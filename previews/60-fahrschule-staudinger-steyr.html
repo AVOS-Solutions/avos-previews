@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fahrschule Staudinger Steyr</title>
+<meta name="description" content="Fahrschule Staudinger Steyr: Ausbildung für die Klassen A, B, C, E, EzB sowie Moped-, Microcar- und Mehrphasenausbildung — kompetent und freundlich in Steyr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101c2e;
+    --navy-2:#16273d;
+    --paper:#f4f6f5;
+    --ink:#101c2e;
+    --ink-soft:#3f5169;
+    --amber:#f0a333;
+    --amber-deep:#d4831a;
+    --teal:#2c8a7a;
+    --line:rgba(16,28,46,0.14);
+    --focus:#d4831a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0d1520;
+      --navy:#f4f6f5;
+      --navy-2:#0a121c;
+      --ink:#f0eee8;
+      --ink-soft:#a9b6c6;
+      --amber:#f6b856;
+      --amber-deep:#f6c274;
+      --teal:#5cc4b0;
+      --line:rgba(240,238,232,0.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0d1520;
+    --navy:#f4f6f5;
+    --navy-2:#0a121c;
+    --ink:#f0eee8;
+    --ink-soft:#a9b6c6;
+    --amber:#f6b856;
+    --amber-deep:#f6c274;
+    --teal:#5cc4b0;
+    --line:rgba(240,238,232,0.16);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .eyebrow{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-deep);font-weight:600;font-family:'Familjen Grotesk'}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+  .disclaimer{background:var(--navy-2);color:#e9edf2;text-align:center;font-size:0.72rem;padding:0.55rem 1rem;line-height:1.5}
+  :root[data-theme="dark"] .disclaimer{color:#0d1520;background:#f0eee8}
+
+  header.site{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3.5rem);max-width:1200px;margin:0 auto}
+  .brand{text-decoration:none;display:flex;flex-direction:column}
+  .brand-name{font-family:'Unbounded';font-weight:700;font-size:1rem;line-height:1.2}
+  .brand-sub{font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{text-decoration:none;font-size:0.9rem;font-weight:500}
+  nav.links a:hover{color:var(--amber-deep)}
+  .nav-cta{display:none;background:var(--amber);color:var(--navy-2);text-decoration:none;padding:0.7rem 1.3rem;border-radius:8px;font-size:0.85rem;font-weight:700}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.2rem;height:1.2rem}
+  @media(min-width:880px){nav.links{display:flex}.nav-cta{display:inline-block}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line);background:var(--paper)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:1rem clamp(1.25rem,4vw,3.5rem);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+
+  /* full bleed typo hero with marquee */
+  .hero{background:var(--navy);color:#f0eee8;position:relative;overflow:hidden}
+  .hero-top{padding:clamp(3rem,8vw,5.5rem) 0 clamp(2rem,5vw,3rem);position:relative}
+  .hero-top h1{
+    font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;max-width:16ch;color:#f4f6f5;
+  }
+  .hero-top .eyebrow{color:var(--amber)}
+  .hero-top p{margin-top:1.4rem;max-width:48ch;color:#c3cede;font-size:1.08rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2rem}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;padding:0 1.5rem;text-decoration:none;font-weight:600;font-size:0.92rem;border-radius:8px}
+  .btn-primary{background:var(--amber);color:var(--navy-2)}
+  .btn-primary:hover{background:var(--amber-deep)}
+  .btn-outline{border:1.5px solid #f0eee8;color:#f0eee8}
+  .btn-outline:hover{border-color:var(--amber);color:var(--amber)}
+
+  .marquee{
+    border-top:1px solid rgba(240,238,232,0.16);
+    border-bottom:1px solid rgba(240,238,232,0.16);
+    overflow:hidden;white-space:nowrap;padding:1rem 0;
+    background:var(--navy-2);
+  }
+  .marquee-track{display:inline-flex;gap:2.5rem;animation:scroll 26s linear infinite;will-change:transform}
+  .marquee span{font-family:'Unbounded';font-size:clamp(0.85rem,2vw,1.15rem);color:var(--amber);display:inline-flex;align-items:center;gap:0.6rem}
+  .marquee span::after{content:"•";color:var(--teal);margin-left:2.5rem}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.marquee-track{animation:none}}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .section-head{max-width:640px;margin-bottom:2.6rem}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-top:0.6rem}
+  .section-head p{color:var(--ink-soft);margin-top:0.9rem;font-size:1.02rem}
+
+  /* bento grid */
+  .bento{
+    display:grid;grid-template-columns:1fr;gap:1rem;
+  }
+  @media(min-width:640px){.bento{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.bento{grid-template-columns:repeat(4,1fr)}}
+  .bento-card{
+    background:var(--navy);color:#f0eee8;border-radius:18px;padding:1.8rem;
+    display:flex;flex-direction:column;gap:0.9rem;min-height:180px;
+  }
+  .bento-card.wide{grid-column:span 1}
+  @media(min-width:640px){.bento-card.wide{grid-column:span 2}}
+  .bento-card.accent{background:var(--amber);color:var(--navy-2)}
+  .bento-card.teal{background:var(--teal);color:#062420}
+  .bento-card .icon{width:2.3rem;height:2.3rem}
+  .bento-card h3{font-size:1.2rem}
+  .bento-card p{font-size:0.92rem;opacity:0.85}
+  .bento-tag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7;font-family:'Familjen Grotesk';font-weight:600}
+
+  /* group band */
+  .group-band{background:var(--navy-2);color:#e9edf2}
+  .group-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+  @media(min-width:900px){.group-grid{grid-template-columns:1fr 1fr}}
+  .group-band h2{color:#f4f6f5}
+  .group-band p{color:#b9c5d6;margin-top:1.1rem;font-size:1.03rem;max-width:48ch}
+  .badge-row{display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1.4rem}
+  .badge-row span{
+    border:1px solid rgba(233,237,242,0.3);padding:0.5rem 1rem;border-radius:999px;font-size:0.82rem;
+  }
+  .group-figure{aspect-ratio:1/1;max-width:320px;margin:0 auto;position:relative}
+  .group-figure svg{width:100%;height:100%}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{background:var(--navy);color:#f0eee8;border-radius:18px;padding:2.2rem}
+  .contact-card h3{font-size:1.4rem;margin-bottom:1.3rem;color:#f4f6f5}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:1.1rem}
+  .contact-list li{display:flex;gap:0.9rem;align-items:flex-start;font-size:0.98rem;color:#dde4ec}
+  .contact-list svg{width:1.3rem;height:1.3rem;flex-shrink:0;margin-top:0.15rem;color:var(--amber)}
+  .contact-list a{text-decoration:underline;text-underline-offset:3px;color:#f4f6f5}
+  .map-frame{border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:280px}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1rem}
+  .foot-grid{display:flex;flex-direction:column;gap:1.4rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-end}}
+  .foot-brand{font-family:'Unbounded';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Fahrschule Staudinger Steyr</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-name">Staudinger</span>
+      <span class="brand-sub">Fahrschule · Steyr</span>
+    </a>
+    <nav class="links">
+      <a href="#ausbildung">Ausbildung</a>
+      <a href="#gruppe">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4372525436">Anmelden</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#ausbildung">Ausbildung</a>
+    <a href="#gruppe">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+4372525436">Anrufen: +43 7252 54366</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-top">
+      <span class="eyebrow reveal">Fahrschule · Steyr, Oberösterreich</span>
+      <h1 class="reveal">Der Führerschein beginnt mit dem richtigen Start.</h1>
+      <p class="reveal">Die Fahrschule Staudinger bildet in Steyr für die Klassen A, B, C, E und EzB aus — dazu Moped-, Microcar- und Mehrphasenausbildung. Kompetent, freundlich, auf den Punkt.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#kontakt">Jetzt anmelden</a>
+        <a class="btn btn-outline" href="tel:+4372525436">Anrufen</a>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Klasse A</span><span>Klasse B</span><span>Klasse C</span><span>Klasse E</span><span>EzB</span><span>Moped</span><span>Microcar</span><span>Mehrphasenausbildung</span>
+        <span>Klasse A</span><span>Klasse B</span><span>Klasse C</span><span>Klasse E</span><span>EzB</span><span>Moped</span><span>Microcar</span><span>Mehrphasenausbildung</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="ausbildung">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ausbildung</span>
+        <h2>Für jede Klasse der richtige Weg</h2>
+        <p>Von Moped bis Lkw-Anhänger — die Fahrschule Staudinger deckt ein breites Spektrum an Führerscheinklassen ab.</p>
+      </div>
+      <div class="bento">
+        <article class="bento-card accent reveal wide">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="20" height="8" rx="2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M6 9V6a2 2 0 0 1 2-2h4l4 5"/></svg>
+          <span class="bento-tag">Klasse B</span>
+          <h3>Der klassische PKW-Führerschein</h3>
+          <p>Die häufigste Ausbildung — praxisnah, strukturiert, verständlich erklärt.</p>
+        </article>
+        <article class="bento-card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          <span class="bento-tag">Klasse A</span>
+          <h3>Motorrad</h3>
+          <p>Vom Einsteiger- bis zum Vollführerschein.</p>
+        </article>
+        <article class="bento-card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.5"/><circle cx="18" cy="19" r="1.5"/></svg>
+          <span class="bento-tag">Klasse C / E</span>
+          <h3>Lkw &amp; Anhänger</h3>
+          <p>Für den beruflichen Einstieg ins Berufskraftfahren.</p>
+        </article>
+        <article class="bento-card teal reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M15 6h4l-1 6H8l-1-4H5"/></svg>
+          <span class="bento-tag">Moped / Microcar</span>
+          <h3>Der erste Schritt</h3>
+          <p>Mobilität für Jugendliche ab dem gesetzlichen Mindestalter.</p>
+        </article>
+        <article class="bento-card reveal">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span class="bento-tag">EzB</span>
+          <h3>Ausbildung vor dem 18. Geburtstag</h3>
+          <p>Begleitetes Fahren ab 17 — früh starten, sicher lernen.</p>
+        </article>
+        <article class="bento-card reveal wide">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+          <span class="bento-tag">Mehrphasenausbildung</span>
+          <h3>Verpflichtende Weiterbildung nach dem Führerschein</h3>
+          <p>Perfektionsfahrten und Fahrsicherheitstraining aus einer Hand organisiert.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="group-band" id="gruppe">
+    <div class="wrap group-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--teal)">Über uns</span>
+        <h2>Teil der Fahrschule Staudinger Gruppe</h2>
+        <p>Die Fahrschule Staudinger Steyr ist Schwesterbetrieb der Fahrschule Staudinger in Kirchdorf und Krems — gebündelte Erfahrung, gleicher Anspruch an Qualität und Verlässlichkeit an mehreren Standorten in Oberösterreich.</p>
+        <div class="badge-row">
+          <span>Steyr</span><span>Kirchdorf</span><span>Krems</span>
+        </div>
+      </div>
+      <div class="group-figure reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#2c8a7a" stroke-width="2" opacity="0.5"/>
+          <circle cx="150" cy="150" r="100" fill="none" stroke="#f0a333" stroke-width="2" opacity="0.6"/>
+          <circle cx="150" cy="150" r="60" fill="#f0a333" opacity="0.9"/>
+          <circle cx="150" cy="150" r="60" fill="none" stroke="#101c2e" stroke-width="1.5"/>
+          <line x1="150" y1="10" x2="150" y2="290" stroke="#e9edf2" stroke-width="1" opacity="0.15"/>
+          <line x1="10" y1="150" x2="290" y2="150" stroke="#e9edf2" stroke-width="1" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Anmelden in Steyr</h2>
+        <p>Persönliche Beratung zur passenden Klasse und den nächsten freien Terminen — telefonisch oder per E-Mail.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Pachergasse 12 · Steyr</h3>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Pachergasse 12, 4400 Steyr<br><a href="https://www.google.com/maps/search/?api=1&query=Pachergasse%2012%2C%204400%20Steyr" target="_blank" rel="noopener">Route berechnen →</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:+4372525436">+43 7252 54366</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+              <span><a href="mailto:office@fahrschule-staudinger-steyr.at">office@fahrschule-staudinger-steyr.at</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span>Kurstermine &amp; Beratung telefonisch oder per E-Mail.</span>
+            </li>
+          </ul>
+          <div style="margin-top:1.6rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+            <a class="btn btn-primary" href="tel:+4372525436">Jetzt anrufen</a>
+            <a class="btn btn-outline" href="mailto:office@fahrschule-staudinger-steyr.at">E-Mail schreiben</a>
+          </div>
+        </div>
+        <div class="map-frame reveal">
+          <iframe title="Standort Fahrschule Staudinger Steyr auf der Karte" loading="lazy" src="https://www.google.com/maps?q=Pachergasse%2012%2C%204400%20Steyr&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Fahrschule Staudinger Steyr</div>
+      <div>Pachergasse 12, 4400 Steyr</div>
+    </div>
+    <div>Gestaltungs-Vorschau — keine offizielle Website von Fahrschule Staudinger Steyr.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
