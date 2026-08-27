@@ -1,0 +1,54 @@
+# Local development stack (no TLS sidecars, published ports). Mirrors avos-erp's dev compose.
+# Ports are offset from the ERP's (5080/3000/5433) so both stacks can run side by side.
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: avos_previews
+      POSTGRES_USER: avos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-devpassword}
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U avos -d avos_previews"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/src/Avos.Previews.Api/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=avos_previews;Username=avos;Password=${POSTGRES_PASSWORD:-devpassword}"
+      Jwt__Key: ${JWT_KEY:-dev-only-jwt-key-0123456789-0123456789-01}
+      Jwt__Issuer: avos-previews
+      Jwt__Audience: avos-previews-clients
+      App__PublicUrl: ${APP_PUBLIC_URL:-http://localhost:5085}
+      Auth__DevPassword: ${DEV_PASSWORD:-dev}
+      Licensing__BaseUrl: ${LICENSING_BASE_URL:-}
+      Licensing__ClientId: ${LICENSING_CLIENT_ID:-}
+      Licensing__ClientSecret: ${LICENSING_CLIENT_SECRET:-}
+    ports:
+      - "5085:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - api
+    environment:
+      API_INTERNAL_URL: http://api:8080
+      APP_PUBLIC_URL: ${APP_PUBLIC_URL_FRONTEND:-http://localhost:3005}
+      DEV_LOGIN_ENABLED: "1"
+    ports:
+      - "3005:3000"
+
+volumes:
+  pgdata:

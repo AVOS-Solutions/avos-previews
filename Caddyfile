@@ -1,0 +1,45 @@
+# Reference routing for the shared edge Caddy (the stack that owns :80/:443 on the host —
+# this file is NOT read by docker-compose.prod.yml; merge these blocks into the edge config,
+# the same way avos-erp documents its routing).
+#
+# Routing rules for AVOS Previews:
+#   - /s/*           → API   (public share links, gate pages rendered by the API)
+#   - /api/public/*  → API   (auth endpoints called during SSO; harmless to expose, everything
+#                             else under /api/* stays unreachable from outside by design)
+#   - /assets/* + /favicon.ico → API (theme CSS/favicon used by the API's gate pages)
+#   - everything else → frontend (Next.js: login, dashboard, /previews/* staff proxy)
+{$DOMAIN} {
+	encode zstd gzip
+
+	handle /s/* {
+		reverse_proxy https://previews-api:8443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	handle /api/public/* {
+		reverse_proxy https://previews-api:8443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	handle /assets/* {
+		reverse_proxy https://previews-api:8443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	handle {
+		reverse_proxy https://previews-frontend:3443 {
+			transport http {
+				tls_insecure_skip_verify
+			}
+		}
+	}
+}

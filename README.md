@@ -1,51 +1,44 @@
 # avos-previews
 
-Website-Relaunch-Vorschauen für 84 österreichische Betriebe mit veralteten Websites,
-erstellt als Sales-Material auf Basis der Recherche `Website-Relaunch Leads Österreich`
-(Stand 27.08.2026).
+Interne Plattform für die Website-Relaunch-Vorschauen aus der Recherche
+„Website-Relaunch Leads Österreich" (84 Betriebe, Stand 27.08.2026) — im
+AVOS-Theme, hinter AVOS-Licensing-Login, mit steuerbaren Share-Links.
 
-## Inhalt
+## Was die App kann
 
-- **`index.html`** — durchsuchbare Übersicht aller 84 Betriebe, gruppiert nach Bundesland
-  (Wien, Niederösterreich, Oberösterreich, Steiermark), mit Link zur jeweiligen
-  Vorschau-Website und zur aktuellen (alten) Website des Betriebs.
-- **`previews/<nr>-<slug>/`** — je eine vollständige, mehrseitige Website pro Betrieb,
-  bespoke gestaltet (eigenes Layout, Typografie-Pairing, Farbwelt passend zur Branche —
-  kein Bau-Kasten-Template):
-  - `index.html` — Home
-  - `ueber-uns.html` — Über uns / Geschichte
-  - `angebot.html` — Angebot/Leistungen (Label je nach Branche: Speisekarte, Zimmer &amp;
-    Ausstattung, Weine &amp; Angebot, Leistungen, Sortiment, Behandlungen, …)
-  - `kontakt.html` — Kontakt &amp; Anfahrt
-  - `impressum.html` — Muster-Impressum (Platzhalter, siehe unten)
-  - `datenschutz.html` — Muster-Datenschutzerklärung (Platzhalter, siehe unten)
+- **Dashboard** (Next.js, AVOS-Design-System): alle 84 Betriebe nach Bundesland,
+  Suche + Filter, Vorschau-Ansicht für eingeloggte Teammitglieder.
+- **Login über avos-licensing** (SSO-Flow `/api/sso/authorize` → Code-Exchange):
+  Licensing-Admins immer, andere Konten nur mit aktiver AVOS-Previews-Lizenz.
+- **Share-Links** pro Betrieb (`https://<domain>/s/<token>`), einzeln steuerbar:
+  - optionales **Passwort** (PBKDF2-gehasht, Abfrage-Seite im AVOS-Theme)
+  - optionales **View-Limit** (Zählung pro Besuch, 30-Minuten-Debounce gegen Reloads)
+  - optionaler **Ablauf** (7/14/30/90 Tage oder Datum)
+  - Widerrufen/Löschen jederzeit, Statistik (Aufrufe, zuletzt geöffnet)
 
-  Alle 6 Seiten eines Betriebs teilen sich Navigation, Footer und Design-System.
+## Struktur
 
-Jede Seite jeder Betriebs-Website trägt eine klar sichtbare Kennzeichnung
-("Unverbindliche Gestaltungs-Vorschau … keine offizielle Website von …"), da es sich um
-unabhängig erstellte Konzepte zu Demonstrationszwecken handelt, nicht um die echten
-Websites der Betriebe. Impressum und Datenschutzerklärung sind ausdrücklich als
-Muster/Platzhalter gekennzeichnet und ersetzen keine rechtliche Prüfung — ein Betrieb,
-der eine dieser Seiten übernehmen möchte, müsste ein rechtskonformes Impressum/eine
-rechtskonforme Datenschutzerklärung durch seine eigene Rechts-/Steuerberatung erstellen
-lassen.
+```
+backend/src/Avos.Previews.Api/   .NET 10 Minimal API (JWT + Refresh-Rotation wie avos-erp,
+                                 EF Core: Postgres, SQLite-Fallback für lokale Entwicklung)
+frontend/                        Next.js 16 App Router (Tailwind v4, ERP-Theme-Tokens,
+                                 httpOnly-Cookie-Sessions, proxy.ts-Refresh wie avos-erp)
+previews/<nr>-<slug>/            84 statische Vorschau-Websites (je 6 Seiten, bespoke Design)
+businesses.json                  Betriebskatalog (aus der Lead-Recherche generiert)
+index.html                       Alte statische Übersicht (durch das Dashboard abgelöst,
+                                 als Referenz behalten)
+docker-compose[.prod].yml        Dev-Stack bzw. avos-edge-Produktionsstack mit TLS-Sidecars
+Caddyfile                        Referenz-Routing für die gemeinsame Edge-Caddy
+```
 
-## Technische Eckpunkte
+Deployment und Licensing-Registrierung: siehe `DEPLOY.md`.
 
-- Reines, statisches HTML/CSS/Vanilla-JS — kein Build-Step, direkt über GitHub Pages
-  oder jeden anderen Static Host deploybar.
-- Jede Seite ist self-contained: einzige externe Ressource sind Google Fonts (und, wo
-  passend, ein Google-Maps-Link/-Embed ohne API-Key). Keine Bild-CDNs, kein Analytics,
-  keine JS-Frameworks — Visuals entstehen ausschließlich aus Typografie, Farbe,
-  Verläufen und Inline-SVG.
-- Mobile-first und responsiv: fluide Typografie via `clamp()`, kollabierende
-  Grids/Hero-Layouts unterhalb von ca. 640–900px, mobile Navigation, Touch-Targets
-  ≥ 44px.
+## Hinweise
 
-## Quelle
-
-Kontaktdaten und Betriebsbeschreibungen stammen aus öffentlich zugänglichen Impressen
-der Betriebe (siehe Ursprungsdokument). Interne Recherche-Notizen (Preiskalkulation,
-technische Mängel der Altwebsite, Bewertungs-Monitoring) sind bewusst nicht Teil der
-Vorschau-Seiten.
+- Jede Vorschau-Seite trägt weiterhin die Kennzeichnung „Unverbindliche
+  Gestaltungs-Vorschau" — es sind unabhängig erstellte Konzepte, keine offiziellen
+  Websites der Betriebe; Impressum/Datenschutz darin sind Muster-Platzhalter.
+- Nichts wird indexiert: `X-Robots-Tag: noindex` auf allen API-Antworten,
+  `robots.txt` Disallow im Frontend, noindex-Metas auf den Gate-Seiten.
+- Share-Tokens (160 bit) stehen im Klartext in der DB, damit Links später erneut
+  kopiert werden können; Passwörter sind ausschließlich gehasht.

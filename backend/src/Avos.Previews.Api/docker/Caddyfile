@@ -1,0 +1,11 @@
+# Internal TLS sidecar for the api container — same pattern as avos-erp. Terminates HTTPS with a
+# self-signed ("tls internal") certificate and reverse-proxies to the API process on loopback:8080.
+# The shared edge Caddy dials this over the avos-edge network as https://previews-api:8443 with
+# certificate verification intentionally skipped; trust comes from the Docker network boundary.
+# Product-qualified alias only-strategy: on the shared avos-edge network every product's api
+# container answers to the bare name "api" (confirmed-live DNS collision in the ERP deployment),
+# so cross-product dials must always use previews-api.
+api:8443, previews-api:8443 {
+	tls internal
+	reverse_proxy localhost:8080
+}

@@ -1,0 +1,14 @@
+# Internal TLS sidecar for the frontend container — same pattern as avos-erp. Terminates HTTPS on
+# 3443 with a self-signed ("tls internal") certificate and reverse-proxies to the Next.js server on
+# loopback:3000. The shared edge Caddy dials this as https://previews-frontend:3443 with
+# certificate verification intentionally skipped; trust comes from the Docker network boundary.
+frontend:3443, previews-frontend:3443 {
+	tls internal
+	reverse_proxy localhost:3000 {
+		# Forward the edge's X-Forwarded-Host through this hop instead of letting Caddy compute its
+		# own default. Confirmed live in the ERP deployment that the default is this site block's own
+		# listen address, which makes Next.js reject every Server Action with its
+		# "x-forwarded-host does not match origin" CSRF check.
+		header_up X-Forwarded-Host {http.request.header.X-Forwarded-Host}
+	}
+}

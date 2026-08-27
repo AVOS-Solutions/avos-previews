@@ -1,0 +1,13 @@
+# .NET
+bin/
+obj/
+*.user
+
+# Node / Next.js
+node_modules/
+.next/
+next-env.d.ts
+
+# Local data & secrets
+.env
+backend/src/Avos.Previews.Api/data/

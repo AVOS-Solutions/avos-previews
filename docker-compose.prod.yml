@@ -1,0 +1,81 @@
+# Production stack, mirroring avos-erp's topology: no published ports; api and frontend each run
+# an in-container Caddy TLS sidecar and join the external shared "avos-edge" network with
+# product-qualified aliases (previews-api / previews-frontend). A shared edge Caddy owning :80/:443
+# routes the public domain here — see Caddyfile in the repo root for the reference routing.
+#
+#   docker network create avos-edge        # once per host (shared by all AVOS products)
+#   docker compose -f docker-compose.prod.yml --env-file .env up -d --build
+#
+# Required .env keys: DOMAIN, POSTGRES_PASSWORD, JWT_KEY, LICENSING_BASE_URL,
+# LICENSING_CLIENT_ID, LICENSING_CLIENT_SECRET. See DEPLOY.md.
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: avos_previews
+      POSTGRES_USER: avos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD must be set}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U avos -d avos_previews"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - internal
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/src/Avos.Previews.Api/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      # Loopback-only: 8080 is reachable solely through the 8443 TLS sidecar.
+      ASPNETCORE_URLS: http://127.0.0.1:8080
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=avos_previews;Username=avos;Password=${POSTGRES_PASSWORD}"
+      Jwt__Key: ${JWT_KEY:?JWT_KEY must be set}
+      Jwt__Issuer: avos-previews
+      Jwt__Audience: avos-previews-clients
+      App__PublicUrl: https://${DOMAIN:?DOMAIN must be set}
+      Licensing__BaseUrl: ${LICENSING_BASE_URL:?LICENSING_BASE_URL must be set}
+      Licensing__ClientId: ${LICENSING_CLIENT_ID:?LICENSING_CLIENT_ID must be set}
+      Licensing__ClientSecret: ${LICENSING_CLIENT_SECRET:?LICENSING_CLIENT_SECRET must be set}
+    volumes:
+      - apidata:/app/data
+    networks:
+      internal:
+      avos-edge:
+        aliases:
+          - previews-api
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      # Loopback-only: 3000 is reachable solely through the 3443 TLS sidecar.
+      HOSTNAME: 127.0.0.1
+      API_INTERNAL_URL: https://previews-api:8443
+      APP_PUBLIC_URL: https://${DOMAIN}
+    networks:
+      internal:
+      avos-edge:
+        aliases:
+          - previews-frontend
+
+volumes:
+  pgdata:
+  apidata:
+
+networks:
+  internal:
+  avos-edge:
+    external: true

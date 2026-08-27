@@ -1,0 +1,842 @@
+[
+ {
+  "num": 1,
+  "slug": "01-buschenschank-haslinger",
+  "name": "Buschenschank Haslinger",
+  "category": "Buschenschank / Heuriger",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Familiengeführte Buschenschank in Sievering zwischen Neustift und Grinzing mit ausschließlich selbst erzeugten Weinen, Innenhof und…",
+  "oldWebsite": "http://www.buschenschank-haslinger.at/"
+ },
+ {
+  "num": 2,
+  "slug": "02-backerei-wannenmacher-gesellschaft-m-b-h",
+  "name": "Bäckerei Wannenmacher Gesellschaft m.b.H.",
+  "category": "Bäckerei / Café",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "1848 gegründet - älteste Bäckerei Wiens in Familienbesitz; backt das originale 'Heurigen-Roggenbrot' nach unverändertem Rezept, mit Café,…",
+  "oldWebsite": "https://www.wannenmacher-brot.at/"
+ },
+ {
+  "num": 3,
+  "slug": "03-cafe-sperl",
+  "name": "Café Sperl",
+  "category": "Kaffeehaus",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Traditionsreiches Wiener Kaffeehaus seit 1880 mit historischem Original-Interieur, mehrfach ausgezeichnet, bekannt für die Sperl-Torte;…",
+  "oldWebsite": "https://www.cafesperl.at/"
+ },
+ {
+  "num": 4,
+  "slug": "04-fahrschule-hietzing",
+  "name": "Fahrschule Hietzing",
+  "category": "Fahrschule",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "1966 gegründete Fahrschule mit über 13.000 Absolventen, Klassen A/B/L17/Moped, E-Autos und E-Motorrädern; 74-78% Erfolgsquote beim…",
+  "oldWebsite": "https://www.fahrschule-hietzing.at/"
+ },
+ {
+  "num": 5,
+  "slug": "05-fleischerei-ringl",
+  "name": "Fleischerei Ringl",
+  "category": "Fleischerei (Metzger)",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Kleiner Familienbetrieb im 6. Bezirk, der Schinken, Würste und Selchfleisch noch selbst erzeugt - ohne Zusatzstoffe/Phosphate; zusätzlich…",
+  "oldWebsite": "https://www.fleischerei-ringl.at/"
+ },
+ {
+  "num": 6,
+  "slug": "06-gasthaus-alt-wien",
+  "name": "Gasthaus Alt Wien",
+  "category": "Gasthaus",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Wiener Gasthaus in Meidling mit Wiener Küche, Balkan-Spezialitäten, Gastgarten und Mittagsmenü; Räumlichkeiten für Feiern und…",
+  "oldWebsite": "https://www.gasthaus-alt-wien.at/"
+ },
+ {
+  "num": 7,
+  "slug": "07-gasthaus-wickerl",
+  "name": "Gasthaus Wickerl",
+  "category": "Gasthaus",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Urtypisches Wiener Gasthaus im Alsergrund mit frisch gekochter traditioneller österreichischer Küche, Schanigarten und Speisen zum…",
+  "oldWebsite": "http://www.wickerl.at/"
+ },
+ {
+  "num": 8,
+  "slug": "08-hotel-orient",
+  "name": "Hotel Orient",
+  "category": "Hotel",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Legendäres, in zweiter Generation geführtes Stundenhotel von 1896 in der Inneren Stadt mit 7 Themenzimmern (Kaiser Suite, 1001 Nights…",
+  "oldWebsite": "http://www.hotelorient.at/"
+ },
+ {
+  "num": 9,
+  "slug": "09-pension-anzengruber",
+  "name": "Pension Anzengruber",
+  "category": "Frühstückspension",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Privat geführte Frühstückspension in Villenlage am Wiener Stadtrand (Hadersdorf-Weidlingau) mit Zimmern und Apartments, Garten,…",
+  "oldWebsite": "https://www.pension-anzengruber.at/"
+ },
+ {
+  "num": 10,
+  "slug": "10-pension-dr-geissler-pension-neuer-markt",
+  "name": "Pension Dr. Geissler / Pension Neuer Markt",
+  "category": "Pension",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Zwei familiär geführte Innenstadt-Pensionen unter einem Dach ('zentral, funktionell, günstig'), Frühstückspension mit traditionell…",
+  "oldWebsite": "http://www.hotelpension.at/"
+ },
+ {
+  "num": 11,
+  "slug": "11-pferdefleischerei-leopold-gumprecht-gmbh-co-kg",
+  "name": "Pferdefleischerei Leopold Gumprecht GmbH & Co KG",
+  "category": "Pferdefleischerei (Marktstände)",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Traditionsreiche Pferdefleischerei mit sechs Verkaufsständen auf Wiener Märkten; großes Sortiment an Pferde- und Fohlenspezialitäten…",
+  "oldWebsite": "https://www.pferdefleischer.at/"
+ },
+ {
+  "num": 12,
+  "slug": "12-physiotherapie-wonisch",
+  "name": "Physiotherapie Wonisch",
+  "category": "Physiotherapie-Praxis",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Gemeinschaftspraxis von vier Physiotherapeuten in Floridsdorf mit Schwerpunkten Orthopädie, Traumatologie, Sportverletzungen und…",
+  "oldWebsite": "http://physiotherapie1210.at/"
+ },
+ {
+  "num": 13,
+  "slug": "13-salon-eva-salon-privat",
+  "name": "Salon Eva / Salon Privat",
+  "category": "Friseursalon",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Friseur-Meisterbetrieb in Kaisermühlen (22. Bezirk) mit zwei Konzepten: klassischer Salon Eva (Damen/Herren) und 'Salon Privat' mit…",
+  "oldWebsite": "https://www.salonprivat.at/"
+ },
+ {
+  "num": 14,
+  "slug": "14-schnitzelwirt-zeiner-partner-ohg",
+  "name": "Schnitzelwirt (Zeiner & Partner OHG)",
+  "category": "Restaurant / Gasthaus",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Kultlokal im 7. Bezirk, vor über 50 Jahren von Günther und Helene Schmidt gegründet und heute von den Töchtern geführt; berühmt für…",
+  "oldWebsite": "https://www.schnitzelwirt.co.at/"
+ },
+ {
+  "num": 15,
+  "slug": "15-tischlerei-hans-korzo-gesmbh-nfg-kg",
+  "name": "Tischlerei Hans Körzö GesmbH Nfg KG",
+  "category": "Tischlerei",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Alteingesessener Familien-Tischlereibetrieb in der Donaustadt: Reparaturen, Innenausbau, Dachbodenausbauten, Böden, Türen, Fenster,…",
+  "oldWebsite": "http://www.tischlerei-koerzoe.at/"
+ },
+ {
+  "num": 16,
+  "slug": "16-tischlerei-kout-gesmbh",
+  "name": "Tischlerei Kout GesmbH",
+  "category": "Tischlerei",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Tischlerei in Ottakring (Firmenbuch seit 2003, FN 229971v), spezialisiert auf Sicherheits- und Feuerschutztüren, Tischlerarbeiten,…",
+  "oldWebsite": "http://www.tischlerei-kout.at/"
+ },
+ {
+  "num": 17,
+  "slug": "17-weinbau-heuriger-kierlinger",
+  "name": "Weinbau & Heuriger Kierlinger",
+  "category": "Heuriger / Weinbau",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Traditioneller Familien-Weinbaubetrieb und Heuriger in Nussdorf mit eigener Vinothek, Winzersaal, Eigenbauweinen vom Nussberg (Gemischter…",
+  "oldWebsite": "https://www.kierlinger.at/"
+ },
+ {
+  "num": 18,
+  "slug": "18-weingut-heuriger-sirbu",
+  "name": "Weingut & Heuriger Sirbu",
+  "category": "Heuriger / Weingut",
+  "region": "Wien",
+  "location": "Wien, Wien",
+  "description": "Familien-Weingut und Heuriger am Nussberg im Kahlenbergerdorf (Mitglied der Landwirtschaftskammer Wien), bekannt für Eigenbauweine und…",
+  "oldWebsite": "http://www.sirbu.at/"
+ },
+ {
+  "num": 19,
+  "slug": "19-cafe-savarona",
+  "name": "Café Savarona",
+  "category": "Café",
+  "region": "Wien",
+  "location": "Wien (11. Bezirk, Simmering), Wien",
+  "description": "Gemütliches Grätzel-Café in Simmering mit eigenem Frühstücksangebot, Gastgarten, Dart und Karaoke-Anlage. Geöffnet Mo-Sa 8-24 Uhr,…",
+  "oldWebsite": "http://www.savarona.at/"
+ },
+ {
+  "num": 20,
+  "slug": "20-zum-holbl-wein-geniessen",
+  "name": "Zum Hölbl - Wein & Geniessen",
+  "category": "Weinlokal / Vinothek",
+  "region": "Wien",
+  "location": "Wien (13. Bezirk, Hietzing), Wien",
+  "description": "Kleines Weinlokal mit Vinothek in der Altgasse in Alt-Hietzing nahe Schönbrunn: ausgewählte österreichische Weiß- und Rotweine, Bier und…",
+  "oldWebsite": "https://www.zumhoelbl.at/"
+ },
+ {
+  "num": 21,
+  "slug": "21-shakes-pub-restaurant",
+  "name": "Shakes - Pub & Restaurant",
+  "category": "Pub / Restaurant",
+  "region": "Wien",
+  "location": "Wien (19. Bezirk, Döbling), Wien",
+  "description": "Pub & Restaurant (vormals Shakes&Beer), eröffnet am 28.05.1998, mit gutbürgerlicher internationaler Küche, Frühstück (Mo-Fr 8-10 Uhr),…",
+  "oldWebsite": "https://www.shakes.at/"
+ },
+ {
+  "num": 22,
+  "slug": "22-pizzeria-capri",
+  "name": "Pizzeria Capri",
+  "category": "Pizzeria / Italienisches Restaurant",
+  "region": "Wien",
+  "location": "Wien (19. Bezirk, Sievering), Wien",
+  "description": "Italienisches Restaurant im Herzen von Sievering, seit 2003 bestehend, mit frisch zubereiteten Spezialitäten, Gastgarten, täglichem…",
+  "oldWebsite": "https://capri.co.at/"
+ },
+ {
+  "num": 23,
+  "slug": "23-china-restaurant-hua-qiang",
+  "name": "China Restaurant Hua Qiang",
+  "category": "Chinesisches Restaurant",
+  "region": "Wien",
+  "location": "Wien (22. Bezirk, Donaustadt), Wien",
+  "description": "Chinesisches Familienrestaurant in der Donaustadt mit fernöstlichen Klassikern und Hauskreationen, Mittagsmenüs und Take-away. Mit…",
+  "oldWebsite": "https://www.huaqiang.at/"
+ },
+ {
+  "num": 24,
+  "slug": "24-kolonitz-beisl",
+  "name": "Kolonitz Beisl",
+  "category": "Wiener Wirtshaus / Beisl",
+  "region": "Wien",
+  "location": "Wien (3. Bezirk, Landstraße), Wien",
+  "description": "Alt-Wiener Wirtshaus seit 1900 im dritten Bezirk mit klassischer Hausmannskost wie Altwiener Suppentopf, Wiener Schnitzel und…",
+  "oldWebsite": "http://www.kolonitzbeisl.at/"
+ },
+ {
+  "num": 25,
+  "slug": "25-genussbauernhof-distelberger",
+  "name": "GenussBauernhof Distelberger",
+  "category": "Mostheuriger / Direktvermarkter / Bauernmuseum",
+  "region": "Niederösterreich",
+  "location": "Amstetten (Ortsteil Gigerreith, Mostviertel), Niederösterreich",
+  "description": "900 Jahre alter Vierkanthof im Mostviertler Birnbaumland; Mostbaron-Betrieb mit Mostheurigem, Hofladen (GenussLaden), Obstprodukten (Most,…",
+  "oldWebsite": "http://www.distelberger.at"
+ },
+ {
+  "num": 26,
+  "slug": "26-fleischerei-anderl",
+  "name": "Fleischerei Anderl",
+  "category": "Fleischerei / Fleischhauerei",
+  "region": "Niederösterreich",
+  "location": "Göpfritz an der Wild (Waldviertel), Niederösterreich",
+  "description": "Familienfleischerei in 4. Generation (Wurzeln bis 1842); eigene Schlachtung mit Tieren ausschließlich von Bauern der Gemeinde, Waldviertler…",
+  "oldWebsite": "https://www.fleischerei-anderl.at"
+ },
+ {
+  "num": 27,
+  "slug": "27-heinz-fischer-gmbh",
+  "name": "Heinz Fischer GmbH",
+  "category": "Installateur (Sanitär/Heizung/Lüftung)",
+  "region": "Niederösterreich",
+  "location": "Herzogenburg (zweiter Standort St. Pölten), Niederösterreich",
+  "description": "Sanitär-, Heizungs- und Lüftungsbetrieb seit 1973 mit 17 Mitarbeitern und Standorten in Herzogenburg und St. Pölten; Bad- und…",
+  "oldWebsite": "http://www.heinzfischergmbh.at"
+ },
+ {
+  "num": 28,
+  "slug": "28-elektro-babinsky-gmbh",
+  "name": "Elektro Babinsky GmbH",
+  "category": "Elektrohandel / Elektroinstallation",
+  "region": "Niederösterreich",
+  "location": "Hollabrunn (Weinviertel), Niederösterreich",
+  "description": "Elektrofachgeschäft (Expert-Partner 'Expert Babinsky') und Installationsbetrieb in Hollabrunn: Elektroinstallationen, SAT/Antenne,…",
+  "oldWebsite": "http://www.elektrobabinsky.at"
+ },
+ {
+  "num": 29,
+  "slug": "29-backerei-konditorei-mistlbacher",
+  "name": "Bäckerei-Konditorei Mistlbacher",
+  "category": "Bäckerei / Konditorei",
+  "region": "Niederösterreich",
+  "location": "Klein-Pöchlarn (Bezirk Melk), Niederösterreich",
+  "description": "Familienbäckerei und Konditorei seit 136 Jahren in 4. Generation, mit Geschäften/Cafés in Klein-Pöchlarn (Stammhaus), Pöchlarn NVZ und Melk…",
+  "oldWebsite": "https://www.mistlbacher.com"
+ },
+ {
+  "num": 30,
+  "slug": "30-friseur-burak",
+  "name": "Friseur Burak",
+  "category": "Herrenfriseur / Barber",
+  "region": "Niederösterreich",
+  "location": "Krems an der Donau, Niederösterreich",
+  "description": "Herren- und Kinderfriseur am Kremser Bahnhof; der Inhaber wurde in der Türkei ausgebildet, hat die österreichische Meisterprüfung und 22…",
+  "oldWebsite": "https://www.friseur-burak.at"
+ },
+ {
+  "num": 31,
+  "slug": "31-lackner-friseure",
+  "name": "Lackner Friseure",
+  "category": "Friseur",
+  "region": "Niederösterreich",
+  "location": "Krems an der Donau, Niederösterreich",
+  "description": "1975 gegründeter Friseursalon in der Kremser Altstadt (1. Stock, barrierefrei), Damen und Herren, Kosmetik, Hochzeitsstyling und…",
+  "oldWebsite": "https://www.lackner-friseure.at"
+ },
+ {
+  "num": 32,
+  "slug": "32-tischlerei-schwab-reinhard-schwab-e-u",
+  "name": "Tischlerei SCHWAB (Reinhard Schwab e.U.)",
+  "category": "Tischlerei",
+  "region": "Niederösterreich",
+  "location": "Ladendorf (Bezirk Mistelbach, Weinviertel), Niederösterreich",
+  "description": "1998 gegründete Meistertischlerei, spezialisiert auf Maßküchen ('SCHWAB Traumküchen') und Möbel von der Planung bis zur Montage; einer der…",
+  "oldWebsite": "http://www.tischlerei-werkstatt.at"
+ },
+ {
+  "num": 33,
+  "slug": "33-fruhstuckspension-haus-monika",
+  "name": "Frühstückspension Haus Monika",
+  "category": "Pension / Frühstückspension",
+  "region": "Niederösterreich",
+  "location": "Mödling, Niederösterreich",
+  "description": "Frühstückspension in Mödling südlich von Wien für Urlaubs-, Geschäfts- und Seminargäste; Frühstück wochentags ab 6:15, bietet auch…",
+  "oldWebsite": "http://www.pensionmonika.com"
+ },
+ {
+  "num": 34,
+  "slug": "34-heuriger-bock-weinbau-bock",
+  "name": "Heuriger Bock (Weinbau Bock)",
+  "category": "Heuriger / Buschenschank",
+  "region": "Niederösterreich",
+  "location": "Pfaffstätten (Bezirk Baden), Niederösterreich",
+  "description": "Familien-Heuriger im Pfaffstättner 'Heurigendorf' bei Baden; klassische Buschenschank-Küche, dazu täglicher Flaschenweinverkauf 8:00-18:00.",
+  "oldWebsite": "http://www.heuriger-bock.at"
+ },
+ {
+  "num": 35,
+  "slug": "35-weinbau-osterreicher-heuriger-osterreicher",
+  "name": "Weinbau Österreicher (Heuriger Österreicher)",
+  "category": "Heuriger / Weinbau",
+  "region": "Niederösterreich",
+  "location": "Pfaffstätten (Bezirk Baden), Niederösterreich",
+  "description": "Bodenständiger Heuriger ('bei uns sollen Sie sich zu Hause fühlen') mit glutenfreien Gerichten, auf Falstaff gelistet; sozial engagiert…",
+  "oldWebsite": "https://www.heuriger-oesterreicher.at"
+ },
+ {
+  "num": 36,
+  "slug": "36-burgherren-restaurant-johann-zeiner",
+  "name": "Burgherren-Restaurant Johann Zeiner",
+  "category": "Restaurant / Gasthaus (Ritteressen)",
+  "region": "Niederösterreich",
+  "location": "St. Andrä-Wördern, Niederösterreich",
+  "description": "Familiengeführtes Burgherren-Restaurant der Familie Zeiner mit deftiger Hausmannskost, Ritteressen, Heurigenlokal, Kegelbahn und…",
+  "oldWebsite": "http://www.gastro-zeiner.at/"
+ },
+ {
+  "num": 37,
+  "slug": "37-ing-t-frieberger-installationen-e-u",
+  "name": "Ing. T. Frieberger Installationen e.U.",
+  "category": "Installateur (Gas/Wasser/Heizung)",
+  "region": "Niederösterreich",
+  "location": "St. Andrä-Wördern (Bezirk Tulln), Niederösterreich",
+  "description": "Installateur für Gas/Wasser/Heizung: Wärmepumpen, Pellets- und Biomasseheizungen, Wasserenthärtung, kontrollierte Wohnraumlüftung, Gas- und…",
+  "oldWebsite": "http://www.installateur-frieberger.at"
+ },
+ {
+  "num": 38,
+  "slug": "38-gastehaus-hahn-hahn-og",
+  "name": "Gästehaus Hahn (Hahn OG)",
+  "category": "Pension / Frühstückspension",
+  "region": "Niederösterreich",
+  "location": "Straß im Straßertale (Bezirk Krems-Land), Niederösterreich",
+  "description": "Familiengeführtes Gästehaus im Weinort Straßertal bei Langenlois/Kamptal, mit Garten, Pool, großen sauberen Zimmern und gelobtem…",
+  "oldWebsite": "http://www.gaestehaus-hahn.at"
+ },
+ {
+  "num": 39,
+  "slug": "39-cafe-konditorei-kostlbauer",
+  "name": "Café Konditorei Köstlbauer",
+  "category": "Café / Konditorei",
+  "region": "Niederösterreich",
+  "location": "Tulln an der Donau, Niederösterreich",
+  "description": "Traditions-Café-Konditorei 'seit Generationen' direkt am Tullner Hauptplatz neben der Bezirkshauptmannschaft; hausgemachtes Eis,…",
+  "oldWebsite": "https://www.koestlbauer.at"
+ },
+ {
+  "num": 40,
+  "slug": "40-landgasthof-zum-topf",
+  "name": "Landgasthof zum Topf",
+  "category": "Gasthaus / Landgasthof",
+  "region": "Niederösterreich",
+  "location": "Vitis (Waldviertel), Niederösterreich",
+  "description": "Traditioneller Waldviertler Landgasthof mit Restaurant, Gourmet-Stüberl, Gastgarten und Café. Mehrfach ausgezeichnet: erneut 2 Hauben im…",
+  "oldWebsite": "http://www.landgasthof-topf.at"
+ },
+ {
+  "num": 41,
+  "slug": "41-wein-ottmann-weinbau-heuriger-gastezimmer",
+  "name": "Wein Ottmann - Weinbau, Heuriger & Gästezimmer",
+  "category": "Winzer / Heuriger / Gästezimmer",
+  "region": "Niederösterreich",
+  "location": "Weißenkirchen in der Wachau, Niederösterreich",
+  "description": "Familienweingut im Herzen der Wachau mit 4 ha Rebfläche, Mitglied der Vinea Wachau Nobilis Districtus; betreibt einen Heurigen und…",
+  "oldWebsite": "http://www.wein-ottmann.at"
+ },
+ {
+  "num": 42,
+  "slug": "42-weingut-gastezimmer-franz-zottl",
+  "name": "Weingut & Gästezimmer Franz Zottl",
+  "category": "Winzer / Heuriger / Gästezimmer",
+  "region": "Niederösterreich",
+  "location": "Weißenkirchen in der Wachau, Niederösterreich",
+  "description": "Familienweingut, das seit 1917 Wein erzeugt (Wurzeln bis ins Mittelalter); Wachauer Steinfeder-, Federspiel- und Smaragd-Weine inkl. Ried…",
+  "oldWebsite": "http://www.weingut-zottl.at"
+ },
+ {
+  "num": 43,
+  "slug": "43-pizza-ristorante-torino",
+  "name": "Pizza-Ristorante Torino",
+  "category": "Pizzeria / Italienisches Restaurant",
+  "region": "Niederösterreich",
+  "location": "Wiener Neustadt, Niederösterreich",
+  "description": "Pizzeria mit Lieferservice in der Neunkirchner Straße in Wiener Neustadt: Pizza, Pasta und italienische Klassiker, Zustellung mit warmer…",
+  "oldWebsite": "https://www.pizzaristorante-torino.at/"
+ },
+ {
+  "num": 44,
+  "slug": "44-josef-schernberger-elektrotechnik",
+  "name": "Josef Schernberger Elektrotechnik",
+  "category": "Elektriker",
+  "region": "Oberösterreich",
+  "location": "Altmünster, Oberösterreich",
+  "description": "Ein-Mann-Elektrotechnikbetrieb für Elektroinstallationen aller Art im privaten Haushalt, tätig im Großraum Gmunden und Vöcklabruck.",
+  "oldWebsite": "https://www.js-etechnik.at/"
+ },
+ {
+  "num": 45,
+  "slug": "45-chamaleon-fassadenbau-gmbh",
+  "name": "Chamäleon Fassadenbau GmbH",
+  "category": "Maler / Fassadenbau / Vollwärmeschutz",
+  "region": "Oberösterreich",
+  "location": "Aschach an der Donau, Oberösterreich",
+  "description": "Fachbetrieb für Malerei, Vollwärmeschutz, Innen- und Außenputz sowie Fassadensanierung im Bezirk Eferding; arbeitet mit Markensystemen von…",
+  "oldWebsite": "http://www.xn--chamleon-3za.at/"
+ },
+ {
+  "num": 46,
+  "slug": "46-fruhstuckspension-sydler",
+  "name": "Frühstückspension Sydler",
+  "category": "Pension",
+  "region": "Oberösterreich",
+  "location": "Bad Goisern am Hallstättersee, Oberösterreich",
+  "description": "Familien- und kinderfreundliche Frühstückspension wenige Gehminuten vom Zentrum von Bad Goisern im UNESCO-Welterbe Salzkammergut; 3 Häuser…",
+  "oldWebsite": "https://www.sydler.at/"
+ },
+ {
+  "num": 47,
+  "slug": "47-gasthof-pension-altmuhl",
+  "name": "Gasthof-Pension Altmühl",
+  "category": "Gasthof-Pension",
+  "region": "Oberösterreich",
+  "location": "Gmunden, Oberösterreich",
+  "description": "Bodenständiger Familien-Gasthof am Traunsee mit 17 Doppel- und 10 Einzelzimmern, Mittagsmenüs und Hausmannskost; Küche macht 'alles selbst…",
+  "oldWebsite": "https://www.gasthof-altmuehl.at/"
+ },
+ {
+  "num": 48,
+  "slug": "48-keramikhotel-goldener-brunnen",
+  "name": "Keramikhotel Goldener Brunnen",
+  "category": "Kleinhotel",
+  "region": "Oberösterreich",
+  "location": "Gmunden, Oberösterreich",
+  "description": "3-Sterne-Stadthotel in einem Gebäude von 1545 direkt an der Traun, wenige Schritte vom Stadtplatz und Traunsee; 29 Zimmer, Sauna und…",
+  "oldWebsite": "https://www.goldenerbrunnen.at/"
+ },
+ {
+  "num": 49,
+  "slug": "49-ferienhotel-innviertel-gasthof-kirchenwirt-inn4tel-gmbh",
+  "name": "Ferienhotel Innviertel - Gasthof Kirchenwirt (Inn4tel GmbH)",
+  "category": "Gasthof / Kleinhotel",
+  "region": "Oberösterreich",
+  "location": "Kirchheim im Innkreis, Oberösterreich",
+  "description": "Familiengeführter Gasthof und Ferienhotel mit Hallenbad und großem Außenbereich am Römerradweg, 10 Autominuten von der Therme Geinberg;…",
+  "oldWebsite": "https://www.ferienpension.at/de/"
+ },
+ {
+  "num": 50,
+  "slug": "50-chinoiss-asia-restaurant",
+  "name": "Chinoiss Asia Restaurant",
+  "category": "Chinesisch-indisches Restaurant",
+  "region": "Oberösterreich",
+  "location": "Linz, Oberösterreich",
+  "description": "Asiatisches Restaurant im Linzer Zentrum mit chinesischer und indischer Küche, Mittagsbuffet (Mo-Fr) und eigenem Zustellservice. 40…",
+  "oldWebsite": "https://www.chinoiss.at/"
+ },
+ {
+  "num": 51,
+  "slug": "51-wok-more-asia-restaurant",
+  "name": "Wok & More Asia-Restaurant",
+  "category": "Asiatisches Restaurant (Buffet/Teppanyaki)",
+  "region": "Oberösterreich",
+  "location": "Linz, Oberösterreich",
+  "description": "Asia-Fresh-Food-Restaurant mit großem Buffet und Teppanyaki-Grill sowie chinesischen, japanischen und thailändischen Gerichten à la carte.…",
+  "oldWebsite": "https://www.wok-more.at/"
+ },
+ {
+  "num": 52,
+  "slug": "52-k-u-k-hofbackerei",
+  "name": "k.u.k. Hofbäckerei",
+  "category": "Bäckerei / Café-Konditorei",
+  "region": "Oberösterreich",
+  "location": "Linz, Oberösterreich",
+  "description": "Älteste Bäckerei von Linz mit Handgebäck seit 1570, berühmt für die Original Linzer Torte und das nostalgische Café mit der ältesten…",
+  "oldWebsite": "https://www.kuk-hofbaeckerei.at/"
+ },
+ {
+  "num": 53,
+  "slug": "53-familiengasthof-blasl",
+  "name": "Familiengasthof Blasl",
+  "category": "Gasthof / Kleinhotel",
+  "region": "Oberösterreich",
+  "location": "Losenstein, Oberösterreich",
+  "description": "Traditioneller Familiengasthof im Ennstal direkt am Ennsradweg mit 18 Komfortzimmern, Wellnessbereich (Sauna, Dampfbad, Infrarot) und…",
+  "oldWebsite": "https://www.gasthof-blasl.at/"
+ },
+ {
+  "num": 54,
+  "slug": "54-backerei-cafe-enzlmuller",
+  "name": "Bäckerei & Café Enzlmüller",
+  "category": "Bäckerei",
+  "region": "Oberösterreich",
+  "location": "Ort im Innkreis, Oberösterreich",
+  "description": "Familiengeführte Bäckerei mit über 30 Jahren 'traditioneller Backkultur' und drei Verkaufsstellen in Ort im Innkreis, Utzenaich und…",
+  "oldWebsite": "https://www.enzlmueller-ort.at/"
+ },
+ {
+  "num": 55,
+  "slug": "55-haustechnik-redhammer-gmbh",
+  "name": "Haustechnik Redhammer GmbH",
+  "category": "Installateur (Sanitär/Heizung)",
+  "region": "Oberösterreich",
+  "location": "Ort im Innkreis, Oberösterreich",
+  "description": "Installateurbetrieb für Sanitär- und Wasserinstallationen sowie Heizungs- und Lüftungstechnik (Ölkessel, Fußbodenheizung, Wärmepumpen,…",
+  "oldWebsite": "http://www.haustechnik-redhammer.at/"
+ },
+ {
+  "num": 56,
+  "slug": "56-restaurant-schachners-machlandstuben",
+  "name": "Restaurant Schachners Machlandstuben",
+  "category": "Restaurant / Gasthof",
+  "region": "Oberösterreich",
+  "location": "Perg, Oberösterreich",
+  "description": "Familienbetrieb in dritter Generation am Hauptplatz von Perg; regionale Schmankerl und internationale Spezialitäten, Zimmer für…",
+  "oldWebsite": "http://www.restaurant-schachner.at/"
+ },
+ {
+  "num": 57,
+  "slug": "57-hattinger-holzbau-gmbh",
+  "name": "Hattinger Holzbau GmbH",
+  "category": "Zimmerei / Holzbau",
+  "region": "Oberösterreich",
+  "location": "Pramet, Oberösterreich",
+  "description": "Zimmerei im Bezirk Ried im Innkreis: Dachstühle, Holzriegelbau, Gartenhäuser, Sanierungen, Terrassen, Balkone, Fassaden und Dämmung;…",
+  "oldWebsite": "https://www.hattinger-holzbau.at/"
+ },
+ {
+  "num": 58,
+  "slug": "58-gasthof-jagawirt-familie-jell",
+  "name": "Gasthof Jagawirt - Familie Jell",
+  "category": "Gasthaus / Gasthof",
+  "region": "Oberösterreich",
+  "location": "Sarleinsbach, Oberösterreich",
+  "description": "Traditionsgasthof im Mühlviertel (Bezirk Rohrbach) mit Restaurant, Musikpub, Kegelbahnen und Indoor-Spielplatz; 4 Einzel- und 5…",
+  "oldWebsite": "http://gh-jell.at/"
+ },
+ {
+  "num": 59,
+  "slug": "59-cafe-konditorei-linzer-backer",
+  "name": "Café & Konditorei Linzer Bäcker",
+  "category": "Café / Konditorei",
+  "region": "Oberösterreich",
+  "location": "Schärding, Oberösterreich",
+  "description": "Traditionscafé und Bäckerei-Konditorei an der barocken Silberzeile in Schärding; täglich frisches Brot, Gebäck und traditionelle…",
+  "oldWebsite": "http://www.linzerbaecker.at/"
+ },
+ {
+  "num": 60,
+  "slug": "60-fahrschule-staudinger-steyr",
+  "name": "Fahrschule Staudinger Steyr",
+  "category": "Fahrschule",
+  "region": "Oberösterreich",
+  "location": "Steyr, Oberösterreich",
+  "description": "Fahrschule in Steyr (Schwesterbetrieb der Fahrschule Staudinger Kirchdorf/Krems); Klassen A, B, C, E, EzB sowie Moped-, Microcar- und…",
+  "oldWebsite": "https://www.fahrschule-staudinger-steyr.at/"
+ },
+ {
+  "num": 61,
+  "slug": "61-fahrschule-steininger",
+  "name": "Fahrschule Steininger",
+  "category": "Fahrschule",
+  "region": "Oberösterreich",
+  "location": "Steyr, Oberösterreich",
+  "description": "Fahrschule mit Standorten in Steyr und Weyer; Ausbildung für Moped, Motorrad, PKW, LKW, Anhänger und Traktor.",
+  "oldWebsite": "https://www.fahrschule-steininger.at/"
+ },
+ {
+  "num": 62,
+  "slug": "62-friseur-klaus-bettso-traunmuller",
+  "name": "Friseur Klaus & Bettso Traunmüller",
+  "category": "Friseur",
+  "region": "Oberösterreich",
+  "location": "Wels, Oberösterreich",
+  "description": "Inhabergeführter 'Insider Coiffeur' Frisiersalon im Welser Zentrum; bietet Damen- und Herrenschnitte, Styling, Brautfrisuren und Make-up.",
+  "oldWebsite": "https://www.friseur-traunmueller.at/"
+ },
+ {
+  "num": 63,
+  "slug": "63-gasthof-huber",
+  "name": "Gasthof Huber",
+  "category": "Gasthof mit Zimmervermietung",
+  "region": "Oberösterreich",
+  "location": "Wels, Oberösterreich",
+  "description": "Traditioneller Welser Gasthof mit internationaler, regionaler und vegetarischer Küche, zwei Sälen (bis 80 Personen), Gastgarten mit…",
+  "oldWebsite": "https://www.gasthaus-huber.at/"
+ },
+ {
+  "num": 64,
+  "slug": "64-haarstudio-melanie",
+  "name": "Haarstudio Melanie",
+  "category": "Friseur",
+  "region": "Oberösterreich",
+  "location": "Wels, Oberösterreich",
+  "description": "Friseursalon ('Ihre Frisur - Unsere Passion') in Wels, arbeitet mit Redken-Produkten; bietet Schnitt, Styling und Make-up.",
+  "oldWebsite": "http://www.haarstudio-melanie.at/"
+ },
+ {
+  "num": 65,
+  "slug": "65-obermairs-wirtshaus",
+  "name": "Obermairs' Wirtshaus",
+  "category": "Wirtshaus / Gasthaus",
+  "region": "Oberösterreich",
+  "location": "Wels (Wimpassing), Oberösterreich",
+  "description": "Traditionswirtshaus in Wels-Wimpassing, seit rund 1870 bestehend, mit bodenständiger Hausmannskost und moderner leichter Küche. Geöffnet…",
+  "oldWebsite": "https://www.gasthaus-obermair.at/"
+ },
+ {
+  "num": 66,
+  "slug": "66-fruhstuckspension-stocker",
+  "name": "Frühstückspension Stocker",
+  "category": "Pension / Frühstückspension",
+  "region": "Steiermark",
+  "location": "Bad Aussee, Steiermark",
+  "description": "Familiär geführte Frühstückspension im Ausseerland, ca. 500 m vom Stadtzentrum Bad Aussee, mit großem Garten direkt an der Altausseer…",
+  "oldWebsite": "https://www.zimmer-ausseerland.at/stocker/"
+ },
+ {
+  "num": 67,
+  "slug": "67-weingut-hack-gebell",
+  "name": "Weingut Hack-Gebell",
+  "category": "Weingut & Buschenschank mit Gästezimmern",
+  "region": "Steiermark",
+  "location": "Gamlitz, Steiermark",
+  "description": "Weingut (seit 1920, 15 ha, überwiegend Handarbeit) mit ausgezeichnetem Buschenschank im 360 Jahre alten Winzerhaus an der Südsteirischen…",
+  "oldWebsite": "https://www.hack-gebell.at/"
+ },
+ {
+  "num": 68,
+  "slug": "68-bodenleger-konrad",
+  "name": "Bodenleger Konrad",
+  "category": "Handwerk - Bodenleger",
+  "region": "Steiermark",
+  "location": "Gnas, Steiermark",
+  "description": "Familienbetrieb (gegründet von Albert Konrad sen.) für Holzböden, Sanierung und Versiegelung alter Böden sowie Beratung, Planung und…",
+  "oldWebsite": "https://www.bodenleger-konrad.at/"
+ },
+ {
+  "num": 69,
+  "slug": "69-gasthaus-binderhansl",
+  "name": "Gasthaus Binderhansl",
+  "category": "Gasthaus / Landgasthaus",
+  "region": "Steiermark",
+  "location": "Gnas, Steiermark",
+  "description": "Landgasthaus im Steirischen Vulkanland, seit 1878 in Familienbesitz; steirische Spezialitäten und regionale Küche, nur Barzahlung.",
+  "oldWebsite": "https://www.gasthaus-binderhansl.at/"
+ },
+ {
+  "num": 70,
+  "slug": "70-zimmer-steger",
+  "name": "Zimmer Steger",
+  "category": "Privatzimmer (Beherbergung)",
+  "region": "Steiermark",
+  "location": "Gnas, Steiermark",
+  "description": "Kleine private Zimmervermietung (2 ebenerdige Doppelzimmer mit Dusche/WC, Sat-TV) in ruhiger Lage 5 Minuten von Gnas, im Steirischen…",
+  "oldWebsite": "http://www.zimmer-steger.at/"
+ },
+ {
+  "num": 71,
+  "slug": "71-gabriela-herzog-selbstandige-buchhalterin",
+  "name": "Gabriela Herzog - Selbständige Buchhalterin",
+  "category": "Buchhaltung / Bürodienstleistung",
+  "region": "Steiermark",
+  "location": "Gnas (Poppendorf), Steiermark",
+  "description": "Selbständige Buchhalterin in Poppendorf bei Gnas; Buchhaltung, Personalverrechnung und Bürodienstleistungen für Klein- und Familienbetriebe…",
+  "oldWebsite": "http://www.gherzog.at/"
+ },
+ {
+  "num": 72,
+  "slug": "72-friseursalon-polzl",
+  "name": "Friseursalon Pölzl",
+  "category": "Friseur",
+  "region": "Steiermark",
+  "location": "Graz, Steiermark",
+  "description": "Traditionsfriseur am Grazer Lendplatz, seit 1962; Damen- und Herrensalon (zwei Häuser nebeneinander), klassische Friseurleistungen ohne…",
+  "oldWebsite": "https://www.friseursalon-poelzl.at/"
+ },
+ {
+  "num": 73,
+  "slug": "73-die-herzl-altsteirisches-wirtshaus-und-weinstube",
+  "name": "Die Herzl - Altsteirisches Wirtshaus und Weinstube",
+  "category": "Gasthaus / Weinstube",
+  "region": "Steiermark",
+  "location": "Graz (Innere Stadt), Steiermark",
+  "description": "Altsteirisches Gasthaus im ältesten Viertel von Graz, 1934 von Robert Herzl als Weinstube eröffnet, in einem Haus aus dem 17. Jahrhundert.…",
+  "oldWebsite": "https://dieherzl.at/"
+ },
+ {
+  "num": 74,
+  "slug": "74-casa-rustica-pizzeria-ristorante",
+  "name": "Casa Rustica Pizzeria Ristorante",
+  "category": "Pizzeria / Italienisches Restaurant",
+  "region": "Steiermark",
+  "location": "Graz (Waltendorf), Steiermark",
+  "description": "Italienisches Restaurant in Graz-Waltendorf mit Pizza, Pasta und Schnitzelgerichten sowie eigenem Lieferservice in Graz und Umgebung…",
+  "oldWebsite": "https://www.italiener-graz.at/"
+ },
+ {
+  "num": 75,
+  "slug": "75-gasthaus-zur-sonne",
+  "name": "Gasthaus Zur Sonne",
+  "category": "Gasthaus",
+  "region": "Steiermark",
+  "location": "Graz-Gösting, Steiermark",
+  "description": "Städtisches Gasthaus mit beliebtem naturbelassenem Gastgarten an der Bus-Endhaltestelle in Graz-Gösting; seit 2014 von Gerti Kristandl…",
+  "oldWebsite": "https://www.gasthauszursonne-graz.at/"
+ },
+ {
+  "num": 76,
+  "slug": "76-buschenschank-zach",
+  "name": "Buschenschank Zach",
+  "category": "Buschenschank / Obstbau & Weinbau",
+  "region": "Steiermark",
+  "location": "Ligist, Steiermark",
+  "description": "Buschenschank am Beginn der Schilcherweinstraße in der Lipizzanerheimat; der Betrieb ist seit rund 100 Jahren vom Obstbau geprägt, mit…",
+  "oldWebsite": "http://www.buschenschank-zach.at/"
+ },
+ {
+  "num": 77,
+  "slug": "77-fleischerei-und-gasthaus-oberer",
+  "name": "Fleischerei und Gasthaus Oberer",
+  "category": "Fleischerei & Gasthaus",
+  "region": "Steiermark",
+  "location": "Mureck, Steiermark",
+  "description": "Gasthaus und Fleischerei in vierter Generation; das rund 400 Jahre alte Haus ist seit fast 120 Jahren in Familienbesitz. Eigene Wurst- und…",
+  "oldWebsite": "http://www.oberer-mureck.at/"
+ },
+ {
+  "num": 78,
+  "slug": "78-fleischhauerei-pichler",
+  "name": "Fleischhauerei Pichler",
+  "category": "Fleischerei",
+  "region": "Steiermark",
+  "location": "St. Ruprecht an der Raab, Steiermark",
+  "description": "Traditionelle Fleischhauerei im Bezirk Weiz mit eigener Produktion und regionalen Spezialitäten, Slogan 'Fleisch gibt Kraft'.…",
+  "oldWebsite": "http://fleisch-gibt-kraft.at/"
+ },
+ {
+  "num": 79,
+  "slug": "79-pension-haus-langmann",
+  "name": "Pension Haus Langmann",
+  "category": "Pension / Frühstückspension",
+  "region": "Steiermark",
+  "location": "St. Stefan ob Stainz, Steiermark",
+  "description": "Frühstückspension (seit 1991) in sonniger Panoramalage inmitten der Schilcher-Weingärten der Weststeiermark, mit Pool, Garten und…",
+  "oldWebsite": "https://www.hauslangmann.at/"
+ },
+ {
+  "num": 80,
+  "slug": "80-gastehaus-egger",
+  "name": "Gästehaus Egger",
+  "category": "Privatzimmer / Gästehaus",
+  "region": "Steiermark",
+  "location": "Straden, Steiermark",
+  "description": "Privatzimmervermietung in Karla, Hof bei Straden, mit vier Themenzimmern (Luft, Wasser, Feuer, Erde) und Frühstücksraum.",
+  "oldWebsite": "http://www.gaestehaus-egger.com/"
+ },
+ {
+  "num": 81,
+  "slug": "81-gastehaus-stockler",
+  "name": "Gästehaus Stöckler",
+  "category": "Privatzimmer / Gästehaus",
+  "region": "Steiermark",
+  "location": "Straden, Steiermark",
+  "description": "Privates Gästehaus mit Zimmervermietung in Radochen bei Straden im Steirischen Vulkanland, familiär geführt von Josef und Margarete…",
+  "oldWebsite": "http://www.gaestehaus-stoeckler.com/"
+ },
+ {
+  "num": 82,
+  "slug": "82-landhaus-sudy",
+  "name": "Landhaus Sudy",
+  "category": "Privatzimmer / Landhaus (Beherbergung)",
+  "region": "Steiermark",
+  "location": "Straden, Steiermark",
+  "description": "4-Sterne-Landhaus mit Gästezimmern und Badeteich im steirischen Wein-, Thermen- und Vulkanland bei Straden; Ausgangspunkt für Radtouren…",
+  "oldWebsite": "http://www.sudy.info/"
+ },
+ {
+  "num": 83,
+  "slug": "83-appartement-prabichl",
+  "name": "Appartement Präbichl",
+  "category": "Ferienwohnung / Appartement",
+  "region": "Steiermark",
+  "location": "Vordernberg, Steiermark",
+  "description": "Ferienwohnungen (65 m², 5-7 Personen) in einem 2007 zum Gästehaus umgebauten historischen Haus im Ortskern von Vordernberg an der…",
+  "oldWebsite": "http://www.appartement-praebichl.at/"
+ },
+ {
+  "num": 84,
+  "slug": "84-tischlerei-holzmarkt-genger-martin",
+  "name": "Tischlerei & Holzmarkt Genger Martin",
+  "category": "Tischlerei",
+  "region": "Steiermark",
+  "location": "Weißkirchen in Steiermark, Steiermark",
+  "description": "Familiengeführte Tischlerei und Holzmarkt im Murtal, ansässig im ehemaligen Betrieb der Tischlerei Zechner. Massivmöbelbau (Eiche, Zirbe,…",
+  "oldWebsite": "http://www.tischlerei-genger.at/"
+ }
+]
