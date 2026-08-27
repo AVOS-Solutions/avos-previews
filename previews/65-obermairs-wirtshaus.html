@@ -203,6 +203,7 @@
   .cta-row{display:flex; gap:0.9rem; margin-top:2rem; flex-wrap:wrap;}
   .cta-row a{
     padding:0.85rem 1.4rem; border-radius:2px; font-size:0.92rem; font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; min-height:44px; box-sizing:border-box;
   }
   .cta-primary{background:var(--mustard); color:var(--rust-dark);}
   .cta-secondary{border:1px solid rgba(246,239,226,0.5); color:var(--cream);}
@@ -342,6 +343,20 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
     var items = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {

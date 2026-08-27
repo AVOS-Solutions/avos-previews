@@ -505,6 +505,22 @@
 
 <script>
   (function(){
+    var toggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if(toggle && navLinks){
+      toggle.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+  (function(){
     var els = document.querySelectorAll('.reveal');
     if('IntersectionObserver' in window){
       var io = new IntersectionObserver(function(entries){

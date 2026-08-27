@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pension Dr. Geissler &amp; Pension Neuer Markt – Zentral wohnen in Wien 1010</title>
+<meta name="description" content="Zwei familiär geführte Pensionen unter einem Dach, direkt im 1. Bezirk nahe Schwedenplatz: zentral, funktionell, günstig. Traditionell eingerichtete Zimmer mit Frühstück in der Postgasse 14.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3f1ec;
+    --panel:#ffffff;
+    --ink:#1c1c1a;
+    --ink-soft:#514f49;
+    --charcoal:#232320;
+    --brass:#a9762f;
+    --brass-light:#c99a52;
+    --line:#d8d4c9;
+    --wine:#5c2a2f;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Libre Caslon Text',Georgia,serif;font-weight:400;line-height:1.08;margin:0;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--brass);outline-offset:2px;}
+
+  .disclaimer{
+    background:var(--charcoal);color:#efe9dd;text-align:center;
+    font-size:0.76rem;padding:0.55rem 1rem;letter-spacing:0.01em;
+  }
+  .disclaimer strong{color:var(--brass-light);}
+
+  header.site{
+    background:var(--paper);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:40;
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    padding:1.1rem clamp(1.1rem,4vw,3rem);max-width:1240px;margin:0 auto;gap:0.8rem 1rem;
+  }
+  .brand{font-family:'Libre Caslon Text',serif;font-size:clamp(0.92rem,3vw,1.05rem);line-height:1.25;text-decoration:none;min-width:0;flex:1 1 220px;}
+  .brand small{display:block;font-family:'Manrope',sans-serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass);margin-top:0.15rem;}
+  .nav-links{display:flex;gap:2.1rem;list-style:none;margin:0;padding:0;font-size:0.92rem;font-weight:600;}
+  .nav-links a{text-decoration:none;}
+  .nav-links a:hover{color:var(--brass);}
+  .nav-cta{
+    background:var(--charcoal);color:#efe9dd;text-decoration:none;font-weight:700;
+    padding:0.7rem 1.3rem;font-size:0.86rem;min-height:44px;display:inline-flex;align-items:center;
+    border:1px solid var(--charcoal);white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brass);border-color:var(--brass);color:#1c1c1a;}
+  .menu-toggle{
+    display:none;background:none;border:1px solid var(--line);width:44px;height:44px;
+    cursor:pointer;position:relative;flex:none;
+  }
+  .menu-toggle span,.menu-toggle::before,.menu-toggle::after{
+    content:"";position:absolute;left:11px;right:11px;height:2px;background:var(--ink);
+  }
+  .menu-toggle span{top:21px;}
+  .menu-toggle::before{top:15px;}
+  .menu-toggle::after{top:27px;}
+
+  @media (max-width:880px){
+    .nav-links{
+      position:fixed;inset:63px 0 0 0;background:var(--paper);flex-direction:column;
+      padding:1.5rem;gap:0;font-size:1.1rem;transform:translateY(-110%);
+      transition:transform 0.3s ease;overflow-y:auto;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex;min-height:52px;align-items:center;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease, transform 0.65s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* split hero: two pensions, one roof */
+  .hero{padding:clamp(2.5rem,6vw,3.5rem) 0 0;}
+  .hero-top{max-width:64ch;padding-bottom:2.2rem;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:0.16em;font-size:0.74rem;font-weight:700;
+    color:var(--brass);display:block;margin-bottom:1rem;
+  }
+  .hero-top h1{font-size:clamp(2.1rem,5vw,3.6rem);}
+  .hero-top p{font-size:1.08rem;color:var(--ink-soft);margin-top:1.2rem;max-width:52ch;}
+
+  .split{
+    display:grid;grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--line);
+  }
+  .split-panel{
+    padding:clamp(2rem,4vw,3.2rem) clamp(1.1rem,4vw,3rem);
+    position:relative;
+  }
+  .split-panel + .split-panel{border-left:1px solid var(--line);}
+  .split-panel.dark{background:var(--charcoal);color:#efe9dd;}
+  .split-panel .tag{
+    display:inline-block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;
+    font-weight:700;color:var(--brass);border:1px solid var(--brass);padding:0.3rem 0.7rem;margin-bottom:1.2rem;
+  }
+  .split-panel.dark .tag{color:var(--brass-light);border-color:var(--brass-light);}
+  .split-panel h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:1rem;}
+  .split-panel p{color:var(--ink-soft);font-size:0.98rem;}
+  .split-panel.dark p{color:#cfc9ba;}
+  .roof-note{
+    text-align:center;padding:1.4rem 1rem;font-size:0.85rem;color:var(--ink-soft);
+    border-top:1px solid var(--line);letter-spacing:0.02em;
+  }
+  .roof-note b{color:var(--brass);}
+
+  @media (max-width:760px){
+    .split{grid-template-columns:1fr;}
+    .split-panel + .split-panel{border-left:none;border-top:1px solid var(--line);}
+  }
+
+  /* about / story - editorial band */
+  .about{padding:5rem 0;}
+  .about .wrap{display:grid;grid-template-columns:0.9fr 1.6fr;gap:3rem;}
+  .about h2{font-size:clamp(1.7rem,3vw,2.4rem);}
+  .about .num{
+    font-family:'Libre Caslon Text',serif;font-size:0.95rem;color:var(--brass);
+    letter-spacing:0.1em;margin-bottom:0.6rem;display:block;
+  }
+  .about .copy p{font-size:1.05rem;color:var(--ink-soft);}
+  @media (max-width:820px){ .about .wrap{grid-template-columns:1fr;gap:1.6rem;} }
+
+  /* amenities strict grid */
+  .grid-section{padding:0 0 5rem;}
+  .grid-section h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:2.4rem;}
+  .grid-3{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .grid-3 .cell{
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:2rem 1.6rem;background:var(--panel);
+  }
+  .grid-3 .cell .n{font-family:'Libre Caslon Text',serif;font-size:0.85rem;color:var(--brass);display:block;margin-bottom:0.8rem;}
+  .grid-3 .cell h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.5rem;}
+  .grid-3 .cell p{margin:0;font-size:0.92rem;color:var(--ink-soft);}
+  @media (max-width:820px){ .grid-3{grid-template-columns:1fr 1fr;} }
+  @media (max-width:540px){ .grid-3{grid-template-columns:1fr;} }
+
+  /* contact */
+  .contact{background:var(--charcoal);color:#efe9dd;padding:5rem 0;}
+  .contact .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;}
+  .contact h2{color:#fff;font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:1rem;}
+  .contact p.lead{color:#cfc9ba;max-width:44ch;margin-bottom:2rem;}
+  .contact-list{list-style:none;margin:0 0 2.2rem;padding:0;display:grid;gap:1.1rem;font-size:1rem;}
+  .contact-list li{display:flex;gap:0.9rem;align-items:flex-start;}
+  .contact-list svg{flex:none;margin-top:2px;}
+  .contact-list a{text-decoration:underline;text-underline-offset:3px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;min-height:48px;
+    padding:0.85rem 1.7rem;text-decoration:none;font-weight:700;font-size:0.92rem;
+    border:1.5px solid var(--brass-light);color:#efe9dd;transition:background 0.2s ease,color 0.2s ease;
+  }
+  .btn:hover{background:var(--brass-light);color:#1c1c1a;}
+  .btn.solid{background:var(--brass-light);color:#1c1c1a;}
+  .btn.solid:hover{background:#efe9dd;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:0.9rem;}
+  .info-card{
+    border:1px solid rgba(239,233,221,0.25);padding:1.8rem;
+  }
+  .info-card .stat{font-family:'Libre Caslon Text',serif;font-size:2.4rem;line-height:1;color:var(--brass-light);margin-bottom:0.4rem;}
+  .info-card p{color:#cfc9ba;font-size:0.9rem;margin:0.3rem 0 0;}
+  .info-card hr{border:none;border-top:1px solid rgba(239,233,221,0.2);margin:1.4rem 0;}
+  @media (max-width:820px){ .contact .wrap{grid-template-columns:1fr;gap:2.2rem;} }
+
+  footer.site{background:var(--paper);color:var(--ink-soft);padding:2.2rem 0;font-size:0.85rem;border-top:1px solid var(--line);}
+  footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:0.8rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Pension Dr. Geissler / Pension Neuer Markt</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="#top">
+      Pension Dr. Geissler &amp; Pension Neuer Markt
+      <small>Postgasse 14 · 1010 Wien</small>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#haeuser">Die Häuser</a></li>
+      <li><a href="#lage">Lage</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43153328 03">+43 1 533 28 03</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-top reveal">
+      <span class="eyebrow">Pension · 1. Bezirk, nahe Schwedenplatz</span>
+      <h1>Zwei Häuser, ein Adresse.<br>Mitten in der Wiener Innenstadt.</h1>
+      <p>Pension Dr. Geissler und Pension Neuer Markt teilen sich ein Haus in der Postgasse – familiär geführt, zentral gelegen und auf das Wesentliche konzentriert: saubere, traditionell eingerichtete Zimmer mit Frühstück, ohne unnötigen Schnickschnack.</p>
+    </div>
+
+    <div class="split" id="haeuser">
+      <div class="split-panel reveal">
+        <span class="tag">Haus 1</span>
+        <h2>Pension Dr. Geissler</h2>
+        <p>Traditionell eingerichtete Zimmer in historischem Ambiente, wenige Gehminuten von Stephansplatz und Donaukanal. Ideal für Gäste, die Wiener Altstadt-Flair ohne Hotelpreise suchen.</p>
+      </div>
+      <div class="split-panel dark reveal">
+        <span class="tag">Haus 2</span>
+        <h2>Pension Neuer Markt</h2>
+        <p>Funktionell und unkompliziert – die zweite Adresse unter demselben Dach, geführt mit derselben familiären Handschrift. Zentral, praktisch, ohne Umwege zur Innenstadt.</p>
+      </div>
+    </div>
+    <div class="roof-note wrap">
+      Ein Familienbetrieb, <b>zwei Namen</b> – gemeinsam verwaltet in der Postgasse 14, 1010 Wien.
+    </div>
+  </section>
+
+  <section class="about" id="lage">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="num">— Über uns</span>
+        <h2>Zentral, funktionell, günstig.</h2>
+      </div>
+      <div class="copy reveal">
+        <p>So beschreiben sich Pension Dr. Geissler und Pension Neuer Markt selbst – und genau das ist ihr Versprechen: eine Unterkunft mitten im 1. Bezirk, fußläufig zu Schwedenplatz, Stephansdom und Donaukanal, ohne den Aufpreis eines klassischen Innenstadt-Hotels.</p>
+        <p>Beide Häuser werden familiär geführt und richten sich an Gäste, die Wert auf Lage und Verlässlichkeit legen: Wer hier bucht, ist zu Fuß in wenigen Minuten mitten im Herzen Wiens – ideal für Städtereisen, Kurzaufenthalte oder Termine in der Innenstadt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-section">
+    <div class="wrap">
+      <h2 class="reveal">Warum Postgasse 14.</h2>
+      <div class="grid-3">
+        <div class="cell reveal"><span class="n">01</span><h3>Lage im 1. Bezirk</h3><p>Nahe Schwedenplatz, Donaukanal und Stephansdom – Wien zu Fuß erreichbar.</p></div>
+        <div class="cell reveal"><span class="n">02</span><h3>Familiär geführt</h3><p>Zwei Pensionen, ein Team – persönlicher Service statt Rezeptions-Warteschlange.</p></div>
+        <div class="cell reveal"><span class="n">03</span><h3>Frühstückspension</h3><p>Traditionell eingerichtete Zimmer inklusive Frühstück für den Start in den Tag.</p></div>
+        <div class="cell reveal"><span class="n">04</span><h3>Zwei Häuser zur Wahl</h3><p>Dr. Geissler oder Neuer Markt – je nach Verfügbarkeit und Vorliebe.</p></div>
+        <div class="cell reveal"><span class="n">05</span><h3>Fair kalkuliert</h3><p>Zentral und dennoch günstig – Innenstadtlage ohne Innenstadtpreise.</p></div>
+        <div class="cell reveal"><span class="n">06</span><h3>Kurz- &amp; Städtetrips</h3><p>Gut geeignet für Wochenendtrips, Termine und kurze Innenstadt-Aufenthalte.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Anfragen &amp; Buchung.</h2>
+        <p class="lead">Ob Pension Dr. Geissler oder Pension Neuer Markt – Anfragen laufen über eine gemeinsame Adresse in der Postgasse.</p>
+        <ul class="contact-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#efe9dd" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <span>Postgasse 14, 1010 Wien</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#efe9dd" stroke-width="1.8"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C9.7 22 2 14.3 2 6a2 2 0 0 1 2-2Z"/></svg>
+            <a href="tel:+43153328 03">+43 1 533 28 03</a>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#efe9dd" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <a href="mailto:dr.geissler@hotelpension.at">dr.geissler@hotelpension.at</a>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn solid" href="tel:+43153328 03">Jetzt anrufen</a>
+          <a class="btn" href="mailto:dr.geissler@hotelpension.at">E-Mail schreiben</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Postgasse%2014%2C%201010%20Wien" target="_blank" rel="noopener">Route berechnen</a>
+        </div>
+      </div>
+      <div class="info-card reveal">
+        <div class="stat">1010</div>
+        <p>Wien Innere Stadt – Postgasse 14, wenige Minuten von Schwedenplatz und Stephansdom entfernt.</p>
+        <hr>
+        <div class="stat" style="font-size:1.6rem;">2 Häuser</div>
+        <p>Pension Dr. Geissler &amp; Pension Neuer Markt, gemeinsam geführt unter einem Dach.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Pension Dr. Geissler / Pension Neuer Markt · Postgasse 14, 1010 Wien</span>
+    <span>Telefon: +43 1 533 28 03</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

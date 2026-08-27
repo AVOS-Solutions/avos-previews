@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gasthof-Pension Altmühl · Gmunden am Traunsee</title>
+<meta name="description" content="Gasthof-Pension Altmühl in Gmunden am Traunsee – bodenständiger Familien-Gasthof mit Hausmannskost, Mittagsmenüs und Zimmern für Gäste, Radlergruppen und Stammgäste.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf1e4;
+    --brick:#7c2d20;
+    --brick-dark:#5c1f16;
+    --mustard:#d99a2b;
+    --pine:#3c5233;
+    --ink:#2b1c14;
+    --paper:#fff9f0;
+    --line:rgba(43,28,20,.15);
+    --serif:'Playfair Display', Georgia, serif;
+    --sans:'Nunito Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,40px);}
+  ::selection{background:var(--mustard);color:var(--ink);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;}
+
+  .disclosure{background:var(--ink);color:var(--cream);text-align:center;font-size:.78rem;padding:9px 16px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(251,241,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(18px,5vw,40px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--brick);}
+  .navlinks{display:flex;gap:6px;align-items:center;}
+  .navlinks a{text-decoration:none;font-weight:700;font-size:.92rem;padding:12px 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:10px;color:var(--ink);}
+  .navlinks a:hover{background:#f4e0c4;}
+  .navlinks a.cta{background:var(--brick);color:#fff;}
+  .navlinks a.cta:hover{background:var(--brick-dark);}
+  .burger{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:760px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;}
+    .navlinks.open{display:flex;}
+    .burger{display:flex;}
+  }
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--brick) 0%,var(--brick-dark) 70%);color:#fff;position:relative;overflow:hidden;}
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:radial-gradient(circle at 85% 20%, rgba(217,154,43,.35), transparent 55%),
+      radial-gradient(circle at 10% 90%, rgba(60,82,51,.4), transparent 50%);
+  }
+  .hero-inner{position:relative;padding:clamp(56px,10vw,120px) 0 clamp(48px,7vw,80px);}
+  .hero-kicker{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:var(--mustard);}
+  .hero h1{
+    font-family:var(--serif);font-weight:800;
+    font-size:clamp(2.3rem,6vw,4.6rem);line-height:1.03;margin:18px 0 20px;max-width:16ch;
+  }
+  .hero p{max-width:52ch;font-size:1.1rem;color:#f4e0d5;margin:0 0 32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;text-decoration:none;font-weight:800;font-size:.95rem;}
+  .btn-mustard{background:var(--mustard);color:var(--ink);}
+  .btn-mustard:hover{background:#c8891f;}
+  .btn-outline{border:2px solid #fff;color:#fff;}
+  .btn-outline:hover{background:#fff;color:var(--brick);}
+  .hero-quote{
+    margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.25);
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:clamp(1.15rem,2.4vw,1.5rem);max-width:46ch;color:#fbe7d1;
+  }
+
+  section{padding:clamp(56px,9vw,100px) 0;}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.09em;font-size:.78rem;color:var(--brick);}
+  h2{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:800;margin:14px 0 16px;color:var(--ink);}
+  .lead{font-size:1.05rem;color:#4a382c;max-width:62ch;}
+
+  /* BENTO GRID — Angebot */
+  .angebot{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .bento{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(140px,auto);
+    gap:16px;margin-top:44px;
+  }
+  .bento .card{
+    border-radius:18px;padding:28px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .bento .card h3{font-family:var(--serif);font-size:1.4rem;margin:0 0 8px;font-weight:700;}
+  .bento .card p{margin:0;font-size:.92rem;}
+  .b1{grid-column:span 2;grid-row:span 2;background:var(--pine);color:#fff;}
+  .b2{grid-column:span 2;background:var(--mustard);color:var(--ink);}
+  .b3{grid-column:span 1;background:var(--brick);color:#fff;}
+  .b4{grid-column:span 1;background:#e7d3ae;color:var(--ink);}
+  .b5{grid-column:span 4;background:var(--ink);color:var(--cream);display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .b5 h3{margin:0;font-family:var(--serif);font-size:1.5rem;}
+  .b5 p{margin:0;font-size:.95rem;color:#d8c6ac;}
+  @media (max-width:900px){
+    .bento{grid-template-columns:repeat(2,1fr);}
+    .b1{grid-column:span 2;grid-row:span 1;}
+    .b2,.b3,.b4{grid-column:span 1;}
+    .b5{grid-column:span 2;flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:520px){
+    .bento{grid-template-columns:1fr;}
+    .b1,.b2,.b3,.b4,.b5{grid-column:span 1;}
+  }
+
+  /* Über uns */
+  .ueber{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center;}
+  @media (max-width:860px){ .ueber{grid-template-columns:1fr;} }
+  .ueber-visual{aspect-ratio:1/1;border-radius:24px;background:
+      repeating-linear-gradient(135deg, var(--brick) 0 18px, var(--brick-dark) 18px 36px);
+    position:relative;
+  }
+  .ueber-visual .ring{position:absolute;inset:14%;border:3px solid rgba(255,255,255,.35);border-radius:50%;}
+  .ueber-visual .center{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);color:#fff;font-weight:800;font-size:clamp(1.4rem,3vw,2.2rem);
+    text-align:center;padding:20%;
+  }
+
+  /* Radler / Stammgäste strip */
+  .strip{background:var(--pine);color:#fff;}
+  .strip-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);border-radius:18px;overflow:hidden;margin-top:40px;}
+  @media (max-width:760px){ .strip-row{grid-template-columns:1fr;} }
+  .strip-item{background:var(--pine);padding:30px 26px;}
+  .strip-item .icon{width:38px;height:38px;margin-bottom:14px;}
+  .strip-item h3{margin:0 0 8px;font-family:var(--serif);font-size:1.2rem;}
+  .strip-item p{margin:0;color:#d7e2cf;font-size:.92rem;}
+
+  /* Kontakt */
+  .kontakt{background:var(--paper);border-top:1px solid var(--line);}
+  .kontakt-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);}
+  @media (max-width:860px){ .kontakt-grid{grid-template-columns:1fr;} }
+  .kdetails{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:16px;}
+  .kdetails li{border-top:1px solid var(--line);padding-top:16px;}
+  .kdetails .k{display:block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--brick);margin-bottom:4px;}
+  .kdetails a{text-decoration:underline;text-underline-offset:3px;font-weight:700;}
+  .map-card{background:var(--brick);color:#fff;border-radius:20px;padding:clamp(24px,4vw,36px);}
+  .map-card h3{font-family:var(--serif);margin-top:0;font-size:1.4rem;}
+  .map-card .btn{margin-top:18px;background:var(--mustard);color:var(--ink);}
+  .map-card .btn:hover{background:#c8891f;}
+
+  footer{padding:36px 0;font-size:.82rem;color:#6b5643;border-top:1px solid var(--line);}
+  .foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof-Pension Altmühl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">Gasthof Altmühl</div>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="#angebot">Angebot</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a class="cta" href="#kontakt">Tisch &amp; Zimmer</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="hero-kicker">Gmunden am Traunsee</span>
+    <h1>Hausmannskost, die satt und glücklich macht.</h1>
+    <p>Der Gasthof-Pension Altmühl ist ein bodenständiger Familien-Gasthof am Traunsee mit Mittagsmenüs, herzhafter Küche und Zimmern für Gäste, Stammgäste und Radlergruppen gleichermaßen.</p>
+    <div class="hero-actions">
+      <a class="btn btn-mustard" href="#kontakt">Tisch reservieren</a>
+      <a class="btn btn-outline" href="tel:+43761264262">+43 7612 64262</a>
+    </div>
+    <p class="hero-quote">„Alles selbst – von Salaten bis Saucen."</p>
+  </div>
+</section>
+
+<section class="angebot" id="angebot">
+  <div class="wrap">
+    <span class="eyebrow">Angebot</span>
+    <h2>Zimmer, Küche und Service auf einen Blick</h2>
+    <p class="lead">27 Zimmer, eine bodenständige Küche und ein Haus, das Radlergruppen ebenso wie Familien und Stammgäste willkommen heißt.</p>
+    <div class="bento">
+      <div class="card b1">
+        <h3>27 Zimmer</h3>
+        <p>17 Doppel- und 10 Einzelzimmer für den kurzen wie den längeren Aufenthalt am Traunsee.</p>
+      </div>
+      <div class="card b2">
+        <h3>Mittagsmenüs</h3>
+        <p>Täglich wechselnde Menüs mit Hausmannskost aus der eigenen Küche.</p>
+      </div>
+      <div class="card b3">
+        <h3>Radlergruppen</h3>
+        <p>Willkommen mit Rad und Gepäck – bewährter Stopp auf der Tour.</p>
+      </div>
+      <div class="card b4">
+        <h3>Stammgäste</h3>
+        <p>Viele Gäste kommen seit Jahren immer wieder.</p>
+      </div>
+      <div class="card b5">
+        <h3>Alles selbstgemacht</h3>
+        <p>Von Salaten bis Saucen – die Küche macht so viel wie möglich selbst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns">
+  <div class="wrap ueber">
+    <div>
+      <span class="eyebrow">Über uns</span>
+      <h2>Ein Familienbetrieb am Traunsee</h2>
+      <p class="lead">Der Gasthof-Pension Altmühl steht für bodenständige Gastlichkeit am Traunsee: ehrliche Hausmannskost, ein Zimmerangebot für Kurzurlaub wie Zwischenstopp, und ein Haus, in dem sich Stammgäste und Erstbesucher gleichermaßen willkommen fühlen.</p>
+      <p class="lead">Ansprechpartner vor Ort ist Gerhard Scheuringer – für Fragen zu Zimmern, Küche oder Gruppenanfragen.</p>
+    </div>
+    <div class="ueber-visual" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="center">Seit Generationen am Traunsee</div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--mustard);">Für wen wir da sind</span>
+    <h2 style="color:#fff;">Ob Rad, Reisegruppe oder Feierabendbesuch</h2>
+    <div class="strip-row">
+      <div class="strip-item">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#f2d98a" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="35" r="6"/><circle cx="37" cy="35" r="6"/><path d="M11 35l9-16h10l7 16M20 19l6 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Radlergruppen</h3>
+        <p>Gepäckabstellraum und ein herzhaftes Menü nach der Tour rund um den Traunsee.</p>
+      </div>
+      <div class="strip-item">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#f2d98a" stroke-width="2.2" aria-hidden="true"><path d="M8 40V16l16-8 16 8v24" stroke-linejoin="round"/><path d="M18 40V26h12v14" stroke-linejoin="round"/></svg>
+        <h3>Familien &amp; Kurzurlaub</h3>
+        <p>27 Zimmer für den entspannten Aufenthalt am See, mit Frühstück und Verpflegung im Haus.</p>
+      </div>
+      <div class="strip-item">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="#f2d98a" stroke-width="2.2" aria-hidden="true"><path d="M10 30h28M14 30v10h20V30M18 30V16a6 6 0 0112 0v14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Stammtisch &amp; Mittagsgäste</h3>
+        <p>Täglich wechselnde Mittagsmenüs und Hausmannskost für die spontane Einkehr.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap kontakt-grid">
+    <div>
+      <span class="eyebrow">Kontakt</span>
+      <h2>Reservierung &amp; Anfrage</h2>
+      <p class="lead">Für Tischreservierung, Zimmeranfrage oder Gruppenbuchung – Gerhard Scheuringer und sein Team freuen sich auf Ihre Nachricht.</p>
+      <ul class="kdetails">
+        <li><span class="k">Adresse</span><span>Ohlsdorfer Straße 50, 4810 Gmunden</span></li>
+        <li><span class="k">Telefon</span><a href="tel:+43761264262">+43 7612 64262</a></li>
+        <li><span class="k">E-Mail</span><a href="mailto:info@gasthof-altmuehl.at">info@gasthof-altmuehl.at</a></li>
+        <li><span class="k">Ansprechperson</span><span>Gerhard Scheuringer</span></li>
+      </ul>
+    </div>
+    <div class="map-card">
+      <h3>Am Traunsee in Gmunden</h3>
+      <p style="color:#f4e0d5;">Ohlsdorfer Straße 50, 4810 Gmunden – gut erreichbar für Ausflüge rund um den Traunsee.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ohlsdorfer%20Stra%C3%9Fe%2050%2C%204810%20Gmunden">Route berechnen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© Gestaltungs-Vorschau · Gasthof-Pension Altmühl</span>
+    <span>Ohlsdorfer Straße 50, 4810 Gmunden</span>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

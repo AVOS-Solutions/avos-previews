@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hattinger Holzbau GmbH — Zimmerei in Pramet</title>
+<meta name="description" content="Hattinger Holzbau GmbH: Zimmerei im Bezirk Ried im Innkreis. Dachstühle, Holzriegelbau, Sanierungen, Terrassen und Fassaden aus 100% nachhaltigem Holz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ede1;
+    --cream-2:#eae1d0;
+    --ink:#2b2118;
+    --ink-soft:#5c4c3a;
+    --walnut:#3c2c1c;
+    --amber:#b5652a;
+    --amber-deep:#8f4c1c;
+    --line:#c9bba1;
+    --green:#4a5d3a;
+    --focus:#8f4c1c;
+    --radius:2px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1b1712;
+      --cream-2:#221c15;
+      --ink:#f1e9d8;
+      --ink-soft:#c9bba1;
+      --walnut:#f1e9d8;
+      --amber:#e0965a;
+      --amber-deep:#e8a76d;
+      --line:#4a3e2c;
+      --green:#8fa578;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#1b1712;
+    --cream-2:#221c15;
+    --ink:#f1e9d8;
+    --ink-soft:#c9bba1;
+    --walnut:#f1e9d8;
+    --amber:#e0965a;
+    --amber-deep:#e8a76d;
+    --line:#4a3e2c;
+    --green:#8fa578;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;text-transform:uppercase;font-size:0.72rem}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+  /* disclaimer bar */
+  .disclaimer{
+    background:var(--walnut);
+    color:var(--cream);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;
+    letter-spacing:0.02em;
+    text-align:center;
+    padding:0.5rem 1rem;
+    line-height:1.4;
+  }
+  :root[data-theme="dark"] .disclaimer, @media (prefers-color-scheme: dark){}
+  .disclaimer strong{font-weight:600}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0.9rem clamp(1.25rem,4vw,3rem);
+    max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;flex-direction:column;gap:0.1rem;text-decoration:none}
+  .brand-name{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.05rem}
+  .brand-sub{font-family:'IBM Plex Mono';font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{font-size:0.85rem;text-decoration:none;font-weight:500;position:relative;padding:0.2rem 0}
+  nav.links a:hover{color:var(--amber-deep)}
+  .nav-cta{
+    display:none;
+    font-family:'IBM Plex Mono';font-size:0.72rem;
+    background:var(--amber);color:#fff;padding:0.55rem 1rem;
+    text-decoration:none;border-radius:var(--radius);
+  }
+  .burger{
+    background:none;border:1px solid var(--line);border-radius:var(--radius);
+    width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+  }
+  .burger svg{width:1.1rem;height:1.1rem}
+  @media(min-width:860px){
+    nav.links{display:flex}
+    .nav-cta{display:inline-block}
+    .burger{display:none}
+  }
+  #mobile-menu{
+    display:none;flex-direction:column;gap:0;
+    border-top:1px solid var(--line);
+    background:var(--cream-2);
+  }
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{
+    padding:0.9rem clamp(1.25rem,4vw,3rem);
+    text-decoration:none;font-size:0.95rem;font-weight:500;
+    border-bottom:1px solid var(--line);
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+    padding:clamp(3rem,8vw,6rem) 0 clamp(2.5rem,6vw,4rem);
+    background-image:
+      repeating-linear-gradient(to right, var(--line) 0, var(--line) 1px, transparent 1px, transparent calc(100%/12)),
+      linear-gradient(var(--cream), var(--cream));
+    background-size: 100% 100%;
+    opacity:1;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px calc(100%/12));
+    opacity:0.35;pointer-events:none;
+  }
+  .hero-inner{position:relative}
+  .kicker{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.4rem}
+  .kicker .dot{width:0.5rem;height:0.5rem;border-radius:50%;background:var(--amber)}
+  h1.hero-title{
+    font-size:clamp(2.6rem,7.5vw,5.4rem);
+    line-height:0.98;
+    max-width:16ch;
+    margin-bottom:1.6rem;
+  }
+  h1.hero-title em{
+    font-style:normal;color:var(--amber-deep);
+  }
+  .hero-lede{
+    max-width:46ch;font-size:1.1rem;color:var(--ink-soft);margin-bottom:2.2rem;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem}
+  .btn{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    padding:0.85rem 1.4rem;text-decoration:none;font-weight:600;font-size:0.92rem;
+    border-radius:var(--radius);
+  }
+  .btn-primary{background:var(--walnut);color:var(--cream)}
+  .btn-primary:hover{background:var(--amber-deep)}
+  .btn-outline{border:1px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+
+  .hero-meta{
+    margin-top:3.5rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;
+    border-top:1px solid var(--line);padding-top:1.5rem;max-width:640px;
+  }
+  @media(min-width:640px){.hero-meta{grid-template-columns:repeat(4,1fr)}}
+  .hero-meta div .mono{color:var(--ink-soft);margin-bottom:0.35rem;display:block}
+  .hero-meta div strong{font-size:1rem;font-weight:600}
+
+  /* section frame */
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .section-head{
+    display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2.6rem;
+    border-bottom:1px solid var(--line);padding-bottom:1.4rem;
+  }
+  .section-num{color:var(--amber-deep)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+
+  /* about / spec */
+  .about-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+  @media(min-width:900px){.about-grid{grid-template-columns:1.1fr 0.9fr}}
+  .about-text p{font-size:1.05rem;color:var(--ink-soft);margin-bottom:1.1rem;max-width:56ch}
+  .spec-card{
+    border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;
+    background:var(--cream-2);
+  }
+  .spec-row{display:flex;justify-content:space-between;gap:1rem;padding:0.7rem 0;border-bottom:1px solid var(--line);font-size:0.92rem}
+  .spec-row:last-child{border-bottom:none}
+  .spec-row span:first-child{color:var(--ink-soft)}
+  .spec-row span:last-child{font-weight:600;text-align:right}
+
+  /* services grid */
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(min-width:640px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc-card{
+    background:var(--cream);padding:2rem 1.7rem;
+    transition:background 0.25s ease, transform 0.25s ease;
+  }
+  .svc-card:hover{background:var(--cream-2)}
+  .svc-icon{width:2.4rem;height:2.4rem;margin-bottom:1.2rem;color:var(--amber-deep)}
+  .svc-card h3{font-size:1.08rem;margin-bottom:0.5rem}
+  .svc-card p{font-size:0.9rem;color:var(--ink-soft)}
+  .svc-num{font-family:'IBM Plex Mono';font-size:0.7rem;color:var(--line);display:block;margin-bottom:0.8rem}
+
+  /* stat / sustainability strip */
+  .stat-strip{
+    background:var(--walnut);color:var(--cream);
+    padding:clamp(2.5rem,6vw,4rem) 0;
+  }
+  .stat-inner{display:grid;gap:2rem;grid-template-columns:1fr;align-items:center}
+  @media(min-width:800px){.stat-inner{grid-template-columns:0.9fr 1.1fr}}
+  .big-stat{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(3.5rem,10vw,6rem);line-height:0.9;color:var(--amber)}
+  .stat-strip p{color:#e4d9c3;font-size:1.05rem;max-width:44ch}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* contact */
+  .contact-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+  @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:2rem;background:var(--cream-2)}
+  .contact-card h3{font-size:1.3rem;margin-bottom:1.2rem}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+  .contact-list li{display:flex;gap:0.9rem;align-items:flex-start;font-size:0.98rem}
+  .contact-list svg{width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.15rem;color:var(--amber-deep)}
+  .contact-list a{text-decoration:underline;text-underline-offset:3px}
+  .map-frame{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;height:100%;min-height:280px}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+
+  footer.site{
+    border-top:1px solid var(--line);
+    padding:2.5rem 0 1rem;
+  }
+  .foot-grid{display:flex;flex-direction:column;gap:1.5rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-end}}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Hattinger Holzbau GmbH</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-name">Hattinger Holzbau</span>
+      <span class="brand-sub">Zimmerei · Pramet</span>
+    </a>
+    <nav class="links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+436506133527">+43 650 6133527</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ueber">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+436506133527">Anrufen: +43 650 6133527</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="kicker mono"><span class="dot"></span> Zimmerei &amp; Holzbau · Bezirk Ried im Innkreis</div>
+      <h1 class="hero-title">Handwerk, das <em>trägt</em>. Aus Holz, für Generationen.</h1>
+      <p class="hero-lede">Hattinger Holzbau fertigt Dachstühle, Holzriegelbau und Sanierungen im Hausruckviertel — mit durchdachter Konstruktion und 100&nbsp;% nachhaltigem Holz aus der Region.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Projekt anfragen</a>
+        <a class="btn btn-outline" href="tel:+436506133527">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Anrufen
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="mono">Standort</span><strong>Pramet, OÖ</strong></div>
+        <div><span class="mono">Material</span><strong>100&nbsp;% Holz</strong></div>
+        <div><span class="mono">Ansprechpartner</span><strong>Johann Hattinger</strong></div>
+        <div><span class="mono">Radius</span><strong>Hausruckviertel</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="mono section-num">01 — Leistungen</span>
+        <h2>Vom Dachstuhl bis zur Fassade</h2>
+      </div>
+      <div class="svc-grid">
+        <article class="svc-card reveal">
+          <span class="svc-num">01</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          <h3>Dachstühle</h3>
+          <p>Statisch durchdachte Konstruktionen, präzise abgebunden und montiert.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">02</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="10" x2="9" y2="20"/><line x1="15" y1="10" x2="15" y2="20"/></svg>
+          <h3>Holzriegelbau</h3>
+          <p>Wohnbau in Holzriegelbauweise — wärmegedämmt, ökologisch, stabil.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">03</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          <h3>Gartenhäuser</h3>
+          <p>Individuell geplante Gartenhäuser und Nebengebäude nach Maß.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">04</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/></svg>
+          <h3>Sanierungen</h3>
+          <p>Statische Ertüchtigung und Erneuerung bestehender Holzkonstruktionen.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">05</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="14" width="18" height="7" rx="1"/><line x1="7" y1="14" x2="7" y2="8"/><line x1="17" y1="14" x2="17" y2="8"/><line x1="7" y1="8" x2="17" y2="8"/></svg>
+          <h3>Terrassen &amp; Balkone</h3>
+          <p>Witterungsbeständige Holzterrassen und Balkonkonstruktionen.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">06</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>
+          <h3>Fassaden &amp; Dämmung</h3>
+          <p>Fassadenverkleidung und Dämmpakete für dauerhaften Werterhalt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="wrap stat-inner">
+      <div class="big-stat reveal">100%</div>
+      <p class="reveal">Hattinger Holzbau setzt nach eigenen Angaben durchgängig auf nachhaltiges Holz — von der Konstruktion bis zur Fassade. Regional gedacht, solide gebaut.</p>
+    </div>
+  </div>
+
+  <section id="ueber">
+    <div class="wrap about-grid">
+      <div class="about-text reveal">
+        <span class="mono section-num">02 — Über uns</span>
+        <h2 style="margin:0.8rem 0 1.4rem;">Zimmerei mit Handschrift</h2>
+        <p>Am Hartlhof in Pramet fertigt das Team rund um Johann Hattinger Holzkonstruktionen für den Bezirk Ried im Innkreis und darüber hinaus — von tragenden Dachstühlen über Holzriegelbau bis zu Terrassen, Balkonen und Fassaden.</p>
+        <p>Jedes Projekt beginnt mit dem Material: ausschließlich nachhaltiges Holz, verarbeitet mit dem Anspruch, dass Konstruktionen Generationen überdauern. Sanierung ebenso wie Neubau — geplant und ausgeführt aus einer Hand.</p>
+      </div>
+      <aside class="spec-card reveal">
+        <h3 class="mono" style="font-size:0.78rem;margin-bottom:1rem;color:var(--ink-soft)">Betriebsdaten</h3>
+        <div class="spec-row"><span>Kategorie</span><span>Zimmerei / Holzbau</span></div>
+        <div class="spec-row"><span>Standort</span><span>Pramet, Oberösterreich</span></div>
+        <div class="spec-row"><span>Ansprechperson</span><span>Johann Hattinger</span></div>
+        <div class="spec-row"><span>Material</span><span>100&nbsp;% Holz</span></div>
+        <div class="spec-row"><span>Einzugsgebiet</span><span>Bezirk Ried i. I.</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="mono section-num">03 — Kontakt</span>
+        <h2>Projekt besprechen</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Hartlhof 14 · Pramet</h3>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hartlhof 14, 4925 Pramet<br><a href="https://www.google.com/maps/search/?api=1&query=Hartlhof%2014%2C%204925%20Pramet" target="_blank" rel="noopener">Route berechnen →</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:+436506133527">+43 650 6133527</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+              <span><a href="mailto:office@hattinger-holzbau.at">office@hattinger-holzbau.at</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span>Termine nach Vereinbarung — Anruf oder E-Mail genügt.</span>
+            </li>
+          </ul>
+          <div style="margin-top:1.6rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+            <a class="btn btn-primary" href="tel:+436506133527">Jetzt anrufen</a>
+            <a class="btn btn-outline" href="mailto:office@hattinger-holzbau.at">E-Mail schreiben</a>
+          </div>
+        </div>
+        <div class="map-frame reveal">
+          <iframe title="Standort Hattinger Holzbau GmbH auf der Karte" loading="lazy" src="https://www.google.com/maps?q=Hartlhof%2014%2C%204925%20Pramet&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Hattinger Holzbau GmbH</div>
+      <div>Hartlhof 14, 4925 Pramet · Bezirk Ried im Innkreis</div>
+    </div>
+    <div>Gestaltungs-Vorschau — keine offizielle Website von Hattinger Holzbau GmbH.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

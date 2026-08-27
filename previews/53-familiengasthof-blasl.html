@@ -65,10 +65,10 @@
   .nav-cta{
     display:inline-flex;align-items:center;gap:0.5rem;
     background:var(--terracotta-deep);color:#fbf3e4;
-    padding:0.6rem 1.15rem;border-radius:2px;text-decoration:none;
+    padding:0.75rem 1.15rem;min-height:44px;border-radius:2px;text-decoration:none;
     font-size:0.88rem;font-weight:600;
   }
-  .burger{display:none;background:none;border:1px solid var(--line);border-radius:4px;padding:0.5rem 0.65rem;cursor:pointer;}
+  .burger{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:4px;min-width:44px;min-height:44px;padding:0;cursor:pointer;}
   .burger span{display:block;width:20px;height:2px;background:var(--forest-deep);margin:4px 0;}
 
   /* hero */
@@ -213,9 +213,10 @@
     .burger{display:block;}
     .nav.open nav.links{
       display:flex;position:absolute;top:100%;left:0;right:0;background:var(--paper);
-      flex-direction:column;padding:1.5rem clamp(1.25rem,4vw,3rem);gap:1.2rem;border-bottom:1px solid var(--line);
+      flex-direction:column;padding:1.5rem clamp(1.25rem,4vw,3rem);gap:0.3rem;border-bottom:1px solid var(--line);
     }
-    .nav.open .nav-cta{display:inline-flex;margin-top:0.5rem;}
+    .nav.open nav.links a{display:flex;align-items:center;min-height:44px;font-size:1rem;}
+    .nav.open .nav-cta{display:inline-flex;margin-top:0.5rem;justify-content:center;}
     .story-grid,.c-grid{grid-template-columns:1fr;}
   }
 </style>
@@ -233,7 +234,7 @@
       <li><a href="#kueche">Küche</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <a class="nav-cta" href="tel:+437255 6215">Tisch &amp; Zimmer anfragen</a>
+    <a class="nav-cta" href="tel:+4372556215">Tisch &amp; Zimmer anfragen</a>
     <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>

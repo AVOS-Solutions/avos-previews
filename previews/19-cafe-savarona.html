@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café Savarona — Simmering, Wien</title>
+<meta name="description" content="Gemütliches Grätzel-Café in Simmering: Frühstück, Gastgarten, Dart und Karaoke. Geöffnet Mo–Sa 8–24 Uhr, So/Feiertag 16–24 Uhr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terra:#d9603a;
+    --terra-dark:#a8432a;
+    --mustard:#e8ac2e;
+    --teal:#1f6f6a;
+    --teal-dark:#164e4a;
+    --cream:#fdf5e8;
+    --cream-2:#f6e6c9;
+    --ink:#2a1e17;
+    --ring:#1f6f6a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  body{font-family:'Sora',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Fahkwang',system-ui,sans-serif;font-weight:600;line-height:1.05}
+  :focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+
+  .disclaimer{background:var(--teal-dark);color:var(--cream);font-size:.78rem;text-align:center;padding:.55rem 1rem}
+  .disclaimer b{color:var(--mustard);font-weight:700}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(253,245,232,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1.25rem,4vw,2.5rem);max-width:1180px;margin:0 auto}
+  .brand{font-family:'Fahkwang',sans-serif;font-size:1.4rem;font-weight:700;color:var(--terra-dark)}
+  .navlist{display:flex;align-items:center;gap:1.8rem;list-style:none}
+  .navlist a{text-decoration:none;font-size:.92rem;font-weight:600;color:var(--ink)}
+  .navlist a:hover{color:var(--terra)}
+  .cta-mini{display:inline-flex;align-items:center;min-height:44px;background:var(--teal);color:#fff;padding:.5rem 1.1rem;border-radius:10px;font-size:.85rem;font-weight:700;text-decoration:none}
+  .cta-mini:hover{background:var(--teal-dark)}
+  .menu-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer}
+  @media (max-width:840px){
+    .navlist{position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--cream);flex-direction:column;align-items:flex-start;padding:2rem clamp(1.25rem,4vw,2.5rem);gap:1.4rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+    .navlist.open{transform:translateX(0)}
+    .navlist a{font-size:1.2rem}
+    .menu-toggle{display:flex}
+    .cta-mini{display:none}
+  }
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:var(--terra);color:#fff;padding:clamp(3.5rem,9vw,6.5rem) 0 clamp(3rem,6vw,4rem)}
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:radial-gradient(circle at 85% 15%, rgba(232,172,46,.55), transparent 45%),
+                      radial-gradient(circle at 5% 90%, rgba(31,111,106,.5), transparent 40%);
+  }
+  .hero-inner{position:relative;z-index:1}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;background:var(--ink);color:var(--mustard);padding:.4rem .9rem;border-radius:999px;margin-bottom:1.5rem}
+  .hero h1{font-size:clamp(2.6rem,9vw,5.4rem);max-width:14ch;margin-bottom:1.2rem;text-wrap:balance}
+  .hero p.lede{font-size:clamp(1rem,1.8vw,1.2rem);max-width:46ch;opacity:.95;margin-bottom:2.2rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.85rem 1.6rem;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,background .2s;border:2.5px solid transparent}
+  .btn-primary{background:var(--ink);color:var(--mustard)}
+  .btn-primary:hover{transform:translateY(-2px);background:#1c130e}
+  .btn-outline{border-color:#fff;color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+
+  .hero-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:3rem;position:relative;z-index:1}
+  .pill{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.4);padding:.5rem 1rem;border-radius:999px;font-size:.82rem;font-weight:600}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0}
+  .section-head{max-width:640px;margin-bottom:2.8rem}
+  .kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-dark);font-weight:700;margin-bottom:.6rem}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+  @media (min-width:860px){.about-grid{grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}}
+  .about p{color:#4a382e;margin-bottom:1rem;max-width:52ch;font-size:1.02rem}
+  .owner-card{background:var(--cream-2);border:2px solid var(--ink);border-radius:18px;padding:1.8rem;box-shadow:6px 6px 0 var(--ink)}
+  .owner-card .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--teal-dark);margin-bottom:.5rem}
+  .owner-card h3{font-size:1.4rem;color:var(--ink);margin-bottom:.4rem}
+  .owner-card p{font-size:.92rem;color:#4a382e;margin:0}
+
+  /* Bento */
+  .bento{background:var(--cream-2)}
+  .bento-grid{display:grid;grid-template-columns:1fr;gap:1.1rem}
+  @media (min-width:680px){.bento-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(140px,auto)}}
+  .bento-item{
+    border-radius:20px;padding:1.8rem;position:relative;overflow:hidden;color:#fff;
+    display:flex;flex-direction:column;justify-content:flex-end;min-height:180px;
+    border:2px solid var(--ink);
+  }
+  .bento-item h3{font-size:1.35rem;margin-bottom:.4rem;position:relative;z-index:1}
+  .bento-item p{font-size:.9rem;opacity:.92;position:relative;z-index:1}
+  .bento-item .ico{position:absolute;top:1.2rem;right:1.2rem;width:34px;height:34px;opacity:.85;z-index:1}
+  .bento-item.b1{background:var(--teal);grid-column:span 2;grid-row:span 2}
+  @media (min-width:680px){.bento-item.b1{min-height:100%}}
+  .bento-item.b2{background:var(--mustard);color:var(--ink);grid-column:span 2}
+  .bento-item.b3{background:var(--terra-dark);grid-column:span 1}
+  .bento-item.b4{background:#3a2a1f;grid-column:span 1}
+  @media (max-width:679px){.bento-item{grid-column:span 1!important}}
+  .bento-item::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 100%, rgba(255,255,255,.18), transparent 55%)}
+
+  /* Hours */
+  .hours{background:var(--teal-dark);color:#fff}
+  .hours-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media (min-width:820px){.hours-grid{grid-template-columns:1fr 1fr;align-items:center}}
+  .hours h2{color:#fff;font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:1rem}
+  .hours p{color:rgba(253,245,232,.85);max-width:44ch;margin-bottom:1rem}
+  .hours-table{background:rgba(253,245,232,.08);border:1.5px solid rgba(253,245,232,.25);border-radius:16px;overflow:hidden}
+  .hours-row{display:flex;justify-content:space-between;padding:1rem 1.4rem;font-size:.98rem}
+  .hours-row+.hours-row{border-top:1px solid rgba(253,245,232,.15)}
+  .hours-row strong{color:var(--mustard)}
+
+  /* Contact */
+  .contact{background:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media (min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{background:var(--terra);color:#fff;border-radius:20px;padding:clamp(1.75rem,4vw,2.5rem);border:2px solid var(--ink)}
+  .contact-card h2{color:#fff;font-size:1.9rem;margin-bottom:1.4rem}
+  .contact-row{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.2rem}
+  .contact-row svg{flex:none;width:20px;height:20px;stroke:var(--mustard);margin-top:.15rem}
+  .contact-row a,.contact-row span{color:#fff;text-decoration:none;font-size:.98rem}
+  .contact-row a:hover{color:var(--mustard)}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+  .map-embed{border-radius:20px;overflow:hidden;border:2px solid var(--ink);min-height:300px}
+  .map-embed iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+
+  footer.site{background:var(--ink);color:var(--cream-2);padding:2.5rem clamp(1.25rem,4vw,2.5rem) 2rem}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;max-width:1180px;margin:0 auto;padding-bottom:1.5rem;border-bottom:1px solid rgba(253,245,232,.15)}
+  .foot-brand{font-family:'Fahkwang',sans-serif;font-size:1.3rem;color:var(--mustard);font-weight:700}
+  .foot-note{max-width:1180px;margin:1.3rem auto 0;font-size:.78rem;color:rgba(253,245,232,.6);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <b>keine offizielle Website</b> von Café Savarona · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <div class="brand">Café Savarona</div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a1e17" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navlist" id="navLinks">
+      <li><a href="#ueber">Über uns</a></li>
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#zeiten">Öffnungszeiten</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a class="cta-mini" href="tel:+4317497084">Anrufen</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Grätzel-Café · Simmering, 1110 Wien</span>
+    <h1>Dein Wohnzimmer in Simmering.</h1>
+    <p class="lede">Café Savarona ist das gemütliche Nachbarschafts-Café in der Simmeringer Hauptstraße — mit Frühstück, Gastgarten, Dart und Karaoke-Abenden für alle, die gern lang bleiben.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#kontakt">Vorbeikommen</a>
+      <a class="btn btn-outline" href="tel:+4317497084">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +43 1 749 70 84
+      </a>
+    </div>
+    <div class="hero-strip">
+      <span class="pill">☕ Hausgemachtes Frühstück</span>
+      <span class="pill">🌿 Gastgarten</span>
+      <span class="pill">🎯 Dart</span>
+      <span class="pill">🎤 Karaoke</span>
+    </div>
+  </div>
+</section>
+
+<section id="ueber" class="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="kicker">Über uns</div>
+      <h2>Ein Grätzel-Café mit Herz</h2>
+      <p>Mitten in Simmering, direkt an der Simmeringer Hauptstraße, ist das Café Savarona seit vielen Jahren fixer Treffpunkt im Grätzel. Frühstück am Vormittag, ein Ratscher am Nachmittag, eine Runde Dart am Abend — hier ist immer etwas los.</p>
+      <p>Im Sommer lockt der eigene Gastgarten, drinnen sorgen Dartscheibe und Karaoke-Anlage für Stimmung bis in die Nacht.</p>
+    </div>
+    <div class="owner-card reveal">
+      <div class="tag">Inhaberin</div>
+      <h3>Selda Ülker</h3>
+      <p>Café Savarona e.U. · persönlich geführt, mit offenem Ohr für die Nachbarschaft.</p>
+    </div>
+  </div>
+</section>
+
+<section id="angebot" class="bento">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Bei uns erwartet Sie</div>
+      <h2>Vier gute Gründe für einen Besuch</h2>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-item b1 reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        <h3>Hausgemachtes Frühstück</h3>
+        <p>Vom kleinen Kaffee bis zum ausgiebigen Frühstück — täglich frisch zubereitet, in aller Ruhe genossen.</p>
+      </div>
+      <div class="bento-item b2 reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2a1e17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C7 12 4 9 4 4c5 0 8 3 8 8Zm0 0c0-5 3-8 8-8 0 5-3 8-8 8Z"/></svg>
+        <h3>Gastgarten</h3>
+        <p>An warmen Tagen im Freien sitzen, mitten im Grätzel.</p>
+      </div>
+      <div class="bento-item b3 reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="#fff"/></svg>
+        <h3>Dart</h3>
+        <p>Eine Runde Dart mit Freunden.</p>
+      </div>
+      <div class="bento-item b4 reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        <h3>Karaoke</h3>
+        <p>Mikrofon frei — bei uns wird gesungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zeiten" class="hours">
+  <div class="wrap hours-grid">
+    <div class="reveal">
+      <div class="kicker" style="color:var(--mustard)">Öffnungszeiten</div>
+      <h2>Wann Sie uns finden</h2>
+      <p>Ob Frühstück, Nachmittagskaffee oder später Karaoke-Abend — das Café Savarona hat lange und verlässlich geöffnet.</p>
+    </div>
+    <div class="hours-table reveal">
+      <div class="hours-row"><span>Montag – Samstag</span><strong>8:00 – 24:00 Uhr</strong></div>
+      <div class="hours-row"><span>Sonn- &amp; Feiertag</span><strong>16:00 – 24:00 Uhr</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Kontakt &amp; Anfahrt</div>
+      <h2>Wir freuen uns auf Sie</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Café Savarona</h2>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Simmeringer Hauptstraße 93/III, 1110 Wien</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+4317497084">+43 1 749 70 84</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          <a href="mailto:office@savarona.at">office@savarona.at</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg>
+          <span>Inhaberin: Selda Ülker</span>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:office@savarona.at">E-Mail schreiben</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Simmeringer%20Hauptstra%C3%9Fe%2093%2C%201110%20Wien" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe title="Lage von Café Savarona auf der Karte" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Simmeringer%20Hauptstra%C3%9Fe%2093%2C%201110%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">Café Savarona</div>
+    <div style="font-size:.9rem;opacity:.85;max-width:44ch">Simmeringer Hauptstraße 93/III · 1110 Wien · +43 1 749 70 84 · office@savarona.at</div>
+  </div>
+  <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Café Savarona · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
