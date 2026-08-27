@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schnitzelwirt — Wiener Schnitzel im 7. Bezirk, Wien</title>
+<meta name="description" content="Schnitzelwirt in der Neubaugasse: seit über 50 Jahren ein Kultlokal im 7. Bezirk, bekannt für riesige, günstige Wiener Schnitzel — gegründet von Günther und Helene Schmidt, heute von den Töchtern geführt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ead9;--paper-2:#ecdcc0;--ink:#2c1810;--red:#8c2a20;--red-deep:#6b1c14;
+    --mustard:#c98a2c;--green:#3c5b3f;--line:rgba(44,24,16,0.16);--focus:#c98a2c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Nunito Sans',system-ui,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(140,42,32,0.05), transparent 40%),
+      radial-gradient(circle at 92% 80%, rgba(60,91,63,0.05), transparent 40%);
+  }
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  .disclosure{background:var(--red-deep);color:#f4ead9;font-size:0.72rem;text-align:center;padding:0.55rem 1rem;letter-spacing:0.02em;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,234,217,0.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;letter-spacing:-0.01em;text-decoration:none;color:inherit;flex-shrink:0;}
+  .brandmark em{color:var(--red);font-style:italic;font-weight:600;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;}
+  nav.links a{text-decoration:none;padding:0.3rem 0;}
+  nav.links a:hover,nav.links a:focus-visible,nav.links a.active{color:var(--red);}
+  .nav-cta{display:none;background:var(--red);color:#fff;border-radius:6px;padding:0.6rem 1.3rem;font-weight:800;text-decoration:none;font-size:0.85rem;white-space:nowrap;}
+  .burger{background:none;border:2px solid var(--ink);border-radius:6px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:840px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;border-top:2px solid var(--ink);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:700;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--red);background:var(--paper-2);}
+
+  .hero{padding:clamp(3rem,9vw,6rem) 0 clamp(2.5rem,6vw,4rem);position:relative;overflow:hidden;}
+  .hero-grid{display:grid;gap:2rem;align-items:end;}
+  @media(min-width:880px){.hero-grid{grid-template-columns:1.6fr 1fr;}}
+  .hero-eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:0.16em;font-size:0.8rem;color:var(--red);margin-bottom:1rem;}
+  .hero h1{font-size:clamp(3rem,10vw,6.6rem);letter-spacing:-0.01em;}
+  .hero h1 .ital{font-style:italic;font-weight:500;color:var(--red);}
+  .hero-sub{margin-top:1.4rem;max-width:44ch;font-size:1.15rem;color:#4a352a;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2rem;}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.6rem;border-radius:6px;font-weight:800;text-decoration:none;font-size:0.95rem;transition:transform .18s ease;min-height:44px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-red{background:var(--red);color:#fff8f0;}
+  .btn-outline{border:2px solid var(--ink);color:var(--ink);}
+
+  .emblem{position:relative;width:min(280px,70vw);aspect-ratio:1;margin:0 auto;}
+  .emblem .plate{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%, #fff6e5, #e8c98a 55%, #c98a2c 100%);box-shadow:0 20px 50px rgba(44,24,16,0.25), inset 0 0 0 8px #f4ead9, inset 0 0 0 10px var(--ink);}
+  .emblem .schnitzel{position:absolute;inset:14%;border-radius:44% 56% 52% 48% / 50% 46% 54% 50%;background:linear-gradient(135deg,#e7b45c,#c9862c 60%,#a9691f);box-shadow:inset 0 0 0 2px rgba(44,24,16,0.15);}
+  .emblem .lemon{position:absolute;width:22%;height:22%;bottom:8%;right:6%;border-radius:50%;background:radial-gradient(circle at 35% 35%, #eef5c8, #b8c96a);}
+  .emblem .label{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:0.9rem;padding:0.35rem 1rem;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,0.2);}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:0.16em;font-size:0.78rem;color:var(--red);margin-bottom:0.9rem;}
+  .section-title{font-size:clamp(2rem,4vw,3rem);max-width:20ch;}
+  .lead{max-width:60ch;margin-top:1.1rem;font-size:1.05rem;color:#4a352a;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .teaser-grid{display:grid;gap:1.5rem;margin-top:3rem;}
+  @media(min-width:760px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+  .teaser-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:2.2rem;display:flex;flex-direction:column;}
+  .teaser-card h3{font-size:1.35rem;margin-bottom:0.8rem;}
+  .teaser-card p{color:#4a352a;font-size:0.98rem;flex-grow:1;}
+  .teaser-link{margin-top:1.4rem;display:inline-flex;align-items:center;gap:0.4rem;color:var(--red);text-decoration:none;font-weight:800;font-size:0.9rem;min-height:44px;}
+  .teaser-link svg{width:16px;height:16px;transition:transform .2s ease;}
+  .teaser-link:hover svg{transform:translateX(4px);}
+
+  .stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:3rem;}
+  .stat-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.8rem;min-width:180px;}
+  .stat-num{font-family:'Playfair Display',serif;font-weight:900;font-size:2.1rem;color:var(--red);}
+  .stat-label{font-size:0.88rem;color:#5a4536;margin-top:0.3rem;}
+
+  .contact{position:relative;overflow:hidden;}
+  .contact-grid{display:grid;gap:3rem;}
+  @media(min-width:840px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-list{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;}
+  .contact-list a{text-decoration:none;}
+  .contact-list li{display:flex;gap:1rem;align-items:flex-start;font-size:1.02rem;}
+  .contact-list .ico{flex-shrink:0;width:22px;height:22px;color:var(--red);margin-top:2px;}
+  .map-frame{border-radius:16px;overflow:hidden;border:2px solid var(--ink);min-height:280px;}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;}
+
+  footer.site{background:var(--red-deep);color:#f4ead9;padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1.2rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-weight:700;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;}
+  footer.site .foot-links a{text-decoration:none;color:#f4ead9;}
+  footer.site .foot-links a:hover{color:var(--mustard);}
+  footer .legal{border-top:1px solid rgba(244,234,217,0.25);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;color:#e6cdb8;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Schnitzelwirt · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html">Schnitzel<em>wirt</em></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4315233771">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4315233771">Anrufen: +43 1 523 37 71</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hero-eyebrow reveal">Kultlokal im 7. Bezirk seit über 50 Jahren</p>
+        <h1 class="reveal">Das <span class="ital">Schnitzel</span><br>Ihres Lebens</h1>
+        <p class="hero-sub reveal">Riesig, knusprig, ehrlich günstig — der Schnitzelwirt in der Neubaugasse serviert seit über einem halben Jahrhundert die Wiener Schnitzel, für die Wien zurecht berühmt ist.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-red" href="tel:+4315233771">Tisch reservieren</a>
+          <a class="btn btn-outline" href="ueber-uns.html">Unsere Geschichte</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="emblem" aria-hidden="true">
+          <span class="label">Neubaugasse 52</span>
+          <div class="plate"></div>
+          <div class="schnitzel"></div>
+          <div class="lemon"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Rund um den Schnitzelwirt</p>
+      <h2 class="section-title reveal">Alles auf einen Blick</h2>
+      <div class="teaser-grid">
+        <div class="teaser-card reveal">
+          <h3>Über uns</h3>
+          <p>Von Günther und Helene Schmidt gegründet, heute von den Töchtern geführt — mehr als 50 Jahre Familientradition.</p>
+          <a class="teaser-link" href="ueber-uns.html">Geschichte lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Speisekarte</h3>
+          <p>Riesengroße Wiener Schnitzel, klassische Beilagen und bodenständige Wiener Küche zu fairen Preisen.</p>
+          <a class="teaser-link" href="angebot.html">Speisekarte ansehen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Kontakt</h3>
+          <p>Reservierung telefonisch, Adresse und Anfahrt in der Neubaugasse, mitten im 7. Bezirk.</p>
+          <a class="teaser-link" href="kontakt.html">Kontakt &amp; Anfahrt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="stats reveal" aria-label="Bewertungsübersicht auf öffentlichen Portalen">
+        <div class="stat-box"><div class="stat-num">4,4 / 5</div><div class="stat-label">Google-Bewertung, zehntausende Stimmen</div></div>
+        <div class="stat-box"><div class="stat-num">50+</div><div class="stat-label">Jahre gelebte Familientradition</div></div>
+        <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Generationen am Herd</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Besuchen Sie uns</p>
+        <h2 class="section-title">Reservierung &amp; Anfahrt</h2>
+        <p class="lead">Reservierungen nimmt der Schnitzelwirt telefonisch entgegen — an stark frequentierten Tagen empfiehlt sich ein Anruf im Voraus.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="tel:+4315233771">Jetzt anrufen</a>
+          <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe title="Lage Schnitzelwirt" loading="lazy" src="https://www.google.com/maps?q=Neubaugasse%2052%2C%201070%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="color:#f4ead9;">Schnitzelwirt</div>
+      <div>Neubaugasse 52, 1070 Wien · +43 1 523 37 71</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Schnitzelwirt · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

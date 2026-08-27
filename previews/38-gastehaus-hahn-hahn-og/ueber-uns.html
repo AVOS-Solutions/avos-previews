@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geschichte – Gästehaus Hahn</title>
+<meta name="description" content="Die Geschichte des Gästehaus Hahn (Hahn OG): familiengeführte Gastfreundschaft im Weinort Straßertal bei Langenlois/Kamptal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf3e6;
+    --cream-2:#f2e6cf;
+    --wood:#5c3a25;
+    --green:#3f5a3c;
+    --green-2:#2b3f2a;
+    --gold:#b98a3d;
+    --gold-light:#e3c07f;
+    --ink:#2c2115;
+    --ink-soft:#6b5b47;
+    --white:#fffdf9;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'DM Serif Display', Georgia, serif;font-weight:400;line-height:1.08;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  .disclaimer{
+    background:var(--green-2);color:#e9dfc6;font-size:12px;letter-spacing:0.02em;
+    text-align:center;padding:9px 16px;line-height:1.5;
+  }
+  .disclaimer strong{color:var(--gold-light);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(250,243,230,0.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(92,58,37,0.15)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1200px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+  .brand-mark{width:46px;height:46px;border-radius:50%;background:var(--green);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:19px;flex-shrink:0}
+  .brand span{font-family:'DM Serif Display',serif;font-size:19px}
+  nav.links{display:flex;gap:32px;list-style:none;margin:0;padding:0;font-size:14.5px}
+  nav.links a{text-decoration:none;position:relative;padding:6px 0;color:var(--ink)}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .25s ease}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%}
+  nav.links a.active{color:var(--green-2);font-weight:600}
+  nav.links a.active::after{width:100%}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--green);color:var(--white)}
+  .btn-primary:hover{background:var(--green-2)}
+  .btn-outline{border-color:var(--green);color:var(--green)}
+  .btn-outline:hover{background:var(--green);color:var(--white)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--green);border-radius:50%;width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--green);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a.active{color:var(--green);font-weight:700}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+  .hero-text{display:flex;flex-direction:column;justify-content:center;padding:64px 6vw;gap:24px}
+  .kicker{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);color:var(--green-2)}
+  h1.hero-title i{color:var(--gold);font-style:italic}
+  .hero-lede{font-size:17px;color:var(--ink-soft);max-width:44ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+  .hero-visual{position:relative;overflow:hidden;background:linear-gradient(180deg,#f6e9c9 0%, #eddcae 45%, #cdd9a8 100%)}
+  .hero-visual svg{position:absolute;inset:0;width:100%;height:100%}
+  .motto{
+    position:absolute;left:8%;bottom:9%;max-width:78%;
+    font-family:'DM Serif Display',serif;font-style:italic;color:var(--green-2);
+    font-size:clamp(1.1rem,2.4vw,1.6rem);line-height:1.3;
+  }
+
+  /* Smaller page hero for subpages */
+  .page-hero{padding:64px 0 48px;background:linear-gradient(180deg,var(--cream) 0%, var(--cream-2) 100%);border-bottom:1px solid rgba(92,58,37,0.12)}
+  .page-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--green-2)}
+  .page-hero p{margin-top:16px;color:var(--ink-soft);max-width:60ch;font-size:16px}
+  .crumb{font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;display:flex;gap:8px;align-items:center}
+  .crumb a{color:var(--ink-soft);text-decoration:none}
+  .crumb a:hover{color:var(--gold)}
+
+  section{padding:96px 0}
+  .section-head{max-width:620px;margin:0 auto 56px;text-align:center}
+  .eyebrow{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+  h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--green-2)}
+  .lead{color:var(--ink-soft);font-size:16px;margin-top:16px}
+
+  .amenities{background:var(--white)}
+  .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(92,58,37,0.14);border:1px solid rgba(92,58,37,0.14)}
+  .amen-card{background:var(--white);padding:38px 28px;text-align:center}
+  .amen-icon{width:52px;height:52px;margin:0 auto 20px;border-radius:50%;background:var(--cream-2);color:var(--green);display:flex;align-items:center;justify-content:center}
+  .amen-card h3{font-size:19px;color:var(--green-2);margin-bottom:10px}
+  .amen-card p{margin:0;font-size:14px;color:var(--ink-soft)}
+
+  .story{background:linear-gradient(180deg,var(--cream) 0%, var(--cream-2) 100%)}
+  .story-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center}
+  .story-frame{
+    aspect-ratio:4/5;border-radius:12px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,var(--green) 0%, var(--green-2) 100%);
+  }
+  .story-frame svg{position:absolute;inset:0;width:100%;height:100%;opacity:0.9}
+  .story-frame .cap{position:absolute;left:24px;bottom:24px;right:24px;color:var(--gold-light);font-family:'DM Serif Display',serif;font-size:1.2rem;font-style:italic}
+  .story-text p{margin:0 0 18px;font-size:16px;color:var(--ink)}
+  .story-text p:last-child{margin-bottom:0}
+  .quote-note{
+    margin-top:28px;padding:20px 24px;border-left:3px solid var(--gold);background:rgba(185,138,61,0.08);
+    font-size:14.5px;color:var(--ink-soft);border-radius:0 8px 8px 0;
+  }
+
+  /* Timeline for Über uns */
+  .timeline{border-left:2px dashed rgba(92,58,37,0.3);margin-left:6px;padding-left:32px;display:flex;flex-direction:column;gap:36px;max-width:70ch}
+  .timeline-item{position:relative}
+  .timeline-item::before{content:"";position:absolute;left:-40px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--cream)}
+  .timeline-item h3{font-size:18px;color:var(--green-2);margin-bottom:8px;font-family:'DM Serif Display',serif}
+  .timeline-item p{margin:0;color:var(--ink-soft);font-size:15px}
+
+  /* Room / Angebot cards */
+  .room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+  .room-card{background:var(--white);border:1px solid rgba(92,58,37,0.14);border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:14px}
+  .room-card .room-icon{width:48px;height:48px;border-radius:50%;background:var(--cream-2);color:var(--green);display:flex;align-items:center;justify-content:center}
+  .room-card h3{font-size:20px;color:var(--green-2)}
+  .room-card p{margin:0;color:var(--ink-soft);font-size:14.5px}
+
+  .contact{background:var(--green-2);color:#ece3ce}
+  .contact .eyebrow{color:var(--gold-light)}
+  .contact h2{color:var(--white)}
+  .contact .lead{color:#c9bda0}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start}
+  .contact-list{display:flex;flex-direction:column;gap:22px}
+  .contact-item{display:flex;gap:16px;align-items:flex-start}
+  .contact-icon{width:42px;height:42px;border-radius:50%;background:rgba(227,192,127,0.15);color:var(--gold-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-item h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.06em;color:var(--gold-light);margin-bottom:5px}
+  .contact-item a,.contact-item p{margin:0;font-size:15.5px;text-decoration:none;color:#ece3ce}
+  .contact-item a:hover{color:var(--gold-light)}
+  .map-box{border-radius:12px;overflow:hidden;border:1px solid rgba(227,192,127,0.25)}
+  .map-frame{width:100%;height:100%;min-height:320px;border:0;filter:saturate(0.85)}
+  .cta-band{margin-top:44px;padding-top:36px;border-top:1px solid rgba(227,192,127,0.2);display:flex;flex-wrap:wrap;gap:16px}
+
+  /* Home teaser */
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .teaser-card{background:var(--white);border:1px solid rgba(92,58,37,0.14);border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:14px}
+  .teaser-card h3{font-size:20px;color:var(--green-2)}
+  .teaser-card p{margin:0;color:var(--ink-soft);font-size:14.5px;flex-grow:1}
+  .teaser-card a.link{color:var(--gold);text-decoration:none;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .teaser-card a.link:hover{text-decoration:underline}
+
+  /* Legal / prose pages */
+  .legal-notice{
+    background:var(--cream-2);border:1px solid rgba(92,58,37,0.2);border-left:4px solid var(--gold);
+    padding:20px 24px;font-size:14px;color:var(--ink);margin-bottom:44px;line-height:1.6;border-radius:0 8px 8px 0;
+  }
+  .prose h2{font-size:1.4rem;margin-bottom:12px;margin-top:40px;font-family:'DM Serif Display',serif;font-weight:400;color:var(--green-2)}
+  .prose h2:first-child{margin-top:0}
+  .prose p{color:var(--ink-soft);font-size:15.5px;margin:0 0 14px;max-width:70ch}
+  .prose ul{color:var(--ink-soft);font-size:15.5px;max-width:70ch;padding-left:20px}
+  .prose li{margin-bottom:8px}
+  .prose strong{color:var(--ink)}
+  .prose a{color:var(--gold);text-decoration:underline}
+
+  footer.site{background:var(--wood);color:#e8dcc7;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(232,220,199,0.15)}
+  .foot-brand{font-family:'DM Serif Display',serif;font-size:20px}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#e8dcc7}
+  .foot-links a:hover{color:var(--gold-light)}
+  .foot-legal{max-width:1200px;margin:0 auto;padding:18px 24px 0;display:flex;gap:20px;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{color:#bfae90;text-decoration:none}
+  .foot-legal a:hover{color:var(--gold-light)}
+  .foot-note{max-width:1200px;margin:0 auto;padding:14px 24px 26px;font-size:12px;line-height:1.6;color:#bfae90}
+  .foot-note strong{color:#e3c07f}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr}
+    .hero-visual{min-height:320px;order:-1}
+    .amen-grid{grid-template-columns:repeat(2,1fr)}
+    .story-grid{grid-template-columns:1fr;gap:36px}
+    .story-frame{aspect-ratio:16/10}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .teaser-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:64px 0}
+    .hero-text{padding:48px 6vw}
+    .page-hero{padding:44px 0 36px}
+  }
+  @media (max-width:520px){
+    .amen-grid{grid-template-columns:1fr}
+    .motto{font-size:1rem;bottom:6%}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> des Gästehaus Hahn (Hahn OG) &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">GH</span>
+      <span>Gästehaus Hahn</span>
+    </a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="ueber-uns.html" class="active">Geschichte</a></li><li><a href="angebot.html">Zimmer & Ausstattung</a></li><li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Anfrage stellen</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid rgba(92,58,37,0.15);background:var(--cream)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html" style="display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)">Home</a></li><li><a href="ueber-uns.html" class="active" style="display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)">Geschichte</a></li><li><a href="angebot.html" style="display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)">Zimmer & Ausstattung</a></li><li><a href="kontakt.html" style="display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <div class="crumb"><a href="index.html">Home</a> / Geschichte</div>
+      <h1>Gastfreundschaft mit Familientradition.</h1>
+      <p>Wie aus einem Familienhaus im Straßertal ein Gästehaus wurde, das Besucher aus dem ganzen Kamptal schätzen.</p>
+    </div>
+  </section>
+
+  <section class="story" id="geschichte" style="padding-top:80px">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-frame reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="500" fill="#2b3f2a"/>
+            <circle cx="320" cy="90" r="70" fill="#b98a3d" opacity="0.5"/>
+            <path d="M0 340 Q100 300 200 340 T400 340 V500 H0 Z" fill="#3f5a3c"/>
+            <g stroke="#e3c07f" stroke-width="1.5" opacity="0.4">
+              <path d="M30 500 L110 350"/><path d="M120 500 L190 350"/>
+              <path d="M200 500 L260 350"/><path d="M280 500 L330 350"/>
+            </g>
+          </svg>
+          <span class="cap">Familiengeführt im Herzen des Straßertals</span>
+        </div>
+        <div class="story-text reveal">
+          <div class="eyebrow">Unsere Geschichte</div>
+          <h2 style="margin-bottom:20px">Ein Haus zum Ankommen.</h2>
+          <p>Das Gästehaus Hahn liegt im Weinort Straßertal, nur wenige Minuten von Langenlois und dem Kamptal entfernt – einer der schönsten Weinbauregionen Österreichs. Familie Hahn führt das Haus mit spürbarer Herzlichkeit und legt Wert darauf, dass sich jeder Gast wie zu Besuch bei guten Bekannten fühlt.</p>
+          <p>Großzügige, saubere Zimmer, ein weitläufiger Garten mit Pool und ein reichhaltiges Frühstücksbuffet gehören zum festen Programm eines Aufenthalts. Ob als Ausgangspunkt für Weinverkostungen im Kamptal, für Radtouren durchs Straßertal oder einfach zum Durchatmen – hier wird man rundum umsorgt.</p>
+          <div class="quote-note">Unser Motto: <em>„Nicht Zuhause und doch Daheim.“</em> Genau dieses Gefühl möchten wir jedem Gast mitgeben.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Was uns wichtig ist</div>
+        <h2>Was Sie bei uns erwartet.</h2>
+        <p class="lead">Vom Empfang bis zum Frühstück am nächsten Morgen – so gestalten wir Ihren Aufenthalt.</p>
+      </div>
+      <div class="timeline reveal" style="margin:0 auto">
+        <div class="timeline-item">
+          <h3>Persönlicher Empfang</h3>
+          <p>Waltraud Hahn und die Familie begrüßen Sie persönlich und zeigen Ihnen Haus, Garten und Zimmer.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Ruhe im Straßertal</h3>
+          <p>Der Garten mit Pool lädt zum Verweilen ein – fernab vom Trubel, mitten im Weinort Straßertal.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Frühstück, das man nicht vergisst</h3>
+          <p>Ein reichhaltiges Frühstücksbuffet, das von Gästen immer wieder besonders gelobt wird.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Nahe an Langenlois &amp; dem Kamptal</h3>
+          <p>Idealer Ausgangspunkt für Weinverkostungen, Radtouren und Ausflüge in die Region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="cta-band reveal" style="margin-top:0;padding-top:0;border-top:none">
+        <a class="btn btn-primary" href="mailto:gaestehaus-hahn@aon.at">Anfrage per E-Mail</a>
+        <a class="btn btn-outline" style="border-color:var(--gold-light);color:var(--gold-light)" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Gästehaus Hahn</div>
+      <p style="font-size:13px;margin:8px 0 0">Prof. Kasererweg 355 &middot; 3491 Straß im Straßertale</p>
+      <p style="font-size:13px;margin:6px 0 0"><a href="tel:+4327355765" style="text-decoration:none;color:#e8dcc7">+43 2735 5765</a></p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li><li><a href="ueber-uns.html">Geschichte</a></li><li><a href="angebot.html">Zimmer & Ausstattung</a></li><li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <div class="foot-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau, erstellt zu Demonstrationszwecken. Dies ist keine offizielle Website des Gästehaus Hahn (Hahn OG) und steht in keiner Verbindung zum Unternehmen. Alle Angaben ohne Gewähr.
+  </p>
+</footer>
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+
+</body>
+</html>

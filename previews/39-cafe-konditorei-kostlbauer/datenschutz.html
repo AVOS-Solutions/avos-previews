@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Café Konditorei Köstlbauer</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Café Konditorei Köstlbauer gemäß DSGVO-Standardtextbausteinen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7ede0;
+    --paper-2:#efe0c9;
+    --burgundy:#6b1f2a;
+    --burgundy-2:#4a1219;
+    --coffee:#2c1810;
+    --gold:#c9a227;
+    --cream:#fffaf1;
+    --ink:#2c1810;
+    --ink-soft:#6a564a;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  .disclaimer{background:var(--coffee);color:#e9d9c4;font-size:12px;text-align:center;padding:9px 16px;line-height:1.5}
+  .disclaimer strong{color:var(--gold);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,237,224,0.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--coffee)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1220px;margin:0 auto;gap:16px}
+  .masthead{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;text-decoration:none;color:var(--coffee);flex-shrink:0}
+  .masthead em{font-style:italic;color:var(--burgundy)}
+  nav.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:13.5px;text-transform:uppercase;letter-spacing:0.05em}
+  nav.links a{text-decoration:none;color:var(--ink);padding:4px 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--burgundy)}
+  nav.links a.active{color:var(--burgundy);border-bottom-color:var(--burgundy)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;font-size:13.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;border:1.5px solid var(--coffee);cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--burgundy);color:var(--cream);border-color:var(--burgundy)}
+  .btn-primary:hover{background:var(--burgundy-2)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--coffee);width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--coffee);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:0.04em}
+
+  .page-hero{padding:52px 0 40px;border-bottom:2px solid var(--coffee)}
+  .page-hero .eyebrow{color:var(--burgundy)}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--coffee);letter-spacing:-0.02em}
+
+  section{padding:60px 0}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--burgundy);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--burgundy)}
+
+  .legal-notice{background:var(--paper-2);border:1.5px solid var(--burgundy);color:var(--coffee);padding:18px 22px;font-size:14px;line-height:1.6;margin-bottom:44px}
+  .legal-notice strong{color:var(--burgundy)}
+  .prose{max-width:760px}
+  .prose h2{font-size:1.5rem;margin:40px 0 14px;color:var(--coffee)}
+  .prose h2:first-child{margin-top:0}
+  .prose p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:15.5px}
+  .prose li{margin-bottom:8px}
+  .prose strong{color:var(--ink)}
+  .prose a{color:var(--burgundy)}
+
+  footer.site{background:var(--coffee);color:#b39d8a;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(179,157,138,0.2)}
+  .foot-brand{font-family:'Fraunces',serif;color:var(--cream);font-size:19px}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:13.5px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#b39d8a}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-legal{display:flex;gap:16px;list-style:none;margin:10px 0 0;padding:0;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{text-decoration:none;color:#8a7362}
+  .foot-legal a:hover{color:var(--gold)}
+  .foot-note{max-width:1220px;margin:0 auto;padding:20px 24px 26px;font-size:12px;line-height:1.6;color:#8a7362}
+  .foot-note strong{color:#c9a227}
+
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:40px 0}
+    .page-hero{padding:36px 0 28px}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="masthead">Köstlbauer <em>Café</em></a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid var(--coffee);background:var(--paper)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Rechtliches</div>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <div class="prose">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+        Café Konditorei Köstlbauer, Mag. Sebastian Köstlbauer<br>
+        Hauptplatz 31, 3430 Tulln an der Donau<br>
+        E-Mail: <a href="mailto:konditorei@koestlbauer.at">konditorei@koestlbauer.at</a> &middot; Telefon: <a href="tel:+43227262266">+43 2272 62266</a></p>
+
+        <h2>2. Allgemeines zur Datenverarbeitung</h2>
+        <p>Beim Besuch dieser Website werden durch den Hosting-Provider automatisch technische Informationen erfasst (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp), sogenannte Server-Logfiles. Diese Daten dienen der technischen Bereitstellung und Absicherung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+        <h2>3. Cookies</h2>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Sofern Cookies für Statistik- oder Marketingzwecke eingesetzt werden, erfolgt dies nur mit vorheriger Einwilligung der Nutzerinnen und Nutzer im Rahmen eines Cookie-Consent-Tools.</p>
+
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Wenn Sie per E-Mail, Telefon oder auf anderem Weg Kontakt mit uns aufnehmen, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zur Bearbeitung Ihres Anliegens verarbeitet und gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. f DSGVO (Vertragsanbahnung bzw. berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+
+        <h2>5. Google Maps</h2>
+        <p>Zur Darstellung der Anfahrt kann ein Kartenausschnitt von Google Maps eingebunden sein. Beim Aufruf dieser Karte können Daten an Google LLC übertragen werden. Weitere Informationen entnehmen Sie der Datenschutzerklärung von Google.</p>
+
+        <h2>6. Rechte der Betroffenen</h2>
+        <ul>
+          <li>Recht auf Auskunft über die verarbeiteten personenbezogenen Daten</li>
+          <li>Recht auf Berichtigung unrichtiger Daten</li>
+          <li>Recht auf Löschung, sofern keine gesetzliche Aufbewahrungspflicht entgegensteht</li>
+          <li>Recht auf Einschränkung der Verarbeitung</li>
+          <li>Recht auf Datenübertragbarkeit</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+          <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde (dsb.gv.at)</li>
+        </ul>
+
+        <h2>7. Kontakt in Datenschutzfragen</h2>
+        <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Café Konditorei Köstlbauer</div>
+      <p style="font-size:13px;margin:8px 0 0">Hauptplatz 31 &middot; 3430 Tulln an der Donau</p>
+      <p style="font-size:13px;margin:4px 0 0"><a href="tel:+43227262266">+43 2272 62266</a></p>
+      <ul class="foot-legal">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; keine offizielle Website der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+</body>
+</html>

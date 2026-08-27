@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Fahrschule Hietzing seit 1966</title>
+<meta name="description" content="Die Fahrschule Hietzing: seit 1966 in Wien, über 13.000 Absolventen, geleitet seit 2020 von Karl Schlosser, klimaaktiv-zertifiziert.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1a17;
+    --paper:#f4f7f2;
+    --paper-2:#e8efe4;
+    --line:#c9d6c4;
+    --line-strong:#0e1a17;
+    --blue:#1f4fd6;
+    --green:#3bb273;
+    --lime:#c7f13e;
+    --muted:#4c5a54;
+    --focus:#1f4fd6;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Familjen Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;margin:0;line-height:1.08;letter-spacing:-.01em;}
+  p{line-height:1.65;}
+  .wrap{max-width:1220px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  img,svg{display:block;max-width:100%;}
+
+  .disclaimer{background:var(--ink);color:var(--paper);font-size:.78rem;text-align:center;padding:.55rem 1rem;}
+  .disclaimer strong{color:var(--lime);font-weight:700;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(244,247,242,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--line-strong);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:.9rem;gap:1rem;}
+  .brand{font-family:'Unbounded',sans-serif;font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);}
+  .brand .dot{width:12px;height:12px;background:var(--green);border-radius:2px;flex:none;}
+  nav.links{display:flex;gap:2rem;font-size:.88rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+  nav.links a{text-decoration:none;position:relative;padding-block:.2rem;color:var(--ink);}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:3px;background:var(--lime);transition:width .2s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  nav.links a.active{color:var(--blue);}
+  nav.links a.active::after{width:100%;background:var(--blue);}
+  .nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--paper);padding:.8rem 1.3rem;min-height:44px;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;border-radius:2px;}
+  .menu-toggle{display:none;background:none;border:2px solid var(--line-strong);border-radius:4px;min-width:44px;min-height:44px;font-size:1.15rem;}
+  @media (max-width:860px){
+    nav.links{position:fixed;inset:56px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:2px solid var(--line-strong);transform:translateY(-130%);opacity:0;transition:transform .3s ease,opacity .3s ease;max-height:80vh;overflow-y:auto;}
+    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links a{padding:1rem 0;border-bottom:1px solid var(--line);}
+    .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
+    .nav-cta{display:none;}
+  }
+
+  .page-hero{padding-block:clamp(2.4rem,6vw,3.6rem) clamp(2rem,5vw,3rem);border-bottom:2px solid var(--line-strong);background:var(--paper-2);}
+  .breadcrumb{font-size:.82rem;color:var(--muted);margin-bottom:1rem;}
+  .breadcrumb a{color:var(--blue);text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .page-hero h1{font-size:clamp(2rem,5.5vw,3.2rem);max-width:18ch;}
+  .page-hero p.lead{margin-top:1.1rem;max-width:56ch;color:var(--muted);font-size:1.05rem;}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:1.1rem;}
+  .eyebrow .sq{width:10px;height:10px;background:var(--green);flex:none;}
+
+  section{padding-block:clamp(3rem,7vw,5.5rem);}
+  .section-head{max-width:60ch;margin-bottom:2.4rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);}
+  .section-head .eyebrow{margin-bottom:.9rem;}
+
+  .timeline-list{position:relative;margin-top:1rem;padding-left:2rem;border-left:3px solid var(--line-strong);max-width:70ch;}
+  .timeline-item{position:relative;padding-bottom:2.6rem;}
+  .timeline-item:last-child{padding-bottom:0;}
+  .timeline-item::before{content:"";position:absolute;left:-2.2rem;top:.2rem;width:16px;height:16px;background:var(--green);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--line-strong);}
+  .timeline-item .year{font-family:'Unbounded',sans-serif;color:var(--blue);font-size:1.15rem;margin-bottom:.4rem;font-weight:700;}
+  .timeline-item h3{font-size:1.2rem;margin-bottom:.5rem;}
+  .timeline-item p{color:var(--muted);margin:0;}
+
+  .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+  @media (max-width:900px){.story .wrap{grid-template-columns:1fr;}}
+  .story-visual{position:relative;aspect-ratio:1/1;border:2px solid var(--line-strong);border-radius:2px;overflow:hidden;
+    background:
+      linear-gradient(135deg, rgba(59,178,115,.15), transparent 55%),
+      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 40px),
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 40px),
+      var(--paper);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .story-visual .badge{
+    width:60%;aspect-ratio:1/1;border-radius:50%;background:var(--ink);color:var(--lime);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    font-family:'Unbounded',sans-serif;padding:1rem;
+  }
+  .story-visual .badge .big{font-size:clamp(1.4rem,4vw,2.2rem);font-weight:800;}
+  .story-visual .badge .small{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--paper);margin-top:.4rem;}
+  .story-list{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:1rem;}
+  .story-list li{display:flex;gap:.8rem;font-size:.95rem;color:var(--muted);}
+  .story-list li svg{flex:none;width:20px;height:20px;color:var(--green);margin-top:.15rem;}
+
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.5rem;border-radius:2px;font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;min-height:44px;transition:transform .2s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--blue);color:#fff;}
+  .btn-ghost{border:2px solid var(--ink);color:var(--ink);}
+
+  .cta-band{background:var(--ink);color:var(--paper);text-align:center;border-top:2px solid var(--line-strong);}
+  .cta-band h2{color:var(--paper);font-size:clamp(1.7rem,3.6vw,2.4rem);}
+  .cta-band p{color:rgba(244,247,242,.8);max-width:56ch;margin:1rem auto 0;}
+  .cta-band .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2rem;}
+
+  footer.site{background:#0a1310;color:rgba(244,247,242,.7);padding-block:2.2rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:flex-start;}
+  .foot-grid .brand{color:var(--paper);}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.85rem;list-style:none;margin:.8rem 0 0;padding:0;}
+  .foot-links a{color:rgba(244,247,242,.75);text-decoration:none;}
+  .foot-links a:hover{color:var(--lime);text-decoration:underline;}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:60ch;margin-top:1rem;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{transition:none;}}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Fahrschule Hietzing</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="dot" aria-hidden="true"></span>Fahrschule Hietzing</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
+    <nav class="links" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Klassen &amp; Kurse</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="kontakt.html">Kurs anfragen</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Über uns</div>
+      <span class="eyebrow"><span class="sq" aria-hidden="true"></span>Seit 1966</span>
+      <h1>Über die Fahrschule Hietzing</h1>
+      <p class="lead">Seit fast sechs Jahrzehnten begleiten wir Menschen in Wien-Hietzing auf dem Weg zum Führerschein — mit Erfahrung, moderner Ausbildung und einer klaren Haltung zu nachhaltiger Mobilität.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="sq" aria-hidden="true"></span>Geschichte</span>
+        <h2>Von 1966 bis heute</h2>
+      </div>
+      <div class="timeline-list reveal">
+        <div class="timeline-item">
+          <div class="year">1966</div>
+          <h3>Gründung der Fahrschule Hietzing</h3>
+          <p>Die Fahrschule Hietzing wird gegründet und bildet seither Generationen von Fahrschülerinnen und Fahrschülern in Wien aus.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">Seither</div>
+          <h3>Über 13.000 Absolventinnen und Absolventen</h3>
+          <p>Mit den Jahren wächst die Fahrschule zu einem festen Bestandteil der Hietzinger Mobilitätsausbildung — über 13.000 Menschen haben hier ihren Führerschein gemacht.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2020</div>
+          <h3>Leitung durch Karl Schlosser</h3>
+          <p>Karl Schlosser übernimmt die Leitung der Fahrschule und führt das Team seither mit einer Erfolgsquote von 74–78% beim Erstantritt.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="year">Heute</div>
+          <h3>klimaaktiv-zertifiziert &amp; elektrisch unterwegs</h3>
+          <p>Die Fahrschule Hietzing ist klimaaktiv-zertifiziert und bildet auch auf E-Autos und E-Motorrädern aus — Ausbildung für die Mobilität von morgen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" style="background:var(--paper-2);border-top:2px solid var(--line-strong);border-bottom:2px solid var(--line-strong);">
+    <div class="wrap">
+      <div class="story-visual reveal" aria-hidden="true">
+        <div class="badge">
+          <div class="big">klimaaktiv</div>
+          <div class="small">Zertifizierte Fahrschule</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow"><span class="sq" aria-hidden="true"></span>Unsere Haltung</span>
+        <h2>Erfahrung trifft nachhaltige Mobilität</h2>
+        <p style="margin-top:1rem;color:var(--muted);">Wir verbinden jahrzehntelange Ausbildungserfahrung mit einer zeitgemäßen, ressourcenschonenden Fahrschulpraxis — inklusive E-Autos und E-Motorrädern in der Fahrzeugflotte.</p>
+        <ul class="story-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>klimaaktiv-Zertifizierung für nachhaltige Fahrausbildung</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Erfolgsquote von 74–78% beim Erstantritt</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Geleitet seit 2020 von Karl Schlosser</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <h2>Lernen Sie unser Angebot kennen</h2>
+      <p>Von Klasse B bis L17 — finden Sie die passende Ausbildung für Ihren Führerschein.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="angebot.html">Klassen &amp; Kurse ansehen</a>
+        <a class="btn btn-ghost" style="border-color:var(--paper);color:var(--paper);" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand"><span class="dot" aria-hidden="true"></span>Fahrschule Hietzing</div>
+      <div style="font-size:.85rem;color:rgba(244,247,242,.75);margin-top:.4rem;">Hietzinger Hauptstraße 123 · 1130 Wien<br>Tel. <a href="tel:+4318775340" style="color:inherit;">+43 1 877 53 40</a></div>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Fahrschule Hietzing · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

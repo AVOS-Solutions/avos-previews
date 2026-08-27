@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Gasthaus Alt Wien</title>
+<meta name="description" content="Familie Miladinovic führt das Gasthaus Alt Wien in Meidling: Wiener Küche trifft Balkan-Spezialitäten, mit Gastgarten und Räumen für Feiern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b1810; --cream:#fbf2e4; --paprika:#b8451f; --paprika-dark:#8f3417;
+    --mustard:#d99a2b; --olive:#5a6b3f; --line:rgba(43,24,16,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Newsreader', Georgia, serif; margin:0; line-height:1.05; font-weight:600;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--mustard); outline-offset:3px;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.1rem,4vw,3rem); width:100%;}
+
+  .disclaimer{background:var(--ink); color:#f3e3cf; font-size:.72rem; text-align:center; padding:.6rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--mustard);}
+
+  header.site{position:sticky; top:0; z-index:50; background:var(--cream); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.1rem,4vw,3rem); gap:1rem;}
+  .brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:'Newsreader',serif; font-weight:600; font-size:1.15rem; min-height:44px;}
+  .brand .mark{width:38px; height:38px; border-radius:50%; background:var(--paprika); display:grid; place-items:center; flex:none;}
+  .brand .mark svg{width:20px; height:20px;}
+  nav.links{display:flex; gap:1.8rem; font-size:.94rem;}
+  nav.links a{text-decoration:none; padding:.5rem 0; display:inline-flex; align-items:center; min-height:44px;}
+  nav.links a:hover{color:var(--paprika);}
+  nav.links a.active{color:var(--paprika); font-weight:600;}
+  .call-btn{background:var(--paprika); color:var(--cream); text-decoration:none; padding:.7rem 1.3rem; border-radius:6px; font-weight:600; font-size:.9rem; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:8px; min-width:44px; min-height:44px; align-items:center; justify-content:center; cursor:pointer;}
+  .burger svg{width:22px; height:22px;}
+  @media (max-width:840px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--cream); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:400px;}
+    nav.links a{padding:1rem clamp(1.1rem,4vw,3rem); border-top:1px solid var(--line); width:100%;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .page-hero{padding:clamp(2.2rem,5vw,4rem) 0 clamp(1.8rem,3vw,2.6rem);}
+  .kicker{text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; font-weight:600; color:var(--paprika-dark); margin-bottom:1rem; display:flex; align-items:center; gap:.6rem;}
+  .kicker::before{content:""; width:24px; height:2px; background:var(--mustard);}
+  .page-hero h1{font-size:clamp(2.1rem, 5vw, 3.4rem); max-width:20ch;}
+  .page-hero .lead{margin-top:1.2rem; font-size:1.05rem; max-width:56ch; line-height:1.6; color:#4a3626;}
+
+  section{padding:clamp(2.6rem,6vw,4.5rem) 0;}
+  .num{font-family:'Newsreader',serif; font-style:italic; color:var(--paprika); font-size:1rem; display:block; margin-bottom:.5rem;}
+  .section-head{margin-bottom:2rem;}
+  .section-head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);}
+
+  .story{background:#f3e3cc;}
+  .story .wrap{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem);}
+  .story blockquote{margin:0; font-family:'Newsreader',serif; font-style:italic; font-weight:500; font-size:clamp(1.2rem,2.8vw,1.6rem); line-height:1.4; color:var(--paprika-dark); border-left:3px solid var(--mustard); padding-left:1.3rem;}
+  .story .copy p{font-size:1.03rem; line-height:1.7; color:#4a3626;}
+  .story .copy p + p{margin-top:1rem;}
+  @media (max-width:760px){.story .wrap{grid-template-columns:1fr;}}
+
+  .garten{background:var(--ink); color:var(--cream);}
+  .garten .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3rem); align-items:center;}
+  .garten h2{color:var(--cream);}
+  .garten p{color:#e4d2ba; font-size:1.03rem; line-height:1.7; margin-top:1rem; max-width:42ch;}
+  .garten-list{list-style:none; padding:0; margin:1.6rem 0 0; display:flex; flex-direction:column; gap:.9rem;}
+  .garten-list li{display:flex; gap:.8rem; align-items:flex-start; font-size:.98rem; color:#f3e3cc;}
+  .garten-list svg{width:20px; height:20px; flex:none; color:var(--mustard); margin-top:.15rem;}
+  .garten-visual{aspect-ratio:4/3; width:100%; border-radius:14px; position:relative; overflow:hidden; background:radial-gradient(circle at 25% 30%, rgba(217,154,43,.35), transparent 60%), linear-gradient(160deg,#3d2515,#2b1810);}
+  .garten-visual svg{position:absolute; inset:0; width:100%; height:100%;}
+  @media (max-width:760px){.garten .wrap{grid-template-columns:1fr;} .garten-visual{order:-1; max-width:420px; margin:0 auto;}}
+
+  .values{display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;}
+  .values .card{background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:1.6rem;}
+  .values .card svg{width:28px; height:28px; color:var(--paprika);}
+  .values .card h3{font-size:1.05rem; margin-top:.8rem;}
+  .values .card p{font-size:.9rem; color:#5a4636; line-height:1.5; margin-top:.4rem;}
+  @media (max-width:760px){.values{grid-template-columns:1fr;}}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  .cta-band{background:#f3e3cc; text-align:center;}
+  .cta-band h2{font-size:clamp(1.6rem,3.5vw,2.2rem); max-width:26ch; margin:0 auto;}
+  .cta-band p{color:#4a3626; margin-top:1rem; max-width:44ch; margin-left:auto; margin-right:auto;}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.8rem; justify-content:center;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.5rem; border-radius:6px; text-decoration:none; font-weight:600; font-size:.95rem; min-height:44px;}
+  .btn.primary{background:var(--paprika); color:var(--cream);}
+  .btn.outline{border:1.5px solid var(--ink); color:var(--ink);}
+  .btn:hover{opacity:.88;}
+
+  footer.site{padding:2.4rem 0 2rem; text-align:center;}
+  footer.site .wrap{border-top:1px solid var(--line); padding-top:1.6rem;}
+  footer.site .foot-links{display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; font-size:.85rem;}
+  footer.site .foot-links a{text-decoration:none; color:#7a6552; min-height:44px; display:inline-flex; align-items:center;}
+  footer.site .foot-links a:hover{color:var(--paprika);}
+  footer.site small{color:#7a6552; font-size:.8rem; display:block; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Gasthaus Alt Wien</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf2e4" stroke-width="1.8"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg></span>
+      Gasthaus Alt Wien
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4318133207">Reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Über uns</p>
+      <h1>Ein urwienerisches Gasthaus mit Balkan-Herz</h1>
+      <p class="lead">Familie Miladinovic führt ihr Gasthaus in Meidling mit spürbarer Gastfreundschaft – seit Jahren ein Fixpunkt im Grätzel für Nachbarn, Vereine und Familienfeiern.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <blockquote class="reveal">„Ein urwienerisches Gasthaus, in dem sich Wien und der Balkan an einem Tisch treffen.“</blockquote>
+      <div class="copy reveal">
+        <span class="num">Unsere Geschichte</span>
+        <p>In Meidling führt Familie Miladinovic ihr Gasthaus mit Herz: Wiener Küche und Balkan-Spezialitäten stehen gleichberechtigt auf der Karte – ehrlich zubereitet, in großzügigen Portionen, für den schnellen Mittagstisch ebenso wie für den langen Abend im Gastgarten.</p>
+        <p>Ob Familienfeier, Vereinstreffen oder spontaner Besuch nach der Arbeit: Bei Alt Wien ist für jeden Anlass Platz. Die Küche verbindet zwei Welten, ohne eine davon zu verstecken – bodenständig auf der einen, herzhaft-würzig auf der anderen Seite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="num">Was uns ausmacht</span>
+        <h2>Gastfreundschaft mit zwei Küchen</h2>
+      </div>
+      <div class="values reveal">
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M8 3v6M16 3v6M8 9a4 4 0 0 0 8 0M12 9v12"/></svg>
+          <h3>Wiener Küche</h3>
+          <p>Klassische, bodenständige Gerichte aus der österreichischen Tradition.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12c2-6 14-6 16 0-2 6-14 6-16 0Z"/><circle cx="12" cy="12" r="2"/></svg>
+          <h3>Balkan-Spezialitäten</h3>
+          <p>Herzhafte Grillgerichte mit südosteuropäischen Wurzeln, mit Sorgfalt zubereitet.</p>
+        </div>
+        <div class="card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21c0-8 4-12 8-12s8 4 8 12"/><circle cx="12" cy="6" r="3"/></svg>
+          <h3>Familienbetrieb</h3>
+          <p>Persönlich geführt von Familie Miladinovic – mit spürbarer Gastfreundschaft.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="garten">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="num" style="color:var(--mustard)">Gastgarten &amp; Räume</span>
+        <h2>Draußen sitzen, drinnen feiern</h2>
+        <p>Der Gastgarten lädt an warmen Tagen zum Verweilen ein. Für Familienfeiern und Vereinstreffen stehen zudem Räumlichkeiten zur Verfügung – persönlich organisiert von Familie Miladinovic.</p>
+        <ul class="garten-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v6M6 21c0-6 2.7-9 6-9s6 3 6 9"/></svg> Gastgarten für laue Abende</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16v12H4z"/><path d="M4 10h16"/></svg> Räume für Feiern &amp; Vereinstreffen</li>
+        </ul>
+      </div>
+      <div class="garten-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 200 150">
+          <g stroke="#d99a2b" stroke-width="1" fill="none" opacity=".7">
+            <circle cx="100" cy="75" r="55"/>
+            <circle cx="100" cy="75" r="38"/>
+            <circle cx="100" cy="75" r="20"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Lernen Sie uns persönlich kennen</h2>
+      <p>Reservieren Sie einen Tisch oder fragen Sie nach einem Termin für Ihre Feier.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+        <a class="btn outline" href="angebot.html">Zur Speisekarte</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <small>Gasthaus Alt Wien · Koflergasse 26, 1120 Wien · Tel. +43 1 813 32 07<br>
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Alt Wien · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
