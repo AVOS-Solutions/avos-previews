@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Weingut Franz Zottl</title>
+<meta name="description" content="Kontaktdaten, Anfahrt und Kartenausschnitt für Weingut Franz Zottl in Weißenkirchen in der Wachau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0d0b;
+  --ink-2:#171310;
+  --ink-3:#221c17;
+  --gold:#b08a44;
+  --gold-2:#d8bd82;
+  --cream:#efe6d6;
+  --cream-dim:#c9bda9;
+  --green:#2a3324;
+  --line:rgba(239,230,214,.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{overflow-x:hidden;}
+body{
+  margin:0;background:var(--ink);color:var(--cream);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:400;margin:0;color:var(--cream);}
+p{margin:0;}
+a{color:inherit;}
+svg{display:block;max-width:100%;}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+
+.disclaimer{
+  background:var(--ink-3);color:var(--gold-2);font-size:.72rem;letter-spacing:.02em;
+  text-align:center;padding:.55rem 1rem;line-height:1.5;border-bottom:1px solid var(--line);
+}
+.disclaimer strong{color:#fff;}
+
+header.site{
+  position:sticky;top:0;z-index:40;
+  background:rgba(15,13,11,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:1.1rem clamp(1.25rem,4vw,3rem);max-width:1160px;margin:0 auto;position:relative;}
+.brand{font-family:'Newsreader',serif;font-style:italic;font-size:1.2rem;color:var(--cream);text-decoration:none;flex:none;}
+.navlinks{display:flex;gap:2.2rem;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;}
+.navlinks a{text-decoration:none;color:var(--cream-dim);padding:.6rem 0;}
+.navlinks a:hover,.navlinks a:focus-visible,.navlinks a.active{color:var(--gold-2);}
+.navcta{
+  display:none;
+  border:1px solid var(--gold);color:var(--gold-2);text-decoration:none;
+  align-items:center;min-height:44px;
+  padding:.6rem 1.1rem;border-radius:2px;font-size:.78rem;letter-spacing:.05em;
+}
+.navcta:hover,.navcta:focus-visible{background:var(--gold);color:var(--ink);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-2);outline-offset:3px;}
+.burger{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;background:none;border:1px solid var(--gold);border-radius:4px;
+  padding:0;cursor:pointer;flex:none;
+}
+.burger svg{width:20px;height:20px;}
+.burger path{stroke:var(--gold-2);}
+@media(min-width:760px){
+  .navcta{display:inline-flex;}
+  .burger{display:none;}
+}
+@media(max-width:759px){
+  .navlinks{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--ink-2);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .navlinks a{padding:.9rem clamp(1.25rem,4vw,3rem);width:100%;box-sizing:border-box;min-height:44px;display:flex;align-items:center;}
+  .navlinks.open{max-height:320px;}
+}
+
+.page-hero{
+  position:relative;overflow:hidden;
+  padding:clamp(4rem,10vw,6.5rem) 0 clamp(3rem,7vw,4.5rem);
+  background:
+    radial-gradient(90% 60% at 50% 0%, var(--green) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 80%);
+  text-align:center;
+}
+.page-hero .wrap{position:relative;z-index:2;}
+.since{
+  font-family:'Newsreader',serif;font-style:italic;color:var(--gold-2);
+  font-size:.95rem;letter-spacing:.1em;margin-bottom:1.4rem;display:inline-block;
+  border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:.5rem 1.4rem;
+}
+.page-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;max-width:22ch;margin-inline:auto;}
+.page-hero .sub{margin:1.6rem auto 0;max-width:52ch;font-size:1.05rem;line-height:1.75;color:var(--cream-dim);font-family:'IBM Plex Sans';}
+
+.hero{
+  position:relative;overflow:hidden;
+  min-height:min(92vh,880px);
+  display:flex;align-items:center;
+  background:
+    radial-gradient(90% 60% at 50% 0%, var(--green) 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink-2) 0%, var(--ink) 70%);
+}
+.hero-lines{position:absolute;inset:0;opacity:.5;}
+.hero-inner{position:relative;z-index:2;width:100%;text-align:center;padding:6rem 1.5rem 4rem;}
+.hero h1{
+  font-size:clamp(3rem,9vw,6.4rem);line-height:.95;letter-spacing:-.01em;
+}
+.hero .sub{
+  margin:2rem auto 0;max-width:46ch;font-size:1.08rem;line-height:1.75;color:var(--cream-dim);font-family:'IBM Plex Sans';
+}
+.hero-cta{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2.6rem;}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.95rem 1.7rem;font-size:.85rem;
+  letter-spacing:.04em;text-decoration:none;border-radius:2px;transition:all .25s ease;
+}
+.btn-gold{background:var(--gold);color:var(--ink);}
+.btn-gold:hover,.btn-gold:focus-visible{background:var(--gold-2);}
+.btn-line{border:1px solid var(--cream-dim);color:var(--cream);}
+.btn-line:hover,.btn-line:focus-visible{border-color:var(--gold-2);color:var(--gold-2);}
+
+section{padding:clamp(3.5rem,8vw,7rem) 0;}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold-2);display:block;margin-bottom:1rem;
+}
+.section-head{max-width:640px;margin:0 auto 3.5rem;text-align:center;}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);}
+.section-head.left{margin-left:0;text-align:left;}
+
+.timeline{border-top:1px dashed var(--line);}
+.tl-row{
+  display:grid;grid-template-columns:1fr;gap:.6rem;
+  padding:2.4rem 0;border-bottom:1px dashed var(--line);position:relative;
+}
+@media(min-width:720px){
+  .tl-row{grid-template-columns:150px 1fr;gap:2.5rem;align-items:start;}
+}
+.tl-year{font-family:'Newsreader',serif;font-style:italic;font-size:2.1rem;color:var(--gold-2);}
+.tl-body h3{font-size:1.3rem;margin-bottom:.5rem;}
+.tl-body p{color:var(--cream-dim);line-height:1.7;font-size:.98rem;max-width:60ch;}
+
+.offer{background:var(--ink-3);}
+.offer-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);grid-template-columns:1fr;}
+@media(min-width:700px){.offer-grid{grid-template-columns:repeat(3,1fr);}}
+.offer-cell{background:var(--ink-3);padding:2.2rem 1.8rem;}
+.offer-cell .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);}
+.offer-cell h3{margin-top:.8rem;font-size:1.4rem;}
+.offer-cell p{margin-top:.8rem;color:var(--cream-dim);font-size:.92rem;line-height:1.65;}
+
+.service-grid{margin-top:1px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-top:0;grid-template-columns:1fr;}
+@media(min-width:700px){.service-grid{grid-template-columns:1fr 1fr;}}
+.service-cell{background:var(--ink-2);padding:2.2rem 1.8rem;}
+.service-cell h3{font-size:1.25rem;margin-bottom:.7rem;}
+.service-cell p{color:var(--cream-dim);font-size:.94rem;line-height:1.7;}
+
+.teaser-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;margin-top:1rem;}
+@media(min-width:820px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+.teaser-card{
+  border:1px solid var(--line);padding:2.1rem;
+  display:flex;flex-direction:column;gap:1rem;background:var(--ink-2);
+}
+.teaser-card h3{font-size:1.25rem;}
+.teaser-card p{color:var(--cream-dim);line-height:1.7;font-size:.94rem;flex:1;}
+.teaser-card a.more{
+  font-size:.82rem;letter-spacing:.04em;text-decoration:none;color:var(--gold-2);
+  border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:2px;
+}
+.teaser-card a.more:hover,.teaser-card a.more:focus-visible{color:#fff;}
+
+.contact-grid{display:grid;gap:2.5rem;}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr;}}
+.contact-card{border:1px solid var(--line);padding:2.4rem;}
+.contact-card h3{font-size:1.3rem;margin-bottom:1.5rem;}
+dl.info{display:grid;gap:1.1rem;margin:0;}
+dl.info dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-2);}
+dl.info dd{margin:.25rem 0 0;font-size:1.02rem;}
+dl.info a{text-decoration:none;border-bottom:1px solid var(--gold);}
+dl.info a:hover,dl.info a:focus-visible{color:var(--gold-2);}
+.map-frame{border:1px solid var(--line);min-height:260px;}
+.map-frame iframe{width:100%;height:100%;min-height:260px;border:0;display:block;filter:grayscale(.2) contrast(1.05);}
+
+.legal{max-width:760px;}
+.legal h2{font-size:clamp(1.4rem,3vw,1.9rem);margin-top:2.2rem;color:var(--cream);}
+.legal h2:first-child{margin-top:0;}
+.legal p,.legal li{color:var(--cream-dim);line-height:1.8;font-size:.97rem;}
+.legal ul{padding-left:1.2rem;}
+.legal a{color:var(--gold-2);}
+.legal-notice{
+  background:var(--ink-3);border:1px solid var(--line);border-left:4px solid var(--gold);
+  padding:1.2rem 1.4rem;margin-bottom:2.4rem;font-size:.92rem;line-height:1.65;color:var(--cream);
+}
+.legal-notice strong{color:#fff;}
+
+footer{background:var(--ink-2);border-top:1px solid var(--line);padding:3rem 0 1.6rem;}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;padding-bottom:2rem;border-bottom:1px solid var(--line);}
+.footer-brand{font-family:'Newsreader',serif;font-style:italic;font-size:1.3rem;color:#fff;}
+.footer-note{font-size:.8rem;color:var(--cream-dim);max-width:34ch;line-height:1.65;}
+.footer-col h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-2);margin-bottom:.9rem;}
+.footer-links{display:flex;flex-direction:column;gap:.6rem;font-size:.85rem;}
+.footer-links a{text-decoration:none;color:var(--cream-dim);}
+.footer-links a:hover,.footer-links a:focus-visible{color:var(--gold-2);}
+.footer-bottom{padding-top:1.5rem;font-size:.72rem;color:rgba(201,189,169,.6);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;}
+.footer-bottom a{color:inherit;}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Weingut Franz Zottl</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html">Franz Zottl</a>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Geschichte</a>
+      <a href="angebot.html">Weine &amp; Gäste</a>
+      <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    </div>
+    <a class="navcta" href="tel:+4327152325">+43 2715 2325</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="since reveal">Kontakt &amp; Anfahrt</span>
+      <h1 class="reveal">Vorbeikommen, verkosten, bleiben.</h1>
+      <p class="sub reveal">Für Reservierungen im Heurigen, Zimmeranfragen oder Fragen zu unseren Weinen erreichen Sie Franz Zottl telefonisch oder per E-Mail.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Franz Zottl</h3>
+          <dl class="info">
+            <div>
+              <dt>Adresse</dt>
+              <dd>Weitenbergweg 105, 3610 Weißenkirchen in der Wachau</dd>
+            </div>
+            <div>
+              <dt>Telefon</dt>
+              <dd><a href="tel:+4327152325">+43 2715 2325</a> · <a href="tel:+436504003747">+43 650 4003747</a></dd>
+            </div>
+            <div>
+              <dt>E-Mail</dt>
+              <dd><a href="mailto:office@weingut-zottl.at">office@weingut-zottl.at</a></dd>
+            </div>
+            <div>
+              <dt>Öffnungszeiten</dt>
+              <dd>Heurigen-Ausstecktermine und Zimmerverfügbarkeit auf Anfrage</dd>
+            </div>
+          </dl>
+          <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap;">
+            <a class="btn btn-gold" href="tel:+4327152325">Anrufen</a>
+            <a class="btn btn-line" href="mailto:office@weingut-zottl.at">E-Mail schreiben</a>
+            <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Weitenbergweg%20105%2C%203610%20Wei%C3%9Fenkirchen%20in%20der%20Wachau">Route planen</a>
+          </div>
+        </div>
+        <div class="map-frame reveal">
+          <iframe title="Karte: Weingut Franz Zottl, Weitenbergweg 105, Weißenkirchen" loading="lazy" src="https://www.google.com/maps?q=Weitenbergweg%20105%2C%203610%20Wei%C3%9Fenkirchen%20in%20der%20Wachau&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Weingut Franz Zottl</div>
+        <p class="footer-note" style="margin-top:.6rem;">Weinbau, Heuriger &amp; Gästezimmer seit 1917 in Weißenkirchen in der Wachau.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="ueber-uns.html">Geschichte</a>
+          <a href="angebot.html">Weine &amp; Gäste</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weingut Franz Zottl · keine Verbindung zum Unternehmen.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>Weitenbergweg 105, 3610 Weißenkirchen in der Wachau · <a href="tel:+4327152325">+43 2715 2325</a></span>
+      <span>Gestaltungs-Vorschau, nicht die echte Website des Betriebs</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var burger=document.getElementById('burger');
+    var navlinks=document.getElementById('navlinks');
+    if(burger&&navlinks){
+      burger.addEventListener('click',function(){
+        var open=navlinks.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open?'true':'false');
+      });
+      navlinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          navlinks.classList.remove('open');
+          burger.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+    var els=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+        });
+      },{threshold:.12});
+      els.forEach(function(el){io.observe(el);});
+    } else {
+      els.forEach(function(el){el.classList.add('in');});
+    }
+  });
+</script>
+</body>
+</html>
