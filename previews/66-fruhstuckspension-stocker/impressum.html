@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Frühstückspension Stocker</title>
+<meta name="description" content="Muster-Impressum für die Frühstückspension Stocker, Bad Aussee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c6e50;
+    --sage-dark:#3d4a36;
+    --cream:#faf6ec;
+    --cream-2:#f0ead9;
+    --rust:#b5623a;
+    --ink:#2c2a22;
+    --line:rgba(44,42,34,0.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Work Sans',system-ui,sans-serif; line-height:1.65;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant',Georgia,serif; margin:0; font-weight:600;}
+  a{color:inherit;}
+  .wrap{max-width:72rem; margin:0 auto; padding:0 min(6vw,1.6rem); width:100%;}
+  :focus-visible{outline:3px solid var(--rust); outline-offset:2px;}
+  img,svg{display:block; max-width:100%; height:auto;}
+
+  .disclaimer{
+    background:var(--sage-dark); color:#eef1e8; font-size:0.76rem; text-align:center;
+    padding:0.55rem 1rem; letter-spacing:0.01em;
+  }
+  .disclaimer strong{font-weight:600;}
+
+  header.site{
+    padding:1.1rem 0; position:sticky; top:0; z-index:30;
+    background:rgba(250,246,236,0.94); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; position:relative;}
+  .brand{font-family:'Cormorant',serif; font-weight:600; font-size:clamp(1.2rem,3vw,1.5rem); color:var(--sage-dark); text-decoration:none;}
+  .brand small{display:block; font-family:'Work Sans',sans-serif; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--rust); font-weight:500;}
+  nav.main{display:flex; align-items:center;}
+  nav.main a{
+    text-decoration:none; font-size:0.9rem; margin-left:1.5rem; color:var(--ink);
+    display:inline-flex; align-items:center; min-height:44px; border-bottom:2px solid transparent;
+  }
+  nav.main a:hover{border-color:var(--rust);}
+  nav.main a.active{border-color:var(--sage-dark); font-weight:600; color:var(--sage-dark);}
+  .nav-toggle{
+    display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:50%;
+    background:#fff; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px; flex-shrink:0;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--sage-dark); display:block;}
+  @media (max-width:780px){
+    nav.main{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--cream); border-bottom:1px solid var(--line); flex-direction:column;
+      padding:0.4rem min(6vw,1.6rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.7rem 0; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .subhero{
+    padding:clamp(2.4rem,6vw,3.4rem) 0 clamp(1.4rem,3vw,1.8rem); position:relative; overflow:hidden;
+    background:linear-gradient(160deg, var(--cream) 60%, var(--cream-2) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .subhero .wrap{position:relative;}
+  .subhero h1{font-size:clamp(1.9rem,4.4vw,2.6rem); color:var(--sage-dark); font-style:italic;}
+
+  section{padding:0 0 clamp(3rem,7vw,4.5rem);}
+
+  .legal-notice{
+    background:var(--cream-2); border:1px solid var(--line); border-left:4px solid var(--rust);
+    border-radius:3px; padding:1.1rem 1.3rem; font-size:0.92rem; color:#4a4636; margin:2rem 0 2.2rem;
+  }
+  .legal-content h2{font-family:'Cormorant',serif; font-style:italic; font-size:clamp(1.3rem,3vw,1.6rem); margin-top:2.2rem; color:var(--sage-dark);}
+  .legal-content h2:first-of-type{margin-top:0;}
+  .legal-content p, .legal-content li{font-size:0.98rem; color:#4a4636; max-width:64ch;}
+  .legal-content dl{display:grid; grid-template-columns:auto 1fr; gap:0.5rem 1rem; max-width:44rem; font-size:0.98rem; margin-top:1rem;}
+  @media (max-width:500px){ .legal-content dl{grid-template-columns:1fr;} .legal-content dd{margin-bottom:0.6rem;} }
+  .legal-content dt{font-weight:600; color:var(--sage-dark);}
+  .legal-content dd{margin:0; color:#4a4636;}
+  .placeholder{color:#8a8268; font-style:italic;}
+
+  footer.site{
+    background:var(--ink); color:#cabf9f; padding:2.2rem 0; font-size:0.85rem;
+  }
+  footer.site .wrap{display:flex; justify-content:space-between; gap:1rem 2rem; flex-wrap:wrap; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#cabf9f; text-decoration:underline; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-note{max-width:34rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Frühstückspension Stocker</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Pension Stocker<small>Bad Aussee · Ausseerland</small></a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <h1>Impressum</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap legal-content">
+    <div class="legal-notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Angaben gemäß § 5 ECG / § 25 Mediengesetz</h2>
+    <dl>
+      <dt>Diensteanbieterin</dt>
+      <dd>Frühstückspension Stocker, Elisabeth Liesinger</dd>
+      <dt>Inhaberin</dt>
+      <dd>Elisabeth Liesinger</dd>
+      <dt>Anschrift</dt>
+      <dd>Altausseerstraße 245, 8990 Bad Aussee, Österreich</dd>
+      <dt>Telefon</dt>
+      <dd><a href="tel:+43362252484">+43 3622 52484</a></dd>
+      <dt>E-Mail</dt>
+      <dd><a href="mailto:pensionstocker@gmx.at">pensionstocker@gmx.at</a></dd>
+      <dt>Firmenbuchnummer</dt>
+      <dd class="placeholder">[Firmenbuchnummer]</dd>
+      <dt>UID-Nummer</dt>
+      <dd class="placeholder">[UID-Nummer]</dd>
+      <dt>Gewerbebehörde</dt>
+      <dd class="placeholder">[zuständige Gewerbebehörde]</dd>
+      <dt>Anwendbare Rechtsvorschriften</dt>
+      <dd class="placeholder">[Gewerbeordnung, einsehbar unter www.ris.bka.gv.at]</dd>
+    </dl>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter ec.europa.eu/consumers/odr. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle <span class="placeholder">[weder verpflichtet noch bereit / bereit — vom Betrieb zu ergänzen]</span>.</p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>Diese Seite dient ausschließlich als unverbindliche Gestaltungs-Vorschau. Für die Inhalte einer tatsächlich betriebenen Website wäre die jeweilige Diensteanbieterin im Rahmen der allgemeinen Gesetze verantwortlich.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-note">
+      <div>© Frühstückspension Stocker · Altausseerstraße 245, 8990 Bad Aussee · <a href="tel:+43362252484" style="color:#cabf9f;">+43 3622 52484</a></div>
+      <div style="margin-top:0.4rem;">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Frühstückspension Stocker · keine Verbindung zum Unternehmen</div>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

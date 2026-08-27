@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Bäckerei &amp; Café Enzlmüller</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Bäckerei &amp; Café Enzlmüller in Ort im Innkreis — generischer Platzhaltertext zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf1de; --paper:#fff8ec; --ink:#3a2417; --ink-soft:#6b5240;
+    --brown:#3a2417; --brown-deep:#241408; --honey:#e2963c; --tomato:#c1442e;
+    --line:rgba(58,36,23,0.14); --focus:#c1442e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Work Sans',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,.display{font-family:'Bricolage Grotesque',system-ui,sans-serif;}
+  a{color:var(--tomato);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  .narrow{max-width:760px;}
+
+  .disclaimer{background:var(--brown-deep);color:#e9c9a3;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:var(--honey);font-weight:700;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,241,222,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.1rem,4vw,3rem);gap:1rem;position:relative;}
+  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.35rem;text-decoration:none;color:var(--brown-deep);white-space:nowrap;}
+  .brand span{color:var(--tomato);}
+  nav.links{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;}
+  nav.links a{text-decoration:none;font-weight:600;font-size:0.92rem;color:var(--ink-soft);padding:0.25rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--tomato);}
+  nav.links a.active{color:var(--tomato);border-bottom-color:var(--tomato);}
+  .nav-cta{display:inline-flex;align-items:center;min-height:44px;background:var(--tomato);color:#fff8ec;padding:0.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.86rem;white-space:nowrap;}
+  .burger{display:none;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:10px;min-width:44px;min-height:44px;padding:0;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--brown-deep);margin:4px 0;}
+
+  main{padding:clamp(2.4rem,6vw,3.8rem) 0 clamp(4rem,7vw,6rem);}
+  h1{font-size:clamp(2rem,4.5vw,2.8rem);margin:0 0 1.5rem;color:var(--brown-deep);}
+  .notice{background:#fff0e0;border:1.5px solid var(--tomato);border-radius:14px;padding:1.2rem 1.4rem;font-size:0.94rem;color:#5a2a1a;margin-bottom:2.5rem;}
+  .notice strong{color:var(--tomato);}
+  h2{font-size:1.3rem;margin:2.2rem 0 0.6rem;color:var(--brown-deep);}
+  p,li{color:var(--ink-soft);font-size:1rem;}
+  ul{padding-left:1.2rem;}
+
+  footer{background:var(--brown-deep);color:#b09679;padding:2.5rem 0 1.5rem;}
+  .foot-disclaimer{max-width:1200px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid rgba(255,248,236,0.1);margin-bottom:1.5rem;font-size:0.78rem;}
+  .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.85rem;}
+  .foot-links{display:flex;gap:1.2rem;list-style:none;margin:0.6rem 0 0;padding:0;flex-wrap:wrap;}
+  .foot-links a{color:#d9c1a5;text-decoration:none;font-size:0.83rem;}
+  .foot-links a:hover{color:var(--honey);text-decoration:underline;}
+
+  @media (max-width:860px){
+    nav.links,.nav-cta{display:none;}
+    .burger{display:flex;}
+    .nav.open nav.links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--paper);padding:1.2rem clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid var(--line);gap:0.2rem;z-index:60;}
+    .nav.open nav.links a{min-height:44px;display:flex;align-items:center;}
+    .nav.open .nav-cta{display:inline-flex;margin-top:0.6rem;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer"><strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Bäckerei &amp; Café Enzlmüller · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav" id="nav">
+    <a href="index.html" class="brand">Enzl<span>müller</span></a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Sortiment</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4377518260">Anrufen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap narrow">
+    <h1>Datenschutzerklärung</h1>
+    <div class="notice"><strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</div>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Bäckerei &amp; Café Enzlmüller, Ort 63, 4974 Ort im Innkreis. Kontakt: <a href="tel:+4377518260">+43 7751 8260</a>, <a href="mailto:baeckerei@enzlmueller-ort.at">baeckerei@enzlmueller-ort.at</a>.</p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Wir verarbeiten personenbezogene Daten unserer Websitebesucher grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Rechtsgrundlage bilden Art. 6 Abs. 1 lit. a (Einwilligung), lit. b (Vertragserfüllung/Anbahnung) und lit. f (berechtigtes Interesse) der DSGVO.</p>
+
+    <h2>3. Server-Logfiles / Hosting</h2>
+    <p>Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch Informationen in Server-Logfiles gespeichert, die Ihr Browser übermittelt (z. B. IP-Adresse, Datum und Uhrzeit der Anfrage, Browsertyp). Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>4. Cookies</h2>
+    <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Werden darüber hinaus Cookies für Statistik- oder Marketingzwecke eingesetzt, erfolgt dies nur nach Ihrer Einwilligung über ein entsprechendes Consent-Tool. Sie können die Speicherung von Cookies in Ihrem Browser jederzeit einschränken oder verhindern.</p>
+
+    <h2>5. Kontaktaufnahme</h2>
+    <p>Wenn Sie uns per Telefon oder E-Mail kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage sowie für mögliche Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+
+    <h2>6. Google Maps</h2>
+    <p>Auf unserer Kontaktseite kann eine Karte von Google Maps eingebunden sein. Beim Laden der Karte können Daten (z. B. IP-Adresse) an Google Ireland Limited übertragen werden. Weitere Informationen entnehmen Sie der Datenschutzerklärung von Google.</p>
+
+    <h2>7. Ihre Rechte als betroffene Person</h2>
+    <ul>
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+      <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+    </ul>
+
+    <h2>8. Kontakt für Datenschutzanliegen</h2>
+    <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Bäckerei &amp; Café Enzlmüller · keine Verbindung zum Unternehmen</div>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>© Bäckerei &amp; Café Enzlmüller</span>
+      <span>Ort 63, 4974 Ort im Innkreis · +43 7751 8260</span>
+    </div>
+    <ul class="foot-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burgerBtn');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.links a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

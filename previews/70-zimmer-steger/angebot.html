@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer & Ausstattung — Zimmer Steger</title>
+<meta name="description" content="Zwei ebenerdige Doppelzimmer mit Dusche/WC und Sat-TV bei Zimmer Steger in Ludersdorf, Gnas – ruhig gelegen im Steirischen Vulkanland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c6e58; --sage-dark:#3c4a39; --clay:#b97a5a; --cream:#f7f3ea;
+    --paper:#fffdf8; --ink:#2c2e28; --line:rgba(44,46,40,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Newsreader', serif;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);}
+  :focus-visible{outline:3px solid var(--clay); outline-offset:3px;}
+
+  .disclaimer{background:var(--sage-dark); color:#e9efe6; font-size:.78rem; text-align:center; padding:.6rem 1rem; line-height:1.45;}
+  .disclaimer strong{color:#d9c2a8;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(247,243,234,.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.2rem,4vw,2.5rem); position:relative;}
+  .brand{font-family:'Newsreader',serif; font-weight:500; font-size:1.3rem; text-decoration:none;}
+  .brand em{font-style:italic; color:var(--clay);}
+  nav.links ul{list-style:none; display:flex; gap:2rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; color:var(--ink); padding:.6rem 0; display:inline-block; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--clay);}
+  nav.links a.active{color:var(--sage-dark); font-weight:600; border-bottom-color:var(--clay);}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; border:2px solid var(--ink); border-radius:8px; background:none; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,5vw,3rem); background:linear-gradient(160deg, rgba(92,110,88,.08), transparent 60%); border-bottom:1px solid var(--line);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); font-weight:500; max-width:22ch;}
+  .page-hero p.lead{margin-top:1.1rem; max-width:48ch; color:#4a4d43; font-size:clamp(1rem,2vw,1.08rem);}
+  .breadcrumb{font-size:.82rem; color:var(--clay); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  .eyebrow{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--sage-dark); margin-bottom:.9rem; display:flex; align-items:center; gap:.6rem;}
+  .eyebrow::before{content:""; width:2rem; height:2px; background:var(--clay); flex-shrink:0;}
+
+  section{padding:clamp(3.2rem,7vw,5.5rem) 0;}
+  .section-head{max-width:40rem; margin-bottom:clamp(2rem,5vw,3rem);}
+  .section-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem); font-weight:500; line-height:1.15;}
+
+  .rooms{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .room-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.2rem,3vw,2rem);}
+  @media (max-width:700px){ .room-grid{grid-template-columns:1fr;} }
+  .room-card{border:1px solid var(--line); border-radius:20px; overflow:hidden; background:var(--cream); transition:transform .25s, box-shadow .25s;}
+  .room-card:hover{transform:translateY(-4px); box-shadow:0 26px 50px -30px rgba(44,46,40,.35);}
+  .room-top{height:150px; position:relative; background:linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);}
+  .room-top::after{content:""; position:absolute; inset:0; background:radial-gradient(45% 60% at 80% 20%, rgba(185,122,90,.5), transparent 70%);}
+  .room-top .rn{position:absolute; bottom:1rem; left:1.3rem; color:#f4efe2; font-family:'Newsreader',serif; font-size:1.3rem; font-style:italic;}
+  .room-body{padding:1.5rem 1.5rem 1.7rem;}
+  .room-body h3{font-size:1.1rem; font-weight:600; font-family:'IBM Plex Sans'; margin-bottom:.7rem;}
+  .room-body p{color:#4a4d43; font-size:.92rem; margin-bottom:.9rem;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:.5rem;}
+  .tag{font-size:.78rem; background:#fff; border:1px solid var(--line); border-radius:999px; padding:.35rem .8rem; color:#4a4d43;}
+
+  .amenity-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;}
+  @media (max-width:760px){ .amenity-grid{grid-template-columns:1fr;} }
+  .a-card{padding:1.6rem; border-radius:16px; background:var(--paper); border:1px solid var(--line);}
+  .a-card .ic{width:36px; height:36px; margin-bottom:.9rem; color:var(--clay);}
+  .a-card h3{font-size:1rem; font-weight:600; font-family:'IBM Plex Sans'; margin-bottom:.4rem;}
+  .a-card p{font-size:.9rem; color:#565a4f;}
+
+  .note{display:flex; gap:1rem; align-items:flex-start; background:var(--paper); border-left:4px solid var(--clay); border-radius:12px; padding:1.4rem 1.6rem; margin-top:2.4rem; max-width:56rem; border:1px solid var(--line); border-left-width:4px;}
+  .note svg{flex-shrink:0; margin-top:.15rem; color:var(--clay);}
+  .note p{font-size:.94rem; color:#4a4d43;}
+
+  .cta-row{display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.8rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.8rem 1.5rem; border-radius:10px; font-weight:600; font-size:.94rem; text-decoration:none; transition:transform .2s, background .2s;}
+  .btn-primary{background:var(--sage-dark); color:#f5f1e6;}
+  .btn-primary:hover{transform:translateY(-2px); background:var(--sage);}
+  .btn-ghost{border:1.5px solid var(--sage-dark); color:var(--sage-dark);}
+  .btn-ghost:hover{background:rgba(60,74,57,.08);}
+
+  footer{background:var(--sage-dark); color:#e9e4d5; padding:clamp(2rem,5vw,3rem) 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(233,228,213,.15);}
+  .footer-brand{font-family:'Newsreader',serif; font-size:1.3rem; font-style:italic;}
+  footer address{font-style:normal; font-size:.9rem; color:#c7c1ac; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c7c1ac; text-decoration:none;}
+  footer address a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c7c1ac; text-decoration:none;}
+  .footer-nav a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.1rem 1rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c7c1ac; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#a8a28e; padding:1rem 1rem 1.5rem; line-height:1.5;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.2rem,4vw,2.5rem); left:clamp(1.2rem,4vw,2.5rem); background:var(--paper); border:1px solid var(--line); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid var(--line); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+  .nav-panel a.active{color:var(--clay);}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Zimmer <em>Steger</em></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html" class="active" aria-current="page">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html" class="active" aria-current="page">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Zimmer & Ausstattung</p>
+      <p class="eyebrow">Unterkunft</p>
+      <h1>Zwei Zimmer, ganz für Sie</h1>
+      <p class="lead">Zwei ebenerdige Doppelzimmer mit Dusche, WC und Sat-TV – ruhig gelegen in Ludersdorf, fünf Minuten von Gnas entfernt.</p>
+    </div>
+  </section>
+
+  <section class="rooms">
+    <div class="wrap">
+      <div class="room-grid">
+        <article class="room-card reveal">
+          <div class="room-top"><span class="rn">Doppelzimmer I</span></div>
+          <div class="room-body">
+            <h3>Ebenerdig & ruhig</h3>
+            <p>Ein Doppelzimmer mit eigener Dusche/WC und Sat-TV, ebenerdig zugänglich – ideal für einen entspannten Aufenthalt.</p>
+            <div class="tag-row">
+              <span class="tag">Dusche / WC</span>
+              <span class="tag">Sat-TV</span>
+              <span class="tag">Ebenerdig</span>
+            </div>
+          </div>
+        </article>
+        <article class="room-card reveal">
+          <div class="room-top"><span class="rn">Doppelzimmer II</span></div>
+          <div class="room-body">
+            <h3>Ebenerdig & ruhig</h3>
+            <p>Das zweite Doppelzimmer bietet dieselbe ruhige, ebenerdige Ausstattung mit Dusche/WC und Sat-TV.</p>
+            <div class="tag-row">
+              <span class="tag">Dusche / WC</span>
+              <span class="tag">Sat-TV</span>
+              <span class="tag">Ebenerdig</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Ausstattung & Lage</p>
+        <h2>Alles, was für einen ruhigen Aufenthalt zählt</h2>
+      </div>
+      <div class="amenity-grid">
+        <div class="a-card reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 2v4M16 2v4"/></svg>
+          <h3>Dusche & WC</h3>
+          <p>Beide Doppelzimmer verfügen über eine eigene Dusche mit WC.</p>
+        </div>
+        <div class="a-card reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          <h3>Sat-TV</h3>
+          <p>Satellitenfernsehen ist in beiden Zimmern verfügbar.</p>
+        </div>
+        <div class="a-card reveal">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+          <h3>Ebenerdiger Zugang</h3>
+          <p>Beide Zimmer sind ebenerdig erreichbar – bequem ohne Stufen.</p>
+        </div>
+      </div>
+      <div class="note reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b97a5a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p>Für individuelle Wünsche zu Anreise, Aufenthaltsdauer oder Besonderheiten beraten Sie Erich und Maria Steger gerne persönlich – rufen Sie einfach an.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+436641364008">Zimmer anfragen</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt & Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Zimmer Steger</div>
+      <address>Ludersdorf 24, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+436641364008">+43 664 1364008</a><br>E-Mail: <a href="mailto:info@zimmer-steger.at">info@zimmer-steger.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer & Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
