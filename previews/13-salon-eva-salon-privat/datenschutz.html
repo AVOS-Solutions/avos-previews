@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Salon Eva &amp; Salon Privat</title>
+<meta name="description" content="Muster-Datenschutzerklärung für Salon Eva &amp; Salon Privat — generischer Platzhaltertext, keine rechtsverbindliche Datenschutzerklärung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f0e8;--cream-2:#efe4d6;--ink:#2a201c;--rose:#b8493f;--rose-deep:#8f342b;
+    --gold:#b8935a;--charcoal:#171310;--charcoal-2:#211a16;--privat-ink:#f2e9dc;--privat-muted:#c9b8a3;
+    --line:rgba(42,32,28,0.14);--line-dark:rgba(242,233,220,0.16);--focus:#b8935a;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  .disclosure{background:var(--charcoal);color:var(--privat-muted);font-size:0.72rem;letter-spacing:0.02em;text-align:center;padding:0.55rem 1rem;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,240,232,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);gap:1rem;max-width:1180px;margin:0 auto;}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none;flex-shrink:0;}
+  .brandmark .div{color:var(--gold);font-weight:300;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding:0.3rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose-deep);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  .nav-cta{display:none;border:1px solid var(--ink);border-radius:999px;padding:0.5rem 1.2rem;font-size:0.85rem;font-weight:600;text-decoration:none;white-space:nowrap;}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:860px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;min-height:44px;display:flex;align-items:center;}
+  section{padding:clamp(3rem,8vw,5.5rem) 0;}
+  h1{font-size:clamp(2rem,5vw,2.8rem);}
+  .legal-notice{background:var(--cream-2);border:1px solid var(--line);border-left:4px solid var(--rose-deep);border-radius:12px;padding:1.4rem 1.6rem;margin:2rem 0 2.5rem;font-size:0.92rem;line-height:1.6;}
+  .legal-notice strong{color:var(--rose-deep);}
+  .legal-section{margin-top:2.2rem;}
+  .legal-section h2{font-size:1.3rem;margin-bottom:0.6rem;}
+  .legal-section p,.legal-section li{color:#4a3a33;font-size:0.98rem;}
+  .legal-section ul{padding-left:1.3rem;margin-top:0.6rem;}
+  .legal-section li{margin-bottom:0.4rem;}
+  footer.site{background:var(--charcoal-2);color:var(--privat-muted);padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{max-width:1180px;display:flex;flex-direction:column;gap:1.2rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;}
+  footer.site .foot-links a{text-decoration:none;color:var(--privat-muted);}
+  footer.site .foot-links a:hover{color:var(--privat-ink);}
+  footer .legal{border-top:1px solid var(--line-dark);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brandmark" href="index.html"><span>Salon Eva</span><span class="div">/</span><span>Privat</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4312690570">+43 1 269 05 70</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4312690570">Anrufen: +43 1 269 05 70</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h1>Datenschutzerklärung</h1>
+      <div class="legal-notice">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <div class="legal-section">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist: Salon Eva / Salon Privat, Schiffmühlenstraße 53, 1220 Wien, Telefon: <a href="tel:+4312690570">+43 1 269 05 70</a>.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Welche Daten bei Website-Nutzung verarbeitet werden</h2>
+        <p>Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in sogenannten Server-Logfiles erfasst. Diese Daten dienen ausschließlich dem sicheren und stabilen Betrieb der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Cookies</h2>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Es werden keine Cookies zu Marketing- oder Analysezwecken ohne vorherige Einwilligung eingesetzt. Sie können die Speicherung von Cookies über die Einstellungen Ihres Browsers verhindern oder bereits gespeicherte Cookies löschen.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Wenn Sie per Telefon oder E-Mail Kontakt mit uns aufnehmen, werden die von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zum Zweck der Bearbeitung Ihrer Anfrage und für den Fall daran anschließender Fragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Google Maps</h2>
+        <p>Auf der Kontaktseite kann eine Karte von Google Maps eingebunden sein, um die Anfahrt zu erleichtern. Beim Aufruf dieser Karte können Daten an Google LLC übertragen werden. Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Ihre Rechte als Betroffene Person</h2>
+        <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>
+        <ul>
+          <li>Auskunft über Ihre gespeicherten personenbezogenen Daten</li>
+          <li>Berichtigung unrichtiger personenbezogener Daten</li>
+          <li>Löschung Ihrer gespeicherten personenbezogenen Daten</li>
+          <li>Einschränkung der Datenverarbeitung</li>
+          <li>Widerspruch gegen die Verarbeitung</li>
+          <li>Datenübertragbarkeit</li>
+        </ul>
+        <p>Sie haben zudem das Recht, sich bei der österreichischen Datenschutzbehörde (dsb.gv.at) zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen geltendes Datenschutzrecht verstößt.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="font-size:1rem;">Salon Eva <span class="div">/</span> Salon Privat</div>
+      <div>Schiffmühlenstraße 53, 1220 Wien · +43 1 269 05 70</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>

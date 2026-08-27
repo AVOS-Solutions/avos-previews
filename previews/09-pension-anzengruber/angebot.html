@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer &amp; Ausstattung — Pension Anzengruber</title>
+<meta name="description" content="Zimmer & Apartments, Garten mit Swimmingpool und Gästeküche in der Pension Anzengruber, Hadersdorf-Weidlingau. Zimmer bereits ab ca. 32,50 € pro Person.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f2e7;--paper:#fbf8f1;--ink:#2a3327;--ink-soft:#4a5646;
+    --sage:#5c7a5e;--sage-dark:#3c5540;--terracotta:#c1744a;--pool:#6fa3a6;
+    --line: rgba(42,51,39,0.14);--radius: 28px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;border-radius:4px;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,242,231,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1.1rem clamp(1.25rem,4vw,3rem);max-width:1180px;margin:0 auto;gap:0.6rem 1rem;}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex:1 1 200px;min-width:0;}
+  .brand-mark{width:34px;height:34px;border-radius:50%;flex:none;background:conic-gradient(from 200deg, var(--sage), var(--pool), var(--terracotta), var(--sage));display:inline-block;}
+  .nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0;font-size:0.95rem;}
+  .nav-links a{text-decoration:none;position:relative;padding:0.2rem 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--terracotta);transition:width 0.25s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--terracotta);font-weight:600;}
+  .nav-links a.active::after{width:100%;}
+  .nav-cta{background:var(--sage-dark);color:#fff;text-decoration:none;padding:0.75rem 1.2rem;border-radius:999px;font-size:0.9rem;font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;position:relative;flex:none;}
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--ink);}
+  .menu-toggle span{top:20px;}
+  .menu-toggle::before{top:14px;}
+  .menu-toggle::after{top:26px;}
+  @media (max-width:820px){
+    .nav-links{position:fixed;inset:64px 0 0 0;background:var(--paper);flex-direction:column;padding:2rem 1.5rem;gap:0.5rem;font-size:1.15rem;transform:translateY(-110%);transition:transform 0.3s ease;overflow-y:auto;}
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{width:100%;}
+    .nav-links a{display:flex;align-items:center;min-height:44px;padding:0.4rem 0;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 3rem;border-bottom:1px solid var(--line);background:var(--paper);}
+  .eyebrow{text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;font-weight:600;color:var(--sage-dark);margin-bottom:1.2rem;display:block;}
+  .page-hero h1{font-size:clamp(2rem,4.4vw,3.3rem);}
+  .page-hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:56ch;margin-top:1.1rem;}
+
+  .amenities{padding:5rem 0;}
+  .amenities h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:0.6rem;}
+  .amenities .sub{color:var(--ink-soft);max-width:56ch;margin-bottom:2.8rem;}
+  .grid-amenities{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;transition:transform 0.25s ease, box-shadow 0.25s ease;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(42,51,39,0.25);}
+  .card .icon{width:44px;height:44px;margin-bottom:1rem;}
+  .card h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
+  .card p{margin:0;font-size:0.92rem;color:var(--ink-soft);}
+  .card.price{background:var(--sage-dark);color:#eef3ea;border-color:transparent;}
+  .card.price p{color:#d9e4d5;}
+
+  .rooms{padding:0 0 5rem;}
+  .rooms h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:2.4rem;}
+  .room-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+  .room-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;}
+  .room-card h3{font-size:1.25rem;margin-bottom:0.6rem;}
+  .room-card p{margin:0;color:var(--ink-soft);font-size:0.98rem;}
+  .room-card .tag{display:inline-block;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;color:var(--sage-dark);background:rgba(92,122,94,0.12);padding:0.3rem 0.7rem;border-radius:999px;margin-bottom:0.9rem;}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1.6rem;min-height:44px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:transform 0.2s ease, box-shadow 0.2s ease;border:none;cursor:pointer;}
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 8px 24px -8px rgba(193,116,74,0.6);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:none;}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream);}
+
+  @media (max-width:980px){
+    .grid-amenities{grid-template-columns:repeat(2,1fr);}
+    .room-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .grid-amenities{grid-template-columns:1fr;}
+    nav{flex-wrap:wrap;row-gap:0.6rem;}
+  }
+
+  footer.site{background:var(--ink);color:#cdd6c8;padding:3rem 0 0;font-size:0.9rem;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;padding-bottom:2rem;}
+  footer.site .brand{color:#eef3ea;}
+  footer.site .brand-mark{width:26px;height:26px;}
+  footer.site p{margin:0.8rem 0 0;color:#cdd6c8;}
+  footer.site a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-links{display:flex;gap:1.4rem;align-items:flex-start;font-size:0.88rem;}
+  .disclaimer-footer{border-top:1px solid rgba(238,243,234,0.15);padding:1.1rem 0;font-size:0.78rem;color:#9fab97;text-align:center;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html" aria-label="Pension Anzengruber – Start">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Pension Anzengruber
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active" aria-current="page">Zimmer &amp; Ausstattung</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43197922214">+43 1 979 22 14</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Zimmer &amp; Ausstattung</span>
+      <h1>Zimmer, Garten, Gästeküche.</h1>
+      <p class="lead">Alles, was einen entspannten Aufenthalt am Wiener Stadtrand ausmacht – übersichtlich zusammengefasst.</p>
+    </div>
+  </section>
+
+  <section class="rooms">
+    <div class="wrap">
+      <h2 class="reveal" style="margin-top:3rem;">Unterkunft</h2>
+      <div class="room-grid">
+        <article class="room-card reveal">
+          <span class="tag">Zimmer</span>
+          <h3>Zimmer</h3>
+          <p>Unterschiedlich geschnittene Zimmer für kurze wie längere Aufenthalte, ruhig gelegen im Grünen von Hadersdorf-Weidlingau.</p>
+        </article>
+        <article class="room-card reveal">
+          <span class="tag">Apartments</span>
+          <h3>Apartments</h3>
+          <p>Für Gäste, die etwas mehr Platz und Unabhängigkeit wünschen – ideal in Kombination mit der Gästeküche.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities">
+    <div class="wrap">
+      <h2 class="reveal">Ausstattung im Haus</h2>
+      <p class="sub reveal">Garten, Pool und Küche – für Gäste, die mehr als nur ein Bett suchen.</p>
+      <div class="grid-amenities">
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none" stroke="#3c5540" stroke-width="1.8"><rect x="6" y="14" width="32" height="22" rx="2"/><path d="M6 22h32"/><path d="M14 14v-4h16v4"/></svg>
+          <h3>Zimmer &amp; Apartments</h3>
+          <p>Unterschiedliche Größen für Kurz- und Längeraufenthalte, ruhig gelegen im Grünen.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none" stroke="#3c5540" stroke-width="1.8"><path d="M22 6c6 6 6 12 0 18-6-6-6-12 0-18Z"/><path d="M22 24v14"/><path d="M14 38h16"/></svg>
+          <h3>Eigener Garten</h3>
+          <p>Grünfläche mit altem Baumbestand – Frühstück, Lesen oder einfach durchatmen.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none" stroke="#3c5540" stroke-width="1.8"><rect x="6" y="16" width="32" height="14" rx="3"/><path d="M10 30v4M34 30v4"/><path d="M12 21q3-3 6 0t6 0 6 0 6 0"/></svg>
+          <h3>Swimmingpool</h3>
+          <p>Erfrischung an heißen Wiener Sommertagen, direkt im Garten der Pension.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none" stroke="#3c5540" stroke-width="1.8"><rect x="8" y="10" width="28" height="24" rx="2"/><path d="M8 18h28"/><circle cx="16" cy="14" r="1.4" fill="#3c5540" stroke="none"/><circle cx="22" cy="14" r="1.4" fill="#3c5540" stroke="none"/></svg>
+          <h3>Gästeküche</h3>
+          <p>Für Selbstversorger und alle, die auch unterwegs gerne selbst kochen.</p>
+        </article>
+      </div>
+      <div class="grid-amenities" style="margin-top:1.4rem;grid-template-columns:1fr;">
+        <article class="card price reveal" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div>
+            <h3 style="margin-bottom:0.3rem;">Zimmer bereits ab ca. 32,50 € pro Person</h3>
+            <p>Genaue Preise je nach Zimmerkategorie und Saison – gerne auf Anfrage.</p>
+          </div>
+          <a class="btn btn-primary" href="kontakt.html">Preise anfragen</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms" style="padding-top:0;">
+    <div class="wrap" style="text-align:center;">
+      <div class="cta-row reveal" style="justify-content:center;">
+        <a class="btn btn-primary" href="tel:+43197922214">Zimmer anfragen</a>
+        <a class="btn btn-ghost" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Pension Anzengruber
+      </a>
+      <p>Anzengruberstraße 59, 1140 Wien<br>Familie Knöll · <a href="tel:+43197922214">+43 1 979 22 14</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="disclaimer-footer">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Pension Anzengruber · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

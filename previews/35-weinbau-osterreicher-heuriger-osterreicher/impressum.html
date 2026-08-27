@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Weinbau Österreicher, Pfaffstätten</title>
+<meta name="description" content="Muster-Impressum für die Gestaltungs-Vorschau von Weinbau Österreicher in Pfaffstätten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f1ea;--panel:#fff;--ink:#1c1c1a;--ink-soft:#54514a;
+    --burgundy:#7a2331;--olive:#5c6b3f;--sand:#d8c9a3;--line:#dcd5c4;--maxw:1280px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;font-size:clamp(15px,1.5vw,16.5px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;}
+  a{color:var(--burgundy);}
+  .wrap{max-width:840px;margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--burgundy);outline-offset:3px;}
+
+  .disclaimer{background:var(--ink);color:var(--sand);text-align:center;font-size:.78rem;padding:.55rem 1rem;}
+  .disclaimer strong{color:#fff;font-weight:600;}
+
+  header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);z-index:40;}
+  nav.wrap{max-width:1280px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.1rem 6vw;position:relative;}
+  .brand{font-family:'Instrument Serif',serif;font-size:1.6rem;letter-spacing:.01em;text-decoration:none;color:var(--ink);}
+  .navlinks{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-size:.85rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--burgundy);}
+  .navtoggle{display:none;background:none;border:1px solid var(--ink);border-radius:8px;width:44px;height:44px;cursor:pointer;color:var(--ink);flex:none;}
+  @media(max-width:840px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:.2rem;padding:1rem 6vw 1.5rem;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:none;text-transform:none;font-size:1rem;}
+    .navlinks.open{display:flex;}
+    .navlinks a{min-height:48px;}
+    .navtoggle{display:block;}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3rem,7vw,5rem);}
+  h1{font-size:clamp(2rem,5vw,3rem);font-style:italic;margin:0 0 1.6rem;}
+  .notice{background:#fff8e6;border:1px solid #e3c98a;border-radius:4px;padding:1.1rem 1.3rem;font-size:.92rem;color:#5c4a1a;margin-bottom:2.2rem;}
+  h2{font-size:1.2rem;font-family:'Space Grotesk',sans-serif;font-weight:600;margin:2rem 0 .6rem;}
+  p{color:var(--ink-soft);margin:0 0 .8rem;}
+  .placeholder{color:var(--burgundy);font-style:italic;}
+
+  footer.site{background:#131311;color:#9c9689;padding:2.4rem 0 1.6rem;font-size:.85rem;}
+  footer.site .wrap{max-width:1280px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;}
+  .footer-col h4{margin:0 0 .6rem;color:#cfc7b4;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+  .footer-col p{margin:0 0 .4rem;color:#9c9689;}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .footer-links a{color:#9c9689;text-decoration:none;min-height:32px;display:inline-flex;align-items:center;}
+  .footer-links a:hover{color:var(--sand);}
+  .footer-disclaimer{width:100%;border-top:1px solid #2a2823;margin-top:1.8rem;padding-top:1.2rem;font-size:.78rem;color:#847d6f;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Weinbau Österreicher</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">Österreicher</a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Impressum</h1>
+    <div class="notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Diensteanbieter</h2>
+    <p>Weinbau Österreicher (Heuriger Österreicher)<br>
+    Bahngasse 19<br>
+    2511 Pfaffstätten<br>
+    Niederösterreich, Österreich</p>
+
+    <h2>Kontakt</h2>
+    <p>Telefon: <a href="tel:+436647614027">+43 664 7614027</a><br>
+    E-Mail: <a href="mailto:office@heuriger-oesterreicher.at">office@heuriger-oesterreicher.at</a></p>
+
+    <h2>Ansprechperson</h2>
+    <p>Elfriede Polt-Österreicher</p>
+
+    <h2>Unternehmensangaben</h2>
+    <p>Firmenbuchnummer: <span class="placeholder">[Firmenbuchnummer, falls vorhanden]</span><br>
+    UID-Nummer: <span class="placeholder">[UID-Nummer]</span><br>
+    Zuständige Kammer/Innung: <span class="placeholder">[z. B. Wirtschaftskammer Niederösterreich, Fachgruppe Gastronomie]</span></p>
+
+    <h2>Anwendbares Recht</h2>
+    <p>Es gilt österreichisches Recht. Diese Musterseite dient ausschließlich der Veranschaulichung einer möglichen Website-Gestaltung.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Weinbau Österreicher</h4>
+      <p>Bahngasse 19 · 2511 Pfaffstätten</p>
+      <p><a href="tel:+436647614027" style="color:inherit;">+43 664 7614027</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div class="footer-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weinbau Österreicher · keine Verbindung zum Unternehmen
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

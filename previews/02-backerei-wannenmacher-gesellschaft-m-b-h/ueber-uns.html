@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bäckerei Wannenmacher — Wiens älteste Bäckerei seit 1848, Sievering</title>
-<meta name="description" content="Seit 1848 in Familienbesitz: die Bäckerei Wannenmacher in Wien-Sievering backt das originale Heurigen-Roggenbrot nach unverändertem Rezept – mit Café, Frühstück und Terrasse.">
+<title>Über uns — Bäckerei Wannenmacher</title>
+<meta name="description" content="Die Geschichte der Bäckerei Wannenmacher: seit 1848 ununterbrochen in Familienbesitz, mit dem originalen Heurigen-Roggenbrot-Rezept.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -22,12 +22,16 @@
     --ink-soft:#5a4530;
     --line:rgba(44,28,16,.14);
     --focus:#8a4b17;
+    --font-head:'DM Serif Display',Georgia,serif;
+    --legal-note-bg:#fff3de;
+    --legal-note-fg:#4a3216;
+    --legal-note-border:#e8c98a;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;}
-  h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:0;line-height:1.06;}
+  h1,h2,h3{font-family:var(--font-head);font-weight:400;margin:0;line-height:1.06;}
   p{line-height:1.65;}
   .wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
   :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
@@ -38,23 +42,23 @@
 
   header.site{position:sticky;top:0;z-index:40;background:rgba(251,245,233,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding-block:.9rem;gap:1rem;}
-  .brand{font-family:'DM Serif Display',serif;font-size:1.2rem;line-height:1.1;display:flex;flex-direction:column;}
+  .brand{font-family:var(--font-head);font-size:1.2rem;line-height:1.1;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);}
   .brand small{font-family:'DM Sans',sans-serif;font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bread);}
   nav.links{display:flex;gap:2rem;font-size:.92rem;font-weight:500;}
   nav.links a{text-decoration:none;position:relative;padding-block:.2rem;}
   nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--bread);transition:width .25s ease;}
   nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  nav.links a.active{color:var(--crust);font-weight:700;}
   .nav-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--crust);color:var(--wheat-soft);padding:.8rem 1.2rem;border-radius:10px;min-height:44px;font-size:.85rem;font-weight:700;text-decoration:none;}
   .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;font-size:1.15rem;}
   @media (max-width:840px){
-    nav.links{position:fixed;inset:56px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);opacity:0;transition:transform .3s ease,opacity .3s ease;}
+    nav.links{position:fixed;inset:56px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);opacity:0;transition:transform .3s ease,opacity .3s ease;max-height:calc(100vh - 56px);overflow-y:auto;}
     nav.links.open{transform:translateY(0);opacity:1;}
-    nav.links a{padding:.9rem 0;border-bottom:1px solid var(--line);}
+    nav.links a{padding:.9rem 0;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
     .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
     .nav-cta{display:none;}
   }
 
-  /* hero: full-bleed typographic, bread-loaf gradient shapes */
   .hero{position:relative;overflow:hidden;padding-block:clamp(3.5rem,10vw,7.5rem) clamp(3rem,7vw,5rem);
     background:linear-gradient(175deg,var(--paper) 0%,var(--paper-2) 100%);}
   .hero-loaf{position:absolute;right:-10%;top:10%;width:min(55vw,520px);height:min(55vw,520px);
@@ -65,27 +69,30 @@
   .hero .wrap{position:relative;}
   .eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--bread);margin-bottom:1.2rem;}
   .eyebrow::before{content:"";width:26px;height:2px;background:var(--bread);}
-  .hero h1{font-size:clamp(2.6rem,8vw,5.6rem);max-width:16ch;color:var(--crust);}
+  .hero h1{font-size:clamp(2.3rem,8vw,5.6rem);max-width:16ch;color:var(--crust);}
   .hero h1 .yr{color:var(--bread);}
-  .hero-lead{margin-top:1.5rem;max-width:48ch;font-size:1.1rem;color:var(--ink-soft);}
+  .hero-lead{margin-top:1.5rem;max-width:48ch;font-size:clamp(1rem,2vw,1.1rem);color:var(--ink-soft);}
   .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;}
   .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.5rem;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;min-height:44px;transition:transform .2s ease;}
   .btn:hover{transform:translateY(-2px);}
   .btn-primary{background:var(--crust);color:var(--wheat-soft);}
   .btn-ghost{border:1.5px solid var(--crust);color:var(--crust);}
 
-  section{padding-block:clamp(3.2rem,7vw,6rem);}
-  .section-head{max-width:60ch;margin-bottom:2.6rem;}
-  .section-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);color:var(--crust);}
+  .page-hero{position:relative;overflow:hidden;padding-block:clamp(2.8rem,7vw,5rem) clamp(2.4rem,6vw,3.5rem);
+    background:linear-gradient(175deg,var(--paper) 0%,var(--paper-2) 100%);}
+  .page-hero h1{font-size:clamp(2.1rem,5.5vw,3.6rem);color:var(--crust);max-width:18ch;}
+  .page-hero p{margin-top:1rem;max-width:52ch;color:var(--ink-soft);font-size:1.05rem;}
 
-  /* stats strip */
+  section{padding-block:clamp(3rem,7vw,6rem);}
+  .section-head{max-width:60ch;margin-bottom:2.6rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--crust);}
+
   .stats{background:var(--crust);color:var(--wheat-soft);}
   .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;}
   @media (max-width:640px){.stats .wrap{grid-template-columns:1fr;gap:1.6rem;}}
-  .stats .num{font-family:'DM Serif Display',serif;font-size:clamp(2.2rem,5vw,3rem);color:var(--wheat);}
+  .stats .num{font-family:var(--font-head);font-size:clamp(2.2rem,5vw,3rem);color:var(--wheat);}
   .stats .lbl{font-size:.85rem;color:rgba(244,230,196,.8);margin-top:.3rem;}
 
-  /* timeline / storytelling */
   .timeline{background:var(--paper);}
   .tl{position:relative;margin-top:2.5rem;}
   .tl::before{content:"";position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--line);}
@@ -101,11 +108,10 @@
     .tl-item:nth-child(odd) .tl-dot{left:auto;right:-9px;}
     .tl-item:nth-child(even) .tl-dot{left:-9px;}
   }
-  .tl-year{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--bread);}
+  .tl-year{font-family:var(--font-head);font-size:1.6rem;color:var(--bread);}
   .tl-item h3{font-size:1.25rem;margin-top:.3rem;color:var(--crust);}
   .tl-item p{margin-top:.5rem;color:var(--ink-soft);font-size:.95rem;}
 
-  /* offerings */
   .offer{background:var(--paper-2);}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
   @media (max-width:900px){.grid3{grid-template-columns:1fr 1fr;}}
@@ -115,7 +121,15 @@
   .offer-card h3{font-size:1.2rem;color:var(--crust);margin-bottom:.5rem;}
   .offer-card p{font-size:.92rem;color:var(--ink-soft);margin:0;}
 
-  /* contact */
+  .teaser{background:var(--paper-2);}
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+  @media (max-width:900px){.teaser-grid{grid-template-columns:1fr;}}
+  .teaser-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;}
+  .teaser-card h3{font-size:1.25rem;color:var(--crust);margin-bottom:.6rem;}
+  .teaser-card p{font-size:.92rem;color:var(--ink-soft);flex:1;}
+  .teaser-card a.more{margin-top:1.1rem;font-weight:700;color:var(--bread);text-decoration:none;font-size:.9rem;}
+  .teaser-card a.more:hover{text-decoration:underline;}
+
   .contact{background:var(--crust);color:var(--wheat-soft);}
   .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;}
   @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
@@ -125,76 +139,80 @@
   .contact-list svg{flex:none;width:22px;height:22px;color:var(--wheat);margin-top:.15rem;}
   .contact-list a{text-decoration:none;font-weight:700;color:var(--wheat-soft);}
   .contact-list a:hover{text-decoration:underline;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem;}
+  .cta-row .btn-ghost{border-color:var(--wheat);color:var(--wheat-soft);}
   .map-card{border-radius:16px;overflow:hidden;border:1px solid rgba(244,230,196,.2);background:var(--crust-2);}
   .map-card iframe{width:100%;height:280px;border:0;display:block;filter:grayscale(.15);}
   .map-card .map-foot{padding:1rem 1.2rem;font-size:.85rem;color:var(--wheat-soft);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
   .map-card .map-foot a{font-weight:700;color:var(--wheat);text-decoration:none;}
 
-  footer.site{background:var(--crust-2);color:rgba(244,230,196,.7);padding-block:2.5rem;}
-  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center;}
+  footer.site{background:var(--crust-2);color:rgba(244,230,196,.7);padding-block:2.2rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;align-items:center;padding-block:.6rem;}
   .foot-grid .brand{color:var(--paper);}
   .foot-grid .brand small{color:var(--wheat);}
-  .foot-note{font-size:.8rem;line-height:1.6;max-width:60ch;}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:70ch;padding-top:.8rem;border-top:1px solid rgba(244,230,196,.15);margin-top:.4rem;}
+  footer.site nav.links{position:static;background:none;transform:none;opacity:1;padding:0;border:0;}
+  footer.site .foot-links a{color:rgba(244,230,196,.85);}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:none;}
   @media (prefers-reduced-motion:reduce){.reveal{transition:none;}}
+
+  .legal{padding-block:clamp(3rem,7vw,5.5rem);}
+  .legal h1{font-size:clamp(2rem,4.5vw,3rem);margin-top:.6rem;}
+  .legal-note{
+    background:var(--legal-note-bg);color:var(--legal-note-fg);
+    border:1px solid var(--legal-note-border);border-radius:14px;
+    padding:1rem 1.3rem;font-size:.92rem;line-height:1.55;max-width:70ch;margin-bottom:1.8rem;
+  }
+  .legal-block{max-width:70ch;margin-top:2.2rem;}
+  .legal-block h2{font-family:var(--font-head);font-weight:600;font-size:1.25rem;margin-bottom:.6rem;}
+  .legal-block p{color:var(--ink-soft);}
+  .legal-dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.2rem;margin:1rem 0 0;font-size:.95rem;}
+  .legal-dl dt{font-weight:600;}
+  .legal-dl dd{margin:0;color:var(--ink-soft);}
+  @media (max-width:640px){.legal-dl{grid-template-columns:1fr;gap:.15rem 0;} .legal-dl dt{margin-top:.6rem;}}
+
+  .foot-links{display:flex;gap:1.4rem;font-size:.85rem;}
+  .foot-links a{text-decoration:none;opacity:.85;}
+  .foot-links a:hover{text-decoration:underline;opacity:1;}
+  nav.links a.active{opacity:1;}
+  nav.links a.active::after{width:100%;}
+
 </style>
 </head>
 <body>
 
-<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Bäckerei Wannenmacher</strong> · keine Verbindung zum Unternehmen</div>
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Bäckerei Wannenmacher</strong> · keine Verbindung zum Unternehmen</div>
 
 <header class="site">
   <div class="wrap nav">
-    <div class="brand">Bäckerei Wannenmacher<small>Seit 1848 · Sievering</small></div>
+    <a class="brand" href="index.html">Bäckerei Wannenmacher<small>Seit 1848 · Sievering</small></a>
     <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
     <nav class="links" id="mainNav">
-      <a href="#geschichte">Geschichte</a>
-      <a href="#angebot">Angebot</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+      <a href="angebot.html">Sortiment</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
-    <a class="nav-cta" href="#kontakt">Café &amp; Anfahrt</a>
+    <a class="nav-cta" href="kontakt.html">Café &amp; Anfahrt</a>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="hero-loaf" aria-hidden="true"></div>
+  <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">Bäckerei &amp; Café · Wien-Sievering</span>
-      <h1>Wiens älteste Bäckerei backt seit <span class="yr">1848</span> für Sievering.</h1>
-      <p class="hero-lead">Das originale Heurigen-Roggenbrot entsteht bis heute nach unverändertem Rezept — in Familienhand, mit Café, Frühstück und Terrasse in der Sieveringer Straße.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:+43132034 91">Bäckerei anrufen</a>
-        <a class="btn btn-ghost" href="#angebot">Zum Angebot</a>
-      </div>
+      <span class="eyebrow">Über uns</span>
+      <h1>Eine Familie, ein Rezept, fast zwei Jahrhunderte</h1>
+      <p>Seit der Gründung 1848 backt die Familie Wannenmacher in Sievering — bis heute nach demselben Grundsatz: Qualität, die man schmeckt.</p>
     </div>
   </section>
 
-  <section class="stats">
-    <div class="wrap">
-      <div>
-        <div class="num">1848</div>
-        <div class="lbl">Gründungsjahr — älteste Bäckerei Wiens in Familienbesitz</div>
-      </div>
-      <div>
-        <div class="num">Familie</div>
-        <div class="lbl">Ununterbrochen in Familienbesitz, bis heute</div>
-      </div>
-      <div>
-        <div class="num">1</div>
-        <div class="lbl">Original-Rezept fürs Heurigen-Roggenbrot, unverändert</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="timeline" id="geschichte">
+  <section class="timeline">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Geschichte</span>
-        <h2>Eine Familie, ein Rezept, fast zwei Jahrhunderte</h2>
-        <p style="margin-top:.8rem;color:var(--ink-soft);">Seit der Gründung 1848 backt die Familie Wannenmacher in Sievering — bis heute nach demselben Grundsatz: Qualität, die man schmeckt, und ein Roggenbrot, das seinen Ruf als Wiener Original zurecht trägt.</p>
+        <h2>Fast zwei Jahrhunderte Backtradition</h2>
       </div>
       <div class="tl">
         <div class="tl-item reveal">
@@ -211,6 +229,12 @@
         </div>
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
+          <div class="tl-year">bis heute</div>
+          <h3>Ununterbrochen in Familienbesitz</h3>
+          <p>Über Generationen hinweg blieb die Bäckerei in der Hand der Familie Wannenmacher — eine Kontinuität, die in Wien ihresgleichen sucht.</p>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
           <div class="tl-year">heute</div>
           <h3>Café, Frühstück und Terrasse</h3>
           <p>Neben der Backstube lädt das Café mit Frühstücksangebot und Terrasse zum Verweilen in Sievering ein — geführt von Geschäftsführer Gregor Lautner.</p>
@@ -219,79 +243,18 @@
     </div>
   </section>
 
-  <section class="offer" id="angebot">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Angebot</span>
-        <h2>Vom Ofen direkt auf den Tisch</h2>
-      </div>
-      <div class="grid3 reveal">
-        <div class="offer-card">
-          <div class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 0 1 16 0c0 4-3 5-3 9H7c0-4-3-5-3-9Z"/><path d="M9 6c-1 1-1.5 2-1.5 3M15 6c1 1 1.5 2 1.5 3"/></svg>
-          </div>
-          <h3>Heurigen-Roggenbrot</h3>
-          <p>Das originale Rezept, unverändert seit den Anfängen der Bäckerei — der Klassiker aus Sievering.</p>
-        </div>
-        <div class="offer-card">
-          <div class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9M8 10V6a4 4 0 0 1 8 0v4"/></svg>
-          </div>
-          <h3>Café &amp; Frühstück</h3>
-          <p>Frühstück, Kaffee und Mehlspeisen im gemütlichen Café — mit Blick auf die Sieveringer Straße.</p>
-        </div>
-        <div class="offer-card">
-          <div class="ic" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v6H3zM3 9v12h18V9M8 21V9M16 21V9"/></svg>
-          </div>
-          <h3>Terrasse in Sievering</h3>
-          <p>Sitzplätze im Freien für eine Pause mit frischem Gebäck, mitten im Grätzel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="kontakt">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <span class="eyebrow" style="color:var(--wheat)">Kontakt &amp; Anfahrt</span>
-        <h2>Vorbeikommen und probieren</h2>
-        <p style="margin-top:1rem;color:rgba(244,230,196,.85);max-width:44ch;">Fragen zu Öffnungszeiten, Bestellungen oder dem Café beantwortet Geschäftsführer Gregor Lautner gerne.</p>
-        <ul class="contact-list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Sieveringer Straße 76, 1190 Wien</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <a href="tel:+4313203491">+43 1 320 34 91</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-            <a href="mailto:office@wannenmacher-brot.at">office@wannenmacher-brot.at</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span>Ansprechperson: Gregor Lautner, Geschäftsführer</span>
-          </li>
-        </ul>
-        <a class="btn btn-ghost" style="margin-top:1.8rem;border-color:var(--wheat);color:var(--wheat-soft);" href="https://www.google.com/maps/search/?api=1&query=Sieveringer%20Stra%C3%9Fe%2076%2C%201190%20Wien">Route berechnen</a>
-      </div>
-      <div class="map-card reveal">
-        <iframe title="Lage der Bäckerei Wannenmacher" loading="lazy" src="https://www.google.com/maps?q=Sieveringer%20Stra%C3%9Fe%2076%2C%201190%20Wien&output=embed"></iframe>
-        <div class="map-foot">
-          <span>Sieveringer Straße 76, 1190 Wien</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Sieveringer%20Stra%C3%9Fe%2076%2C%201190%20Wien" target="_blank" rel="noopener">Karte öffnen ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site">
   <div class="wrap foot-grid">
     <div class="brand">Bäckerei Wannenmacher<small>Sieveringer Straße 76 · 1190 Wien</small></div>
-    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Bäckerei Wannenmacher · keine Verbindung zum Unternehmen.</p>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Bäckerei Wannenmacher · keine Verbindung zum Unternehmen.</p>
   </div>
 </footer>
 

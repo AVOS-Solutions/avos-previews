@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolonitz Beisl – Alt-Wiener Wirtshaus seit 1900</title>
+<meta name="description" content="Kolonitz Beisl in der Bechardgasse, Wien-Landstraße: Alt-Wiener Wirtshaus seit 1900 mit klassischer Hausmannskost, zwei Gaststuben, Reservierung telefonisch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#12201a;
+    --bg2:#0d1813;
+    --paper:#f3ead6;
+    --ink:#f3ead6;
+    --ink-dim:#b9c4ba;
+    --gold:#c9a13a;
+    --burgundy:#7a2331;
+    --line:rgba(243,234,214,.14);
+    --focus:#c9a13a;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope', system-ui, sans-serif; line-height:1.6;}
+  .serif{font-family:'Libre Caslon Text', Georgia, serif;}
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:2px;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclaimer{background:var(--bg2); color:#cfc4a3; text-align:center; font-size:.72rem; padding:.55rem 1rem; border-bottom:1px solid var(--line);}
+  .disclaimer strong{color:var(--gold); font-weight:700;}
+
+  header{position:sticky; top:0; z-index:60; background:rgba(18,32,26,.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem,4vw,3rem);}
+  .logo{font-family:'Libre Caslon Text',serif; font-style:italic; font-size:1.5rem; text-decoration:none; letter-spacing:.01em; color:var(--paper);}
+  .logo b{font-style:normal; color:var(--gold);}
+  nav ul{list-style:none; display:flex; gap:2.2rem; margin:0; padding:0;}
+  nav a{text-decoration:none; font-weight:600; font-size:.9rem; color:var(--ink-dim); display:inline-flex; align-items:center; min-height:44px;}
+  nav a:hover{color:var(--gold);}
+  nav a.active{color:var(--gold);}
+  .navtoggle{display:none; background:none; border:2px solid var(--line); color:var(--ink); border-radius:8px; width:44px; height:44px; font-size:1.2rem; cursor:pointer;}
+  .call-btn{background:var(--gold); color:#1c1503; padding:.7rem 1.3rem; border-radius:6px; text-decoration:none; font-weight:700; font-size:.85rem; display:inline-flex; align-items:center; min-height:44px;}
+  @media (max-width:860px){
+    nav ul{position:fixed; inset:63px 0 auto 0; flex-direction:column; background:var(--bg2); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:.3rem; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s; max-height:calc(100vh - 63px); overflow-y:auto;}
+    nav ul.open{transform:translateY(0);}
+    nav li{width:100%;}
+    nav a{width:100%; padding:.6rem 0;}
+    .navtoggle{display:block;}
+    .call-btn{display:none;}
+  }
+
+  /* hero */
+  .hero{position:relative; padding:clamp(4rem,10vw,7.5rem) 0 clamp(3rem,7vw,5rem); text-align:center; overflow:hidden;}
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(201,161,58,.16), transparent 60%),
+      repeating-linear-gradient(90deg, rgba(243,234,214,.03) 0 1px, transparent 1px 80px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:760px; margin:0 auto;}
+  .eyebrow{color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:.18em; font-size:.78rem; margin-bottom:1.4rem;}
+  h1{font-family:'Libre Caslon Text',serif; font-style:italic; font-weight:400; font-size:clamp(2.6rem,7vw,4.6rem); line-height:1.08; margin:0 0 1.4rem;}
+  h1 b{font-style:normal; color:var(--gold); display:block; font-size:clamp(3.4rem,10vw,6.5rem); letter-spacing:.01em; margin-top:.2rem;}
+  .hero-sub{max-width:52ch; margin:0 auto 2.2rem; font-size:1.12rem; color:var(--ink-dim);}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.7rem; border-radius:6px; text-decoration:none; font-weight:700; font-size:.98rem; transition:transform .18s; min-height:44px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--gold); color:#1c1503;}
+  .btn-outline{border:1.5px solid var(--line); color:var(--ink);}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .kicker{color:var(--gold); font-weight:700; text-transform:uppercase; font-size:.78rem; letter-spacing:.16em; margin:0 0 .8rem; text-align:center;}
+  h2{font-family:'Libre Caslon Text',serif; font-weight:400; font-size:clamp(2.1rem,4.5vw,3rem); margin:0 0 1rem; text-align:center;}
+  .lead{font-size:1.08rem; color:var(--ink-dim); max-width:56ch; margin:0 auto; text-align:center;}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  /* teaser cards */
+  .teaser-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.4rem; margin-top:2.6rem;}
+  .teaser-card{background:linear-gradient(155deg, #1a2b22, #0f1a14); border:1px solid var(--line); border-radius:18px; padding:1.8rem; display:flex; flex-direction:column; gap:.7rem;}
+  .teaser-card h3{margin:0; font-family:'Libre Caslon Text',serif; font-style:italic; font-size:1.35rem; color:var(--paper);}
+  .teaser-card p{margin:0; color:var(--ink-dim); font-size:.95rem; flex:1;}
+  .link-more{color:var(--gold); font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:.4rem; min-height:44px;}
+  .link-more:hover{text-decoration:underline;}
+
+  .dishes{margin-top:2.6rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem;}
+  .dish{border:1px solid var(--line); border-radius:14px; padding:1.3rem; text-align:center;}
+  .dish span{display:block; font-family:'Libre Caslon Text',serif; font-style:italic; font-size:1.15rem; color:var(--paper);}
+
+  /* rating band */
+  .rateband{background:var(--burgundy); text-align:center;}
+  .rateband .wrap{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem;}
+  @media (max-width:600px){ .rateband .wrap{grid-template-columns:1fr;} }
+  .rateband .stat b{display:block; font-family:'Libre Caslon Text',serif; font-style:italic; font-size:clamp(2.2rem,6vw,3rem);}
+  .rateband .stat span{font-size:.85rem; opacity:.85;}
+
+  /* contact */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; margin-top:2.6rem;}
+  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  .info-list{list-style:none; margin:0; padding:0; display:grid; gap:1.1rem;}
+  .info-list li{display:flex; gap:.9rem; align-items:flex-start;}
+  .info-list svg{flex:none; width:22px; height:22px; color:var(--gold); margin-top:.15rem;}
+  .info-list a{text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px;}
+  .res-note{background:rgba(201,161,58,.1); border:1px solid rgba(201,161,58,.35); border-radius:14px; padding:1.5rem;}
+  .res-note h3{margin:0 0 .5rem; font-size:1.05rem; color:var(--gold);}
+  .res-note p{margin:0; color:var(--ink-dim); font-size:.94rem;}
+
+  footer{padding:3rem 0 1.5rem; text-align:center; color:var(--ink-dim); font-size:.9rem; border-top:1px solid var(--line);}
+  footer .fname{color:var(--gold); font-weight:700;}
+  .foot-links{display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:0 0 1rem; padding:0; list-style:none;}
+  .foot-links a{text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px; font-size:.85rem; display:inline-flex; align-items:center; min-height:44px;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Kolonitz Beisl</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Kolonitz <b>Beisl</b></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4317138193">Tisch reservieren</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Wiener Wirtshaus · Landstraße, Wien</p>
+      <h1>Alt-Wiener Wirtshauskultur<b>Seit 1900</b></h1>
+      <p class="hero-sub">Im dritten Bezirk serviert das Kolonitz Beisl seit über 125 Jahren klassische Hausmannskost – vom Altwiener Suppentopf bis zum Wiener Schnitzel, in gemütlichen Gaststuben.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+4317138193">+43 1 713 81 93</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="geschichte">
+    <div class="wrap">
+      <p class="kicker">Tradition</p>
+      <h2>Eine Wirtshausgeschichte im dritten Bezirk</h2>
+      <p class="lead">Seit 1900 steht das Kolonitz Beisl für gelebte Wiener Wirtshauskultur in der Bechardgasse.</p>
+      <div class="teaser-grid">
+        <div class="teaser-card reveal">
+          <h3>Seit 1900</h3>
+          <p>Über 125 Jahre Wirtshaustradition im dritten Bezirk – von Beginn an ein Ort für ehrliche Wiener Küche.</p>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Heute</h3>
+          <p>Unter der Leitung von Jacqueline Zulic setzt das Kolonitz Beisl die Tradition mit klassischer Hausmannskost fort.</p>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:2rem;"><a class="link-more" href="ueber-uns.html">Die ganze Geschichte lesen →</a></p>
+    </div>
+  </section>
+
+  <section id="angebot" style="background:var(--bg2);">
+    <div class="wrap">
+      <p class="kicker">Das Angebot</p>
+      <h2>Hausmannskost &amp; Gaststuben</h2>
+      <p class="lead">Klassische Wiener Küche und Platz für Gesellschaften jeder Größe.</p>
+      <div class="dishes">
+        <div class="dish reveal"><span>Altwiener Suppentopf</span></div>
+        <div class="dish reveal"><span>Wiener Schnitzel</span></div>
+        <div class="dish reveal"><span>Palatschinken</span></div>
+      </div>
+      <p style="text-align:center; margin-top:2rem;"><a class="link-more" href="angebot.html">Zur ganzen Speisekarte →</a></p>
+    </div>
+  </section>
+
+  <div class="rateband">
+    <div class="wrap">
+      <div class="stat"><b>4,8/5</b><span>Restaurant Guru · 1.154 Bewertungen</span></div>
+      <div class="stat"><b>4,5/5</b><span>Tripadvisor · unter den Top-Adressen Wiens</span></div>
+    </div>
+  </div>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <p class="kicker">Kontakt &amp; Reservierung</p>
+      <h2>Bechardgasse 2, im dritten Bezirk</h2>
+      <p class="lead">Reservierung ausschließlich telefonisch – rufen Sie uns einfach an.</p>
+      <div style="text-align:center; margin-top:2rem;">
+        <a class="btn btn-primary" href="tel:+4317138193">Tisch reservieren</a>
+        <a class="btn btn-outline" href="kontakt.html">Alle Kontaktdaten</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p><span class="fname">Kolonitz Beisl</span> · Bechardgasse 2, 1030 Wien · <a href="tel:+4317138193" style="text-decoration:underline;">+43 1 713 81 93</a></p>
+    <p>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des Kolonitz Beisl · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

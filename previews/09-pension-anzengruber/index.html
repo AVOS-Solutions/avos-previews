@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pension Anzengruber – Frühstückspension in Hadersdorf-Weidlingau, Wien</title>
+<meta name="description" content="Privat geführte Frühstückspension in Villenlage am Wiener Stadtrand: Zimmer & Apartments, Garten, Swimmingpool und Gästeküche. Familie Knöll heißt Sie in Hadersdorf-Weidlingau willkommen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f2e7;
+    --paper:#fbf8f1;
+    --ink:#2a3327;
+    --ink-soft:#4a5646;
+    --sage:#5c7a5e;
+    --sage-dark:#3c5540;
+    --terracotta:#c1744a;
+    --pool:#6fa3a6;
+    --line: rgba(42,51,39,0.14);
+    --radius: 28px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    line-height:1.05;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--terracotta);outline-offset:3px;border-radius:4px;}
+
+  /* nav */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(247,242,231,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    padding:1.1rem clamp(1.25rem,4vw,3rem);
+    max-width:1180px;margin:0 auto;gap:0.6rem 1rem;
+  }
+  .brand{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;
+    display:flex;align-items:center;gap:0.6rem;text-decoration:none;flex:1 1 200px;min-width:0;
+  }
+  .brand-mark{
+    width:34px;height:34px;border-radius:50%;flex:none;
+    background:conic-gradient(from 200deg, var(--sage), var(--pool), var(--terracotta), var(--sage));
+    display:inline-block;
+  }
+  .nav-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0;font-size:0.95rem;}
+  .nav-links a{text-decoration:none;position:relative;padding:0.2rem 0;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--terracotta);transition:width 0.25s ease;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.active{color:var(--terracotta);font-weight:600;}
+  .nav-links a.active::after{width:100%;}
+  .nav-cta{
+    background:var(--sage-dark);color:#fff;text-decoration:none;
+    padding:0.75rem 1.2rem;border-radius:999px;font-size:0.9rem;font-weight:600;
+    white-space:nowrap;display:inline-flex;align-items:center;min-height:44px;
+  }
+  .menu-toggle{
+    display:none;background:none;border:1px solid var(--line);border-radius:10px;
+    width:44px;height:44px;cursor:pointer;position:relative;flex:none;
+  }
+  .menu-toggle span, .menu-toggle::before, .menu-toggle::after{
+    content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--ink);
+  }
+  .menu-toggle span{top:20px;}
+  .menu-toggle::before{top:14px;}
+  .menu-toggle::after{top:26px;}
+
+  @media (max-width:820px){
+    .nav-links{
+      position:fixed;inset:64px 0 0 0;background:var(--paper);
+      flex-direction:column;padding:2rem 1.5rem;gap:0.5rem;font-size:1.15rem;
+      transform:translateY(-110%);transition:transform 0.3s ease;
+      overflow-y:auto;
+    }
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{width:100%;}
+    .nav-links a{display:flex;align-items:center;min-height:44px;padding:0.4rem 0;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  /* hero */
+  .hero{
+    padding:clamp(3rem,8vw,6rem) 0 4rem;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;
+  }
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;
+    font-weight:600;color:var(--sage-dark);margin-bottom:1.2rem;display:block;
+  }
+  .hero h1{font-size:clamp(2.4rem,5.2vw,4.1rem);}
+  .hero h1 em{font-style:italic;color:var(--terracotta);}
+  .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:46ch;margin:1.5rem 0 2.2rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+    padding:0.85rem 1.6rem;min-height:44px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:0.95rem;transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border:none;cursor:pointer;
+  }
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 8px 24px -8px rgba(193,116,74,0.6);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:none;}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream);}
+
+  .hero-art{position:relative;aspect-ratio:1/1.05;}
+  .hero-art svg{width:100%;height:100%;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* page hero (subpages) */
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 3rem;border-bottom:1px solid var(--line);background:var(--paper);}
+  .page-hero h1{font-size:clamp(2rem,4.4vw,3.3rem);}
+  .page-hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:56ch;margin-top:1.1rem;}
+
+  /* story */
+  .story{
+    padding:5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--paper);
+  }
+  .story .wrap{display:grid;grid-template-columns:0.7fr 1.3fr;gap:3.5rem;}
+  .story h2{font-size:clamp(1.8rem,3.2vw,2.6rem);}
+  .story .hosts{
+    font-size:0.95rem;color:var(--sage-dark);font-weight:600;margin-top:1rem;
+  }
+  .story .copy{font-size:1.08rem;color:var(--ink-soft);}
+  .story .copy p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;font-size:3.6rem;line-height:0.8;float:left;
+    padding:0.1rem 0.5rem 0 0;color:var(--terracotta);font-weight:600;
+  }
+
+  /* teaser grid (home) */
+  .teasers{padding:5rem 0;}
+  .teasers h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:2.6rem;}
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+  .teaser-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:2rem;display:flex;flex-direction:column;gap:0.9rem;
+    text-decoration:none;color:var(--ink);transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .teaser-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(42,51,39,0.25);}
+  .teaser-card h3{font-size:1.3rem;}
+  .teaser-card p{margin:0;color:var(--ink-soft);font-size:0.98rem;flex:1;}
+  .teaser-card .arrow{font-weight:600;color:var(--terracotta);}
+
+  /* amenities / cards */
+  .amenities{padding:5rem 0;}
+  .amenities h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:0.6rem;}
+  .amenities .sub{color:var(--ink-soft);max-width:56ch;margin-bottom:2.8rem;}
+  .grid-amenities{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;
+  }
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.8rem;transition:transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px rgba(42,51,39,0.25);}
+  .card .icon{width:44px;height:44px;margin-bottom:1rem;}
+  .card h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
+  .card p{margin:0;font-size:0.92rem;color:var(--ink-soft);}
+  .card.price{background:var(--sage-dark);color:#eef3ea;border-color:transparent;}
+  .card.price p{color:#d9e4d5;}
+  .card.price .icon path,.card.price .icon circle{stroke:#eef3ea;}
+
+  @media (max-width:980px){
+    .grid-amenities{grid-template-columns:repeat(2,1fr);}
+    .teaser-grid{grid-template-columns:1fr;}
+    .story .wrap{grid-template-columns:1fr;gap:2rem;}
+    .hero{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:min(340px,80vw);margin:0 auto;}
+    .contact .wrap{grid-template-columns:1fr;gap:2.4rem;}
+  }
+  @media (max-width:560px){
+    .grid-amenities{grid-template-columns:1fr;}
+    nav{flex-wrap:wrap;row-gap:0.6rem;}
+  }
+
+  /* contact */
+  .contact{
+    background:var(--sage-dark);color:#eef3ea;padding:5rem 0;
+  }
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+  .contact h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:1rem;}
+  .contact p.lead{color:#d9e4d5;max-width:42ch;margin-bottom:2rem;}
+  .contact-list{list-style:none;margin:0 0 2rem;padding:0;display:grid;gap:1rem;font-size:1.02rem;}
+  .contact-list li{display:flex;gap:0.8rem;align-items:flex-start;}
+  .contact-list svg{flex:none;margin-top:3px;}
+  .contact-list a{text-decoration:underline;text-underline-offset:3px;}
+  .map-embed{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,0.2);min-height:320px;}
+  .map-embed iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
+
+  /* legal */
+  .legal{padding:3rem 0 5rem;}
+  .legal .notice{
+    background:#fdf0e4;border:1px solid var(--terracotta);border-radius:16px;
+    padding:1.4rem 1.6rem;margin-bottom:2.6rem;font-size:0.95rem;color:var(--ink);
+  }
+  .legal h2{font-size:1.35rem;margin:2.2rem 0 0.8rem;font-family:'Fraunces',serif;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p, .legal li{color:var(--ink-soft);font-size:1rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal .field{color:var(--terracotta);font-style:italic;}
+
+  footer.site{
+    background:var(--ink);color:#cdd6c8;padding:3rem 0 0;font-size:0.9rem;
+  }
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;padding-bottom:2rem;}
+  footer.site .brand{color:#eef3ea;}
+  footer.site .brand-mark{width:26px;height:26px;}
+  footer.site p{margin:0.8rem 0 0;color:#cdd6c8;}
+  footer.site a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-links{display:flex;gap:1.4rem;align-items:flex-start;font-size:0.88rem;}
+  .disclaimer-footer{
+    border-top:1px solid rgba(238,243,234,0.15);padding:1.1rem 0;
+    font-size:0.78rem;color:#9fab97;text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html" aria-label="Pension Anzengruber – Start">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Pension Anzengruber
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43197922214">+43 1 979 22 14</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div>
+      <span class="eyebrow">Frühstückspension · Hadersdorf-Weidlingau, Wien</span>
+      <h1>Wiener Stadtrand,<br><em>Villenruhe</em> und ein<br>Garten zum Ankommen.</h1>
+      <p class="lead">Zimmer und Apartments in ruhiger Villenlage am Rand von Wien – mit eigenem Garten, Swimmingpool und Gästeküche. Familiär geführt von Familie Knöll, ein Rückzugsort für Gäste, die Stadt und Grün gleichermaßen schätzen.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="kontakt.html">Zimmer anfragen</a>
+        <a class="btn btn-ghost" href="angebot.html">Zimmer &amp; Ausstattung ansehen</a>
+      </div>
+    </div>
+    <div class="hero-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f0ead9"/>
+            <stop offset="1" stop-color="#e4dcc4"/>
+          </linearGradient>
+          <linearGradient id="poolg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7fb3b6"/>
+            <stop offset="1" stop-color="#5c9a9d"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="400" height="420" rx="28" fill="url(#sky)"/>
+        <circle cx="330" cy="70" r="34" fill="#e7b463" opacity="0.85"/>
+        <g>
+          <rect x="90" y="190" width="180" height="130" fill="#f7f2e7" stroke="#3c5540" stroke-width="3"/>
+          <polygon points="80,190 180,120 280,190" fill="#c1744a"/>
+          <rect x="150" y="240" width="42" height="80" fill="#3c5540"/>
+          <rect x="205" y="230" width="34" height="34" fill="#6fa3a6" stroke="#3c5540" stroke-width="2"/>
+          <rect x="115" y="230" width="24" height="24" fill="#6fa3a6" stroke="#3c5540" stroke-width="2"/>
+        </g>
+        <ellipse cx="200" cy="370" rx="180" ry="45" fill="#87a37f"/>
+        <path d="M40 355 Q140 330 240 358 T400 350" fill="none" stroke="#5c7a5e" stroke-width="6" opacity="0.6"/>
+        <rect x="215" y="345" width="120" height="46" rx="10" fill="url(#poolg)"/>
+        <path d="M225 368 q10 -8 20 0 t20 0 t20 0 t20 0" stroke="#eef7f7" stroke-width="2" fill="none" opacity="0.7"/>
+        <circle cx="65" cy="300" r="22" fill="#5c7a5e"/>
+        <rect x="61" y="300" width="8" height="40" fill="#3c5540"/>
+        <circle cx="355" cy="290" r="16" fill="#5c7a5e"/>
+        <rect x="352" y="290" width="6" height="30" fill="#3c5540"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="teasers">
+    <div class="wrap">
+      <h2 class="reveal">Willkommen bei Familie Knöll.</h2>
+      <div class="teaser-grid">
+        <a class="teaser-card reveal" href="ueber-uns.html">
+          <h3>Über uns</h3>
+          <p>Ein privat geführtes Haus in Hadersdorf-Weidlingau – die Geschichte hinter der Pension und was einen Aufenthalt hier ausmacht.</p>
+          <span class="arrow">Mehr erfahren →</span>
+        </a>
+        <a class="teaser-card reveal" href="angebot.html">
+          <h3>Zimmer &amp; Ausstattung</h3>
+          <p>Zimmer, Apartments, Garten mit Pool und Gästeküche – alles für einen entspannten Aufenthalt am Stadtrand.</p>
+          <span class="arrow">Ausstattung ansehen →</span>
+        </a>
+        <a class="teaser-card reveal" href="kontakt.html">
+          <h3>Kontakt &amp; Anfahrt</h3>
+          <p>Anzengruberstraße 59, 1140 Wien. So erreichen Sie Familie Knöll für Ihre Zimmeranfrage.</p>
+          <span class="arrow">Kontakt aufnehmen →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap" style="grid-template-columns:1fr;text-align:center;">
+      <div class="reveal">
+        <h2>Bereit für Ihren Aufenthalt im Grünen?</h2>
+        <p class="lead" style="margin-left:auto;margin-right:auto;">Familie Knöll freut sich auf Ihre Anfrage – telefonisch, per E-Mail oder über die Kontaktseite.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="tel:+43197922214">Jetzt anrufen</a>
+          <a class="btn btn-ghost" style="border-color:#eef3ea;color:#eef3ea;" href="kontakt.html">Zur Kontaktseite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Pension Anzengruber
+      </a>
+      <p>Anzengruberstraße 59, 1140 Wien<br>Familie Knöll · <a href="tel:+43197922214">+43 1 979 22 14</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="disclaimer-footer">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Pension Anzengruber · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

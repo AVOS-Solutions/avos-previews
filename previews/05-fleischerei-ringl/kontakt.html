@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Fleischerei Ringl</title>
+<meta name="description" content="Kontakt und Anfahrt zur Fleischerei Ringl in der Gumpendorfer Straße 105, 1060 Wien. Telefon, E-Mail und Route.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241a16; --paper:#f6efe4; --paper-2:#efe4d2;
+    --oxblood:#6d1f26; --oxblood-dark:#4f151b; --brass:#c8912b;
+    --line: rgba(36,26,22,0.16); --max: 1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Work Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Fraunces', Georgia, serif; font-weight:600; line-height:1.05; margin:0; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 clamp(1.25rem, 4vw, 3rem); width:100%;}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+
+  .disclaimer{background:var(--ink); color:#e9dfce; font-size:.72rem; letter-spacing:.02em; text-align:center; padding:.55rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--brass); font-weight:600;}
+
+  header.site{position:sticky; top:0; z-index:40; background:var(--paper); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem, 4vw, 3rem); gap:1rem;}
+  .brand{font-family:'Fraunces', serif; font-weight:700; font-size:1.15rem; letter-spacing:-0.01em; text-decoration:none; display:flex; align-items:center; gap:.6rem; min-height:44px;}
+  .brand .mark{width:34px;height:34px;border-radius:50%; background:var(--oxblood); display:grid;place-items:center; flex:none;}
+  .brand .mark svg{width:18px;height:18px;}
+  nav.links{display:flex; gap:2rem; font-size:.92rem;}
+  nav.links a{text-decoration:none; position:relative; padding:.2rem 0; min-height:44px; display:inline-flex; align-items:center;}
+  nav.links a::after{content:""; position:absolute; left:0; right:0; bottom:2px; height:2px; background:var(--oxblood); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;}
+  nav.links a:hover::after, nav.links a:focus-visible::after, nav.links a.active::after{transform:scaleX(1);}
+  nav.links a.active{font-weight:600;}
+  .call-btn{background:var(--oxblood); color:#f6efe4; text-decoration:none; padding:.6rem 1.15rem; border-radius:999px; font-size:.85rem; font-weight:600; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:8px; padding:.5rem .6rem; cursor:pointer; min-width:44px; min-height:44px; align-items:center; justify-content:center;}
+  .burger svg{width:22px;height:22px;display:block;}
+  @media (max-width: 820px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:400px;}
+    nav.links a{padding:1rem clamp(1.25rem,4vw,3rem); border-top:1px solid var(--line); display:flex; align-items:center; min-height:44px; width:100%;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .page-hero{padding: clamp(2.5rem,6vw,4.5rem) 0 clamp(2rem,4vw,3rem);}
+  .kicker{text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; font-weight:600; color:var(--oxblood); margin-bottom:1.1rem; display:flex; align-items:center; gap:.6rem;}
+  .kicker::before{content:""; width:26px; height:2px; background:var(--brass); display:inline-block;}
+  .page-hero h1{font-size:clamp(2.2rem, 5vw, 3.6rem); max-width:20ch;}
+  .page-hero .lead{margin-top:1.2rem; font-size:1.08rem; max-width:56ch; line-height:1.6; color:#4a3c34;}
+
+  .contact{background:var(--ink); color:var(--paper); padding:clamp(3rem,6vw,5rem) 0;}
+  .contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:3rem;}
+  .info-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1.2rem;}
+  .info-list li{display:flex; gap:1rem; align-items:flex-start; font-size:1.05rem;}
+  .info-list svg{width:22px; height:22px; flex:none; margin-top:.15rem; color:var(--brass);}
+  .info-list a{text-decoration:none; border-bottom:1px solid rgba(246,239,228,.35);}
+  .info-list a:hover{border-color:var(--brass);}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.2rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.5rem; border-radius:999px; text-decoration:none; font-weight:600; font-size:.95rem; border:1px solid transparent; min-height:44px;}
+  .btn.primary{background:var(--brass); color:var(--ink);}
+  .btn.ghost{border-color:rgba(246,239,228,.4); color:var(--paper);}
+  .btn:hover{opacity:.9;}
+  .map-card{border:1px solid rgba(246,239,228,.18); border-radius:12px; padding:1.8rem; background:rgba(246,239,228,.04);}
+  .map-card h3{color:var(--paper); font-size:1.2rem; font-weight:600; font-family:'Fraunces',serif;}
+  .map-card .addr{margin-top:.6rem; color:#cdbfae; font-size:.95rem; line-height:1.6;}
+  .hours-note{margin-top:1.2rem; font-size:.85rem; color:#a99a89; border-top:1px solid rgba(246,239,228,.14); padding-top:1.2rem;}
+  .map-embed{margin-top:1.4rem; border-radius:10px; overflow:hidden; border:1px solid rgba(246,239,228,.18);}
+  .map-embed iframe{display:block; width:100%; height:220px; border:0;}
+  @media (max-width:800px){.contact .wrap{grid-template-columns:1fr; gap:2.4rem;}}
+
+  footer.site{padding:2.5rem 0 2rem; text-align:center;}
+  footer.site .wrap{border-top:1px solid var(--line); padding-top:1.8rem;}
+  footer.site .foot-links{display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; font-size:.85rem;}
+  footer.site .foot-links a{text-decoration:none; color:#6d5b4e; min-height:44px; display:inline-flex; align-items:center;}
+  footer.site .foot-links a:hover{color:var(--oxblood);}
+  footer.site small{color:#8a7a6c; font-size:.8rem; display:block; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Fleischerei Ringl</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f6efe4" stroke-width="1.8"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8"/><path d="M4 12c0 2.8 1.8 5 4 5"/></svg></span>
+      Fleischerei Ringl
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Sortiment</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4315963278">Anrufen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Kontakt</p>
+      <h1>Vorbeikommen &amp; bestellen</h1>
+      <p class="lead">Ob für den Sonntagsbraten oder die Feinkostplatte am Wochenende – Familie Ringl berät Sie gerne persönlich in der Gumpendorfer Straße.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Gumpendorfer Straße 105, 1060 Wien</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 6a2 2 0 0 1 2-2Z"/></svg>
+            <a href="tel:+4315963278">+43 1 596 32 78</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <a href="mailto:office@fleischerei-ringl.at">office@fleischerei-ringl.at</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            <span>Familie Ringl — Claudia &amp; Monika Ringl</span>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:+4315963278">Jetzt anrufen</a>
+          <a class="btn ghost" href="mailto:office@fleischerei-ringl.at">E-Mail schreiben</a>
+        </div>
+      </div>
+      <div class="map-card">
+        <h3>Fleischerei Ringl</h3>
+        <p class="addr">Gumpendorfer Straße 105<br>1060 Wien, Österreich</p>
+        <a class="btn ghost" style="margin-top:1.2rem;" href="https://www.google.com/maps/search/?api=1&query=Gumpendorfer%20Stra%C3%9Fe%20105%2C%201060%20Wien" target="_blank" rel="noopener">Route planen</a>
+        <div class="map-embed">
+          <iframe title="Karte: Gumpendorfer Straße 105, 1060 Wien" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Gumpendorfer%20Stra%C3%9Fe%20105%2C%201060%20Wien&output=embed"></iframe>
+        </div>
+        <div class="hours-note">Öffnungszeiten auf Anfrage – rufen Sie uns gerne an, wir informieren Sie gerne persönlich.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <small>Fleischerei Ringl · Gumpendorfer Straße 105, 1060 Wien · Tel. +43 1 596 32 78<br>
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei Ringl · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

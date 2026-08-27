@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buschenschank Haslinger — Familienweingut &amp; Heuriger in Sievering</title>
+<meta name="description" content="Familiengeführte Buschenschank in Wien-Sievering: ausschließlich selbst erzeugte Weine, lauschiger Innenhof, Terrasse und regelmäßige Jazz- und Kulturabende.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine-950:#2a0f14;
+    --wine-900:#3a1420;
+    --wine-800:#551b2b;
+    --wine-700:#7a2638;
+    --terracotta:#c17a4f;
+    --gold:#cfa25f;
+    --gold-soft:#e5cd9e;
+    --cream:#f7efe1;
+    --cream-2:#f1e4cc;
+    --ink:#2b1a14;
+    --ink-soft:#5c4a3f;
+    --line:rgba(43,26,20,.15);
+    --focus:#8a4b2c;
+    --font-head:'Fraunces',Georgia,serif;
+    --legal-note-bg:#fff7e6;
+    --legal-note-fg:#5c4020;
+    --legal-note-border:#e5cd9e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--font-head);font-weight:500;margin:0;line-height:1.05;}
+  p{line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+
+  .disclaimer{
+    background:var(--wine-950);
+    color:var(--gold-soft);
+    font-size:.78rem;
+    text-align:center;
+    padding:.55rem 1rem;
+    letter-spacing:.01em;
+  }
+  .disclaimer strong{color:var(--cream);font-weight:600;}
+
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(247,239,225,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-block:.9rem;gap:1rem;
+  }
+  .brand{
+    font-family:var(--font-head);font-size:1.15rem;font-weight:600;
+    display:flex;flex-direction:column;line-height:1.1;text-decoration:none;color:var(--ink);
+  }
+  .brand small{font-family:'Inter',sans-serif;font-weight:500;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wine-700);}
+  nav.links{display:flex;gap:2rem;font-size:.92rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding-block:.2rem;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--terracotta);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  nav.links a.active{color:var(--wine-800);font-weight:600;}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--wine-800);color:var(--cream);
+    padding:.8rem 1.2rem;border-radius:999px;min-height:44px;
+    font-size:.85rem;font-weight:600;text-decoration:none;
+  }
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;}
+  @media (max-width:840px){
+    nav.links{
+      position:fixed;inset:56px 0 auto 0;background:var(--cream);
+      flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-130%);opacity:0;transition:transform .3s ease, opacity .3s ease;
+      max-height:calc(100vh - 56px);overflow-y:auto;
+    }
+    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links a{padding:.9rem 0;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
+    .nav-cta{display:none;}
+  }
+
+  .hero{
+    position:relative;overflow:hidden;
+    padding-block:clamp(3.5rem,9vw,7rem) clamp(4rem,10vw,8rem);
+    background:
+      radial-gradient(60% 55% at 85% 10%, rgba(207,162,95,.35), transparent 60%),
+      radial-gradient(70% 60% at 8% 90%, rgba(122,38,56,.28), transparent 60%),
+      linear-gradient(160deg,var(--cream) 0%, var(--cream-2) 100%);
+  }
+  .hero-blob{
+    position:absolute; right:-8%; top:-10%;
+    width:min(60vw,620px); height:min(60vw,620px);
+    background:radial-gradient(circle at 30% 30%, var(--wine-700), var(--wine-950) 75%);
+    border-radius:42% 58% 65% 35% / 45% 40% 60% 55%;
+    filter:blur(1px);
+    opacity:.92;
+    animation:blobshift 18s ease-in-out infinite alternate;
+  }
+  @keyframes blobshift{
+    0%{border-radius:42% 58% 65% 35% / 45% 40% 60% 55%;}
+    100%{border-radius:58% 42% 40% 60% / 55% 65% 35% 45%;}
+  }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.3fr .9fr;gap:3rem;align-items:end;}
+  @media (max-width:900px){.hero-inner{grid-template-columns:1fr;}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    color:var(--wine-800);margin-bottom:1.2rem;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--wine-800);}
+  .hero h1{
+    font-size:clamp(2.4rem,6.4vw,5rem);
+    font-optical-sizing:auto;
+    max-width:14ch;
+    color:var(--wine-950);
+  }
+  .hero h1 em{font-style:italic;color:var(--terracotta);}
+  .hero-lead{margin-top:1.4rem;max-width:46ch;font-size:clamp(1rem,2vw,1.08rem);color:var(--ink-soft);}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.1rem;}
+  .btn{
+    display:inline-flex;align-items:center;gap:.55rem;
+    padding:.85rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;
+    text-decoration:none;transition:transform .2s ease, box-shadow .2s ease;min-height:44px;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--wine-800);color:var(--cream);box-shadow:0 10px 24px -10px rgba(58,20,32,.55);}
+  .btn-ghost{border:1.5px solid var(--wine-800);color:var(--wine-900);}
+  .hero-card{
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:22px;padding:1.6rem;backdrop-filter:blur(6px);
+    box-shadow:0 30px 60px -30px rgba(42,15,20,.35);
+  }
+  .hero-card dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1rem;margin:0;font-size:.92rem;}
+  .hero-card dt{font-weight:600;color:var(--wine-800);}
+  .hero-card dd{margin:0;color:var(--ink-soft);}
+  .hero-stars{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-soft);}
+  .hero-stars strong{color:var(--wine-900);font-family:var(--font-head);font-size:1.1rem;}
+
+  .page-hero{
+    position:relative;overflow:hidden;
+    padding-block:clamp(2.8rem,7vw,5rem) clamp(2.4rem,6vw,3.5rem);
+    background:linear-gradient(160deg,var(--cream) 0%, var(--cream-2) 100%);
+  }
+  .page-hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);color:var(--wine-950);max-width:18ch;}
+  .page-hero p{margin-top:1rem;max-width:52ch;color:var(--ink-soft);font-size:1.05rem;}
+
+  section{padding-block:clamp(3rem,8vw,6.5rem);}
+  .section-head{max-width:60ch;margin-bottom:2.5rem;}
+  .section-head .eyebrow{margin-bottom:.8rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.7rem);color:var(--wine-950);}
+
+  .story{background:var(--wine-950);color:var(--cream-2);position:relative;overflow:hidden;}
+  .story::before{
+    content:"";position:absolute;left:-15%;bottom:-25%;width:70vw;height:70vw;max-width:640px;max-height:640px;
+    background:radial-gradient(circle,rgba(207,162,95,.18),transparent 65%);
+  }
+  .story .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+  @media (max-width:900px){.story .wrap{grid-template-columns:1fr;}}
+  .story h2{color:var(--cream);}
+  .story p{color:rgba(247,239,225,.82);font-size:1.05rem;}
+  .story-figure{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 20% 0%, rgba(207,162,95,.5), transparent 55%),
+      linear-gradient(150deg,var(--wine-800),var(--wine-900) 60%,var(--wine-950));
+    display:flex;align-items:flex-end;padding:2rem;
+  }
+  .story-figure svg{position:absolute;inset:0;width:100%;height:100%;opacity:.5;}
+  .story-figure figcaption{position:relative;font-family:var(--font-head);font-size:1.5rem;color:var(--gold-soft);font-style:italic;}
+  .story-list{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:1rem;}
+  .story-list li{display:flex;gap:.8rem;font-size:.95rem;color:var(--cream-2);}
+  .story-list li svg{flex:none;width:20px;height:20px;color:var(--gold);margin-top:.15rem;}
+
+  .philo{background:var(--cream);}
+  .philo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;}
+  @media (max-width:760px){.philo-grid{grid-template-columns:1fr;}}
+  .philo-card{background:var(--cream-2);border:1px solid var(--line);border-radius:18px;padding:1.8rem;}
+  .philo-card h3{font-size:1.2rem;color:var(--wine-900);margin-bottom:.6rem;}
+  .philo-card p{font-size:.95rem;color:var(--ink-soft);margin:0;}
+
+  .offer{background:var(--cream);}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem;}
+  @media (max-width:820px){.bento{grid-template-columns:1fr 1fr;}}
+  @media (max-width:520px){.bento{grid-template-columns:1fr;}}
+  .bento .card{border-radius:20px;padding:1.8rem;background:var(--cream-2);border:1px solid var(--line);}
+  .bento .card h3{font-size:1.3rem;color:var(--wine-900);margin-bottom:.6rem;}
+  .bento .card p{font-size:.92rem;color:var(--ink-soft);margin:0;}
+  .bento .c1{grid-column:span 4;background:linear-gradient(135deg,var(--wine-800),var(--wine-700));color:var(--cream);}
+  .bento .c1 h3{color:var(--gold-soft);}
+  .bento .c1 p{color:rgba(247,239,225,.85);}
+  .bento .c2{grid-column:span 2;}
+  .bento .c3{grid-column:span 3;}
+  .bento .c4{grid-column:span 3;background:var(--terracotta);color:#fff;}
+  .bento .c4 h3{color:#fff;}
+  .bento .c4 p{color:rgba(255,255,255,.9);}
+  @media (max-width:820px){.bento .c1,.bento .c2,.bento .c3,.bento .c4{grid-column:span 2;}}
+  @media (max-width:520px){.bento .c1,.bento .c2,.bento .c3,.bento .c4{grid-column:span 1;}}
+
+  .events{background:var(--wine-900);overflow:hidden;padding-block:1.4rem;border-top:1px solid rgba(207,162,95,.25);border-bottom:1px solid rgba(207,162,95,.25);}
+  .ticker-track{display:flex;gap:3rem;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content;}
+  .events:hover .ticker-track{animation-play-state:paused;}
+  .ticker-track span{font-family:var(--font-head);font-style:italic;font-size:1.3rem;color:var(--gold-soft);display:inline-flex;align-items:center;gap:.9rem;}
+  .ticker-track span::after{content:"✦";color:var(--terracotta);font-style:normal;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.ticker-track{animation:none;}.hero-blob{animation:none;}}
+
+  .teaser{background:var(--cream-2);}
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+  @media (max-width:900px){.teaser-grid{grid-template-columns:1fr;}}
+  .teaser-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:1.8rem;display:flex;flex-direction:column;}
+  .teaser-card h3{font-size:1.25rem;color:var(--wine-900);margin-bottom:.6rem;}
+  .teaser-card p{font-size:.92rem;color:var(--ink-soft);flex:1;}
+  .teaser-card a.more{margin-top:1.1rem;font-weight:600;color:var(--wine-800);text-decoration:none;font-size:.9rem;}
+  .teaser-card a.more:hover{text-decoration:underline;}
+
+  .contact{background:var(--cream-2);}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-list{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:1.2rem;}
+  .contact-list li{display:flex;gap:1rem;align-items:flex-start;font-size:.98rem;}
+  .contact-list svg{flex:none;width:22px;height:22px;color:var(--wine-800);margin-top:.15rem;}
+  .contact-list a{text-decoration:none;font-weight:600;color:var(--wine-900);}
+  .contact-list a:hover{text-decoration:underline;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem;}
+  .map-card{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 20px 45px -25px rgba(42,15,20,.35);}
+  .map-card iframe{width:100%;height:280px;border:0;display:block;}
+  .map-card .map-foot{padding:1rem 1.2rem;font-size:.85rem;color:var(--ink-soft);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;}
+  .map-card .map-foot a{font-weight:600;color:var(--wine-800);text-decoration:none;}
+
+  footer.site{background:var(--wine-950);color:rgba(247,239,225,.75);padding-block:2.2rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;align-items:center;padding-block:.6rem;}
+  .foot-grid .brand{color:var(--cream);}
+  .foot-grid .brand small{color:var(--gold);}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:70ch;padding-top:.8rem;border-top:1px solid rgba(247,239,225,.15);margin-top:.4rem;}
+  footer.site nav.links{position:static;background:none;transform:none;opacity:1;padding:0;border:0;}
+  footer.site .foot-links a{color:rgba(247,239,225,.85);}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .legal{padding-block:clamp(3rem,7vw,5.5rem);}
+  .legal h1{font-size:clamp(2rem,4.5vw,3rem);margin-top:.6rem;}
+  .legal-note{
+    background:var(--legal-note-bg);color:var(--legal-note-fg);
+    border:1px solid var(--legal-note-border);border-radius:14px;
+    padding:1rem 1.3rem;font-size:.92rem;line-height:1.55;max-width:70ch;margin-bottom:1.8rem;
+  }
+  .legal-block{max-width:70ch;margin-top:2.2rem;}
+  .legal-block h2{font-family:var(--font-head);font-weight:600;font-size:1.25rem;margin-bottom:.6rem;}
+  .legal-block p{color:var(--ink-soft);}
+  .legal-dl{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.2rem;margin:1rem 0 0;font-size:.95rem;}
+  .legal-dl dt{font-weight:600;}
+  .legal-dl dd{margin:0;color:var(--ink-soft);}
+  @media (max-width:640px){.legal-dl{grid-template-columns:1fr;gap:.15rem 0;} .legal-dl dt{margin-top:.6rem;}}
+
+  .foot-links{display:flex;gap:1.4rem;font-size:.85rem;}
+  .foot-links a{text-decoration:none;opacity:.85;}
+  .foot-links a:hover{text-decoration:underline;opacity:1;}
+  nav.links a.active{opacity:1;}
+  nav.links a.active::after{width:100%;}
+
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Buschenschank Haslinger</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Buschenschank<br>Haslinger<small>Sievering · Wien</small></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
+    <nav class="links" id="mainNav">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Weine &amp; Angebot</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="kontakt.html">Tisch reservieren</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-blob" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">Buschenschank &amp; Familienweingut · Wien-Sievering</span>
+        <h1>Eigener Wein, <em>eigene Geschichte</em>, offene Tür.</h1>
+        <p class="hero-lead">Zwischen Neustift und Grinzing öffnet die Familie Haslinger Innenhof und Terrasse für Gäste, die guten Wein ausschließlich aus eigener Erzeugung suchen — mit Zeit, Ruhe und dem echten Sievering-Flair.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+4314401347">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Jetzt anrufen
+          </a>
+          <a class="btn btn-ghost" href="angebot.html">Weine &amp; Angebot ansehen</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <dl>
+          <dt>Inhaberin</dt><dd>Rosmarie Haslinger</dd>
+          <dt>Lage</dt><dd>Agnesgasse 3, 1190 Wien</dd>
+          <dt>Charakter</dt><dd>Innenhof, Terrasse, Jazzabende</dd>
+        </dl>
+        <div class="hero-stars">Von Gästen geschätzt für <strong>eigene Weine</strong> und die ruhige Terrasse mitten in Sievering.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Willkommen</span>
+        <h2>Ein Familienbetrieb mit klarer Haltung</h2>
+      </div>
+      <div class="teaser-grid">
+        <div class="teaser-card reveal">
+          <h3>Über uns</h3>
+          <p>Familiengeführte Buschenschank in Sievering — was ausgeschenkt wird, kommt ausschließlich aus dem eigenen Weingarten. Erfahren Sie mehr über unsere Geschichte und Haltung.</p>
+          <a class="more" href="ueber-uns.html">Mehr über uns →</a>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Weine &amp; Angebot</h3>
+          <p>Eigene Weine, ein lauschiger Innenhof, eine Terrasse im Grünen und regelmäßige Jazz- und Kulturabende unter einem Dach.</p>
+          <a class="more" href="angebot.html">Angebot entdecken →</a>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Kontakt &amp; Anfahrt</h3>
+          <p>Agnesgasse 3, 1190 Wien — mitten in Sievering, zwischen Neustift am Walde und Grinzing. Rosmarie Haslinger freut sich auf Ihren Besuch.</p>
+          <a class="more" href="kontakt.html">Kontakt &amp; Anfahrt →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events" aria-label="Kurzhinweise">
+    <div class="ticker-track" aria-hidden="true">
+      <span>Live-Jazz im Innenhof</span>
+      <span>Ausschließlich Weine aus eigener Erzeugung</span>
+      <span>Kulturabende im Buschenschank</span>
+      <span>Terrasse bei jedem Wetter geöffnet</span>
+      <span>Live-Jazz im Innenhof</span>
+      <span>Ausschließlich Weine aus eigener Erzeugung</span>
+      <span>Kulturabende im Buschenschank</span>
+      <span>Terrasse bei jedem Wetter geöffnet</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div class="brand">Buschenschank Haslinger<small>Agnesgasse 3 · 1190 Wien</small></div>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Buschenschank Haslinger · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

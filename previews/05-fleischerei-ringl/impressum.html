@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Fleischerei Ringl</title>
+<meta name="description" content="Muster-Impressum der Fleischerei Ringl — Platzhalter zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241a16; --paper:#f6efe4; --paper-2:#efe4d2;
+    --oxblood:#6d1f26; --oxblood-dark:#4f151b; --brass:#c8912b;
+    --line: rgba(36,26,22,0.16); --max: 1160px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Work Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Fraunces', Georgia, serif; font-weight:600; line-height:1.1; margin:0; letter-spacing:-0.01em;}
+  a{color:var(--oxblood);}
+  .wrap{max-width:820px; margin:0 auto; padding:0 clamp(1.25rem, 4vw, 3rem); width:100%;}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+
+  .disclaimer{background:var(--ink); color:#e9dfce; font-size:.72rem; letter-spacing:.02em; text-align:center; padding:.55rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--brass); font-weight:600;}
+
+  header.site{position:sticky; top:0; z-index:40; background:var(--paper); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem, 4vw, 3rem); gap:1rem; max-width:1160px; margin:0 auto;}
+  .brand{font-family:'Fraunces', serif; font-weight:700; font-size:1.15rem; letter-spacing:-0.01em; text-decoration:none; color:var(--ink); display:flex; align-items:center; gap:.6rem; min-height:44px;}
+  .brand .mark{width:34px;height:34px;border-radius:50%; background:var(--oxblood); display:grid;place-items:center; flex:none;}
+  .brand .mark svg{width:18px;height:18px;}
+  nav.links{display:flex; gap:2rem; font-size:.92rem;}
+  nav.links a{text-decoration:none; color:var(--ink); position:relative; padding:.2rem 0; min-height:44px; display:inline-flex; align-items:center;}
+  nav.links a::after{content:""; position:absolute; left:0; right:0; bottom:2px; height:2px; background:var(--oxblood); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;}
+  nav.links a:hover::after, nav.links a:focus-visible::after{transform:scaleX(1);}
+  .call-btn{background:var(--oxblood); color:#f6efe4; text-decoration:none; padding:.6rem 1.15rem; border-radius:999px; font-size:.85rem; font-weight:600; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:8px; padding:.5rem .6rem; cursor:pointer; min-width:44px; min-height:44px; align-items:center; justify-content:center;}
+  .burger svg{width:22px;height:22px;display:block;}
+  @media (max-width: 820px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:400px;}
+    nav.links a{padding:1rem clamp(1.25rem,4vw,3rem); border-top:1px solid var(--line); display:flex; align-items:center; min-height:44px; width:100%;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3rem,6vw,5rem);}
+  .legal-notice{background:var(--paper-2); border:1px solid var(--line); border-left:4px solid var(--oxblood); border-radius:8px; padding:1.2rem 1.4rem; font-size:.92rem; line-height:1.6; margin-bottom:2.4rem;}
+  h1{font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:1.8rem;}
+  h2{font-size:1.25rem; margin:2.2rem 0 .8rem;}
+  p, li{font-size:1rem; line-height:1.7; color:#3c2f28;}
+  ul{padding-left:1.2rem;}
+  .field{color:#8a7a6c; font-style:italic;}
+
+  footer.site{padding:2.5rem 0 2rem; text-align:center;}
+  footer.site .wrap{border-top:1px solid var(--line); padding-top:1.8rem; max-width:1160px;}
+  footer.site .foot-links{display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; font-size:.85rem;}
+  footer.site .foot-links a{text-decoration:none; color:#6d5b4e; min-height:44px; display:inline-flex; align-items:center;}
+  footer.site .foot-links a:hover{color:var(--oxblood);}
+  footer.site small{color:#8a7a6c; font-size:.8rem; display:block; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Fleischerei Ringl</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f6efe4" stroke-width="1.8"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8"/><path d="M4 12c0 2.8 1.8 5 4 5"/></svg></span>
+      Fleischerei Ringl
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Sortiment</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4315963278">Anrufen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="legal-notice">
+      <strong>Muster-Impressum — Platzhalter zur Veranschaulichung.</strong> Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h1>Impressum</h1>
+
+    <h2>Diensteanbieter</h2>
+    <p>
+      Fleischerei Ringl<br>
+      Familie Ringl (Claudia und Monika Ringl)<br>
+      Gumpendorfer Straße 105<br>
+      1060 Wien, Österreich
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+4315963278">+43 1 596 32 78</a><br>
+      E-Mail: <a href="mailto:office@fleischerei-ringl.at">office@fleischerei-ringl.at</a>
+    </p>
+
+    <h2>Unternehmensangaben</h2>
+    <p>
+      Gewerbeart: Fleischer (Handwerk)<br>
+      UID-Nummer: <span class="field">[UID-Nummer]</span><br>
+      Gewerbebehörde: <span class="field">[zuständige Bezirksverwaltungsbehörde]</span><br>
+      Mitgliedschaft: <span class="field">[zuständige Wirtschaftskammer / Innung]</span>
+    </p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Familie Ringl, Gumpendorfer Straße 105, 1060 Wien</p>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle ist der Betrieb nicht verpflichtet.</p>
+
+    <h2>Hinweis</h2>
+    <p>Dies ist ein unverbindliches Muster-Impressum zu Demonstrationszwecken im Rahmen einer Gestaltungs-Vorschau. Es erhebt keinen Anspruch auf rechtliche Vollständigkeit oder Richtigkeit und ersetzt keine individuelle Rechtsberatung.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <small>Fleischerei Ringl · Gumpendorfer Straße 105, 1060 Wien · Tel. +43 1 596 32 78<br>
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei Ringl · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

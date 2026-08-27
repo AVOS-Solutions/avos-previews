@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Shakes Pub &amp; Restaurant</title>
+<meta name="description" content="Die Geschichte von Shakes – Pub &amp; Restaurant in der Muthgasse, Wien-Döbling: seit 1998 gutbürgerliche Küche und fester Treffpunkt im Grätzl.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#17140f; --bg2:#1f1b14; --ink:#f4ede1; --ink-dim:#c9bfa8;
+  --amber:#e8a33d; --rust:#c1542a; --line:#3a3327; --card:#221d15; --focus:#e8a33d;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:'Bricolage Grotesque', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:3px;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+.disclaimer{background:#0d0b08; color:#a89a7c; font-size:.72rem; letter-spacing:.02em; text-align:center; padding:.55rem 1rem; border-bottom:1px solid var(--line);}
+.disclaimer strong{color:#d8c9a3; font-weight:600;}
+
+header{position:sticky; top:0; z-index:50; background:rgba(23,20,15,.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem,4vw,3rem); gap:1rem;}
+.logo{font-weight:800; font-size:1.35rem; letter-spacing:-.02em; text-decoration:none; flex:none;}
+.logo span{color:var(--amber);}
+nav ul{list-style:none; display:flex; gap:2rem; margin:0; padding:0;}
+nav a{text-decoration:none; font-weight:600; font-size:.95rem; color:var(--ink-dim); display:inline-flex; align-items:center; min-height:44px; padding:.3rem 0; position:relative;}
+nav a:hover{color:var(--amber);}
+nav a.active{color:var(--amber);}
+nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:.15rem; height:2px; background:var(--amber); border-radius:2px;}
+.navtoggle{display:none; background:none; border:2px solid var(--line); color:var(--ink); border-radius:8px; width:44px; height:44px; font-size:1.3rem; cursor:pointer; flex:none;}
+.call-btn{background:var(--amber); color:#1a1408; padding:.7rem 1.3rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:.9rem; white-space:nowrap; display:inline-flex; align-items:center; min-height:44px; flex:none;}
+@media (max-width:820px){
+  nav ul{position:fixed; inset:64px 0 auto 0; flex-direction:column; background:var(--bg2); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:1rem; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s ease; max-height:calc(100vh - 64px); overflow-y:auto;}
+  nav ul.open{transform:translateY(0);}
+  nav a{min-height:48px;}
+  .navtoggle{display:block;}
+  .call-btn{display:none;}
+}
+
+.page-hero{position:relative; padding:clamp(2.6rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem); overflow:hidden; border-bottom:1px solid var(--line);}
+.page-hero::before{content:""; position:absolute; top:-40%; right:-15%; width:50vw; height:50vw; max-width:600px; max-height:600px; background:radial-gradient(circle at 30% 30%, rgba(232,163,61,.18), transparent 65%); z-index:0;}
+.page-hero h1{font-size:clamp(2.4rem,6vw,4.2rem); position:relative; z-index:1;}
+.page-hero p.hero-sub{position:relative; z-index:1; margin-bottom:0;}
+.eyebrow{display:inline-flex; align-items:center; gap:.6rem; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--amber); font-weight:700; margin-bottom:1.4rem;}
+.eyebrow::before{content:""; width:28px; height:2px; background:var(--amber);}
+h1{font-weight:800; letter-spacing:-.03em; margin:0 0 1.2rem; line-height:1.02;}
+.hero-sub{max-width:52ch; font-size:1.1rem; color:var(--ink-dim); line-height:1.6; margin:0;}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;}
+.section-head{max-width:56ch; margin-bottom:2.4rem;}
+.kicker{color:var(--amber); font-weight:700; text-transform:uppercase; font-size:.8rem; letter-spacing:.14em; margin:0 0 .8rem;}
+h2{font-size:clamp(2rem,4.5vw,2.9rem); line-height:1.08; letter-spacing:-.02em; margin:0 0 1rem; font-weight:800;}
+.lead{font-size:1.1rem; color:var(--ink-dim); line-height:1.7; max-width:64ch;}
+
+.timeline{list-style:none; margin:0; padding:0; border-left:2px solid var(--line); display:grid; gap:2.4rem; max-width:70ch;}
+.timeline li{position:relative; padding-left:2rem;}
+.timeline li::before{content:""; position:absolute; left:-7px; top:.3rem; width:12px; height:12px; border-radius:50%; background:var(--amber);}
+.timeline .t-year{font-weight:800; color:var(--amber); font-size:1.1rem; letter-spacing:-.01em; margin:0 0 .4rem;}
+.timeline p{margin:0; color:var(--ink-dim); line-height:1.7; font-size:1.02rem;}
+
+.grid4{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:1.9rem; transition:border-color .2s ease, transform .2s ease;}
+.card:hover{border-color:var(--amber); transform:translateY(-4px);}
+.card h3{font-size:1.2rem; margin:0 0 .6rem; font-weight:700; letter-spacing:-.01em;}
+.card p{color:var(--ink-dim); font-size:.96rem; line-height:1.6; margin:0;}
+
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:none;}
+
+.cta-band{background:linear-gradient(155deg, var(--bg2), var(--bg)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center;}
+.cta-band h2{margin-bottom:.8rem;}
+.cta-band .lead{margin:0 auto 1.8rem; max-width:52ch;}
+.hero-actions{display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;}
+.btn{display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.7rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:1rem; transition:transform .18s ease; min-height:44px;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--amber); color:#1a1408;}
+.btn-ghost{border:1.5px solid var(--line); color:var(--ink);}
+
+footer{padding:3rem 0 1.5rem; text-align:center; color:var(--ink-dim); font-size:.9rem;}
+footer .fname{color:var(--amber); font-weight:700;}
+footer .foot-links{margin:.6rem 0 1.2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem 1.2rem;}
+footer .foot-links a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+footer .foot-disclaimer{max-width:60ch; margin:0 auto; font-size:.82rem; opacity:.85;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Shakes – Pub &amp; Restaurant</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">SHAKE<span>S</span></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4312760160">+43 1 276 01 60</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Über uns</p>
+      <h1>Seit 1998 ein fixer Platz in Döbling</h1>
+      <p class="hero-sub">Wie aus „Shakes&amp;Beer" das heutige Shakes wurde – und warum es für so viele Betriebe rundherum längst mehr als nur ein Lokal ist.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Geschichte</p>
+        <h2>Vom Eröffnungstag bis heute</h2>
+        <p class="lead">Am 28. Mai 1998 öffnete das Lokal in der Muthgasse als „Shakes&amp;Beer" seine Türen. Seither hat sich vieles gewandelt, geblieben ist der Anspruch: gutbürgerliche, international angehauchte Küche, die man sich werktags ohne Umwege gönnen kann.</p>
+      </div>
+      <ol class="timeline reveal">
+        <li>
+          <p class="t-year">28.05.1998</p>
+          <p>Eröffnung als „Shakes&amp;Beer" in der Muthgasse 56 – von Beginn an mit Fokus auf gutbürgerliche, international angehauchte Küche.</p>
+        </li>
+        <li>
+          <p class="t-year">Etablierung im Grätzl</p>
+          <p>Die Lage inmitten mehrerer Betriebe in der Muthgasse macht Shakes rasch zum bevorzugten Anlaufpunkt für Frühstück und Mittagstisch der umliegenden Belegschaften.</p>
+        </li>
+        <li>
+          <p class="t-year">Heute: Shakes – Pub &amp; Restaurant</p>
+          <p>Werktags von 8:00 bis 23:00 Uhr geöffnet, mit festem Frühstücksfenster (Mo–Fr 8–10 Uhr), wechselnder Wochenmenükarte und verlässlichem Mittagstisch – nach wie vor an derselben Adresse.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Was uns ausmacht</p>
+        <h2>Verlässlichkeit statt Trends</h2>
+      </div>
+      <div class="grid4">
+        <div class="card reveal">
+          <h3>Feste Öffnungszeiten</h3>
+          <p>Werktags 8–23 Uhr durchgehend geöffnet – ohne Mittagspause, ohne Überraschungen.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Nachbarschaft im Fokus</h3>
+          <p>Direkt im Umfeld zahlreicher Betriebe in der Muthgasse gelegen – Frühstück und Mittagstisch, die sich in den Arbeitsalltag einfügen.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Wechselnde Karte</h3>
+          <p>Die Wochenmenükarte wird laufend erneuert, damit es auch bei täglichen Gästen nicht eintönig wird.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <p class="kicker">Weiterlesen</p>
+      <h2>Was heute auf der Karte steht</h2>
+      <p class="lead">Von Frühstück bis Abendkarte – ein Überblick über das Angebot bei Shakes.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="angebot.html">Zur Speisekarte</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="fname">Shakes – Pub &amp; Restaurant</span> · Muthgasse 56, 1190 Wien · <a href="tel:+4312760160" style="text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;">+43 1 276 01 60</a></p>
+    <p class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Shakes – Pub &amp; Restaurant · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

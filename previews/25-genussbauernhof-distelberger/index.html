@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenussBauernhof Distelberger — Mostheuriger &amp; Hofladen im Mostviertel</title>
+<meta name="description" content="GenussBauernhof Distelberger in Gigerreith bei Amstetten: 900 Jahre alter Vierkanthof mit Mostheurigem, Hofladen, eigenen Obstprodukten und Bauernmuseum im Mostviertler Birnbaumland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --clay: #7a3b22;
+    --clay-deep: #4d2413;
+    --moss: #5b6b3f;
+    --moss-deep: #38431f;
+    --cream: #f7ecd9;
+    --cream-2: #efe0c4;
+    --ink: #2c2013;
+    --gold: #c98d3c;
+    --line: rgba(44,32,19,0.14);
+    --radius: 28px;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:clamp(15.5px,1.4vw,17px);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--clay-deep);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,56px);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{
+    background:var(--clay-deep);
+    color:#f3e6d3;
+    font-size:12.5px;
+    text-align:center;
+    padding:9px 16px;
+    line-height:1.5;
+  }
+  .disclaimer strong{color:var(--gold); font-weight:600;}
+
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(247,236,217,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px clamp(20px,5vw,56px);
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.25rem;
+    color:var(--clay-deep); text-decoration:none;
+  }
+  .brand span{color:var(--moss);}
+  nav.links{display:flex; gap:28px; list-style:none; margin:0; padding:0;}
+  nav.links a{
+    text-decoration:none; font-size:0.92rem; font-weight:500;
+    color:var(--ink); position:relative; padding:11px 2px;
+  }
+  nav.links a:hover{color:var(--clay);}
+  nav.links a.active{color:var(--clay); font-weight:700;}
+  nav.links a.active::after{content:""; position:absolute; left:0; right:0; bottom:4px; height:2px; background:var(--gold);}
+  .nav-toggle{display:none; background:none; border:2px solid var(--clay-deep); border-radius:10px; padding:11px 13px; min-width:44px; min-height:44px; cursor:pointer;}
+  .nav-toggle svg{display:block;}
+
+  .hero{
+    position:relative; overflow:hidden;
+    padding:min(12vw,96px) 0 72px;
+    background:
+      radial-gradient(60% 55% at 82% 10%, rgba(201,141,60,0.25), transparent 60%),
+      radial-gradient(55% 60% at 10% 95%, rgba(91,107,63,0.22), transparent 65%),
+      var(--cream);
+  }
+  .hero .kicker{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:0.82rem; text-transform:uppercase; letter-spacing:0.14em;
+    color:var(--moss-deep); font-weight:600; margin-bottom:22px;
+  }
+  .hero .kicker::before{content:""; width:26px; height:2px; background:var(--gold); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.2rem, 6.2vw, 4.4rem);
+    line-height:1.04;
+    max-width:15ch;
+    position:relative; z-index:1;
+  }
+  .hero h1 em{font-style:italic; color:var(--clay);}
+  .hero p.lead{
+    max-width:52ch; font-size:clamp(1rem,2.4vw,1.15rem); margin-top:24px; color:#4a3a26;
+    position:relative; z-index:1;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-top:34px; position:relative; z-index:1;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 26px; min-height:44px; border-radius:999px; text-decoration:none;
+    font-weight:600; font-size:0.95rem; border:2px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary{background:var(--clay); color:var(--cream);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(122,59,34,0.35);}
+  .btn-ghost{border-color:var(--clay-deep); color:var(--clay-deep);}
+  .btn-ghost:hover{background:var(--clay-deep); color:var(--cream);}
+
+  .hero-badge{
+    position:absolute; right:clamp(6px,6vw,80px); top:clamp(90px,16vw,140px);
+    width:min(200px,24vw); aspect-ratio:1;
+    border-radius:50%;
+    background:conic-gradient(from 180deg, var(--gold), var(--clay), var(--moss), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    z-index:1;
+  }
+  .hero-badge .inner{
+    width:82%; height:82%; border-radius:50%; background:var(--cream);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; font-family:'Fraunces',serif; color:var(--clay-deep);
+  }
+  .hero-badge .num{font-size:clamp(1.6rem,4vw,2.4rem); font-weight:600; line-height:1;}
+  .hero-badge .cap{font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; margin-top:6px; color:var(--moss-deep); font-family:'Inter',sans-serif; font-weight:600;}
+
+  section{padding:clamp(56px,9vw,96px) 0;}
+  .section-head{max-width:60ch; margin-bottom:clamp(32px,6vw,56px);}
+  .section-head .eyebrow{
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.8rem; font-weight:600;
+    color:var(--moss-deep); margin-bottom:14px; display:block;
+  }
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.6rem);}
+
+  .story{background:var(--cream-2); position:relative;}
+  .timeline{position:relative; margin-top:20px;}
+  .timeline::before{
+    content:""; position:absolute; left:19px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(var(--gold),var(--moss));
+  }
+  .t-item{position:relative; padding-left:56px; margin-bottom:44px;}
+  .t-item:last-child{margin-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:8px; top:4px; width:24px; height:24px; border-radius:50%;
+    background:var(--cream-2); border:3px solid var(--clay); box-shadow:0 0 0 6px var(--cream-2);
+  }
+  .t-item .tag{font-weight:700; color:var(--clay); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px; display:block;}
+  .t-item h3{font-size:clamp(1.2rem,2.6vw,1.4rem); margin-bottom:10px;}
+  .t-item p{margin:0; color:#4a3a26; max-width:60ch;}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .offer{background:var(--cream);}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{
+    background:var(--cream-2);
+    border-radius:var(--radius);
+    padding:clamp(24px,4vw,34px) clamp(20px,4vw,30px);
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .card::after{
+    content:""; position:absolute; width:150px; height:150px; border-radius:50%;
+    right:-60px; bottom:-60px; opacity:0.5;
+  }
+  .card:nth-child(1)::after{background:radial-gradient(circle, rgba(201,141,60,0.35), transparent 70%);}
+  .card:nth-child(2)::after{background:radial-gradient(circle, rgba(91,107,63,0.35), transparent 70%);}
+  .card:nth-child(3)::after{background:radial-gradient(circle, rgba(122,59,34,0.3), transparent 70%);}
+  .card:nth-child(4)::after{background:radial-gradient(circle, rgba(201,141,60,0.35), transparent 70%);}
+  .card .icon{width:46px; height:46px; margin-bottom:18px; position:relative; z-index:1;}
+  .card h3{font-size:clamp(1.15rem,2.4vw,1.35rem); margin-bottom:12px; position:relative; z-index:1;}
+  .card p{margin:0; color:#4a3a26; position:relative; z-index:1; font-size:0.98rem;}
+  .card a.card-link{display:inline-block; margin-top:16px; font-weight:700; color:var(--clay); text-decoration:none; position:relative; z-index:1;}
+  .card a.card-link:hover{text-decoration:underline;}
+
+  .strip{
+    background:linear-gradient(120deg, var(--moss-deep), var(--clay-deep));
+    color:var(--cream);
+    padding:clamp(46px,7vw,70px) 0;
+  }
+  .strip .wrap{display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:space-between;}
+  .strip h2{color:var(--cream); font-size:clamp(1.4rem,3vw,2.2rem); max-width:24ch;}
+  .strip p{color:#e9dcc4; max-width:44ch; margin-top:12px;}
+
+  .contact{background:var(--cream-2);}
+  .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:44px; align-items:start;}
+  .info-list{list-style:none; margin:0; padding:0; display:grid; gap:18px;}
+  .info-list li{display:flex; gap:16px; align-items:flex-start; padding-bottom:18px; border-bottom:1px solid var(--line);}
+  .info-list .ico{width:22px; height:22px; flex:none; margin-top:3px; color:var(--clay);}
+  .info-list .label{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--moss-deep); font-weight:700; margin-bottom:3px;}
+  .info-list a{text-decoration:none; font-weight:600; color:var(--clay-deep); word-break:break-word;}
+  .info-list a:hover{text-decoration:underline;}
+  .map-frame{
+    border-radius:24px; overflow:hidden; border:1px solid var(--line); background:var(--cream);
+    aspect-ratio:4/3;
+  }
+  .map-frame iframe{width:100%; height:100%; border:0;}
+
+  .legal{background:var(--cream);}
+  .legal h2{font-size:clamp(1.5rem,3.4vw,2rem); margin-bottom:10px;}
+  .legal h3{font-size:1.1rem; margin:28px 0 8px;}
+  .legal p, .legal li{color:#4a3a26;}
+  .legal .placeholder{color:var(--clay); font-weight:600;}
+  .notice{
+    background:var(--cream-2); border:1px solid var(--line); border-left:5px solid var(--gold);
+    border-radius:14px; padding:18px 22px; margin-bottom:40px; font-size:0.95rem; color:var(--clay-deep);
+  }
+
+  footer{background:var(--clay-deep); color:#e8d8bd; padding:44px 0 24px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:flex-start;}
+  footer .brand2{font-family:'Fraunces',serif; font-size:1.15rem; color:var(--cream);}
+  footer small{color:#c9b183;}
+  footer .foot-links{list-style:none; margin:10px 0 0; padding:0; display:flex; gap:16px; flex-wrap:wrap;}
+  footer .foot-links a{color:#e8d8bd; font-size:0.85rem; text-decoration:none;}
+  footer .foot-links a:hover{text-decoration:underline;}
+  .foot-note{
+    border-top:1px solid rgba(255,255,255,0.15); margin-top:30px; padding-top:20px;
+    font-size:12.5px; color:#c9b183; text-align:center;
+  }
+
+  @media (max-width:900px){
+    .cards{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .hero-badge{display:none;}
+    nav.links{
+      position:fixed; inset:64px 16px auto 16px; background:var(--cream);
+      border-radius:20px; flex-direction:column; padding:14px; gap:2px;
+      box-shadow:0 20px 50px rgba(44,32,19,0.25); border:1px solid var(--line);
+      display:none; max-height:calc(100vh - 90px); overflow-y:auto;
+    }
+    nav.links.open{display:flex;}
+    nav.links a{padding:13px 10px; display:block;}
+    .nav-toggle{display:inline-flex; align-items:center; justify-content:center;}
+  }
+  @media (max-width:640px){
+    footer .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von GenussBauernhof Distelberger · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Genuss<span>Bauernhof</span> Distelberger</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="20" y2="5"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">Gigerreith · Amstetten · Mostviertel</span>
+      <h1>900 Jahre <em>Vierkanthof</em>, ein Leben lang Genuss.</h1>
+      <p class="lead">Mostheuriger, Hofladen und Bauernmuseum mitten im Mostviertler Birnbaumland — geführt von Toni Distelberger &amp; Christine Pfligl, getragen von fünf Hektar Streuobstwiesen.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="kontakt.html">Hof besuchen</a>
+        <a class="btn btn-ghost" href="angebot.html">Unser Angebot</a>
+      </div>
+    </div>
+    <div class="hero-badge" aria-hidden="true">
+      <div class="inner"><span class="num">900</span><span class="cap">Jahre Geschichte</span></div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Über uns</span>
+        <h2>Ein Hof, der seit neun Jahrhunderten Wurzeln schlägt.</h2>
+      </div>
+      <p class="reveal" style="max-width:64ch; color:#4a3a26; margin-bottom:28px;">Unser Vierkanthof zählt zu den ältesten im Mostviertel und wird heute von Toni Distelberger und Christine Pfligl geführt — als Mostbaron-Betrieb mit Mostheurigem, Hofladen und Bauernmuseum.</p>
+      <a class="btn btn-ghost reveal" href="ueber-uns.html">Unsere Geschichte lesen</a>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Was uns ausmacht</span>
+        <h2>Mostheuriger, GenussLaden &amp; Bauernmuseum unter einem Dach.</h2>
+      </div>
+      <div class="cards">
+        <div class="card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 6c-7 8-12 14-12 22a12 12 0 0024 0c0-8-5-14-12-22z"/></svg>
+          <h3>Mostheuriger</h3>
+          <p>Hausgemachte Schmankerln und eigener Most in gemütlicher Vierkanthof-Atmosphäre — Ausg'steckt-Zeiten auf Anfrage.</p>
+        </div>
+        <div class="card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="16" width="32" height="24" rx="3"/><path d="M16 16v-4a8 8 0 0116 0v4"/></svg>
+          <h3>GenussLaden &amp; Hofladen</h3>
+          <p>Most, Säfte, Essige und Dörrobst aus eigener Erzeugung — direkt ab Hof, aus den Früchten unserer Streuobstwiesen.</p>
+        </div>
+        <div class="card reveal">
+          <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 40V18l16-10 16 10v22"/><path d="M18 40V26h12v14"/></svg>
+          <h3>Bauernmuseum &amp; Führungen</h3>
+          <p>Das Mostviertler Bauernmuseum erzählt vom bäuerlichen Alltag — mit Gruppenführungen rund um Hof und Museum.</p>
+        </div>
+      </div>
+      <div style="margin-top:36px;">
+        <a class="btn btn-primary reveal" href="angebot.html">Alle Angebote ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap">
+      <h2 class="reveal">Wir freuen uns auf Ihren Besuch</h2>
+      <p class="reveal">Ob zum Ausg'steckt, im Hofladen oder bei einer Museumsführung — melden Sie sich, wir sagen Ihnen gerne, wann bei uns geöffnet ist.</p>
+      <a class="btn btn-primary reveal" href="kontakt.html" style="margin-top:6px;">Zum Kontakt</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand2">GenussBauernhof Distelberger</div>
+      <small>Gigerreith 39 · 3300 Amstetten · Mostviertel, Niederösterreich</small><br>
+      <small><a href="tel:+4374797334" style="color:#e8d8bd;">+43 7479 7334</a></small>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div>
+      <small>Mostheuriger · Hofladen · Bauernmuseum</small>
+    </div>
+  </div>
+  <div class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von GenussBauernhof Distelberger · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+    });
+
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

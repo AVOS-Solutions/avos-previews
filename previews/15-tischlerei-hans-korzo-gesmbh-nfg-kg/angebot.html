@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leistungen — Tischlerei Hans Körzö</title>
+<meta name="description" content="Leistungen der Tischlerei Hans Körzö in Wien-Donaustadt: Dachbodenausbau, Reparaturen, Innenausbau, Böden, Türen, Fenster, Pergolen und Carports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4efe6;--panel:#fff;--ink:#241d15;--oak:#a5672c;--oak-deep:#7c4a1e;--moss:#4b5c3f;
+    --line:rgba(36,29,21,0.16);--line-strong:rgba(36,29,21,0.4);--focus:#a5672c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclosure{background:var(--ink);color:#e8dfce;font-size:0.72rem;text-align:center;padding:0.55rem 1rem;letter-spacing:0.02em;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,239,230,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-strong);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-weight:800;font-size:1.05rem;text-decoration:none;color:var(--ink);}
+  .brandmark .tag{background:var(--oak);color:#fff;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;}
+  nav.links{display:none;gap:1.8rem;font-size:0.92rem;font-weight:600;}
+  nav.links a{text-decoration:none;padding:0.3rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--oak-deep);}
+  nav.links a.active{color:var(--oak-deep);border-bottom-color:var(--oak-deep);}
+  .nav-cta{display:none;background:var(--oak);color:#fff;border-radius:8px;padding:0.65rem 1.3rem;font-weight:700;text-decoration:none;font-size:0.85rem;}
+  .burger{background:none;border:1px solid var(--line-strong);border-radius:8px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:860px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line-strong);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:600;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--oak-deep);background:rgba(165,103,44,0.08);}
+
+  section{padding:clamp(3.2rem,8vw,6rem) 0;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-size:0.78rem;color:var(--oak-deep);margin-bottom:0.9rem;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.7rem);max-width:22ch;}
+  .lead{max-width:58ch;margin-top:1.1rem;font-size:1.03rem;color:#4a3d2c;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{padding:clamp(2.6rem,7vw,4.5rem) 0 0.5rem;}
+  .page-hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);max-width:20ch;}
+  .breadcrumb{font-size:0.82rem;color:#7c6a4e;margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;color:#7c6a4e;}
+  .breadcrumb a:hover{color:var(--oak-deep);}
+
+  .bento{display:grid;gap:1.1rem;margin-top:3rem;grid-template-columns:1fr;}
+  @media(min-width:640px){.bento{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;}}
+  .bento-item{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;padding:1.8rem;display:flex;flex-direction:column;gap:0.8rem;}
+  @media(min-width:1000px){.bento-item.feature{grid-column:span 2;grid-row:span 2;background:var(--ink);color:#f4efe6;}}
+  .bento-item.feature h3{color:#f4efe6;}
+  .bento-item.feature p{color:#c9bda3;}
+  .bento-icon{width:34px;height:34px;color:var(--oak);flex-shrink:0;}
+  .bento-item.feature .bento-icon{color:#e0a84f;width:44px;height:44px;}
+  .bento-item h3{font-size:1.05rem;}
+  .bento-item p{font-size:0.92rem;color:#4a3d2c;flex-grow:1;}
+  .bento-item .idx{font-size:0.75rem;font-weight:700;color:var(--oak-deep);letter-spacing:0.06em;}
+  .bento-item.feature .idx{color:#e0a84f;}
+
+  .process-note{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;padding:2rem clamp(1.6rem,4vw,2.4rem);margin-top:3rem;display:flex;gap:1.2rem;align-items:flex-start;}
+  .process-note svg{width:28px;height:28px;color:var(--oak);flex-shrink:0;margin-top:0.2rem;}
+  .process-note p{color:#4a3d2c;font-size:0.96rem;}
+  .process-note strong{color:var(--ink);}
+
+  .contact{background:var(--ink);color:#f4efe6;}
+  .contact .eyebrow{color:#e0a84f;}
+  .contact h2{color:#f4efe6;}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.6rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;min-height:44px;transition:transform .18s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-oak{background:var(--oak);color:#fff;}
+  .btn-outline{border:1.5px solid rgba(244,239,230,0.35);color:#f4efe6;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:1.6rem;}
+
+  footer.site{background:#1a1510;color:#c9bda3;padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:#f4efe6;font-weight:700;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.8rem;}
+  footer.site .foot-links a{text-decoration:none;color:#c9bda3;}
+  footer.site .foot-links a:hover{color:#e0a84f;}
+  footer .legal{border-top:1px solid rgba(244,239,230,0.15);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Hans Körzö GesmbH Nfg KG · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html">Tischlerei Körzö <span class="tag">seit Generationen</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+43177461140">Anfrage stellen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html" class="active">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+43177461140">Anrufen: +43 1 774 61 14</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> / Leistungen</p>
+      <p class="eyebrow reveal">Leistungen</p>
+      <h1 class="reveal">Was wir für Sie umsetzen</h1>
+      <p class="lead reveal">Ein Überblick über das Leistungsspektrum der Tischlerei Hans Körzö — abgestimmt auf Wiener Wohnhäuser, Gärten und Gewerbeflächen. Konkrete Preise besprechen wir gerne individuell nach Besichtigung.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="bento">
+        <div class="bento-item feature reveal">
+          <span class="idx">01 · Schwerpunkt</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+          <h3>Dachbodenausbau</h3>
+          <p>Aus ungenutztem Dachboden wird zusätzlicher Wohnraum — von der Planung der Innenverkleidung und Dämmung bis zur fertigen Ausführung, ganz auf Ihr Wiener Zuhause abgestimmt. Inklusive Einbau von Türen, Böden und Stauraumlösungen unter der Dachschräge.</p>
+        </div>
+        <div class="bento-item reveal">
+          <span class="idx">02</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12l6 6L20 6"/></svg>
+          <h3>Reparaturen</h3>
+          <p>Rasche, fachgerechte Reparatur von Möbeln, Türen und Holzelementen jeder Art — von der klemmenden Zimmertür bis zum wackeligen Möbelstück.</p>
+        </div>
+        <div class="bento-item reveal">
+          <span class="idx">03</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg>
+          <h3>Innenausbau</h3>
+          <p>Maßgeschneiderte Lösungen für Wohn- und Arbeitsräume — vom einzelnen Möbelstück bis zum kompletten Raumkonzept, exakt auf Ihre Raumsituation zugeschnitten.</p>
+        </div>
+        <div class="bento-item reveal">
+          <span class="idx">04</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 20h18M6 20V9l6-4 6 4v11"/></svg>
+          <h3>Böden</h3>
+          <p>Fachgerechte Verlegung und Sanierung von Holzböden, langlebig und passgenau verarbeitet — für Alt- und Neubau gleichermaßen geeignet.</p>
+        </div>
+        <div class="bento-item reveal">
+          <span class="idx">05</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="18" rx="1"/><line x1="15" y1="12" x2="15" y2="12.01"/></svg>
+          <h3>Türen &amp; Fenster</h3>
+          <p>Von der Maßfertigung bis zum fachgerechten Einbau — Türen und Fenster in Tischlerqualität, passend zu Ihrem Gebäude.</p>
+        </div>
+        <div class="bento-item reveal">
+          <span class="idx">06</span>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10M4 20h16M9 20v-6h6v6"/></svg>
+          <h3>Pergolen &amp; Carports</h3>
+          <p>Stabile, wetterfeste Holzkonstruktionen für Terrasse, Garten und Stellplatz — passgenau geplant und fachgerecht errichtet.</p>
+        </div>
+      </div>
+
+      <div class="process-note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>
+        <p><strong>Zum Ablauf:</strong> Jedes Projekt beginnt mit einem persönlichen Gespräch — bei Bedarf mit Besichtigung vor Ort. Danach erhalten Sie ein auf Ihr Vorhaben abgestimmtes Angebot. So bleibt der Aufwand transparent und planbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Ihr Projekt</p>
+      <h2 class="reveal">Passt eine dieser Leistungen zu Ihrem Vorhaben?</h2>
+      <p class="lead reveal" style="color:#c9bda3;">Rufen Sie an oder schreiben Sie uns — wir besprechen gerne, was für Ihr Zuhause oder Ihren Betrieb sinnvoll ist.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-oak" href="tel:+43177461140">Jetzt anrufen</a>
+        <a class="btn btn-outline" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>Tischlerei Hans Körzö GesmbH Nfg KG</div>
+      <div>Wehrbrücklstraße 38-40, 1220 Wien · +43 1 774 61 14</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Hans Körzö GesmbH Nfg KG · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

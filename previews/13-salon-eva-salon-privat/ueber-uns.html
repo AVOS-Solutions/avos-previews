@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Salon Eva &amp; Salon Privat</title>
+<meta name="description" content="Meisterin Gabriele Wiedenhofer und ihr Team: die Geschichte hinter Salon Eva und Salon Privat in Wien-Kaisermühlen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f0e8;--cream-2:#efe4d6;--ink:#2a201c;--rose:#b8493f;--rose-deep:#8f342b;
+    --gold:#b8935a;--charcoal:#171310;--charcoal-2:#211a16;--privat-ink:#f2e9dc;--privat-muted:#c9b8a3;
+    --line:rgba(42,32,28,0.14);--line-dark:rgba(242,233,220,0.16);--focus:#b8935a;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.05;margin:0;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  .disclosure{background:var(--charcoal);color:var(--privat-muted);font-size:0.72rem;letter-spacing:0.02em;text-align:center;padding:0.55rem 1rem;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,240,232,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none;flex-shrink:0;}
+  .brandmark .div{color:var(--gold);font-weight:300;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding:0.3rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose-deep);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after,nav.links a.active::after{width:100%;}
+  nav.links a.active{color:var(--rose-deep);font-weight:700;}
+  .nav-cta{display:none;border:1px solid var(--ink);border-radius:999px;padding:0.5rem 1.2rem;font-size:0.85rem;font-weight:600;text-decoration:none;white-space:nowrap;}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:860px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--rose-deep);font-weight:700;background:var(--cream-2);}
+  .page-hero{background:radial-gradient(120% 140% at 80% 0%, #2c211b 0%, var(--charcoal) 55%, var(--charcoal-2) 100%);color:var(--privat-ink);padding:clamp(3rem,10vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);position:relative;overflow:hidden;}
+  .deco-ring{position:absolute;border-radius:50%;border:1px solid;opacity:0.35;}
+  .page-hero .deco-ring{border-color:var(--gold);width:min(300px,60vw);height:min(300px,60vw);right:-10%;top:-16%;}
+  .page-hero .eyebrow{color:var(--gold);}
+  .page-hero h1{color:var(--privat-ink);font-size:clamp(2.2rem,6vw,3.6rem);position:relative;}
+  .page-hero p.tag{margin-top:1rem;max-width:56ch;color:var(--privat-muted);font-size:1.05rem;position:relative;}
+  section{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;color:var(--rose-deep);margin-bottom:0.8rem;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:22ch;}
+  .lead{max-width:60ch;margin-top:1.2rem;font-size:1.08rem;color:#4a3a33;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .story{background:var(--cream-2);}
+  .story-grid{display:grid;gap:2.5rem;margin-top:2.5rem;}
+  @media(min-width:800px){.story-grid{grid-template-columns:1.1fr 0.9fr;align-items:center;}}
+  .story-art{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:radial-gradient(circle at 30% 20%, #d9a76a 0%, transparent 45%),radial-gradient(circle at 80% 75%, #8f342b 0%, transparent 55%),linear-gradient(160deg,#2c211b,#171310);}
+  .story-art::before{content:"E";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:min(40vw,220px);color:rgba(247,240,232,0.14);}
+  .story-text p{margin:1rem 0 0;color:#4a3a33;}
+  .story-text p:first-of-type{margin-top:0;}
+  .timeline{margin-top:3rem;position:relative;}
+  .timeline-line{position:absolute;left:22px;top:0;bottom:0;width:2px;background:var(--line);}
+  @media(min-width:760px){.timeline-line{left:50%;}}
+  .t-items{display:grid;gap:2.6rem;position:relative;}
+  .t-item{position:relative;padding-left:3.2rem;}
+  @media(min-width:760px){
+    .t-item{padding-left:0;width:calc(50% - 2.5rem);}
+    .t-item:nth-child(odd){margin-right:calc(50% + 2.5rem);text-align:right;}
+    .t-item:nth-child(even){margin-left:calc(50% + 2.5rem);}
+  }
+  .t-dot{position:absolute;left:14px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--rose-deep);border:3px solid var(--cream);box-shadow:0 0 0 2px var(--rose-deep);}
+  @media(min-width:760px){.t-item:nth-child(odd) .t-dot{left:auto;right:-2.5rem;}.t-item:nth-child(even) .t-dot{left:-2.5rem;}}
+  .t-year{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;color:var(--rose-deep);}
+  .t-item h3{margin-top:0.3rem;font-size:1.25rem;}
+  .t-item p{margin-top:0.5rem;color:#4a3a33;font-size:0.97rem;}
+  .concept-grid{display:grid;gap:1.75rem;margin-top:3rem;}
+  @media(min-width:760px){.concept-grid{grid-template-columns:1fr 1fr;}}
+  .concept-card{border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;}
+  .concept-card.eva{background:#fff;border:1px solid var(--line);}
+  .concept-card.privat{background:var(--charcoal);color:var(--privat-ink);}
+  .concept-card h3{font-size:1.6rem;margin-bottom:0.9rem;}
+  .concept-card.privat h3{color:var(--gold);}
+  .concept-card ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:0.7rem;}
+  .concept-card li{display:flex;gap:0.7rem;font-size:0.96rem;align-items:flex-start;}
+  .concept-card.eva li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose-deep);margin-top:0.55rem;flex-shrink:0;}
+  .concept-card.privat li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:0.55rem;flex-shrink:0;}
+  .trust{display:flex;flex-wrap:wrap;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--line);}
+  .trust-item{min-width:160px;}
+  .trust-num{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--rose-deep);}
+  .trust-label{font-size:0.85rem;color:#6b5a50;margin-top:0.2rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;}
+  .btn-primary,.btn-ghost{padding:0.9rem 1.7rem;border-radius:999px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;}
+  .btn-primary{background:var(--rose-deep);color:#fff8f3;}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
+  footer.site{background:var(--charcoal-2);color:var(--privat-muted);padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1.2rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;}
+  footer.site .foot-links a{text-decoration:none;color:var(--privat-muted);}
+  footer.site .foot-links a:hover{color:var(--privat-ink);}
+  footer .legal{border-top:1px solid var(--line-dark);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html"><span>Salon Eva</span><span class="div">/</span><span>Privat</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4312690570">+43 1 269 05 70</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+    <a href="angebot.html">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4312690570">Anrufen: +43 1 269 05 70</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="deco-ring" aria-hidden="true"></div>
+      <p class="eyebrow">Über uns</p>
+      <h1>Zwei Konzepte, ein Meisterbetrieb</h1>
+      <p class="tag">Die Geschichte von Salon Eva und Salon Privat — und wie Meisterin Gabriele Wiedenhofer beide Häuser zusammenhält.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap story-grid">
+      <div class="story-art reveal" aria-hidden="true"></div>
+      <div class="story-text reveal">
+        <p class="eyebrow">Der Betrieb</p>
+        <h2 class="section-title">Handwerk auf Meisterniveau in Kaisermühlen</h2>
+        <p>In der Schiffmühlenstraße im 22. Bezirk führt Meisterin Gabriele Wiedenhofer einen Friseur-Meisterbetrieb, der bewusst zwei Wege anbietet: den klassischen, lebendigen <strong>Salon Eva</strong> für Damen und Herren — und mit <strong>Salon Privat</strong> ein zweites, ruhigeres Konzept mit eigenen, geschlossenen Einzelräumen für alle, die Styling lieber unter vier Augen erleben.</p>
+        <p>Beide Häuser teilen sich denselben Anspruch: Handwerk auf Meisterniveau, persönliche Beratung und ein Ergebnis, das zur Person passt — nicht zum Trend von letzter Woche. Ob mitten im Salonleben oder ganz für sich: Wer zu Gabriele Wiedenhofer und ihrem Team kommt, bekommt volle Aufmerksamkeit für Haar und Typ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Wie alles zusammenkam</p>
+      <h2 class="section-title reveal">Ein Betrieb, zwei Adressen</h2>
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="t-items">
+          <div class="t-item reveal">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-year">Salon Eva</div>
+            <h3>Der klassische Salon entsteht</h3>
+            <p>In Kaisermühlen etabliert sich Salon Eva als offener, freundlicher Anlaufpunkt für Damen- und Herrenhairstyling im Bezirk.</p>
+          </div>
+          <div class="t-item reveal">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-year">2023</div>
+            <h3>Salon Privat eröffnet</h3>
+            <p>Mit eigenen, geschlossenen Räumen entsteht ein zweites Konzept für alle, die ihre Zeit im Salon lieber ungestört verbringen möchten.</p>
+          </div>
+          <div class="t-item reveal">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-year">Heute</div>
+            <h3>Zwei Häuser, ein Team</h3>
+            <p>Meisterin Gabriele Wiedenhofer und ihr Team betreuen beide Konzepte mit demselben Blick für Handwerk und Beratung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <p class="eyebrow reveal">Die zwei Konzepte im Detail</p>
+      <h2 class="section-title reveal">Wählen Sie Ihren Rahmen</h2>
+      <p class="lead reveal">Ob mitten im Salonleben oder ganz für sich — beide Konzepte teilen sich Meisterhandwerk, Beratung und Sorgfalt.</p>
+      <div class="concept-grid">
+        <div class="concept-card eva reveal">
+          <h3>Salon Eva</h3>
+          <p>Der klassische Salon für Damen und Herren: offene Atmosphäre, kurze Wege, Beratung mit Blick für aktuelle Schnitte und Farben.</p>
+          <ul>
+            <li>Damen- und Herrenhaarschnitte</li>
+            <li>Farbe, Strähnen &amp; Balayage</li>
+            <li>Föhnen &amp; Festliche Frisuren</li>
+            <li>Beratung für jeden Haartyp</li>
+          </ul>
+        </div>
+        <div class="concept-card privat reveal">
+          <h3>Salon Privat</h3>
+          <p>Eigene, geschlossene Räume für alle, die ihre Zeit im Salon lieber ungestört und in aller Ruhe verbringen möchten.</p>
+          <ul>
+            <li>Private Einzelräume mit Diskretion</li>
+            <li>Individuell abgestimmte Termine</li>
+            <li>Ruhige, konzentrierte Atmosphäre</li>
+            <li>Ideal für besondere Anlässe</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trust reveal">
+        <div class="trust-item">
+          <div class="trust-num">2</div>
+          <div class="trust-label">Konzepte unter einem Dach</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">22.</div>
+          <div class="trust-label">Bezirk — Kaisermühlen, Wien</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">1</div>
+          <div class="trust-label">Meisterin, ein Team, ein Anspruch</div>
+        </div>
+      </div>
+      <div class="cta-row reveal">
+        <a class="btn-primary" href="angebot.html">Leistungen ansehen</a>
+        <a class="btn-ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="font-size:1rem;">Salon Eva <span class="div">/</span> Salon Privat</div>
+      <div>Schiffmühlenstraße 53, 1220 Wien · +43 1 269 05 70</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

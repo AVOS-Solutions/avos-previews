@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Café Sperl</title>
+<meta name="description" content="Muster-Datenschutzerklärung des Café Sperl gemäß DSGVO-Standardtextbausteinen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#141110;
+    --night-2:#1c1815;
+    --brass:#b98a4a;
+    --brass-soft:#e3c793;
+    --marble:#efe7da;
+    --marble-dim:#cfc3ac;
+    --wine:#7a2333;
+    --ink:#efe7da;
+    --line:rgba(239,231,218,.14);
+    --focus:#e3c793;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--night);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;margin:0;line-height:1.05;}
+  p{line-height:1.7;}
+  .wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3.5rem);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  img,svg{display:block;max-width:100%;}
+
+  .disclaimer{background:#0c0a09;color:var(--marble-dim);font-size:.78rem;text-align:center;padding:.55rem 1rem;}
+  .disclaimer strong{color:var(--brass-soft);font-weight:700;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(20,17,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:1rem;gap:1rem;}
+  .brand{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;letter-spacing:.02em;text-decoration:none;}
+  nav.links{display:flex;gap:2.2rem;font-size:.86rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+  nav.links a{text-decoration:none;color:var(--marble-dim);position:relative;padding-block:.2rem;}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--brass-soft);}
+  .nav-cta{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--brass);color:var(--brass-soft);padding:.75rem 1.3rem;border-radius:2px;min-height:44px;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;min-width:44px;min-height:44px;font-size:1.15rem;}
+  @media (max-width:860px){
+    nav.links{position:fixed;inset:60px 0 auto 0;background:var(--night-2);flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);opacity:0;transition:transform .3s ease,opacity .3s ease;max-height:80vh;overflow-y:auto;}
+    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links a{padding:1rem 0;border-bottom:1px solid var(--line);}
+    .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
+    .nav-cta{display:none;}
+  }
+
+  .page-hero{padding-block:clamp(2.4rem,6vw,3.4rem) clamp(1.8rem,4vw,2.4rem);border-bottom:1px solid var(--line);background:var(--night-2);}
+  .breadcrumb{font-size:.82rem;color:var(--marble-dim);margin-bottom:1rem;}
+  .breadcrumb a{color:var(--brass-soft);text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,2.8rem);color:var(--marble);}
+
+  section{padding-block:clamp(2.8rem,6vw,4.5rem);}
+  .legal-note{background:var(--night-2);border:1px solid var(--brass);border-left:4px solid var(--brass);padding:1.3rem 1.5rem;border-radius:2px;max-width:72ch;color:var(--marble-dim);font-size:.92rem;line-height:1.6;margin-bottom:2.5rem;}
+  .legal-note strong{color:var(--brass-soft);}
+
+  .prose{max-width:72ch;}
+  .prose h2{color:var(--marble);font-size:1.35rem;margin-top:2.2rem;margin-bottom:.7rem;}
+  .prose h2:first-of-type{margin-top:0;}
+  .prose p{color:var(--marble-dim);margin-bottom:.6rem;}
+  .prose ul{color:var(--marble-dim);padding-left:1.3rem;margin-bottom:1rem;}
+  .prose li{margin-bottom:.5rem;}
+  .prose a{color:var(--brass-soft);}
+
+  footer.site{background:#0c0a09;color:var(--marble-dim);padding-block:2.5rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:flex-start;}
+  .foot-grid .brand{color:var(--brass-soft);}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.85rem;list-style:none;margin:.8rem 0 0;padding:0;}
+  .foot-links a{color:var(--marble-dim);text-decoration:none;}
+  .foot-links a:hover{color:var(--brass-soft);text-decoration:underline;}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:60ch;margin-top:1rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Café Sperl</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Café Sperl</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
+    <nav class="links" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="kontakt.html">Tisch reservieren</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Datenschutz</div>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-note">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <div class="prose">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+        Café Sperl, Manfred Staub (Geschäftsführung/Inhaber)<br>
+        Gumpendorfer Straße 11, 1060 Wien<br>
+        E-Mail: <a href="mailto:melange@cafesperl.at">melange@cafesperl.at</a></p>
+
+        <h2>2. Datenverarbeitung beim Besuch dieser Website</h2>
+        <p>Beim Aufruf dieser Website können durch den Hosting-Anbieter automatisch technische Daten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in sogenannten Server-Logfiles erfasst werden. Diese Daten dienen der technischen Bereitstellung und Absicherung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+        <h2>3. Cookies</h2>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Sofern Cookies eingesetzt werden, die nicht technisch notwendig sind (z. B. für Statistik oder Marketing), erfolgt dies nur mit vorheriger Einwilligung der Nutzerinnen und Nutzer.</p>
+
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Bei Kontaktaufnahme per Telefon oder E-Mail werden die von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) ausschließlich zur Bearbeitung Ihres Anliegens verarbeitet und nicht ohne Ihre Einwilligung an Dritte weitergegeben.</p>
+
+        <h2>5. Rechte der Betroffenen</h2>
+        <p>Nach der Datenschutz-Grundverordnung (DSGVO) haben Sie insbesondere folgende Rechte:</p>
+        <ul>
+          <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+          <li>Recht auf Berichtigung unrichtiger Daten</li>
+          <li>Recht auf Löschung Ihrer gespeicherten Daten</li>
+          <li>Recht auf Einschränkung der Datenverarbeitung</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+          <li>Recht auf Datenübertragbarkeit</li>
+          <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+        </ul>
+
+        <h2>6. Kontakt für Datenschutzanliegen</h2>
+        <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand">Café Sperl</div>
+      <div style="font-size:.85rem;color:var(--marble-dim);margin-top:.4rem;">Gumpendorfer Straße 11 · 1060 Wien<br>Tel. <a href="tel:+4315864158" style="color:inherit;">+43 1 586 41 58</a></div>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des Café Sperl · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+</body>
+</html>

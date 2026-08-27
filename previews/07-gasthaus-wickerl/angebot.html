@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — Gasthaus Wickerl</title>
+<meta name="description" content="Speisekarte des Gasthaus Wickerl: traditionelle österreichische Küche, frisch gekocht, im Alsergrund – zum Tisch, zum Mitnehmen und im Schanigarten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b21;
+    --forest:#1f3329;
+    --forest-deep:#142019;
+    --cream:#f3ece0;
+    --brass:#c9a24b;
+    --line:rgba(28,43,33,.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'Manrope', system-ui, sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Libre Caslon Text', Georgia, serif; margin:0; font-weight:400; line-height:1.08;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 clamp(1.1rem,5vw,2.5rem); width:100%;}
+  img,svg{max-width:100%;}
+
+  .disclaimer{background:var(--forest-deep); color:#e9dfc9; font-size:.72rem; text-align:center; padding:.6rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--brass);}
+
+  header.site{position:sticky; top:0; z-index:50; background:var(--cream); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.1rem,5vw,2.5rem); max-width:980px; margin:0 auto; gap:1rem; position:relative;}
+  .brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:'Libre Caslon Text',serif; font-size:1.2rem; min-height:44px;}
+  .brand .mark{width:36px; height:36px; border-radius:50%; background:var(--forest); display:grid; place-items:center; flex:none;}
+  .brand .mark svg{width:18px; height:18px;}
+  nav.links{display:flex; gap:1.8rem; font-size:.92rem;}
+  nav.links a{text-decoration:none; min-height:44px; display:inline-flex; align-items:center; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--forest);}
+  nav.links a.active{color:var(--forest); font-weight:700; border-bottom-color:var(--brass);}
+  .call-btn{background:var(--forest); color:var(--cream); text-decoration:none; padding:.7rem 1.3rem; border-radius:3px; font-weight:600; font-size:.88rem; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:6px; min-width:44px; min-height:44px; align-items:center; justify-content:center; cursor:pointer;}
+  .burger svg{width:22px;height:22px;}
+  @media (max-width:760px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--cream); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease; box-shadow:0 12px 20px -14px rgba(20,32,25,.3);}
+    nav.links.open{max-height:360px;}
+    nav.links a{padding:1rem clamp(1.1rem,5vw,2.5rem); border-top:1px solid var(--line); width:100%; border-bottom:none;}
+    nav.links a.active{background:rgba(31,51,41,.07); border-bottom:none;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .hero{padding:clamp(3rem,8vw,6rem) 0 clamp(2rem,5vw,3.5rem); text-align:center; position:relative;}
+  .hero .wrap{display:flex; flex-direction:column; align-items:center;}
+  .kicker{text-transform:uppercase; letter-spacing:.18em; font-size:.72rem; font-weight:700; color:var(--forest); margin-bottom:1.2rem;}
+  .hero h1{font-size:clamp(2.4rem,8vw,4.4rem); max-width:16ch;}
+  .hero h1 em{font-style:italic; color:var(--forest);}
+  .hero p.lead{margin-top:1.5rem; font-size:clamp(1rem,2.2vw,1.15rem); max-width:46ch; line-height:1.65; color:#3c4a3f;}
+  .ornament{margin-top:2.2rem; width:64px; height:2px; background:var(--brass);}
+  .hero-cta{display:flex; gap:1rem; justify-content:center; margin-top:2.2rem; flex-wrap:wrap;}
+
+  .hero.compact{padding:clamp(2.4rem,6vw,3.6rem) 0 clamp(1.8rem,4vw,2.6rem);}
+  .hero.compact h1{font-size:clamp(2.1rem,6vw,3.3rem);}
+  .hero.compact p.lead{max-width:56ch;}
+
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.5rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:.95rem; min-height:44px;}
+  .btn.primary{background:var(--forest); color:var(--cream);}
+  .btn.gold{background:var(--brass); color:var(--forest-deep);}
+  .btn.ghost{border:1px solid var(--line); color:var(--ink);}
+  .btn:hover{opacity:.88;}
+
+  .story{padding:clamp(2.5rem,6vw,4.5rem) 0;}
+  .section-head{margin-bottom:2.2rem;}
+  .num{font-family:'Libre Caslon Text',serif; font-style:italic; color:var(--forest); font-size:1rem; display:block; margin-bottom:.4rem;}
+  .story h2{font-size:clamp(1.8rem,4.5vw,2.4rem);}
+  .story-item{
+    display:grid; grid-template-columns:64px 1fr; gap:clamp(1rem,3vw,2rem);
+    padding-bottom:clamp(2.5rem,6vw,4rem);
+    position:relative;
+  }
+  .story-item:not(:last-child)::before{
+    content:""; position:absolute; left:31px; top:64px; bottom:0; width:1px; background:var(--line);
+  }
+  .story-num{
+    width:64px; height:64px; border-radius:50%; background:var(--forest); color:var(--cream);
+    display:grid; place-items:center; font-family:'Libre Caslon Text',serif; font-size:1.4rem; flex:none;
+  }
+  .story-body h3{font-size:clamp(1.4rem,3.5vw,1.9rem); margin-bottom:.7rem;}
+  .story-body p{font-size:1.02rem; line-height:1.7; color:#3c4a3f; max-width:56ch;}
+
+  .quote-band{background:var(--forest); color:var(--cream); padding:clamp(3rem,7vw,5rem) 0;}
+  .quote-band .wrap{text-align:center;}
+  .quote-band p{font-family:'Libre Caslon Text', serif; font-style:italic; font-size:clamp(1.4rem,4vw,2.2rem); line-height:1.4; max-width:26ch; margin:0 auto;}
+  .quote-band .attr{margin-top:1.3rem; font-family:'Manrope',sans-serif; font-style:normal; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brass); display:block;}
+
+  .teaser-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,260px),1fr)); gap:1.4rem; padding:clamp(2.5rem,6vw,4rem) 0;}
+  .teaser-card{border:1px solid var(--line); border-radius:6px; padding:1.9rem; background:#fbf7ee; display:flex; flex-direction:column;}
+  .teaser-card svg{width:28px; height:28px; color:var(--forest);}
+  .teaser-card h3{font-size:1.3rem; margin-top:1rem; font-weight:400;}
+  .teaser-card p{font-size:.95rem; color:#4a5a4d; line-height:1.6; margin-top:.6rem; flex:1;}
+  .teaser-card a.more{margin-top:1.2rem; font-weight:600; font-size:.9rem; color:var(--forest); text-decoration:none; display:inline-flex; align-items:center; gap:.4rem; min-height:44px;}
+  .teaser-card a.more:hover{text-decoration:underline;}
+
+  .offer{padding:clamp(3rem,7vw,5rem) 0;}
+  .offer h2{font-size:clamp(1.8rem,4.5vw,2.4rem);}
+  .offer-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:1.3rem;}
+  .offer-card{border:1px solid var(--line); border-radius:4px; padding:1.7rem; background:#fbf7ee;}
+  .offer-card svg{width:28px; height:28px; color:var(--forest);}
+  .offer-card h3{font-size:1.2rem; margin-top:.9rem; font-weight:400;}
+  .offer-card p{font-size:.92rem; color:#4a5a4d; line-height:1.55; margin-top:.5rem;}
+  .offer-card ul{margin:.7rem 0 0; padding-left:1.1rem; font-size:.9rem; color:#4a5a4d; line-height:1.6;}
+  .offer-note{margin-top:2.4rem; font-size:.88rem; color:#5c6b5e; border-top:1px solid var(--line); padding-top:1.4rem;}
+
+  .contact{background:var(--forest-deep); color:var(--cream);}
+  .contact .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3rem); padding-top:clamp(3rem,7vw,5rem); padding-bottom:clamp(3rem,7vw,5rem);}
+  .contact h2{color:var(--cream); font-size:clamp(1.8rem,4.5vw,2.4rem);}
+  .contact p.lead{color:#c9d4c8; margin-top:1rem; max-width:40ch; line-height:1.6;}
+  .info-list{list-style:none; margin:1.8rem 0 0; padding:0; display:flex; flex-direction:column; gap:1.1rem;}
+  .info-list li{display:flex; gap:1rem; align-items:flex-start; font-size:1rem;}
+  .info-list svg{width:20px; height:20px; flex:none; color:var(--brass); margin-top:.15rem;}
+  .info-list a{text-decoration:none; border-bottom:1px solid rgba(243,236,224,.35);}
+  .contact .btn.ghost{border:1px solid rgba(243,236,224,.4); color:var(--cream);}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;}
+  .contact-card{border:1px solid rgba(243,236,224,.18); border-radius:6px; padding:clamp(1.5rem,3vw,2rem); background:rgba(243,236,224,.04); align-self:start;}
+  .contact-card h3{font-size:1.25rem; color:var(--cream);}
+  .contact-card .addr{margin-top:.7rem; font-size:.95rem; line-height:1.6; color:#c9d4c8;}
+  .contact-card .hours{margin-top:1.2rem; padding-top:1.2rem; border-top:1px solid rgba(243,236,224,.14); font-size:.85rem; color:#9fae9d;}
+
+  .legal-notice{background:#fff8e6; border:1px solid var(--brass); border-radius:6px; padding:1.1rem 1.3rem; font-size:.88rem; line-height:1.6; color:#5c4a1f; margin:clamp(1.5rem,4vw,2.5rem) 0;}
+  .legal-notice strong{color:#3c2f10;}
+  .legal-body{padding-bottom:clamp(3rem,6vw,5rem);}
+  .legal-body h2{font-size:1.25rem; margin-top:2.2rem; margin-bottom:.6rem; font-family:'Manrope',sans-serif; font-weight:700;}
+  .legal-body p, .legal-body li{font-size:.95rem; line-height:1.7; color:#3c4a3f;}
+  .legal-body ul{padding-left:1.2rem;}
+  .legal-body a{color:var(--forest);}
+  .legal-body .placeholder{background:rgba(201,162,75,.18); padding:.05rem .35rem; border-radius:3px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  footer.site{padding-top:clamp(2.5rem,5vw,3.5rem); background:var(--cream); border-top:1px solid var(--line);}
+  .footer-cols{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.2rem; padding-bottom:2rem;}
+  .footer-brand h3{font-size:1.3rem; font-weight:400;}
+  .footer-brand p{margin-top:.6rem; font-size:.9rem; color:#4a5a4d; line-height:1.65; max-width:32ch;}
+  .footer-brand a{color:#4a5a4d;}
+  .footer-nav{display:flex; flex-direction:column; gap:.6rem; font-size:.92rem;}
+  .footer-nav a{text-decoration:none; color:var(--ink); min-height:44px; display:inline-flex; align-items:center;}
+  .footer-nav a:hover{color:var(--forest);}
+  .footer-legal{display:flex; flex-direction:column; gap:.6rem; font-size:.85rem;}
+  .footer-legal a{text-decoration:none; color:#5c6b5e; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-legal a:hover{color:var(--forest);}
+  footer.site .bottom{border-top:1px solid var(--line); padding:1.4rem 0 2rem; text-align:center;}
+  footer.site small{color:#5c6b5e; font-size:.8rem; line-height:1.5;}
+
+  @media (max-width:700px){
+    .story-item{grid-template-columns:48px 1fr;}
+    .story-num{width:48px; height:48px; font-size:1.1rem;}
+    .story-item:not(:last-child)::before{left:23px; top:48px;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .footer-cols{flex-direction:column; gap:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Gasthaus Wickerl</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#f3ece0" stroke-width="1.7"><path d="M5 21V9l7-6 7 6v12"/><path d="M9 21v-7h6v7"/></svg></span>
+      Gasthaus Wickerl
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4313177489">Anrufen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero compact">
+    <div class="wrap">
+      <p class="kicker">Speisekarte</p>
+      <h1>Traditionelle Küche, <em>frisch</em> gekocht.</h1>
+      <p class="lead">Im Gasthaus Wickerl kommt österreichische Hausmannskost auf den Tisch – ehrlich zubereitet, in gewohnter Gasthausqualität. Die folgende Übersicht zeigt, was Sie bei uns erwarten dürfen.</p>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="wrap">
+      <div class="offer-grid reveal">
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3v7a3 3 0 0 0 3 3v9M6 3v7M10 3v7M18 3c-2 2-2 5-2 7 0 2 1 3 2 3v9"/></svg>
+          <h3>Vorspeisen &amp; Suppen</h3>
+          <p>Kleine, klassische Auftakte nach Wiener Gasthaustradition.</p>
+        </div>
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M8 3v6M16 3v6M8 9a4 4 0 0 0 8 0M12 9v12"/></svg>
+          <h3>Wiener Klassiker</h3>
+          <p>Traditionelle österreichische Hauptgerichte, frisch zubereitet – bodenständige Gasthausküche im besten Sinn.</p>
+        </div>
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <h3>Tagesteller &amp; Saisonales</h3>
+          <p>Wechselnde Gerichte je nach Saison und Verfügbarkeit – am besten direkt bei uns erfragen.</p>
+        </div>
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M8 12V6a4 4 0 0 1 8 0v6"/><path d="M6 12v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"/></svg>
+          <h3>Mehlspeisen &amp; Süßes</h3>
+          <p>Ein süßer Abschluss nach Wiener Art.</p>
+        </div>
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M6 21c0-6 2.7-9 6-9s6 3 6 9"/></svg>
+          <h3>Schanigarten</h3>
+          <p>Sitzplätze im Freien in der Porzellangasse, sobald das Wetter mitspielt.</p>
+        </div>
+        <div class="offer-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16"/></svg>
+          <h3>Speisen zum Mitnehmen</h3>
+          <p>Auf Anfrage auch unkompliziert zum Abholen.</p>
+        </div>
+      </div>
+      <p class="offer-note">Aktuelle Gerichte, Tagesangebote und Preise erfragen Sie bitte direkt telefonisch – die Karte wechselt je nach Saison und Verfügbarkeit.</p>
+    </div>
+  </section>
+
+  <div class="quote-band">
+    <div class="wrap reveal">
+      <p>„Ein Gasthaus, wie es sie in Wien immer seltener gibt.“</p>
+      <span class="attr">Gasthaus Wickerl · Porzellangasse</span>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-cols">
+    <div class="footer-brand">
+      <h3>Gasthaus Wickerl</h3>
+      <p>Porzellangasse 24a<br>1090 Wien, Österreich<br><a href="tel:+4313177489">+43 1 317 74 89</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="bottom wrap">
+    <small>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Wickerl · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

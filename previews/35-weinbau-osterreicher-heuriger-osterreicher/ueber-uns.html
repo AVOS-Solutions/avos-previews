@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Weinbau Österreicher, Pfaffstätten</title>
+<meta name="description" content="Die Geschichte und Werte des Heurigen Österreicher in Pfaffstätten: bodenständige Gastfreundschaft, glutenfreie Küche und soziales Engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f1ea;--panel:#fff;--ink:#1c1c1a;--ink-soft:#54514a;
+    --burgundy:#7a2331;--olive:#5c6b3f;--sand:#d8c9a3;--line:#dcd5c4;--maxw:1280px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;font-size:clamp(15px,1.5vw,16.5px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--burgundy);outline-offset:3px;}
+
+  .disclaimer{background:var(--ink);color:var(--sand);text-align:center;font-size:.78rem;padding:.55rem 1rem;}
+  .disclaimer strong{color:#fff;font-weight:600;}
+
+  header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);z-index:40;}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.1rem 6vw;position:relative;}
+  .brand{font-family:'Instrument Serif',serif;font-size:1.6rem;letter-spacing:.01em;text-decoration:none;color:var(--ink);}
+  .navlinks{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-size:.85rem;font-weight:500;text-transform:uppercase;letter-spacing:.06em;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--burgundy);}
+  .navlinks a.active{color:var(--burgundy);border-bottom:2px solid var(--burgundy);}
+  .navtoggle{display:none;background:none;border:1px solid var(--ink);border-radius:8px;width:44px;height:44px;cursor:pointer;color:var(--ink);flex:none;}
+  @media(max-width:840px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:.2rem;padding:1rem 6vw 1.5rem;background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:none;text-transform:none;font-size:1rem;}
+    .navlinks.open{display:flex;}
+    .navlinks a{min-height:48px;}
+    .navtoggle{display:block;}
+  }
+
+  .page-hero{padding:clamp(2.6rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem);border-bottom:1px solid var(--line);}
+  .page-hero .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--burgundy);font-weight:600;margin-bottom:.7rem;}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,4rem);font-style:italic;margin:0;line-height:1.05;}
+
+  section{padding:clamp(3rem,7vw,5rem) 0;}
+  .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--burgundy);font-weight:600;margin-bottom:.7rem;}
+  h2.section-title{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;margin:0 0 1.6rem;}
+
+  .about-cols{columns:2;column-gap:3.5rem;font-size:1.02rem;color:var(--ink-soft);}
+  @media(max-width:760px){.about-cols{columns:1;}}
+  .about-cols p{margin:0 0 1.1rem;break-inside:avoid;}
+
+  .values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:760px){.values{grid-template-columns:1fr;}}
+  .vcard{background:var(--panel);padding:2.2rem 1.8rem;}
+  .vcard .n{font-family:'Instrument Serif',serif;font-style:italic;font-size:2.2rem;color:var(--burgundy);margin-bottom:.6rem;display:block;}
+  .vcard h3{margin:0 0 .6rem;font-size:1.1rem;font-weight:600;}
+  .vcard p{margin:0;color:var(--ink-soft);font-size:.92rem;}
+
+  .timeline{border-top:1px solid var(--line);}
+  .trow{display:grid;grid-template-columns:1fr 3fr;gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  @media(max-width:640px){.trow{grid-template-columns:1fr;gap:.4rem;}}
+  .trow .t-label{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.5rem;color:var(--olive);}
+  .trow p{margin:0;color:var(--ink-soft);}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.7rem 1.6rem;font-weight:600;font-size:.9rem;text-decoration:none;border-radius:2px;transition:opacity .2s;text-transform:uppercase;letter-spacing:.04em;}
+  .btn-solid{background:var(--burgundy);color:#fff;}
+  .btn-solid:hover{opacity:.85;}
+  .btn-outline{border:1.5px solid var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--bg);}
+
+  footer.site{background:#131311;color:#9c9689;padding:2.4rem 0 1.6rem;font-size:.85rem;}
+  footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;}
+  .footer-col h4{margin:0 0 .6rem;color:#cfc7b4;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+  .footer-col p{margin:0 0 .4rem;}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .footer-links a{color:#9c9689;text-decoration:none;min-height:32px;display:inline-flex;align-items:center;}
+  .footer-links a:hover{color:var(--sand);}
+  .footer-disclaimer{width:100%;border-top:1px solid #2a2823;margin-top:1.8rem;padding-top:1.2rem;font-size:.78rem;color:#847d6f;}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Weinbau Österreicher</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">Österreicher</a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+      <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Über uns</div>
+      <h1>Bodenständig, herzlich, echt</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="about-cols">
+        <p>Der Heuriger Österreicher in Pfaffstätten steht für das, was einen guten Heurigen ausmacht: bodenständige Küche, eigener Wein und eine Gastfreundschaft, bei der man sich sofort willkommen fühlt. „Bei uns sollen Sie sich zu Hause fühlen" ist bei uns keine Floskel, sondern gelebter Anspruch — vom ersten Gruß an der Tür bis zum letzten Glas Wein am Abend.</p>
+        <p>Wir achten auch auf jene Gäste, die besondere Ansprüche an ihre Küche stellen: Ein Teil unserer Gerichte ist glutenfrei zubereitet, sodass niemand am Tisch verzichten muss. Unsere Qualität wurde auch von Falstaff anerkannt — für uns Bestätigung, dass Bodenständigkeit und Anspruch zusammengehören.</p>
+        <p>Gastfreundschaft endet für uns nicht am Gartenzaun. Wir unterstützen die Friedensflotte „mirno more" und sehen unser Engagement als selbstverständlichen Teil dessen, wofür ein Heuriger stehen sollte: Zusammenhalt, über den eigenen Hof hinaus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid var(--line);">
+    <div class="wrap reveal">
+      <div class="kicker">Was uns wichtig ist</div>
+      <h2 class="section-title">Mehr als nur ein Glas Wein</h2>
+      <div class="values">
+        <div class="vcard">
+          <span class="n">01</span>
+          <h3>Glutenfrei möglich</h3>
+          <p>Ausgewählte Gerichte glutenfrei zubereitet — Genuss ohne Kompromisse für alle am Tisch.</p>
+        </div>
+        <div class="vcard">
+          <span class="n">02</span>
+          <h3>Falstaff-gelistet</h3>
+          <p>Unsere Küche und unser Wein sind auch über Pfaffstätten hinaus bekannt und anerkannt.</p>
+        </div>
+        <div class="vcard">
+          <span class="n">03</span>
+          <h3>Soziales Engagement</h3>
+          <p>Wir unterstützen die Friedensflotte „mirno more" — Gastfreundschaft, die über den eigenen Hof hinausreicht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid var(--line);">
+    <div class="wrap reveal">
+      <div class="kicker">Wie wir arbeiten</div>
+      <h2 class="section-title">Was Sie bei uns erwarten dürfen</h2>
+      <div class="timeline">
+        <div class="trow">
+          <div class="t-label">Herkunft</div>
+          <p>Eigener Wein aus Pfaffstätten, Bezirk Baden — bodenständig produziert und mit Überzeugung ausgeschenkt.</p>
+        </div>
+        <div class="trow">
+          <div class="t-label">Küche</div>
+          <p>Hausgemachte, bodenständige Gerichte — ein Teil davon bewusst glutenfrei, damit alle Gäste mitfeiern können.</p>
+        </div>
+        <div class="trow">
+          <div class="t-label">Anerkennung</div>
+          <p>Auf Falstaff gelistet — eine Bestätigung für die Qualität, die hinter unserer bodenständigen Gastlichkeit steckt.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="angebot.html">Weine &amp; Angebot ansehen</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Weinbau Österreicher</h4>
+      <p>Bahngasse 19 · 2511 Pfaffstätten</p>
+      <p><a href="tel:+436647614027" style="color:inherit;">+43 664 7614027</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div class="footer-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weinbau Österreicher · keine Verbindung zum Unternehmen
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

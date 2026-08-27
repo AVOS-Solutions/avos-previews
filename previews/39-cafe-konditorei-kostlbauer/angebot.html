@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — Café Konditorei Köstlbauer</title>
+<meta name="description" content="Hausgemachtes Eis, feine Mehlspeisen und Torten aus eigener Konditorei: das Angebot der Café Konditorei Köstlbauer am Hauptplatz Tulln.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7ede0;
+    --paper-2:#efe0c9;
+    --burgundy:#6b1f2a;
+    --burgundy-2:#4a1219;
+    --coffee:#2c1810;
+    --gold:#c9a227;
+    --cream:#fffaf1;
+    --ink:#2c1810;
+    --ink-soft:#6a564a;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  .disclaimer{background:var(--coffee);color:#e9d9c4;font-size:12px;text-align:center;padding:9px 16px;line-height:1.5}
+  .disclaimer strong{color:var(--gold);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,237,224,0.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--coffee)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1220px;margin:0 auto;gap:16px}
+  .masthead{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;text-decoration:none;color:var(--coffee);flex-shrink:0}
+  .masthead em{font-style:italic;color:var(--burgundy)}
+  nav.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:13.5px;text-transform:uppercase;letter-spacing:0.05em}
+  nav.links a{text-decoration:none;color:var(--ink);padding:4px 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--burgundy)}
+  nav.links a.active{color:var(--burgundy);border-bottom-color:var(--burgundy)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;font-size:13.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;border:1.5px solid var(--coffee);cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--burgundy);color:var(--cream);border-color:var(--burgundy)}
+  .btn-primary:hover{background:var(--burgundy-2)}
+  .btn-outline{color:var(--coffee)}
+  .btn-outline:hover{background:var(--coffee);color:var(--cream)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--coffee);width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--coffee);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:0.04em}
+  #mobile-menu a.active{color:var(--burgundy)}
+
+  .page-hero{padding:52px 0 40px;border-bottom:2px solid var(--coffee)}
+  .page-hero .eyebrow{color:var(--burgundy)}
+  .page-hero h1{font-size:clamp(2.4rem,7vw,4.6rem);color:var(--coffee);letter-spacing:-0.02em}
+  .page-hero p{color:var(--ink-soft);font-size:17px;max-width:60ch;margin-top:16px}
+
+  section{padding:88px 0}
+  .section-head{max-width:680px;margin-bottom:52px}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--burgundy);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--burgundy)}
+  h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--coffee)}
+  .lead{color:var(--ink-soft);font-size:16px;margin-top:16px;max-width:62ch}
+
+  .offer{background:var(--coffee);color:var(--paper)}
+  .offer .eyebrow{color:var(--gold)}
+  .offer h2{color:var(--cream)}
+  .offer .lead{color:#cbb9a6}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:14px}
+  .bento .card{grid-column:span 3;background:rgba(247,237,224,0.05);border:1px solid rgba(247,237,224,0.16);padding:30px;display:flex;flex-direction:column;justify-content:flex-end;transition:background .2s ease}
+  .bento .card:hover{background:rgba(247,237,224,0.1)}
+  .bento .card.big{grid-column:span 4;grid-row:span 2}
+  .bento .card.small{grid-column:span 2}
+  .bento h3{font-size:22px;color:var(--cream);margin-bottom:8px}
+  .bento p{margin:0;font-size:13.5px;color:#cbb9a6;line-height:1.6}
+  .bento .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:auto}
+
+  .note-box{background:var(--paper-2);border:1.5px solid var(--coffee);padding:22px 26px;font-size:14.5px;color:var(--ink-soft);max-width:760px}
+  .note-box strong{color:var(--coffee)}
+
+  .cta-final{padding:26px 44px;background:var(--coffee);color:var(--cream);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+  .cta-final p{margin:0;font-size:14px;color:#cbb9a6}
+  .cta-final .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+  footer.site{background:var(--coffee);color:#b39d8a;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(179,157,138,0.2)}
+  .foot-brand{font-family:'Fraunces',serif;color:var(--cream);font-size:19px}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:13.5px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#b39d8a}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-legal{display:flex;gap:16px;list-style:none;margin:10px 0 0;padding:0;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{text-decoration:none;color:#8a7362}
+  .foot-legal a:hover{color:var(--gold)}
+  .foot-note{max-width:1220px;margin:0 auto;padding:20px 24px 26px;font-size:12px;line-height:1.6;color:#8a7362}
+  .foot-note strong{color:#c9a227}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width:960px){
+    .bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+    .bento .card,.bento .card.big,.bento .card.small{grid-column:span 1;grid-row:auto;min-height:170px}
+  }
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:60px 0}
+    .page-hero{padding:36px 0 28px}
+  }
+  @media (max-width:520px){
+    .cta-final{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="masthead">Köstlbauer <em>Café</em></a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid var(--coffee);background:var(--paper)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow reveal">Unser Angebot</div>
+      <h1 class="reveal">Von Eis bis Mehlspeise, alles hausgemacht.</h1>
+      <p class="reveal">Jede Torte, jedes Eis, jede Kleinigkeit entsteht in unserer eigenen Konditorei – nach Rezepten, die über Generationen weitergegeben wurden.</p>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="wrap">
+      <div class="bento reveal">
+        <div class="card big">
+          <span class="tag">Klassiker</span>
+          <h3>Hausgemachtes Eis</h3>
+          <p>Cremig, fruchtig, in wechselnden Sorten – von Klassikern bis zu saisonalen Kreationen, direkt in der Konditorei erzeugt.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Kaffeehaus</span>
+          <h3>Mehlspeisen &amp; Torten</h3>
+          <p>Vom Apfelstrudel bis zur feinen Cremetorte – täglich frisch gebacken.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Kaffeehauskultur</span>
+          <h3>Kaffee &amp; Klassiker</h3>
+          <p>Vom kleinen Braunen bis zur Melange – Kaffeehauskultur, wie sie sein soll.</p>
+        </div>
+        <div class="card small">
+          <span class="tag">Verweilen</span>
+          <h3>Schanigarten</h3>
+          <p>Großer, schattiger Gastgarten am Hauptplatz – ideal für lange Nachmittage.</p>
+        </div>
+        <div class="card small">
+          <span class="tag">Tradition</span>
+          <h3>Seit Generationen</h3>
+          <p>Ein Familienbetrieb mit langer Tullner Kaffeehausgeschichte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Hinweis</div>
+        <h2>Aktuelle Preise &amp; Tagesangebote</h2>
+      </div>
+      <div class="note-box reveal">
+        <strong>Hinweis:</strong> Die konkrete Sorten- und Tortenauswahl wechselt saisonal. Aktuelle Preise und die tagesaktuelle Auswahl erfragen Sie bitte telefonisch oder direkt vor Ort am Hauptplatz.
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-final reveal" style="border:2px solid var(--coffee)">
+        <p>Reservierungen und Anfragen gerne telefonisch oder per E-Mail.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="tel:+43227262266">Anrufen</a>
+          <a class="btn btn-outline" style="border-color:var(--coffee)" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Café Konditorei Köstlbauer</div>
+      <p style="font-size:13px;margin:8px 0 0">Hauptplatz 31 &middot; 3430 Tulln an der Donau</p>
+      <p style="font-size:13px;margin:4px 0 0"><a href="tel:+43227262266">+43 2272 62266</a></p>
+      <ul class="foot-legal">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; keine offizielle Website der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>

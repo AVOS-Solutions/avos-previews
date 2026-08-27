@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Bäckerei-Konditorei Mistlbacher</title>
+<meta name="description" content="Vier Generationen Familientradition: die Geschichte der Bäckerei-Konditorei Mistlbacher in Klein-Pöchlarn, Pöchlarn und Melk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6efe2;--cream-2:#efe4d0;--espresso:#2f2117;--espresso-soft:#4a3826;
+    --caramel:#c1793b;--caramel-deep:#9c5a24;--wine:#762f2c;--paper:#fffaf1;--line:#d9c8a9;--maxw:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--espresso);font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem;}
+  :focus-visible{outline:3px solid var(--wine);outline-offset:3px;}
+
+  .disclaimer{background:var(--espresso);color:#e9dcc4;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;letter-spacing:0.01em;}
+  .disclaimer strong{color:#fff;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(246,239,226,0.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;padding-bottom:1rem;gap:1rem;position:relative;}
+  .brand{display:flex;flex-direction:column;line-height:1;font-family:"Fraunces",serif;text-decoration:none;color:inherit;}
+  .brand .name{font-size:1.25rem;font-weight:600;}
+  .brand .tag{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--caramel-deep);margin-top:0.25rem;}
+  .nav-links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;font-size:0.92rem;}
+  .nav-links a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s;display:inline-flex;align-items:center;min-height:44px;}
+  .nav-links a:hover{border-color:var(--caramel-deep);}
+  .nav-links a[aria-current="page"]{border-color:var(--wine);color:var(--wine);font-weight:600;}
+  .nav-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--wine);color:#fdf3e6;padding:0.7rem 1.1rem;border-radius:999px;text-decoration:none;font-size:0.88rem;font-weight:600;white-space:nowrap;min-height:44px;}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;font-size:1.3rem;align-items:center;justify-content:center;color:var(--espresso);}
+  @media (max-width:820px){
+    .nav-links{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .nav-links.open{max-height:20rem;}
+    .nav-links li{border-top:1px solid var(--line);}
+    .nav-links a{padding:0.9rem 1.5rem;width:100%;}
+    .menu-toggle{display:inline-flex;}
+    .nav-cta span.long{display:none;}
+  }
+
+  .page-hero{position:relative;padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,4vw,2.6rem);overflow:hidden;}
+  .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 55% at 85% 10%, rgba(193,121,59,0.24), transparent 70%);pointer-events:none;}
+  .page-hero .wrap{position:relative;}
+  .kicker{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--caramel-deep);font-weight:600;margin-bottom:1.2rem;}
+  .kicker::before{content:"";width:2.2rem;height:1px;background:var(--caramel-deep);}
+  .page-hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);max-width:20ch;}
+  .page-hero .sub{max-width:56ch;font-size:clamp(1rem,2vw,1.15rem);margin-top:1.4rem;color:var(--espresso-soft);}
+
+  section{padding:clamp(2.6rem,6vw,5rem) 0;}
+  .section-head{max-width:60ch;margin-bottom:3rem;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--caramel-deep);font-weight:600;}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.8rem);margin-top:0.6rem;}
+
+  .story{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .story-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:start;}
+  @media (max-width:860px){.story-grid{grid-template-columns:1fr;}}
+  .story p{font-size:1.05rem;color:var(--espresso-soft);}
+  .story .lede{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:500;font-style:italic;color:var(--espresso);line-height:1.35;margin-bottom:1.2rem;}
+  .oven{aspect-ratio:4/3;border-radius:1.3rem;background:linear-gradient(160deg, var(--caramel) 0%, var(--caramel-deep) 45%, var(--wine) 100%);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:1.6rem;}
+  .oven::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg, rgba(255,255,255,0.08) 0 2px, transparent 2px 34px);}
+  .oven-badge{position:relative;color:#fdf3e6;font-family:"Fraunces",serif;}
+  .oven-badge .n{font-size:clamp(2.4rem,6vw,3.4rem);font-weight:600;line-height:1;}
+  .oven-badge .t{font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;margin-top:0.4rem;}
+
+  .timeline{position:relative;}
+  .timeline-line{position:absolute;left:1.15rem;top:0.5rem;bottom:0.5rem;width:2px;background:linear-gradient(var(--caramel), var(--wine));}
+  @media (max-width:640px){.timeline-line{left:0.9rem;}}
+  .t-item{position:relative;padding-left:3.5rem;padding-bottom:2.75rem;}
+  @media (max-width:640px){.t-item{padding-left:2.8rem;}}
+  .t-item:last-child{padding-bottom:0;}
+  .t-dot{position:absolute;left:0.35rem;top:0.15rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--paper);border:2px solid var(--wine);display:flex;align-items:center;justify-content:center;font-family:"Fraunces",serif;font-weight:600;font-size:0.8rem;color:var(--wine);}
+  @media (max-width:640px){.t-dot{left:0.05rem;width:1.4rem;height:1.4rem;font-size:0.7rem;}}
+  .t-item h3{font-size:1.25rem;margin-bottom:0.4rem;}
+  .t-item p{margin:0;color:var(--espresso-soft);max-width:56ch;}
+
+  .values{background:var(--cream-2);}
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+  @media (max-width:820px){.val-grid{grid-template-columns:1fr;}}
+  .val-card{background:var(--paper);border:1px solid var(--line);border-radius:1.1rem;padding:1.8rem;}
+  .val-card h3{font-size:1.2rem;margin-bottom:0.6rem;}
+  .val-card p{margin:0;color:var(--espresso-soft);font-size:0.94rem;}
+
+  .cta-band{background:linear-gradient(135deg,var(--wine),var(--espresso));color:#fdf3e6;border-radius:1.4rem;padding:clamp(2rem,5vw,3.2rem);display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;justify-content:space-between;}
+  .cta-band h2{color:#fdf3e6;font-size:clamp(1.5rem,3vw,2rem);max-width:24ch;}
+  .cta-band p{color:#e9d9c4;margin:0.6rem 0 0;max-width:36ch;}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:transform .15s ease;min-height:44px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--wine);color:#fdf3e6;}
+  .btn-ghost{border:1.5px solid var(--espresso);color:var(--espresso);}
+  .cta-band .btn-ghost{border-color:#e9dcc4;color:#fdf3e6;}
+
+  footer.site{background:var(--espresso);color:#c9b28f;}
+  .foot-inner{border-top:1px solid rgba(255,255,255,0.12);padding:2.4rem 0 1.6rem;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;}
+  .foot-col h4{font-family:"Fraunces",serif;color:#fdf3e6;font-size:1.05rem;margin-bottom:0.8rem;font-weight:600;}
+  .foot-col p{margin:0.2rem 0;font-size:0.9rem;}
+  .foot-col a{text-decoration:none;color:#c9b28f;}
+  .foot-col a:hover{color:#fdf3e6;}
+  .foot-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.12);padding:1.2rem 0 2rem;font-size:0.78rem;color:#a9926f;text-align:center;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Bäckerei-Konditorei Mistlbacher</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">
+      <span class="name">Mistlbacher</span>
+      <span class="tag">Bäckerei &amp; Konditorei</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" aria-current="page">Über uns</a></li>
+      <li><a href="angebot.html">Sortiment</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4374138219"><span class="long">Anrufen ·</span> +43 7413 8219</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Über uns</span>
+      <h1>Vier Generationen am Marktplatz von Klein-Pöchlarn.</h1>
+      <p class="sub">Was 1890 als kleine Backstube begann, ist heute ein Familienbetrieb mit drei Standorten in der Region — geführt von Johannes Mistlbacher in vierter Generation.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <span class="eyebrow">Unsere Geschichte</span>
+        <p class="lede">„Backen ist bei uns keine Aufgabe, sondern eine Familientradition, die von Generation zu Generation weitergegeben wird.“</p>
+        <p>Die Bäckerei-Konditorei Mistlbacher steht seit 136 Jahren am Marktplatz von Klein-Pöchlarn. Was als kleine Backstube begann, ist heute ein Familienbetrieb, den Johannes Mistlbacher in vierter Generation führt. Über die Jahrzehnte ist einiges gewachsen — aus der reinen Bäckerei wurde eine Konditorei, aus der Backstube wurden Cafés mit klassischem Kaffeehaus-Ambiente an gleich drei Standorten.</p>
+        <p>Was sich dabei nicht verändert hat: der Anspruch an Frische und Handwerk. Brot wird bei uns noch heute täglich frisch gebacken — mit demselben Respekt vor dem Handwerk, das schon die Urgroßeltern in der Backstube prägte.</p>
+      </div>
+      <div class="oven reveal">
+        <div class="oven-badge">
+          <div class="n">136</div>
+          <div class="t">Jahre Familientradition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Vier Generationen</span>
+        <h2>Eine Backstube wird zum Familienunternehmen</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"></div>
+        <div class="t-item reveal">
+          <div class="t-dot">1</div>
+          <h3>Die Gründung</h3>
+          <p>Am Marktplatz in Klein-Pöchlarn entsteht die erste Backstube der Familie Mistlbacher — der Grundstein für 136 Jahre Handwerkstradition.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot">2</div>
+          <h3>Das Sortiment wächst</h3>
+          <p>Aus der reinen Bäckerei wird eine Konditorei: Torten, Mehlspeisen und erste Kaffeehaus-Sitzplätze ergänzen das tägliche Brot.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot">3</div>
+          <h3>Neue Standorte</h3>
+          <p>Mit dem Nahversorgungszentrum Pöchlarn und der Filiale in der Melker Altstadt wächst der Betrieb über Klein-Pöchlarn hinaus.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot">4</div>
+          <h3>Heute</h3>
+          <p>Johannes Mistlbacher führt den Familienbetrieb in vierter Generation — mit demselben Anspruch an Frische und Qualität wie am ersten Tag.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Wofür wir stehen</span>
+        <h2>Handwerk, Familie, Frische</h2>
+      </div>
+      <div class="val-grid">
+        <div class="val-card reveal">
+          <h3>Handwerkstradition</h3>
+          <p>Rezepte und Techniken, die seit vier Generationen in der Familie weitergegeben werden.</p>
+        </div>
+        <div class="val-card reveal">
+          <h3>Familienbetrieb</h3>
+          <p>Geführt von Johannes Mistlbacher — mit persönlicher Verantwortung für jeden der drei Standorte.</p>
+        </div>
+        <div class="val-card reveal">
+          <h3>Tägliche Frische</h3>
+          <p>Brot, Gebäck und Mehlspeisen entstehen jeden Tag neu in der eigenen Backstube.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Entdecken Sie unser Sortiment</h2>
+          <p>Von frischem Brot bis zu feinen Konditorei-Spezialitäten.</p>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.9rem;">
+          <a class="btn btn-primary" href="angebot.html" style="background:#fdf3e6;color:var(--wine);">Zum Sortiment</a>
+          <a class="btn btn-ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-inner">
+    <div class="foot-col">
+      <h4>Mistlbacher</h4>
+      <p>Marktplatz 3, 3660 Klein-Pöchlarn</p>
+      <p><a href="tel:+4374138219">+43 7413 8219</a></p>
+      <p><a href="mailto:office@mistlbacher.com">office@mistlbacher.com</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul class="foot-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Sortiment</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Rechtliches</h4>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Bäckerei-Konditorei Mistlbacher · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if(toggle && navLinks){
+      toggle.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      },{threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

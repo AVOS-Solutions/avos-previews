@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leistungen — Salon Eva &amp; Salon Privat</title>
+<meta name="description" content="Leistungen von Salon Eva und Salon Privat in Wien-Kaisermühlen: Damen- und Herrenhairstyling, Farbe, Styling — klassisch offen oder in privaten Einzelräumen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f0e8;--cream-2:#efe4d6;--ink:#2a201c;--rose:#b8493f;--rose-deep:#8f342b;
+    --gold:#b8935a;--charcoal:#171310;--charcoal-2:#211a16;--privat-ink:#f2e9dc;--privat-muted:#c9b8a3;
+    --line:rgba(42,32,28,0.14);--line-dark:rgba(242,233,220,0.16);--focus:#b8935a;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.05;margin:0;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  .disclosure{background:var(--charcoal);color:var(--privat-muted);font-size:0.72rem;letter-spacing:0.02em;text-align:center;padding:0.55rem 1rem;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,240,232,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:0.01em;text-decoration:none;flex-shrink:0;}
+  .brandmark .div{color:var(--gold);font-weight:300;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding:0.3rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose-deep);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after,nav.links a.active::after{width:100%;}
+  nav.links a.active{color:var(--rose-deep);font-weight:700;}
+  .nav-cta{display:none;border:1px solid var(--ink);border-radius:999px;padding:0.5rem 1.2rem;font-size:0.85rem;font-weight:600;text-decoration:none;white-space:nowrap;}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:860px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--rose-deep);font-weight:700;background:var(--cream-2);}
+  .page-hero{background:radial-gradient(120% 140% at 80% 0%, #2c211b 0%, var(--charcoal) 55%, var(--charcoal-2) 100%);color:var(--privat-ink);padding:clamp(3rem,10vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);position:relative;overflow:hidden;}
+  .deco-ring{position:absolute;border-radius:50%;border:1px solid;opacity:0.35;}
+  .page-hero .deco-ring{border-color:var(--gold);width:min(300px,60vw);height:min(300px,60vw);right:-10%;top:-16%;}
+  .page-hero .eyebrow{color:var(--gold);}
+  .page-hero h1{color:var(--privat-ink);font-size:clamp(2.2rem,6vw,3.6rem);position:relative;}
+  .page-hero p.tag{margin-top:1rem;max-width:56ch;color:var(--privat-muted);font-size:1.05rem;position:relative;}
+  section{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;color:var(--rose-deep);margin-bottom:0.8rem;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:22ch;}
+  .lead{max-width:60ch;margin-top:1.2rem;font-size:1.08rem;color:#4a3a33;}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  .concept-grid{display:grid;gap:1.75rem;margin-top:3rem;}
+  @media(min-width:760px){.concept-grid{grid-template-columns:1fr 1fr;}}
+  .concept-card{border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;}
+  .concept-card.eva{background:#fff;border:1px solid var(--line);}
+  .concept-card.privat{background:var(--charcoal);color:var(--privat-ink);}
+  .concept-card h3{font-size:1.6rem;margin-bottom:0.9rem;}
+  .concept-card.privat h3{color:var(--gold);}
+  .concept-card ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:0.7rem;}
+  .concept-card li{display:flex;gap:0.7rem;font-size:0.96rem;align-items:flex-start;}
+  .concept-card.eva li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose-deep);margin-top:0.55rem;flex-shrink:0;}
+  .concept-card.privat li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:0.55rem;flex-shrink:0;}
+  .service-grid{display:grid;gap:1.75rem;margin-top:3rem;}
+  @media(min-width:640px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1000px){.service-grid{grid-template-columns:repeat(3,1fr);}}
+  .service-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.9rem;}
+  .service-card h3{font-size:1.2rem;margin-bottom:0.6rem;}
+  .service-card p{color:#4a3a33;font-size:0.95rem;}
+  .note-box{background:var(--cream-2);border-radius:16px;padding:1.5rem 1.8rem;margin-top:2.5rem;font-size:0.95rem;color:#4a3a33;border-left:4px solid var(--gold);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;}
+  .btn-primary,.btn-ghost{padding:0.9rem 1.7rem;border-radius:999px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;}
+  .btn-primary{background:var(--rose-deep);color:#fff8f3;}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);}
+  .story{background:var(--cream-2);}
+  footer.site{background:var(--charcoal-2);color:var(--privat-muted);padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1.2rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;}
+  footer.site .foot-links a{text-decoration:none;color:var(--privat-muted);}
+  footer.site .foot-links a:hover{color:var(--privat-ink);}
+  footer .legal{border-top:1px solid var(--line-dark);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html"><span>Salon Eva</span><span class="div">/</span><span>Privat</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active" aria-current="page">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4312690570">+43 1 269 05 70</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html" class="active" aria-current="page">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4312690570">Anrufen: +43 1 269 05 70</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="deco-ring" aria-hidden="true"></div>
+      <p class="eyebrow">Leistungen</p>
+      <h1>Handwerk für jedes Haar</h1>
+      <p class="tag">Ob im offenen Salon Eva oder ganz privat — beide Konzepte teilen sich dasselbe Leistungsspektrum auf Meisterniveau.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Salon Eva</p>
+      <h2 class="section-title reveal">Klassisches Damen- und Herrenhairstyling</h2>
+      <p class="lead reveal">Offene Atmosphäre, kurze Wege, Beratung mit Blick für aktuelle Schnitte und Farben — für den Alltag ebenso wie für besondere Anlässe.</p>
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <h3>Damen- &amp; Herrenschnitte</h3>
+          <p>Von klassisch bis modern, individuell auf Kopfform, Haarstruktur und persönlichen Stil abgestimmt.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Farbe, Strähnen &amp; Balayage</h3>
+          <p>Von dezenten Nuancen bis zu markanten Farbverläufen — mit Beratung, die zum Hautton passt.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Föhnen &amp; Festliche Frisuren</h3>
+          <p>Für den besonderen Anlass ebenso wie für den gepflegten Alltagslook.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Beratung für jeden Haartyp</h3>
+          <p>Persönliche Empfehlung zu Pflege, Schnitt und Stylingtechnik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <p class="eyebrow reveal">Salon Privat</p>
+      <h2 class="section-title reveal">Diskretes Styling in eigenen Räumen</h2>
+      <p class="lead reveal">Für alle, die ihre Zeit im Salon lieber ungestört verbringen — dieselben Leistungen wie bei Salon Eva, in ruhiger, geschlossener Atmosphäre.</p>
+      <div class="concept-grid">
+        <div class="concept-card privat reveal">
+          <h3>Salon Privat</h3>
+          <ul>
+            <li>Private Einzelräume mit Diskretion</li>
+            <li>Individuell abgestimmte Termine</li>
+            <li>Ruhige, konzentrierte Atmosphäre</li>
+            <li>Ideal für besondere Anlässe</li>
+          </ul>
+        </div>
+        <div class="concept-card eva reveal">
+          <h3>Gemeinsamer Anspruch</h3>
+          <ul>
+            <li>Meisterhandwerk in beiden Konzepten</li>
+            <li>Persönliche, ehrliche Beratung</li>
+            <li>Ergebnis passend zur Person, nicht zum Trend</li>
+            <li>Team rund um Meisterin Gabriele Wiedenhofer</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note-box reveal">Aktuelle Preise erfragen Sie am besten direkt telefonisch — je nach Haarlänge und gewünschter Leistung variieren sie individuell.</div>
+      <div class="cta-row reveal">
+        <a class="btn-primary" href="kontakt.html">Termin anfragen</a>
+        <a class="btn-ghost" href="tel:+4312690570">Anrufen: +43 1 269 05 70</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="font-size:1rem;">Salon Eva <span class="div">/</span> Salon Privat</div>
+      <div>Schiffmühlenstraße 53, 1220 Wien · +43 1 269 05 70</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

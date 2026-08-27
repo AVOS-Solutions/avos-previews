@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café Konditorei Köstlbauer – Traditionscafé am Hauptplatz Tulln</title>
+<meta name="description" content="Café Konditorei Köstlbauer am Hauptplatz von Tulln an der Donau: Traditionscafé seit Generationen mit hausgemachtem Eis, feinen Mehlspeisen und großem, schattigem Schanigarten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7ede0;
+    --paper-2:#efe0c9;
+    --burgundy:#6b1f2a;
+    --burgundy-2:#4a1219;
+    --coffee:#2c1810;
+    --gold:#c9a227;
+    --cream:#fffaf1;
+    --ink:#2c1810;
+    --ink-soft:#6a564a;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  .disclaimer{background:var(--coffee);color:#e9d9c4;font-size:12px;text-align:center;padding:9px 16px;line-height:1.5}
+  .disclaimer strong{color:var(--gold);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(247,237,224,0.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--coffee)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1220px;margin:0 auto;gap:16px}
+  .masthead{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;text-decoration:none;color:var(--coffee);flex-shrink:0}
+  .masthead em{font-style:italic;color:var(--burgundy)}
+  nav.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:13.5px;text-transform:uppercase;letter-spacing:0.05em}
+  nav.links a{text-decoration:none;color:var(--ink);padding:4px 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--burgundy)}
+  nav.links a.active{color:var(--burgundy);border-bottom-color:var(--burgundy)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;font-size:13.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;border:1.5px solid var(--coffee);cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--burgundy);color:var(--cream);border-color:var(--burgundy)}
+  .btn-primary:hover{background:var(--burgundy-2)}
+  .btn-outline{color:var(--coffee)}
+  .btn-outline:hover{background:var(--coffee);color:var(--cream)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--coffee);width:46px;height:46px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--coffee);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink);text-transform:uppercase;font-size:14px;letter-spacing:0.04em}
+  #mobile-menu a.active{color:var(--burgundy)}
+
+  .hero{padding:64px 0 40px;border-bottom:2px solid var(--coffee)}
+  .hero-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;font-size:12.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);border-bottom:1px solid rgba(44,24,16,0.2);padding-bottom:18px;margin-bottom:34px}
+  h1.hero-title{font-size:clamp(2.6rem,9vw,7.4rem);letter-spacing:-0.02em;color:var(--coffee)}
+  h1.hero-title .accent{font-style:italic;color:var(--burgundy);font-weight:500}
+  .hero-cols{display:grid;grid-template-columns:1.6fr 1fr;gap:44px;margin-top:34px;align-items:end}
+  .hero-dek{font-size:19px;color:var(--ink-soft);max-width:52ch}
+  .hero-side{border-left:2px solid var(--coffee);padding-left:24px;font-size:14px}
+  .hero-side .label{text-transform:uppercase;letter-spacing:0.08em;font-size:11.5px;color:var(--ink-soft);margin-bottom:6px}
+  .hero-side .val{font-family:'Fraunces',serif;font-size:19px;margin-bottom:18px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+
+  .page-hero{padding:52px 0 40px;border-bottom:2px solid var(--coffee)}
+  .page-hero .eyebrow{color:var(--burgundy)}
+  .page-hero h1{font-size:clamp(2.4rem,7vw,4.6rem);color:var(--coffee);letter-spacing:-0.02em}
+  .page-hero p{color:var(--ink-soft);font-size:17px;max-width:60ch;margin-top:16px}
+
+  section{padding:88px 0}
+  .section-head{max-width:680px;margin-bottom:52px}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--burgundy);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--burgundy)}
+  h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--coffee)}
+  .lead{color:var(--ink-soft);font-size:16px;margin-top:16px;max-width:62ch}
+
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .teaser-card{background:var(--cream);border:2px solid var(--coffee);padding:32px;display:flex;flex-direction:column;gap:12px}
+  .teaser-card h3{font-size:1.4rem;color:var(--coffee)}
+  .teaser-card p{margin:0;color:var(--ink-soft);font-size:14.5px;flex-grow:1}
+  .teaser-card a.more{font-size:13px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;color:var(--burgundy);text-decoration:none}
+  .teaser-card a.more:hover{text-decoration:underline}
+
+  .offer{background:var(--coffee);color:var(--paper)}
+  .offer .eyebrow{color:var(--gold)}
+  .offer h2{color:var(--cream)}
+  .offer .lead{color:#cbb9a6}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:14px}
+  .bento .card{grid-column:span 3;background:rgba(247,237,224,0.05);border:1px solid rgba(247,237,224,0.16);padding:30px;display:flex;flex-direction:column;justify-content:flex-end;transition:background .2s ease}
+  .bento .card:hover{background:rgba(247,237,224,0.1)}
+  .bento .card.big{grid-column:span 4;grid-row:span 2}
+  .bento .card.small{grid-column:span 2}
+  .bento h3{font-size:22px;color:var(--cream);margin-bottom:8px}
+  .bento p{margin:0;font-size:13.5px;color:#cbb9a6;line-height:1.6}
+  .bento .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:auto}
+
+  .timeline{background:var(--paper)}
+  .tl{position:relative;padding-left:32px;border-left:2px solid var(--burgundy)}
+  .tl-item{position:relative;padding-bottom:44px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-39px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--burgundy);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--burgundy)}
+  .tl-item h3{font-size:1.4rem;color:var(--coffee);margin-bottom:8px}
+  .tl-item p{margin:0;color:var(--ink-soft);font-size:15px;max-width:60ch}
+  .tl-item .tl-tag{font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--burgundy);font-weight:600;margin-bottom:6px;display:block}
+
+  .quote-band{background:var(--burgundy);color:var(--cream);text-align:center}
+  .quote-band blockquote{margin:0 auto;max-width:800px;font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.35}
+  .quote-band cite{display:block;margin-top:22px;font-style:normal;font-family:'Inter',sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:#e3c9b8}
+
+  .contact{background:var(--paper-2)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--coffee)}
+  .contact-col{padding:44px}
+  .contact-col + .contact-col{border-left:2px solid var(--coffee)}
+  .contact-item{display:flex;gap:16px;padding:16px 0;border-top:1px dashed rgba(44,24,16,0.3)}
+  .contact-item:first-child{border-top:none;padding-top:0}
+  .contact-icon{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--burgundy);color:var(--cream);display:flex;align-items:center;justify-content:center}
+  .contact-item h3{font-family:'Fraunces',serif;font-weight:600;font-size:15px;margin:0 0 4px;color:var(--coffee)}
+  .contact-item a,.contact-item p{margin:0;font-size:14.5px;color:var(--ink-soft);text-decoration:none}
+  .contact-item a:hover{color:var(--burgundy)}
+  .map-frame{width:100%;height:100%;min-height:280px;border:0;filter:sepia(0.12) saturate(0.9)}
+  .cta-final{padding:26px 44px;background:var(--coffee);color:var(--cream);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+  .cta-final p{margin:0;font-size:14px;color:#cbb9a6}
+  .cta-final .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+  .legal-notice{background:var(--paper-2);border:1.5px solid var(--burgundy);color:var(--coffee);padding:18px 22px;font-size:14px;line-height:1.6;margin-bottom:44px}
+  .legal-notice strong{color:var(--burgundy)}
+  .prose{max-width:760px}
+  .prose h2{font-size:1.5rem;margin:40px 0 14px;color:var(--coffee)}
+  .prose h2:first-child{margin-top:0}
+  .prose p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:15.5px}
+  .prose li{margin-bottom:8px}
+  .prose strong{color:var(--ink)}
+
+  footer.site{background:var(--coffee);color:#b39d8a;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(179,157,138,0.2)}
+  .foot-brand{font-family:'Fraunces',serif;color:var(--cream);font-size:19px}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:13.5px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#b39d8a}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-legal{display:flex;gap:16px;list-style:none;margin:10px 0 0;padding:0;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{text-decoration:none;color:#8a7362}
+  .foot-legal a:hover{color:var(--gold)}
+  .foot-note{max-width:1220px;margin:0 auto;padding:20px 24px 26px;font-size:12px;line-height:1.6;color:#8a7362}
+  .foot-note strong{color:#c9a227}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width:960px){
+    .hero-cols{grid-template-columns:1fr}
+    .hero-side{border-left:none;border-top:2px solid var(--coffee);padding-left:0;padding-top:20px}
+    .bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
+    .bento .card,.bento .card.big,.bento .card.small{grid-column:span 1;grid-row:auto;min-height:170px}
+    .contact-grid{grid-template-columns:1fr}
+    .contact-col + .contact-col{border-left:none;border-top:2px solid var(--coffee)}
+    .teaser-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:60px 0}
+    .hero{padding:44px 0 32px}
+    .page-hero{padding:36px 0 28px}
+  }
+  @media (max-width:520px){
+    .contact-col{padding:28px}
+    .cta-final{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="masthead">Köstlbauer <em>Café</em></a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid var(--coffee);background:var(--paper)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <span>Café &amp; Konditorei &middot; Tulln an der Donau</span>
+        <span>Hauptplatz 31</span>
+      </div>
+      <h1 class="hero-title reveal">Süße Tradition<br>am <span class="accent">Hauptplatz.</span></h1>
+      <div class="hero-cols reveal">
+        <p class="hero-dek">Die Café Konditorei Köstlbauer verwöhnt Tulln seit Generationen mit hausgemachtem Eis, feinen Mehlspeisen und Kaffeehauskultur, wie sie sein soll – mitten am Hauptplatz, direkt neben der Bezirkshauptmannschaft.</p>
+        <div class="hero-side">
+          <div class="label">Inhaber</div>
+          <div class="val">Mag. Sebastian Köstlbauer</div>
+          <div class="label">Adresse</div>
+          <div class="val" style="font-size:16px">Hauptplatz 31, 3430 Tulln</div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="tel:+43227262266">Anrufen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Willkommen</div>
+        <h2>Ein Haus mit Geschichte, mitten in Tulln.</h2>
+        <p class="lead">Von der Rezeptur bis zur Tasse Kaffee – bei uns entsteht alles handwerklich, direkt vor Ort. Lernen Sie unsere Konditorei und ihre Geschichte kennen.</p>
+      </div>
+      <div class="teaser-grid reveal">
+        <div class="teaser-card">
+          <h3>Über uns</h3>
+          <p>Ein Familienbetrieb mit langer Tullner Kaffeehausgeschichte – geführt von Mag. Sebastian Köstlbauer.</p>
+          <a class="more" href="ueber-uns.html">Unsere Geschichte →</a>
+        </div>
+        <div class="teaser-card">
+          <h3>Speisekarte</h3>
+          <p>Hausgemachtes Eis, feine Mehlspeisen und Torten – alles aus eigener Konditorei.</p>
+          <a class="more" href="angebot.html">Zum Angebot →</a>
+        </div>
+        <div class="teaser-card">
+          <h3>Kontakt</h3>
+          <p>Reservierungen, Anfragen und Anfahrt zum Hauptplatz 31 in Tulln.</p>
+          <a class="more" href="kontakt.html">Kontakt aufnehmen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="wrap">
+      <blockquote class="reveal">„Kaffeehauskultur, hausgemachtes Eis und feine Mehlspeisen – seit Generationen am Hauptplatz von Tulln.“</blockquote>
+      <cite>Café Konditorei Köstlbauer</cite>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Besuchen Sie uns</div>
+        <h2>Am Hauptplatz von Tulln.</h2>
+        <p class="lead">Für Reservierungen, Bestellungen oder Fragen erreichen Sie uns telefonisch oder per E-Mail.</p>
+      </div>
+      <div class="cta-final reveal" style="border:2px solid var(--coffee)">
+        <p>Hauptplatz 31, 3430 Tulln an der Donau &middot; +43 2272 62266</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="tel:+43227262266">Anrufen</a>
+          <a class="btn btn-outline" style="border-color:var(--coffee)" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Café Konditorei Köstlbauer</div>
+      <p style="font-size:13px;margin:8px 0 0">Hauptplatz 31 &middot; 3430 Tulln an der Donau</p>
+      <p style="font-size:13px;margin:4px 0 0"><a href="tel:+43227262266">+43 2272 62266</a></p>
+      <ul class="foot-legal">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; keine offizielle Website der Café Konditorei Köstlbauer &middot; keine Verbindung zum Unternehmen.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>

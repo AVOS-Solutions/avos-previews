@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Lackner Friseure</title>
+<meta name="description" content="Muster-Impressum für Lackner Friseure, Krems an der Donau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#efd9d3;
+    --blush-2:#e3bdb3;
+    --rose:#b97b6f;
+    --rose-deep:#8a4b41;
+    --ink:#241f1c;
+    --paper:#fbf6f2;
+    --line:#e3d3cb;
+    --muted:#6f6259;
+    --maxw:1200px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem);}
+  :focus-visible{outline:3px solid var(--rose-deep);outline-offset:3px;}
+  h1,h2,h3{font-family:"Cormorant",Georgia,serif;font-weight:500;line-height:1.08;margin:0;}
+
+  .disclaimer{background:var(--ink);color:var(--blush);font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:#fff;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,246,242,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem;position:relative;flex-wrap:wrap;}
+  .brand{font-family:"Cormorant",serif;font-size:1.5rem;letter-spacing:0.01em;text-decoration:none;}
+  .brand em{font-style:italic;color:var(--rose-deep);}
+  .nav-links{display:flex;gap:clamp(1rem,2.5vw,2rem);list-style:none;margin:0;padding:0;font-size:0.92rem;letter-spacing:0.01em;}
+  .nav-links a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid transparent;}
+  .nav-links a:hover{border-color:var(--rose-deep);}
+  .nav-links a.active{border-color:var(--rose-deep);color:var(--rose-deep);font-weight:600;}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:0.5rem;background:var(--rose-deep);color:var(--paper);
+    padding:0.7rem 1.2rem;border-radius:999px;text-decoration:none;font-size:0.88rem;font-weight:600;
+    min-height:44px;white-space:nowrap;
+  }
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;font-size:1.2rem;align-items:center;justify-content:center;color:var(--ink);}
+  @media (max-width:840px){
+    .nav-links{
+      position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:20rem;}
+    .nav-links li{border-top:1px solid var(--line);}
+    .nav-links a{padding:0.9rem clamp(1.2rem,4vw,2rem);width:100%;}
+    .menu-toggle{display:inline-flex;}
+    .nav-cta span.long{display:none;}
+  }
+
+  .page-hero{
+    background:linear-gradient(160deg,var(--blush) 0%,var(--blush-2) 55%,var(--rose) 100%);
+    padding:clamp(2.6rem,7vw,3.6rem) 0 clamp(2rem,5vw,2.8rem);position:relative;overflow:hidden;
+  }
+  .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(38% 32% at 82% 15%, rgba(255,255,255,0.4), transparent 70%);}
+  .page-hero .wrap{position:relative;z-index:1;}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,2.8rem);}
+
+  section{padding:clamp(2.5rem,6vw,4rem) 0;}
+  .legal-notice{background:var(--blush);border:1px solid var(--rose-deep);border-radius:0.8rem;padding:1.2rem 1.4rem;font-size:0.92rem;color:var(--rose-deep);margin-bottom:2.5rem;font-weight:600;line-height:1.5;}
+  .legal-body{max-width:70ch;}
+  .legal-body h2{font-size:1.4rem;margin:2.2rem 0 0.8rem;font-family:"Cormorant",serif;font-weight:600;}
+  .legal-body h2:first-child{margin-top:0;}
+  .legal-body p, .legal-body li{color:var(--muted);font-size:0.98rem;line-height:1.7;}
+  .legal-body ul{padding-left:1.2rem;margin:0.5rem 0;}
+  .legal-body .field{color:var(--ink);font-style:italic;}
+  .legal-body a{color:var(--rose-deep);}
+
+  footer.site{background:var(--ink);color:#a5978c;}
+  .foot-top{padding:clamp(2.5rem,6vw,3.5rem) 0 2rem;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;}
+  @media (max-width:700px){.foot-top{grid-template-columns:1fr;gap:1.6rem;}}
+  .foot-top .brand{color:var(--paper);}
+  .foot-top .brand em{color:var(--blush-2);}
+  .foot-top p{margin:0.8rem 0 0;font-size:0.92rem;color:#c9b8ab;}
+  .foot-col h4{color:var(--paper);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.9rem;font-weight:600;}
+  .foot-col a{color:#c9b8ab;text-decoration:none;display:inline-flex;align-items:center;min-height:32px;font-size:0.92rem;}
+  .foot-col a:hover{color:var(--paper);}
+  .foot-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.3rem;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.1);padding:1.4rem 0;display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:space-between;font-size:0.8rem;}
+  .foot-legal{font-size:0.76rem;color:#8d7f74;text-align:center;padding:0 0 1.4rem;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Lackner Friseure</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">Lackner <em>Friseure</em></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Leistungen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43273285600"><span class="long">Anrufen ·</span> Termin</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+      <div class="legal-body">
+        <h2>Diensteanbieter</h2>
+        <p>Lackner Friseure<br>
+        Ringstraße 20<br>
+        3500 Krems an der Donau<br>
+        Österreich</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+43273285600">+43 2732 85600</a><br>
+        E-Mail: <a href="mailto:office@lackner-friseure.at">office@lackner-friseure.at</a></p>
+
+        <h2>Vertretungsberechtigte Person</h2>
+        <p>Sascha Bennör (Salonleitung)</p>
+
+        <h2>Unternehmensgegenstand</h2>
+        <p>Friseurgewerbe (Damen und Herren), Kosmetik</p>
+
+        <h2>Firmenbuchnummer / UID</h2>
+        <p>Firmenbuchnummer: <span class="field">[Firmenbuchnummer]</span><br>
+        UID-Nummer: <span class="field">[UID-Nummer]</span></p>
+
+        <h2>Zuständige Kammer / Gewerbebehörde</h2>
+        <p>Wirtschaftskammer Niederösterreich, Bezirksstelle Krems — <span class="field">[genaue Bezeichnung auf Anfrage]</span></p>
+
+        <h2>Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-top">
+    <div>
+      <a class="brand" href="index.html">Lackner <em>Friseure</em></a>
+      <p>Ringstraße 20, 3500 Krems an der Donau<br><a href="tel:+43273285600">+43 2732 85600</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul class="foot-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Leistungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Rechtliches</h4>
+      <ul class="foot-nav">
+        <li><a href="impressum.html" class="active">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Lackner Friseure · Krems an der Donau</span>
+  </div>
+  <p class="wrap foot-legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Lackner Friseure · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if(toggle && navLinks){
+      toggle.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

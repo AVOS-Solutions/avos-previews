@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hua Qiang – Chinesisches Familienrestaurant in Donaustadt</title>
+<meta name="description" content="China Restaurant Hua Qiang in der Donaustadt: fernöstliche Klassiker und Hauskreationen, Mittagsmenüs, Gastgarten und Kinderspielplatz, barrierefrei zugänglich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f1e6;
+    --paper2:#efe4d0;
+    --ink:#1b1512;
+    --ink-dim:#5c5045;
+    --red:#8e1e2b;
+    --red-dark:#5e131c;
+    --gold:#c79a3f;
+    --line:rgba(27,21,18,.14);
+    --focus:#8e1e2b;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; line-height:1.55;}
+  .serif{font-family:'Instrument Serif', Georgia, serif; font-weight:400;}
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:2px;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclaimer{background:var(--ink); color:#e7dcc9; text-align:center; font-size:.72rem; padding:.55rem 1rem;}
+  .disclaimer strong{color:#fff; font-weight:700;}
+
+  header{position:sticky; top:0; z-index:60; background:rgba(247,241,230,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem,4vw,3rem);}
+  .logo{font-family:'Instrument Serif',serif; font-size:1.7rem; font-style:italic; text-decoration:none; letter-spacing:.01em; color:var(--ink);}
+  .logo b{font-style:normal; color:var(--red);}
+  nav ul{list-style:none; display:flex; gap:2.2rem; margin:0; padding:0;}
+  nav a{text-decoration:none; font-weight:500; font-size:.92rem; display:inline-flex; align-items:center; min-height:44px; color:var(--ink);}
+  nav a:hover{color:var(--red);}
+  nav a.active{color:var(--red); font-weight:700;}
+  .navtoggle{display:none; background:none; border:2px solid var(--line); border-radius:8px; width:44px; height:44px; font-size:1.2rem; cursor:pointer; color:var(--ink);}
+  .call-btn{background:var(--red); color:#fff; padding:.7rem 1.3rem; border-radius:999px; text-decoration:none; font-weight:600; font-size:.88rem; display:inline-flex; align-items:center; min-height:44px;}
+  @media (max-width:860px){
+    nav ul{position:fixed; inset:64px 0 auto 0; flex-direction:column; background:var(--paper); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:.3rem; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s; max-height:calc(100vh - 64px); overflow-y:auto;}
+    nav ul.open{transform:translateY(0);}
+    nav li{width:100%;}
+    nav a{width:100%; padding:.6rem 0;}
+    .navtoggle{display:block;}
+    .call-btn{display:none;}
+  }
+
+  /* split hero */
+  .hero{display:grid; grid-template-columns:1fr 1fr; align-items:stretch; min-height:min(86vh,780px);}
+  @media (max-width:900px){ .hero{grid-template-columns:1fr;} }
+  .hero-text{display:flex; flex-direction:column; justify-content:center; padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,4vw,3.5rem);}
+  .eyebrow{color:var(--red); font-weight:600; text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; margin-bottom:1.3rem;}
+  h1{font-size:clamp(3rem,7vw,5.6rem); line-height:1.02; margin:0 0 1.3rem; font-weight:400;}
+  h1 i{color:var(--red);}
+  .hero-sub{max-width:44ch; font-size:1.1rem; color:var(--ink-dim); margin:0 0 2rem;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:1rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.7rem; border-radius:999px; text-decoration:none; font-weight:600; font-size:.98rem; transition:transform .18s; min-height:44px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--red); color:#fff;}
+  .btn-outline{border:1.5px solid var(--ink); color:var(--ink);}
+
+  .hero-visual{position:relative; background:radial-gradient(circle at 65% 35%, var(--red) 0%, var(--red-dark) 55%, #2c0a0f 100%); overflow:hidden; min-height:280px;}
+  .hero-visual svg{position:absolute; inset:0; width:100%; height:100%;}
+  .rating-chip{
+    position:absolute; top:2rem; right:2rem; background:rgba(247,241,230,.95); color:var(--ink);
+    border-radius:16px; padding:1rem 1.3rem; text-align:center; min-width:120px;
+  }
+  .rating-chip b{display:block; font-family:'Instrument Serif',serif; font-size:2.1rem; color:var(--red); line-height:1;}
+  .rating-chip span{font-size:.72rem; color:var(--ink-dim); letter-spacing:.03em;}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .kicker{color:var(--red); font-weight:600; text-transform:uppercase; font-size:.78rem; letter-spacing:.16em; margin:0 0 .8rem;}
+  h2{font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(2.3rem,5vw,3.6rem); margin:0 0 1rem; line-height:1.05;}
+
+  /* magazine about teaser */
+  .magazine{display:grid; grid-template-columns:.4fr 1fr; gap:clamp(1.5rem,4vw,3.5rem); align-items:start;}
+  @media (max-width:820px){ .magazine{grid-template-columns:1fr;} }
+  .magazine .col-body p{font-size:1.08rem; color:var(--ink-dim); margin:0 0 1.1rem; max-width:62ch;}
+  .dropcap::first-letter{
+    font-family:'Instrument Serif',serif; font-size:4.2rem; float:left; line-height:.8; padding:.1rem .5rem 0 0; color:var(--red);
+  }
+  .link-more{color:var(--red); font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:.4rem; min-height:44px;}
+  .link-more:hover{text-decoration:underline;}
+
+  /* teaser cards */
+  .teaser-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.4rem;}
+  .teaser-card{background:var(--paper2); border:1px solid var(--line); border-radius:20px; padding:2rem; display:flex; flex-direction:column; gap:.8rem;}
+  .teaser-card h3{margin:0; font-size:1.35rem; font-family:'Instrument Serif',serif; font-weight:400;}
+  .teaser-card p{margin:0; color:var(--ink-dim); flex:1; font-size:.98rem;}
+
+  /* feature row */
+  .features{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem;}
+  .feature{
+    background:var(--paper2); border:1px solid var(--line); border-radius:20px; padding:1.8rem;
+  }
+  .feature svg{width:34px; height:34px; color:var(--red); margin-bottom:.9rem;}
+  .feature h3{font-size:1.15rem; margin:0 0 .5rem; font-weight:600;}
+  .feature p{margin:0; color:var(--ink-dim); font-size:.94rem;}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  /* rating band */
+  .rateband{background:var(--red); color:#fff;}
+  .rateband .wrap{display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; text-align:center;}
+  @media (max-width:700px){ .rateband .wrap{grid-template-columns:1fr;} }
+  .rateband .stat b{display:block; font-family:'Instrument Serif',serif; font-size:clamp(2.4rem,6vw,3.4rem); font-weight:400;}
+  .rateband .stat span{font-size:.85rem; opacity:.85; letter-spacing:.04em;}
+
+  /* contact */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center;}
+  @media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+  .info-list{list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:1.1rem;}
+  .info-list li{display:flex; gap:.9rem; align-items:flex-start;}
+  .info-list svg{flex:none; width:22px; height:22px; color:var(--red); margin-top:.15rem;}
+  .info-list a{text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:3px;}
+  iframe{width:100%; height:280px; border:0; border-radius:20px;}
+  .map-card{border-radius:20px; overflow:hidden; border:1px solid var(--line);}
+
+  /* page-hero for subpages */
+  .page-hero{padding:clamp(3rem,8vw,5rem) 0 clamp(2rem,5vw,3rem); background:linear-gradient(180deg, var(--paper2), var(--paper));}
+  .page-hero h1{font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(2.6rem,6vw,4.4rem); margin:0 0 .8rem; line-height:1.05;}
+  .page-hero p{max-width:60ch; color:var(--ink-dim); font-size:1.05rem; margin:0;}
+
+  /* legal notice box */
+  .legal-notice{background:var(--paper2); border:1px solid var(--line); border-radius:14px; padding:1.2rem 1.5rem; margin:0 0 2.4rem; font-size:.92rem; color:var(--ink-dim);}
+  .legal-notice strong{color:var(--ink);}
+  .legal h2{font-size:clamp(1.6rem,3.5vw,2.1rem); margin:2rem 0 .8rem;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p, .legal li{color:var(--ink-dim); font-size:.98rem;}
+  .legal dl{display:grid; grid-template-columns:auto 1fr; gap:.5rem 1.2rem; margin:0;}
+  .legal dt{font-weight:600; color:var(--ink);}
+  .legal dd{margin:0; color:var(--ink-dim);}
+  @media (max-width:600px){ .legal dl{grid-template-columns:1fr;} .legal dd{margin-bottom:.6rem;} }
+
+  footer{padding:3rem 0 1.5rem; text-align:center; color:var(--ink-dim); font-size:.9rem; border-top:1px solid var(--line);}
+  footer .fname{color:var(--red); font-weight:700;}
+  .foot-links{display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:0 0 1rem; padding:0; list-style:none;}
+  .foot-links a{text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:3px; font-size:.85rem; display:inline-flex; align-items:center; min-height:44px;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des China Restaurant Hua Qiang</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Hua <b>Qiang</b></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4312856758">Anrufen</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Chinesisches Familienrestaurant · Donaustadt</p>
+      <h1>Fernöstliche <i>Klassiker</i>, mit Familie gekocht</h1>
+      <p class="hero-sub">Hua Qiang bringt fernöstliche Klassiker und eigene Hauskreationen in die Donaustadt – mit Mittagsmenüs, Take-away und einem Gastgarten für die ganze Familie.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+4312856758">+43 1 285 67 58</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 500 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <circle cx="250" cy="330" r="190" fill="none" stroke="#f7f1e6" stroke-width="1.2" opacity=".3"/>
+        <circle cx="250" cy="330" r="140" fill="none" stroke="#c79a3f" stroke-width="1.2" opacity=".5"/>
+        <circle cx="330" cy="230" r="55" fill="#c79a3f" opacity=".85"/>
+        <path d="M60 560 Q 250 470 440 560" stroke="#f7f1e6" stroke-width="1.2" fill="none" opacity=".35"/>
+        <path d="M60 600 Q 250 520 440 600" stroke="#f7f1e6" stroke-width="1.2" fill="none" opacity=".25"/>
+      </svg>
+      <div class="rating-chip">
+        <b>4,8</b>
+        <span>921 Bewertungen</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="ueber">
+    <div class="wrap magazine">
+      <div class="col-head reveal">
+        <p class="kicker">Über Hua Qiang</p>
+        <h2>Familientradition in der Donaustadt</h2>
+      </div>
+      <div class="col-body reveal">
+        <p class="dropcap">Hua Qiang ist ein chinesisches Familienrestaurant in der Donaustadt, das fernöstliche Klassiker mit eigenen Hauskreationen verbindet. Ob Mittagsmenü unter der Woche oder entspanntes Abendessen im Gastgarten – hier trifft bewährtes Handwerk auf familiäre Gastfreundschaft.</p>
+        <a class="link-more" href="ueber-uns.html">Mehr über uns lesen →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="angebot" style="background:var(--paper2);">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:2.4rem;">
+        <p class="kicker">Für die ganze Familie</p>
+        <h2>Was Hua Qiang besonders macht</h2>
+      </div>
+      <div class="teaser-grid">
+        <div class="teaser-card reveal">
+          <h3>Mittagsmenüs</h3>
+          <p>Werktags schnell und ausgewogen verköstigt.</p>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Take-away</h3>
+          <p>Hua Qiang schnell und unkompliziert zum Mitnehmen.</p>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Gastgarten &amp; Spielplatz</h3>
+          <p>Platz im Freien, mit eigenem Kinderspielplatz für die Kleinen.</p>
+        </div>
+        <div class="teaser-card reveal">
+          <h3>Barrierefrei</h3>
+          <p>Zugang und Räumlichkeiten sind barrierefrei gestaltet.</p>
+        </div>
+      </div>
+      <p style="margin-top:2rem;"><a class="link-more" href="angebot.html">Zur ganzen Speisekarte →</a></p>
+    </div>
+  </section>
+
+  <div class="rateband">
+    <div class="wrap">
+      <div class="stat"><b>4,8/5</b><span>Google-Bewertung (via Restaurant Guru)</span></div>
+      <div class="stat"><b>921</b><span>Bewertungen von Gästen</span></div>
+      <div class="stat"><b>Sehr gut</b><span>bewertet in der Donaustadt</span></div>
+    </div>
+  </div>
+
+  <section id="kontakt">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="kicker">Kontakt &amp; Anfahrt</p>
+        <h2>Besuchen Sie uns in der Donaustadt</h2>
+        <p style="color:var(--ink-dim); font-size:1.08rem; max-width:48ch;">Für Tischreservierungen und Fragen zur Speisekarte erreichen Sie Hua Qiang telefonisch.</p>
+        <div class="hero-actions" style="margin-top:1.6rem;">
+          <a class="btn btn-primary" href="tel:+4312856758">Anrufen</a>
+          <a class="btn btn-outline" href="kontakt.html">Alle Kontaktdaten</a>
+        </div>
+      </div>
+      <div class="map-card reveal">
+        <iframe title="Anfahrt zu Hua Qiang" loading="lazy" src="https://www.google.com/maps?q=Hartlebengasse%2021%2C%201220%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p><span class="fname">China Restaurant Hua Qiang</span> · Hartlebengasse 21, 1220 Wien · <a href="tel:+4312856758" style="text-decoration:underline;">+43 1 285 67 58</a></p>
+    <p>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des China Restaurant Hua Qiang · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Tischlerei Hans Körzö</title>
+<meta name="description" content="Die Tischlerei Hans Körzö: alteingesessener Familienbetrieb in Wien-Donaustadt. Geschichte, Werte und Handwerk hinter dem Namen Körzö.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4efe6;--panel:#fff;--ink:#241d15;--oak:#a5672c;--oak-deep:#7c4a1e;--moss:#4b5c3f;
+    --line:rgba(36,29,21,0.16);--line-strong:rgba(36,29,21,0.4);--focus:#a5672c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclosure{background:var(--ink);color:#e8dfce;font-size:0.72rem;text-align:center;padding:0.55rem 1rem;letter-spacing:0.02em;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,239,230,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-strong);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-weight:800;font-size:1.05rem;text-decoration:none;color:var(--ink);}
+  .brandmark .tag{background:var(--oak);color:#fff;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;}
+  nav.links{display:none;gap:1.8rem;font-size:0.92rem;font-weight:600;}
+  nav.links a{text-decoration:none;padding:0.3rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--oak-deep);}
+  nav.links a.active{color:var(--oak-deep);border-bottom-color:var(--oak-deep);}
+  .nav-cta{display:none;background:var(--oak);color:#fff;border-radius:8px;padding:0.65rem 1.3rem;font-weight:700;text-decoration:none;font-size:0.85rem;}
+  .burger{background:none;border:1px solid var(--line-strong);border-radius:8px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:860px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line-strong);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:600;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--oak-deep);background:rgba(165,103,44,0.08);}
+
+  section{padding:clamp(3.2rem,8vw,6rem) 0;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-size:0.78rem;color:var(--oak-deep);margin-bottom:0.9rem;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.7rem);max-width:22ch;}
+  .lead{max-width:58ch;margin-top:1.1rem;font-size:1.03rem;color:#4a3d2c;}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{padding:clamp(2.6rem,7vw,4.5rem) 0 0.5rem;}
+  .page-hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);max-width:20ch;}
+  .breadcrumb{font-size:0.82rem;color:#7c6a4e;margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;color:#7c6a4e;}
+  .breadcrumb a:hover{color:var(--oak-deep);}
+
+  .about-grid{display:grid;gap:2.5rem;margin-top:2.5rem;}
+  @media(min-width:860px){.about-grid{grid-template-columns:1fr 1fr;align-items:start;}}
+  .about-panel{background:var(--panel);border:1px solid var(--line-strong);border-radius:4px;padding:2.2rem;}
+  .about-panel h3{font-size:1.1rem;display:flex;align-items:center;gap:0.6rem;}
+  .about-panel h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--moss);flex-shrink:0;}
+  .about-panel p{margin-top:0.9rem;color:#4a3d2c;font-size:0.97rem;}
+
+  .timeline{margin-top:3rem;display:grid;gap:1.6rem;}
+  .timeline-item{background:var(--panel);border:1px solid var(--line-strong);border-radius:6px;padding:1.8rem 1.8rem 1.8rem 2.4rem;display:grid;gap:0.6rem;position:relative;}
+  .timeline-item::before{content:"";position:absolute;left:1rem;top:2.1rem;width:10px;height:10px;border-radius:50%;background:var(--oak);}
+  .timeline-item .kicker{font-size:0.76rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--oak-deep);}
+  .timeline-item h3{font-size:1.1rem;margin-top:0.2rem;}
+  .timeline-item p{color:#4a3d2c;font-size:0.95rem;}
+
+  .quote-block{background:var(--ink);color:#f4efe6;border-radius:8px;padding:2.4rem clamp(1.6rem,4vw,3rem);margin-top:3rem;}
+  .quote-block p{font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.4;max-width:36ch;}
+  .quote-block span{display:block;margin-top:1rem;font-size:0.85rem;color:#c9bda3;font-weight:500;}
+
+  .contact{background:var(--ink);color:#f4efe6;}
+  .contact .eyebrow{color:#e0a84f;}
+  .contact h2{color:#f4efe6;}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.6rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;min-height:44px;transition:transform .18s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-oak{background:var(--oak);color:#fff;}
+  .btn-outline{border:1.5px solid rgba(244,239,230,0.35);color:#f4efe6;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:1.6rem;}
+
+  footer.site{background:#1a1510;color:#c9bda3;padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:#f4efe6;font-weight:700;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.8rem;}
+  footer.site .foot-links a{text-decoration:none;color:#c9bda3;}
+  footer.site .foot-links a:hover{color:#e0a84f;}
+  footer .legal{border-top:1px solid rgba(244,239,230,0.15);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Hans Körzö GesmbH Nfg KG · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html">Tischlerei Körzö <span class="tag">seit Generationen</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+43177461140">Anfrage stellen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active">Über uns</a>
+    <a href="angebot.html">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+43177461140">Anrufen: +43 1 774 61 14</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> / Über uns</p>
+      <p class="eyebrow reveal">Der Betrieb</p>
+      <h1 class="reveal">Eine Familie, ein Handwerk, ein Wort.</h1>
+      <p class="lead reveal">Die Tischlerei Hans Körzö ist ein alteingesessener Familienbetrieb in der Wiener Donaustadt. Was mit klassischer Tischlerei begann, ist heute ein breit aufgestellter Betrieb für Reparaturen, Innenausbau und Außenbau — geführt mit demselben Anspruch: Handschlagqualität statt Massenware.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Werte</p>
+      <h2 class="section-title reveal">Worauf es uns ankommt</h2>
+      <div class="about-grid">
+        <div class="about-panel reveal">
+          <h3><span class="dot" aria-hidden="true"></span>Persönlich statt anonym</h3>
+          <p>Als Familienbetrieb kennt man bei Körzö seine Kundschaft — Hans Körzö und sein Team besprechen jedes Projekt persönlich, statt es an ein Callcenter weiterzureichen.</p>
+        </div>
+        <div class="about-panel reveal">
+          <h3><span class="dot" aria-hidden="true"></span>Für Wiener Wohnverhältnisse</h3>
+          <p>Enge Stiegenhäuser, schräge Dachböden, Altbau-Details: Die Tischlerei kennt die typischen Herausforderungen Wiener Wohnungen und Häuser aus jahrelanger Praxis.</p>
+        </div>
+        <div class="about-panel reveal">
+          <h3><span class="dot" aria-hidden="true"></span>Innen und außen aus einer Hand</h3>
+          <p>Vom Türstock im Wohnzimmer bis zum Carport vor der Garage — ein Ansprechpartner für das gesamte Projekt, keine Schnittstellenprobleme zwischen Gewerken.</p>
+        </div>
+        <div class="about-panel reveal">
+          <h3><span class="dot" aria-hidden="true"></span>Ehrliches Handwerk</h3>
+          <p>Klare Absprachen, solide Ausführung, Material, das hält — die Tischlerei Körzö setzt auf Handwerk, das seinen Namen verdient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow reveal">So arbeiten wir</p>
+      <h2 class="section-title reveal">Von der Idee bis zur fertigen Ausführung</h2>
+      <p class="lead reveal">Jedes Projekt ist anders — trotzdem folgt die Zusammenarbeit einem klaren, verlässlichen Ablauf.</p>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="kicker">Erster Kontakt</span>
+          <h3>Anruf oder E-Mail genügt</h3>
+          <p>Sie schildern Ihr Anliegen — ob Reparatur, Umbau oder Neubau eines Elements — telefonisch oder per E-Mail. Meist lässt sich schon dabei die grobe Richtung klären.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="kicker">Vor Ort</span>
+          <h3>Besichtigung und Beratung</h3>
+          <p>Bei größeren Vorhaben wie Dachbodenausbau oder Innenausbau erfolgt eine Besichtigung vor Ort, um Maße, Möglichkeiten und Materialien gemeinsam zu besprechen.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="kicker">Umsetzung</span>
+          <h3>Maßarbeit in der Werkstatt und vor Ort</h3>
+          <p>Von der Fertigung bis zum Einbau — die Tischlerei Körzö übernimmt die Ausführung mit demselben Anspruch an Präzision, den ein Familienbetrieb an sich selbst stellt.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="kicker">Nach dem Projekt</span>
+          <h3>Ansprechbar bleiben</h3>
+          <p>Auch nach Abschluss eines Projekts ist die Tischlerei bei Rückfragen oder weiteren Reparaturen erreichbar — Handschlagqualität endet nicht mit der Rechnung.</p>
+        </div>
+      </div>
+      <div class="quote-block reveal">
+        <p>„Wir bauen nicht für den Katalog, sondern für die Menschen, die täglich durch die Tür gehen, die wir gefertigt haben.“</p>
+        <span>Hans Körzö, Tischlerei Hans Körzö GesmbH Nfg KG</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Nächster Schritt</p>
+      <h2 class="reveal">Lernen Sie uns persönlich kennen</h2>
+      <p class="lead reveal" style="color:#c9bda3;">Am besten überzeugt ein Gespräch — rufen Sie an oder sehen Sie sich unser Leistungsspektrum an.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-oak" href="kontakt.html">Zum Kontakt</a>
+        <a class="btn btn-outline" href="angebot.html">Leistungen ansehen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>Tischlerei Hans Körzö GesmbH Nfg KG</div>
+      <div>Wehrbrücklstraße 38-40, 1220 Wien · +43 1 774 61 14</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Hans Körzö GesmbH Nfg KG · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

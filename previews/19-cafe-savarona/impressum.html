@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Café Savarona</title>
+<meta name="description" content="Muster-Impressum für Café Savarona, Simmeringer Hauptstraße 93/III, 1110 Wien.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terra:#d9603a;
+    --terra-dark:#a8432a;
+    --mustard:#e8ac2e;
+    --teal:#1f6f6a;
+    --teal-dark:#164e4a;
+    --cream:#fdf5e8;
+    --cream-2:#f6e6c9;
+    --ink:#2a1e17;
+    --ring:#1f6f6a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Sora',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Fahkwang',system-ui,sans-serif;font-weight:600;line-height:1.15}
+  :focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+
+  .disclaimer{background:var(--teal-dark);color:var(--cream);font-size:.78rem;text-align:center;padding:.55rem 1rem}
+  .disclaimer b{color:var(--mustard);font-weight:700}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(253,245,232,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--ink)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem clamp(1.25rem,4vw,2.5rem);max-width:1180px;margin:0 auto}
+  .brand{font-family:'Fahkwang',sans-serif;font-size:1.4rem;font-weight:700;color:var(--terra-dark);text-decoration:none}
+  .navlist{display:flex;align-items:center;gap:1.8rem;list-style:none}
+  .navlist a{text-decoration:none;font-size:.92rem;font-weight:600;color:var(--ink)}
+  .navlist a:hover{color:var(--terra)}
+  .cta-mini{display:inline-flex;align-items:center;min-height:44px;background:var(--teal);color:#fff;padding:.5rem 1.1rem;border-radius:10px;font-size:.85rem;font-weight:700;text-decoration:none}
+  .cta-mini:hover{background:var(--teal-dark)}
+  .menu-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer}
+  @media (max-width:840px){
+    .navlist{position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--cream);flex-direction:column;align-items:flex-start;padding:2rem clamp(1.25rem,4vw,2.5rem);gap:1.4rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+    .navlist.open{transform:translateX(0)}
+    .navlist a{font-size:1.2rem}
+    .menu-toggle{display:flex}
+    .cta-mini{display:none}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3.5rem,8vw,5rem)}
+  .page-title{font-size:clamp(2rem,6vw,2.8rem);margin-bottom:1.6rem}
+  .legal-notice{background:var(--cream-2);border:2px solid var(--ink);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:2.4rem;font-size:.92rem;color:#4a382e;max-width:70ch}
+  .legal-notice strong{color:var(--terra-dark)}
+  .legal-content{max-width:70ch}
+  .legal-content h2{font-size:1.35rem;margin:2.2rem 0 .8rem;color:var(--ink)}
+  .legal-content h2:first-child{margin-top:0}
+  .legal-content p,.legal-content li{color:#4a382e;margin-bottom:.7rem;font-size:.98rem}
+  .legal-content ul{padding-left:1.4rem;margin-bottom:.8rem}
+  .legal-content a{color:var(--teal-dark);text-decoration:underline}
+  .placeholder{color:var(--terra-dark);font-style:italic}
+
+  footer.site{background:var(--ink);color:var(--cream-2);padding:2.5rem clamp(1.25rem,4vw,2.5rem) 2rem}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;max-width:1180px;margin:0 auto;padding-bottom:1.5rem;border-bottom:1px solid rgba(253,245,232,.15)}
+  .foot-brand{font-family:'Fahkwang',sans-serif;font-size:1.3rem;color:var(--mustard);font-weight:700}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center}
+  .foot-links a{color:var(--cream-2);text-decoration:none;font-size:.85rem}
+  .foot-links a:hover{color:var(--mustard);text-decoration:underline}
+  .foot-note{max-width:1180px;margin:1.3rem auto 0;font-size:.78rem;color:rgba(253,245,232,.6);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <b>keine offizielle Website</b> von Café Savarona · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">Café Savarona</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a1e17" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navlist" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a class="cta-mini" href="tel:+4317497084">Anrufen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1 class="page-title">Impressum</h1>
+    <div class="legal-notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+    <div class="legal-content">
+      <h2>Diensteanbieter</h2>
+      <p>Café Savarona e.U.<br>
+      Inhaberin: Selda Ülker<br>
+      Simmeringer Hauptstraße 93/III<br>
+      1110 Wien, Österreich</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: <a href="tel:+4317497084">+43 1 749 70 84</a><br>
+      E-Mail: <a href="mailto:office@savarona.at">office@savarona.at</a></p>
+
+      <h2>Unternehmensgegenstand</h2>
+      <p>Betrieb eines Cafés / einer Gastronomie (Café Savarona).</p>
+
+      <h2>Gewerberechtliche Angaben</h2>
+      <p>Firmenbuchnummer: <span class="placeholder">[Firmenbuchnummer, falls vorhanden]</span><br>
+      UID-Nummer: <span class="placeholder">[UID-Nummer]</span><br>
+      Mitgliedschaft bei der Wirtschaftskammer Österreich (WKO) — gesetzliche Interessenvertretung für Gewerbetreibende in Österreich.<br>
+      Zuständige Gewerbebehörde: <span class="placeholder">[zuständige Bezirksverwaltungsbehörde]</span></p>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Café Savarona nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle derzeit nicht teil und ist dazu auch nicht verpflichtet.</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Diese Seite ist eine unverbindliche Gestaltungs-Vorschau zu Demonstrationszwecken. Für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Informationen kann keine Gewähr übernommen werden.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">Café Savarona</div>
+    <div style="font-size:.9rem;opacity:.85;max-width:44ch">Simmeringer Hauptstraße 93/III · 1110 Wien · +43 1 749 70 84 · office@savarona.at</div>
+    <nav class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Café Savarona · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+</body>
+</html>

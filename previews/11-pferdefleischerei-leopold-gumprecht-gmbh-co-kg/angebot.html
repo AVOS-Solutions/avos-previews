@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sortiment — Pferdefleischerei Gumprecht</title>
+<meta name="description" content="Das Sortiment der Pferdefleischerei Leopold Gumprecht: Pferde- und Fohlenspezialitäten wie Lungenbraten, Beiried, hausgemachter Leberkäse und Rohwürste aus eigener Herstellung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4ece1;--paper:#fffaf3;--ink:#241512;--ink-soft:#5a453d;
+    --oxblood:#6f1d1d;--oxblood-dark:#4a1212;--mustard:#d99b2b;--line:#e4d5bf;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;line-height:1.1;margin:0;}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  img,svg{max-width:100%;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;}
+
+  header.site{background:var(--paper);border-bottom:3px solid var(--oxblood);position:sticky;top:0;z-index:40;}
+  nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1rem clamp(1.1rem,4vw,3rem);max-width:1220px;margin:0 auto;gap:0.7rem 1rem;}
+  .brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;font-family:'Unbounded',sans-serif;font-weight:800;font-size:clamp(0.85rem,2.6vw,1rem);color:var(--oxblood);min-width:0;flex:1 1 200px;}
+  .brand-mark{width:36px;height:36px;border-radius:8px;flex:none;background:var(--oxblood);display:flex;align-items:center;justify-content:center;color:var(--mustard);font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:800;}
+  .nav-links{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-size:0.92rem;font-weight:600;}
+  .nav-links a{text-decoration:none;padding:0.2rem 0;border-bottom:2px solid transparent;}
+  .nav-links a:hover{color:var(--oxblood);}
+  .nav-links a.active{color:var(--oxblood);border-bottom-color:var(--mustard);}
+  .nav-cta{background:var(--oxblood);color:#fff;text-decoration:none;font-weight:700;padding:0.75rem 1.3rem;border-radius:999px;font-size:0.86rem;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
+  .nav-cta:hover{background:var(--oxblood-dark);}
+  .menu-toggle{display:none;background:none;border:2px solid var(--oxblood);border-radius:8px;width:44px;height:44px;cursor:pointer;position:relative;flex:none;}
+  .menu-toggle span,.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--oxblood);}
+  .menu-toggle span{top:21px;}
+  .menu-toggle::before{top:15px;}
+  .menu-toggle::after{top:27px;}
+
+  @media (max-width:860px){
+    .nav-links{position:fixed;inset:63px 0 0 0;background:var(--paper);flex-direction:column;padding:1.5rem;gap:0;font-size:1.15rem;transform:translateY(-110%);transition:transform 0.3s ease;overflow-y:auto;}
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex;min-height:52px;align-items:center;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{background:var(--oxblood);color:#f6e9d8;padding:clamp(2.6rem,6vw,4rem) 0;}
+  .breadcrumb{font-size:0.78rem;color:var(--mustard);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.08em;}
+  .breadcrumb a{text-decoration:underline;}
+  .page-hero h1{font-size:clamp(2rem,5.5vw,3.2rem);text-transform:uppercase;}
+  .page-hero p{color:#e8d6c2;max-width:60ch;margin-top:1.1rem;font-size:1.04rem;}
+
+  .bento-section{padding:4.5rem 0 5rem;}
+  .bento-section h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--oxblood);margin-bottom:0.6rem;}
+  .bento-section .sub{color:var(--ink-soft);max-width:60ch;margin-bottom:2.5rem;}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(110px,auto);gap:1rem;}
+  .bento .tile{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;transition:transform 0.25s ease, box-shadow 0.25s ease;}
+  .bento .tile:hover{transform:translateY(-4px);box-shadow:0 16px 32px -18px rgba(111,29,29,0.35);}
+  .bento .tile h3{font-size:1.05rem;color:var(--oxblood);margin-bottom:0.4rem;font-family:'Unbounded',sans-serif;}
+  .bento .tile p{margin:0;font-size:0.88rem;color:var(--ink-soft);}
+  .bento .tile.big{grid-column:span 3;grid-row:span 2;}
+  .bento .tile.wide{grid-column:span 3;}
+  .bento .tile.tall{grid-column:span 2;grid-row:span 2;}
+  .bento .tile.small{grid-column:span 2;}
+  .bento .tile.dark{background:var(--oxblood);color:#f6e9d8;border-color:var(--oxblood);}
+  .bento .tile.dark h3{color:var(--mustard);}
+  .bento .tile.dark p{color:#e8d6c2;}
+  .bento .tile .icon{width:36px;height:36px;margin-bottom:0.8rem;}
+  .stall-list{list-style:none;margin:0.6rem 0 0;padding:0;font-size:0.86rem;display:grid;gap:0.3rem;}
+  .stall-list li::before{content:"— ";color:var(--mustard);}
+
+  @media (max-width:900px){.bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;}.bento .tile.big,.bento .tile.wide,.bento .tile.tall,.bento .tile.small{grid-column:span 2;grid-row:auto;}}
+  @media (max-width:520px){.bento{grid-template-columns:1fr;}.bento .tile.big,.bento .tile.wide,.bento .tile.tall,.bento .tile.small{grid-column:span 1;}}
+
+  .note{background:var(--paper);border:1px dashed var(--line);border-radius:14px;padding:1.3rem 1.5rem;margin-top:2.5rem;font-size:0.92rem;color:var(--ink-soft);}
+
+  .cta-band{background:var(--ink);color:#f6e9d8;padding:4rem 0;}
+  .cta-band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.8rem;}
+  .cta-band h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);max-width:26ch;}
+  .cta-band p{color:#d9c4b3;margin:0.6rem 0 0;max-width:38ch;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;min-height:48px;padding:0.85rem 1.7rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.94rem;transition:transform 0.2s ease;}
+  .btn-mustard{background:var(--mustard);color:#241512;}
+  .btn-mustard:hover{transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid #f6e9d8;color:#f6e9d8;}
+  .btn-outline:hover{background:#f6e9d8;color:var(--oxblood);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;}
+
+  footer.site{background:var(--paper);color:var(--ink-soft);padding-top:2.6rem;font-size:0.85rem;border-top:1px solid var(--line);}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.8rem;padding-bottom:1.8rem;max-width:1220px;margin:0 auto;padding-left:clamp(1.1rem,4vw,3rem);padding-right:clamp(1.1rem,4vw,3rem);}
+  .footer-col h4{font-family:'Unbounded',sans-serif;font-size:0.82rem;color:var(--oxblood);margin-bottom:0.7rem;}
+  .footer-col p{margin:0;max-width:30ch;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:0.45rem;}
+  .footer-col a{text-decoration:none;}
+  .footer-col a:hover{color:var(--oxblood);}
+  .disclaimer{background:var(--oxblood-dark);color:#f6e9d8;text-align:center;font-size:0.76rem;padding:0.7rem 1rem;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">G</span>
+      Pferdefleischerei Gumprecht
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Sortiment</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43127013122">+43 1 270 13 22</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="breadcrumb"><a href="index.html">Home</a> / Sortiment</span>
+      <h1>Sortiment &amp; Standorte.</h1>
+      <p>Eines der größten Sortimente an Pferde- und Fohlenspezialitäten auf Wiens Märkten – von Edelteilen bis zu hausgemachter Wurstware.</p>
+    </div>
+  </section>
+
+  <section class="bento-section">
+    <div class="wrap">
+      <h2 class="reveal">Was Sie bei uns finden.</h2>
+      <p class="sub reveal">Sechs Verkaufsstände, ein Sortiment aus eigener Herstellung und Verarbeitung.</p>
+      <div class="bento">
+        <article class="tile big dark reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#f6e9d8" stroke-width="1.8"><rect x="6" y="14" width="24" height="16" rx="2"/><path d="M6 14 L10 6 h16 l4 8"/><path d="M14 30v-6M22 30v-6"/></svg>
+          <h3>Hauptstand: Floridsdorfer Markt</h3>
+          <ul class="stall-list">
+            <li>Stand 79–80, 1210 Wien</li>
+            <li>Weitere fünf Marktstände in ganz Wien</li>
+          </ul>
+        </article>
+        <article class="tile wide reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#6f1d1d" stroke-width="1.8"><path d="M8 20c0-6 4-11 10-11s10 5 10 11"/><path d="M6 22h24"/><path d="M10 26h16"/></svg>
+          <h3>Lungenbraten &amp; Beiried</h3>
+          <p>Klassische Edelteile für die gehobene Küche – frisch vom Stand.</p>
+        </article>
+        <article class="tile tall reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#6f1d1d" stroke-width="1.8"><rect x="8" y="8" width="20" height="20" rx="3"/><path d="M8 16h20M16 8v20"/></svg>
+          <h3>Hausgemachter Leberkäse</h3>
+          <p>Nach traditioneller Rezeptur zubereitet – ein Klassiker der Fleischerei.</p>
+        </article>
+        <article class="tile small reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#6f1d1d" stroke-width="1.8"><path d="M10 10c6 6 10 10 16 16M10 26c6-6 10-10 16-16" stroke-linecap="round"/></svg>
+          <h3>Rohwürste</h3>
+          <p>Handwerklich hergestellt, aus eigener Produktion.</p>
+        </article>
+        <article class="tile small reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#6f1d1d" stroke-width="1.8"><path d="M10 22c2-8 6-14 8-14s6 6 8 14"/><path d="M8 22h20"/></svg>
+          <h3>Fohlenspezialitäten</h3>
+          <p>Besondere Zuschnitte für Kenner der Wiener Marktküche.</p>
+        </article>
+        <article class="tile wide reveal">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="#6f1d1d" stroke-width="1.8"><circle cx="18" cy="18" r="10"/><path d="M18 12v6l4 3"/></svg>
+          <h3>Öffnungszeiten</h3>
+          <p>Je Standort unterschiedlich – am besten telefonisch erfragen oder direkt am Stand vorbeischauen.</p>
+        </article>
+      </div>
+      <p class="note reveal">Genaue Verfügbarkeit und Preise erfahren Sie direkt an den Verkaufsständen oder telefonisch – das Sortiment variiert je nach Saison und Standort.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Fragen zu einem bestimmten Zuschnitt?</h2>
+        <p>Rufen Sie den Hauptstand an – wir beraten Sie gerne.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-mustard" href="tel:+43127013122">Jetzt anrufen</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Pferdefleischerei Gumprecht</h4>
+      <p>Floridsdorfer Markt Stand 79–80, 1210 Wien</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+43127013122">+43 1 270 13 22</a></li>
+        <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Sortiment</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Pferdefleischerei Leopold Gumprecht GmbH &amp; Co KG · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Hua Qiang</title>
+<meta name="description" content="Muster-Datenschutzerklärung für die Vorschau-Website des China Restaurant Hua Qiang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f1e6;
+    --paper2:#efe4d0;
+    --ink:#1b1512;
+    --ink-dim:#5c5045;
+    --red:#8e1e2b;
+    --red-dark:#5e131c;
+    --gold:#c79a3f;
+    --line:rgba(27,21,18,.14);
+    --focus:#8e1e2b;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; line-height:1.55;}
+  .serif{font-family:'Instrument Serif', Georgia, serif; font-weight:400;}
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:2px;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclaimer{background:var(--ink); color:#e7dcc9; text-align:center; font-size:.72rem; padding:.55rem 1rem;}
+  .disclaimer strong{color:#fff; font-weight:700;}
+
+  header{position:sticky; top:0; z-index:60; background:rgba(247,241,230,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.25rem,4vw,3rem);}
+  .logo{font-family:'Instrument Serif',serif; font-size:1.7rem; font-style:italic; text-decoration:none; letter-spacing:.01em; color:var(--ink);}
+  .logo b{font-style:normal; color:var(--red);}
+  nav ul{list-style:none; display:flex; gap:2.2rem; margin:0; padding:0;}
+  nav a{text-decoration:none; font-weight:500; font-size:.92rem; display:inline-flex; align-items:center; min-height:44px; color:var(--ink);}
+  nav a:hover{color:var(--red);}
+  nav a.active{color:var(--red); font-weight:700;}
+  .navtoggle{display:none; background:none; border:2px solid var(--line); border-radius:8px; width:44px; height:44px; font-size:1.2rem; cursor:pointer; color:var(--ink);}
+  .call-btn{background:var(--red); color:#fff; padding:.7rem 1.3rem; border-radius:999px; text-decoration:none; font-weight:600; font-size:.88rem; display:inline-flex; align-items:center; min-height:44px;}
+  @media (max-width:860px){
+    nav ul{position:fixed; inset:64px 0 auto 0; flex-direction:column; background:var(--paper); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:.3rem; border-bottom:1px solid var(--line); transform:translateY(-130%); transition:transform .3s; max-height:calc(100vh - 64px); overflow-y:auto;}
+    nav ul.open{transform:translateY(0);}
+    nav li{width:100%;}
+    nav a{width:100%; padding:.6rem 0;}
+    .navtoggle{display:block;}
+    .call-btn{display:none;}
+  }
+
+  section{padding:clamp(3rem,7vw,5rem) 0;}
+  .page-hero{padding:clamp(3rem,8vw,5rem) 0 clamp(2rem,5vw,3rem); background:linear-gradient(180deg, var(--paper2), var(--paper));}
+  .kicker{color:var(--red); font-weight:600; text-transform:uppercase; font-size:.78rem; letter-spacing:.16em; margin:0 0 .8rem;}
+  .page-hero h1{font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(2.4rem,5.5vw,3.6rem); margin:0 0 .8rem; line-height:1.05;}
+
+  .legal-notice{background:#f6e2c6; border:1px solid var(--gold); border-radius:14px; padding:1.2rem 1.5rem; margin:0 0 2.4rem; font-size:.94rem; color:var(--ink-dim);}
+  .legal-notice strong{color:var(--ink);}
+  .legal{max-width:760px;}
+  .legal h2{font-size:clamp(1.5rem,3.2vw,1.9rem); font-family:'Instrument Serif',serif; font-weight:400; margin:2.2rem 0 .8rem;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p, .legal li{color:var(--ink-dim); font-size:.98rem; margin:0 0 .8rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal a{text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:3px;}
+
+  footer{padding:3rem 0 1.5rem; text-align:center; color:var(--ink-dim); font-size:.9rem; border-top:1px solid var(--line);}
+  footer .fname{color:var(--red); font-weight:700;}
+  .foot-links{display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin:0 0 1rem; padding:0; list-style:none;}
+  .foot-links a{text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:3px; font-size:.85rem; display:inline-flex; align-items:center; min-height:44px;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des China Restaurant Hua Qiang</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Hua <b>Qiang</b></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4312856758">Anrufen</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Datenschutz</p>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap legal">
+      <div class="legal-notice">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website wäre im echten Betrieb: China Restaurant Hua Qiang (Xie &amp; Wu GmbH), Hartlebengasse 21, 1220 Wien, Telefon: <a href="tel:+4312856758">+43 1 285 67 58</a>.</p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Beim Besuch dieser Website werden durch den Hosting-Anbieter technisch bedingt Zugriffsdaten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) automatisch in Server-Logfiles gespeichert. Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+      <h2>3. Cookies</h2>
+      <p>Diese Vorschau-Website verwendet keine Cookies zu Analyse- oder Marketingzwecken. Eine echte Website des Betriebs kann technisch notwendige und – nach Einwilligung – optionale Cookies einsetzen; hierüber würde im Ernstfall ein Cookie-Consent-Banner informieren.</p>
+
+      <h2>4. Kontaktaufnahme</h2>
+      <p>Wenn Sie per Telefon oder E-Mail Kontakt mit dem Betrieb aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.</p>
+
+      <h2>5. Ihre Rechte</h2>
+      <p>Sie haben nach der DSGVO grundsätzlich das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch bezüglich Ihrer gespeicherten personenbezogenen Daten sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde (in Österreich: Datenschutzbehörde, <a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).</p>
+
+      <h2>6. Kontakt in Datenschutzfragen</h2>
+      <p>Bei einer echten Website würde sich der Betrieb hier als Ansprechpartner für Datenschutzfragen nennen. Für diese Muster-Seite gilt: keine rechtsverbindliche Datenverarbeitung, da es sich um eine reine Demonstrations-Vorschau handelt.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="impressum.html">Impressum</a></li>
+      <li><a href="datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p><span class="fname">China Restaurant Hua Qiang</span> · Hartlebengasse 21, 1220 Wien · <a href="tel:+4312856758" style="text-decoration:underline;">+43 1 285 67 58</a></p>
+    <p>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des China Restaurant Hua Qiang · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>
