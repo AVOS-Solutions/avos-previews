@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Hotel Orient</title>
+<meta name="description" content="Kontakt und Anfahrt zum Hotel Orient, Tiefer Graben 30-32, 1010 Wien. Reservierungen telefonisch oder per E-Mail bei der Direktion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#14101c;
+    --night-2:#1c1628;
+    --gold:#c9a15a;
+    --gold-soft:#e3c689;
+    --wine:#3a1420;
+    --paper:#f4ede0;
+    --line:rgba(244,237,224,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--night); color:var(--paper); font-family:'Nunito Sans', system-ui, sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Playfair Display', Georgia, serif; margin:0; font-weight:600; line-height:1.08;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(1.1rem,4vw,3rem); width:100%;}
+  img,svg{max-width:100%;}
+
+  .disclaimer{background:#0c0912; color:#cdbfa0; font-size:.72rem; text-align:center; padding:.6rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--gold-soft);}
+
+  header.site{position:sticky; top:0; z-index:50; background:rgba(20,16,28,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,3rem); max-width:1160px; margin:0 auto; gap:1rem; position:relative;}
+  .brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--paper); min-height:44px;}
+  .brand .mark{width:38px; height:38px; border-radius:50%; border:1px solid var(--gold); display:grid; place-items:center; flex:none;}
+  .brand .mark svg{width:18px; height:18px;}
+  nav.links{display:flex; gap:1.8rem; font-size:.9rem;}
+  nav.links a{text-decoration:none; min-height:44px; display:inline-flex; align-items:center; color:#d9cdb5; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--gold-soft);}
+  nav.links a.active{color:var(--gold-soft); font-weight:700; border-bottom-color:var(--gold);}
+  .call-btn{background:var(--gold); color:#14101c; text-decoration:none; padding:.7rem 1.3rem; border-radius:2px; font-weight:700; font-size:.85rem; letter-spacing:.03em; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:6px; min-width:44px; min-height:44px; align-items:center; justify-content:center; cursor:pointer; color:var(--paper);}
+  .burger svg{width:22px;height:22px;}
+  @media (max-width:840px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--night-2); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:360px;}
+    nav.links a{padding:1rem clamp(1.1rem,4vw,3rem); border-top:1px solid var(--line); width:100%; border-bottom:none;}
+    nav.links a.active{background:rgba(201,161,90,.08); border-bottom:none;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .hero{
+    position:relative; padding:clamp(3rem,7vw,5rem) 0 clamp(2rem,5vw,3rem);
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(201,161,90,.16), transparent 60%),
+      linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+    text-align:center;
+  }
+  .kicker{text-transform:uppercase; letter-spacing:.24em; font-size:.72rem; font-weight:700; color:var(--gold-soft); margin-bottom:1.4rem;}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.5rem); max-width:20ch; margin:0 auto;}
+  .hero p.lead{margin:1.4rem auto 0; font-size:clamp(1rem,2.2vw,1.15rem); max-width:56ch; line-height:1.7; color:#d9cdb5;}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .num{font-family:'Playfair Display',serif; font-style:italic; color:var(--gold-soft); font-size:1rem; display:block; margin-bottom:.6rem;}
+
+  .contact{background:var(--night-2);}
+  .contact .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3rem);}
+  .contact h2{font-size:clamp(1.9rem,4.5vw,2.7rem);}
+  .contact p.lead{color:#c9bda3; margin-top:1rem; max-width:42ch; line-height:1.65;}
+  .info-list{list-style:none; margin:1.8rem 0 0; padding:0; display:flex; flex-direction:column; gap:1.1rem;}
+  .info-list li{display:flex; gap:1rem; align-items:flex-start; font-size:1rem;}
+  .info-list svg{width:20px; height:20px; flex:none; color:var(--gold); margin-top:.15rem;}
+  .info-list a{text-decoration:none; border-bottom:1px solid rgba(244,237,224,.3);}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.6rem; border-radius:2px; text-decoration:none; font-weight:700; font-size:.9rem; letter-spacing:.02em; min-height:44px;}
+  .btn.primary{background:var(--gold); color:#14101c;}
+  .btn.ghost{border:1px solid rgba(244,237,224,.35); color:var(--paper);}
+  .btn:hover{opacity:.88;}
+  .contact-card{border:1px solid var(--line); border-radius:8px; padding:clamp(1.6rem,3vw,2.2rem); background:rgba(244,237,224,.03); align-self:start;}
+  .contact-card h3{font-size:1.3rem;}
+  .contact-card .addr{margin-top:.8rem; font-size:.95rem; line-height:1.65; color:#c9bda3;}
+  .contact-card .hours{margin-top:1.3rem; padding-top:1.3rem; border-top:1px solid var(--line); font-size:.85rem; color:#9a8b70;}
+  .map-embed{margin-top:1.4rem; border-radius:6px; overflow:hidden; border:1px solid var(--line); filter:grayscale(.2) invert(.92) hue-rotate(180deg);}
+  .map-embed iframe{display:block; width:100%; height:260px; border:0;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  footer.site{padding-top:clamp(2.5rem,5vw,3.5rem);}
+  .footer-cols{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.2rem; padding-bottom:2rem;}
+  .footer-brand h3{font-size:1.3rem;}
+  .footer-brand p{margin-top:.6rem; font-size:.9rem; color:#c9bda3; line-height:1.65; max-width:32ch;}
+  .footer-brand a{color:#c9bda3;}
+  .footer-nav{display:flex; flex-direction:column; gap:.6rem; font-size:.92rem;}
+  .footer-nav a{text-decoration:none; color:var(--paper); min-height:44px; display:inline-flex; align-items:center;}
+  .footer-nav a:hover{color:var(--gold-soft);}
+  .footer-legal{display:flex; flex-direction:column; gap:.6rem; font-size:.85rem;}
+  .footer-legal a{text-decoration:none; color:#9a8b70; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-legal a:hover{color:var(--gold-soft);}
+  footer.site .bottom{border-top:1px solid var(--line); padding:1.4rem 0 2rem; text-align:center;}
+  footer.site small{color:#8a7c64; font-size:.8rem; line-height:1.5;}
+
+  @media (max-width:760px){
+    .contact .wrap{grid-template-columns:1fr;}
+    .footer-cols{flex-direction:column; gap:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Hotel Orient</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a15a" stroke-width="1.5"><path d="M12 3l2 5 5 .8-3.6 3.5.9 5.2L12 15l-4.3 2.5.9-5.2L5 8.8 10 8Z"/></svg></span>
+      Hotel Orient
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4315337307">Reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Kontakt</p>
+      <h1>Reservierung &amp; <em>Anfahrt</em>.</h1>
+      <p class="lead">Für Reservierungsanfragen steht Ihnen die Direktion des Hauses gerne persönlich zur Verfügung.</p>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="num">So erreichen Sie uns</span>
+        <h2>Kontakt &amp; Anfahrt</h2>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Tiefer Graben 30-32, 1010 Wien</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 6a2 2 0 0 1 2-2Z"/></svg>
+            <a href="tel:+4315337307">+43 1 533 73 07</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <a href="mailto:direktion@hotel-orient.at">direktion@hotel-orient.at</a>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:+4315337307">Anrufen</a>
+          <a class="btn ghost" href="mailto:direktion@hotel-orient.at">E-Mail schreiben</a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Tiefer%20Graben%2030-32%2C%201010%20Wien" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <h3>Hotel Orient</h3>
+        <p class="addr">Tiefer Graben 30-32<br>1010 Wien, Österreich<br>Direktion: Heinz Rüdiger Schimanko</p>
+        <div class="hours">Rezeption &amp; Reservierung: telefonisch oder per E-Mail.</div>
+        <div class="map-embed">
+          <iframe title="Karte: Tiefer Graben 30-32, 1010 Wien" src="https://maps.google.com/maps?q=Tiefer%20Graben%2030-32%2C%201010%20Wien&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-cols">
+    <div class="footer-brand">
+      <h3>Hotel Orient</h3>
+      <p>Tiefer Graben 30-32<br>1010 Wien, Österreich<br><a href="tel:+4315337307">+43 1 533 73 07</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="bottom wrap">
+    <small>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Hotel Orient · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Fleischerei Anderl</title>
+<meta name="description" content="Kontakt und Anfahrt zur Fleischerei Anderl in Göpfritz an der Wild: Adresse, Telefon, E-Mail und 24h-Automat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oxblood:#6d1420; --oxblood-deep:#460d15; --cream:#f4ede2; --cream-2:#ece1cf;
+    --charcoal:#221a17; --brass:#b98a3c; --line: rgba(34,26,23,0.15); --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--charcoal); font-family:'Manrope',system-ui,sans-serif; font-size:clamp(15.5px,1.4vw,17px); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Libre Caslon Text',Georgia,serif; font-weight:400; margin:0; color:var(--oxblood-deep);}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,60px);}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+
+  .disclaimer{background:var(--charcoal); color:#e7dcc9; font-size:12.5px; text-align:center; padding:9px 16px; line-height:1.5;}
+  .disclaimer strong{color:var(--brass);}
+
+  header{border-bottom:3px solid var(--oxblood-deep); background:var(--cream); position:sticky; top:0; z-index:40;}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,60px); max-width:var(--maxw); margin:0 auto;}
+  .brand{font-family:'Libre Caslon Text',serif; font-size:1.3rem; text-decoration:none; color:var(--oxblood-deep); letter-spacing:0.01em;}
+  .brand small{display:block; font-family:'Manrope',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); font-weight:700; margin-top:2px;}
+  nav.links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
+  nav.links a{text-decoration:none; font-size:0.86rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--charcoal); padding:12px 2px; display:inline-block;}
+  nav.links a:hover{color:var(--oxblood);}
+  nav.links a.active{color:var(--oxblood); border-bottom:2px solid var(--brass);}
+  .nav-toggle{display:none; background:none; border:2px solid var(--oxblood-deep); border-radius:8px; min-width:46px; min-height:46px; align-items:center; justify-content:center; cursor:pointer;}
+
+  .page-hero{border-bottom:1px solid var(--line); padding:clamp(36px,7vw,64px) 0;}
+  .page-hero .eyebrow{font-size:0.8rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--oxblood); margin-bottom:18px; display:flex; align-items:center; gap:12px;}
+  .page-hero .eyebrow::before{content:""; width:34px; height:3px; background:var(--brass); display:inline-block;}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); max-width:20ch;}
+  .page-hero p{max-width:60ch; font-size:clamp(1rem,2.2vw,1.1rem); margin-top:20px; color:#3d2e29;}
+
+  section{padding:clamp(32px,6vw,64px) 0 clamp(56px,8vw,88px);}
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start;}
+  .info-list{list-style:none; margin:0; padding:0; display:grid; gap:0; border-top:1px solid var(--line);}
+  .info-list li{padding:20px 0; border-bottom:1px solid var(--line); display:flex; gap:16px; align-items:flex-start;}
+  .info-list .ico{width:22px; height:22px; flex:none; margin-top:3px; color:var(--oxblood);}
+  .info-list .label{font-size:0.76rem; text-transform:uppercase; letter-spacing:0.09em; color:var(--brass); font-weight:800; margin-bottom:3px;}
+  .info-list a{text-decoration:none; font-weight:700; color:var(--oxblood-deep); word-break:break-word;}
+  .info-list a:hover{text-decoration:underline;}
+  .map-frame{border-radius:4px; overflow:hidden; border:1px solid var(--line); aspect-ratio:4/3; background:var(--cream-2);}
+  .map-frame iframe{width:100%; height:100%; border:0;}
+
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:32px;}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:15px 28px; min-height:44px; text-decoration:none; font-weight:700; font-size:0.92rem; border-radius:3px; border:2px solid transparent; letter-spacing:0.02em;}
+  .btn-primary{background:var(--oxblood); color:var(--cream);}
+  .btn-primary:hover{background:var(--oxblood-deep);}
+  .btn-ghost{border-color:var(--oxblood-deep); color:var(--oxblood-deep);}
+  .btn-ghost:hover{background:var(--oxblood-deep); color:var(--cream);}
+
+  .note{background:var(--cream-2); border:1px solid var(--line); border-left:5px solid var(--brass); border-radius:4px; padding:16px 20px; margin-bottom:28px; font-size:0.95rem; color:var(--oxblood-deep);}
+
+  footer{background:var(--oxblood-deep); color:#e2c896; padding:44px 0 24px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+  footer .brand2{font-family:'Libre Caslon Text',serif; font-size:1.15rem; color:var(--cream);}
+  footer small{color:#c7a875;}
+  footer .foot-links{list-style:none; margin:10px 0 0; padding:0; display:flex; gap:16px; flex-wrap:wrap;}
+  footer .foot-links a{color:#e2c896; font-size:0.85rem; text-decoration:none;}
+  footer .foot-links a:hover{text-decoration:underline;}
+  .foot-note{border-top:1px solid rgba(244,237,226,0.15); margin-top:28px; padding-top:18px; font-size:12.5px; color:#c7a875; text-align:center;}
+
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+    nav.links{position:fixed; inset:66px 16px auto 16px; background:var(--cream); border-radius:10px; flex-direction:column; padding:14px; gap:2px; box-shadow:0 20px 50px rgba(34,26,23,0.3); border:1px solid var(--line); display:none; max-height:calc(100vh - 90px); overflow-y:auto;}
+    nav.links.open{display:flex;}
+    nav.links a{padding:14px 10px; display:block;}
+    .nav-toggle{display:inline-flex;}
+  }
+  @media (max-width:640px){
+    footer .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Anderl<small>Fleischerei seit 1842</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="20" y2="5"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Sortiment</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt &amp; Anfahrt</span>
+      <h1>Besuchen Sie uns in der Hauptstraße.</h1>
+      <p>Ob an der Theke oder rund um die Uhr am Automaten vor dem Geschäft — wir freuen uns auf Sie.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="note">24h-Automat: Montag bis Sonntag rund um die Uhr direkt vor dem Geschäft. Öffnungszeiten der Fleischerei auf Anfrage.</div>
+      <div class="contact-grid">
+        <ul class="info-list reveal">
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div>
+              <div class="label">Adresse</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Hauptstra%C3%9Fe%2061%2C%203800%20G%C3%B6pfritz%20an%20der%20Wild" target="_blank" rel="noopener">Hauptstraße 61, 3800 Göpfritz an der Wild</a>
+            </div>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h4l2 6-3 2a14 14 0 006 6l2-3 6 2v4a2 2 0 01-2 2C10 23 1 14 1 6a2 2 0 012-2z"/></svg>
+            <div>
+              <div class="label">Telefon</div>
+              <a href="tel:+4328258317">+43 2825 8317</a>
+            </div>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+            <div>
+              <div class="label">E-Mail</div>
+              <a href="mailto:office@fleischerei-anderl.at">office@fleischerei-anderl.at</a>
+            </div>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17.5 6.5 21 8 13.5 3 9l6.5-0.5z"/></svg>
+            <div>
+              <div class="label">24h-Automat</div>
+              <div style="font-weight:700;">Direkt vor dem Geschäft</div>
+            </div>
+          </li>
+        </ul>
+        <div class="map-frame reveal">
+          <iframe title="Lage Fleischerei Anderl" loading="lazy" src="https://www.google.com/maps?q=Hauptstra%C3%9Fe%2061%2C%203800%20G%C3%B6pfritz%20an%20der%20Wild&output=embed"></iframe>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+4328258317">Anrufen</a>
+        <a class="btn btn-ghost" href="mailto:office@fleischerei-anderl.at">E-Mail schreiben</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Hauptstra%C3%9Fe%2061%2C%203800%20G%C3%B6pfritz%20an%20der%20Wild" target="_blank" rel="noopener">Route planen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand2">Fleischerei Anderl</div>
+      <small>Hauptstraße 61 · 3800 Göpfritz an der Wild · Waldviertel</small><br>
+      <small><a href="tel:+4328258317" style="color:#e2c896;">+43 2825 8317</a></small>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div><small>Familienbetrieb seit 1842 · 4. Generation</small></div>
+  </div>
+  <div class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>

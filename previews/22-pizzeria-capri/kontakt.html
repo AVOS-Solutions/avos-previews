@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Pizzeria Capri</title>
+<meta name="description" content="Kontakt und Anfahrt zur Pizzeria Capri, Sieveringer Straße 141, 1190 Wien. Täglich 11–22 Uhr geöffnet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf3e6; --cream2:#f4e6d1; --brown:#2c1912; --brown-dim:#6b5344;
+  --tomato:#c1432a; --tomato-dark:#9c331f; --basil:#4b6b3f; --gold:#d99b3f; --focus:#9c331f;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--cream); color:var(--brown); font-family:'Work Sans', system-ui, sans-serif; line-height:1.5; overflow-x:hidden;}
+h1,h2,h3,.serif{font-family:'Fraunces', Georgia, serif;}
+a{color:inherit;}
+a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:2px;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+.disclaimer{background:var(--brown); color:#e9d9c5; text-align:center; font-size:.72rem; padding:.55rem 1rem; letter-spacing:.01em;}
+.disclaimer strong{color:#fff; font-weight:700;}
+
+header{position:sticky; top:0; z-index:60; background:rgba(251,243,230,.92); backdrop-filter:blur(8px); border-bottom:1px solid rgba(44,25,18,.1);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:1.1rem clamp(1.25rem,4vw,3rem); gap:1rem;}
+.logo{font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; text-decoration:none; letter-spacing:-.01em; flex:none;}
+.logo em{font-style:italic; color:var(--tomato);}
+nav ul{list-style:none; display:flex; gap:2.2rem; margin:0; padding:0;}
+nav a{text-decoration:none; font-weight:600; font-size:.95rem; display:inline-flex; align-items:center; min-height:44px; padding:.3rem 0; position:relative;}
+nav a:hover{color:var(--tomato);}
+nav a.active{color:var(--tomato-dark);}
+nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:.15rem; height:2px; background:var(--tomato); border-radius:2px;}
+.navtoggle{display:none; background:none; border:2px solid var(--brown); border-radius:8px; width:44px; height:44px; font-size:1.2rem; cursor:pointer; color:var(--brown); flex:none;}
+.call-btn{background:var(--tomato); color:#fff; padding:.7rem 1.3rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:.9rem; display:inline-flex; align-items:center; min-height:44px; flex:none;}
+@media (max-width:860px){
+  nav ul{position:fixed; inset:64px 0 auto 0; flex-direction:column; background:var(--cream); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:1rem; border-bottom:1px solid rgba(44,25,18,.1); transform:translateY(-130%); transition:transform .3s; max-height:calc(100vh - 64px); overflow-y:auto;}
+  nav ul.open{transform:translateY(0);}
+  nav a{min-height:48px;}
+  .navtoggle{display:block;}
+  .call-btn{display:none;}
+}
+
+.page-hero{position:relative; padding:clamp(2.6rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem); overflow:hidden; background:linear-gradient(165deg,var(--tomato) 0%, var(--tomato-dark) 65%, #6f2417 100%); color:#fff;}
+.page-hero .eyebrow{color:#f6d9c8;}
+.page-hero h1{color:#fff; font-size:clamp(2.3rem,5.5vw,3.8rem); margin:0 0 1.1rem; line-height:1.05;}
+.page-hero .hero-sub{color:#f3ded1; max-width:56ch; margin:0; font-size:1.1rem;}
+.eyebrow{font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:1.1rem;}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;}
+h2{font-size:clamp(1.8rem,4vw,2.5rem); font-weight:600; margin:0 0 1rem; letter-spacing:-.01em;}
+.lead{font-size:1.05rem; color:var(--brown-dim); max-width:60ch;}
+
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:start;}
+@media (max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+.info-list{list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:1.1rem;}
+.info-list li{display:flex; gap:.9rem;}
+.info-list svg{flex:none; width:22px; height:22px; color:var(--tomato); margin-top:.15rem;}
+.info-list a{text-decoration:underline; text-decoration-color:var(--tomato); text-underline-offset:3px;}
+.action-row{display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem;}
+.btn{display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.7rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:1rem; transition:transform .18s; min-height:44px;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--tomato); color:#fff;}
+.btn-outline{border:1.5px solid var(--brown); color:var(--brown);}
+
+.hours-box{background:#fff; border:1px solid rgba(44,25,18,.12); border-radius:20px; padding:2rem; margin-bottom:1.4rem;}
+.hours-box h3{margin:0 0 1rem; font-size:1.2rem;}
+.hours-row{display:flex; justify-content:space-between; padding:.55rem 0; border-bottom:1px dashed rgba(44,25,18,.15); font-size:.95rem; gap:1rem;}
+.hours-row:last-child{border-bottom:none;}
+.hours-row span:first-child{color:var(--brown-dim);}
+.map-card{border-radius:20px; overflow:hidden; border:1px solid rgba(44,25,18,.12);}
+iframe{width:100%; height:280px; border:0; display:block;}
+
+footer{padding:3rem 0 1.5rem; text-align:center; color:var(--brown-dim); font-size:.9rem;}
+footer .fname{color:var(--tomato-dark); font-weight:700;}
+footer .foot-links{margin:.6rem 0 1.2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem 1.2rem;}
+footer .foot-links a{text-decoration:underline; text-decoration-color:rgba(44,25,18,.3); text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+footer .foot-disclaimer{max-width:60ch; margin:0 auto; font-size:.82rem; opacity:.9;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Pizzeria Capri</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Capr<em>i</em></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4313280053">Reservieren</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Kontakt &amp; Anfahrt</p>
+      <h1>Zu Gast bei Capri</h1>
+      <p class="hero-sub">Für Reservierungen, Fragen zur Tageskarte oder Zustellung – Younes Salib und sein Team freuen sich auf Ihre Nachricht.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <h2>So erreichen Sie uns</h2>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Sieveringer Straße 141, 1190 Wien</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5c0 8.3 6.7 15 15 15l3-4-6-3-2 2c-2.5-1.3-4.7-3.5-6-6l2-2-3-6-4 0z"/></svg>
+            <span><a href="tel:+4313280053">+43 1 328 00 53</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <span><a href="mailto:office@capri.co.at">office@capri.co.at</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>Ansprechperson: Younes Salib (Inhaber)</span>
+          </li>
+        </ul>
+        <div class="action-row">
+          <a class="btn btn-primary" href="tel:+4313280053">Jetzt anrufen</a>
+          <a class="btn btn-outline" href="mailto:office@capri.co.at">E-Mail schreiben</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Sieveringer%20Stra%C3%9Fe%20141%2C%201190%20Wien" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div>
+        <div class="hours-box">
+          <h3>Öffnungszeiten</h3>
+          <div class="hours-row"><span>Täglich</span><span>11:00 – 22:00 Uhr</span></div>
+        </div>
+        <div class="map-card">
+          <iframe title="Anfahrt zur Pizzeria Capri" loading="lazy" src="https://www.google.com/maps?q=Sieveringer%20Stra%C3%9Fe%20141%2C%201190%20Wien&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="fname">Pizzeria Capri</span> · Sieveringer Straße 141, 1190 Wien · <a href="tel:+4313280053" style="text-decoration:underline; text-decoration-color:rgba(44,25,18,.3); text-underline-offset:3px;">+43 1 328 00 53</a></p>
+    <p class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Pizzeria Capri · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+</body>
+</html>

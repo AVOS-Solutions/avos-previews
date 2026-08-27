@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Wein Ottmann</title>
+<meta name="description" content="Muster-Datenschutzerklärung von Wein Ottmann, Weißenkirchen in der Wachau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine-950:#2c0d16;
+  --wine-900:#3d1220;
+  --wine-800:#5c1a2e;
+  --wine-700:#7a2438;
+  --gold:#c9a24b;
+  --gold-soft:#e2c78a;
+  --cream:#f6efe3;
+  --cream-2:#efe3cf;
+  --ink:#241512;
+  --line:rgba(36,21,18,.14);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{overflow-x:hidden;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;margin:0;letter-spacing:-0.01em;}
+p{margin:0;}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+
+.disclaimer{
+  background:var(--wine-950);
+  color:var(--gold-soft);
+  font-size:.72rem;
+  letter-spacing:.02em;
+  text-align:center;
+  padding:.55rem 1rem;
+  line-height:1.5;
+}
+.disclaimer strong{color:#fff;font-weight:600;}
+
+header.site{
+  position:sticky;top:0;z-index:40;
+  background:rgba(246,239,227,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem clamp(1.25rem,4vw,3rem);
+  max-width:1180px;margin:0 auto;position:relative;gap:.75rem;
+}
+.brand{
+  font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:.01em;
+  display:flex;align-items:baseline;gap:.5rem;text-decoration:none;color:var(--ink);flex:none;
+}
+.brand .dot{color:var(--gold);}
+.navlinks{display:flex;gap:2rem;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;}
+.navlinks a{text-decoration:none;position:relative;padding:.6rem 0;color:var(--wine-900);}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.navlinks a:hover:after,.navlinks a:focus-visible:after,.navlinks a.active:after{width:100%;}
+.navlinks a.active{color:var(--wine-800);}
+.navlinks a:focus-visible,.brand:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.navcall{display:none;}
+@media(min-width:720px){
+  .navcall{display:inline-flex;align-items:center;gap:.5rem;background:var(--wine-800);color:#fff;
+    padding:.7rem 1.1rem;min-height:44px;border-radius:100px;font-size:.8rem;text-decoration:none;letter-spacing:.02em;}
+  .navcall:hover,.navcall:focus-visible{background:var(--wine-700);}
+}
+.burger{
+  display:none;align-items:center;justify-content:center;
+  width:44px;height:44px;background:none;border:1px solid var(--wine-800);border-radius:8px;
+  padding:0;cursor:pointer;flex:none;
+}
+.burger svg{width:20px;height:20px;}
+.burger rect,.burger path{stroke:var(--wine-800);}
+@media(max-width:719px){
+  .navlinks{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;
+    background:var(--cream);border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .navlinks a{padding:.9rem clamp(1.25rem,4vw,3rem);width:100%;min-height:44px;display:flex;align-items:center;}
+  .navlinks.open{max-height:320px;}
+  .burger{display:inline-flex;}
+}
+
+.page-hero{
+  padding:clamp(3.5rem,9vw,6rem) 0 clamp(2.5rem,6vw,4rem);
+  background:radial-gradient(120% 140% at 85% -10%, var(--cream-2) 0%, var(--cream) 60%);
+  border-bottom:1px solid var(--line);
+}
+.kicker{
+  text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--wine-700);
+  display:flex;align-items:center;gap:.6rem;margin-bottom:1.4rem;
+}
+.kicker:before{content:"";width:28px;height:1px;background:var(--gold);display:inline-block;}
+.page-hero h1{font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.02;color:var(--wine-900);max-width:22ch;}
+.page-hero .lede{margin-top:1.4rem;font-size:1.05rem;line-height:1.7;max-width:52ch;color:#3a2622;}
+
+.hero{
+  display:grid;grid-template-columns:1fr;
+  min-height:min(88vh,900px);
+}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.05fr .95fr;}
+}
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(2.5rem,6vw,5rem) clamp(1.25rem,4vw,3.5rem);
+  order:2;
+}
+@media(min-width:900px){.hero-copy{order:1;}}
+.hero h1{
+  font-size:clamp(2.6rem,6vw,4.6rem);
+  line-height:.98;
+  color:var(--wine-900);
+}
+.hero h1 em{font-style:italic;color:var(--wine-800);}
+.hero-lede{
+  margin-top:1.6rem;font-size:1.08rem;line-height:1.7;max-width:38ch;color:#3a2622;
+}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem;}
+.badge{
+  font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;
+  border:1px solid var(--wine-800);color:var(--wine-800);
+  padding:.4rem .85rem;border-radius:100px;
+}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.4rem;}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
+  padding:.95rem 1.5rem;border-radius:4px;font-size:.9rem;letter-spacing:.02em;
+  text-decoration:none;border:1px solid transparent;transition:transform .25s ease, background .25s;
+}
+.btn-primary{background:var(--wine-800);color:#fff;}
+.btn-primary:hover,.btn-primary:focus-visible{background:var(--wine-900);transform:translateY(-2px);}
+.btn-ghost{border-color:var(--wine-800);color:var(--wine-800);}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--wine-800);color:#fff;}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+.hero-visual{
+  order:1;position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 100% at 85% 10%, var(--wine-700) 0%, var(--wine-900) 55%, var(--wine-950) 100%);
+  min-height:320px;
+}
+@media(min-width:900px){.hero-visual{order:2;}}
+.rows{
+  position:absolute;inset:0;
+  background-image:repeating-linear-gradient(115deg, rgba(201,162,75,.16) 0 2px, transparent 2px 34px);
+}
+.hero-visual svg{position:absolute;inset:0;width:100%;height:100%;}
+.hero-visual .label{
+  position:absolute;left:1.5rem;bottom:1.5rem;color:var(--gold-soft);font-size:.75rem;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+
+section{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+.section-head{max-width:640px;margin-bottom:2.8rem;}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:var(--wine-700);margin-bottom:1rem;display:block;
+}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--wine-900);}
+
+.about{background:var(--cream-2);}
+.about-grid{display:grid;gap:2.5rem;}
+@media(min-width:820px){.about-grid{grid-template-columns:.9fr 1.1fr;align-items:start;}}
+.dropcap{
+  font-family:'Fraunces',serif;font-size:1.15rem;line-height:1.85;color:#3a2622;
+}
+.dropcap::first-letter{
+  font-size:4.2rem;float:left;line-height:.8;padding-right:.5rem;padding-top:.4rem;
+  color:var(--wine-800);font-style:italic;
+}
+.about-fact{
+  border-left:2px solid var(--gold);padding-left:1.5rem;
+}
+.about-fact .num{font-family:'Fraunces',serif;font-style:italic;font-size:2.6rem;color:var(--wine-800);display:block;}
+.about-fact p{margin-top:.4rem;font-size:.92rem;color:#4a3530;line-height:1.6;}
+.about-fact + .about-fact{margin-top:2rem;}
+
+/* timeline */
+.timeline{border-top:1px dashed var(--line);margin-top:.5rem;}
+.tl-row{
+  display:grid;grid-template-columns:1fr;gap:.6rem;
+  padding:2.2rem 0;border-bottom:1px dashed var(--line);position:relative;
+}
+@media(min-width:720px){
+  .tl-row{grid-template-columns:150px 1fr;gap:2.5rem;align-items:start;}
+}
+.tl-year{font-family:'Fraunces',serif;font-style:italic;font-size:1.9rem;color:var(--wine-800);}
+.tl-body h3{font-size:1.25rem;margin-bottom:.5rem;color:var(--wine-900);}
+.tl-body p{color:#4a3530;line-height:1.7;font-size:.98rem;max-width:60ch;}
+
+.offer-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;}
+@media(min-width:760px){.offer-grid{grid-template-columns:1fr 1fr;}}
+.offer-grid.three{grid-template-columns:1fr;}
+@media(min-width:760px){.offer-grid.three{grid-template-columns:repeat(3,1fr);}}
+.offer-card{
+  background:#fff;border:1px solid var(--line);border-radius:6px;padding:2.2rem;
+  position:relative;overflow:hidden;
+}
+.offer-card:before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--wine-800),var(--gold));
+}
+.offer-card h3{font-size:1.5rem;color:var(--wine-900);margin-bottom:.9rem;}
+.offer-card p{color:#4a3530;line-height:1.7;font-size:.98rem;}
+.offer-list{list-style:none;padding:0;margin:1.3rem 0 0;display:grid;gap:.55rem;}
+.offer-list li{display:flex;gap:.6rem;font-size:.92rem;color:#3a2622;}
+.offer-list li:before{content:"—";color:var(--gold);flex:none;}
+
+.strip{
+  background:var(--wine-900);color:var(--cream);
+  text-align:center;padding:clamp(2.5rem,6vw,4rem) 0;
+}
+.strip p{
+  font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);
+  max-width:44ch;margin:0 auto;line-height:1.5;color:var(--gold-soft);
+}
+
+.teaser-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;}
+@media(min-width:820px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+.teaser-card{
+  background:#fff;border:1px solid var(--line);border-radius:6px;padding:2.2rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.teaser-card h3{font-size:1.35rem;color:var(--wine-900);}
+.teaser-card p{color:#4a3530;line-height:1.7;font-size:.95rem;flex:1;}
+.teaser-card a.more{
+  font-size:.85rem;letter-spacing:.03em;text-decoration:none;color:var(--wine-800);
+  border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:2px;
+}
+.teaser-card a.more:hover,.teaser-card a.more:focus-visible{color:var(--wine-950);}
+
+.contact-grid{display:grid;gap:2.5rem;}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr;}}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:2.4rem;}
+.contact-card h3{font-size:1.3rem;color:var(--wine-900);margin-bottom:1.4rem;}
+dl.info{display:grid;gap:1rem;margin:0;}
+dl.info div{display:flex;flex-direction:column;gap:.15rem;}
+dl.info dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--wine-700);}
+dl.info dd{margin:0;font-size:1rem;}
+dl.info a{text-decoration:none;border-bottom:1px solid var(--gold);}
+dl.info a:hover,dl.info a:focus-visible{color:var(--wine-800);}
+.map-frame{border-radius:6px;overflow:hidden;border:1px solid var(--line);min-height:260px;background:var(--cream-2);}
+.map-frame iframe{width:100%;height:100%;min-height:260px;border:0;display:block;}
+
+.legal{max-width:760px;}
+.legal h2{font-size:clamp(1.5rem,3vw,2rem);color:var(--wine-900);margin-top:2.2rem;}
+.legal h2:first-child{margin-top:0;}
+.legal p,.legal li{color:#3a2622;line-height:1.75;font-size:.98rem;}
+.legal ul{padding-left:1.2rem;}
+.legal-notice{
+  background:var(--cream-2);border:1px solid var(--line);border-left:4px solid var(--gold);
+  border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:2.4rem;font-size:.92rem;line-height:1.65;color:var(--wine-950);
+}
+.legal-notice strong{color:var(--wine-900);}
+
+footer{
+  background:var(--wine-950);color:var(--cream-2);padding:3rem 0 1.5rem;
+}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.12);}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.3rem;color:#fff;}
+.footer-note{font-size:.8rem;color:rgba(246,239,227,.6);max-width:32ch;line-height:1.6;}
+.footer-links{display:flex;flex-direction:column;gap:.6rem;font-size:.85rem;}
+.footer-links a{text-decoration:none;color:var(--cream-2);}
+.footer-links a:hover,.footer-links a:focus-visible{color:var(--gold-soft);}
+.footer-col h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-soft);margin-bottom:.9rem;}
+.footer-bottom{
+  padding-top:1.6rem;font-size:.72rem;color:rgba(246,239,227,.55);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
+}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Wein Ottmann</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html">Wein Ottmann<span class="dot">.</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Wein &amp; Zimmer</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <a class="navcall" href="tel:+4327157 2842">+43 2715 72842</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="page-hero" style="border-bottom:none;padding-bottom:0;">
+    <div class="wrap">
+      <span class="kicker reveal">Datenschutz</span>
+      <h1 class="reveal">Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section style="padding-top:1.5rem;">
+    <div class="wrap legal">
+      <div class="legal-notice reveal">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <h2>Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>Wein Ottmann, Isabella und Richard Ottmann, Lichtgartl 374, 3610 Weißenkirchen in der Wachau, E-Mail: <a href="mailto:office@wein-ottmann.at">office@wein-ottmann.at</a></p>
+
+      <h2>Allgemeines zur Datenverarbeitung</h2>
+      <p>Beim Besuch dieser Website werden aus technischen Gründen automatisch Informationen (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in Server-Logfiles erfasst. Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs der Website sowie zur Verbesserung des Angebots ausgewertet und nicht mit anderen Datenquellen zusammengeführt.</p>
+
+      <h2>Cookies</h2>
+      <p>Diese Website verwendet, sofern technisch nicht zwingend erforderlich, keine Cookies zu Tracking- oder Analysezwecken. Sollten künftig Cookies eingesetzt werden, werden Besucher:innen vorab um Zustimmung gebeten, soweit dies rechtlich erforderlich ist.</p>
+
+      <h2>Kontaktaufnahme</h2>
+      <p>Wenn Sie per E-Mail, Telefon oder über sonstige Kontaktmöglichkeiten mit uns in Verbindung treten, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) ausschließlich zur Bearbeitung Ihres Anliegens gespeichert und verarbeitet. Eine Weitergabe an Dritte erfolgt nicht, sofern dies nicht zur Beantwortung Ihrer Anfrage erforderlich ist oder wir gesetzlich dazu verpflichtet sind.</p>
+
+      <h2>Rechte der betroffenen Personen</h2>
+      <p>Ihnen stehen nach der Datenschutz-Grundverordnung (DSGVO) grundsätzlich folgende Rechte zu:</p>
+      <ul>
+        <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+        <li>Recht auf Berichtigung unrichtiger Daten</li>
+        <li>Recht auf Löschung Ihrer Daten</li>
+        <li>Recht auf Einschränkung der Verarbeitung</li>
+        <li>Recht auf Datenübertragbarkeit</li>
+        <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+        <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde (dsb.gv.at)</li>
+      </ul>
+
+      <h2>Kontakt für Datenschutzanfragen</h2>
+      <p>Für Anfragen zum Datenschutz wenden Sie sich bitte an: <a href="mailto:office@wein-ottmann.at">office@wein-ottmann.at</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Wein Ottmann</div>
+        <p class="footer-note" style="margin-top:.6rem;">Weinbau, Heuriger &amp; Gästezimmer in Weißenkirchen in der Wachau.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="angebot.html">Wein &amp; Zimmer</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Wein Ottmann · keine Verbindung zum Unternehmen.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>Lichtgartl 374, 3610 Weißenkirchen in der Wachau · <a href="tel:+4327157 2842" style="color:inherit;">+43 2715 72842</a></span>
+      <span>Gestaltungs-Vorschau, nicht die echte Website des Betriebs</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var burger=document.getElementById('burger');
+    var navlinks=document.getElementById('navlinks');
+    if(burger&&navlinks){
+      burger.addEventListener('click',function(){
+        var open=navlinks.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open?'true':'false');
+      });
+      navlinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          navlinks.classList.remove('open');
+          burger.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+    var els=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+        });
+      },{threshold:.15});
+      els.forEach(function(el){io.observe(el);});
+    } else {
+      els.forEach(function(el){el.classList.add('in');});
+    }
+  });
+</script>
+</body>
+</html>

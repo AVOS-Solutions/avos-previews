@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Burgherren-Restaurant Johann Zeiner</title>
+<meta name="description" content="Muster-Impressum für die Gestaltungs-Vorschau des Burgherren-Restaurants Johann Zeiner in St. Andrä-Wördern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;800&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#161210;--night-2:#211a15;--gold:#c9973f;--gold-light:#e6c27a;
+    --wine:#6e1f24;--forest:#2f3d2a;--parchment:#ece2cd;--ink-soft:#c9bda3;--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--night);color:var(--parchment);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.65;font-size:clamp(15px,1.6vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;}
+  a{color:var(--gold-light);}
+  .wrap{max-width:840px;margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  .disclaimer{background:#0c0a09;color:var(--ink-soft);text-align:center;font-size:.78rem;padding:.55rem 1rem;}
+  .disclaimer strong{color:var(--gold-light);font-weight:600;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(22,18,16,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,151,63,.25);}
+  nav.wrap{max-width:1200px;display:flex;align-items:center;justify-content:space-between;padding:1rem 6vw;position:relative;}
+  .brand{font-family:'Unbounded',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.02em;color:var(--gold-light);display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+  .brand svg{flex:none;}
+  .navlinks{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;font-size:.85rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--gold-light);}
+  .navtoggle{display:none;background:none;border:1px solid var(--gold);border-radius:8px;width:44px;height:44px;color:var(--gold-light);cursor:pointer;flex:none;}
+  @media(max-width:820px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--night-2);padding:1rem 6vw 1.5rem;gap:.3rem;border-bottom:1px solid rgba(201,151,63,.25);display:none;}
+    .navlinks.open{display:flex;}
+    .navlinks a{min-height:48px;}
+    .navtoggle{display:block;}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3rem,7vw,5rem);}
+  h1{font-size:clamp(2rem,5vw,3rem);font-weight:600;margin:0 0 1.6rem;}
+  .notice{background:#2a2213;border:1px solid rgba(201,151,63,.5);border-radius:8px;padding:1.1rem 1.3rem;font-size:.92rem;color:var(--gold-light);margin-bottom:2.2rem;}
+  h2{font-size:1.2rem;font-family:'Familjen Grotesk',sans-serif;font-weight:600;margin:2rem 0 .6rem;color:var(--parchment);}
+  p{color:var(--ink-soft);margin:0 0 .8rem;}
+  .placeholder{color:var(--gold-light);font-style:italic;}
+
+  footer.site{background:#0c0a09;color:#8a8074;padding:2.4rem 0 1.6rem;font-size:.85rem;}
+  footer.site .wrap{max-width:1200px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;}
+  .footer-col h4{margin:0 0 .6rem;color:var(--ink-soft);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+  .footer-col p{margin:0 0 .4rem;color:#8a8074;}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .footer-links a{color:#8a8074;text-decoration:none;min-height:32px;display:inline-flex;align-items:center;}
+  .footer-links a:hover{color:var(--gold-light);}
+  .footer-disclaimer{width:100%;border-top:1px solid #201b17;margin-top:1.8rem;padding-top:1.2rem;font-size:.78rem;color:#5f584e;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Burgherren-Restaurants Johann Zeiner</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+      Zeiner
+    </a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Impressum</h1>
+    <div class="notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Diensteanbieter</h2>
+    <p>Burgherren-Restaurant Johann Zeiner (Familie Zeiner)<br>
+    Bahngasse 17<br>
+    3423 St. Andrä-Wördern<br>
+    Niederösterreich, Österreich</p>
+
+    <h2>Kontakt</h2>
+    <p>Telefon: <a href="tel:+436767060501">+43 676 7060501</a></p>
+
+    <h2>Ansprechperson</h2>
+    <p>Johann Zeiner (Familie Zeiner)</p>
+
+    <h2>Unternehmensangaben</h2>
+    <p>Firmenbuchnummer: <span class="placeholder">[Firmenbuchnummer, falls vorhanden]</span><br>
+    UID-Nummer: <span class="placeholder">[UID-Nummer]</span><br>
+    Zuständige Kammer/Innung: <span class="placeholder">[z. B. Wirtschaftskammer Niederösterreich, Fachgruppe Gastronomie]</span></p>
+
+    <h2>Anwendbares Recht</h2>
+    <p>Es gilt österreichisches Recht. Diese Musterseite dient ausschließlich der Veranschaulichung einer möglichen Website-Gestaltung.</p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Burgherren-Restaurant Zeiner</h4>
+      <p>Bahngasse 17 · 3423 St. Andrä-Wördern</p>
+      <p><a href="tel:+436767060501" style="color:inherit;">+43 676 7060501</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div class="footer-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des Burgherren-Restaurants Johann Zeiner · keine Verbindung zum Unternehmen
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

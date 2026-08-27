@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Landgasthof zum Topf</title>
+<meta name="description" content="Der Landgasthof zum Topf in Vitis: ein Traditionsgasthof im Waldviertel mit mehrfach ausgezeichneter Küche – Gault Millau, A la carte und Falstaff 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2f4a3b;
+    --forest-2:#1f332a;
+    --walnut:#4a3222;
+    --amber:#c98a3c;
+    --amber-light:#e3b877;
+    --cream:#f6f1e4;
+    --cream-2:#ece1c7;
+    --ink:#2a2318;
+    --ink-soft:#5c5140;
+    --white:#fffdf8;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Work Sans',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Cormorant',Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+  .disclaimer{background:var(--forest-2);color:#e3ddc8;font-size:12px;text-align:center;padding:9px 16px;line-height:1.5}
+  .disclaimer strong{color:var(--amber-light);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(246,241,228,0.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(74,50,34,0.15)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex-shrink:0}
+  .brand-mark{width:44px;height:44px;border-radius:46% 54% 60% 40%/50% 45% 55% 50%;background:var(--forest);color:var(--amber-light);display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:19px;flex-shrink:0}
+  .brand-name{font-family:'Cormorant',serif;font-size:20px;font-weight:700}
+  nav.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px}
+  nav.links a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--amber)}
+  nav.links a.active{color:var(--amber);border-bottom-color:var(--amber)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--forest);color:var(--white)}
+  .btn-primary:hover{background:var(--forest-2)}
+  .btn-outline{border-color:var(--forest);color:var(--forest)}
+  .btn-outline:hover{background:var(--forest);color:var(--white)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--forest);border-radius:50%;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--forest);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)}
+  #mobile-menu a.active{color:var(--forest);font-weight:600}
+
+  .page-hero{position:relative;padding:64px 0 56px;overflow:hidden;text-align:center}
+  .blob{position:absolute;border-radius:42% 58% 63% 37%/47% 41% 59% 53%;opacity:0.5;filter:blur(2px)}
+  .blob-1{width:34vw;max-width:420px;aspect-ratio:1;background:radial-gradient(circle at 30% 30%, var(--amber-light), var(--amber));top:-14%;right:-8%}
+  .kicker{font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:16px;position:relative}
+  .page-hero h1{font-size:clamp(2.2rem,7vw,4.4rem);color:var(--forest-2);max-width:22ch;margin:0 auto;position:relative}
+  .page-hero p{font-size:17px;color:var(--ink-soft);max-width:56ch;margin:20px auto 0;position:relative}
+
+  section{padding:88px 0}
+  .section-head{max-width:640px;margin:0 auto 52px;text-align:center}
+  .eyebrow{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:14px}
+  h2{font-size:clamp(2rem,4.2vw,3rem);color:var(--forest-2)}
+  .lead{color:var(--ink-soft);font-size:16px;margin-top:16px}
+
+  .story-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center}
+  .story-text p{margin:0 0 18px;font-size:16px;color:var(--ink-soft)}
+  .story-text p:last-child{margin-bottom:0}
+  .story-visual{position:relative;aspect-ratio:1/1;border-radius:44% 56% 60% 40%/50% 46% 54% 50%;background:linear-gradient(160deg,var(--forest) 0%,var(--forest-2) 60%,var(--walnut) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .story-visual svg{width:70%;height:70%;opacity:0.9}
+
+  .awards{background:var(--cream-2)}
+  .award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .award-card{background:var(--white);border-radius:24px;padding:36px 28px;text-align:center;box-shadow:0 1px 0 rgba(74,50,34,0.06)}
+  .award-badge{width:74px;height:74px;margin:0 auto 20px;border-radius:44% 56% 60% 40%/50% 46% 54% 50%;background:linear-gradient(160deg,var(--amber-light),var(--amber));color:var(--forest-2);display:flex;align-items:center;justify-content:center}
+  .award-card h3{font-size:1.5rem;color:var(--forest-2);margin-bottom:10px}
+  .award-card p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+  .cta-band{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+
+  footer.site{background:var(--walnut);color:#dccbb5;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(220,203,181,0.18)}
+  .foot-brand{font-family:'Cormorant',serif;color:var(--white);font-size:21px;font-weight:700}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#dccbb5}
+  .foot-links a:hover{color:var(--amber-light)}
+  .foot-legal{display:flex;gap:16px;list-style:none;margin:10px 0 0;padding:0;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{text-decoration:none;color:#b39d84}
+  .foot-legal a:hover{color:var(--amber-light)}
+  .foot-note{max-width:1200px;margin:0 auto;padding:20px 24px 26px;font-size:12px;line-height:1.6;color:#b39d84}
+  .foot-note strong{color:#e3b877}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width:960px){
+    .story-grid{grid-template-columns:1fr;gap:36px}
+    .story-visual{max-width:320px;margin:0 auto;aspect-ratio:1/1}
+    .award-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:60px 0}
+    .page-hero{padding:44px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> des Landgasthof zum Topf &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">T</span>
+      <span class="brand-name">zum Topf</span>
+    </a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Tisch reservieren</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid rgba(74,50,34,0.15);background:var(--cream)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <span class="blob blob-1" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="kicker reveal">Über uns</div>
+      <h1 class="reveal">Traditionsgasthof im Herzen des Waldviertels.</h1>
+      <p class="reveal">Der Landgasthof zum Topf liegt in Vitis, mitten im Waldviertel, und steht seit langem für bodenständige Gastlichkeit auf hohem Niveau.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-text reveal">
+          <div class="eyebrow">Unsere Geschichte</div>
+          <h2 style="margin-bottom:20px">Bodenständig, mit ausgezeichneter Küche.</h2>
+          <p>Der Landgasthof zum Topf liegt in Vitis, mitten im Waldviertel, und steht seit langem für bodenständige Gastlichkeit auf hohem Niveau. Restaurant, Gourmet-Stüberl, Gastgarten und Café bilden gemeinsam ein Haus, das für jeden Anlass den passenden Rahmen bietet – vom traditionellen Mittagstisch bis zum besonderen Menü.</p>
+          <p>Die Küche wurde wiederholt ausgezeichnet: mit 2 Hauben im Gault Millau 2026, dem roten Fixstern im A la carte 2026 sowie 2 Gabeln im Falstaff 2026 zählt der Landgasthof zu den anerkannten Adressen der regionalen Gastronomie – ohne dabei die Bodenständigkeit des Waldviertels zu verlieren.</p>
+          <p>Im Restaurant trifft traditionelle Waldviertler Küche auf handwerkliche Sorgfalt, im Gourmet-Stüberl bekommt ein besonderer Anlass den passenden Rahmen, im Gastgarten lässt sich der Sommer im Grünen genießen, und im Café gibt es Kaffee und Mehlspeise für zwischendurch.</p>
+        </div>
+        <div class="story-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 200 200" fill="none">
+            <path d="M60 130c0-30 18-55 40-55s40 25 40 55" stroke="#e3b877" stroke-width="3" stroke-linecap="round"/>
+            <path d="M50 130h100" stroke="#e3b877" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="60" r="10" fill="#e3b877"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="awards">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Auszeichnungen</div>
+        <h2>Anerkennung von den führenden Gourmetführern.</h2>
+      </div>
+      <div class="award-grid reveal">
+        <div class="award-card">
+          <span class="award-badge" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg></span>
+          <h3>2 Hauben</h3>
+          <p>Gault&nbsp;Millau 2026</p>
+        </div>
+        <div class="award-card">
+          <span class="award-badge" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M7 8l5-5 5 5M7 16l5 5 5-5"/></svg></span>
+          <h3>Roter Fixstern</h3>
+          <p>A la carte 2026</p>
+        </div>
+        <div class="award-card">
+          <span class="award-badge" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 4v16M16 4v16M8 4h8M8 12h8"/></svg></span>
+          <h3>2 Gabeln</h3>
+          <p>Falstaff 2026</p>
+        </div>
+      </div>
+      <div class="cta-band reveal">
+        <a class="btn btn-primary" href="angebot.html">Zur Speisekarte</a>
+        <a class="btn btn-outline" href="kontakt.html">Tisch reservieren</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Landgasthof zum Topf</div>
+      <p style="font-size:13px;margin:8px 0 0">Kaltenbach 26 &middot; 3902 Vitis</p>
+      <p style="font-size:13px;margin:4px 0 0"><a href="tel:+4328418329">+43 2841 8329</a></p>
+      <ul class="foot-legal">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; keine offizielle Website des Landgasthof zum Topf &middot; keine Verbindung zum Unternehmen.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>

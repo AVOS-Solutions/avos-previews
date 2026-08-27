@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer &amp; Ausstattung — Hotel Orient</title>
+<meta name="description" content="Die sieben Themenzimmer des Hotel Orient am Tiefen Graben in Wien – von der Kaiser Suite bis „1001 Nights“, individuell gestaltet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#14101c;
+    --night-2:#1c1628;
+    --gold:#c9a15a;
+    --gold-soft:#e3c689;
+    --wine:#3a1420;
+    --paper:#f4ede0;
+    --line:rgba(244,237,224,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--night); color:var(--paper); font-family:'Nunito Sans', system-ui, sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Playfair Display', Georgia, serif; margin:0; font-weight:600; line-height:1.08;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 clamp(1.1rem,4vw,3rem); width:100%;}
+  img,svg{max-width:100%;}
+
+  .disclaimer{background:#0c0912; color:#cdbfa0; font-size:.72rem; text-align:center; padding:.6rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--gold-soft);}
+
+  header.site{position:sticky; top:0; z-index:50; background:rgba(20,16,28,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,3rem); max-width:1160px; margin:0 auto; gap:1rem; position:relative;}
+  .brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--paper); min-height:44px;}
+  .brand .mark{width:38px; height:38px; border-radius:50%; border:1px solid var(--gold); display:grid; place-items:center; flex:none;}
+  .brand .mark svg{width:18px; height:18px;}
+  nav.links{display:flex; gap:1.8rem; font-size:.9rem;}
+  nav.links a{text-decoration:none; min-height:44px; display:inline-flex; align-items:center; color:#d9cdb5; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--gold-soft);}
+  nav.links a.active{color:var(--gold-soft); font-weight:700; border-bottom-color:var(--gold);}
+  .call-btn{background:var(--gold); color:#14101c; text-decoration:none; padding:.7rem 1.3rem; border-radius:2px; font-weight:700; font-size:.85rem; letter-spacing:.03em; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:6px; min-width:44px; min-height:44px; align-items:center; justify-content:center; cursor:pointer; color:var(--paper);}
+  .burger svg{width:22px;height:22px;}
+  @media (max-width:840px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--night-2); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:360px;}
+    nav.links a{padding:1rem clamp(1.1rem,4vw,3rem); border-top:1px solid var(--line); width:100%; border-bottom:none;}
+    nav.links a.active{background:rgba(201,161,90,.08); border-bottom:none;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .hero{
+    position:relative; padding:clamp(3rem,7vw,5rem) 0 clamp(2rem,5vw,3rem);
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(201,161,90,.16), transparent 60%),
+      linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+    text-align:center;
+  }
+  .kicker{text-transform:uppercase; letter-spacing:.24em; font-size:.72rem; font-weight:700; color:var(--gold-soft); margin-bottom:1.4rem;}
+  .hero h1{font-size:clamp(2.1rem,6vw,3.5rem); max-width:20ch; margin:0 auto;}
+  .hero p.lead{margin:1.4rem auto 0; font-size:clamp(1rem,2.2vw,1.15rem); max-width:56ch; line-height:1.7; color:#d9cdb5;}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .num{font-family:'Playfair Display',serif; font-style:italic; color:var(--gold-soft); font-size:1rem; display:block; margin-bottom:.6rem;}
+
+  .rooms{background:var(--night-2);}
+  .rooms .section-head{text-align:center; margin-bottom:2.6rem;}
+  .rooms h2{font-size:clamp(1.9rem,4.5vw,2.7rem);}
+  .rooms p.sub{color:#c9bda3; margin-top:.9rem; max-width:52ch; margin-inline:auto;}
+  .room-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,250px),1fr)); gap:1.3rem;}
+  .room-card{
+    border:1px solid var(--line); border-radius:6px; padding:1.8rem;
+    background:linear-gradient(160deg, rgba(201,161,90,.05), rgba(58,20,32,.25));
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .room-card:hover{transform:translateY(-4px); border-color:var(--gold);}
+  .room-card .idx{font-family:'Playfair Display',serif; font-style:italic; color:var(--gold); font-size:.95rem;}
+  .room-card h3{font-size:1.3rem; margin-top:.7rem;}
+  .room-card p{font-size:.92rem; color:#c9bda3; line-height:1.55; margin-top:.6rem;}
+
+  .amenities .section-head{text-align:center; margin-bottom:2.6rem;}
+  .amenities h2{font-size:clamp(1.9rem,4.5vw,2.7rem);}
+  .amenity-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,240px),1fr)); gap:1.3rem;}
+  .amenity-card{border:1px solid var(--line); border-radius:6px; padding:1.6rem; text-align:center;}
+  .amenity-card svg{width:26px; height:26px; color:var(--gold);}
+  .amenity-card h3{font-size:1.05rem; margin-top:.8rem; font-weight:600; font-family:'Nunito Sans',sans-serif;}
+  .amenity-card p{font-size:.88rem; color:#c9bda3; margin-top:.4rem; line-height:1.5;}
+
+  .quote-strip{text-align:center; padding:clamp(3rem,7vw,5rem) 0;}
+  .quote-strip p{font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1.3rem,4vw,2rem); line-height:1.4; max-width:30ch; margin:0 auto; color:var(--paper);}
+  .quote-strip .attr{margin-top:1.2rem; display:block; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-soft);}
+
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.6rem; border-radius:2px; text-decoration:none; font-weight:700; font-size:.9rem; letter-spacing:.02em; min-height:44px;}
+  .btn.primary{background:var(--gold); color:#14101c;}
+  .btn.ghost{border:1px solid rgba(244,237,224,.35); color:var(--paper);}
+  .btn:hover{opacity:.88;}
+  .cta-row{display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;}
+
+  .legal-notice{background:rgba(201,161,90,.1); border:1px solid var(--gold); border-radius:6px; padding:1.1rem 1.3rem; font-size:.88rem; line-height:1.6; color:#e3c689; margin:clamp(1.5rem,4vw,2.5rem) 0;}
+  .legal-notice strong{color:var(--gold-soft);}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  footer.site{padding-top:clamp(2.5rem,5vw,3.5rem);}
+  .footer-cols{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2.2rem; padding-bottom:2rem;}
+  .footer-brand h3{font-size:1.3rem;}
+  .footer-brand p{margin-top:.6rem; font-size:.9rem; color:#c9bda3; line-height:1.65; max-width:32ch;}
+  .footer-brand a{color:#c9bda3;}
+  .footer-nav{display:flex; flex-direction:column; gap:.6rem; font-size:.92rem;}
+  .footer-nav a{text-decoration:none; color:var(--paper); min-height:44px; display:inline-flex; align-items:center;}
+  .footer-nav a:hover{color:var(--gold-soft);}
+  .footer-legal{display:flex; flex-direction:column; gap:.6rem; font-size:.85rem;}
+  .footer-legal a{text-decoration:none; color:#9a8b70; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-legal a:hover{color:var(--gold-soft);}
+  footer.site .bottom{border-top:1px solid var(--line); padding:1.4rem 0 2rem; text-align:center;}
+  footer.site small{color:#8a7c64; font-size:.8rem; line-height:1.5;}
+
+  @media (max-width:760px){
+    .footer-cols{flex-direction:column; gap:1.6rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Hotel Orient</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a15a" stroke-width="1.5"><path d="M12 3l2 5 5 .8-3.6 3.5.9 5.2L12 15l-4.3 2.5.9-5.2L5 8.8 10 8Z"/></svg></span>
+      Hotel Orient
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4315337307">Reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Zimmer &amp; Ausstattung</p>
+      <h1>Sieben Themenzimmer, <em>ein Haus</em>.</h1>
+      <p class="lead">Von der Kaiser Suite bis „1001 Nights“ – jedes Zimmer im Hotel Orient ist individuell gestaltet und erzählt seine eigene Geschichte.</p>
+    </div>
+  </section>
+
+  <section class="rooms">
+    <div class="wrap">
+      <div class="room-grid reveal">
+        <div class="room-card">
+          <span class="idx">Zimmer I</span>
+          <h3>Kaiser Suite</h3>
+          <p>Herrschaftlich gestaltet, ganz im Zeichen kaiserlicher Eleganz.</p>
+        </div>
+        <div class="room-card">
+          <span class="idx">Zimmer II</span>
+          <h3>1001 Nights</h3>
+          <p>Orientalische Opulenz und stimmungsvolles Ambiente.</p>
+        </div>
+        <div class="room-card">
+          <span class="idx">Zimmer III</span>
+          <h3>Themenzimmer III</h3>
+          <p>Eigenständig gestaltet, mit eigenem Charakter und eigener Atmosphäre.</p>
+        </div>
+        <div class="room-card">
+          <span class="idx">Zimmer IV</span>
+          <h3>Themenzimmer IV</h3>
+          <p>Individuelles Design, das sich von den anderen Räumen des Hauses abhebt.</p>
+        </div>
+        <div class="room-card">
+          <span class="idx">Zimmer V</span>
+          <h3>Themenzimmer V</h3>
+          <p>Ein weiterer Raum mit eigenständigem Stil und Charakter.</p>
+        </div>
+        <div class="room-card">
+          <span class="idx">Zimmer VI–VII</span>
+          <h3>Weitere Themenzimmer</h3>
+          <p>Zwei weitere, jeweils individuell gestaltete Räume runden das Angebot ab.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amenities">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="num">Ausstattung</span>
+        <h2>Was das Haus ausmacht</h2>
+      </div>
+      <div class="amenity-grid reveal">
+        <div class="amenity-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          <h3>Zentrale Lage</h3>
+          <p>Am Tiefen Graben, mitten in der Wiener Innenstadt.</p>
+        </div>
+        <div class="amenity-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+          <h3>Individuelles Design</h3>
+          <p>Jedes Zimmer eigenständig gestaltet, kein Zimmer wie das andere.</p>
+        </div>
+        <div class="amenity-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <h3>Diskretion</h3>
+          <p>Persönliche Betreuung mit Rücksicht auf die Privatsphäre der Gäste.</p>
+        </div>
+        <div class="amenity-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 6a2 2 0 0 1 2-2Z"/></svg>
+          <h3>Persönliche Reservierung</h3>
+          <p>Anfragen werden direkt von der Direktion des Hauses betreut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-strip">
+    <div class="wrap reveal">
+      <p>„Das einzige renommierte Stundenhotel Europas.“</p>
+      <span class="attr">BBC</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap" style="text-align:center;">
+      <div class="cta-row">
+        <a class="btn primary" href="tel:+4315337307">Jetzt reservieren</a>
+        <a class="btn ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-cols">
+    <div class="footer-brand">
+      <h3>Hotel Orient</h3>
+      <p>Tiefer Graben 30-32<br>1010 Wien, Österreich<br><a href="tel:+4315337307">+43 1 533 73 07</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="footer-legal">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="bottom wrap">
+    <small>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Hotel Orient · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

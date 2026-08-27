@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behandlungen — Physiotherapie Wonisch</title>
+<meta name="description" content="Behandlungsschwerpunkte der Physiotherapie Wonisch in Wien Floridsdorf: Orthopädie, Traumatologie, Sportverletzungen und Neurologie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f5f7f5;--panel:#ffffff;--ink:#1f2b29;--ink-soft:#516560;
+    --teal:#2f6b64;--teal-dark:#204b46;--sand:#e7ddc9;--sand-dark:#c9b98f;--line:#dbe4e0;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;line-height:1.12;margin:0;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  img,svg{max-width:100%;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+
+  header.site{background:rgba(245,247,245,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;}
+  nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:1.05rem clamp(1.1rem,4vw,3rem);max-width:1180px;margin:0 auto;gap:0.7rem 1rem;}
+  .brand{display:flex;align-items:center;gap:0.65rem;text-decoration:none;color:var(--ink);min-width:0;flex:1 1 220px;}
+  .brand-mark{width:36px;height:36px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%, var(--teal), var(--teal-dark));}
+  .brand-text{font-family:'Newsreader',serif;font-size:clamp(0.95rem,3vw,1.15rem);font-weight:500;line-height:1.2;}
+  .brand-text small{display:block;font-family:'IBM Plex Sans',sans-serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-top:0.1rem;}
+  .nav-links{display:flex;gap:1.9rem;list-style:none;margin:0;padding:0;font-size:0.92rem;font-weight:500;}
+  .nav-links a{text-decoration:none;padding:0.2rem 0;border-bottom:2px solid transparent;}
+  .nav-links a:hover{color:var(--teal);}
+  .nav-links a.active{color:var(--teal);border-bottom-color:var(--teal);}
+  .nav-cta{background:var(--teal);color:#fff;text-decoration:none;font-weight:600;padding:0.75rem 1.3rem;border-radius:10px;font-size:0.88rem;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
+  .nav-cta:hover{background:var(--teal-dark);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;position:relative;flex:none;}
+  .menu-toggle span,.menu-toggle::before,.menu-toggle::after{content:"";position:absolute;left:10px;right:10px;height:2px;background:var(--ink);}
+  .menu-toggle span{top:21px;}
+  .menu-toggle::before{top:15px;}
+  .menu-toggle::after{top:27px;}
+
+  @media (max-width:860px){
+    .nav-links{position:fixed;inset:64px 0 0 0;background:var(--paper);flex-direction:column;padding:1.5rem;gap:0;font-size:1.1rem;transform:translateY(-110%);transition:transform 0.3s ease;overflow-y:auto;}
+    .nav-links.open{transform:translateY(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex;min-height:52px;align-items:center;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease, transform 0.65s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{padding:clamp(2.4rem,5.5vw,3.8rem) 0;border-bottom:1px solid var(--line);}
+  .breadcrumb{font-size:0.78rem;color:var(--teal);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.08em;}
+  .breadcrumb a{text-decoration:underline;}
+  .page-hero h1{font-size:clamp(2rem,5vw,3rem);}
+  .page-hero p{color:var(--ink-soft);max-width:60ch;margin-top:1.1rem;font-size:1.04rem;}
+
+  .focus{padding:4rem 0 2rem;}
+  .focus h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:2.2rem;}
+  .focus-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+  .focus-list .item{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:0.9rem;}
+  .focus-list .icon-wrap{width:52px;height:52px;border-radius:14px;background:var(--teal-dark);display:flex;align-items:center;justify-content:center;}
+  .focus-list .icon-wrap svg{width:28px;height:28px;}
+  .focus-list h3{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:1.12rem;color:var(--teal-dark);}
+  .focus-list p{margin:0;font-size:0.96rem;color:var(--ink-soft);}
+  @media (max-width:820px){.focus-list{grid-template-columns:1fr;}}
+
+  .practical{padding:2rem 0 5rem;}
+  .practical .box{background:var(--sand);border-radius:18px;padding:2rem clamp(1.5rem,4vw,2.5rem);}
+  .practical h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-bottom:1rem;}
+  .practical ul{list-style:none;margin:0;padding:0;display:grid;gap:0.8rem;font-size:0.98rem;color:var(--ink-soft);}
+  .practical li{display:flex;gap:0.7rem;align-items:flex-start;}
+  .practical li::before{content:"—";color:var(--teal);flex:none;}
+
+  .cta-band{background:var(--teal-dark);color:#eaf3ef;padding:4rem 0;}
+  .cta-band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.8rem;}
+  .cta-band h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);max-width:26ch;}
+  .cta-band p{color:#cfe6df;margin:0.6rem 0 0;max-width:38ch;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;min-height:48px;padding:0.85rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.94rem;transition:transform 0.2s ease, box-shadow 0.2s ease;}
+  .btn-primary{background:#eaf3ef;color:var(--teal-dark);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid #eaf3ef;color:#eaf3ef;}
+  .btn-ghost:hover{background:#eaf3ef;color:var(--teal-dark);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;}
+
+  footer.site{background:var(--teal-dark);color:#cfe6df;padding-top:2.6rem;font-size:0.86rem;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.8rem;padding-bottom:1.8rem;max-width:1180px;margin:0 auto;padding-left:clamp(1.1rem,4vw,3rem);padding-right:clamp(1.1rem,4vw,3rem);}
+  .footer-col h4{font-family:'Newsreader',serif;font-weight:500;font-size:0.98rem;color:#fff;margin-bottom:0.7rem;}
+  .footer-col p{margin:0;max-width:30ch;}
+  .footer-col ul{list-style:none;margin:0;padding:0;display:grid;gap:0.45rem;}
+  .footer-col a{text-decoration:none;}
+  .footer-col a:hover{color:#fff;}
+  .disclaimer{background:#173934;color:#cfe6df;text-align:center;font-size:0.76rem;padding:0.7rem 1rem;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">Physiotherapie Wonisch<small>Floridsdorf, Wien</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Behandlungen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+436763303102">Termin anfragen</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="breadcrumb"><a href="index.html">Home</a> / Behandlungen</span>
+      <h1>Unsere Behandlungsschwerpunkte.</h1>
+      <p>Vier Physiotherapeut:innen, vier fachliche Schwerpunkte – gebündelt in einer Praxis in Floridsdorf.</p>
+    </div>
+  </section>
+
+  <section class="focus">
+    <div class="wrap">
+      <h2 class="reveal">Schwerpunkte im Überblick.</h2>
+      <div class="focus-list">
+        <div class="item reveal">
+          <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="#eaf3ef" stroke-width="1.6"><circle cx="15" cy="8" r="3.5"/><path d="M15 12v8M9 16h12M11 28l4-8 4 8"/></svg></span>
+          <h3>Orthopädie</h3>
+          <p>Gezielte Therapie bei Beschwerden des Bewegungsapparats – Gelenke, Muskulatur und Wirbelsäule.</p>
+        </div>
+        <div class="item reveal">
+          <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="#eaf3ef" stroke-width="1.6"><path d="M6 24 18 6l4 4-6 8h6l-8 12z"/></svg></span>
+          <h3>Traumatologie</h3>
+          <p>Physiotherapeutische Begleitung nach Unfällen, Verletzungen und operativen Eingriffen.</p>
+        </div>
+        <div class="item reveal">
+          <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="#eaf3ef" stroke-width="1.6"><circle cx="15" cy="15" r="10"/><path d="M15 9v6l4 3"/></svg></span>
+          <h3>Sportverletzungen</h3>
+          <p>Rehabilitation und gezielter Leistungsaufbau nach Verletzungen im Sport.</p>
+        </div>
+        <div class="item reveal">
+          <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 30 30" fill="none" stroke="#eaf3ef" stroke-width="1.6"><path d="M15 5c-6 3-9 8-9 13a9 9 0 0 0 18 0c0-5-3-10-9-13Z"/><path d="M15 12v8"/></svg></span>
+          <h3>Neurologie</h3>
+          <p>Physiotherapeutische Betreuung bei neurologischen Krankheitsbildern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="practical">
+    <div class="wrap">
+      <div class="box reveal">
+        <h2>Gut zu wissen.</h2>
+        <ul>
+          <li>Termine werden telefonisch oder per E-Mail vereinbart.</li>
+          <li>Vier Therapeut:innen mit unterschiedlichen Schwerpunkten unter einem Dach.</li>
+          <li>Behandlung von akuten Verletzungen bis zur längerfristigen Rehabilitation.</li>
+          <li>Ansprechpartner für Terminanfragen: Gerald Wonisch.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Bereit für einen Termin?</h2>
+        <p>Rufen Sie an oder schreiben Sie eine E-Mail – wir melden uns zeitnah zurück.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+436763303102">Jetzt anrufen</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Physiotherapie Wonisch</h4>
+      <p>Pragerstraße 177/1, 1210 Wien</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+436763303102">+43 676 33 031 02</a></li>
+        <li><a href="mailto:praxis@physiotherapie1210.at">praxis@physiotherapie1210.at</a></li>
+        <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Behandlungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Physiotherapie Wonisch · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.12});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

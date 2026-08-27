@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Schnitzelwirt</title>
+<meta name="description" content="Kontakt und Anfahrt zum Schnitzelwirt: Neubaugasse 52, 1070 Wien. Reservierung telefonisch unter +43 1 523 37 71.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ead9;--paper-2:#ecdcc0;--ink:#2c1810;--red:#8c2a20;--red-deep:#6b1c14;
+    --mustard:#c98a2c;--green:#3c5b3f;--line:rgba(44,24,16,0.16);--focus:#c98a2c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background-image:radial-gradient(circle at 8% 12%, rgba(140,42,32,0.05), transparent 40%),radial-gradient(circle at 92% 80%, rgba(60,91,63,0.05), transparent 40%);}
+  h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+  .disclosure{background:var(--red-deep);color:#f4ead9;font-size:0.72rem;text-align:center;padding:0.55rem 1rem;letter-spacing:0.02em;}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,234,217,0.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;letter-spacing:-0.01em;text-decoration:none;color:inherit;flex-shrink:0;}
+  .brandmark em{color:var(--red);font-style:italic;font-weight:600;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;}
+  nav.links a{text-decoration:none;padding:0.3rem 0;}
+  nav.links a:hover,nav.links a:focus-visible,nav.links a.active{color:var(--red);}
+  .nav-cta{display:none;background:var(--red);color:#fff;border-radius:6px;padding:0.6rem 1.3rem;font-weight:800;text-decoration:none;font-size:0.85rem;white-space:nowrap;}
+  .burger{background:none;border:2px solid var(--ink);border-radius:6px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:840px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;border-top:2px solid var(--ink);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:700;min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--red);background:var(--paper-2);}
+
+  .page-hero{background:var(--ink);color:var(--paper);padding:clamp(3rem,10vw,5.5rem) 0 clamp(2.5rem,6vw,4rem);position:relative;overflow:hidden;}
+  .page-hero .eyebrow{color:var(--mustard);}
+  .page-hero h1{color:var(--paper);font-size:clamp(2.2rem,6vw,3.6rem);}
+  .page-hero p.tag{margin-top:1rem;max-width:56ch;color:#d8c9b3;font-size:1.05rem;}
+
+  section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .contact-grid{display:grid;gap:3rem;}
+  @media(min-width:840px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-list{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem;}
+  .contact-list a{text-decoration:none;}
+  .contact-list li{display:flex;gap:1rem;align-items:flex-start;font-size:1.05rem;}
+  .contact-list .ico{flex-shrink:0;width:22px;height:22px;color:var(--red);margin-top:2px;}
+  .map-frame{border-radius:16px;overflow:hidden;border:2px solid var(--ink);min-height:280px;}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2.2rem;}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.6rem;border-radius:6px;font-weight:800;text-decoration:none;font-size:0.95rem;transition:transform .18s ease;min-height:44px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-red{background:var(--red);color:#fff8f0;}
+  .btn-outline{border:2px solid var(--ink);color:var(--ink);}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  footer.site{background:var(--red-deep);color:#f4ead9;padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1.2rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-weight:700;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.5rem;}
+  footer.site .foot-links a{text-decoration:none;color:#f4ead9;}
+  footer.site .foot-links a:hover{color:var(--mustard);}
+  footer .legal{border-top:1px solid rgba(244,234,217,0.25);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;color:#e6cdb8;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Schnitzelwirt · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html">Schnitzel<em>wirt</em></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4315233771">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    <a href="tel:+4315233771">Anrufen: +43 1 523 37 71</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Kontakt &amp; Anfahrt</p>
+      <h1>Reservierung &amp; Anfahrt</h1>
+      <p class="tag">Reservierungen nimmt der Schnitzelwirt telefonisch entgegen — an stark frequentierten Tagen empfiehlt sich ein Anruf im Voraus.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <ul class="contact-list">
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.6 21 3 14.4 3 6a2 2 0 0 1 1-2z"/></svg>
+            <a href="tel:+4315233771">+43 1 523 37 71</a>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Neubaugasse 52, 1070 Wien</span>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>Öffnungszeiten auf Anfrage — Reservierung empfohlen</span>
+          </li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-red" href="tel:+4315233771">Jetzt anrufen</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Neubaugasse%2052%2C%201070%20Wien" target="_blank" rel="noopener">Route berechnen</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe title="Lage Schnitzelwirt" loading="lazy" src="https://www.google.com/maps?q=Neubaugasse%2052%2C%201070%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="color:#f4ead9;">Schnitzelwirt</div>
+      <div>Neubaugasse 52, 1070 Wien · +43 1 523 37 71</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Schnitzelwirt · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

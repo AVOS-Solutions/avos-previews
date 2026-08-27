@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heuriger Bock — Buschenschank in Pfaffstätten</title>
+<meta name="description" content="Heuriger Bock in Pfaffstätten im Heurigendorf bei Baden: familiär geführte Buschenschank mit klassischer Heurigenküche und täglichem Flaschenweinverkauf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5c1a24;--wine-deep:#3a0f17;--must:#8a2f2f;--gold:#d3a24a;
+    --cream:#f7ede0;--leaf:#5e6b3f;--ink:#2a1a14;--ink-soft:#5c483e;--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.65;font-size:clamp(15px,1.6vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Fraunces',Georgia,serif;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,237,224,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(92,26,36,.15);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:1rem 6vw;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:var(--wine);text-decoration:none;}
+  .navlinks{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-size:.9rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--must);}
+  .navlinks a.active{color:var(--must);font-weight:700;}
+  .navtoggle{display:none;background:none;border:1px solid var(--wine);border-radius:8px;width:44px;height:44px;color:var(--wine);cursor:pointer;flex:none;}
+  @media(max-width:800px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:1rem 6vw 1.5rem;gap:.3rem;border-bottom:1px solid rgba(92,26,36,.15);display:none;}
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+  }
+
+  .hero{position:relative;background:var(--wine);color:var(--cream);padding:clamp(3rem,10vw,7rem) 0 clamp(2.5rem,6vw,4rem);overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 15% 10%, rgba(211,162,74,.25), transparent 60%),radial-gradient(ellipse 50% 60% at 90% 90%, rgba(138,47,47,.5), transparent 65%);pointer-events:none;}
+  .hero-inner{position:relative;}
+  .hero-eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:1rem;}
+  .hero h1{font-size:clamp(2.4rem,9vw,6.2rem);line-height:.98;font-weight:600;margin:0 0 1.2rem;letter-spacing:-.01em;max-width:16ch;}
+  .hero h1 .it{font-style:italic;font-weight:500;color:var(--gold);}
+  .hero p.lead{font-size:clamp(1rem,2vw,1.2rem);max-width:52ch;color:#f0dcc9;margin:0 0 2.2rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .18s;}
+  .btn-solid{background:var(--gold);color:var(--wine-deep);}
+  .btn-solid:hover{transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid rgba(247,237,224,.6);color:var(--cream);}
+  .btn-outline:hover{background:rgba(247,237,224,.1);}
+
+  .ticker{background:var(--wine-deep);color:var(--gold);overflow:hidden;border-top:1px solid rgba(211,162,74,.3);border-bottom:1px solid rgba(211,162,74,.3);white-space:nowrap;}
+  .ticker-track{display:inline-flex;gap:3rem;padding:.8rem 0;animation:scroll 28s linear infinite;font-size:.85rem;letter-spacing:.04em;}
+  .ticker-track span{display:inline-flex;align-items:center;gap:.6rem;}
+  .ticker-track span::before{content:"◆";font-size:.6rem;color:var(--must);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media(prefers-reduced-motion:reduce){.ticker-track{animation:none;}}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--must);font-weight:700;margin-bottom:.7rem;}
+  h2.section-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;color:var(--wine);margin:0 0 1.5rem;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:2.5rem;}}
+  .about-grid p{color:var(--ink-soft);font-size:1.05rem;margin:0 0 1.1rem;}
+  .more{color:var(--must);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;min-height:44px;margin-top:.4rem;}
+  .more:hover{text-decoration:underline;}
+
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(130px,auto);gap:1.1rem;}
+  @media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.bento{grid-template-columns:1fr;}}
+  .bcard{border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .25s ease;}
+  .bcard:hover{transform:translateY(-4px);}
+  .bcard h3{font-size:1.15rem;margin:0 0 .5rem;font-weight:600;}
+  .bcard p{margin:0;font-size:.9rem;}
+  .b1{grid-column:span 4;background:linear-gradient(135deg,var(--must),var(--wine));color:var(--cream);}
+  .b2{grid-column:span 2;background:var(--leaf);color:var(--cream);}
+  .b3{grid-column:span 2;background:var(--gold);color:var(--wine-deep);}
+  .b4{grid-column:span 4;background:#fff;color:var(--ink);border:1px solid rgba(92,26,36,.15);}
+  @media(max-width:900px){.b1,.b2,.b3,.b4{grid-column:span 2;}}
+  @media(max-width:520px){.b1,.b2,.b3,.b4{grid-column:span 1;}}
+
+  .cta-band{background:var(--wine);color:var(--cream);border-radius:24px;padding:3rem 3vw;text-align:center;}
+  @media(max-width:640px){.cta-band{padding:2.2rem 6vw;}}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .8rem;font-weight:600;}
+  .cta-band p{color:#f0dcc9;margin:0 0 1.6rem;}
+  .cta-center{justify-content:center;}
+
+  footer.site{background:var(--wine-deep);color:#d9bfa9;padding:2.6rem 0 1.4rem;font-size:.86rem;}
+  footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;}
+  .footer-col h4{color:#f0dcc9;font-size:.83rem;margin:0 0 .7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+  .footer-col a{color:#d9bfa9;text-decoration:none;display:inline-flex;align-items:center;min-height:32px;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem;}
+  .footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap;}
+  .footer-bottom{border-top:1px solid rgba(217,191,169,.2);margin-top:2rem;padding-top:1.2rem;font-size:.76rem;color:#a5866f;line-height:1.6;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">Heuriger Bock</a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-eyebrow">Pfaffstätten · Heurigendorf bei Baden</div>
+      <h1>Willkommen im <span class="it">Heurigendorf.</span></h1>
+      <p class="lead">Familien-Heuriger Bock: klassische Buschenschank-Küche, eigener Wein und ein Platz zum Verweilen — mitten im Pfaffstättner Heurigendorf.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="tel:+436649131880">Tisch reservieren</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Eigener Wein aus Pfaffstätten</span>
+      <span>Klassische Buschenschank-Küche</span>
+      <span>Flaschenweinverkauf täglich 8:00–18:00</span>
+      <span>Familiengeführt</span>
+      <span>Eigener Wein aus Pfaffstätten</span>
+      <span>Klassische Buschenschank-Küche</span>
+      <span>Flaschenweinverkauf täglich 8:00–18:00</span>
+      <span>Familiengeführt</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap about-grid reveal">
+      <div>
+        <div class="kicker">Über uns</div>
+        <h2 class="section-title">Ein Heuriger wie er sein soll</h2>
+        <p>Der Heuriger Bock liegt im Pfaffstättner „Heurigendorf" bei Baden — dort, wo sich Weingärten und gastliche Stuben abwechseln. Bei uns treffen sich Nachbarn, Ausflügler und Weinliebhaber gleichermaßen.</p>
+        <a class="more" href="ueber-uns.html">Unsere Geschichte lesen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div>
+        <div class="kicker">Weine &amp; Angebot</div>
+        <h2 class="section-title">Klassische Buschenschank-Küche</h2>
+        <p>Auf den Tisch kommt bodenständige Hausmannskost, dazu Wein aus dem Pfaffstättner Weinbaugebiet — direkt vom Weinbau Bock. Flaschenweinverkauf täglich von 8:00 bis 18:00 Uhr.</p>
+        <a class="more" href="angebot.html">Angebot ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--wine);color:var(--cream);border-radius:0;">
+    <div class="wrap cta-band reveal" style="background:none;padding:0;text-align:left;">
+      <div class="kicker" style="color:var(--gold);">Kontakt</div>
+      <h2 class="section-title" style="color:var(--cream);">Wir freuen uns auf Ihren Besuch</h2>
+      <p style="color:#f0dcc9;max-width:56ch;margin:0 0 1.8rem;">Hauptstraße 25, 2511 Pfaffstätten — mitten im Heurigendorf. Rufen Sie an, um einen Tisch zu reservieren, oder planen Sie gleich Ihre Anfahrt.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="tel:+436649131880">Jetzt anrufen</a>
+        <a class="btn btn-outline" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Heuriger Bock</h4>
+      <div>Hauptstraße 25<br>2511 Pfaffstätten, Niederösterreich</div>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+436649131880">+43 664 9131880</a></li>
+        <li><a href="mailto:heuriger-bock@hotmail.com">heuriger-bock@hotmail.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Heuriger Bock · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

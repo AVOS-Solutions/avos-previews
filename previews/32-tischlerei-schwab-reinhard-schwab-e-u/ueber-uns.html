@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Tischlerei SCHWAB</title>
+<meta name="description" content="Die Geschichte der Tischlerei SCHWAB (Reinhard Schwab e.U.): Meistertischlerei in Ladendorf im Weinviertel seit 1998, spezialisiert auf Maßküchen und Möbel nach Maß.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe4;
+    --paper-2:#ece3d1;
+    --walnut:#3a2a1c;
+    --walnut-2:#4f3a26;
+    --oak:#b3854f;
+    --amber:#d97b1c;
+    --ink:#241a10;
+    --line:#cdbb98;
+    --muted:#6b5c46;
+    --maxw:1240px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem);}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+  h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+
+  .disclaimer{background:var(--walnut);color:#e9dcc0;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:#fff;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,239,228,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:0.95rem 0;gap:1rem;position:relative;flex-wrap:wrap;}
+  .brand{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+  .brand .sq{width:1.6rem;height:1.6rem;background:var(--amber);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:700;}
+  .nav-links{display:flex;gap:clamp(1rem,2.5vw,2rem);list-style:none;margin:0;padding:0;font-size:0.9rem;font-weight:500;}
+  .nav-links a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid transparent;}
+  .nav-links a:hover{border-color:var(--amber);}
+  .nav-links a.active{border-color:var(--amber);color:var(--amber);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:0.5rem;background:var(--walnut);color:var(--paper);
+    padding:0.7rem 1.2rem;border-radius:0.4rem;text-decoration:none;font-size:0.85rem;font-weight:600;
+    min-height:44px;white-space:nowrap;
+  }
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;font-size:1.2rem;align-items:center;justify-content:center;color:var(--ink);}
+  @media (max-width:840px){
+    .nav-links{
+      position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:20rem;}
+    .nav-links li{border-top:1px solid var(--line);}
+    .nav-links a{padding:0.9rem clamp(1.2rem,4vw,2rem);width:100%;}
+    .menu-toggle{display:inline-flex;}
+    .nav-cta span.long{display:none;}
+  }
+
+  .blueprint{
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:clamp(28px,4vw,44px) clamp(28px,4vw,44px);
+    background-position:center;
+    opacity:0.35;
+  }
+
+  .page-hero{position:relative;padding:clamp(3rem,7vw,4.5rem) 0 clamp(2.2rem,5vw,3.2rem);overflow:hidden;}
+  .page-hero .blueprint{position:absolute;inset:0;z-index:0;}
+  .page-hero .wrap{position:relative;z-index:1;}
+  .page-hero h1{font-size:clamp(2rem,5.5vw,3.4rem);max-width:20ch;}
+  .page-hero h1 .hl{color:var(--amber);}
+  .page-hero p{max-width:54ch;font-size:clamp(1rem,2vw,1.1rem);margin-top:1rem;color:var(--muted);}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);font-weight:500;}
+  .section-head{max-width:60ch;margin-bottom:2.6rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-top:0.5rem;}
+  .section-idx{font-family:"IBM Plex Mono",monospace;color:var(--line);font-size:clamp(2rem,6vw,3.5rem);font-weight:500;line-height:1;}
+
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;}
+  @media (max-width:900px){.feature{grid-template-columns:1fr;}}
+  .feature-visual{
+    aspect-ratio:4/3;border-radius:0.9rem;position:relative;overflow:hidden;
+    background:linear-gradient(155deg,var(--oak) 0%,var(--walnut-2) 60%,var(--walnut) 100%);
+  }
+  .feature-visual::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 46px),
+               repeating-linear-gradient(90deg, rgba(0,0,0,0.08) 0 2px, transparent 2px 90px);
+  }
+  .feature-visual .tag{
+    position:absolute;left:1.4rem;bottom:1.4rem;background:rgba(36,26,16,0.65);color:var(--paper);
+    padding:0.5rem 0.9rem;border-radius:0.4rem;font-family:"IBM Plex Mono",monospace;font-size:0.78rem;
+  }
+  .feature h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:1.1rem;}
+  .feature p{color:var(--muted);font-size:1.05rem;max-width:50ch;}
+
+  /* timeline / process */
+  .process{background:var(--walnut);color:var(--paper);}
+  .process .eyebrow{color:var(--oak);}
+  .process h2{color:var(--paper);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+  @media (max-width:760px){.steps{grid-template-columns:1fr;}}
+  .step{border:1px solid rgba(244,239,228,0.18);border-radius:0.8rem;padding:1.8rem;}
+  .step .n{font-family:"IBM Plex Mono",monospace;color:var(--oak);font-size:0.85rem;}
+  .step h3{font-size:1.3rem;margin:0.6rem 0 0.6rem;color:var(--paper);}
+  .step p{margin:0;color:#d9c9ab;font-size:0.94rem;}
+
+  .util-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:0.8rem;overflow:hidden;}
+  @media (max-width:820px){.util-grid{grid-template-columns:1fr;}}
+  .util-item{
+    padding:clamp(1.4rem,3vw,2rem);border-right:1px solid var(--line);
+    background:var(--paper-2);display:flex;flex-direction:column;gap:0.6rem;
+  }
+  .util-item:last-child{border-right:none;}
+  @media (max-width:820px){.util-item{border-right:none;border-bottom:1px solid var(--line);} .util-item:last-child{border-bottom:none;}}
+  .util-item h3{font-size:1.1rem;}
+  .util-item p{margin:0;color:var(--muted);font-size:0.92rem;}
+
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;}
+  .btn{
+    display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.5rem;border-radius:0.45rem;
+    text-decoration:none;font-weight:600;font-size:0.95rem;min-height:44px;transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--amber);color:#fff;}
+  .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);}
+
+  footer.site{background:var(--walnut);color:#c9b28f;}
+  .foot-top{padding:clamp(2.5rem,6vw,3.5rem) 0 2rem;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;}
+  @media (max-width:700px){.foot-top{grid-template-columns:1fr;gap:1.6rem;}}
+  .foot-top .brand{color:var(--paper);}
+  .foot-top p{margin:0.8rem 0 0;font-size:0.92rem;color:#c9b28f;}
+  .foot-col h4{color:var(--paper);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.9rem;font-weight:600;font-family:"IBM Plex Mono",monospace;}
+  .foot-col a{color:#c9b28f;text-decoration:none;display:inline-flex;align-items:center;min-height:32px;font-size:0.92rem;}
+  .foot-col a:hover{color:var(--paper);}
+  .foot-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.3rem;}
+  .foot-bottom{border-top:1px solid rgba(244,239,228,0.15);padding:1.4rem 0;display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:space-between;font-size:0.82rem;}
+  .foot-legal{font-size:0.76rem;color:#a8916c;text-align:center;padding:0 0 1.4rem;line-height:1.6;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Tischlerei SCHWAB</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html"><span class="sq">S</span> Tischlerei SCHWAB</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+      <li><a href="angebot.html">Leistungen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4367683001325"><span class="long">Anrufen ·</span> Anfrage</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="blueprint" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">// Über uns</span>
+      <h1>Meisterhandwerk aus <span class="hl">Ladendorf</span>, seit 1998.</h1>
+      <p>Reinhard Schwab führt seine Meistertischlerei seit 1998 im Weinviertel — vom ersten Entwurf bis zur letzten Schraube in eigener Hand.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap feature">
+      <div class="feature-visual reveal" aria-hidden="true">
+        <div class="tag">Werkstatt Ladendorf</div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">// Unsere Geschichte</span>
+        <h2>Ein Meisterbetrieb mit Handschrift</h2>
+        <p>Seit der Gründung im Jahr 1998 fertigt die Tischlerei SCHWAB in Ladendorf im Weinviertel Möbel und Küchen nach Maß. Reinhard Schwab hat sich als einer der bekannten Tischler der Region einen Namen gemacht — vor allem mit seinen individuell geplanten Maßküchen unter der Marke „SCHWAB Traumküchen". Von der ersten Skizze über die Fertigung in der eigenen Werkstatt bis zur fachgerechten Montage bleibt jedes Projekt in einer Hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="util">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">// Was uns ausmacht</span><h2>Handwerk aus einer Hand</h2></div>
+      </div>
+      <div class="util-grid">
+        <div class="util-item reveal">
+          <h3>Meisterbetrieb</h3>
+          <p>Planung, Fertigung und Montage kommen aus derselben Werkstatt — ohne Umwege über Subunternehmer.</p>
+        </div>
+        <div class="util-item reveal">
+          <h3>Regional verwurzelt</h3>
+          <p>Seit 1998 in Ladendorf im Weinviertel zuhause und einer der bekannten Tischler der Region.</p>
+        </div>
+        <div class="util-item reveal">
+          <h3>Maßgeschneidert</h3>
+          <p>Jede Küche und jedes Möbelstück wird exakt auf Raum und Wünsche der Kundschaft zugeschnitten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div><span class="eyebrow">// Ablauf</span><h2>So entsteht Ihr Projekt</h2></div>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="n">SCHRITT 01</div><h3>Beratung &amp; Planung</h3><p>Wir besprechen Ihre Wünsche und nehmen vor Ort Maß.</p></div>
+        <div class="step reveal"><div class="n">SCHRITT 02</div><h3>Fertigung</h3><p>Ihre Küche oder Ihr Möbelstück entsteht in unserer Werkstatt in Ladendorf.</p></div>
+        <div class="step reveal"><div class="n">SCHRITT 03</div><h3>Montage</h3><p>Der fachgerechte Einbau erfolgt durch unseren Meisterbetrieb.</p></div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" style="color:#fff;" href="kontakt.html">Projekt besprechen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-top">
+    <div>
+      <a class="brand" href="index.html"><span class="sq">S</span> Tischlerei SCHWAB</a>
+      <p>Garmanns 19, 2126 Ladendorf<br><a href="tel:+4367683001325">+43 676 8300 1325</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul class="foot-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Leistungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Rechtliches</h4>
+      <ul class="foot-nav">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Tischlerei SCHWAB (Reinhard Schwab e.U.) · Ladendorf</span>
+  </div>
+  <p class="wrap foot-legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei SCHWAB · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if(toggle && navLinks){
+      toggle.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      },{threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
