@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Fleischerei Anderl</title>
+<meta name="description" content="Muster-Datenschutzerklärung für die Gestaltungs-Vorschau der Fleischerei Anderl in Göpfritz an der Wild.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oxblood:#6d1420; --oxblood-deep:#460d15; --cream:#f4ede2; --cream-2:#ece1cf;
+    --charcoal:#221a17; --brass:#b98a3c; --line: rgba(34,26,23,0.15); --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--charcoal); font-family:'Manrope',system-ui,sans-serif; font-size:clamp(15.5px,1.4vw,17px); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Libre Caslon Text',Georgia,serif; font-weight:400; margin:0; color:var(--oxblood-deep);}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,60px);}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+
+  .disclaimer{background:var(--charcoal); color:#e7dcc9; font-size:12.5px; text-align:center; padding:9px 16px; line-height:1.5;}
+  .disclaimer strong{color:var(--brass);}
+
+  header{border-bottom:3px solid var(--oxblood-deep); background:var(--cream); position:sticky; top:0; z-index:40;}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,60px); max-width:var(--maxw); margin:0 auto;}
+  .brand{font-family:'Libre Caslon Text',serif; font-size:1.3rem; text-decoration:none; color:var(--oxblood-deep); letter-spacing:0.01em;}
+  .brand small{display:block; font-family:'Manrope',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); font-weight:700; margin-top:2px;}
+  nav.links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
+  nav.links a{text-decoration:none; font-size:0.86rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--charcoal); padding:12px 2px; display:inline-block;}
+  nav.links a:hover{color:var(--oxblood);}
+  .nav-toggle{display:none; background:none; border:2px solid var(--oxblood-deep); border-radius:8px; min-width:46px; min-height:46px; align-items:center; justify-content:center; cursor:pointer;}
+
+  section{padding:clamp(48px,8vw,80px) 0;}
+  .legal h1{font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:26px;}
+  .legal h2{font-size:clamp(1.2rem,2.3vw,1.45rem); margin:30px 0 10px;}
+  .legal p, .legal li{color:#3d2e29; max-width:70ch;}
+  .legal ul{padding-left:20px;}
+  .notice{background:var(--cream-2); border:1px solid var(--line); border-left:5px solid var(--brass); border-radius:4px; padding:18px 22px; margin-bottom:38px; font-size:0.95rem; color:var(--oxblood-deep); max-width:70ch;}
+
+  footer{background:var(--oxblood-deep); color:#e2c896; padding:44px 0 24px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+  footer .brand2{font-family:'Libre Caslon Text',serif; font-size:1.15rem; color:var(--cream);}
+  footer small{color:#c7a875;}
+  footer .foot-links{list-style:none; margin:10px 0 0; padding:0; display:flex; gap:16px; flex-wrap:wrap;}
+  footer .foot-links a{color:#e2c896; font-size:0.85rem; text-decoration:none;}
+  footer .foot-links a:hover{text-decoration:underline;}
+  .foot-note{border-top:1px solid rgba(244,237,226,0.15); margin-top:28px; padding-top:18px; font-size:12.5px; color:#c7a875; text-align:center;}
+
+  @media (max-width:860px){
+    nav.links{position:fixed; inset:66px 16px auto 16px; background:var(--cream); border-radius:10px; flex-direction:column; padding:14px; gap:2px; box-shadow:0 20px 50px rgba(34,26,23,0.3); border:1px solid var(--line); display:none; max-height:calc(100vh - 90px); overflow-y:auto;}
+    nav.links.open{display:flex;}
+    nav.links a{padding:14px 10px; display:block;}
+    .nav-toggle{display:inline-flex;}
+  }
+  @media (max-width:640px){
+    footer .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Anderl<small>Fleischerei seit 1842</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="20" y2="5"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Sortiment</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="wrap">
+      <h1>Datenschutzerklärung</h1>
+      <div class="notice">Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</div>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+      Fleischerei Anderl, Hauptstraße 61, 3800 Göpfritz an der Wild<br>
+      E-Mail: <a href="mailto:office@fleischerei-anderl.at">office@fleischerei-anderl.at</a> · Telefon: <a href="tel:+4328258317">+43 2825 8317</a></p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Beim Besuch dieser Website werden durch den Hosting-Anbieter automatisch technische Informationen erfasst (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser). Diese Daten dienen der technischen Bereitstellung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+      <h2>3. Cookies</h2>
+      <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen bereitzustellen. Sofern Cookies für Statistik- oder Marketingzwecke eingesetzt werden, erfolgt dies nur mit vorheriger Einwilligung der Nutzerinnen und Nutzer.</p>
+
+      <h2>4. Kontaktaufnahme</h2>
+      <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zur Bearbeitung Ihrer Anfrage gespeichert und verarbeitet. Rechtsgrundlage ist die Erfüllung vorvertraglicher bzw. vertraglicher Maßnahmen oder ein berechtigtes Interesse an der Beantwortung Ihrer Anfrage.</p>
+
+      <h2>5. Einbindung von Google Maps</h2>
+      <p>Zur Anzeige des Standorts kann diese Website eine Karte von Google Maps einbinden. Beim Aufruf der Karte können Daten an Google LLC übertragen und dort verarbeitet werden. Weitere Informationen finden Sie in der Datenschutzerklärung von Google.</p>
+
+      <h2>6. Ihre Rechte als betroffene Person</h2>
+      <p>Nach der Datenschutz-Grundverordnung (DSGVO) haben Sie insbesondere folgende Rechte:</p>
+      <ul>
+        <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+        <li>Recht auf Berichtigung unrichtiger Daten</li>
+        <li>Recht auf Löschung bzw. Einschränkung der Verarbeitung</li>
+        <li>Recht auf Datenübertragbarkeit</li>
+        <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+        <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+      </ul>
+
+      <h2>7. Kontakt in Datenschutzfragen</h2>
+      <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand2">Fleischerei Anderl</div>
+      <small>Hauptstraße 61 · 3800 Göpfritz an der Wild · Waldviertel</small><br>
+      <small><a href="tel:+4328258317" style="color:#e2c896;">+43 2825 8317</a></small>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div><small>Familienbetrieb seit 1842 · 4. Generation</small></div>
+  </div>
+  <div class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>

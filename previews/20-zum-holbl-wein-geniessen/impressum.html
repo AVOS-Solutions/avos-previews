@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Zum Hölbl</title>
+<meta name="description" content="Muster-Impressum für Zum Hölbl – Wein &amp; Genießen, Altgasse 11, 1130 Wien.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14110f;
+    --bg-2:#1c1815;
+    --line:rgba(233,222,201,.14);
+    --paper:#e9dec9;
+    --paper-dim:rgba(233,222,201,.65);
+    --gold:#c8a24a;
+    --gold-soft:#d9bd7c;
+    --wine:#7a2333;
+    --ring:#c8a24a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.15}
+  :focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+
+  .disclaimer{background:#0c0a09;color:var(--paper-dim);font-size:.76rem;text-align:center;padding:.55rem 1rem;border-bottom:1px solid var(--line)}
+  .disclaimer b{color:var(--gold-soft);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(20,17,15,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,2.5rem);max-width:1200px;margin:0 auto}
+  .brand{font-family:'Instrument Serif',serif;font-size:1.5rem;font-style:italic;color:var(--paper);text-decoration:none}
+  .brand em{color:var(--gold)}
+  .navlist{display:flex;align-items:center;gap:2.2rem;list-style:none}
+  .navlist a{text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--paper-dim)}
+  .navlist a:hover{color:var(--gold-soft)}
+  .cta-mini{display:inline-flex;align-items:center;min-height:44px;border:1px solid var(--gold);color:var(--gold-soft);padding:.5rem 1.1rem;border-radius:2px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  .cta-mini:hover{background:rgba(200,162,74,.12)}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer}
+  @media (max-width:860px){
+    .navlist{position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:2rem clamp(1.25rem,4vw,2.5rem);gap:1.5rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+    .navlist.open{transform:translateX(0)}
+    .navlist a{font-size:1.1rem}
+    .menu-toggle{display:flex}
+    .cta-mini{display:none}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3.5rem,8vw,5rem)}
+  .page-title{font-size:clamp(2rem,6vw,2.8rem);font-style:italic;margin-bottom:1.6rem}
+  .legal-notice{border:1px solid var(--line);border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:2.4rem;font-size:.92rem;color:var(--paper-dim);max-width:70ch;background:var(--bg-2)}
+  .legal-notice strong{color:var(--gold-soft)}
+  .legal-content{max-width:70ch}
+  .legal-content h2{font-size:1.35rem;font-style:italic;margin:2.2rem 0 .8rem;color:var(--paper)}
+  .legal-content h2:first-child{margin-top:0}
+  .legal-content p,.legal-content li{color:var(--paper-dim);margin-bottom:.7rem;font-size:.98rem}
+  .legal-content ul{padding-left:1.4rem;margin-bottom:.8rem}
+  .legal-content a{color:var(--gold-soft);text-decoration:underline}
+  .placeholder{color:var(--gold-soft);font-style:italic}
+
+  footer.site{background:#0c0a09;color:var(--paper-dim);padding:2.5rem clamp(1.25rem,4vw,2.5rem) 2rem;border-top:1px solid var(--line)}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;max-width:1200px;margin:0 auto;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+  .foot-brand{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.4rem;color:var(--gold-soft)}
+  .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center}
+  .foot-links a{color:var(--paper-dim);text-decoration:none;font-size:.85rem}
+  .foot-links a:hover{color:var(--gold-soft);text-decoration:underline}
+  .foot-note{max-width:1200px;margin:1.3rem auto 0;font-size:.76rem;color:rgba(233,222,201,.45);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <b>keine offizielle Website</b> von Zum Hölbl – Wein &amp; Genießen · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">Zum <em>Hölbl</em></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e9dec9" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navlist" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a class="cta-mini" href="tel:+436642437575">Anrufen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1 class="page-title">Impressum</h1>
+    <div class="legal-notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+    <div class="legal-content">
+      <h2>Diensteanbieter</h2>
+      <p>Zum Hölbl – Wein &amp; Genießen<br>
+      Inhaber: Michael Hölbl<br>
+      Altgasse 11<br>
+      1130 Wien, Österreich</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: <a href="tel:+436642437575">+43 664 2437575</a><br>
+      E-Mail: <a href="mailto:mh@zumhoelbl.at">mh@zumhoelbl.at</a></p>
+
+      <h2>Unternehmensgegenstand</h2>
+      <p>Betrieb eines Weinlokals mit Vinothek (Gastronomie, Ausschank &amp; Verkauf von Wein).</p>
+
+      <h2>Gewerberechtliche Angaben</h2>
+      <p>Firmenbuchnummer: <span class="placeholder">[Firmenbuchnummer, falls vorhanden]</span><br>
+      UID-Nummer: <span class="placeholder">[UID-Nummer]</span><br>
+      Mitglied der Wirtschaftskammer Österreich (WKO), Fachgruppe Gastronomie.<br>
+      Zuständige Gewerbebehörde: <span class="placeholder">[zuständige Bezirksverwaltungsbehörde]</span></p>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Zum Hölbl nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle derzeit nicht teil und ist dazu auch nicht verpflichtet.</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Diese Seite ist eine unverbindliche Gestaltungs-Vorschau zu Demonstrationszwecken. Für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Informationen kann keine Gewähr übernommen werden.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">Zum Hölbl</div>
+    <div style="font-size:.88rem;opacity:.85;max-width:44ch">Altgasse 11 · 1130 Wien · +43 664 2437575 · mh@zumhoelbl.at</div>
+    <nav class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zum Hölbl – Wein &amp; Genießen · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+</body>
+</html>

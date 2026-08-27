@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weine &amp; Angebot — Heuriger Bock</title>
+<meta name="description" content="Buschenschank-Küche, eigener Wein aus Pfaffstätten und täglicher Flaschenweinverkauf beim Heuriger Bock.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5c1a24;--wine-deep:#3a0f17;--must:#8a2f2f;--gold:#d3a24a;
+    --cream:#f7ede0;--leaf:#5e6b3f;--ink:#2a1a14;--ink-soft:#5c483e;--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.65;font-size:clamp(15px,1.6vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Fraunces',Georgia,serif;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,237,224,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(92,26,36,.15);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:1rem 6vw;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:var(--wine);text-decoration:none;}
+  .navlinks{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-size:.9rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--must);}
+  .navlinks a.active{color:var(--must);font-weight:700;}
+  .navtoggle{display:none;background:none;border:1px solid var(--wine);border-radius:8px;width:44px;height:44px;color:var(--wine);cursor:pointer;flex:none;}
+  @media(max-width:800px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:1rem 6vw 1.5rem;gap:.3rem;border-bottom:1px solid rgba(92,26,36,.15);display:none;}
+    .navlinks.open{display:flex;}
+    .navtoggle{display:block;}
+  }
+
+  .page-hero{position:relative;background:var(--wine);color:var(--cream);padding:clamp(2.6rem,7vw,4.6rem) 0 clamp(2.2rem,5vw,3.4rem);overflow:hidden;}
+  .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 15% 10%, rgba(211,162,74,.22), transparent 60%);pointer-events:none;}
+  .page-hero .inner{position:relative;}
+  .hero-eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:1rem;}
+  .page-hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:600;margin:0 0 .9rem;max-width:18ch;}
+  .page-hero p.lead{font-size:1.06rem;max-width:62ch;color:#f0dcc9;margin:0;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;color:var(--must);font-weight:700;margin-bottom:.7rem;}
+  h2.section-title{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:600;color:var(--wine);margin:0 0 1.4rem;}
+
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(150px,auto);gap:1.1rem;}
+  @media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.bento{grid-template-columns:1fr;}}
+  .bcard{border-radius:20px;padding:1.9rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;transition:transform .25s ease;}
+  .bcard:hover{transform:translateY(-4px);}
+  .bcard h3{font-size:1.25rem;margin:0 0 .5rem;font-weight:600;}
+  .bcard p{margin:0;font-size:.92rem;}
+  .b1{grid-column:span 4;background:linear-gradient(135deg,var(--must),var(--wine));color:var(--cream);}
+  .b2{grid-column:span 2;background:var(--leaf);color:var(--cream);}
+  .b3{grid-column:span 2;background:var(--gold);color:var(--wine-deep);}
+  .b4{grid-column:span 4;background:#fff;color:var(--ink);border:1px solid rgba(92,26,36,.15);}
+  @media(max-width:900px){.b1,.b2,.b3,.b4{grid-column:span 2;}}
+  @media(max-width:520px){.b1,.b2,.b3,.b4{grid-column:span 1;}}
+
+  .note{background:#fff;border:1px solid rgba(92,26,36,.15);border-radius:16px;padding:1.6rem 1.8rem;margin-top:2rem;}
+  .note p{margin:0;color:var(--ink-soft);}
+  .note strong{color:var(--wine);}
+
+  .cta-band{background:var(--wine);color:var(--cream);border-radius:24px;padding:3rem 3vw;margin:0 6vw;text-align:center;}
+  @media(max-width:640px){.cta-band{margin:0 4vw;padding:2.2rem 6vw;}}
+  .cta-band h2{color:var(--cream);font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 .8rem;font-weight:600;}
+  .cta-band p{color:#f0dcc9;margin:0 0 1.6rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.7rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .18s;}
+  .btn-solid{background:var(--gold);color:var(--wine-deep);}
+  .btn-solid:hover{transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid rgba(247,237,224,.6);color:var(--cream);}
+  .btn-outline:hover{background:rgba(247,237,224,.1);}
+
+  footer.site{background:var(--wine-deep);color:#d9bfa9;padding:2.6rem 0 1.4rem;font-size:.86rem;}
+  footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.6rem;}
+  .footer-col h4{color:#f0dcc9;font-size:.83rem;margin:0 0 .7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+  .footer-col a{color:#d9bfa9;text-decoration:none;display:inline-flex;align-items:center;min-height:32px;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem;}
+  .footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap;}
+  .footer-bottom{border-top:1px solid rgba(217,191,169,.2);margin-top:2rem;padding-top:1.2rem;font-size:.76rem;color:#a5866f;line-height:1.6;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">Heuriger Bock</a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Weine &amp; Angebot</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap inner">
+      <div class="hero-eyebrow">Weine &amp; Angebot</div>
+      <h1>Was Sie bei uns erwartet</h1>
+      <p class="lead">Klassische Buschenschank-Küche, eigener Wein aus Pfaffstätten und täglicher Flaschenweinverkauf — echte Heurigen-Tradition im Heurigendorf.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="bento">
+        <div class="bcard b1">
+          <h3>Buschenschank-Küche</h3>
+          <p>Klassische, deftige Hausmannskost — genau das, was einen echten Heurigen ausmacht.</p>
+        </div>
+        <div class="bcard b2">
+          <h3>Eigener Wein</h3>
+          <p>Weine aus dem Pfaffstättner Weinbaugebiet, direkt vom Weinbau Bock.</p>
+        </div>
+        <div class="bcard b3">
+          <h3>Flaschenverkauf</h3>
+          <p>Täglich von 8:00 bis 18:00 Uhr — Wein zum Mitnehmen.</p>
+        </div>
+        <div class="bcard b4">
+          <h3>Ausg'steckt-Termine</h3>
+          <p>Unser Heuriger hat nicht durchgehend geöffnet — die aktuellen Ausg'steckt-Zeiten erfahren Sie gerne telefonisch oder bei Ihrer Anfrage.</p>
+        </div>
+      </div>
+      <div class="note">
+        <p><strong>Speisen &amp; Weinauswahl im Detail:</strong> Unsere Speise- und Weinkarte wechselt je nach Saison und Aussteckzeit. Rufen Sie uns gerne an — wir sagen Ihnen, was aktuell aufgetischt wird.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta-band reveal">
+      <h2>Tisch reservieren oder Wein bestellen?</h2>
+      <p>Rufen Sie uns an — wir freuen uns auf Ihren Besuch im Heurigendorf.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="tel:+436649131880">Jetzt anrufen</a>
+        <a class="btn btn-outline" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Heuriger Bock</h4>
+      <div>Hauptstraße 25<br>2511 Pfaffstätten, Niederösterreich</div>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+436649131880">+43 664 9131880</a></li>
+        <li><a href="mailto:heuriger-bock@hotmail.com">heuriger-bock@hotmail.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Heuriger Bock · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
