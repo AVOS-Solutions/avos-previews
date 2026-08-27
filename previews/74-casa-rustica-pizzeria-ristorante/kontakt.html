@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Casa Rustica, Graz-Waltendorf</title>
+<meta name="description" content="Kontakt und Anfahrt zu Casa Rustica in Graz-Waltendorf: Waltendorfer Hauptstraße 94, 8010 Graz. Täglich 11:00–23:00 Uhr, mit Lieferservice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#d94a2e; --tomato-deep:#a8331d; --basil:#3c6e47; --basil-deep:#25452c;
+    --cream:#fff3e2; --mozz:#fffaf0; --ink:#241a12; --gold:#f0a93a;
+    --display:'Unbounded', system-ui, sans-serif;
+    --body:'Familjen Grotesk', system-ui, -apple-system, sans-serif;
+    --maxw:78rem;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:var(--body); line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 min(5vw,1.6rem); width:100%;}
+  a{color:inherit;}
+  ::selection{background:var(--gold); color:var(--ink);}
+  :focus-visible{outline:3px solid var(--basil); outline-offset:3px;}
+  h1,h2,h3{font-family:var(--display); line-height:1.05;}
+
+  .disclaimer{background:var(--ink); color:#f3e6d4; font-size:0.72rem; text-align:center; padding:0.55rem 1rem; letter-spacing:0.01em;}
+  .disclaimer strong{color:var(--gold);}
+
+  header.site{position:sticky; top:0; z-index:60; background:var(--mozz); border-bottom:3px solid var(--ink);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:0.9rem min(5vw,1.6rem); max-width:var(--maxw); margin:0 auto; gap:1rem;}
+  .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; font-family:var(--display); font-weight:800; font-size:clamp(1rem,3.2vw,1.3rem); color:var(--tomato-deep); min-width:0;}
+  .brand svg{width:34px; height:34px; flex-shrink:0;}
+  .brand span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .navlinks{display:none; gap:1.8rem; list-style:none; font-weight:600; font-size:0.95rem;}
+  .navlinks a{text-decoration:none; padding:.4rem 0; border-bottom:3px solid transparent;}
+  .navlinks a:hover{border-color:var(--gold);}
+  .navlinks a.active{border-color:var(--tomato); color:var(--tomato-deep);}
+  .navcta{display:none; background:var(--basil); color:#fff; text-decoration:none; padding:.7rem 1.2rem; border-radius:100px; font-weight:700; font-size:0.9rem; white-space:nowrap;}
+  .burger{background:var(--ink); border:none; border-radius:8px; width:46px; height:46px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;}
+  .burger span, .burger span::before, .burger span::after{content:"";display:block; width:20px; height:2.5px; background:var(--mozz); position:relative;}
+  .burger span::before{position:absolute; top:-7px;}
+  .burger span::after{position:absolute; top:7px;}
+  .mobilemenu{display:none; flex-direction:column; background:var(--mozz); border-bottom:3px solid var(--ink);}
+  .mobilemenu.open{display:flex;}
+  .mobilemenu a{padding:1.1rem min(5vw,1.6rem); text-decoration:none; color:var(--ink); font-weight:700; border-top:1px solid #eaddc6; min-height:44px; display:flex; align-items:center;}
+  .mobilemenu a.active{color:var(--tomato-deep);}
+  @media(min-width:860px){.navlinks{display:flex;} .navcta{display:inline-block;} .burger{display:none;} .mobilemenu{display:none !important;}}
+
+  .pagehero{position:relative; padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,4vw,3rem); background:
+      radial-gradient(circle at 90% 0%, rgba(217,74,46,0.16), transparent 55%),
+      radial-gradient(circle at 0% 100%, rgba(60,110,71,0.14), transparent 50%);
+    border-bottom:3px solid var(--ink); overflow:hidden;
+  }
+  .eyebrow{font-family:var(--display); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; font-weight:700; color:var(--basil-deep); margin-bottom:0.8rem;}
+  .pagehero h1{font-size:clamp(2rem,6vw,3.4rem); color:var(--tomato-deep); max-width:18ch;}
+  .pagehero p{margin-top:1.1rem; max-width:36rem; font-size:clamp(1rem,2.2vw,1.15rem); color:#40301f;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+
+  .kontakt{background:var(--ink); color:var(--cream);}
+  .kontakt .eyebrow{color:var(--gold);}
+  .kontakt-grid{display:grid; gap:2.2rem;}
+  @media(min-width:900px){.kontakt-grid{grid-template-columns:1fr 1fr; gap:3rem;}}
+  .kontakt-info dl{display:grid; grid-template-columns:auto 1fr; gap:0.9rem 1rem; font-size:1rem;}
+  .kontakt-info dt{font-weight:700; text-transform:uppercase; font-size:0.7rem; letter-spacing:0.08em; color:var(--gold); padding-top:0.2rem;}
+  .kontakt-info dd a{text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(255,246,232,0.4); word-break:break-word;}
+  .kontakt-info dd a:hover{text-decoration-color:var(--gold);}
+  .cta-row{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem;}
+  .btn{display:inline-flex; align-items:center; gap:.6rem; padding:0.95rem 1.6rem; border-radius:100px; text-decoration:none; font-weight:700; font-size:0.95rem; min-height:44px; transition:transform .2s ease, box-shadow .2s ease;}
+  .btn-light{background:var(--cream); color:var(--ink);}
+  .btn-light:hover{transform:translateY(-2px);}
+  .btn-ghost-dark{border:2px solid rgba(255,246,232,0.4); color:var(--cream);}
+  .btn-ghost-dark:hover{border-color:var(--gold); color:var(--gold);}
+  .mapwrap{border-radius:20px; overflow:hidden; border:2px solid rgba(255,246,232,0.25); aspect-ratio:4/3.4; width:100%;}
+  .mapwrap iframe{width:100%; height:100%; border:0;}
+
+  .infosec{background:var(--mozz); border-top:3px solid var(--ink);}
+  .infogrid{display:grid; gap:1.1rem; grid-template-columns:1fr;}
+  @media(min-width:640px){.infogrid{grid-template-columns:repeat(3,1fr);}}
+  .infocard{background:var(--cream); border:2px solid var(--ink); border-radius:16px; padding:1.6rem;}
+  .infocard svg{width:28px;height:28px; color:var(--tomato); margin-bottom:.8rem;}
+  .infocard h3{font-size:1.05rem; margin-bottom:.4rem; color:var(--ink);}
+  .infocard p{font-size:0.9rem; color:#4a3826;}
+
+  footer.site{background:#180f09; color:#b6a488; padding:1.8rem 0; font-size:0.82rem;}
+  .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:0.8rem; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#f0dcc0; text-decoration:underline; text-underline-offset:3px;}
+  .footer-note{margin-top:1rem; font-size:0.74rem; color:#8a7458; max-width:60rem; line-height:1.6;}
+  .footer-note strong{color:var(--gold);}
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Casa Rustica Pizzeria Ristorante</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="10.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="11" cy="14.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <span>Casa Rustica</span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+    </ul>
+    <a class="navcta" href="tel:+4367764775001">Anrufen &amp; bestellen</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn"><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    <a href="tel:+4367764775001">Anrufen &amp; bestellen</a>
+  </div>
+</header>
+
+<main>
+  <section class="pagehero">
+    <div class="wrap">
+      <p class="eyebrow">Kontakt &amp; Bestellung</p>
+      <h1>Reservieren, bestellen oder vorbeikommen.</h1>
+      <p>Waltendorfer Hauptstraße 94, 8010 Graz — täglich von 11:00 bis 23:00 Uhr.</p>
+    </div>
+  </section>
+
+  <section class="kontakt">
+    <div class="wrap kontakt-grid">
+      <div class="kontakt-info reveal">
+        <dl>
+          <dt>Adresse</dt><dd>Waltendorfer Hauptstraße 94<br>8010 Graz</dd>
+          <dt>Telefon</dt><dd><a href="tel:+4367764775001">+43 677 64775001</a></dd>
+          <dt>E-Mail</dt><dd><a href="mailto:casa_rust_ica@hotmail.com">casa_rust_ica@hotmail.com</a></dd>
+          <dt>Öffnungszeiten</dt><dd>Täglich 11:00–23:00 Uhr</dd>
+          <dt>Lieferservice</dt><dd>Graz · Raaba · Laßnitzhöhe</dd>
+        </dl>
+        <div class="cta-row">
+          <a class="btn btn-light" href="tel:+4367764775001">Jetzt anrufen</a>
+          <a class="btn btn-ghost-dark" href="mailto:casa_rust_ica@hotmail.com">E-Mail schreiben</a>
+          <a class="btn btn-ghost-dark" href="https://www.google.com/maps/search/?api=1&query=Waltendorfer%20Hauptstra%C3%9Fe%2094%2C%208010%20Graz" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="mapwrap reveal">
+        <iframe title="Lage von Casa Rustica auf der Karte" loading="lazy" src="https://www.google.com/maps?q=Waltendorfer%20Hauptstra%C3%9Fe%2094%2C%208010%20Graz&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="infosec">
+    <div class="wrap">
+      <div class="infogrid">
+        <div class="infocard reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <h3>Lage</h3>
+          <p>In Graz-Waltendorf, an der Waltendorfer Hauptstraße — gut erreichbar aus der ganzen Stadt.</p>
+        </div>
+        <div class="infocard reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h3l3 3v3h-6z"/><circle cx="6" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg>
+          <h3>Lieferservice</h3>
+          <p>Wir liefern direkt nach Hause — in Graz, Raaba und Laßnitzhöhe.</p>
+        </div>
+        <div class="infocard reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <h3>Öffnungszeiten</h3>
+          <p>Täglich von 11:00 bis 23:00 Uhr geöffnet — auch für spontanen Hunger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© Casa Rustica Pizzeria Ristorante · Waltendorfer Hauptstraße 94, 8010 Graz</span>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Casa Rustica Pizzeria Ristorante</strong> · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); burgerBtn.setAttribute('aria-expanded','false'); });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

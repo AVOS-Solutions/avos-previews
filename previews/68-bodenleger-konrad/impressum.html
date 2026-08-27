@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum – Bodenleger Konrad</title>
+<meta name="description" content="Muster-Impressum für die Gestaltungs-Vorschau von Bodenleger Konrad in Gnas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wood:#a8632a;
+    --wood-dark:#7c4a1f;
+    --charcoal:#1f1d1b;
+    --charcoal-2:#2a2724;
+    --paper:#f4efe6;
+    --paper-2:#e9e1d1;
+    --line:rgba(31,29,27,0.16);
+    --line-2:rgba(244,239,230,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--charcoal);
+    font-family:'Familjen Grotesk',system-ui,sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Familjen Grotesk',sans-serif; font-weight:700; margin:0; letter-spacing:-0.01em;}
+  .mono{font-family:'Space Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:76rem; margin:0 auto; padding:0 min(6vw,1.6rem); width:100%;}
+  :focus-visible{outline:3px solid var(--wood); outline-offset:2px;}
+  img,svg{display:block; max-width:100%; height:auto;}
+
+  .disclaimer{
+    background:var(--charcoal); color:var(--paper-2); font-size:0.76rem; text-align:center;
+    padding:0.55rem 1rem; letter-spacing:0.01em;
+  }
+  .disclaimer strong{font-weight:700; color:var(--wood);}
+
+  header.site{
+    padding:1.1rem 0; position:sticky; top:0; z-index:30;
+    background:rgba(244,239,230,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; position:relative;}
+  .brand{display:flex; align-items:center; gap:0.6rem; text-decoration:none;}
+  .brand-mark{
+    width:2.3rem; height:2.3rem; background:var(--charcoal); color:var(--wood); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-family:'Space Mono',monospace; font-weight:700; font-size:0.95rem;
+  }
+  .brand-text{font-weight:700; font-size:clamp(1rem,3vw,1.2rem); color:var(--charcoal);}
+  .brand-text small{display:block; font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; color:var(--wood-dark); font-weight:400; text-transform:uppercase;}
+  nav.main{display:flex; align-items:center;}
+  nav.main a{
+    text-decoration:none; font-size:0.88rem; margin-left:1.5rem; color:var(--charcoal); font-weight:600;
+    display:inline-flex; align-items:center; min-height:44px; border-bottom:2px solid transparent;
+  }
+  nav.main a:hover{border-color:var(--wood);}
+  nav.main a.active{border-color:var(--wood); color:var(--wood-dark);}
+  .nav-toggle{
+    display:none; width:44px; height:44px; border:1px solid var(--line); background:transparent;
+    cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--charcoal); display:block;}
+  @media (max-width:780px){
+    nav.main{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--paper); border-bottom:1px solid var(--line); flex-direction:column;
+      padding:0.4rem min(6vw,1.6rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.7rem 0; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .page-hero{padding:clamp(2.6rem,7vw,3.8rem) 0; border-bottom:1px solid var(--line);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: min(8vw,3.2rem) min(8vw,3.2rem);
+    background-position: center top;
+  }
+  .page-hero h1{font-size:clamp(2rem,5.5vw,3.2rem); max-width:22ch;}
+
+  section{padding:clamp(3rem,7vw,5rem) 0;}
+
+  .legal-notice{border:1.5px solid var(--wood-dark); background:rgba(168,99,42,0.08); padding:1.2rem 1.4rem; margin:0 0 2.4rem; font-size:0.92rem; color:var(--charcoal); line-height:1.6;}
+  .legal-notice strong{color:var(--wood-dark);}
+  .legal-content h2{margin-top:2.4rem; font-size:clamp(1.35rem,3vw,1.7rem);}
+  .legal-content h2:first-of-type{margin-top:0;}
+  .legal-content p, .legal-content li{color:#3d3833; font-size:0.98rem;}
+  .legal-content ul{padding-left:1.3rem;}
+  .legal-content dl{display:grid; grid-template-columns:auto 1fr; gap:0.5rem 1rem; margin:1rem 0; font-family:'Space Mono',monospace; font-size:0.9rem;}
+  .legal-content dt{color:var(--wood-dark); font-weight:700;}
+  .legal-content dd{margin:0;}
+  .legal-content .wrap{max-width:52rem;}
+
+  footer.site{
+    background:var(--paper-2); color:#57503f; padding:clamp(2.2rem,6vw,3.2rem) 0 1.6rem; font-family:'Space Mono',monospace;
+  }
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(1.6rem,4vw,3rem); margin-bottom:2rem; font-family:'Familjen Grotesk',sans-serif;}
+  @media (max-width:780px){ .footer-grid{grid-template-columns:1fr; gap:1.8rem;} }
+  .footer-brand{font-weight:700; font-size:1.15rem; color:var(--charcoal); margin-bottom:0.6rem;}
+  .footer-about{font-size:0.88rem; max-width:32ch; color:#57503f;}
+  .footer-col h4{font-family:'Space Mono',monospace; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--wood-dark); margin-bottom:0.9rem; font-weight:700;}
+  .footer-col ul{list-style:none; margin:0; padding:0; display:grid; gap:0.55rem;}
+  .footer-col a{text-decoration:none; color:#3d3833; font-size:0.88rem; font-family:'Familjen Grotesk',sans-serif;}
+  .footer-col a:hover{text-decoration:underline;}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:1.3rem; display:flex; flex-wrap:wrap; gap:0.7rem 1.3rem; justify-content:space-between; font-size:0.78rem;}
+  .footer-disclaimer{font-size:0.74rem; color:#726a55; max-width:76ch; line-height:1.55; margin-top:1.1rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Bodenleger Konrad</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">BK</span>
+      <span class="brand-text">Bodenleger Konrad<small>Gnas · Südoststeiermark</small></span>
+    </a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" style="font-family:'Space Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--wood-dark); font-weight:700; display:inline-block; border:1px solid var(--wood-dark); padding:0.35rem 0.7rem; margin-bottom:1rem;">Impressum</span>
+    <h1>Impressum</h1>
+  </div>
+</section>
+
+<section class="legal-content">
+  <div class="wrap">
+    <div class="legal-notice">
+      <strong>Hinweis:</strong> Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Diensteanbieter</h2>
+    <dl>
+      <dt>Unternehmen</dt><dd>Bodenleger Konrad</dd>
+      <dt>Inhaber</dt><dd>Albert Konrad, Bodenlegermeister</dd>
+      <dt>Anschrift</dt><dd>Fischa 1, 8342 Gnas, Österreich</dd>
+      <dt>Telefon</dt><dd><a href="tel:+436645489385">+43 664 5489385</a></dd>
+      <dt>E-Mail</dt><dd><a href="mailto:office@bodenleger-konrad.at">office@bodenleger-konrad.at</a></dd>
+      <dt>UID-Nummer</dt><dd>[UID-Nummer]</dd>
+      <dt>Gewerbeberechtigung</dt><dd>[Gewerbeberechtigung Bodenleger/Bodenlegergewerbe]</dd>
+      <dt>Zuständige Kammer</dt><dd>[Wirtschaftskammer, Fachgruppe]</dd>
+    </dl>
+
+    <h2>Unternehmensgegenstand</h2>
+    <p>Verlegung, Sanierung und Versiegelung von Holzböden sowie Beratung, Planung und Verkauf im Bodenleger-Gewerbe.</p>
+
+    <h2>Online-Streitbeilegung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter ec.europa.eu/consumers/odr. Der Betrieb ist zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle [nicht/im konkreten Fall zu ergänzen] verpflichtet.</p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>Diese Seite ist eine unverbindliche Gestaltungs-Vorschau zu Demonstrationszwecken. Für eine echte Website sind sämtliche Angaben durch den Betrieb zu prüfen und rechtskonform zu vervollständigen.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Bodenleger Konrad</div>
+        <p class="footer-about">Familienbetrieb für Holzböden, Sanierung und Versiegelung. Fischa 1, 8342 Gnas.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt &amp; Rechtliches</h4>
+        <ul>
+          <li><a href="tel:+436645489385">+43 664 5489385</a></li>
+          <li><a href="mailto:office@bodenleger-konrad.at">office@bodenleger-konrad.at</a></li>
+          <li><a href="impressum.html" class="active" aria-current="page">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Bodenleger Konrad · Fischa 1, 8342 Gnas</span>
+      <span>Gestaltungs-Vorschau — keine offizielle Website</span>
+    </div>
+    <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Bodenleger Konrad · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>
