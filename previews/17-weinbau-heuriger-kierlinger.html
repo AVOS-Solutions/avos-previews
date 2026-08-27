@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weinbau & Heuriger Kierlinger — Nussdorf, Wien</title>
+<meta name="description" content="Familien-Weinbaubetrieb und Heuriger in Nussdorf: Eigenbauweine vom Nussberg, Vinothek, Winzersaal und klassisches Heurigenbuffet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine-900:#3c0f18;
+    --wine-800:#5a1622;
+    --wine-700:#7a2333;
+    --wine-600:#96324a;
+    --gold-500:#c9a15a;
+    --gold-300:#e3c98a;
+    --cream-050:#faf4ea;
+    --cream-100:#f2e6d2;
+    --ink-900:#241614;
+    --green-700:#3c4a30;
+    --ring:#c9a15a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--cream-050);
+    color:var(--ink-900);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-0.01em}
+  :focus-visible{outline:3px solid var(--ring);outline-offset:3px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 1.5rem}
+
+  /* Disclaimer strip */
+  .disclaimer{
+    background:var(--wine-900);color:var(--cream-100);
+    font-size:.78rem;text-align:center;padding:.55rem 1rem;
+    letter-spacing:.01em;
+  }
+  .disclaimer b{color:var(--gold-300);font-weight:600}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:40;
+    background:rgba(250,244,234,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(60,15,24,.1);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1180px;margin:0 auto}
+  .brand{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;color:var(--wine-800)}
+  .brand span{color:var(--gold-500)}
+  nav.links{display:flex;gap:2rem;list-style:none}
+  nav.links a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--ink-900);position:relative;padding:.25rem 0}
+  nav.links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold-500);transition:width .25s}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%}
+  .navlist{display:flex;align-items:center;gap:2rem}
+  .cta-mini{
+    display:inline-flex;align-items:center;min-height:44px;
+    background:var(--wine-700);color:var(--cream-050);padding:.55rem 1.1rem;border-radius:999px;
+    font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s;
+  }
+  .cta-mini:hover{background:var(--wine-800)}
+  .menu-toggle{display:none;background:none;border:1px solid var(--wine-700);border-radius:8px;padding:.6rem;min-width:44px;min-height:44px;cursor:pointer;align-items:center;justify-content:center}
+  .menu-toggle svg{stroke:var(--wine-800)}
+
+  @media (max-width:820px){
+    nav.links{position:fixed;top:64px;left:0;right:0;bottom:0;background:var(--cream-050);
+      flex-direction:column;padding:2rem 1.5rem;gap:1.5rem;transform:translateX(100%);
+      transition:transform .3s ease;overflow-y:auto}
+    nav.links.open{transform:translateX(0)}
+    nav.links a{font-size:1.15rem}
+    .menu-toggle{display:block}
+    .cta-mini{display:none}
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 20% -10%, rgba(201,161,90,.35), transparent 55%),
+      linear-gradient(160deg, var(--wine-900) 0%, var(--wine-700) 55%, var(--wine-600) 100%);
+    color:var(--cream-050);
+    padding:6.5rem 1.5rem 5rem;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;opacity:.12;
+    background-image:repeating-linear-gradient(115deg, var(--gold-300) 0 2px, transparent 2px 34px);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-300);
+    border:1px solid rgba(227,201,138,.4);padding:.4rem .9rem;border-radius:999px;margin-bottom:1.75rem;
+  }
+  .hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);max-width:16ch;margin-bottom:1.4rem}
+  .hero h1 em{font-style:italic;color:var(--gold-300);font-weight:450}
+  .hero p.lede{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:52ch;color:var(--cream-100);opacity:.92;margin-bottom:2.5rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:999px;min-height:44px;
+    font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .2s,background .2s;
+  }
+  .btn-primary{background:var(--gold-500);color:var(--wine-900)}
+  .btn-primary:hover{background:var(--gold-300);transform:translateY(-2px)}
+  .btn-outline{border:1.5px solid rgba(250,244,234,.55);color:var(--cream-050)}
+  .btn-outline:hover{background:rgba(250,244,234,.1);transform:translateY(-2px)}
+
+  .hero-facts{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    margin-top:4rem;background:rgba(250,244,234,.18);border-radius:14px;overflow:hidden;
+    border:1px solid rgba(250,244,234,.18);
+  }
+  .hero-facts div{background:rgba(60,15,24,.35);padding:1.25rem 1.4rem}
+  .hero-facts strong{display:block;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--gold-300);margin-bottom:.2rem}
+  .hero-facts span{font-size:.82rem;color:var(--cream-100);opacity:.85}
+  @media (max-width:560px){.hero-facts{grid-template-columns:1fr}}
+
+  /* Section shell */
+  section{padding:5.5rem 1.5rem}
+  .section-head{max-width:640px;margin-bottom:3rem}
+  .kicker{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wine-600);font-weight:600;margin-bottom:.75rem}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--wine-900)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Story timeline */
+  .story{background:var(--cream-050)}
+  .timeline{max-width:820px;margin:0 auto;position:relative}
+  .timeline::before{
+    content:'';position:absolute;left:1.15rem;top:.5rem;bottom:.5rem;width:2px;
+    background:linear-gradient(var(--gold-500),var(--wine-700));
+  }
+  @media (min-width:720px){.timeline::before{left:50%;margin-left:-1px}}
+  .t-item{position:relative;padding:0 0 3.2rem 3.3rem}
+  @media (min-width:720px){
+    .t-item{width:50%;padding:0 0 3.2rem 0}
+    .t-item:nth-child(odd){padding-right:3.5rem;text-align:right;margin-right:50%}
+    .t-item:nth-child(even){padding-left:3.5rem;margin-left:50%}
+  }
+  .t-dot{
+    position:absolute;left:.65rem;top:.15rem;width:1.1rem;height:1.1rem;border-radius:50%;
+    background:var(--cream-050);border:3px solid var(--wine-700);
+  }
+  @media (min-width:720px){
+    .t-item:nth-child(odd) .t-dot{left:auto;right:-.6rem}
+    .t-item:nth-child(even) .t-dot{left:-.6rem}
+  }
+  .t-item h3{font-size:1.3rem;color:var(--wine-800);margin-bottom:.5rem}
+  .t-item p{color:#4a3733;font-size:.98rem}
+  .t-tag{display:inline-block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-500);font-weight:700;margin-bottom:.4rem}
+
+  /* Wines */
+  .wines{background:var(--wine-900);color:var(--cream-100);position:relative;overflow:hidden}
+  .wines::before{
+    content:'';position:absolute;inset:0;opacity:.08;
+    background-image:radial-gradient(circle at 80% 20%, var(--gold-300) 0, transparent 40%);
+  }
+  .wines .section-head h2{color:var(--cream-050)}
+  .wines .kicker{color:var(--gold-300)}
+  .wine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;position:relative;z-index:1}
+  .wine-card{
+    background:rgba(250,244,234,.06);border:1px solid rgba(227,201,138,.25);border-radius:16px;
+    padding:2rem 1.7rem;transition:transform .25s,border-color .25s;
+  }
+  .wine-card:hover{transform:translateY(-6px);border-color:var(--gold-300)}
+  .wine-card .glyph{width:42px;height:42px;margin-bottom:1.2rem}
+  .wine-card h3{font-size:1.25rem;color:var(--gold-300);margin-bottom:.6rem;font-weight:450;font-style:italic}
+  .wine-card p{font-size:.92rem;color:var(--cream-100);opacity:.85}
+
+  /* Venue split */
+  .venue{background:var(--cream-100)}
+  .venue-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
+  @media (min-width:900px){.venue-grid{grid-template-columns:1.1fr 1fr}}
+  .venue-art{
+    aspect-ratio:4/3;border-radius:20px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--wine-700),var(--wine-900));
+  }
+  .venue-art svg{position:absolute;inset:0;width:100%;height:100%}
+  .venue-copy h2{color:var(--wine-900);font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:1.1rem}
+  .venue-copy p{color:#4a3733;margin-bottom:1rem;max-width:48ch}
+  .venue-list{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+  .venue-list li{display:flex;gap:.7rem;align-items:flex-start;font-size:.95rem;color:#3d2b27}
+  .venue-list svg{flex:none;margin-top:.2rem;width:18px;height:18px;stroke:var(--wine-700)}
+
+  /* Contact */
+  .contact{background:var(--cream-050)}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media (min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{
+    background:var(--wine-800);color:var(--cream-050);border-radius:20px;padding:2.5rem;
+    background-image:radial-gradient(circle at 90% 0%, rgba(201,161,90,.25), transparent 55%);
+  }
+  .contact-card h2{color:var(--cream-050);font-size:1.9rem;margin-bottom:1.5rem}
+  .contact-row{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.3rem}
+  .contact-row svg{flex:none;width:20px;height:20px;stroke:var(--gold-300);margin-top:.15rem}
+  .contact-row a,.contact-row span{color:var(--cream-100);text-decoration:none;font-size:.98rem}
+  .contact-row a:hover{color:var(--gold-300)}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+  .map-embed{border-radius:20px;overflow:hidden;border:1px solid rgba(60,15,24,.15);min-height:320px}
+  .map-embed iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+
+  footer.site{background:var(--wine-900);color:var(--cream-100);padding:3rem 1.5rem 2rem}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;max-width:1180px;margin:0 auto;padding-bottom:2rem;border-bottom:1px solid rgba(227,201,138,.15)}
+  .foot-brand{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--gold-300)}
+  .foot-note{max-width:1180px;margin:1.5rem auto 0;font-size:.78rem;color:rgba(242,230,210,.6);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <b>keine offizielle Website</b> von Weinbau &amp; Heuriger Kierlinger · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <div class="brand">Kierlinger<span>.</span></div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="links navlist" id="navLinks">
+      <li><a href="#geschichte">Geschichte</a></li>
+      <li><a href="#weine">Weine &amp; Buffet</a></li>
+      <li><a href="#winzersaal">Vinothek &amp; Winzersaal</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a class="cta-mini" href="tel:+4313702264">Anrufen</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Heuriger &amp; Weinbau · Nussdorf, Wien</span>
+    <h1>Wein vom Nussberg, <em>gelebt</em> seit Generationen.</h1>
+    <p class="lede">Familienbetrieb Kierlinger in Nussdorf: eigene Weingärten am Nussberg, klassisches Heurigenbuffet und eine Vinothek, in der sich Tradition und Geselligkeit treffen.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#kontakt">Tisch anfragen</a>
+      <a class="btn btn-outline" href="tel:+4313702264">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +43 1 370 22 64
+      </a>
+    </div>
+    <div class="hero-facts">
+      <div><strong>Nussdorf</strong><span>am Fuß des Nussbergs, 1190 Wien</span></div>
+      <div><strong>Eigenbau</strong><span>Gemischter Satz &amp; Grüner Veltliner</span></div>
+      <div><strong>Winzersaal</strong><span>für Feiern &amp; Firmenevents</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="geschichte" class="story">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Unsere Geschichte</div>
+      <h2>Ein Familienbetrieb mit Wurzeln am Nussberg</h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <span class="t-dot" aria-hidden="true"></span>
+        <span class="t-tag">Die Familie</span>
+        <h3>Getragen von Generationen</h3>
+        <p>Der Betrieb Kierlinger wird als Familienbetrieb geführt — Weinbau, Heuriger und Gastlichkeit liegen in einer Hand, mit dem Anspruch, Nussdorfer Heurigenkultur authentisch weiterzugeben.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot" aria-hidden="true"></span>
+        <span class="t-tag">Die Lage</span>
+        <h3>Zwischen Weinbergen und Donau</h3>
+        <p>In Nussdorf, direkt am Fuß des Nussbergs gelegen, verbindet der Betrieb die Nähe zu den eigenen Weingärten mit der Erreichbarkeit der Wiener Innenstadt.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot" aria-hidden="true"></span>
+        <span class="t-tag">Der Weinberg</span>
+        <h3>Eigenbau vom Nussberg</h3>
+        <p>Gemischter Satz und Grüner Veltliner reifen in den eigenen Weingärten am Nussberg und kommen direkt aus dem Keller auf den Heurigentisch.</p>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot" aria-hidden="true"></span>
+        <span class="t-tag">Heute</span>
+        <h3>Vinothek, Winzersaal &amp; Heurigenbuffet</h3>
+        <p>Vinothek zum Verkosten und Mitnehmen, ein Winzersaal für größere Runden und ein klassisches Heurigenbuffet — drei Räume, ein gemeinsamer Ursprung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="weine" class="wines">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Weine &amp; Buffet</div>
+      <h2>Was auf den Tisch kommt</h2>
+    </div>
+    <div class="wine-grid">
+      <div class="wine-card reveal">
+        <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold-300)"><path d="M16 6h16l-2 16a6 6 0 0 1-12 0L16 6Z"/><path d="M24 28v12"/><path d="M17 40h14"/></svg>
+        <h3>Gemischter Satz</h3>
+        <p>Der Wiener Klassiker: mehrere Rebsorten, gemeinsam gelesen und ausgebaut — ein Wein, der Nussberg und Nussdorf in sich trägt.</p>
+      </div>
+      <div class="wine-card reveal">
+        <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold-300)"><path d="M16 6h16l-2 16a6 6 0 0 1-12 0L16 6Z"/><path d="M24 28v12"/><path d="M17 40h14"/></svg>
+        <h3>Grüner Veltliner</h3>
+        <p>Frisch, würzig und eigenständig — aus eigenem Anbau am Nussberg, in der Vinothek auch zum Mitnehmen erhältlich.</p>
+      </div>
+      <div class="wine-card reveal">
+        <svg class="glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--gold-300)"><path d="M10 14h28l-3 8H13l-3-8Z"/><path d="M13 22l2 18h18l2-18"/><path d="M20 22v6M28 22v6"/></svg>
+        <h3>Heurigenbuffet</h3>
+        <p>Klassisches Wiener Heurigenbuffet zum Wein — deftig, hausgemacht und in geselliger Runde am besten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="winzersaal" class="venue">
+  <div class="wrap venue-grid">
+    <div class="venue-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7a2333"/>
+            <stop offset="1" stop-color="#3c0f18"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="300" fill="url(#vg)"/>
+        <g stroke="#e3c98a" stroke-width="1" opacity="0.35">
+          <path d="M0 260 L400 200" /><path d="M0 240 L400 180" /><path d="M0 220 L400 160" />
+        </g>
+        <g fill="none" stroke="#c9a15a" stroke-width="2" opacity="0.8">
+          <path d="M60 240 Q60 180 100 180 Q140 180 140 240" />
+          <path d="M160 240 Q160 170 210 170 Q260 170 260 240" />
+          <path d="M280 240 Q280 190 320 190 Q360 190 360 240" />
+        </g>
+        <circle cx="330" cy="60" r="34" fill="#e3c98a" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="venue-copy reveal">
+      <div class="kicker">Vinothek &amp; Winzersaal</div>
+      <h2>Raum für Genuss — im kleinen und im großen Kreis</h2>
+      <p>Die Vinothek lädt zum Verkosten und Mitnehmen der Eigenbauweine ein. Der Winzersaal steht für größere Gesellschaften, Familienfeiern und Firmenevents inmitten weinseliger Atmosphäre bereit.</p>
+      <ul class="venue-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Vinothek mit Verkostung &amp; Verkauf ab Hof</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Winzersaal für Feiern &amp; Firmenveranstaltungen</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Öffnungszeiten je Aussteckperiode — Termine auf Anfrage</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Kontakt &amp; Anfahrt</div>
+      <h2>Wir freuen uns auf Ihren Besuch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Kierlinger</h2>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Kahlenbergerstraße 20, 1190 Wien (Nussdorf)</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+4313702264">+43 1 370 22 64</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          <a href="mailto:office@kierlinger.at">office@kierlinger.at</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg>
+          <span>Ansprechpartner: Matthias Kierlinger</span>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:office@kierlinger.at">E-Mail schreiben</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Kahlenbergerstra%C3%9Fe%2020%2C%201190%20Wien" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe title="Lage von Kierlinger auf der Karte" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Kahlenbergerstra%C3%9Fe%2020%2C%201190%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">Kierlinger</div>
+    <div style="font-size:.9rem;opacity:.85;max-width:44ch">Kahlenbergerstraße 20 · 1190 Wien (Nussdorf) · +43 1 370 22 64 · office@kierlinger.at</div>
+  </div>
+  <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weinbau &amp; Heuriger Kierlinger · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

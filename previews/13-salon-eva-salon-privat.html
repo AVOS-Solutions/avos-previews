@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salon Eva &amp; Salon Privat — Friseur-Meisterbetrieb Kaisermühlen, Wien</title>
+<meta name="description" content="Salon Eva &amp; Salon Privat in Wien-Kaisermühlen: klassisches Damen- und Herrenhairstyling und diskretes Styling in privaten Einzelräumen — geführt von Meisterin Gabriele Wiedenhofer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f0e8;
+    --cream-2:#efe4d6;
+    --ink:#2a201c;
+    --rose:#b8493f;
+    --rose-deep:#8f342b;
+    --gold:#b8935a;
+    --charcoal:#171310;
+    --charcoal-2:#211a16;
+    --privat-ink:#f2e9dc;
+    --privat-muted:#c9b8a3;
+    --line:rgba(42,32,28,0.14);
+    --line-dark:rgba(242,233,220,0.16);
+    --focus:#b8935a;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    line-height:1.05;
+    margin:0;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+  /* disclosure strip */
+  .disclosure{
+    background:var(--charcoal);
+    color:var(--privat-muted);
+    font-size:0.72rem;
+    letter-spacing:0.02em;
+    text-align:center;
+    padding:0.55rem 1rem;
+  }
+
+  /* nav */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,240,232,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3rem);}
+  .brandmark{display:flex;align-items:center;gap:0.6rem;font-family:'Fraunces',serif;font-size:1.15rem;letter-spacing:0.01em;}
+  .brandmark .div{color:var(--gold);font-weight:300;}
+  nav.links{display:none;gap:2rem;font-size:0.92rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding-bottom:4px;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--rose-deep);transition:width .25s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  .nav-cta{display:none;border:1px solid var(--ink);border-radius:999px;padding:0.5rem 1.2rem;font-size:0.85rem;font-weight:600;text-decoration:none;}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:820px){
+    nav.links{display:flex;}
+    .nav-cta{display:inline-block;}
+    .burger{display:none;}
+  }
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;}
+
+  /* split hero */
+  .hero{display:grid;grid-template-columns:1fr;min-height:640px;}
+  @media(min-width:900px){.hero{grid-template-columns:1fr 1fr;}}
+  .hero-half{position:relative;display:flex;flex-direction:column;justify-content:center;padding:4rem clamp(1.5rem,5vw,4rem);overflow:hidden;}
+  .hero-eva{background:linear-gradient(165deg,var(--cream) 0%,var(--cream-2) 60%,#e6d5c0 100%);color:var(--ink);}
+  .hero-privat{background:radial-gradient(120% 140% at 80% 0%, #2c211b 0%, var(--charcoal) 55%, var(--charcoal-2) 100%);color:var(--privat-ink);}
+  .hero-eyebrow{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;margin-bottom:1.1rem;}
+  .hero-eva .hero-eyebrow{color:var(--rose-deep);}
+  .hero-privat .hero-eyebrow{color:var(--gold);}
+  .hero-half h1{font-size:clamp(2.3rem,5.2vw,3.6rem);}
+  .hero-half p.tag{margin-top:1.1rem;max-width:32ch;font-size:1.02rem;opacity:0.85;}
+  .hero-privat p.tag{color:var(--privat-muted);}
+  .hero-btn{margin-top:2rem;display:inline-flex;align-items:center;gap:0.5rem;width:fit-content;padding:0.85rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.92rem;transition:transform .2s ease;}
+  .hero-btn:hover{transform:translateY(-2px);}
+  .hero-eva .hero-btn{background:var(--rose-deep);color:#fff8f3;}
+  .hero-privat .hero-btn{background:var(--gold);color:var(--charcoal);}
+  .deco-ring{position:absolute;border-radius:50%;border:1px solid;opacity:0.35;}
+  .hero-eva .deco-ring{border-color:var(--rose);width:340px;height:340px;right:-120px;bottom:-140px;}
+  .hero-privat .deco-ring{border-color:var(--gold);width:260px;height:260px;left:-80px;top:-90px;}
+  .hero-divider{display:none;}
+  @media(min-width:900px){
+    .hero-divider{
+      display:block;position:absolute;left:50%;top:0;bottom:0;width:1px;
+      background:linear-gradient(180deg,transparent,var(--gold),transparent);
+      z-index:2;
+    }
+  }
+  .hero{position:relative;}
+
+  /* section basics */
+  section{padding:clamp(3.5rem,8vw,6.5rem) 0;}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;color:var(--rose-deep);margin-bottom:0.8rem;}
+  .section-title{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:22ch;}
+  .lead{max-width:60ch;margin-top:1.2rem;font-size:1.08rem;color:#4a3a33;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* story */
+  .story{background:var(--cream-2);}
+  .story-grid{display:grid;gap:2.5rem;margin-top:2.5rem;}
+  @media(min-width:800px){.story-grid{grid-template-columns:1.1fr 0.9fr;align-items:center;}}
+  .story-art{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:
+    radial-gradient(circle at 30% 20%, #d9a76a 0%, transparent 45%),
+    radial-gradient(circle at 80% 75%, #8f342b 0%, transparent 55%),
+    linear-gradient(160deg,#2c211b,#171310);
+  }
+  .story-art::before{
+    content:"E";
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:min(40vw,220px);
+    color:rgba(247,240,232,0.14);
+  }
+  .story-text p{margin:1rem 0 0;color:#4a3a33;}
+  .story-text p:first-of-type{margin-top:0;}
+
+  /* two concepts detail cards */
+  .concepts{}
+  .concept-grid{display:grid;gap:1.75rem;margin-top:3rem;}
+  @media(min-width:760px){.concept-grid{grid-template-columns:1fr 1fr;}}
+  .concept-card{border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;}
+  .concept-card.eva{background:#fff;border:1px solid var(--line);}
+  .concept-card.privat{background:var(--charcoal);color:var(--privat-ink);}
+  .concept-card h3{font-size:1.6rem;margin-bottom:0.9rem;}
+  .concept-card.privat h3{color:var(--gold);}
+  .concept-card ul{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:0.7rem;}
+  .concept-card li{display:flex;gap:0.7rem;font-size:0.96rem;align-items:flex-start;}
+  .concept-card.eva li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose-deep);margin-top:0.55rem;flex-shrink:0;}
+  .concept-card.privat li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:0.55rem;flex-shrink:0;}
+
+  /* trust strip */
+  .trust{display:flex;flex-wrap:wrap;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--line);}
+  .trust-item{min-width:160px;}
+  .trust-num{font-family:'Fraunces',serif;font-size:2.2rem;color:var(--rose-deep);}
+  .trust-label{font-size:0.85rem;color:#6b5a50;margin-top:0.2rem;}
+
+  /* contact */
+  .contact{background:var(--charcoal);color:var(--privat-ink);position:relative;overflow:hidden;}
+  .contact::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(184,147,90,0.18),transparent 70%);top:-200px;right:-150px;}
+  .contact-grid{display:grid;gap:3rem;position:relative;}
+  @media(min-width:800px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact .eyebrow{color:var(--gold);}
+  .contact h2{color:var(--privat-ink);}
+  .contact-list{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;}
+  .contact-list a{text-decoration:none;}
+  .contact-list li{display:flex;gap:1rem;align-items:flex-start;font-size:1.02rem;}
+  .contact-list .ico{flex-shrink:0;width:22px;height:22px;color:var(--gold);margin-top:2px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;}
+  .btn-primary,.btn-ghost{padding:0.9rem 1.7rem;border-radius:999px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;}
+  .btn-primary{background:var(--gold);color:var(--charcoal);}
+  .btn-ghost{border:1px solid var(--line-dark);color:var(--privat-ink);}
+  .map-frame{border-radius:20px;overflow:hidden;border:1px solid var(--line-dark);min-height:280px;}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;filter:grayscale(0.3) contrast(1.05);}
+
+  footer.site{background:var(--charcoal-2);color:var(--privat-muted);padding:2.5rem 0 1.5rem;font-size:0.85rem;}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;}
+  footer .legal{border-top:1px solid var(--line-dark);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <div class="brandmark"><span>Salon Eva</span><span class="div">/</span><span>Privat</span></div>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="#konzepte">Konzepte</a>
+      <a href="#geschichte">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+43126905 70">+43 1 269 05 70</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="#konzepte">Konzepte</a>
+    <a href="#geschichte">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:+4312690570">Anrufen: +43 1 269 05 70</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-label="Willkommen">
+    <div class="hero-divider" aria-hidden="true"></div>
+    <div class="hero-half hero-eva">
+      <div class="deco-ring" aria-hidden="true"></div>
+      <p class="hero-eyebrow">Klassischer Salon · Kaisermühlen</p>
+      <h1>Salon Eva</h1>
+      <p class="tag">Damen- und Herrenhairstyling mit Meisterhandwerk — offen, freundlich, für den ganz normalen Wahnsinn des Alltags.</p>
+      <a class="hero-btn" href="tel:+4312690570">Termin für Salon Eva anfragen</a>
+    </div>
+    <div class="hero-half hero-privat">
+      <div class="deco-ring" aria-hidden="true"></div>
+      <p class="hero-eyebrow">Private Einzelräume</p>
+      <h1>Salon Privat</h1>
+      <p class="tag">Diskretes Styling hinter verschlossener Tür — für alle, die ihre Zeit im Salon lieber ungestört verbringen.</p>
+      <a class="hero-btn" href="tel:+4312690570">Termin für Salon Privat anfragen</a>
+    </div>
+  </section>
+
+  <section class="story" id="geschichte">
+    <div class="wrap story-grid">
+      <div class="story-art reveal" aria-hidden="true"></div>
+      <div class="story-text reveal">
+        <p class="eyebrow">Der Betrieb</p>
+        <h2 class="section-title">Ein Meisterbetrieb, zwei Adressen für Ihr Haar</h2>
+        <p>In der Schiffmühlenstraße im 22. Bezirk führt Meisterin Gabriele Wiedenhofer einen Friseur-Meisterbetrieb, der bewusst zwei Wege anbietet: den klassischen, lebendigen <strong>Salon Eva</strong> für Damen und Herren — und mit <strong>Salon Privat</strong> ein zweites, ruhigeres Konzept mit eigenen, geschlossenen Räumen für alle, die Styling lieber unter vier Augen erleben.</p>
+        <p>Zwei Adressen, ein Anspruch: Handwerk auf Meisterniveau, persönliche Beratung und ein Ergebnis, das zur Person passt — nicht zum Trend von letzter Woche.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="concepts" id="konzepte">
+    <div class="wrap">
+      <p class="eyebrow reveal">Zwei Konzepte</p>
+      <h2 class="section-title reveal">Wählen Sie Ihren Rahmen</h2>
+      <p class="lead reveal">Ob mitten im Salonleben oder ganz für sich — beide Konzepte teilen sich Meisterhandwerk, Beratung und Sorgfalt.</p>
+      <div class="concept-grid">
+        <div class="concept-card eva reveal">
+          <h3>Salon Eva</h3>
+          <p>Der klassische Salon für Damen und Herren: offene Atmosphäre, kurze Wege, Beratung mit Blick für aktuelle Schnitte und Farben.</p>
+          <ul>
+            <li>Damen- und Herrenhaarschnitte</li>
+            <li>Farbe, Strähnen &amp; Balayage</li>
+            <li>Föhnen &amp; Festliche Frisuren</li>
+            <li>Beratung für jeden Haartyp</li>
+          </ul>
+        </div>
+        <div class="concept-card privat reveal">
+          <h3>Salon Privat</h3>
+          <p>Eigene, geschlossene Räume für alle, die ihre Zeit im Salon lieber ungestört und in aller Ruhe verbringen möchten.</p>
+          <ul>
+            <li>Private Einzelräume mit Diskretion</li>
+            <li>Individuell abgestimmte Termine</li>
+            <li>Ruhige, konzentrierte Atmosphäre</li>
+            <li>Ideal für besondere Anlässe</li>
+          </ul>
+        </div>
+      </div>
+      <div class="trust reveal">
+        <div class="trust-item">
+          <div class="trust-num">2022<span style="font-size:1.1rem;">er</span></div>
+          <div class="trust-label">Jahre Erfahrung im Bezirk</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">2</div>
+          <div class="trust-label">Konzepte unter einem Dach</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">22.</div>
+          <div class="trust-label">Bezirk — Kaisermühlen, Wien</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Kontakt &amp; Termin</p>
+        <h2>Wir freuen uns auf Sie</h2>
+        <p style="margin-top:1rem;color:var(--privat-muted);max-width:42ch;">Rufen Sie an oder kommen Sie vorbei — Meisterin Gabriele Wiedenhofer und ihr Team beraten Sie gerne, welches Konzept zu Ihnen passt.</p>
+        <ul class="contact-list">
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.6 21 3 14.4 3 6a2 2 0 0 1 1-2z"/></svg>
+            <a href="tel:+4312690570">+43 1 269 05 70</a>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Schiffmühlenstraße 53, 1220 Wien</span>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>Öffnungszeiten auf Anfrage</span>
+          </li>
+          <li>
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
+            <span>Ansprechperson: Meisterin Gabriele Wiedenhofer</span>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn-primary" href="tel:+4312690570">Jetzt anrufen</a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Schiffm%C3%BChlenstra%C3%9Fe%2053%2C%201220%20Wien" target="_blank" rel="noopener">Route berechnen</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe title="Lage Salon Eva / Salon Privat" loading="lazy" src="https://www.google.com/maps?q=Schiffm%C3%BChlenstra%C3%9Fe%2053%2C%201220%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="brandmark" style="font-size:1rem;">Salon Eva <span class="div">/</span> Salon Privat</div>
+      <div>Schiffmühlenstraße 53, 1220 Wien · +43 1 269 05 70</div>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Salon Eva / Salon Privat · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      });
+    });
+
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
