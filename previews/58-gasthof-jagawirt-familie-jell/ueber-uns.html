@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Gasthof Jagawirt, Sarleinsbach</title>
+<meta name="description" content="Familie Jell führt den Gasthof Jagawirt in Sarleinsbach im Mühlviertel — Tradition, Gastlichkeit und ein Haus mit vielen Facetten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7efdf;--paper:#fbf5e9;--ink:#2c1c14;--ink-soft:#5a4433;
+    --wine:#6d2028;--wine-deep:#4c151b;--forest:#3c4d2e;--gold:#b8862f;
+    --line:rgba(44,28,20,0.16);--focus:#6d2028;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#20140f;--paper:#2a1a13;--ink:#f3e6d4;--ink-soft:#d3b99e;
+      --wine:#d97b81;--wine-deep:#e69aa0;--forest:#8fae74;--gold:#e0af5c;
+      --line:rgba(243,230,212,0.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#20140f;--paper:#2a1a13;--ink:#f3e6d4;--ink-soft:#d3b99e;
+    --wine:#d97b81;--wine-deep:#e69aa0;--forest:#8fae74;--gold:#e0af5c;
+    --line:rgba(243,230,212,0.16);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em}
+  .eyebrow{font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--wine);font-weight:600}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .disclaimer{background:var(--wine-deep);color:var(--paper);text-align:center;font-size:0.72rem;padding:0.55rem 1rem;letter-spacing:0.02em;line-height:1.5}
+  header.site{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3.5rem);max-width:1200px;margin:0 auto}
+  .brand{text-decoration:none;display:flex;flex-direction:column;gap:0.1rem}
+  .brand-name{font-family:'Fraunces';font-weight:600;font-size:1.15rem}
+  .brand-sub{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{text-decoration:none;font-size:0.92rem;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+  nav.links a:hover{color:var(--wine)}
+  nav.links a.active{color:var(--wine);font-weight:700;border-bottom:2px solid var(--wine)}
+  .nav-cta{display:none;background:var(--wine);color:var(--paper);text-decoration:none;padding:0 1.3rem;border-radius:999px;font-size:0.85rem;font-weight:600;min-height:44px;align-items:center}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.2rem;height:1.2rem}
+  @media(min-width:880px){nav.links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line);background:var(--cream)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:1rem clamp(1.25rem,4vw,3.5rem);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+  #mobile-menu a.active{color:var(--wine);font-weight:700}
+  .page-hero{position:relative;padding:clamp(2.6rem,6vw,4.2rem) 0 clamp(2.2rem,5vw,3.4rem);background:linear-gradient(160deg, var(--paper) 0%, var(--cream) 100%);border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(2.2rem,5.5vw,3.4rem);max-width:24ch;margin-top:0.8rem}
+  .page-hero p{max-width:56ch;color:var(--ink-soft);font-size:1.05rem;margin-top:1rem}
+  section{padding:clamp(3rem,7vw,6rem) 0}
+  .section-head{max-width:640px;margin-bottom:2.6rem}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:0.5rem}
+  .section-head p{color:var(--ink-soft);margin-top:0.8rem;font-size:1.05rem}
+  .about-text p{font-size:1.05rem;color:var(--ink-soft);margin-bottom:1.1rem;max-width:64ch}
+  .flow{display:flex;flex-direction:column;gap:0}
+  .flow-item{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding:2.2rem 0;border-top:1px solid var(--line)}
+  .flow-item:last-child{border-bottom:1px solid var(--line)}
+  .flow-num{font-family:'Fraunces';font-size:2.2rem;color:var(--gold);font-weight:500;line-height:1;min-width:2.5ch}
+  .flow-body h3{font-size:1.5rem;margin-bottom:0.6rem}
+  .flow-body p{color:var(--ink-soft);max-width:56ch;font-size:1.02rem}
+  .flow-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+  .flow-tags span{font-size:0.78rem;padding:0.3rem 0.75rem;border:1px solid var(--line);border-radius:999px;color:var(--ink-soft)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;padding:0 1.5rem;text-decoration:none;font-weight:600;font-size:0.92rem;border-radius:999px}
+  .btn-primary{background:var(--wine);color:var(--paper)}
+  .btn-primary:hover{background:var(--wine-deep)}
+  .btn-outline{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--wine);color:var(--wine)}
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1.5rem}
+  .foot-grid{display:flex;flex-direction:column;gap:1.4rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-family:'Fraunces';font-weight:600;color:var(--ink);font-size:1.05rem;margin-bottom:0.3rem}
+  .foot-legal{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:0.6rem}
+  .foot-legal a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
+  .foot-disclaimer{font-size:0.78rem;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:2rem;padding-top:1.4rem;max-width:1200px}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Gasthof Jagawirt – Familie Jell</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Gasthof Jagawirt</span>
+      <span class="brand-sub">Familie Jell · Sarleinsbach</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+      <a href="angebot.html">Speisekarte &amp; Zimmer</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="kontakt.html">Tisch reservieren</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+    <a href="angebot.html">Speisekarte &amp; Zimmer</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4372838247">Anrufen: +43 7283 8247</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Über uns</span>
+      <h1>Ein Traditionsgasthof, geführt von Familie Jell</h1>
+      <p>Mitten im Mühlviertel, im Bezirk Rohrbach, ist der Jagawirt weit mehr als ein Gasthaus — Wirtshaus, Musikpub, Kegelbahn und Gästehaus unter einem Dach.</p>
+    </div>
+  </section>
+
+  <section id="ueber">
+    <div class="wrap about-text reveal">
+      <span class="eyebrow">Unsere Geschichte</span>
+      <h2 style="margin:0.8rem 0 1.4rem;">Gastlichkeit mit Tradition</h2>
+      <p>Der Gasthof Jagawirt ist ein Traditionsgasthof im Mühlviertel, geführt von Familie Jell. Über Generationen hinweg ist das Haus zu einem festen Bestandteil des Ortslebens in Sarleinsbach geworden — Treffpunkt für Einheimische ebenso wie Anlaufstelle für Gäste, die das Mühlviertel entdecken.</p>
+      <p>Was den Jagawirt besonders macht, ist seine Vielseitigkeit: ein Restaurant mit regionaler Küche, ein Musikpub für gesellige Abende, zwei Kegelbahnen für Vereins- und Freizeitrunden sowie ein Indoor-Spielplatz für die jüngsten Gäste. Dazu neun Gästezimmer, jedes mit eigener Terrasse — für alle, die länger bleiben möchten.</p>
+      <p>Familie Jell versteht den Betrieb als Wohnzimmer des Ortes: ein Haus, in dem gefeiert, gegessen, gespielt und genächtigt wird — mit der Gastfreundschaft, die einen echten Traditionsgasthof ausmacht.</p>
+    </div>
+  </section>
+
+  <section id="facetten">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ein Haus, viele Facetten</span>
+        <h2>Was den Jagawirt trägt</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-item reveal">
+          <div class="flow-num">01</div>
+          <div class="flow-body">
+            <h3>Wirtshaus &amp; Restaurant</h3>
+            <p>Regionale Küche und ein Speiseraum für Familienfeiern, Vereinsrunden und den ganz normalen Sonntag.</p>
+            <div class="flow-tags"><span>Hausmannskost</span><span>Feiern &amp; Anlässe</span></div>
+          </div>
+        </div>
+        <div class="flow-item reveal">
+          <div class="flow-num">02</div>
+          <div class="flow-body">
+            <h3>Musikpub</h3>
+            <p>Der Pub-Bereich des Hauses ist Treffpunkt für gesellige Abende — mit Musik, Getränken und guter Stimmung bis spät.</p>
+            <div class="flow-tags"><span>Abends geöffnet</span><span>Geselligkeit</span></div>
+          </div>
+        </div>
+        <div class="flow-item reveal">
+          <div class="flow-num">03</div>
+          <div class="flow-body">
+            <h3>Kegelbahnen &amp; Indoor-Spielplatz</h3>
+            <p>Zwei Kegelbahnen für Vereins- und Freizeitrunden, dazu ein Indoor-Spielplatz — ideal für Familien und Firmenfeiern bei jedem Wetter.</p>
+            <div class="flow-tags"><span>Für Gruppen</span><span>Familienfreundlich</span></div>
+          </div>
+        </div>
+        <div class="flow-item reveal">
+          <div class="flow-num">04</div>
+          <div class="flow-body">
+            <h3>Übernachten</h3>
+            <p>4 Einzel- und 5 Doppelzimmer der Kategorie ***Standard, alle mit eigener Terrasse — ruhig gelegen im Herzen von Sarleinsbach.</p>
+            <div class="flow-tags"><span>9 Zimmer</span><span>Alle mit Terrasse</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align:center">
+    <div class="wrap" style="max-width:640px;margin:0 auto">
+      <h2 style="margin-bottom:1.2rem;">Lernen Sie uns kennen</h2>
+      <p style="color:var(--ink-soft);margin-bottom:1.8rem;">Werfen Sie einen Blick auf Speisekarte und Zimmer oder reservieren Sie direkt.</p>
+      <div style="display:flex;justify-content:center;gap:0.9rem;flex-wrap:wrap">
+        <a class="btn btn-primary" href="angebot.html">Speisekarte &amp; Zimmer</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Gasthof Jagawirt — Familie Jell</div>
+        <div>Gollnerweg 1, 4152 Sarleinsbach · Mühlviertel, Oberösterreich</div>
+        <div><a href="tel:+4372838247">+43 7283 8247</a> · <a href="mailto:info@gh-jell.at">info@gh-jell.at</a></div>
+        <div class="foot-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div>
+        <nav class="links" style="display:flex">
+          <a href="index.html">Home</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="angebot.html">Speisekarte &amp; Zimmer</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof Jagawirt – Familie Jell · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

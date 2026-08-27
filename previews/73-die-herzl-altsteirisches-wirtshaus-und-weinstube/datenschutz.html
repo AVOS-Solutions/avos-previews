@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Die Herzl, Graz</title>
+<meta name="description" content="Muster-Datenschutzerklärung für Die Herzl, Graz — generischer Platzhaltertext zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine: #5c1620; --wine-deep: #3c0e15; --cream: #f4ecdd; --cream-2: #ece0c9;
+    --gold: #c9a24b; --forest: #33473a; --ink: #241512;
+    --serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+    --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --maxw: 76rem;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x:hidden;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.5rem;}
+  h1,h2{font-family:var(--serif); font-weight:400; line-height:1.05; letter-spacing:-0.01em;}
+  ::selection{background:var(--gold); color:var(--wine-deep);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{background: var(--wine-deep); color: #e8d9c8; font-size: 0.72rem; letter-spacing: 0.02em; text-align:center; padding: 0.5rem 1rem;}
+  .disclaimer strong{color:var(--gold); font-weight:700;}
+
+  header.site{position: sticky; top:0; z-index:50; background: rgba(244,236,221,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(92,22,32,0.15);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding: 1rem 1.5rem; max-width: var(--maxw); margin:0 auto; gap:1rem;}
+  .brand{font-family: var(--serif); font-size:1.35rem; color:var(--wine); text-decoration:none; display:flex; align-items:center; gap:.6rem; min-width:0;}
+  .brand svg{width:28px; height:28px; flex-shrink:0;}
+  .navlinks{display:none; gap:2rem; list-style:none; font-size:0.92rem; font-weight:600;}
+  .navlinks a{text-decoration:none; color:var(--wine-deep); position:relative; padding:.3rem 0;}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s;}
+  .navlinks a:hover::after{width:100%;}
+  .navcta{display:none; background:var(--wine); color:var(--cream); text-decoration:none; padding:.55rem 1.1rem; border-radius:2px; font-size:0.85rem; font-weight:700; letter-spacing:.02em;}
+  .burger{background:none;border:2px solid var(--wine); border-radius:4px; width:44px;height:44px; display:flex; align-items:center;justify-content:center; cursor:pointer; flex-shrink:0;}
+  .burger span, .burger span::before, .burger span::after{content:"";display:block;width:20px;height:2px;background:var(--wine); position:relative; transition:.2s;}
+  .burger span::before{position:absolute; top:-6px;}
+  .burger span::after{position:absolute; top:6px;}
+  .mobilemenu{display:none; flex-direction:column; gap:0; background:var(--cream); border-bottom:1px solid rgba(92,22,32,0.15);}
+  .mobilemenu.open{display:flex;}
+  .mobilemenu a{padding:1rem 1.5rem; text-decoration:none; color:var(--wine-deep); border-top:1px solid rgba(92,22,32,0.1); font-weight:600; min-height:44px; display:flex; align-items:center;}
+  @media(min-width:840px){.navlinks{display:flex;} .navcta{display:inline-block;} .burger{display:none;} .mobilemenu{display:none !important;}}
+
+  section{padding: 3.4rem 0 5rem;}
+  h1{font-size:clamp(1.9rem,5vw,2.8rem); color:var(--wine); margin-bottom:1.6rem;}
+
+  .legalnotice{background:var(--cream-2); border:1px solid rgba(92,22,32,0.25); border-radius:2px; padding:1.2rem 1.4rem; margin-bottom:2.5rem; font-size:0.92rem; color:var(--wine-deep); max-width:52rem;}
+  .legalnotice strong{color:var(--wine);}
+  .legalbody h2{font-size:1.4rem; color:var(--wine-deep); margin:2rem 0 .8rem; font-family:var(--serif); font-weight:400;}
+  .legalbody h2:first-child{margin-top:0;}
+  .legalbody p{margin-bottom:.9rem; color:#3c2b26; max-width:48rem;}
+  .legalbody ul{margin:0 0 .9rem 1.3rem; color:#3c2b26; max-width:48rem;}
+  .legalbody li{margin-bottom:.4rem;}
+
+  footer.site{background:var(--wine-deep); border-top:1px solid rgba(240,228,211,0.15); color:#c9b8a4; padding:2.2rem 0 1.4rem; font-size:0.85rem;}
+  .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#e8d9c8; text-decoration:underline; text-underline-offset:3px;}
+  .footer-note{margin-top:1.2rem; font-size:0.76rem; color:#a8927c; max-width:60rem; line-height:1.6;}
+  .footer-note strong{color:#c9a24b;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Die Herzl</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 3h8l-1 8a3 3 0 0 1-3 3 3 3 0 0 1-3-3L8 3Z"/><path d="M12 14v6"/><path d="M8 21h8"/></svg>
+      Die Herzl
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="navcta" href="tel:+43316824300">Tisch reservieren</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn"><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+43316824300">Tisch reservieren</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h1>Datenschutzerklärung</h1>
+      <div class="legalnotice">
+        <strong>Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</strong>
+      </div>
+      <div class="legalbody">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:</p>
+        <p>Die Herzl — Altsteirisches Wirtshaus und Weinstube<br>Edith Seitinger<br>Prokopigasse 12 / Mehlplatz, 8010 Graz<br>Telefon: <a href="tel:+43316824300">+43 316 824 300</a><br>E-Mail: <a href="mailto:office@dieherzl.at">office@dieherzl.at</a></p>
+
+        <h2>2. Allgemeines zur Datenverarbeitung</h2>
+        <p>Beim Aufruf dieser Website erfasst der Webserver aus technischen Gründen automatisch Informationen wie IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser und Betriebssystem (Server-Logfiles). Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs sowie zur Verbesserung des Angebots ausgewertet und nicht mit anderen Datenquellen zusammengeführt.</p>
+
+        <h2>3. Cookies</h2>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen bereitzustellen. Werden darüber hinaus Cookies für Statistik- oder Marketingzwecke eingesetzt, erfolgt dies nur nach Ihrer ausdrücklichen Einwilligung über ein entsprechendes Cookie-Banner.</p>
+
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Wenn Sie per Telefon oder E-Mail mit uns Kontakt aufnehmen, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Nachricht) zur Bearbeitung Ihrer Anfrage gespeichert und verarbeitet. Rechtsgrundlage hierfür ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen bzw. Vertragserfüllung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+
+        <h2>5. Google Maps</h2>
+        <p>Auf dieser Website ist eine Karte des Anbieters Google Maps eingebunden. Beim Aufruf der Kartenansicht kann eine Verbindung zu Servern von Google in den USA hergestellt und dabei Ihre IP-Adresse übertragen werden. Nähere Informationen entnehmen Sie der Datenschutzerklärung von Google unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+        <h2>6. Ihre Rechte als betroffene Person</h2>
+        <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>
+        <ul>
+          <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+          <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+          <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO)</li>
+          <li>Einschränkung der Datenverarbeitung (Art. 18 DSGVO)</li>
+          <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+          <li>Beschwerde bei der österreichischen Datenschutzbehörde (dsb.gv.at)</li>
+        </ul>
+
+        <h2>7. Speicherdauer</h2>
+        <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für die genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten dies vorsehen.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© Die Herzl · Prokopigasse 12, 8010 Graz · <a href="tel:+43316824300" style="color:#e8d9c8;">+43 316 824 300</a></span>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Die Herzl</strong> · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); burgerBtn.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

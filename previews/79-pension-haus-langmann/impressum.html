@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Pension Haus Langmann</title>
+<meta name="description" content="Muster-Impressum für die Gestaltungs-Vorschau von Pension Haus Langmann, St. Stefan ob Stainz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sun:#f6ecd6;
+    --sun-2:#eee0bd;
+    --paper:#fbf8f0;
+    --olive:#5c6b3f;
+    --olive-deep:#3d4a29;
+    --wine:#7a3b3f;
+    --gold:#c99a3a;
+    --ink:#2c2717;
+    --ink-soft:#5b5442;
+    --line:rgba(44,39,23,0.16);
+    --focus:#c99a3a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --sun:#241f14;
+      --sun-2:#2c2517;
+      --paper:#1a1610;
+      --ink:#f1ecdd;
+      --ink-soft:#cbc2a8;
+      --olive:#a6c17e;
+      --olive-deep:#c3dba0;
+      --wine:#dd9a9d;
+      --gold:#e3bb63;
+      --line:rgba(241,236,221,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --sun:#241f14;
+    --sun-2:#2c2517;
+    --paper:#1a1610;
+    --ink:#f1ecdd;
+    --ink-soft:#cbc2a8;
+    --olive:#a6c17e;
+    --olive-deep:#c3dba0;
+    --wine:#dd9a9d;
+    --gold:#e3bb63;
+    --line:rgba(241,236,221,0.18);
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Newsreader',Georgia,serif;color:var(--ink);font-weight:500;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+  .disclaimer{background:var(--olive-deep);color:var(--sun);text-align:center;font-size:0.77rem;padding:0.55rem 1rem;}
+  :root:not([data-theme="light"]) .disclaimer, :root[data-theme="dark"] .disclaimer{color:var(--ink);}
+
+  header{position:sticky;top:0;z-index:30;background:rgba(251,248,240,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  :root:not([data-theme="light"]) header, :root[data-theme="dark"] header{background:rgba(26,22,16,0.92);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1160px;margin:0 auto;}
+  .brand{font-family:'Newsreader',serif;font-style:italic;font-size:1.3rem;text-decoration:none;}
+  nav.links{display:flex;align-items:center;gap:1.6rem;font-size:0.9rem;}
+  nav.links a{text-decoration:none;padding:0.6rem 0.2rem;border-bottom:1px solid transparent;}
+  nav.links a:hover{border-color:var(--gold);}
+  nav.links a.active{color:var(--wine);border-color:var(--wine);font-weight:600;}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;color:var(--ink);}
+  @media(max-width:740px){
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    nav.links.open{max-height:20rem;}
+    nav.links a{padding:0.95rem 1.5rem;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navtoggle{display:block;}
+  }
+
+  .page-header{padding:clamp(2.8rem,7vw,5rem) 1.5rem clamp(2.2rem,5vw,3.2rem);border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--sun) 0%, var(--paper) 100%);}
+  :root:not([data-theme="light"]) .page-header, :root[data-theme="dark"] .page-header{background:linear-gradient(180deg,var(--sun-2) 0%, var(--paper) 100%);}
+  .page-header .wrap{max-width:52rem;}
+  .page-header h1{font-size:clamp(2.1rem,5.5vw,3.4rem);margin:0 0 0.9rem;font-style:italic;}
+  .page-header p{color:var(--ink-soft);font-size:1.08rem;max-width:50ch;margin:0;}
+
+  .legal{padding:clamp(2.5rem,6vw,4rem) 1.5rem clamp(3.5rem,7vw,6rem);}
+  .legal .wrap{max-width:44rem;}
+  .legal h2{font-size:clamp(1.5rem,3.4vw,1.9rem);margin:2.2rem 0 0.8rem;}
+  .legal h2:first-of-type{margin-top:0.5rem;}
+  .legal p, .legal li{color:var(--ink-soft);font-size:1rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal a{color:var(--wine);font-weight:600;text-decoration:none;}
+  .legal a:hover{text-decoration:underline;}
+  .legal-note{background:var(--sun-2);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.3rem;font-size:0.92rem;color:var(--ink);margin-bottom:0.5rem;}
+  .legal-note strong{color:var(--wine);}
+
+  footer{padding:2.5rem 1.5rem 1.5rem;border-top:1px solid var(--line);}
+  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1rem;}
+  .footer-row .brand{font-size:1.1rem;text-decoration:none;}
+  .footer-row p{margin:0.3rem 0 0;color:var(--ink-soft);font-size:0.9rem;}
+  .footer-links{font-size:0.85rem;margin-bottom:1.3rem;}
+  .footer-links a{color:var(--ink-soft);text-decoration:none;font-weight:400;}
+  .footer-links a:hover{color:var(--wine);text-decoration:underline;}
+  .foot-disclaimer{font-size:0.76rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.1rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Pension Haus Langmann · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Haus Langmann</a>
+    <nav class="links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="wrap">
+    <span class="kicker">Rechtliches</span>
+    <h1>Impressum</h1>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="wrap">
+    <div class="legal-note">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Diensteanbieter</h2>
+    <p>Pension Haus Langmann<br>
+    Katrin &amp; Andreas Langmann<br>
+    Lestein 47a<br>
+    8511 St. Stefan ob Stainz<br>
+    Österreich</p>
+
+    <h2>Kontakt</h2>
+    <p>Telefon: <a href="tel:+43 3463 81591">+43 3463 81591</a><br>
+    E-Mail: <a href="mailto:urlaub@hauslangmann.at">urlaub@hauslangmann.at</a></p>
+
+    <h2>Unternehmensangaben</h2>
+    <p>UID-Nummer: [UID-Nummer]<br>
+    Gewerbebehörde / zuständige Kammer: [Angabe der Gewerbebehörde bzw. Wirtschaftskammer]</p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>Katrin &amp; Andreas Langmann, Anschrift wie oben.</p>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Diese Muster-Website nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht teil.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a class="brand" href="index.html">Pension Haus Langmann</a>
+        <p>Lestein 47a · 8511 St. Stefan ob Stainz</p>
+      </div>
+      <p>+43 3463 81591 · urlaub@hauslangmann.at</p>
+    </div>
+    <div class="footer-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+    <div class="foot-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Pension Haus Langmann · keine Verbindung zum Unternehmen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>
