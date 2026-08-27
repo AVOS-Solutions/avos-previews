@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Fleischerei Anderl</title>
+<meta name="description" content="Die Geschichte der Fleischerei Anderl in Göpfritz an der Wild: Familienbetrieb in 4. Generation mit Wurzeln bis 1842.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oxblood:#6d1420; --oxblood-deep:#460d15; --cream:#f4ede2; --cream-2:#ece1cf;
+    --charcoal:#221a17; --brass:#b98a3c; --line: rgba(34,26,23,0.15); --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--charcoal); font-family:'Manrope',system-ui,sans-serif; font-size:clamp(15.5px,1.4vw,17px); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Libre Caslon Text',Georgia,serif; font-weight:400; margin:0; color:var(--oxblood-deep);}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,60px);}
+  :focus-visible{outline:3px solid var(--brass); outline-offset:3px;}
+
+  .disclaimer{background:var(--charcoal); color:#e7dcc9; font-size:12.5px; text-align:center; padding:9px 16px; line-height:1.5;}
+  .disclaimer strong{color:var(--brass);}
+
+  header{border-bottom:3px solid var(--oxblood-deep); background:var(--cream); position:sticky; top:0; z-index:40;}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,5vw,60px); max-width:var(--maxw); margin:0 auto;}
+  .brand{font-family:'Libre Caslon Text',serif; font-size:1.3rem; text-decoration:none; color:var(--oxblood-deep); letter-spacing:0.01em;}
+  .brand small{display:block; font-family:'Manrope',sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); font-weight:700; margin-top:2px;}
+  nav.links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
+  nav.links a{text-decoration:none; font-size:0.86rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--charcoal); padding:12px 2px; display:inline-block;}
+  nav.links a:hover{color:var(--oxblood);}
+  nav.links a.active{color:var(--oxblood); border-bottom:2px solid var(--brass);}
+  .nav-toggle{display:none; background:none; border:2px solid var(--oxblood-deep); border-radius:8px; min-width:46px; min-height:46px; align-items:center; justify-content:center; cursor:pointer;}
+
+  .page-hero{border-bottom:1px solid var(--line); padding:clamp(36px,7vw,64px) 0;}
+  .page-hero .eyebrow{font-size:0.8rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:800; color:var(--oxblood); margin-bottom:18px; display:flex; align-items:center; gap:12px;}
+  .page-hero .eyebrow::before{content:""; width:34px; height:3px; background:var(--brass); display:inline-block;}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); max-width:18ch;}
+  .page-hero p{max-width:60ch; font-size:clamp(1rem,2.2vw,1.1rem); margin-top:20px; color:#3d2e29;}
+
+  section{padding:clamp(48px,8vw,80px) 0;}
+  .section-head{max-width:64ch; margin-bottom:clamp(30px,6vw,44px);}
+  .section-head .eyebrow{text-transform:uppercase; letter-spacing:0.14em; font-size:0.78rem; font-weight:800; color:var(--oxblood); margin-bottom:14px; display:block;}
+  .section-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem);}
+
+  .story{background:var(--cream);}
+  .story-grid{display:grid; grid-template-columns:0.55fr 1fr; gap:50px; align-items:start;}
+  .story-figure{background:var(--oxblood); border-radius:4px; padding:32px 28px; color:var(--cream); position:sticky; top:100px;}
+  .story-figure .stat{font-family:'Libre Caslon Text',serif; font-size:2.3rem; line-height:1;}
+  .story-figure .stat-label{font-size:0.76rem; text-transform:uppercase; letter-spacing:0.1em; color:#e2c896; margin:6px 0 22px; font-weight:700;}
+  .story-figure hr{border:none; border-top:1px solid rgba(244,237,226,0.25); margin:18px 0;}
+  .drop p:first-of-type::first-letter{font-family:'Libre Caslon Text',serif; font-size:3.8rem; line-height:0.75; float:left; padding:6px 10px 0 0; color:var(--oxblood);}
+  .drop p{color:#3d2e29; margin:0 0 18px; max-width:64ch;}
+
+  .timeline-alt{background:var(--cream-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .t-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .t-card{background:var(--cream); border:1px solid var(--line); border-radius:4px; padding:26px 22px;}
+  .t-card .yr{font-family:'Libre Caslon Text',serif; font-size:1.7rem; color:var(--brass); margin-bottom:8px;}
+  .t-card h3{font-size:1.1rem; margin-bottom:8px;}
+  .t-card p{margin:0; color:#3d2e29; font-size:0.95rem;}
+
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:15px 28px; min-height:44px; text-decoration:none; font-weight:700; font-size:0.92rem; border-radius:3px; border:2px solid transparent; letter-spacing:0.02em;}
+  .btn-primary{background:var(--oxblood); color:var(--cream);}
+  .btn-primary:hover{background:var(--oxblood-deep);}
+  .btn-ghost{border-color:var(--oxblood-deep); color:var(--oxblood-deep);}
+  .btn-ghost:hover{background:var(--oxblood-deep); color:var(--cream);}
+
+  footer{background:var(--oxblood-deep); color:#e2c896; padding:44px 0 24px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;}
+  footer .brand2{font-family:'Libre Caslon Text',serif; font-size:1.15rem; color:var(--cream);}
+  footer small{color:#c7a875;}
+  footer .foot-links{list-style:none; margin:10px 0 0; padding:0; display:flex; gap:16px; flex-wrap:wrap;}
+  footer .foot-links a{color:#e2c896; font-size:0.85rem; text-decoration:none;}
+  footer .foot-links a:hover{text-decoration:underline;}
+  .foot-note{border-top:1px solid rgba(244,237,226,0.15); margin-top:28px; padding-top:18px; font-size:12.5px; color:#c7a875; text-align:center;}
+
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width:860px){
+    .story-grid{grid-template-columns:1fr;}
+    .story-figure{position:static;}
+    .t-cards{grid-template-columns:1fr;}
+    nav.links{position:fixed; inset:66px 16px auto 16px; background:var(--cream); border-radius:10px; flex-direction:column; padding:14px; gap:2px; box-shadow:0 20px 50px rgba(34,26,23,0.3); border:1px solid var(--line); display:none; max-height:calc(100vh - 90px); overflow-y:auto;}
+    nav.links.open{display:flex;}
+    nav.links a{padding:14px 10px; display:block;}
+    .nav-toggle{display:inline-flex;}
+  }
+  @media (max-width:640px){
+    footer .wrap{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Anderl<small>Fleischerei seit 1842</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="2" y1="5" x2="20" y2="5"/><line x1="2" y1="11" x2="20" y2="11"/><line x1="2" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <ul class="links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+      <li><a href="angebot.html">Sortiment</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Über uns</span>
+      <h1>Eine Familie, ein Handwerk, ein Ort.</h1>
+      <p>Vier Generationen Fleischerhandwerk in Göpfritz an der Wild — mit Wurzeln, die bis ins Jahr 1842 zurückreichen.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Unsere Geschichte</span>
+        <h2>Handwerk, das seinen Ursprung kennt.</h2>
+      </div>
+      <div class="story-grid">
+        <div class="story-figure reveal">
+          <div class="stat">4.</div>
+          <div class="stat-label">Generation am Werk</div>
+          <hr>
+          <div class="stat">1842</div>
+          <div class="stat-label">Wurzeln der Fleischerei</div>
+          <hr>
+          <div class="stat">24h</div>
+          <div class="stat-label">Automat vor dem Geschäft</div>
+        </div>
+        <div class="drop reveal">
+          <p>Die Fleischerei Anderl in Göpfritz an der Wild reicht mit ihren Wurzeln bis ins Jahr 1842 zurück. Seither wird in der Familie weitergegeben, was gutes Fleischerhandwerk ausmacht — von Generation zu Generation, mitten im Waldviertel.</p>
+          <p>Wir schlachten selbst und beziehen unsere Tiere ausschließlich von Bauern aus der Gemeinde Göpfritz an der Wild. Kurze Wege, persönliche Beziehungen zu den Höfen und Handwerk, das seinen Ursprung kennt — das ist die Basis für alles, was aus unserer Fleischerei kommt.</p>
+          <p>Heute steht die vierte Generation der Familie am Werk und führt fort, was über eineinhalb Jahrhunderte gewachsen ist: Fleisch- und Wurstspezialitäten mit Handschrift, verwurzelt in der Waldviertler Gemeinde, die uns trägt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Auf einen Blick</span>
+        <h2>Was unseren Betrieb ausmacht.</h2>
+      </div>
+      <div class="t-cards">
+        <div class="t-card reveal">
+          <div class="yr">1842</div>
+          <h3>Wurzeln in Göpfritz</h3>
+          <p>Seit dieser Zeit steht die Fleischerei Anderl für Handwerk aus der Region, für die Region.</p>
+        </div>
+        <div class="t-card reveal">
+          <div class="yr">4. Gen.</div>
+          <h3>Familienbetrieb</h3>
+          <p>Von Generation zu Generation weitergegebenes Wissen um gutes Fleischerhandwerk.</p>
+        </div>
+        <div class="t-card reveal">
+          <div class="yr">Eigen</div>
+          <h3>Schlachtung vor Ort</h3>
+          <p>Tiere ausschließlich von Bauern der Gemeinde — kurze Wege, volle Kontrolle über die Qualität.</p>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <a class="btn btn-primary reveal" href="angebot.html">Unser Sortiment entdecken</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand2">Fleischerei Anderl</div>
+      <small>Hauptstraße 61 · 3800 Göpfritz an der Wild · Waldviertel</small><br>
+      <small><a href="tel:+4328258317" style="color:#e2c896;">+43 2825 8317</a></small>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div><small>Familienbetrieb seit 1842 · 4. Generation</small></div>
+  </div>
+  <div class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei Anderl · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — Burgherren-Restaurant Johann Zeiner</title>
+<meta name="description" content="Deftige Hausmannskost, das legendäre Ritteressen und ein eigenes Heurigenlokal im Burgherren-Restaurant Johann Zeiner in St. Andrä-Wördern.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;800&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#161210;--night-2:#211a15;--gold:#c9973f;--gold-light:#e6c27a;
+    --wine:#6e1f24;--forest:#2f3d2a;--parchment:#ece2cd;--ink-soft:#c9bda3;--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--night);color:var(--parchment);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.65;font-size:clamp(15px,1.6vw,17px);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Unbounded',system-ui,sans-serif;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  .disclaimer{background:#0c0a09;color:var(--ink-soft);text-align:center;font-size:.78rem;padding:.55rem 1rem;}
+  .disclaimer strong{color:var(--gold-light);font-weight:600;}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(22,18,16,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,151,63,.25);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:1rem 6vw;position:relative;}
+  .brand{font-family:'Unbounded',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.02em;color:var(--gold-light);display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+  .brand svg{flex:none;}
+  .navlinks{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0;font-size:.85rem;font-weight:500;}
+  .navlinks a{text-decoration:none;color:var(--ink-soft);display:inline-flex;align-items:center;min-height:44px;}
+  .navlinks a:hover{color:var(--gold-light);}
+  .navlinks a.active{color:var(--gold-light);border-bottom:2px solid var(--gold);}
+  .navtoggle{display:none;background:none;border:1px solid var(--gold);border-radius:8px;width:44px;height:44px;color:var(--gold-light);cursor:pointer;flex:none;}
+  @media(max-width:820px){
+    .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--night-2);padding:1rem 6vw 1.5rem;gap:.3rem;border-bottom:1px solid rgba(201,151,63,.25);display:none;}
+    .navlinks.open{display:flex;}
+    .navlinks a{min-height:48px;}
+    .navtoggle{display:block;}
+  }
+
+  .page-hero{position:relative;padding:clamp(2.6rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem);overflow:hidden;
+    background:radial-gradient(ellipse 60% 60% at 85% 0%, rgba(110,31,36,.3), transparent 60%),var(--night);
+    border-bottom:1px solid rgba(201,151,63,.2);}
+  .page-hero .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:.8rem;}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:600;margin:0 0 1rem;color:var(--parchment);}
+  .page-hero p{max-width:60ch;color:var(--ink-soft);margin:0;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:.8rem;}
+  h2.section-title{font-family:'Unbounded',sans-serif;font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:600;margin:0 0 1.6rem;color:var(--parchment);}
+
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+  @media(max-width:820px){.menu-grid{grid-template-columns:1fr;}}
+  .mcard{background:var(--night-2);border:1px solid rgba(201,151,63,.2);border-radius:14px;padding:1.9rem 1.7rem;}
+  .mcard h3{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:500;margin:0 0 .7rem;color:var(--gold-light);}
+  .mcard p{margin:0 0 .8rem;color:var(--ink-soft);}
+  .mcard ul{margin:0;padding-left:1.1rem;color:var(--ink-soft);}
+  .mcard li{margin-bottom:.4rem;}
+
+  .band{background:linear-gradient(135deg,var(--wine),#3c1216);border-radius:20px;padding:clamp(2.2rem,5vw,3.4rem) clamp(1.6rem,5vw,3rem);margin:0 6vw;display:grid;grid-template-columns:1.3fr 1fr;gap:3vw;align-items:center;}
+  @media(max-width:820px){.band{grid-template-columns:1fr;margin:0 4vw;padding:2.2rem 6vw;}}
+  .band h2{font-size:clamp(1.5rem,3.2vw,2.1rem);margin:0 0 .9rem;color:var(--gold-light);}
+  .band p{color:#e8d7cf;margin:0;}
+  .crest{justify-self:center;width:clamp(110px,22vw,170px);}
+  @media(max-width:820px){.crest{margin-top:1.5rem;}}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.75rem 1.6rem;border-radius:4px;font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .18s,background .2s;}
+  .btn-solid{background:var(--gold);color:#241a0d;}
+  .btn-solid:hover{transform:translateY(-2px);background:var(--gold-light);}
+  .btn-outline{border:1.5px solid rgba(236,226,205,.4);color:var(--parchment);}
+  .btn-outline:hover{background:rgba(236,226,205,.08);}
+
+  footer.site{background:#0c0a09;color:#8a8074;padding:2.4rem 0 1.6rem;font-size:.85rem;}
+  footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;}
+  .footer-col h4{margin:0 0 .6rem;color:var(--ink-soft);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
+  .footer-col p{margin:0 0 .4rem;}
+  .footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem;}
+  .footer-links a{color:#8a8074;text-decoration:none;min-height:32px;display:inline-flex;align-items:center;}
+  .footer-links a:hover{color:var(--gold-light);}
+  .footer-disclaimer{width:100%;border-top:1px solid #201b17;margin-top:1.8rem;padding-top:1.2rem;font-size:.78rem;color:#5f584e;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Burgherren-Restaurants Johann Zeiner</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+      Zeiner
+    </a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="5" x2="18" y2="5"/><line x1="2" y1="10" x2="18" y2="10"/><line x1="2" y1="15" x2="18" y2="15"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Speisekarte</div>
+      <h1>Deftige Hausmannskost mit großen Portionen</h1>
+      <p>Ein Überblick über unsere Küche — konkrete Preise nennen wir gerne direkt bei Ihrer Reservierung.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal">
+      <div class="menu-grid">
+        <div class="mcard">
+          <h3>Hausmannskost</h3>
+          <p>Klassische, deftige Küche mit großen Portionen — das Markenzeichen des Hauses.</p>
+          <ul>
+            <li>Cordon bleu, hausgemacht und großzügig portioniert</li>
+            <li>Bodenständige Fleisch- und Beilagengerichte</li>
+            <li>Reichhaltige Tellergerichte für den großen Hunger</li>
+          </ul>
+        </div>
+        <div class="mcard">
+          <h3>Heurigenlokal</h3>
+          <p>Unser eigenes Heurigenlokal ergänzt das Restaurant mit typischer Heurigen-Atmosphäre.</p>
+          <ul>
+            <li>Wein und Jause im gemütlichen Heurigen-Ambiente</li>
+            <li>Ideal für einen entspannten Ausklang</li>
+          </ul>
+        </div>
+        <div class="mcard">
+          <h3>Feiern &amp; Gruppen</h3>
+          <p>Für Familienfeiern, Firmenausflüge und größere Gesellschaften bieten wir passende Räumlichkeiten.</p>
+          <ul>
+            <li>Reservierungen für Gruppen und Feiern</li>
+            <li>Seminarräume für Tagungen und Anlässe</li>
+          </ul>
+        </div>
+        <div class="mcard">
+          <h3>Geselligkeit</h3>
+          <p>Eine eigene Kegelbahn sorgt für Unterhaltung abseits des Tisches.</p>
+          <ul>
+            <li>Kegelbahn für gesellige Runden</li>
+            <li>Beliebt bei Feiern und Gruppenausflügen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band reveal">
+      <div>
+        <h2>Das Ritteressen</h2>
+        <p>Das Herzstück unserer Speisekarte: ein deftiges, geselliges Menü-Erlebnis für Gruppen und Feiern, das dem Burgherren-Restaurant seinen Namen gibt. Ideal für Familienfeste, Firmenausflüge und alle, die gerne ausgiebig und mit guter Stimmung tafeln. Details und Termine erfragen Sie gerne telefonisch.</p>
+      </div>
+      <svg class="crest" viewBox="0 0 160 160" aria-hidden="true">
+        <circle cx="80" cy="80" r="76" fill="none" stroke="var(--gold-light)" stroke-width="2" opacity="0.6"/>
+        <path d="M80 30 40 50v30c0 28 18 44 40 54 22-10 40-26 40-54V50L80 30Z" fill="none" stroke="var(--gold-light)" stroke-width="3"/>
+        <path d="M80 60v40M64 80h32" stroke="var(--gold-light)" stroke-width="3"/>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap reveal" style="text-align:center;">
+      <div class="cta-row" style="justify-content:center;">
+        <a class="btn btn-solid" href="tel:+436767060501">Tisch reservieren</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-col">
+      <h4>Burgherren-Restaurant Zeiner</h4>
+      <p>Bahngasse 17 · 3423 St. Andrä-Wördern</p>
+      <p><a href="tel:+436767060501" style="color:inherit;">+43 676 7060501</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div class="footer-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website des Burgherren-Restaurants Johann Zeiner · keine Verbindung zum Unternehmen
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>

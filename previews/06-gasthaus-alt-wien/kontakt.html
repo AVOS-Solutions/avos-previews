@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Gasthaus Alt Wien</title>
+<meta name="description" content="Kontakt und Anfahrt zum Gasthaus Alt Wien in der Koflergasse 26, 1120 Wien. Telefon, E-Mail und Route.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b1810; --cream:#fbf2e4; --paprika:#b8451f; --paprika-dark:#8f3417;
+    --mustard:#d99a2b; --olive:#5a6b3f; --line:rgba(43,24,16,.14);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Newsreader', Georgia, serif; margin:0; line-height:1.05; font-weight:600;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--mustard); outline-offset:3px;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.1rem,4vw,3rem); width:100%;}
+
+  .disclaimer{background:var(--ink); color:#f3e3cf; font-size:.72rem; text-align:center; padding:.6rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:var(--mustard);}
+
+  header.site{position:sticky; top:0; z-index:50; background:var(--cream); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.1rem,4vw,3rem); gap:1rem;}
+  .brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:'Newsreader',serif; font-weight:600; font-size:1.15rem; min-height:44px;}
+  .brand .mark{width:38px; height:38px; border-radius:50%; background:var(--paprika); display:grid; place-items:center; flex:none;}
+  .brand .mark svg{width:20px; height:20px;}
+  nav.links{display:flex; gap:1.8rem; font-size:.94rem;}
+  nav.links a{text-decoration:none; padding:.5rem 0; display:inline-flex; align-items:center; min-height:44px;}
+  nav.links a:hover{color:var(--paprika);}
+  nav.links a.active{color:var(--paprika); font-weight:600;}
+  .call-btn{background:var(--paprika); color:var(--cream); text-decoration:none; padding:.7rem 1.3rem; border-radius:6px; font-weight:600; font-size:.9rem; white-space:nowrap; min-height:44px; display:inline-flex; align-items:center;}
+  .burger{display:none; background:none; border:1px solid var(--line); border-radius:8px; min-width:44px; min-height:44px; align-items:center; justify-content:center; cursor:pointer;}
+  .burger svg{width:22px; height:22px;}
+  @media (max-width:840px){
+    nav.links{position:absolute; top:100%; left:0; right:0; background:var(--cream); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .3s ease;}
+    nav.links.open{max-height:400px;}
+    nav.links a{padding:1rem clamp(1.1rem,4vw,3rem); border-top:1px solid var(--line); width:100%;}
+    .burger{display:flex;}
+    .call-btn{display:none;}
+  }
+
+  .page-hero{padding:clamp(2.2rem,5vw,4rem) 0 clamp(1.8rem,3vw,2.6rem);}
+  .kicker{text-transform:uppercase; letter-spacing:.16em; font-size:.75rem; font-weight:600; color:var(--paprika-dark); margin-bottom:1rem; display:flex; align-items:center; gap:.6rem;}
+  .kicker::before{content:""; width:24px; height:2px; background:var(--mustard);}
+  .page-hero h1{font-size:clamp(2.1rem, 5vw, 3.4rem); max-width:20ch;}
+  .page-hero .lead{margin-top:1.2rem; font-size:1.05rem; max-width:56ch; line-height:1.6; color:#4a3626;}
+
+  .contact{background:#f3e3cc; padding:clamp(2.6rem,6vw,4.5rem) 0;}
+  .contact .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3rem);}
+  .info-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:1.1rem;}
+  .info-list li{display:flex; gap:1rem; align-items:flex-start; font-size:1.02rem;}
+  .info-list svg{width:20px; height:20px; flex:none; color:var(--paprika); margin-top:.15rem;}
+  .info-list a{text-decoration:none; border-bottom:1px solid rgba(43,24,16,.3);}
+  .info-list a:hover{border-color:var(--paprika);}
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.8rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.5rem; border-radius:6px; text-decoration:none; font-weight:600; font-size:.95rem; min-height:44px;}
+  .btn.primary{background:var(--paprika); color:var(--cream);}
+  .btn.outline{border:1.5px solid var(--ink); color:var(--ink);}
+  .btn:hover{opacity:.88;}
+  .contact-card{background:var(--cream); border:1px solid var(--line); border-radius:14px; padding:clamp(1.5rem,3vw,2.2rem);}
+  .contact-card h3{font-size:1.3rem;}
+  .contact-card .addr{margin-top:.8rem; font-size:.98rem; line-height:1.6; color:#4a3626;}
+  .contact-card .hours{margin-top:1.3rem; padding-top:1.3rem; border-top:1px solid var(--line); font-size:.88rem; color:#6b5646;}
+  .map-embed{margin-top:1.3rem; border-radius:10px; overflow:hidden; border:1px solid var(--line);}
+  .map-embed iframe{display:block; width:100%; height:220px; border:0;}
+  @media (max-width:800px){.contact .wrap{grid-template-columns:1fr; gap:2.2rem;}}
+
+  footer.site{padding:2.4rem 0 2rem; text-align:center;}
+  footer.site .wrap{border-top:1px solid var(--line); padding-top:1.6rem;}
+  footer.site .foot-links{display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; margin-bottom:1rem; font-size:.85rem;}
+  footer.site .foot-links a{text-decoration:none; color:#7a6552; min-height:44px; display:inline-flex; align-items:center;}
+  footer.site .foot-links a:hover{color:var(--paprika);}
+  footer.site small{color:#7a6552; font-size:.8rem; display:block; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Gasthaus Alt Wien</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf2e4" stroke-width="1.8"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg></span>
+      Gasthaus Alt Wien
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </nav>
+    <a class="call-btn" href="tel:+4318133207">Reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">Kontakt</p>
+      <h1>Reservierung &amp; Anfahrt</h1>
+      <p class="lead">Familie Miladinovic freut sich auf Ihren Besuch – rufen Sie an oder planen Sie Ihre Route direkt hierher.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>Koflergasse 26, 1120 Wien</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 0 0 6 6L15 14l5 2v4a2 2 0 0 1-2 2C10 22 2 14 2 6a2 2 0 0 1 2-2Z"/></svg>
+            <span><a href="tel:+4318133207">+43 1 813 32 07</a> · Mobil <a href="tel:+436769628122">+43 676 962 81 22</a></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <a href="mailto:ghaltwien@aon.at">ghaltwien@aon.at</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            <span>Familie Miladinovic</span>
+          </li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:+4318133207">Anrufen &amp; reservieren</a>
+          <a class="btn outline" href="mailto:ghaltwien@aon.at">E-Mail schreiben</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Gasthaus Alt Wien</h3>
+        <p class="addr">Koflergasse 26<br>1120 Wien, Österreich<br>Familie Miladinovic</p>
+        <a class="btn outline" style="margin-top:1.2rem;" href="https://www.google.com/maps/search/?api=1&query=Koflergasse%2026%2C%201120%20Wien" target="_blank" rel="noopener">Route planen</a>
+        <div class="map-embed">
+          <iframe title="Karte: Koflergasse 26, 1120 Wien" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Koflergasse%2026%2C%201120%20Wien&output=embed"></iframe>
+        </div>
+        <div class="hours">Öffnungszeiten auf Anfrage – wir informieren Sie gerne telefonisch.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <small>Gasthaus Alt Wien · Koflergasse 26, 1120 Wien · Tel. +43 1 813 32 07<br>
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Alt Wien · keine Verbindung zum Unternehmen</small>
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var links = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

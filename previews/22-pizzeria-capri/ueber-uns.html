@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Pizzeria Capri</title>
+<meta name="description" content="Die Geschichte der Pizzeria Capri in Sievering, Wien: italienische Familienküche seit 2003.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf3e6; --cream2:#f4e6d1; --brown:#2c1912; --brown-dim:#6b5344;
+  --tomato:#c1432a; --tomato-dark:#9c331f; --basil:#4b6b3f; --gold:#d99b3f; --focus:#9c331f;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--cream); color:var(--brown); font-family:'Work Sans', system-ui, sans-serif; line-height:1.5; overflow-x:hidden;}
+h1,h2,h3,.serif{font-family:'Fraunces', Georgia, serif;}
+a{color:inherit;}
+a:focus-visible, button:focus-visible{outline:3px solid var(--focus); outline-offset:2px;}
+img{max-width:100%; display:block;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem);}
+
+.disclaimer{background:var(--brown); color:#e9d9c5; text-align:center; font-size:.72rem; padding:.55rem 1rem; letter-spacing:.01em;}
+.disclaimer strong{color:#fff; font-weight:700;}
+
+header{position:sticky; top:0; z-index:60; background:rgba(251,243,230,.92); backdrop-filter:blur(8px); border-bottom:1px solid rgba(44,25,18,.1);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:1.1rem clamp(1.25rem,4vw,3rem); gap:1rem;}
+.logo{font-family:'Fraunces',serif; font-weight:600; font-size:1.5rem; text-decoration:none; letter-spacing:-.01em; flex:none;}
+.logo em{font-style:italic; color:var(--tomato);}
+nav ul{list-style:none; display:flex; gap:2.2rem; margin:0; padding:0;}
+nav a{text-decoration:none; font-weight:600; font-size:.95rem; display:inline-flex; align-items:center; min-height:44px; padding:.3rem 0; position:relative;}
+nav a:hover{color:var(--tomato);}
+nav a.active{color:var(--tomato-dark);}
+nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:.15rem; height:2px; background:var(--tomato); border-radius:2px;}
+.navtoggle{display:none; background:none; border:2px solid var(--brown); border-radius:8px; width:44px; height:44px; font-size:1.2rem; cursor:pointer; color:var(--brown); flex:none;}
+.call-btn{background:var(--tomato); color:#fff; padding:.7rem 1.3rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:.9rem; display:inline-flex; align-items:center; min-height:44px; flex:none;}
+@media (max-width:860px){
+  nav ul{position:fixed; inset:64px 0 auto 0; flex-direction:column; background:var(--cream); padding:1.5rem clamp(1.25rem,4vw,3rem); gap:1rem; border-bottom:1px solid rgba(44,25,18,.1); transform:translateY(-130%); transition:transform .3s; max-height:calc(100vh - 64px); overflow-y:auto;}
+  nav ul.open{transform:translateY(0);}
+  nav a{min-height:48px;}
+  .navtoggle{display:block;}
+  .call-btn{display:none;}
+}
+
+.page-hero{position:relative; padding:clamp(2.6rem,7vw,4.5rem) 0 clamp(2rem,5vw,3rem); overflow:hidden; background:linear-gradient(165deg,var(--tomato) 0%, var(--tomato-dark) 65%, #6f2417 100%); color:#fff;}
+.page-hero .eyebrow{color:#f6d9c8;}
+.page-hero h1{color:#fff; font-size:clamp(2.3rem,5.5vw,3.8rem); margin:0 0 1.1rem; line-height:1.05;}
+.page-hero .hero-sub{color:#f3ded1; max-width:56ch; margin:0; font-size:1.1rem;}
+.eyebrow{font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:1.1rem;}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;}
+.kicker{color:var(--tomato); font-weight:700; text-transform:uppercase; font-size:.8rem; letter-spacing:.14em; margin:0 0 .8rem;}
+h2{font-size:clamp(1.9rem,4.2vw,2.7rem); font-weight:600; margin:0 0 1rem; letter-spacing:-.01em;}
+.lead{font-size:1.08rem; color:var(--brown-dim); max-width:64ch; line-height:1.65;}
+
+.timeline{list-style:none; margin:0; padding:0; border-left:2px solid rgba(44,25,18,.18); display:grid; gap:2.2rem; max-width:70ch;}
+.timeline li{position:relative; padding-left:2rem;}
+.timeline li::before{content:""; position:absolute; left:-7px; top:.3rem; width:12px; height:12px; border-radius:50%; background:var(--tomato);}
+.timeline .t-year{font-family:'Fraunces',serif; font-weight:600; color:var(--tomato-dark); font-size:1.15rem; margin:0 0 .4rem;}
+.timeline p{margin:0; color:var(--brown-dim); line-height:1.7; font-size:1.02rem;}
+
+.grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.2rem;}
+.card{background:#fff; border:1px solid rgba(44,25,18,.12); border-radius:20px; padding:1.9rem; transition:transform .2s ease, box-shadow .2s ease;}
+.card:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(44,25,18,.08);}
+.card h3{font-size:1.2rem; margin:0 0 .6rem; font-weight:600;}
+.card p{color:var(--brown-dim); font-size:.96rem; line-height:1.6; margin:0;}
+
+blockquote{font-family:'Fraunces',serif; font-style:italic; font-size:1.4rem; line-height:1.4; color:var(--tomato-dark); border-left:3px solid var(--tomato); padding-left:1.3rem; margin:2rem 0 0; max-width:60ch;}
+
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:none;}
+
+.cta-band{background:var(--cream2); text-align:center;}
+.cta-band .lead{margin:0 auto 1.8rem; max-width:52ch;}
+.hero-actions{display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;}
+.btn{display:inline-flex; align-items:center; gap:.5rem; padding:.95rem 1.7rem; border-radius:999px; text-decoration:none; font-weight:700; font-size:1rem; transition:transform .18s; min-height:44px;}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--tomato); color:#fff;}
+.btn-outline{border:1.5px solid var(--brown); color:var(--brown);}
+
+footer{padding:3rem 0 1.5rem; text-align:center; color:var(--brown-dim); font-size:.9rem;}
+footer .fname{color:var(--tomato-dark); font-weight:700;}
+footer .foot-links{margin:.6rem 0 1.2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem 1.2rem;}
+footer .foot-links a{text-decoration:underline; text-decoration-color:rgba(44,25,18,.3); text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+footer .foot-disclaimer{max-width:60ch; margin:0 auto; font-size:.82rem; opacity:.9;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Pizzeria Capri</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Capr<em>i</em></a>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <ul id="navlist">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="call-btn" href="tel:+4313280053">Reservieren</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Über uns</p>
+      <h1>Familienküche mit Sievering-Herz seit 2003</h1>
+      <p class="hero-sub">Wie aus einer kleinen Pizzeria in der Sieveringer Straße ein fester Bestandteil des Grätzls wurde.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:2.6rem;">
+        <p class="kicker">Geschichte</p>
+        <h2>Über zwei Jahrzehnte im Herzen von Sievering</h2>
+        <p class="lead">Seit 2003 verwöhnt die Pizzeria Capri ihre Gäste mit frisch zubereiteten italienischen Spezialitäten. Was als Nachbarschaftslokal begann, ist heute ein fester Anlaufpunkt in Sievering – für den schnellen Tagesteller ebenso wie für den langen Abend im Gastgarten.</p>
+      </div>
+      <ol class="timeline reveal">
+        <li>
+          <p class="t-year">2003</p>
+          <p>Eröffnung der Pizzeria Capri in der Sieveringer Straße 141 – von Anfang an mit dem Anspruch, italienische Klassiker frisch und mit echtem Handwerk zuzubereiten.</p>
+        </li>
+        <li>
+          <p class="t-year">Fester Bestandteil des Grätzls</p>
+          <p>Mit täglich wechselndem Tagesteller, beliebter Tagespizza und dem sonnigen Gastgarten wird Capri zum Stammlokal für Familien und Nachbarschaft in Sievering.</p>
+        </li>
+        <li>
+          <p class="t-year">Heute</p>
+          <p>Täglich von 11:00 bis 22:00 Uhr geöffnet – im Lokal, im Gastgarten oder per Hauszustellung direkt vor die eigene Tür. Geführt von Younes Salib und seinem Team.</p>
+        </li>
+      </ol>
+      <blockquote class="reveal">„Frisch zubereitet, täglich neu, mit echtem italienischem Handwerk."</blockquote>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:2.2rem;">
+        <p class="kicker">Was uns ausmacht</p>
+        <h2>Italien, wie es sein soll</h2>
+      </div>
+      <div class="grid3">
+        <div class="card reveal">
+          <h3>Frisch statt fertig</h3>
+          <p>Klassiker der italienischen Küche werden täglich frisch zubereitet, keine Fertigware von der Stange.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Gastgarten</h3>
+          <p>Sonnige Plätze im Freien machen Capri zum beliebten Ausflugsziel in Sievering.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Für zuhause</h3>
+          <p>Wer lieber daheim isst: Hauszustellung bringt Italien schnell und zuverlässig vor die Tür.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <p class="kicker">Weiterlesen</p>
+      <h2>Was heute auf der Karte steht</h2>
+      <p class="lead">Pizza, Pasta, Tagesteller und Tagespizza – ein Überblick über das Angebot bei Capri.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="angebot.html">Zur Speisekarte</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><span class="fname">Pizzeria Capri</span> · Sieveringer Straße 141, 1190 Wien · <a href="tel:+4313280053" style="text-decoration:underline; text-decoration-color:rgba(44,25,18,.3); text-underline-offset:3px;">+43 1 328 00 53</a></p>
+    <p class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Pizzeria Capri · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navtoggle');
+  const navlist = document.getElementById('navlist');
+  toggle.addEventListener('click', () => {
+    const open = navlist.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navlist.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlist.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

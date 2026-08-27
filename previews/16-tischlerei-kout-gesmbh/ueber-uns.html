@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Tischlerei Kout</title>
+<meta name="description" content="Tischlerei Kout GesmbH: seit 2003 im Firmenbuch, spezialisiert auf Sicherheits- und Feuerschutztüren in Wien-Ottakring. Geschichte und Werte des Betriebs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel-0:#14181b;--steel-1:#1d2226;--steel-2:#262c31;--paper:#eceeef;--muted:#9aa4ab;
+    --orange:#e05a1c;--orange-deep:#b8460f;--line:rgba(236,238,239,0.14);--line-strong:rgba(236,238,239,0.28);--focus:#e05a1c;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--steel-0);color:var(--paper);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;line-height:1.08;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem);}
+
+  .disclosure{background:var(--orange);color:#1a0d04;font-size:0.72rem;font-weight:600;text-align:center;padding:0.55rem 1rem;letter-spacing:0.02em;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(20,24,27,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-strong);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);gap:1rem;}
+  .brandmark{display:flex;align-items:center;gap:0.55rem;font-family:'Unbounded',sans-serif;font-weight:700;font-size:0.98rem;text-decoration:none;color:var(--paper);}
+  .brandmark .sq{width:11px;height:11px;background:var(--orange);flex-shrink:0;}
+  nav.links{display:none;gap:1.8rem;font-size:0.92rem;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;}
+  nav.links a{text-decoration:none;color:var(--muted);padding-bottom:0.3rem;border-bottom:2px solid transparent;}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--paper);}
+  nav.links a.active{color:var(--paper);border-bottom-color:var(--orange);}
+  .nav-cta{display:none;background:var(--orange);color:#1a0d04;border-radius:2px;padding:0.65rem 1.3rem;font-weight:700;text-decoration:none;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.04em;}
+  .burger{background:none;border:1px solid var(--line-strong);border-radius:2px;width:44px;height:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--paper);}
+  .burger svg{width:20px;height:20px;}
+  @media(min-width:880px){nav.links{display:flex;}.nav-cta{display:inline-block;}.burger{display:none;}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line-strong);}
+  #mobile-menu.open{display:flex;}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;border-bottom:1px solid var(--line);font-weight:500;color:var(--paper);min-height:44px;display:flex;align-items:center;}
+  #mobile-menu a.active{color:var(--orange);}
+
+  section{padding:clamp(3.2rem,8vw,6rem) 0;}
+  .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:0.12em;font-size:0.76rem;color:var(--orange);margin-bottom:0.9rem;}
+  .section-title{font-size:clamp(1.8rem,3.4vw,2.5rem);max-width:22ch;}
+  .lead{max-width:56ch;margin-top:1.1rem;font-size:1.02rem;color:var(--muted);}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .page-hero{padding:clamp(2.6rem,7vw,4.2rem) 0 0.5rem;border-bottom:1px solid var(--line-strong);}
+  .page-hero h1{font-size:clamp(2rem,5.5vw,3.2rem);max-width:20ch;}
+  .breadcrumb{font-size:0.8rem;color:var(--muted);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.04em;}
+  .breadcrumb a{text-decoration:none;color:var(--muted);}
+  .breadcrumb a:hover{color:var(--orange);}
+
+  .about-grid{display:grid;gap:0;margin-top:2.5rem;border:1px solid var(--line-strong);}
+  @media(min-width:800px){.about-grid{grid-template-columns:1fr 1fr;}}
+  .about-cell{padding:2rem;border-bottom:1px solid var(--line-strong);}
+  @media(min-width:800px){
+    .about-cell:nth-child(odd){border-right:1px solid var(--line-strong);}
+    .about-cell:nth-child(3),.about-cell:nth-child(4){border-bottom:none;}
+  }
+  .about-cell h3{font-size:1.05rem;display:flex;align-items:baseline;gap:0.6rem;}
+  .about-cell h3 .no{font-family:'Unbounded',sans-serif;color:var(--orange);font-size:0.85rem;}
+  .about-cell p{margin-top:0.8rem;color:var(--muted);font-size:0.94rem;}
+
+  .timeline{margin-top:3rem;border:1px solid var(--line-strong);}
+  .timeline-item{padding:1.8rem clamp(1.5rem,3vw,2.4rem);border-bottom:1px solid var(--line-strong);display:grid;gap:0.5rem;}
+  .timeline-item:last-child{border-bottom:none;}
+  @media(min-width:700px){.timeline-item{grid-template-columns:120px 1fr;align-items:start;gap:1.5rem;}}
+  .timeline-item .year{font-family:'Unbounded',sans-serif;font-size:1.3rem;color:var(--orange);}
+  .timeline-item h3{font-size:1.05rem;}
+  .timeline-item p{margin-top:0.5rem;color:var(--muted);font-size:0.94rem;}
+
+  .quote-block{background:var(--steel-1);border:1px solid var(--line-strong);border-radius:2px;padding:2.4rem clamp(1.6rem,4vw,3rem);margin-top:3rem;}
+  .quote-block p{font-family:'Unbounded',sans-serif;font-size:clamp(1.1rem,2.2vw,1.4rem);font-weight:500;line-height:1.4;max-width:36ch;}
+  .quote-block span{display:block;margin-top:1rem;font-size:0.85rem;color:var(--muted);font-family:'Familjen Grotesk',sans-serif;}
+
+  .contact{background:var(--steel-1);}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 1.6rem;border-radius:2px;font-weight:700;text-decoration:none;font-size:0.88rem;min-height:44px;text-transform:uppercase;letter-spacing:0.03em;transition:transform .18s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-orange{background:var(--orange);color:#1a0d04;}
+  .btn-outline{border:1px solid var(--line-strong);color:var(--paper);}
+  .cta-row{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:1.6rem;}
+
+  footer.site{background:var(--steel-0);color:var(--muted);padding:2.5rem 0 1.5rem;font-size:0.85rem;border-top:1px solid var(--line-strong);}
+  footer.site .wrap{display:flex;flex-direction:column;gap:1rem;}
+  footer.site .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;color:var(--paper);font-weight:600;}
+  footer.site .foot-links{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.8rem;}
+  footer.site .foot-links a{text-decoration:none;color:var(--muted);}
+  footer.site .foot-links a:hover{color:var(--orange);}
+  footer .legal{border-top:1px solid var(--line);padding-top:1.2rem;font-size:0.76rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Kout GesmbH · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav wrap">
+    <a class="brandmark" href="index.html"><span class="sq" aria-hidden="true"></span>Tischlerei Kout</a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4314921309">Anfrage stellen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active">Über uns</a>
+    <a href="angebot.html">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4314921309">Anrufen: +43 1 492 13 09</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> / Über uns</p>
+      <p class="eyebrow reveal">Der Betrieb</p>
+      <h1 class="reveal">Spezialisiert, seit über zwei Jahrzehnten.</h1>
+      <p class="lead reveal">Die Tischlerei Kout GesmbH ist seit 2003 im Firmenbuch verankert (FN 229971v) und hat sich in Wien-Ottakring auf ein anspruchsvolles Feld spezialisiert: Sicherheits- und Feuerschutztüren, die im Ernstfall zuverlässig funktionieren müssen.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow reveal">Worauf wir bauen</p>
+      <h2 class="section-title reveal">Vier Säulen des Betriebs</h2>
+      <div class="about-grid">
+        <div class="about-cell reveal">
+          <h3><span class="no">01</span>Sicherheitsdenken</h3>
+          <p>Sicherheits- und Feuerschutztüren verlangen Präzision bis ins Detail — genau dieses Spezialwissen ist der Kern des Betriebs und unterscheidet ihn von klassischen Tischlereien.</p>
+        </div>
+        <div class="about-cell reveal">
+          <h3><span class="no">02</span>Breites Handwerk</h3>
+          <p>Neben der Spezialisierung deckt die Tischlerei Kout klassische Tischlerarbeiten für Wohn- und Gewerbeobjekte ab — ein zweites Standbein neben dem Sicherheitsgeschäft.</p>
+        </div>
+        <div class="about-cell reveal">
+          <h3><span class="no">03</span>Langfristige Betreuung</h3>
+          <p>Sanierung und Wartung bestehender Türen und Objekte sorgen dafür, dass Sicherheit nicht nur beim Einbau, sondern dauerhaft erhalten bleibt.</p>
+        </div>
+        <div class="about-cell reveal">
+          <h3><span class="no">04</span>Lehrlingsausbildung</h3>
+          <p>Der Betrieb bildet aktiv Lehrlinge aus und gibt Tischler-Handwerk sowie das Spezialwissen um Sicherheitstüren an die nächste Generation weiter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid var(--line-strong);">
+    <div class="wrap">
+      <p class="eyebrow reveal">Verankerung</p>
+      <h2 class="section-title reveal">Ottakring als Standort</h2>
+      <p class="lead reveal">Die Tischlerei Kout GesmbH ist in der Neumayrgasse in Wien-Ottakring beheimatet — mit einer im Firmenbuch dokumentierten Geschichte, die bis ins Jahr 2003 zurückreicht.</p>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="year">2003</span>
+          <div>
+            <h3>Eintragung im Firmenbuch</h3>
+            <p>Die Tischlerei Kout GesmbH wird unter der Firmenbuchnummer FN 229971v eingetragen — der formale Ausgangspunkt des heutigen Betriebs.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="year">Seither</span>
+          <div>
+            <h3>Spezialisierung auf Sicherheitstüren</h3>
+            <p>Der Betrieb baut ein Spezialgebiet auf, das hohe technische Anforderungen stellt: Sicherheits- und Feuerschutztüren für Wohn-, Büro- und Gewerbeobjekte.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="year">Heute</span>
+          <div>
+            <h3>Breites Leistungsspektrum in Ottakring</h3>
+            <p>Neben dem Sicherheitsgeschäft übernimmt die Tischlerei Kout klassische Tischlerarbeiten, Sanierung, Wartung und bildet aktiv Lehrlinge aus.</p>
+          </div>
+        </div>
+      </div>
+      <div class="quote-block reveal">
+        <p>„Eine Tür, die im Ernstfall schützen soll, muss beim Einbau schon zu hundert Prozent stimmen.“</p>
+        <span>Aus der Praxis der Tischlerei Kout GesmbH</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <p class="eyebrow reveal">Nächster Schritt</p>
+      <h2 class="reveal">Sehen Sie sich unser Leistungsspektrum an</h2>
+      <p class="lead reveal">Von Sicherheitstüren bis Lehrlingsausbildung — oder nehmen Sie direkt Kontakt auf.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-orange" href="angebot.html">Leistungen ansehen</a>
+        <a class="btn btn-outline" href="kontakt.html">Zum Kontakt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>Tischlerei Kout GesmbH</div>
+      <div>Neumayrgasse 16, 1160 Wien · +43 1 492 13 09</div>
+    </div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei Kout GesmbH · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
