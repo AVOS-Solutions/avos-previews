@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website-Relaunch Previews · Österreich</title>
+<meta name="description" content="84 individuelle Redesign-Vorschauen für österreichische Betriebe mit veralteten Websites, gruppiert nach Bundesland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1210;
+    --bg-elevated: #171b18;
+    --card: #1c211d;
+    --card-border: #2b332b;
+    --ink: #f3f1ea;
+    --ink-soft: #b9bfb6;
+    --ink-faint: #7c877c;
+    --accent: #c98a3f;
+    --accent-soft: #e7c395;
+    --accent-ink: #1b1406;
+    --radius: 14px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  .top-banner {
+    background: linear-gradient(90deg, #2a2116, #1b1406);
+    color: var(--accent-soft);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: clamp(0.72rem, 0.6rem + 0.4vw, 0.85rem);
+    border-bottom: 1px solid #3a2c15;
+  }
+
+  header.hero {
+    padding: clamp(2.5rem, 2rem + 3vw, 5rem) 1.25rem clamp(2rem, 1.5rem + 2vw, 3rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2rem, 1.5rem + 3vw, 3.6rem);
+    line-height: 1.05;
+    margin: 0 0 1rem;
+    max-width: 18ch;
+  }
+  .hero-sub {
+    color: var(--ink-soft);
+    font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+    max-width: 62ch;
+    margin: 0 0 1.5rem;
+  }
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 0.8rem + 1vw, 2.5rem);
+    margin-top: 1.5rem;
+  }
+  .stat { min-width: 90px; }
+  .stat b {
+    font-family: var(--serif);
+    display: block;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem);
+    color: var(--accent-soft);
+  }
+  .stat span {
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(15, 18, 16, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0.9rem 1.25rem;
+  }
+  .controls-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  #search {
+    flex: 1 1 220px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    color: var(--ink);
+    padding: 0.65rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+  #search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .filter-btn {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    color: var(--ink-soft);
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    min-height: 44px;
+    white-space: nowrap;
+  }
+  .filter-btn span { color: var(--ink-faint); margin-left: 0.3em; }
+  .filter-btn.active {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .filter-btn.active span { color: var(--accent-ink); opacity: 0.7; }
+
+  main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+
+  .region { margin-top: 2.5rem; }
+  .region-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+  .region-head h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.8rem);
+    margin: 0;
+  }
+  .region-count { color: var(--ink-faint); font-size: 0.85rem; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+  }
+  .card-num { color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .card-cat {
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: right;
+  }
+  .card-name {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    margin: 0.1rem 0 0;
+    line-height: 1.25;
+  }
+  .card-loc { color: var(--ink-faint); font-size: 0.85rem; margin: 0; }
+  .card-desc {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    margin: 0.2rem 0 0.4rem;
+    flex-grow: 1;
+  }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    flex: 1 1 auto;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-soft); }
+  .btn-ghost { background: transparent; border: 1px solid var(--card-border); color: var(--ink-soft); }
+  .btn-ghost:hover { border-color: var(--ink-soft); }
+
+  .empty-state {
+    display: none;
+    text-align: center;
+    color: var(--ink-faint);
+    padding: 3rem 1rem;
+  }
+
+  footer {
+    border-top: 1px solid var(--card-border);
+    padding: 2rem 1.25rem 3rem;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .card-actions { flex-direction: column; }
+    .btn { flex: 1 1 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">Internes Sales-Material · unverbindliche Gestaltungs-Vorschauen · keine offiziellen Websites der gelisteten Betriebe</div>
+
+<header class="hero">
+  <p class="eyebrow">Website-Relaunch Previews</p>
+  <h1>84 Redesign-Konzepte für österreichische Betriebe</h1>
+  <p class="hero-sub">Für jeden Lead aus der Recherche wurde eine eigenständige, hochwertige Vorschau-Website gebaut &mdash; state-of-the-art Design, zugeschnitten auf den jeweiligen Betrieb. Jede Karte führt zur individuellen Konzept-Seite.</p>
+  <div class="stat-row">
+    <div class="stat"><b>84</b><span>Betriebe gesamt</span></div>
+    <div class="stat"><b>24</b><span>Wien</span></div>
+    <div class="stat"><b>19</b><span>Nieder&ouml;sterreich</span></div>
+    <div class="stat"><b>22</b><span>Ober&ouml;sterreich</span></div>
+    <div class="stat"><b>19</b><span>Steiermark</span></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <input id="search" type="search" placeholder="Betrieb, Kategorie oder Ort suchen…" aria-label="Betriebe durchsuchen">
+    <button class="filter-btn active" data-filter="all">Alle <span>84</span></button>
+<button class="filter-btn" data-filter="wien">Wien <span>24</span></button>
+<button class="filter-btn" data-filter="noe">Niederösterreich <span>19</span></button>
+<button class="filter-btn" data-filter="ooe">Oberösterreich <span>22</span></button>
+<button class="filter-btn" data-filter="steiermark">Steiermark <span>19</span></button>
+  </div>
+</div>
+
+<main>
+    <section class="region" id="region-wien">
+      <div class="region-head">
+        <h2>Wien</h2>
+        <span class="region-count">24 Betriebe</span>
+      </div>
+      <div class="card-grid">
+      <article class="card" data-region="wien" data-search="buschenschank haslinger buschenschank / heuriger wien, wien">
+        <div class="card-top">
+          <span class="card-num">01</span>
+          <span class="card-cat">Buschenschank / Heuriger</span>
+        </div>
+        <h3 class="card-name">Buschenschank Haslinger</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Familiengeführte Buschenschank in Sievering zwischen Neustift und Grinzing mit ausschließlich selbst erzeugten Weinen, Innenhof und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/01-buschenschank-haslinger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.buschenschank-haslinger.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="bäckerei wannenmacher gesellschaft m.b.h. bäckerei / café wien, wien">
+        <div class="card-top">
+          <span class="card-num">02</span>
+          <span class="card-cat">Bäckerei / Café</span>
+        </div>
+        <h3 class="card-name">Bäckerei Wannenmacher Gesellschaft m.b.H.</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">1848 gegründet - älteste Bäckerei Wiens in Familienbesitz; backt das originale &#x27;Heurigen-Roggenbrot&#x27; nach unverändertem Rezept, mit Café,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/02-backerei-wannenmacher-gesellschaft-m-b-h.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.wannenmacher-brot.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="café sperl kaffeehaus wien, wien">
+        <div class="card-top">
+          <span class="card-num">03</span>
+          <span class="card-cat">Kaffeehaus</span>
+        </div>
+        <h3 class="card-name">Café Sperl</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Traditionsreiches Wiener Kaffeehaus seit 1880 mit historischem Original-Interieur, mehrfach ausgezeichnet, bekannt für die Sperl-Torte;…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/03-cafe-sperl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.cafesperl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="fahrschule hietzing fahrschule wien, wien">
+        <div class="card-top">
+          <span class="card-num">04</span>
+          <span class="card-cat">Fahrschule</span>
+        </div>
+        <h3 class="card-name">Fahrschule Hietzing</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">1966 gegründete Fahrschule mit über 13.000 Absolventen, Klassen A/B/L17/Moped, E-Autos und E-Motorrädern; 74-78% Erfolgsquote beim…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/04-fahrschule-hietzing.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.fahrschule-hietzing.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="fleischerei ringl fleischerei (metzger) wien, wien">
+        <div class="card-top">
+          <span class="card-num">05</span>
+          <span class="card-cat">Fleischerei (Metzger)</span>
+        </div>
+        <h3 class="card-name">Fleischerei Ringl</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Kleiner Familienbetrieb im 6. Bezirk, der Schinken, Würste und Selchfleisch noch selbst erzeugt - ohne Zusatzstoffe/Phosphate; zusätzlich…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/05-fleischerei-ringl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.fleischerei-ringl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="gasthaus alt wien gasthaus wien, wien">
+        <div class="card-top">
+          <span class="card-num">06</span>
+          <span class="card-cat">Gasthaus</span>
+        </div>
+        <h3 class="card-name">Gasthaus Alt Wien</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Wiener Gasthaus in Meidling mit Wiener Küche, Balkan-Spezialitäten, Gastgarten und Mittagsmenü; Räumlichkeiten für Feiern und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/06-gasthaus-alt-wien.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthaus-alt-wien.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="gasthaus wickerl gasthaus wien, wien">
+        <div class="card-top">
+          <span class="card-num">07</span>
+          <span class="card-cat">Gasthaus</span>
+        </div>
+        <h3 class="card-name">Gasthaus Wickerl</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Urtypisches Wiener Gasthaus im Alsergrund mit frisch gekochter traditioneller österreichischer Küche, Schanigarten und Speisen zum…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/07-gasthaus-wickerl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.wickerl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="hotel orient hotel wien, wien">
+        <div class="card-top">
+          <span class="card-num">08</span>
+          <span class="card-cat">Hotel</span>
+        </div>
+        <h3 class="card-name">Hotel Orient</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Legendäres, in zweiter Generation geführtes Stundenhotel von 1896 in der Inneren Stadt mit 7 Themenzimmern (Kaiser Suite, 1001 Nights…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/08-hotel-orient.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.hotelorient.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="pension anzengruber frühstückspension wien, wien">
+        <div class="card-top">
+          <span class="card-num">09</span>
+          <span class="card-cat">Frühstückspension</span>
+        </div>
+        <h3 class="card-name">Pension Anzengruber</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Privat geführte Frühstückspension in Villenlage am Wiener Stadtrand (Hadersdorf-Weidlingau) mit Zimmern und Apartments, Garten,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/09-pension-anzengruber.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.pension-anzengruber.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="pension dr. geissler / pension neuer markt pension wien, wien">
+        <div class="card-top">
+          <span class="card-num">10</span>
+          <span class="card-cat">Pension</span>
+        </div>
+        <h3 class="card-name">Pension Dr. Geissler / Pension Neuer Markt</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Zwei familiär geführte Innenstadt-Pensionen unter einem Dach (&#x27;zentral, funktionell, günstig&#x27;), Frühstückspension mit traditionell…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/10-pension-dr-geissler-pension-neuer-markt.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.hotelpension.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="pferdefleischerei leopold gumprecht gmbh &amp; co kg pferdefleischerei (marktstände) wien, wien">
+        <div class="card-top">
+          <span class="card-num">11</span>
+          <span class="card-cat">Pferdefleischerei (Marktstände)</span>
+        </div>
+        <h3 class="card-name">Pferdefleischerei Leopold Gumprecht GmbH &amp; Co KG</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Traditionsreiche Pferdefleischerei mit sechs Verkaufsständen auf Wiener Märkten; großes Sortiment an Pferde- und Fohlenspezialitäten…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/11-pferdefleischerei-leopold-gumprecht-gmbh-co-kg.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.pferdefleischer.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="physiotherapie wonisch physiotherapie-praxis wien, wien">
+        <div class="card-top">
+          <span class="card-num">12</span>
+          <span class="card-cat">Physiotherapie-Praxis</span>
+        </div>
+        <h3 class="card-name">Physiotherapie Wonisch</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Gemeinschaftspraxis von vier Physiotherapeuten in Floridsdorf mit Schwerpunkten Orthopädie, Traumatologie, Sportverletzungen und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/12-physiotherapie-wonisch.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://physiotherapie1210.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="salon eva / salon privat friseursalon wien, wien">
+        <div class="card-top">
+          <span class="card-num">13</span>
+          <span class="card-cat">Friseursalon</span>
+        </div>
+        <h3 class="card-name">Salon Eva / Salon Privat</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Friseur-Meisterbetrieb in Kaisermühlen (22. Bezirk) mit zwei Konzepten: klassischer Salon Eva (Damen/Herren) und &#x27;Salon Privat&#x27; mit…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/13-salon-eva-salon-privat.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.salonprivat.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="schnitzelwirt (zeiner &amp; partner ohg) restaurant / gasthaus wien, wien">
+        <div class="card-top">
+          <span class="card-num">14</span>
+          <span class="card-cat">Restaurant / Gasthaus</span>
+        </div>
+        <h3 class="card-name">Schnitzelwirt (Zeiner &amp; Partner OHG)</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Kultlokal im 7. Bezirk, vor über 50 Jahren von Günther und Helene Schmidt gegründet und heute von den Töchtern geführt; berühmt für…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/14-schnitzelwirt-zeiner-partner-ohg.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.schnitzelwirt.co.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="tischlerei hans körzö gesmbh nfg kg tischlerei wien, wien">
+        <div class="card-top">
+          <span class="card-num">15</span>
+          <span class="card-cat">Tischlerei</span>
+        </div>
+        <h3 class="card-name">Tischlerei Hans Körzö GesmbH Nfg KG</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Alteingesessener Familien-Tischlereibetrieb in der Donaustadt: Reparaturen, Innenausbau, Dachbodenausbauten, Böden, Türen, Fenster,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/15-tischlerei-hans-korzo-gesmbh-nfg-kg.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.tischlerei-koerzoe.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="tischlerei kout gesmbh tischlerei wien, wien">
+        <div class="card-top">
+          <span class="card-num">16</span>
+          <span class="card-cat">Tischlerei</span>
+        </div>
+        <h3 class="card-name">Tischlerei Kout GesmbH</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Tischlerei in Ottakring (Firmenbuch seit 2003, FN 229971v), spezialisiert auf Sicherheits- und Feuerschutztüren, Tischlerarbeiten,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/16-tischlerei-kout-gesmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.tischlerei-kout.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="weinbau &amp; heuriger kierlinger heuriger / weinbau wien, wien">
+        <div class="card-top">
+          <span class="card-num">17</span>
+          <span class="card-cat">Heuriger / Weinbau</span>
+        </div>
+        <h3 class="card-name">Weinbau &amp; Heuriger Kierlinger</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Traditioneller Familien-Weinbaubetrieb und Heuriger in Nussdorf mit eigener Vinothek, Winzersaal, Eigenbauweinen vom Nussberg (Gemischter…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/17-weinbau-heuriger-kierlinger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.kierlinger.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="weingut &amp; heuriger sirbu heuriger / weingut wien, wien">
+        <div class="card-top">
+          <span class="card-num">18</span>
+          <span class="card-cat">Heuriger / Weingut</span>
+        </div>
+        <h3 class="card-name">Weingut &amp; Heuriger Sirbu</h3>
+        <p class="card-loc">Wien, Wien</p>
+        <p class="card-desc">Familien-Weingut und Heuriger am Nussberg im Kahlenbergerdorf (Mitglied der Landwirtschaftskammer Wien), bekannt für Eigenbauweine und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/18-weingut-heuriger-sirbu.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.sirbu.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="café savarona café wien (11. bezirk, simmering), wien">
+        <div class="card-top">
+          <span class="card-num">19</span>
+          <span class="card-cat">Café</span>
+        </div>
+        <h3 class="card-name">Café Savarona</h3>
+        <p class="card-loc">Wien (11. Bezirk, Simmering), Wien</p>
+        <p class="card-desc">Gemütliches Grätzel-Café in Simmering mit eigenem Frühstücksangebot, Gastgarten, Dart und Karaoke-Anlage. Geöffnet Mo-Sa 8-24 Uhr,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/19-cafe-savarona.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.savarona.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="zum hölbl - wein &amp; geniessen weinlokal / vinothek wien (13. bezirk, hietzing), wien">
+        <div class="card-top">
+          <span class="card-num">20</span>
+          <span class="card-cat">Weinlokal / Vinothek</span>
+        </div>
+        <h3 class="card-name">Zum Hölbl - Wein &amp; Geniessen</h3>
+        <p class="card-loc">Wien (13. Bezirk, Hietzing), Wien</p>
+        <p class="card-desc">Kleines Weinlokal mit Vinothek in der Altgasse in Alt-Hietzing nahe Schönbrunn: ausgewählte österreichische Weiß- und Rotweine, Bier und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/20-zum-holbl-wein-geniessen.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.zumhoelbl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="shakes - pub &amp; restaurant pub / restaurant wien (19. bezirk, döbling), wien">
+        <div class="card-top">
+          <span class="card-num">21</span>
+          <span class="card-cat">Pub / Restaurant</span>
+        </div>
+        <h3 class="card-name">Shakes - Pub &amp; Restaurant</h3>
+        <p class="card-loc">Wien (19. Bezirk, Döbling), Wien</p>
+        <p class="card-desc">Pub &amp; Restaurant (vormals Shakes&amp;Beer), eröffnet am 28.05.1998, mit gutbürgerlicher internationaler Küche, Frühstück (Mo-Fr 8-10 Uhr),…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/21-shakes-pub-restaurant.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.shakes.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="pizzeria capri pizzeria / italienisches restaurant wien (19. bezirk, sievering), wien">
+        <div class="card-top">
+          <span class="card-num">22</span>
+          <span class="card-cat">Pizzeria / Italienisches Restaurant</span>
+        </div>
+        <h3 class="card-name">Pizzeria Capri</h3>
+        <p class="card-loc">Wien (19. Bezirk, Sievering), Wien</p>
+        <p class="card-desc">Italienisches Restaurant im Herzen von Sievering, seit 2003 bestehend, mit frisch zubereiteten Spezialitäten, Gastgarten, täglichem…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/22-pizzeria-capri.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://capri.co.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="china restaurant hua qiang chinesisches restaurant wien (22. bezirk, donaustadt), wien">
+        <div class="card-top">
+          <span class="card-num">23</span>
+          <span class="card-cat">Chinesisches Restaurant</span>
+        </div>
+        <h3 class="card-name">China Restaurant Hua Qiang</h3>
+        <p class="card-loc">Wien (22. Bezirk, Donaustadt), Wien</p>
+        <p class="card-desc">Chinesisches Familienrestaurant in der Donaustadt mit fernöstlichen Klassikern und Hauskreationen, Mittagsmenüs und Take-away. Mit…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/23-china-restaurant-hua-qiang.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.huaqiang.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="wien" data-search="kolonitz beisl wiener wirtshaus / beisl wien (3. bezirk, landstraße), wien">
+        <div class="card-top">
+          <span class="card-num">24</span>
+          <span class="card-cat">Wiener Wirtshaus / Beisl</span>
+        </div>
+        <h3 class="card-name">Kolonitz Beisl</h3>
+        <p class="card-loc">Wien (3. Bezirk, Landstraße), Wien</p>
+        <p class="card-desc">Alt-Wiener Wirtshaus seit 1900 im dritten Bezirk mit klassischer Hausmannskost wie Altwiener Suppentopf, Wiener Schnitzel und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/24-kolonitz-beisl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.kolonitzbeisl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="region" id="region-noe">
+      <div class="region-head">
+        <h2>Niederösterreich</h2>
+        <span class="region-count">19 Betriebe</span>
+      </div>
+      <div class="card-grid">
+      <article class="card" data-region="noe" data-search="genussbauernhof distelberger mostheuriger / direktvermarkter / bauernmuseum amstetten (ortsteil gigerreith, mostviertel), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">25</span>
+          <span class="card-cat">Mostheuriger / Direktvermarkter / Bauernmuseum</span>
+        </div>
+        <h3 class="card-name">GenussBauernhof Distelberger</h3>
+        <p class="card-loc">Amstetten (Ortsteil Gigerreith, Mostviertel), Niederösterreich</p>
+        <p class="card-desc">900 Jahre alter Vierkanthof im Mostviertler Birnbaumland; Mostbaron-Betrieb mit Mostheurigem, Hofladen (GenussLaden), Obstprodukten (Most,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/25-genussbauernhof-distelberger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.distelberger.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="fleischerei anderl fleischerei / fleischhauerei göpfritz an der wild (waldviertel), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">26</span>
+          <span class="card-cat">Fleischerei / Fleischhauerei</span>
+        </div>
+        <h3 class="card-name">Fleischerei Anderl</h3>
+        <p class="card-loc">Göpfritz an der Wild (Waldviertel), Niederösterreich</p>
+        <p class="card-desc">Familienfleischerei in 4. Generation (Wurzeln bis 1842); eigene Schlachtung mit Tieren ausschließlich von Bauern der Gemeinde, Waldviertler…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/26-fleischerei-anderl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.fleischerei-anderl.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="heinz fischer gmbh installateur (sanitär/heizung/lüftung) herzogenburg (zweiter standort st. pölten), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">27</span>
+          <span class="card-cat">Installateur (Sanitär/Heizung/Lüftung)</span>
+        </div>
+        <h3 class="card-name">Heinz Fischer GmbH</h3>
+        <p class="card-loc">Herzogenburg (zweiter Standort St. Pölten), Niederösterreich</p>
+        <p class="card-desc">Sanitär-, Heizungs- und Lüftungsbetrieb seit 1973 mit 17 Mitarbeitern und Standorten in Herzogenburg und St. Pölten; Bad- und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/27-heinz-fischer-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.heinzfischergmbh.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="elektro babinsky gmbh elektrohandel / elektroinstallation hollabrunn (weinviertel), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">28</span>
+          <span class="card-cat">Elektrohandel / Elektroinstallation</span>
+        </div>
+        <h3 class="card-name">Elektro Babinsky GmbH</h3>
+        <p class="card-loc">Hollabrunn (Weinviertel), Niederösterreich</p>
+        <p class="card-desc">Elektrofachgeschäft (Expert-Partner &#x27;Expert Babinsky&#x27;) und Installationsbetrieb in Hollabrunn: Elektroinstallationen, SAT/Antenne,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/28-elektro-babinsky-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.elektrobabinsky.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="bäckerei-konditorei mistlbacher bäckerei / konditorei klein-pöchlarn (bezirk melk), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">29</span>
+          <span class="card-cat">Bäckerei / Konditorei</span>
+        </div>
+        <h3 class="card-name">Bäckerei-Konditorei Mistlbacher</h3>
+        <p class="card-loc">Klein-Pöchlarn (Bezirk Melk), Niederösterreich</p>
+        <p class="card-desc">Familienbäckerei und Konditorei seit 136 Jahren in 4. Generation, mit Geschäften/Cafés in Klein-Pöchlarn (Stammhaus), Pöchlarn NVZ und Melk…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/29-backerei-konditorei-mistlbacher.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.mistlbacher.com" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="friseur burak herrenfriseur / barber krems an der donau, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">30</span>
+          <span class="card-cat">Herrenfriseur / Barber</span>
+        </div>
+        <h3 class="card-name">Friseur Burak</h3>
+        <p class="card-loc">Krems an der Donau, Niederösterreich</p>
+        <p class="card-desc">Herren- und Kinderfriseur am Kremser Bahnhof; der Inhaber wurde in der Türkei ausgebildet, hat die österreichische Meisterprüfung und 22…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/30-friseur-burak.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.friseur-burak.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="lackner friseure friseur krems an der donau, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">31</span>
+          <span class="card-cat">Friseur</span>
+        </div>
+        <h3 class="card-name">Lackner Friseure</h3>
+        <p class="card-loc">Krems an der Donau, Niederösterreich</p>
+        <p class="card-desc">1975 gegründeter Friseursalon in der Kremser Altstadt (1. Stock, barrierefrei), Damen und Herren, Kosmetik, Hochzeitsstyling und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/31-lackner-friseure.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.lackner-friseure.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="tischlerei schwab (reinhard schwab e.u.) tischlerei ladendorf (bezirk mistelbach, weinviertel), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">32</span>
+          <span class="card-cat">Tischlerei</span>
+        </div>
+        <h3 class="card-name">Tischlerei SCHWAB (Reinhard Schwab e.U.)</h3>
+        <p class="card-loc">Ladendorf (Bezirk Mistelbach, Weinviertel), Niederösterreich</p>
+        <p class="card-desc">1998 gegründete Meistertischlerei, spezialisiert auf Maßküchen (&#x27;SCHWAB Traumküchen&#x27;) und Möbel von der Planung bis zur Montage; einer der…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/32-tischlerei-schwab-reinhard-schwab-e-u.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.tischlerei-werkstatt.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="frühstückspension haus monika pension / frühstückspension mödling, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">33</span>
+          <span class="card-cat">Pension / Frühstückspension</span>
+        </div>
+        <h3 class="card-name">Frühstückspension Haus Monika</h3>
+        <p class="card-loc">Mödling, Niederösterreich</p>
+        <p class="card-desc">Frühstückspension in Mödling südlich von Wien für Urlaubs-, Geschäfts- und Seminargäste; Frühstück wochentags ab 6:15, bietet auch…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/33-fruhstuckspension-haus-monika.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.pensionmonika.com" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="heuriger bock (weinbau bock) heuriger / buschenschank pfaffstätten (bezirk baden), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">34</span>
+          <span class="card-cat">Heuriger / Buschenschank</span>
+        </div>
+        <h3 class="card-name">Heuriger Bock (Weinbau Bock)</h3>
+        <p class="card-loc">Pfaffstätten (Bezirk Baden), Niederösterreich</p>
+        <p class="card-desc">Familien-Heuriger im Pfaffstättner &#x27;Heurigendorf&#x27; bei Baden; klassische Buschenschank-Küche, dazu täglicher Flaschenweinverkauf 8:00-18:00.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/34-heuriger-bock-weinbau-bock.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.heuriger-bock.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="weinbau österreicher (heuriger österreicher) heuriger / weinbau pfaffstätten (bezirk baden), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">35</span>
+          <span class="card-cat">Heuriger / Weinbau</span>
+        </div>
+        <h3 class="card-name">Weinbau Österreicher (Heuriger Österreicher)</h3>
+        <p class="card-loc">Pfaffstätten (Bezirk Baden), Niederösterreich</p>
+        <p class="card-desc">Bodenständiger Heuriger (&#x27;bei uns sollen Sie sich zu Hause fühlen&#x27;) mit glutenfreien Gerichten, auf Falstaff gelistet; sozial engagiert…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/35-weinbau-osterreicher-heuriger-osterreicher.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.heuriger-oesterreicher.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="burgherren-restaurant johann zeiner restaurant / gasthaus (ritteressen) st. andrä-wördern, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">36</span>
+          <span class="card-cat">Restaurant / Gasthaus (Ritteressen)</span>
+        </div>
+        <h3 class="card-name">Burgherren-Restaurant Johann Zeiner</h3>
+        <p class="card-loc">St. Andrä-Wördern, Niederösterreich</p>
+        <p class="card-desc">Familiengeführtes Burgherren-Restaurant der Familie Zeiner mit deftiger Hausmannskost, Ritteressen, Heurigenlokal, Kegelbahn und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/36-burgherren-restaurant-johann-zeiner.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.gastro-zeiner.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="ing. t. frieberger installationen e.u. installateur (gas/wasser/heizung) st. andrä-wördern (bezirk tulln), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">37</span>
+          <span class="card-cat">Installateur (Gas/Wasser/Heizung)</span>
+        </div>
+        <h3 class="card-name">Ing. T. Frieberger Installationen e.U.</h3>
+        <p class="card-loc">St. Andrä-Wördern (Bezirk Tulln), Niederösterreich</p>
+        <p class="card-desc">Installateur für Gas/Wasser/Heizung: Wärmepumpen, Pellets- und Biomasseheizungen, Wasserenthärtung, kontrollierte Wohnraumlüftung, Gas- und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/37-ing-t-frieberger-installationen-e-u.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.installateur-frieberger.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="gästehaus hahn (hahn og) pension / frühstückspension straß im straßertale (bezirk krems-land), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">38</span>
+          <span class="card-cat">Pension / Frühstückspension</span>
+        </div>
+        <h3 class="card-name">Gästehaus Hahn (Hahn OG)</h3>
+        <p class="card-loc">Straß im Straßertale (Bezirk Krems-Land), Niederösterreich</p>
+        <p class="card-desc">Familiengeführtes Gästehaus im Weinort Straßertal bei Langenlois/Kamptal, mit Garten, Pool, großen sauberen Zimmern und gelobtem…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/38-gastehaus-hahn-hahn-og.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.gaestehaus-hahn.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="café konditorei köstlbauer café / konditorei tulln an der donau, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">39</span>
+          <span class="card-cat">Café / Konditorei</span>
+        </div>
+        <h3 class="card-name">Café Konditorei Köstlbauer</h3>
+        <p class="card-loc">Tulln an der Donau, Niederösterreich</p>
+        <p class="card-desc">Traditions-Café-Konditorei &#x27;seit Generationen&#x27; direkt am Tullner Hauptplatz neben der Bezirkshauptmannschaft; hausgemachtes Eis,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/39-cafe-konditorei-kostlbauer.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.koestlbauer.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="landgasthof zum topf gasthaus / landgasthof vitis (waldviertel), niederösterreich">
+        <div class="card-top">
+          <span class="card-num">40</span>
+          <span class="card-cat">Gasthaus / Landgasthof</span>
+        </div>
+        <h3 class="card-name">Landgasthof zum Topf</h3>
+        <p class="card-loc">Vitis (Waldviertel), Niederösterreich</p>
+        <p class="card-desc">Traditioneller Waldviertler Landgasthof mit Restaurant, Gourmet-Stüberl, Gastgarten und Café. Mehrfach ausgezeichnet: erneut 2 Hauben im…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/40-landgasthof-zum-topf.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.landgasthof-topf.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="wein ottmann - weinbau, heuriger &amp; gästezimmer winzer / heuriger / gästezimmer weißenkirchen in der wachau, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">41</span>
+          <span class="card-cat">Winzer / Heuriger / Gästezimmer</span>
+        </div>
+        <h3 class="card-name">Wein Ottmann - Weinbau, Heuriger &amp; Gästezimmer</h3>
+        <p class="card-loc">Weißenkirchen in der Wachau, Niederösterreich</p>
+        <p class="card-desc">Familienweingut im Herzen der Wachau mit 4 ha Rebfläche, Mitglied der Vinea Wachau Nobilis Districtus; betreibt einen Heurigen und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/41-wein-ottmann-weinbau-heuriger-gastezimmer.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.wein-ottmann.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="weingut &amp; gästezimmer franz zottl winzer / heuriger / gästezimmer weißenkirchen in der wachau, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">42</span>
+          <span class="card-cat">Winzer / Heuriger / Gästezimmer</span>
+        </div>
+        <h3 class="card-name">Weingut &amp; Gästezimmer Franz Zottl</h3>
+        <p class="card-loc">Weißenkirchen in der Wachau, Niederösterreich</p>
+        <p class="card-desc">Familienweingut, das seit 1917 Wein erzeugt (Wurzeln bis ins Mittelalter); Wachauer Steinfeder-, Federspiel- und Smaragd-Weine inkl. Ried…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/42-weingut-gastezimmer-franz-zottl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.weingut-zottl.at" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="noe" data-search="pizza-ristorante torino pizzeria / italienisches restaurant wiener neustadt, niederösterreich">
+        <div class="card-top">
+          <span class="card-num">43</span>
+          <span class="card-cat">Pizzeria / Italienisches Restaurant</span>
+        </div>
+        <h3 class="card-name">Pizza-Ristorante Torino</h3>
+        <p class="card-loc">Wiener Neustadt, Niederösterreich</p>
+        <p class="card-desc">Pizzeria mit Lieferservice in der Neunkirchner Straße in Wiener Neustadt: Pizza, Pasta und italienische Klassiker, Zustellung mit warmer…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/43-pizza-ristorante-torino.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.pizzaristorante-torino.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="region" id="region-ooe">
+      <div class="region-head">
+        <h2>Oberösterreich</h2>
+        <span class="region-count">22 Betriebe</span>
+      </div>
+      <div class="card-grid">
+      <article class="card" data-region="ooe" data-search="josef schernberger elektrotechnik elektriker altmünster, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">44</span>
+          <span class="card-cat">Elektriker</span>
+        </div>
+        <h3 class="card-name">Josef Schernberger Elektrotechnik</h3>
+        <p class="card-loc">Altmünster, Oberösterreich</p>
+        <p class="card-desc">Ein-Mann-Elektrotechnikbetrieb für Elektroinstallationen aller Art im privaten Haushalt, tätig im Großraum Gmunden und Vöcklabruck.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/44-josef-schernberger-elektrotechnik.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.js-etechnik.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="chamäleon fassadenbau gmbh maler / fassadenbau / vollwärmeschutz aschach an der donau, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">45</span>
+          <span class="card-cat">Maler / Fassadenbau / Vollwärmeschutz</span>
+        </div>
+        <h3 class="card-name">Chamäleon Fassadenbau GmbH</h3>
+        <p class="card-loc">Aschach an der Donau, Oberösterreich</p>
+        <p class="card-desc">Fachbetrieb für Malerei, Vollwärmeschutz, Innen- und Außenputz sowie Fassadensanierung im Bezirk Eferding; arbeitet mit Markensystemen von…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/45-chamaleon-fassadenbau-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.xn--chamleon-3za.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="frühstückspension sydler pension bad goisern am hallstättersee, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">46</span>
+          <span class="card-cat">Pension</span>
+        </div>
+        <h3 class="card-name">Frühstückspension Sydler</h3>
+        <p class="card-loc">Bad Goisern am Hallstättersee, Oberösterreich</p>
+        <p class="card-desc">Familien- und kinderfreundliche Frühstückspension wenige Gehminuten vom Zentrum von Bad Goisern im UNESCO-Welterbe Salzkammergut; 3 Häuser…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/46-fruhstuckspension-sydler.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.sydler.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="gasthof-pension altmühl gasthof-pension gmunden, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">47</span>
+          <span class="card-cat">Gasthof-Pension</span>
+        </div>
+        <h3 class="card-name">Gasthof-Pension Altmühl</h3>
+        <p class="card-loc">Gmunden, Oberösterreich</p>
+        <p class="card-desc">Bodenständiger Familien-Gasthof am Traunsee mit 17 Doppel- und 10 Einzelzimmern, Mittagsmenüs und Hausmannskost; Küche macht &#x27;alles selbst…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/47-gasthof-pension-altmuhl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthof-altmuehl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="keramikhotel goldener brunnen kleinhotel gmunden, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">48</span>
+          <span class="card-cat">Kleinhotel</span>
+        </div>
+        <h3 class="card-name">Keramikhotel Goldener Brunnen</h3>
+        <p class="card-loc">Gmunden, Oberösterreich</p>
+        <p class="card-desc">3-Sterne-Stadthotel in einem Gebäude von 1545 direkt an der Traun, wenige Schritte vom Stadtplatz und Traunsee; 29 Zimmer, Sauna und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/48-keramikhotel-goldener-brunnen.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.goldenerbrunnen.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="ferienhotel innviertel - gasthof kirchenwirt (inn4tel gmbh) gasthof / kleinhotel kirchheim im innkreis, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">49</span>
+          <span class="card-cat">Gasthof / Kleinhotel</span>
+        </div>
+        <h3 class="card-name">Ferienhotel Innviertel - Gasthof Kirchenwirt (Inn4tel GmbH)</h3>
+        <p class="card-loc">Kirchheim im Innkreis, Oberösterreich</p>
+        <p class="card-desc">Familiengeführter Gasthof und Ferienhotel mit Hallenbad und großem Außenbereich am Römerradweg, 10 Autominuten von der Therme Geinberg;…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/49-ferienhotel-innviertel-gasthof-kirchenwirt-inn4tel-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.ferienpension.at/de/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="chinoiss asia restaurant chinesisch-indisches restaurant linz, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">50</span>
+          <span class="card-cat">Chinesisch-indisches Restaurant</span>
+        </div>
+        <h3 class="card-name">Chinoiss Asia Restaurant</h3>
+        <p class="card-loc">Linz, Oberösterreich</p>
+        <p class="card-desc">Asiatisches Restaurant im Linzer Zentrum mit chinesischer und indischer Küche, Mittagsbuffet (Mo-Fr) und eigenem Zustellservice. 40…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/50-chinoiss-asia-restaurant.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.chinoiss.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="wok &amp; more asia-restaurant asiatisches restaurant (buffet/teppanyaki) linz, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">51</span>
+          <span class="card-cat">Asiatisches Restaurant (Buffet/Teppanyaki)</span>
+        </div>
+        <h3 class="card-name">Wok &amp; More Asia-Restaurant</h3>
+        <p class="card-loc">Linz, Oberösterreich</p>
+        <p class="card-desc">Asia-Fresh-Food-Restaurant mit großem Buffet und Teppanyaki-Grill sowie chinesischen, japanischen und thailändischen Gerichten à la carte.…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/51-wok-more-asia-restaurant.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.wok-more.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="k.u.k. hofbäckerei bäckerei / café-konditorei linz, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">52</span>
+          <span class="card-cat">Bäckerei / Café-Konditorei</span>
+        </div>
+        <h3 class="card-name">k.u.k. Hofbäckerei</h3>
+        <p class="card-loc">Linz, Oberösterreich</p>
+        <p class="card-desc">Älteste Bäckerei von Linz mit Handgebäck seit 1570, berühmt für die Original Linzer Torte und das nostalgische Café mit der ältesten…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/52-k-u-k-hofbackerei.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.kuk-hofbaeckerei.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="familiengasthof blasl gasthof / kleinhotel losenstein, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">53</span>
+          <span class="card-cat">Gasthof / Kleinhotel</span>
+        </div>
+        <h3 class="card-name">Familiengasthof Blasl</h3>
+        <p class="card-loc">Losenstein, Oberösterreich</p>
+        <p class="card-desc">Traditioneller Familiengasthof im Ennstal direkt am Ennsradweg mit 18 Komfortzimmern, Wellnessbereich (Sauna, Dampfbad, Infrarot) und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/53-familiengasthof-blasl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthof-blasl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="bäckerei &amp; café enzlmüller bäckerei ort im innkreis, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">54</span>
+          <span class="card-cat">Bäckerei</span>
+        </div>
+        <h3 class="card-name">Bäckerei &amp; Café Enzlmüller</h3>
+        <p class="card-loc">Ort im Innkreis, Oberösterreich</p>
+        <p class="card-desc">Familiengeführte Bäckerei mit über 30 Jahren &#x27;traditioneller Backkultur&#x27; und drei Verkaufsstellen in Ort im Innkreis, Utzenaich und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/54-backerei-cafe-enzlmuller.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.enzlmueller-ort.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="haustechnik redhammer gmbh installateur (sanitär/heizung) ort im innkreis, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">55</span>
+          <span class="card-cat">Installateur (Sanitär/Heizung)</span>
+        </div>
+        <h3 class="card-name">Haustechnik Redhammer GmbH</h3>
+        <p class="card-loc">Ort im Innkreis, Oberösterreich</p>
+        <p class="card-desc">Installateurbetrieb für Sanitär- und Wasserinstallationen sowie Heizungs- und Lüftungstechnik (Ölkessel, Fußbodenheizung, Wärmepumpen,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/55-haustechnik-redhammer-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.haustechnik-redhammer.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="restaurant schachners machlandstuben restaurant / gasthof perg, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">56</span>
+          <span class="card-cat">Restaurant / Gasthof</span>
+        </div>
+        <h3 class="card-name">Restaurant Schachners Machlandstuben</h3>
+        <p class="card-loc">Perg, Oberösterreich</p>
+        <p class="card-desc">Familienbetrieb in dritter Generation am Hauptplatz von Perg; regionale Schmankerl und internationale Spezialitäten, Zimmer für…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/56-restaurant-schachners-machlandstuben.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.restaurant-schachner.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="hattinger holzbau gmbh zimmerei / holzbau pramet, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">57</span>
+          <span class="card-cat">Zimmerei / Holzbau</span>
+        </div>
+        <h3 class="card-name">Hattinger Holzbau GmbH</h3>
+        <p class="card-loc">Pramet, Oberösterreich</p>
+        <p class="card-desc">Zimmerei im Bezirk Ried im Innkreis: Dachstühle, Holzriegelbau, Gartenhäuser, Sanierungen, Terrassen, Balkone, Fassaden und Dämmung;…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/57-hattinger-holzbau-gmbh.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.hattinger-holzbau.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="gasthof jagawirt - familie jell gasthaus / gasthof sarleinsbach, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">58</span>
+          <span class="card-cat">Gasthaus / Gasthof</span>
+        </div>
+        <h3 class="card-name">Gasthof Jagawirt - Familie Jell</h3>
+        <p class="card-loc">Sarleinsbach, Oberösterreich</p>
+        <p class="card-desc">Traditionsgasthof im Mühlviertel (Bezirk Rohrbach) mit Restaurant, Musikpub, Kegelbahnen und Indoor-Spielplatz; 4 Einzel- und 5…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/58-gasthof-jagawirt-familie-jell.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://gh-jell.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="café &amp; konditorei linzer bäcker café / konditorei schärding, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">59</span>
+          <span class="card-cat">Café / Konditorei</span>
+        </div>
+        <h3 class="card-name">Café &amp; Konditorei Linzer Bäcker</h3>
+        <p class="card-loc">Schärding, Oberösterreich</p>
+        <p class="card-desc">Traditionscafé und Bäckerei-Konditorei an der barocken Silberzeile in Schärding; täglich frisches Brot, Gebäck und traditionelle…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/59-cafe-konditorei-linzer-backer.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.linzerbaecker.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="fahrschule staudinger steyr fahrschule steyr, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">60</span>
+          <span class="card-cat">Fahrschule</span>
+        </div>
+        <h3 class="card-name">Fahrschule Staudinger Steyr</h3>
+        <p class="card-loc">Steyr, Oberösterreich</p>
+        <p class="card-desc">Fahrschule in Steyr (Schwesterbetrieb der Fahrschule Staudinger Kirchdorf/Krems); Klassen A, B, C, E, EzB sowie Moped-, Microcar- und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/60-fahrschule-staudinger-steyr.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.fahrschule-staudinger-steyr.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="fahrschule steininger fahrschule steyr, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">61</span>
+          <span class="card-cat">Fahrschule</span>
+        </div>
+        <h3 class="card-name">Fahrschule Steininger</h3>
+        <p class="card-loc">Steyr, Oberösterreich</p>
+        <p class="card-desc">Fahrschule mit Standorten in Steyr und Weyer; Ausbildung für Moped, Motorrad, PKW, LKW, Anhänger und Traktor.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/61-fahrschule-steininger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.fahrschule-steininger.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="friseur klaus &amp; bettso traunmüller friseur wels, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">62</span>
+          <span class="card-cat">Friseur</span>
+        </div>
+        <h3 class="card-name">Friseur Klaus &amp; Bettso Traunmüller</h3>
+        <p class="card-loc">Wels, Oberösterreich</p>
+        <p class="card-desc">Inhabergeführter &#x27;Insider Coiffeur&#x27; Frisiersalon im Welser Zentrum; bietet Damen- und Herrenschnitte, Styling, Brautfrisuren und Make-up.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/62-friseur-klaus-bettso-traunmuller.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.friseur-traunmueller.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="gasthof huber gasthof mit zimmervermietung wels, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">63</span>
+          <span class="card-cat">Gasthof mit Zimmervermietung</span>
+        </div>
+        <h3 class="card-name">Gasthof Huber</h3>
+        <p class="card-loc">Wels, Oberösterreich</p>
+        <p class="card-desc">Traditioneller Welser Gasthof mit internationaler, regionaler und vegetarischer Küche, zwei Sälen (bis 80 Personen), Gastgarten mit…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/63-gasthof-huber.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthaus-huber.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="haarstudio melanie friseur wels, oberösterreich">
+        <div class="card-top">
+          <span class="card-num">64</span>
+          <span class="card-cat">Friseur</span>
+        </div>
+        <h3 class="card-name">Haarstudio Melanie</h3>
+        <p class="card-loc">Wels, Oberösterreich</p>
+        <p class="card-desc">Friseursalon (&#x27;Ihre Frisur - Unsere Passion&#x27;) in Wels, arbeitet mit Redken-Produkten; bietet Schnitt, Styling und Make-up.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/64-haarstudio-melanie.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.haarstudio-melanie.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="ooe" data-search="obermairs&#x27; wirtshaus wirtshaus / gasthaus wels (wimpassing), oberösterreich">
+        <div class="card-top">
+          <span class="card-num">65</span>
+          <span class="card-cat">Wirtshaus / Gasthaus</span>
+        </div>
+        <h3 class="card-name">Obermairs&#x27; Wirtshaus</h3>
+        <p class="card-loc">Wels (Wimpassing), Oberösterreich</p>
+        <p class="card-desc">Traditionswirtshaus in Wels-Wimpassing, seit rund 1870 bestehend, mit bodenständiger Hausmannskost und moderner leichter Küche. Geöffnet…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/65-obermairs-wirtshaus.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthaus-obermair.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="region" id="region-steiermark">
+      <div class="region-head">
+        <h2>Steiermark</h2>
+        <span class="region-count">19 Betriebe</span>
+      </div>
+      <div class="card-grid">
+      <article class="card" data-region="steiermark" data-search="frühstückspension stocker pension / frühstückspension bad aussee, steiermark">
+        <div class="card-top">
+          <span class="card-num">66</span>
+          <span class="card-cat">Pension / Frühstückspension</span>
+        </div>
+        <h3 class="card-name">Frühstückspension Stocker</h3>
+        <p class="card-loc">Bad Aussee, Steiermark</p>
+        <p class="card-desc">Familiär geführte Frühstückspension im Ausseerland, ca. 500 m vom Stadtzentrum Bad Aussee, mit großem Garten direkt an der Altausseer…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/66-fruhstuckspension-stocker.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.zimmer-ausseerland.at/stocker/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="weingut hack-gebell weingut &amp; buschenschank mit gästezimmern gamlitz, steiermark">
+        <div class="card-top">
+          <span class="card-num">67</span>
+          <span class="card-cat">Weingut &amp; Buschenschank mit Gästezimmern</span>
+        </div>
+        <h3 class="card-name">Weingut Hack-Gebell</h3>
+        <p class="card-loc">Gamlitz, Steiermark</p>
+        <p class="card-desc">Weingut (seit 1920, 15 ha, überwiegend Handarbeit) mit ausgezeichnetem Buschenschank im 360 Jahre alten Winzerhaus an der Südsteirischen…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/67-weingut-hack-gebell.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.hack-gebell.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="bodenleger konrad handwerk - bodenleger gnas, steiermark">
+        <div class="card-top">
+          <span class="card-num">68</span>
+          <span class="card-cat">Handwerk - Bodenleger</span>
+        </div>
+        <h3 class="card-name">Bodenleger Konrad</h3>
+        <p class="card-loc">Gnas, Steiermark</p>
+        <p class="card-desc">Familienbetrieb (gegründet von Albert Konrad sen.) für Holzböden, Sanierung und Versiegelung alter Böden sowie Beratung, Planung und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/68-bodenleger-konrad.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.bodenleger-konrad.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="gasthaus binderhansl gasthaus / landgasthaus gnas, steiermark">
+        <div class="card-top">
+          <span class="card-num">69</span>
+          <span class="card-cat">Gasthaus / Landgasthaus</span>
+        </div>
+        <h3 class="card-name">Gasthaus Binderhansl</h3>
+        <p class="card-loc">Gnas, Steiermark</p>
+        <p class="card-desc">Landgasthaus im Steirischen Vulkanland, seit 1878 in Familienbesitz; steirische Spezialitäten und regionale Küche, nur Barzahlung.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/69-gasthaus-binderhansl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthaus-binderhansl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="zimmer steger privatzimmer (beherbergung) gnas, steiermark">
+        <div class="card-top">
+          <span class="card-num">70</span>
+          <span class="card-cat">Privatzimmer (Beherbergung)</span>
+        </div>
+        <h3 class="card-name">Zimmer Steger</h3>
+        <p class="card-loc">Gnas, Steiermark</p>
+        <p class="card-desc">Kleine private Zimmervermietung (2 ebenerdige Doppelzimmer mit Dusche/WC, Sat-TV) in ruhiger Lage 5 Minuten von Gnas, im Steirischen…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/70-zimmer-steger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.zimmer-steger.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="gabriela herzog - selbständige buchhalterin buchhaltung / bürodienstleistung gnas (poppendorf), steiermark">
+        <div class="card-top">
+          <span class="card-num">71</span>
+          <span class="card-cat">Buchhaltung / Bürodienstleistung</span>
+        </div>
+        <h3 class="card-name">Gabriela Herzog - Selbständige Buchhalterin</h3>
+        <p class="card-loc">Gnas (Poppendorf), Steiermark</p>
+        <p class="card-desc">Selbständige Buchhalterin in Poppendorf bei Gnas; Buchhaltung, Personalverrechnung und Bürodienstleistungen für Klein- und Familienbetriebe…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/71-gabriela-herzog-selbstandige-buchhalterin.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.gherzog.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="friseursalon pölzl friseur graz, steiermark">
+        <div class="card-top">
+          <span class="card-num">72</span>
+          <span class="card-cat">Friseur</span>
+        </div>
+        <h3 class="card-name">Friseursalon Pölzl</h3>
+        <p class="card-loc">Graz, Steiermark</p>
+        <p class="card-desc">Traditionsfriseur am Grazer Lendplatz, seit 1962; Damen- und Herrensalon (zwei Häuser nebeneinander), klassische Friseurleistungen ohne…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/72-friseursalon-polzl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.friseursalon-poelzl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="die herzl - altsteirisches wirtshaus und weinstube gasthaus / weinstube graz (innere stadt), steiermark">
+        <div class="card-top">
+          <span class="card-num">73</span>
+          <span class="card-cat">Gasthaus / Weinstube</span>
+        </div>
+        <h3 class="card-name">Die Herzl - Altsteirisches Wirtshaus und Weinstube</h3>
+        <p class="card-loc">Graz (Innere Stadt), Steiermark</p>
+        <p class="card-desc">Altsteirisches Gasthaus im ältesten Viertel von Graz, 1934 von Robert Herzl als Weinstube eröffnet, in einem Haus aus dem 17. Jahrhundert.…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/73-die-herzl-altsteirisches-wirtshaus-und-weinstube.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://dieherzl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="casa rustica pizzeria ristorante pizzeria / italienisches restaurant graz (waltendorf), steiermark">
+        <div class="card-top">
+          <span class="card-num">74</span>
+          <span class="card-cat">Pizzeria / Italienisches Restaurant</span>
+        </div>
+        <h3 class="card-name">Casa Rustica Pizzeria Ristorante</h3>
+        <p class="card-loc">Graz (Waltendorf), Steiermark</p>
+        <p class="card-desc">Italienisches Restaurant in Graz-Waltendorf mit Pizza, Pasta und Schnitzelgerichten sowie eigenem Lieferservice in Graz und Umgebung…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/74-casa-rustica-pizzeria-ristorante.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.italiener-graz.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="gasthaus zur sonne gasthaus graz-gösting, steiermark">
+        <div class="card-top">
+          <span class="card-num">75</span>
+          <span class="card-cat">Gasthaus</span>
+        </div>
+        <h3 class="card-name">Gasthaus Zur Sonne</h3>
+        <p class="card-loc">Graz-Gösting, Steiermark</p>
+        <p class="card-desc">Städtisches Gasthaus mit beliebtem naturbelassenem Gastgarten an der Bus-Endhaltestelle in Graz-Gösting; seit 2014 von Gerti Kristandl…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/75-gasthaus-zur-sonne.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.gasthauszursonne-graz.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="buschenschank zach buschenschank / obstbau &amp; weinbau ligist, steiermark">
+        <div class="card-top">
+          <span class="card-num">76</span>
+          <span class="card-cat">Buschenschank / Obstbau &amp; Weinbau</span>
+        </div>
+        <h3 class="card-name">Buschenschank Zach</h3>
+        <p class="card-loc">Ligist, Steiermark</p>
+        <p class="card-desc">Buschenschank am Beginn der Schilcherweinstraße in der Lipizzanerheimat; der Betrieb ist seit rund 100 Jahren vom Obstbau geprägt, mit…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/76-buschenschank-zach.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.buschenschank-zach.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="fleischerei und gasthaus oberer fleischerei &amp; gasthaus mureck, steiermark">
+        <div class="card-top">
+          <span class="card-num">77</span>
+          <span class="card-cat">Fleischerei &amp; Gasthaus</span>
+        </div>
+        <h3 class="card-name">Fleischerei und Gasthaus Oberer</h3>
+        <p class="card-loc">Mureck, Steiermark</p>
+        <p class="card-desc">Gasthaus und Fleischerei in vierter Generation; das rund 400 Jahre alte Haus ist seit fast 120 Jahren in Familienbesitz. Eigene Wurst- und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/77-fleischerei-und-gasthaus-oberer.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.oberer-mureck.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="fleischhauerei pichler fleischerei st. ruprecht an der raab, steiermark">
+        <div class="card-top">
+          <span class="card-num">78</span>
+          <span class="card-cat">Fleischerei</span>
+        </div>
+        <h3 class="card-name">Fleischhauerei Pichler</h3>
+        <p class="card-loc">St. Ruprecht an der Raab, Steiermark</p>
+        <p class="card-desc">Traditionelle Fleischhauerei im Bezirk Weiz mit eigener Produktion und regionalen Spezialitäten, Slogan &#x27;Fleisch gibt Kraft&#x27;.…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/78-fleischhauerei-pichler.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://fleisch-gibt-kraft.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="pension haus langmann pension / frühstückspension st. stefan ob stainz, steiermark">
+        <div class="card-top">
+          <span class="card-num">79</span>
+          <span class="card-cat">Pension / Frühstückspension</span>
+        </div>
+        <h3 class="card-name">Pension Haus Langmann</h3>
+        <p class="card-loc">St. Stefan ob Stainz, Steiermark</p>
+        <p class="card-desc">Frühstückspension (seit 1991) in sonniger Panoramalage inmitten der Schilcher-Weingärten der Weststeiermark, mit Pool, Garten und…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/79-pension-haus-langmann.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="https://www.hauslangmann.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="gästehaus egger privatzimmer / gästehaus straden, steiermark">
+        <div class="card-top">
+          <span class="card-num">80</span>
+          <span class="card-cat">Privatzimmer / Gästehaus</span>
+        </div>
+        <h3 class="card-name">Gästehaus Egger</h3>
+        <p class="card-loc">Straden, Steiermark</p>
+        <p class="card-desc">Privatzimmervermietung in Karla, Hof bei Straden, mit vier Themenzimmern (Luft, Wasser, Feuer, Erde) und Frühstücksraum.</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/80-gastehaus-egger.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.gaestehaus-egger.com/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="gästehaus stöckler privatzimmer / gästehaus straden, steiermark">
+        <div class="card-top">
+          <span class="card-num">81</span>
+          <span class="card-cat">Privatzimmer / Gästehaus</span>
+        </div>
+        <h3 class="card-name">Gästehaus Stöckler</h3>
+        <p class="card-loc">Straden, Steiermark</p>
+        <p class="card-desc">Privates Gästehaus mit Zimmervermietung in Radochen bei Straden im Steirischen Vulkanland, familiär geführt von Josef und Margarete…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/81-gastehaus-stockler.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.gaestehaus-stoeckler.com/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="landhaus sudy privatzimmer / landhaus (beherbergung) straden, steiermark">
+        <div class="card-top">
+          <span class="card-num">82</span>
+          <span class="card-cat">Privatzimmer / Landhaus (Beherbergung)</span>
+        </div>
+        <h3 class="card-name">Landhaus Sudy</h3>
+        <p class="card-loc">Straden, Steiermark</p>
+        <p class="card-desc">4-Sterne-Landhaus mit Gästezimmern und Badeteich im steirischen Wein-, Thermen- und Vulkanland bei Straden; Ausgangspunkt für Radtouren…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/82-landhaus-sudy.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.sudy.info/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="appartement präbichl ferienwohnung / appartement vordernberg, steiermark">
+        <div class="card-top">
+          <span class="card-num">83</span>
+          <span class="card-cat">Ferienwohnung / Appartement</span>
+        </div>
+        <h3 class="card-name">Appartement Präbichl</h3>
+        <p class="card-loc">Vordernberg, Steiermark</p>
+        <p class="card-desc">Ferienwohnungen (65 m², 5-7 Personen) in einem 2007 zum Gästehaus umgebauten historischen Haus im Ortskern von Vordernberg an der…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/83-appartement-prabichl.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.appartement-praebichl.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      <article class="card" data-region="steiermark" data-search="tischlerei &amp; holzmarkt genger martin tischlerei weißkirchen in steiermark, steiermark">
+        <div class="card-top">
+          <span class="card-num">84</span>
+          <span class="card-cat">Tischlerei</span>
+        </div>
+        <h3 class="card-name">Tischlerei &amp; Holzmarkt Genger Martin</h3>
+        <p class="card-loc">Weißkirchen in Steiermark, Steiermark</p>
+        <p class="card-desc">Familiengeführte Tischlerei und Holzmarkt im Murtal, ansässig im ehemaligen Betrieb der Tischlerei Zechner. Massivmöbelbau (Eiche, Zirbe,…</p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="previews/84-tischlerei-holzmarkt-genger-martin.html">Vorschau ansehen</a>
+          <a class="btn btn-ghost" href="http://www.tischlerei-genger.at/" target="_blank" rel="noopener">Aktuelle Website ↗</a>
+        </div>
+      </article>
+      </div>
+    </section>
+  <p class="empty-state" id="empty-state">Keine Treffer für diese Suche.</p>
+</main>
+
+<footer>
+  Unverbindliche Gestaltungs-Vorschauen, erstellt zu Demonstrationszwecken auf Basis &ouml;ffentlich zug&auml;nglicher Kontaktdaten (Impressum). Keine der verlinkten Seiten ist die offizielle Website des jeweiligen Betriebs; es besteht keine Verbindung zu den genannten Unternehmen.
+</footer>
+
+<script>
+(function () {
+  const search = document.getElementById('search');
+  const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const regions = Array.from(document.querySelectorAll('.region'));
+  const emptyState = document.getElementById('empty-state');
+  let activeFilter = 'all';
+
+  function apply() {
+    const q = search.value.trim().toLowerCase();
+    let visibleTotal = 0;
+    regions.forEach(function (region) {
+      let visibleInRegion = 0;
+      region.querySelectorAll('.card').forEach(function (card) {
+        const matchesRegion = activeFilter === 'all' || card.dataset.region === activeFilter;
+        const matchesSearch = !q || card.dataset.search.includes(q);
+        const show = matchesRegion && matchesSearch;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleInRegion++;
+      });
+      region.style.display = visibleInRegion > 0 ? '' : 'none';
+      visibleTotal += visibleInRegion;
+    });
+    emptyState.style.display = visibleTotal === 0 ? 'block' : 'none';
+  }
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      apply();
+    });
+  });
+
+  search.addEventListener('input', apply);
+})();
+</script>
+
+</body>
+</html>
