@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — k.u.k. Hofbäckerei Linz</title>
+<meta name="description" content="Muster-Impressum der Gestaltungs-Vorschau für die k.u.k. Hofbäckerei in Linz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#5c1a24; --burgundy-deep:#3d0f16;
+    --cream:#f7ecd9; --cream-2:#efdfc0;
+    --ink:#2a1710; --ink-soft:#5c4736;
+    --gold:#c69b46; --gold-soft:#d9b878;
+    --line:rgba(42,23,16,0.16); --card:#fffaef;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"Work Sans",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,.serif{font-family:"Cormorant",Georgia,serif;font-weight:600;letter-spacing:0.005em;margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+
+  .disclaimer{background:var(--burgundy-deep);color:#f0dfc0;font-size:0.76rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:var(--gold-soft);}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(247,236,217,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;}
+  .brand .crest{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 35% 30%, var(--gold-soft), var(--burgundy) 75%);display:flex;align-items:center;justify-content:center;color:#f7ecd9;font-family:"Cormorant",serif;font-weight:600;font-size:1.1rem;border:1px solid var(--gold);}
+  .brand .name{font-family:"Cormorant",serif;font-weight:600;font-size:1.35rem;letter-spacing:0.01em;color:var(--ink);}
+  nav.links{display:flex;gap:1.8rem;font-size:0.92rem;}
+  nav.links a{text-decoration:none;color:var(--ink-soft);padding:0.3rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--burgundy);}
+  .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:var(--burgundy);color:#f7ecd9;padding:0.6rem 1.2rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:0.86rem;letter-spacing:0.02em;box-shadow:0 6px 16px -6px rgba(92,26,36,0.5);}
+  .nav-right{display:flex;align-items:center;gap:0.8rem;}
+  .menu-toggle{display:none;min-width:44px;min-height:44px;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:4px;cursor:pointer;}
+  .menu-toggle span{display:block;width:19px;height:2px;background:var(--ink);margin:4px auto;}
+  .mobile-links{display:none;flex-direction:column;background:var(--cream);border-bottom:1px solid var(--line);}
+  .mobile-links a{padding:0.95rem 0;text-decoration:none;color:var(--ink);border-top:1px solid var(--line);font-weight:600;min-height:44px;display:flex;align-items:center;}
+  .mobile-links.open{display:flex;}
+
+  .page-hero{padding:clamp(2.6rem,7vw,4rem) 0 clamp(2rem,5vw,3rem);border-bottom:1px solid var(--line);text-align:center;}
+  .page-hero h1{font-size:clamp(2rem,5vw,2.8rem);}
+
+  section{padding:clamp(2.6rem,6vw,4rem) 0;}
+  .legal{max-width:74ch;margin:0 auto;}
+  .legal h2{font-size:clamp(1.4rem,3.6vw,1.8rem);margin-top:2.2rem;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p,.legal li{color:var(--ink-soft);font-size:0.98rem;margin-top:0.8rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal a{color:var(--burgundy);text-decoration:underline;text-underline-offset:3px;}
+  .legal-notice{background:rgba(198,155,70,0.14);border:1px solid rgba(198,155,70,0.45);border-radius:14px;padding:1.1rem 1.3rem;font-size:0.92rem;color:var(--ink);margin-bottom:2.4rem;}
+  .legal-notice strong{color:var(--burgundy);}
+  .kv{margin-top:1.4rem;}
+  .kv .row{display:flex;flex-wrap:wrap;gap:0.4rem 1rem;padding:0.6rem 0;border-bottom:1px solid var(--line);}
+  .kv .row .k{width:150px;flex-shrink:0;color:var(--ink-soft);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.06em;}
+  .kv .row .v{color:var(--ink);}
+  .placeholder{color:var(--burgundy);font-style:italic;}
+
+  .footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:0.82rem;}
+  .footer-legal a{text-decoration:underline;text-underline-offset:3px;color:#e6d6b8;}
+  footer{background:var(--ink);color:#e6d6b8;padding:2.6rem 0 2rem;margin-top:1rem;}
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;}
+  footer .name{font-family:"Cormorant",serif;font-weight:600;font-size:1.3rem;}
+  footer .addr{font-size:0.85rem;color:#b8a582;margin-top:0.5rem;}
+  footer .addr a{color:#e6d6b8;}
+  .footer-note{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(230,214,184,0.15);font-size:0.76rem;color:#a89877;line-height:1.6;}
+  .footer-note strong{color:var(--gold-soft);}
+
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .menu-toggle{display:inline-flex;}
+  }
+  @media (max-width:480px){
+    .kv .row .k{width:100%;}
+    .nav-cta{padding:0.6rem 0.9rem;font-size:0.82rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von k.u.k. Hofbäckerei · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="crest" aria-hidden="true">K</span>
+      <span class="name">k.u.k. Hofbäckerei</span>
+    </a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Sortiment</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="tel:+43732784110">Anrufen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-links" id="mobileLinks">
+    <div class="wrap" style="padding-top:0;">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Sortiment</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap legal">
+      <div class="legal-notice">
+        <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+
+      <h2>Diensteanbieter</h2>
+      <div class="kv">
+        <div class="row"><span class="k">Name</span><span class="v">k.u.k. Hofbäckerei</span></div>
+        <div class="row"><span class="k">Anschrift</span><span class="v">Pfarrgasse 17, 4020 Linz, Österreich</span></div>
+        <div class="row"><span class="k">Inhaberin</span><span class="v">Corinne Wandling, Meisterbäckerin</span></div>
+        <div class="row"><span class="k">Telefon</span><span class="v"><a href="tel:+43732784110">+43 732 784110</a></span></div>
+        <div class="row"><span class="k">E-Mail</span><span class="v"><a href="mailto:office@kuk-hofbaeckerei.at">office@kuk-hofbaeckerei.at</a></span></div>
+        <div class="row"><span class="k">UID-Nummer</span><span class="v placeholder">[UID-Nummer]</span></div>
+        <div class="row"><span class="k">Gewerbebehörde</span><span class="v placeholder">[zuständige Gewerbebehörde]</span></div>
+      </div>
+
+      <h2>Unternehmensgegenstand</h2>
+      <p>Bäckerei und Café-Konditorei mit Handgebäck, Torten und Café-Betrieb.</p>
+
+      <h2>Anwendbare Rechtsvorschriften</h2>
+      <p>Gewerbeordnung: <span class="placeholder">[www.ris.bka.gv.at]</span></p>
+
+      <h2>Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle <span class="placeholder">[nicht/verpflichtet/bereit]</span> — bitte im echten Impressum ergänzen.</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Die Inhalte dieser Vorschau-Website wurden zu Demonstrationszwecken erstellt und erheben keinen Anspruch auf Vollständigkeit, Aktualität oder Richtigkeit.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div class="name">k.u.k. Hofbäckerei</div>
+        <div class="addr">Pfarrgasse 17 · 4020 Linz · seit 1570</div>
+        <div class="addr">Tel: <a href="tel:+43732784110">+43 732 784110</a><br>E-Mail: <a href="mailto:office@kuk-hofbaeckerei.at">office@kuk-hofbaeckerei.at</a></div>
+      </div>
+      <nav class="footer-legal" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="footer-note"><strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von k.u.k. Hofbäckerei · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var mobileLinks = document.getElementById('mobileLinks');
+    if(toggle && mobileLinks){
+      toggle.addEventListener('click', function(){
+        var open = mobileLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      mobileLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          mobileLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

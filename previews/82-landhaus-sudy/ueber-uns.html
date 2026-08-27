@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns – Landhaus Sudy, Straden</title>
+<meta name="description" content="Elfriede und Rudolf Sudy führen das 4-Sterne-Landhaus Sudy in Kronnersdorf bei Straden – mit Badeteich, Gästezimmern und Nähe zu Murradweg, Buschenschank und Thermen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#efe6d3; --sand-2:#e2d5b6; --sage:#5b6b52; --sage-dark:#3d4a38;
+    --ink:#25281f; --gold:#bd9648; --paper:#f8f4ea;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk',system-ui,sans-serif; overflow-x:hidden; }
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Instrument Serif', Georgia, serif; font-weight:400; margin:0;}
+  p{line-height:1.7; color:#4c4f3f;}
+  .wrap{width:min(1180px,92%); margin-inline:auto;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{ background:var(--sage-dark); color:var(--sand); font-size:clamp(.68rem,1.6vw,.78rem); text-align:center; padding:.55rem 1rem; }
+
+  header{ position:sticky; top:0; z-index:60; background:rgba(248,244,234,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--sand-2); }
+  nav.bar{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;}
+  .brand{ font-family:'Instrument Serif', serif; font-style:italic; font-size:clamp(1.2rem,2.8vw,1.6rem); letter-spacing:.01em; text-decoration:none; }
+  .nav-links{display:flex; gap:clamp(1rem,2.4vw,2.4rem); list-style:none; margin:0; padding:0; font-size:.88rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; align-items:center;}
+  .nav-links a{text-decoration:none; padding:.7rem .1rem; display:inline-block; border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-color:var(--gold);}
+  .nav-links a.active{color:var(--sage-dark); border-color:var(--gold);}
+  .menu-toggle{
+    display:none; background:none; border:2px solid var(--ink); border-radius:10px;
+    width:46px; height:44px; align-items:center; justify-content:center; cursor:pointer;
+    flex-direction:column; gap:5px;
+  }
+  .menu-toggle span{display:block; width:20px; height:2px; background:var(--ink);}
+  @media (max-width:780px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--paper);
+      flex-direction:column; padding:.5rem 6% 1.2rem; border-bottom:1px solid var(--sand-2);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.9rem .2rem; width:100%; border-bottom:1px solid var(--sand-2); min-height:44px;}
+    .menu-toggle{display:flex;}
+  }
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(1.4rem,3vw,2rem);}
+  .eyebrow{ font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:1.1rem; display:flex; align-items:center; gap:.6rem; }
+  .eyebrow::before{content:"◆"; color:var(--gold); font-size:.7rem;}
+  h1.headline{ font-size:clamp(2.2rem,5.6vw,3.6rem); font-style:italic; line-height:1.05; max-width:22ch; }
+  .page-lede{max-width:56ch; margin-top:1.3rem; font-size:clamp(1rem,1.8vw,1.12rem);}
+
+  section{padding:clamp(2.4rem,6vw,4.5rem) 0;}
+  .section-tag{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:.8rem;}
+  h2{font-size:clamp(1.8rem,4vw,2.5rem); font-style:italic; line-height:1.1;}
+  .story-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:clamp(2rem,5vw,4rem); align-items:start;}
+  @media (max-width:820px){ .story-grid{grid-template-columns:1fr;} }
+  .story p + p{margin-top:1rem;}
+
+  .timeline{ list-style:none; margin:2.2rem 0 0; padding:0; border-left:2px solid var(--sand-2); }
+  .timeline li{ position:relative; padding:0 0 2rem 1.8rem; }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{ content:""; position:absolute; left:-7px; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--gold); border:3px solid var(--paper); }
+  .timeline h3{ font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:600; margin-bottom:.4rem; }
+  .timeline p{margin:0; max-width:56ch;}
+
+  .region{ background:var(--sand); border-radius:20px; padding:clamp(1.8rem,5vw,3rem); display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+  @media (max-width:820px){ .region{grid-template-columns:1fr;} }
+  .region-visual{aspect-ratio:4/3; border-radius:16px; overflow:hidden; position:relative;
+    background: radial-gradient(60% 50% at 30% 25%, #cfe0d1 0%, transparent 60%), radial-gradient(70% 60% at 70% 75%, #8ea788 0%, transparent 65%), linear-gradient(150deg, var(--sage) 0%, var(--sage-dark) 100%);
+  }
+  .region-visual svg{position:absolute; inset:0; width:100%; height:100%;}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.95rem 1.6rem; border-radius:4px; text-decoration:none;
+    font-weight:600; font-size:.92rem; min-height:44px; text-transform:uppercase; letter-spacing:.04em;
+    transition:transform .18s ease, background .18s ease;
+  }
+  .btn-primary{background:var(--sage-dark); color:var(--sand);}
+  .btn-primary:hover{background:var(--gold); transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  footer{background:var(--ink); color:#c9c8b8; padding:clamp(2.2rem,5vw,3.2rem) 0 1.5rem;}
+  .foot-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:2.5rem; }
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; gap:2rem;} }
+  footer h3{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.4rem; color:#fff; margin-bottom:.8rem;}
+  footer p, footer a{color:#c9c8b8; font-size:.95rem; text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .foot-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.6rem;}
+  .foot-list a{display:inline-block; min-height:44px; line-height:44px;}
+  .foot-bottom{ border-top:1px solid #454838; margin-top:2rem; padding-top:1.3rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:.7rem; font-size:.82rem; color:#98977f; }
+  .foot-bottom a{color:#98977f;}
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Landhaus Sudy · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="wrap">
+    <nav class="bar">
+      <a class="brand" href="index.html">Landhaus Sudy</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html" class="active">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Über uns</span>
+      <h1 class="headline">Geführt von Elfriede und Rudolf Sudy</h1>
+      <p class="page-lede">Ein 4-Sterne-Landhaus im steirischen Wein-, Thermen- und Vulkanland – mit eigenem Badeteich und persönlicher Betreuung in Kronnersdorf bei Straden.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <span class="section-tag">Geschichte</span>
+        <h2>Ruhe, Wasser und <em>Weite</em>.</h2>
+      </div>
+      <div class="story reveal">
+        <p>Im steirischen Wein-, Thermen- und Vulkanland, unweit von Straden, empfangen Elfriede und Rudolf Sudy ihre Gäste im Landhaus Sudy – einem 4-Sterne-Haus mit Gästezimmern und eigenem Badeteich in Kronnersdorf.</p>
+        <p>Die Lage macht das Landhaus zum idealen Ausgangspunkt für alle, die Bewegung und Erholung verbinden möchten: der Murradweg führt direkt vor die Tür, Buschenschanken und Thermen der Region liegen in bequemer Reichweite.</p>
+        <p>Wer bei Elfriede und Rudolf Sudy zu Gast ist, findet ein Haus, das auf persönliche Betreuung und die ruhige Lage im Vulkanland setzt – ideal für alle, die einen Ausgangspunkt für Rad-, Wein- und Thermenausflüge suchen, ohne auf Komfort zu verzichten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="section-tag">Was das Haus prägt</span>
+      <h2>Vier Sterne, <em>eigene Handschrift</em></h2>
+      <ol class="timeline">
+        <li class="reveal">
+          <h3>4-Sterne-Standard</h3>
+          <p>Gästezimmer, die auf Komfort und Qualität ausgelegt sind – geführt von Elfriede und Rudolf Sudy persönlich.</p>
+        </li>
+        <li class="reveal">
+          <h3>Eigener Badeteich</h3>
+          <p>Ein natürliches Gewässer direkt am Haus, das nach einem Tag im Vulkanland zum Verweilen einlädt.</p>
+        </li>
+        <li class="reveal">
+          <h3>Lage am Murradweg</h3>
+          <p>Kronnersdorf liegt direkt an einer der beliebtesten Radrouten der Steiermark – ideal für aktive Gäste.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap region reveal">
+      <div class="region-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+          <circle class="ripple" cx="220" cy="230" r="60" stroke="#eadfc2" stroke-width="1" fill="none" opacity=".55"/>
+          <circle class="ripple" cx="220" cy="230" r="110" stroke="#eadfc2" stroke-width="1" fill="none" opacity=".45"/>
+          <circle class="ripple" cx="220" cy="230" r="160" stroke="#eadfc2" stroke-width="1" fill="none" opacity=".35"/>
+        </svg>
+      </div>
+      <div>
+        <span class="section-tag">Lage</span>
+        <h2>Kronnersdorf, mitten im <em>Vulkanland</em></h2>
+        <p style="margin-top:1rem;">Straden und seine Umgebung zählen zu den bekanntesten Zielen des Steirischen Vulkanlands – geprägt von Weingärten, sanften Hügeln und Thermen. Das Landhaus Sudy liegt ruhig in Kronnersdorf und ist dennoch nah an allem, was die Region ausmacht.</p>
+        <a class="btn btn-ghost" style="margin-top:1.5rem;" href="angebot.html">Zimmer &amp; Ausstattung ansehen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Landhaus Sudy</h3>
+      <p>Kronnersdorf 40<br>8345 Straden, Steiermark</p>
+      <p style="margin-top:1rem;">Ansprechpersonen: Elfriede und Rudolf Sudy</p>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Kontakt</h3>
+      <ul class="foot-list">
+        <li><a href="tel:+4334738287">+43 3473 8287</a></li>
+        <li><a href="mailto:mail@sudy.info">mail@sudy.info</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Navigation</h3>
+      <ul class="foot-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Gestaltungs-Vorschau · Landhaus Sudy</span>
+    <span>Elfriede &amp; Rudolf Sudy · Straden</span>
+  </div>
+</footer>
+
+<script>
+  var t = document.getElementById('menuToggle');
+  var n = document.getElementById('navLinks');
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

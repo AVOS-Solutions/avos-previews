@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Zimmer Steger</title>
+<meta name="description" content="Erich und Maria Steger führen die private Zimmervermietung Zimmer Steger in Ludersdorf bei Gnas im Steirischen Vulkanland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c6e58; --sage-dark:#3c4a39; --clay:#b97a5a; --cream:#f7f3ea;
+    --paper:#fffdf8; --ink:#2c2e28; --line:rgba(44,46,40,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Newsreader', serif;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);}
+  :focus-visible{outline:3px solid var(--clay); outline-offset:3px;}
+
+  .disclaimer{background:var(--sage-dark); color:#e9efe6; font-size:.78rem; text-align:center; padding:.6rem 1rem; line-height:1.45;}
+  .disclaimer strong{color:#d9c2a8;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(247,243,234,.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.2rem,4vw,2.5rem); position:relative;}
+  .brand{font-family:'Newsreader',serif; font-weight:500; font-size:1.3rem; text-decoration:none;}
+  .brand em{font-style:italic; color:var(--clay);}
+  nav.links ul{list-style:none; display:flex; gap:2rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; color:var(--ink); padding:.6rem 0; display:inline-block; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--clay);}
+  nav.links a.active{color:var(--sage-dark); font-weight:600; border-bottom-color:var(--clay);}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; border:2px solid var(--ink); border-radius:8px; background:none; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,5vw,3rem); background:linear-gradient(160deg, rgba(92,110,88,.08), transparent 60%); border-bottom:1px solid var(--line);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); font-weight:500; max-width:22ch;}
+  .page-hero h1 em{font-style:italic; color:var(--sage-dark);}
+  .page-hero p.lead{margin-top:1.1rem; max-width:48ch; color:#4a4d43; font-size:clamp(1rem,2vw,1.08rem);}
+  .breadcrumb{font-size:.82rem; color:var(--clay); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  .eyebrow{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; font-weight:600; color:var(--sage-dark); margin-bottom:.9rem; display:flex; align-items:center; gap:.6rem;}
+  .eyebrow::before{content:""; width:2rem; height:2px; background:var(--clay); flex-shrink:0;}
+
+  section{padding:clamp(3.2rem,7vw,5.5rem) 0;}
+  .section-head{max-width:40rem; margin-bottom:clamp(2rem,5vw,3rem);}
+  .section-head h2{font-size:clamp(1.6rem,3.6vw,2.4rem); font-weight:500; line-height:1.15;}
+
+  .story-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,5vw,3.5rem); align-items:start;}
+  @media (max-width:860px){ .story-grid{grid-template-columns:1fr;} }
+  .story-grid p{color:#4a4d43; margin-bottom:1.1rem; max-width:56ch;}
+  .quote-badge{
+    background:var(--sage-dark); color:#f2ede0; border-radius:24px; padding:clamp(2rem,5vw,2.8rem);
+    display:flex; flex-direction:column; gap:1rem;
+  }
+  .quote-badge span.q{font-family:'Newsreader',serif; font-style:italic; font-size:1.3rem; line-height:1.4;}
+  .quote-badge span.a{font-size:.88rem; color:#d9d3c2;}
+
+  .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;}
+  @media (max-width:760px){.values-grid{grid-template-columns:1fr;}}
+  .value-card{background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:1.8rem;}
+  .value-card h3{font-size:1.05rem; font-weight:600; font-family:'IBM Plex Sans'; margin-bottom:.6rem;}
+  .value-card p{color:#4a4d43; font-size:.94rem;}
+
+  .cta-row{display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.2rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.8rem 1.5rem; border-radius:10px; font-weight:600; font-size:.94rem; text-decoration:none; transition:transform .2s, background .2s;}
+  .btn-primary{background:var(--sage-dark); color:#f5f1e6;}
+  .btn-primary:hover{transform:translateY(-2px); background:var(--sage);}
+  .btn-ghost{border:1.5px solid var(--sage-dark); color:var(--sage-dark);}
+  .btn-ghost:hover{background:rgba(60,74,57,.08);}
+
+  footer{background:var(--sage-dark); color:#e9e4d5; padding:clamp(2rem,5vw,3rem) 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(233,228,213,.15);}
+  .footer-brand{font-family:'Newsreader',serif; font-size:1.3rem; font-style:italic;}
+  footer address{font-style:normal; font-size:.9rem; color:#c7c1ac; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c7c1ac; text-decoration:none;}
+  footer address a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c7c1ac; text-decoration:none;}
+  .footer-nav a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.1rem 1rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c7c1ac; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#a8a28e; padding:1rem 1rem 1.5rem; line-height:1.5;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.2rem,4vw,2.5rem); left:clamp(1.2rem,4vw,2.5rem); background:var(--paper); border:1px solid var(--line); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid var(--line); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+  .nav-panel a.active{color:var(--clay);}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Zimmer <em>Steger</em></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Über uns</p>
+      <p class="eyebrow">Über uns</p>
+      <h1>Erich und Maria <em>Steger</em></h1>
+      <p class="lead">Eine kleine, private Zimmervermietung in Ludersdorf bei Gnas – geführt mit persönlichem Kontakt und viel Ruhe, mitten im Steirischen Vulkanland.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="reveal">
+          <p>Zimmer Steger ist eine kleine, private Zimmervermietung in Ludersdorf, nur fünf Minuten von Gnas entfernt. Zwei ebenerdige Doppelzimmer mit Dusche, WC und Sat-TV bieten Gästen ein ruhiges Zuhause auf Zeit – fernab vom Trubel, mitten im Grünen des Steirischen Vulkanlands.</p>
+          <p>Als kleine, private Zimmervermietung legen Erich und Maria Steger großen Wert auf persönlichen Kontakt. Wer bei ihnen zu Gast ist, wird nicht anonym einquartiert, sondern persönlich begrüßt und beraten – ob es um die Anreise, die Aufenthaltsdauer oder besondere Wünsche geht.</p>
+          <p>Die ruhige Lage im Steirischen Vulkanland macht Zimmer Steger zu einem idealen Ausgangspunkt für alle, die sanfte Hügel, Weingärten und gute Luft suchen, ohne dabei auf die Nähe zum Ortskern von Gnas mit seinen Geschäften und der Gastronomie verzichten zu wollen.</p>
+        </div>
+        <div class="quote-badge reveal">
+          <span class="q">„Willkommen bei uns in Ludersdorf.“</span>
+          <span class="a">Erich und Maria Steger</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Was uns wichtig ist</p>
+        <h2>Persönlich, ruhig, gastfreundlich</h2>
+      </div>
+      <div class="values-grid">
+        <article class="value-card reveal">
+          <h3>Persönlicher Kontakt</h3>
+          <p>Kein anonymer Check-in – Erich und Maria Steger begrüßen ihre Gäste persönlich und stehen für Fragen zur Verfügung.</p>
+        </article>
+        <article class="value-card reveal">
+          <h3>Ruhige Lage</h3>
+          <p>Ludersdorf liegt still und grün, fünf Minuten von Gnas entfernt – ideal zum Ankommen und Entspannen.</p>
+        </article>
+        <article class="value-card reveal">
+          <h3>Ebenerdiger Komfort</h3>
+          <p>Beide Doppelzimmer sind ebenerdig zugänglich und mit Dusche/WC sowie Sat-TV ausgestattet.</p>
+        </article>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="angebot.html">Zimmer ansehen</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt & Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Zimmer Steger</div>
+      <address>Ludersdorf 24, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+436641364008">+43 664 1364008</a><br>E-Mail: <a href="mailto:info@zimmer-steger.at">info@zimmer-steger.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer & Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

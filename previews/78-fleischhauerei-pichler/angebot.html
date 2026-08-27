@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fleischhauerei Pichler · St. Ruprecht an der Raab</title>
-<meta name="description" content="Fleischhauerei Pichler in St. Ruprecht an der Raab: Fleisch gibt Kraft. Traditionelle Fleischhauerei mit eigener Produktion und regionalen Spezialitäten, geführt von Josef und Dominik Pichler.">
+<title>Sortiment — Fleischhauerei Pichler</title>
+<meta name="description" content="Eigene Wurst- und Fleischproduktion sowie regionale Spezialitäten der Fleischhauerei Pichler im Bezirk Weiz.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -63,20 +63,20 @@
 
   header{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30;}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;max-width:1180px;margin:0 auto;}
-  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.02em;display:flex;align-items:center;gap:0.6rem;}
-  .brand .mark{width:2.2rem;height:2.2rem;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;border-radius:3px;}
+  .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.02em;display:flex;align-items:center;gap:0.6rem;text-decoration:none;}
+  .brand .mark{width:2.2rem;height:2.2rem;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem;border-radius:3px;flex:none;}
   nav.links{display:flex;gap:0.5rem;font-size:0.88rem;font-weight:600;text-transform:uppercase;letter-spacing:0.03em;}
-  nav.links a{text-decoration:none;padding:0.75rem 0.9rem;border-radius:3px;}
+  nav.links a{text-decoration:none;padding:0.75rem 0.9rem;border-radius:3px;min-height:44px;display:flex;align-items:center;}
   nav.links a:hover{background:var(--line);}
+  nav.links a.active{background:var(--ink);color:var(--paper);}
   .navtoggle{display:none;background:none;border:2px solid var(--ink);border-radius:4px;min-width:44px;min-height:44px;font-size:1.1rem;}
   @media(max-width:780px){
     nav.links{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;border-bottom:2px solid var(--ink);max-height:0;overflow:hidden;transition:max-height .3s ease;}
-    nav.links.open{max-height:20rem;}
+    nav.links.open{max-height:24rem;}
     nav.links a{padding:1rem 1.25rem;border-bottom:1px solid var(--line);border-radius:0;}
     .navtoggle{display:block;}
   }
 
-  /* HERO: utility grid / spec-sheet */
   .hero{padding:3.5rem 1.25rem 0;background:var(--paper);}
   .hero-grid{
     display:grid;grid-template-columns:1.3fr 1fr;
@@ -110,7 +110,11 @@
   .spec-row .k{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);font-weight:600;}
   .spec-row .v{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;text-align:right;}
 
-  /* icon utility strip */
+  .page-hero{padding:3rem 1.25rem 0;}
+  .page-hero-inner{border:2px solid var(--ink);padding:2.6rem 2rem;}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,3rem);margin:0 0 0.7rem;}
+  .page-hero p{color:var(--ink-soft);font-size:1.02rem;max-width:52ch;margin:0;}
+
   .strip{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--panel);}
   .strip-grid{display:grid;grid-template-columns:repeat(4,1fr);}
   @media(max-width:760px){.strip-grid{grid-template-columns:repeat(2,1fr);}}
@@ -121,7 +125,6 @@
   .strip-item h3{font-size:0.98rem;margin:0;text-transform:uppercase;letter-spacing:0.02em;}
   .strip-item p{margin:0;font-size:0.88rem;color:var(--ink-soft);}
 
-  /* story: two-generation split */
   .story{padding:5rem 1.25rem;}
   .story-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:3rem;align-items:center;}
   @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:2rem;}}
@@ -141,7 +144,15 @@
   .story li{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.98rem;color:var(--ink);}
   .story li svg{flex:none;width:1.2rem;height:1.2rem;color:var(--red);margin-top:0.15rem;}
 
-  /* offer: spec table */
+  .timeline2{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:0;border:2px solid var(--ink);border-radius:4px;overflow:hidden;}
+  .tl2-row{display:grid;grid-template-columns:8rem 1fr;border-bottom:2px solid var(--ink);}
+  .tl2-row:last-child{border-bottom:none;}
+  @media(max-width:600px){.tl2-row{grid-template-columns:1fr;}}
+  .tl2-row .yr{background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Bricolage Grotesque',sans-serif;padding:1rem;text-align:center;}
+  .tl2-row .content{padding:1.4rem 1.6rem;background:var(--panel);}
+  .tl2-row h3{margin:0 0 0.4rem;font-size:1.05rem;}
+  .tl2-row p{margin:0;color:var(--ink-soft);font-size:0.94rem;max-width:52ch;}
+
   .offer{padding:5rem 1.25rem;background:var(--panel);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);}
   .offer .kicker{margin-bottom:0.6rem;}
   .offer h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 3rem;max-width:26ch;}
@@ -153,7 +164,31 @@
   .trow h3{margin:0;font-size:1.1rem;}
   .trow p{margin:0.35rem 0 0;color:var(--ink-soft);font-size:0.92rem;max-width:48ch;flex-basis:100%;}
 
-  /* contact */
+  .sortiment{padding:5rem 1.25rem;}
+  .sort-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem;}
+  @media(max-width:700px){.sort-grid{grid-template-columns:1fr;}}
+  .sort-card{border:2px solid var(--ink);border-radius:4px;padding:1.6rem 1.7rem;background:var(--panel);}
+  .sort-card h3{font-size:1.05rem;margin:0 0 0.5rem;color:var(--red);text-transform:uppercase;letter-spacing:0.02em;}
+  .sort-card p{margin:0;color:var(--ink-soft);font-size:0.94rem;}
+  .note-box2{margin-top:2rem;padding:1.1rem 1.4rem;border:2px dashed var(--line);border-radius:4px;font-size:0.9rem;color:var(--ink-soft);max-width:60ch;}
+
+  .teaser{padding:4.5rem 1.25rem;}
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.2rem;}
+  @media(max-width:900px){.teaser-grid{grid-template-columns:1fr;}}
+  .teaser-card{border:2px solid var(--ink);border-radius:4px;padding:1.8rem;background:var(--panel);display:flex;flex-direction:column;}
+  .teaser-card h3{font-size:1.15rem;margin:0 0 0.6rem;}
+  .teaser-card p{color:var(--ink-soft);margin:0 0 1.1rem;font-size:0.95rem;flex:1;}
+  .teaser-card a.more{color:var(--red);font-weight:700;text-decoration:none;align-self:flex-start;}
+  .teaser-card a.more:hover{text-decoration:underline;}
+
+  .cta-band{padding:4rem 1.25rem;text-align:center;background:var(--ink);color:var(--paper);}
+  .cta-band h2{font-size:clamp(1.6rem,4vw,2.3rem);margin:0 0 1rem;color:var(--paper);}
+  .cta-band p{color:#cfc9bc;margin:0 0 1.8rem;max-width:46ch;margin-inline:auto;}
+  .cta-band .hero-cta{justify-content:center;}
+  .cta-band .btn.ghost{border-color:#4a463d;color:var(--paper);}
+  .cta-band .btn.ghost:hover{background:var(--paper);color:var(--ink);}
+  .cta-band .btn.primary{background:var(--red);border-color:var(--red);}
+
   .contact{padding:5rem 1.25rem;}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr;}}
@@ -166,11 +201,33 @@
   .ccard .row a:hover{color:var(--red);}
   .map-frame{border:2px solid var(--ink);border-radius:4px;overflow:hidden;min-height:260px;}
   .map-frame iframe{width:100%;height:100%;min-height:260px;border:0;display:block;}
+  .cta-buttons{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.5rem;}
+
+  .legal{padding:3.5rem 1.25rem 5rem;}
+  .legal .wrap{max-width:760px;padding:0 1.25rem;}
+  .notice-box{
+    background:var(--panel);border:2px solid var(--red);border-radius:4px;
+    padding:1.2rem 1.4rem;margin-bottom:2.5rem;font-size:0.92rem;color:var(--ink-soft);
+  }
+  .notice-box strong{color:var(--ink);}
+  .legal h1{font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 2rem;}
+  .legal h2{font-size:1.2rem;margin:2.2rem 0 0.8rem;text-transform:uppercase;letter-spacing:0.02em;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p,.legal li{color:var(--ink-soft);font-size:1rem;}
+  .legal ul{padding-left:1.2rem;}
+  .field-table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;}
+  .field-table tr{border-bottom:1px solid var(--line);}
+  .field-table td{padding:0.6rem 0.5rem;font-size:0.95rem;vertical-align:top;}
+  .field-table td:first-child{color:var(--ink-soft);width:38%;}
+  .field-table a{color:var(--red);text-decoration:none;}
 
   footer{padding:2.5rem 1.25rem 1.5rem;border-top:2px solid var(--ink);}
-  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;}
+  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;margin-bottom:1.4rem;}
   .footer-row .brand{font-size:1rem;}
   .footer-row p{margin:0.3rem 0 0;color:var(--ink-soft);font-size:0.9rem;}
+  .footer-nav{display:flex;flex-direction:column;gap:0.5rem;}
+  .footer-nav a{color:var(--ink-soft);text-decoration:none;font-size:0.9rem;}
+  .footer-nav a:hover{color:var(--red);}
   .foot-disclaimer{font-size:0.76rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.1rem;}
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
@@ -183,86 +240,30 @@
 
 <header>
   <div class="nav">
-    <div class="brand"><span class="mark">P</span>Pichler</div>
+    <a class="brand" href="index.html"><span class="mark">P</span>Pichler</a>
     <nav class="links" id="navlinks">
-      <a href="#betrieb">Der Betrieb</a>
-      <a href="#angebot">Angebot</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="index.html" class="">Home</a>
+      <a href="ueber-uns.html" class="">Der Betrieb</a>
+      <a href="angebot.html" class="active">Sortiment</a>
+      <a href="kontakt.html" class="">Kontakt</a>
     </nav>
     <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
   </div>
 </header>
-
-<section class="hero">
+<section class="page-hero">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-main">
-        <span class="tagline">Fleisch gibt Kraft</span>
-        <h1 class="display">Fleischhauerei <span>Pichler</span></h1>
-        <p>Traditionelle Fleischhauerei im Bezirk Weiz mit eigener Produktion und regionalen Spezialitäten — geführt von Josef und Dominik Pichler.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="tel:+43 3178 2931">Jetzt anrufen</a>
-          <a class="btn ghost" href="#angebot">Zum Angebot</a>
-        </div>
-      </div>
-      <div class="hero-spec">
-        <div class="spec-row"><span class="k">Standort</span><span class="v">St. Ruprecht/Raab</span></div>
-        <div class="spec-row"><span class="k">Führung</span><span class="v">Josef &amp; Dominik Pichler</span></div>
-        <div class="spec-row"><span class="k">Produktion</span><span class="v">Eigene Herstellung</span></div>
-        <div class="spec-row"><span class="k">Motto</span><span class="v">„Fleisch gibt Kraft“</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="strip">
-  <div class="wrap">
-    <div class="strip-grid">
-      <div class="strip-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h16M4 12h16M4 16h10"/></svg>
-        <h3>Eigene Produktion</h3>
-        <p>Herstellung im eigenen Betrieb statt Zukauf.</p>
-      </div>
-      <div class="strip-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
-        <h3>Regionale Herkunft</h3>
-        <p>Spezialitäten mit Bezug zur Region Weiz.</p>
-      </div>
-      <div class="strip-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
-        <h3>Familienbetrieb</h3>
-        <p>Vater-Sohn-Führung mit langer Erfahrung.</p>
-      </div>
-      <div class="strip-item reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16M4 12l4-4M4 12l4 4"/></svg>
-        <h3>Direkt vor Ort</h3>
-        <p>Parkstraße 133, gut erreichbar in St. Ruprecht.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="story" id="betrieb">
-  <div class="wrap story-grid">
-    <div class="story-visual reveal"><span class="cap">Josef &amp; Dominik Pichler</span></div>
-    <div class="reveal">
-      <span class="kicker">Der Betrieb</span>
-      <h2>Zwei Generationen, ein Handwerk.</h2>
-      <p>Die Fleischhauerei Pichler steht seit Langem für traditionelles Handwerk im Bezirk Weiz. Josef Pichler hat den Betrieb über Jahrzehnte aufgebaut, heute führt Sohn Dominik Pichler, MSc gemeinsam mit ihm die Geschäfte weiter — mit demselben Anspruch an Qualität, aber offen für Neues.</p>
-      <p>Der Name ist Programm: „Fleisch gibt Kraft" steht für ehrliche, kräftige Produkte aus eigener Herstellung statt austauschbarer Massenware.</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg> Eigene Produktion mit regionalen Spezialitäten</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg> Vater-Sohn-Führung: Josef &amp; Dominik Pichler</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg> Verwurzelt im Bezirk Weiz</li>
-      </ul>
+    <div class="page-hero-inner">
+      <span class="kicker">Sortiment</span>
+      <h1>Was die Fleischhauerei Pichler ausmacht</h1>
+      <p>Eigene Produktion statt Zukauf — regionale Spezialitäten aus dem Bezirk Weiz.</p>
     </div>
   </div>
 </section>
 
 <section class="offer" id="angebot">
   <div class="wrap">
-    <span class="kicker">Angebot</span>
-    <h2>Was die Fleischhauerei Pichler ausmacht</h2>
+    <span class="kicker">Überblick</span>
+    <h2>Vier Gründe für die Theke in St. Ruprecht</h2>
     <div class="table">
       <div class="trow reveal">
         <div class="idx">01</div>
@@ -296,22 +297,42 @@
   </div>
 </section>
 
-<section class="contact" id="kontakt">
-  <div class="wrap contact-grid">
-    <div class="ccard reveal">
-      <h3>Kontakt</h3>
-      <div class="row"><span class="k">Adresse</span><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Parkstra%C3%9Fe%20133%2C%208181%20St.%20Ruprecht%20an%20der%20Raab">Parkstraße 133, 8181 St. Ruprecht/Raab</a></div>
-      <div class="row"><span class="k">Telefon</span><a href="tel:+43 3178 2931">+43 3178 2931</a></div>
-      <div class="row"><span class="k">Mobil (Dominik Pichler)</span><a href="tel:+43 664 8575768">+43 664 8575768</a></div>
-      <div class="row"><span class="k">E-Mail</span><a href="mailto:pichler@fleisch-gibt-kraft.at">pichler@fleisch-gibt-kraft.at</a></div>
-      <div class="row"><span class="k">Ansprechpersonen</span><span class="v">Josef &amp; Dominik Pichler</span></div>
+<section class="sortiment">
+  <div class="wrap">
+    <span class="kicker">An der Theke</span>
+    <h2>Unser Sortiment</h2>
+    <div class="sort-grid">
+      <div class="sort-card reveal">
+        <h3>Wurstwaren aus eigener Herstellung</h3>
+        <p>Klassische und regionale Wurstspezialitäten, im eigenen Betrieb hergestellt.</p>
+      </div>
+      <div class="sort-card reveal">
+        <h3>Frischfleisch</h3>
+        <p>Fleisch für den täglichen Einkauf, mit nachvollziehbarer Herkunft aus der Region.</p>
+      </div>
+      <div class="sort-card reveal">
+        <h3>Regionale Spezialitäten</h3>
+        <p>Produkte mit Bezug zur Region Weiz für Liebhaber traditioneller Küche.</p>
+      </div>
+      <div class="sort-card reveal">
+        <h3>Bestellungen für größere Anlässe</h3>
+        <p>Auf Vorbestellung auch größere Mengen für Feiern und Veranstaltungen.</p>
+      </div>
     </div>
-    <div class="map-frame reveal">
-      <iframe title="Lage Fleischhauerei Pichler" loading="lazy" src="https://www.google.com/maps?q=Parkstra%C3%9Fe%20133%2C%208181%20St.%20Ruprecht%20an%20der%20Raab&output=embed"></iframe>
-    </div>
+    <div class="note-box2">Aktuelles Sortiment und Preise erfahren Sie direkt an der Theke oder telefonisch — Josef und Dominik Pichler beraten Sie gerne persönlich.</div>
   </div>
 </section>
 
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Jetzt anrufen oder vorbeikommen.</h2>
+    <p>Persönliche Beratung an der Theke in der Parkstraße 133.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="tel:+4331782931">+43 3178 2931 anrufen</a>
+      <a class="btn ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div class="footer-row">
@@ -319,7 +340,13 @@
         <div class="brand">Fleischhauerei Pichler</div>
         <p>Parkstraße 133 · 8181 St. Ruprecht an der Raab</p>
       </div>
-      <p>+43 3178 2931 · pichler@fleisch-gibt-kraft.at</p>
+      <div>
+        <p><a href="tel:+4331782931" style="color:inherit;text-decoration:none;">+43 3178 2931</a><br><a href="mailto:pichler@fleisch-gibt-kraft.at" style="color:inherit;text-decoration:none;">pichler@fleisch-gibt-kraft.at</a></p>
+      </div>
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
     </div>
     <div class="foot-disclaimer">
       Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischhauerei Pichler · keine Verbindung zum Unternehmen.
@@ -347,5 +374,6 @@
     els.forEach(function(el){ el.classList.add('revealed'); });
   }
 </script>
+
 </body>
 </html>

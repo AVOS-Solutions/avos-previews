@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Fahrschule Staudinger Steyr</title>
+<meta name="description" content="Muster-Datenschutzerklärung für Fahrschule Staudinger Steyr.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101c2e; --navy-2:#16273d; --paper:#f4f6f5; --ink:#101c2e; --ink-soft:#3f5169;
+    --amber:#f0a333; --amber-deep:#d4831a; --teal:#2c8a7a; --line:rgba(16,28,46,0.14); --focus:#d4831a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0d1520; --navy:#f4f6f5; --navy-2:#0a121c; --ink:#f0eee8; --ink-soft:#a9b6c6;
+      --amber:#f6b856; --amber-deep:#f6c274; --teal:#5cc4b0; --line:rgba(240,238,232,0.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0d1520; --navy:#f4f6f5; --navy-2:#0a121c; --ink:#f0eee8; --ink-soft:#a9b6c6;
+    --amber:#f6b856; --amber-deep:#f6c274; --teal:#5cc4b0; --line:rgba(240,238,232,0.16);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .eyebrow{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-deep);font-weight:600;font-family:'Familjen Grotesk'}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+  header.site{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3.5rem);max-width:1200px;margin:0 auto}
+  .brand{text-decoration:none;display:flex;flex-direction:column}
+  .brand-name{font-family:'Unbounded';font-weight:700;font-size:1rem;line-height:1.2}
+  .brand-sub{font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{text-decoration:none;font-size:0.9rem;font-weight:500;padding:0.3rem 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--amber-deep)}
+  .nav-cta{display:none;background:var(--amber);color:var(--navy-2);text-decoration:none;padding:0.7rem 1.3rem;border-radius:8px;font-size:0.85rem;font-weight:700}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.2rem;height:1.2rem}
+  @media(min-width:880px){nav.links{display:flex}.nav-cta{display:inline-block}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line);background:var(--paper)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:1rem clamp(1.25rem,4vw,3.5rem);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+
+  section{padding:clamp(2.5rem,7vw,4.5rem) 0}
+  .page-hero{padding:clamp(2rem,6vw,3.5rem) 0 clamp(1.2rem,3vw,2rem)}
+  .page-hero h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.05}
+
+  .legal-notice{background:#fff;border:1.5px solid var(--amber-deep);padding:1.2rem 1.4rem;font-size:0.92rem;color:var(--ink);margin-bottom:2.5rem;max-width:760px;border-radius:8px}
+  :root[data-theme="dark"] .legal-notice{background:var(--navy-2)}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .legal-notice{background:var(--navy-2)}}
+  .legal-notice strong{color:var(--amber-deep)}
+  .legal{max-width:760px}
+  .legal h2{font-size:1.3rem;margin:2rem 0 0.7rem;font-family:'Unbounded'}
+  .legal h2:first-of-type{margin-top:0}
+  .legal p, .legal li{color:var(--ink-soft);font-size:0.98rem;margin-bottom:0.5rem}
+  .legal ul{padding-left:1.3rem;margin-top:0.3rem}
+
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1.6rem;background:var(--paper)}
+  .foot-grid{display:flex;flex-direction:column;gap:1.4rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-family:'Unbounded';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+  .foot-links{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:0.6rem}
+  .foot-links a{text-decoration:underline;text-underline-offset:3px}
+  .foot-disclaimer{font-size:0.74rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.2rem;margin-top:1.8rem;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Staudinger</span>
+      <span class="brand-sub">Fahrschule · Steyr</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4372525436">Anmelden</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4372525436">Anrufen: +43 7252 54366</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Datenschutz</span>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        <strong>Hinweis:</strong> Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+      <div class="legal">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:</p>
+        <p>Fahrschule Staudinger Steyr, Pachergasse 12, 4400 Steyr, Österreich<br>Telefon: <a href="tel:+4372525436">+43 7252 54366</a> · E-Mail: <a href="mailto:office@fahrschule-staudinger-steyr.at">office@fahrschule-staudinger-steyr.at</a></p>
+
+        <h2>2. Welche Daten bei der Website-Nutzung verarbeitet werden</h2>
+        <p>Beim Aufruf dieser Website können durch den Hosting-Anbieter automatisch technische Zugriffsdaten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp) in sogenannten Server-Logfiles erfasst werden. Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+        <h2>3. Cookies</h2>
+        <p>Diese Website verwendet, sofern nicht anders vermerkt, keine Tracking- oder Marketing-Cookies. Technisch notwendige Cookies können zur grundlegenden Funktion der Website eingesetzt werden. Ein etwaiger Einsatz von Analyse- oder Marketing-Cookies wäre gesondert und einwilligungsbasiert über ein Cookie-Consent-Tool umzusetzen.</p>
+
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Wenn Sie per Telefon oder E-Mail Kontakt mit uns aufnehmen, werden Ihre Angaben (z. B. Name, Kontaktdaten, Inhalt der Anfrage, z. B. zur gewünschten Führerscheinklasse) zur Bearbeitung Ihres Anliegens gespeichert und verarbeitet. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.</p>
+
+        <h2>5. Rechte der Betroffenen</h2>
+        <p>Nach der Datenschutz-Grundverordnung (DSGVO) haben Sie insbesondere folgende Rechte:</p>
+        <ul>
+          <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
+          <li>Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+          <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde (dsb.gv.at)</li>
+        </ul>
+
+        <h2>6. Kontakt für Datenschutzanliegen</h2>
+        <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Fahrschule Staudinger Steyr</div>
+        <div>Pachergasse 12, 4400 Steyr</div>
+        <div><a href="tel:+4372525436">+43 7252 54366</a></div>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Fahrschule Staudinger Steyr</strong> · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>
