@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Chamäleon Fassadenbau GmbH</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Gestaltungs-Vorschau für Chamäleon Fassadenbau GmbH, Aschach an der Donau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211d16;--paper:#f3efe6;--paper-2:#e9e2d2;--clay:#8a5a3b;--clay-dark:#6b4229;--line:#c9bfa6;
+    --shift-a:#1f7a5c;--shift-b:#2f8f8a;--shift-c:#c99a2e;
+    --mono:'JetBrains Mono', ui-monospace, monospace;--grot:'Bricolage Grotesque', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--grot);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden;}
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--shift-b);color:#fff;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--shift-c);outline-offset:3px;}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(243,239,230,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:16px;}
+  .brand{font-weight:800;font-size:1.05rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap;}
+  .brand-mark{width:14px;height:14px;border-radius:3px;flex:none;background:linear-gradient(135deg,var(--shift-a),var(--shift-b) 50%,var(--shift-c));background-size:200% 200%;animation:shift 6s ease-in-out infinite;}
+  @keyframes shift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+  nav#mainmenu ul{list-style:none;display:flex;gap:20px;margin:0;padding:0;flex-wrap:wrap;}
+  nav#mainmenu a{text-decoration:none;font-size:.9rem;font-weight:600;font-family:var(--mono);text-transform:uppercase;letter-spacing:.03em;padding:12px 2px;border-bottom:2px solid transparent;display:inline-flex;align-items:center;min-height:44px;}
+  nav#mainmenu a:hover, nav#mainmenu a.active{border-color:var(--clay);color:var(--clay-dark);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  .nav-cta{background:var(--ink);color:var(--paper)!important;padding:12px 18px;border-radius:2px;font-family:var(--mono);font-size:.82rem;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;}
+  .nav-toggle{display:none;background:none;border:2px solid var(--ink);border-radius:4px;padding:10px;cursor:pointer;min-width:44px;min-height:44px;align-items:center;justify-content:center;flex:none;}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:860px){
+    .nav{flex-wrap:wrap;}
+    nav#mainmenu{order:3;flex-basis:100%;background:var(--paper);border-top:1px solid var(--line);display:none;padding:12px 0 4px;}
+    nav#mainmenu.open{display:block;}
+    nav#mainmenu ul{flex-direction:column;gap:2px;}
+    .nav-toggle{display:flex;}
+    .brand{font-size:.98rem;}
+  }
+
+  .page-hero{padding:56px 0 24px;}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--clay-dark);display:block;margin-bottom:12px;}
+  .page-hero h1{font-size:clamp(1.9rem,4.4vw,2.8rem);margin:0 0 20px;font-weight:800;letter-spacing:-.02em;}
+
+  section{padding:0 0 clamp(48px,8vw,88px);}
+  .legal-banner{background:var(--paper-2);border:1px solid var(--clay);border-left:4px solid var(--clay-dark);padding:18px 20px;margin:0 0 40px;font-size:.9rem;color:#4a4436;border-radius:2px;max-width:80ch;}
+  .legal-banner strong{color:var(--clay-dark);}
+  .legal-body{max-width:74ch;}
+  .legal-body h2{font-size:1.25rem;margin:36px 0 12px;}
+  .legal-body h2:first-of-type{margin-top:0;}
+  .legal-body h3{font-size:1.02rem;margin:22px 0 8px;}
+  .legal-body p, .legal-body li{color:#4a4436;font-size:.96rem;}
+  .legal-body ul{padding-left:20px;margin:8px 0;}
+  .legal-body a{color:var(--clay-dark);text-decoration:underline;text-underline-offset:2px;}
+
+  footer{padding:36px 0 30px;font-family:var(--mono);font-size:.8rem;color:#4a4436;border-top:1px solid var(--line);background:var(--paper-2);}
+  .foot-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .foot-row a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-links a{margin-right:16px;display:inline-flex;min-height:44px;align-items:center;}
+  .footer-disclosure{font-size:.72rem;color:#7c7359;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);max-width:90ch;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span>Chamäleon Fassadenbau</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainmenu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-right">
+      <nav id="mainmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="tel:+436644400806">+43 664 4400806</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="page-hero">
+      <span class="eyebrow">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+    </div>
+    <div class="legal-banner">
+      <strong>Hinweis:</strong> Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+    </div>
+    <div class="legal-body">
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>
+        Verantwortlich für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br>
+        Chamäleon Fassadenbau GmbH, Weingartenweg 2b, 4082 Aschach an der Donau<br>
+        E-Mail: <a href="mailto:office@chamäleon.at">office@chamäleon.at</a> · Telefon: <a href="tel:+436644400806">+43 664 4400806</a>
+      </p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Beim Besuch dieser Website werden durch den verwendeten Browser automatisch technische Informationen (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) an den Server übermittelt und in Protokolldateien (Server-Logfiles) gespeichert. Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+      <h3>Cookies</h3>
+      <p>Diese Website verwendet, sofern technisch umgesetzt, nur solche Cookies, die für den Betrieb der Website technisch notwendig sind. Sollten künftig Cookies für Statistik- oder Marketingzwecke eingesetzt werden, erfolgt dies nur nach vorheriger Einwilligung im Rahmen eines Cookie-Consent-Tools.</p>
+
+      <h2>3. Kontaktaufnahme</h2>
+      <p>Wenn Sie per Telefon, E-Mail oder über sonstige Kontaktmöglichkeiten mit uns in Verbindung treten, werden die von Ihnen übermittelten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) ausschließlich zur Bearbeitung Ihres Anliegens verarbeitet und gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO (vorvertragliche Anfrage bzw. berechtigtes Interesse an der Beantwortung).</p>
+
+      <h2>4. Weitergabe von Daten</h2>
+      <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur, wenn dies zur Vertragserfüllung notwendig ist, wir gesetzlich dazu verpflichtet sind, oder Sie zuvor ausdrücklich eingewilligt haben.</p>
+
+      <h2>5. Speicherdauer</h2>
+      <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für die jeweiligen Zwecke erforderlich ist, oder solange gesetzliche Aufbewahrungsfristen bestehen.</p>
+
+      <h2>6. Ihre Rechte als betroffene Person</h2>
+      <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>
+      <ul>
+        <li>Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO)</li>
+        <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+        <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO)</li>
+        <li>Einschränkung der Datenverarbeitung (Art. 18 DSGVO)</li>
+        <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      </ul>
+      <p>Zudem steht Ihnen das Recht zu, sich bei der österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>) zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt.</p>
+
+      <h2>7. Änderungen dieser Datenschutzerklärung</h2>
+      <p>Da diese Seite eine unverbindliche Gestaltungs-Vorschau ist, dient dieser Text ausschließlich der Veranschaulichung und wird für eine reale Website durch eine individuell geprüfte, rechtsverbindliche Datenschutzerklärung ersetzt.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot-row">
+    <div>
+      <strong>Chamäleon Fassadenbau GmbH</strong><br>
+      Weingartenweg 2b, 4082 Aschach an der Donau<br>
+      <a href="tel:+436644400806">+43 664 4400806</a> · <a href="mailto:office@chamäleon.at">office@chamäleon.at</a>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="container footer-disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Chamäleon Fassadenbau GmbH · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mainmenu');
+  toggle.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+</body>
+</html>

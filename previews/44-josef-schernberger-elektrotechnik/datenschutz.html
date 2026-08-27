@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Josef Schernberger Elektrotechnik – Altmünster</title>
-<meta name="description" content="Elektrotechnikbetrieb Josef Schernberger in Altmünster: Elektroinstallationen aller Art im privaten Haushalt, tätig im Großraum Gmunden und Vöcklabruck.">
+<title>Datenschutz — Josef Schernberger Elektrotechnik</title>
+<meta name="description" content="Muster-Datenschutzerklärung von Josef Schernberger Elektrotechnik in Altmünster.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
+
   :root{
     --ink:#161a1d;
     --paper:#f4f2ec;
@@ -55,8 +56,9 @@
     display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;
   }
   .navlinks{display:flex;gap:1.8rem;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
-  .navlinks a{text-decoration:none;color:var(--ink);padding:.6rem 0;}
+  .navlinks a{text-decoration:none;color:var(--ink);padding:.6rem 0;border-bottom:2px solid transparent;}
   .navlinks a:hover,.navlinks a:focus-visible{color:var(--blue);}
+  .navlinks a.active{color:var(--blue);border-bottom-color:var(--yellow-dark);}
   .navcta{
     display:none;align-items:center;min-height:44px;background:var(--ink);color:var(--yellow);text-decoration:none;
     padding:.6rem 1.1rem;font-size:.8rem;font-weight:700;border:2px solid var(--ink);
@@ -77,8 +79,8 @@
       display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
       background:var(--paper);border-bottom:2px solid var(--ink);max-height:0;overflow:hidden;transition:max-height .35s ease;
     }
-    .navlinks a{padding:.9rem clamp(1.1rem,4vw,3rem);width:100%;box-sizing:border-box;border-top:1px solid var(--line);}
-    .navlinks.open{max-height:260px;}
+    .navlinks a{padding:.9rem clamp(1.1rem,4vw,3rem);width:100%;box-sizing:border-box;border-top:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navlinks.open{max-height:320px;}
   }
   a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
 
@@ -138,6 +140,11 @@
   .section-head{max-width:640px;margin-bottom:2.6rem;}
   .section-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);}
 
+  /* page hero (subpages) */
+  .page-hero{padding:clamp(2.4rem,6vw,3.6rem) 0 clamp(1.6rem,4vw,2.4rem);border-bottom:2px solid var(--ink);}
+  .page-hero h1{font-size:clamp(2rem,5.6vw,3.2rem);}
+  .page-hero p{margin-top:1.1rem;max-width:60ch;font-size:1.02rem;line-height:1.7;color:#333;}
+
   /* icon strip */
   .icon-strip{
     display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink);border-left:2px solid var(--ink);
@@ -167,6 +174,28 @@
   .about-card li{display:flex;gap:.6rem;font-size:.94rem;}
   .about-card li:before{content:"→";color:var(--blue);flex:none;font-weight:700;}
 
+  /* timeline (ueber-uns) */
+  .timeline{display:grid;gap:1.4rem;margin-top:1rem;}
+  .tl-item{background:var(--panel);border:2px solid var(--ink);padding:1.6rem 1.8rem;}
+  .tl-item .tl-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:.5rem;}
+  .tl-item h3{font-size:1.1rem;margin-bottom:.5rem;}
+  .tl-item p{font-size:.94rem;line-height:1.65;color:#333;}
+
+  /* teaser cards (home) */
+  .teaser-grid{display:grid;gap:0;grid-template-columns:1fr;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
+  @media(min-width:760px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+  .teaser-card{background:var(--panel);border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.9rem;display:flex;flex-direction:column;gap:.9rem;}
+  .teaser-card h3{font-size:1.2rem;}
+  .teaser-card p{font-size:.94rem;line-height:1.6;color:var(--muted);flex-grow:1;}
+  .teaser-card .link{
+    display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;text-decoration:none;
+    color:var(--blue);border-bottom:2px solid var(--yellow-dark);align-self:flex-start;min-height:44px;align-items:center;
+  }
+  .teaser-card .link:hover,.teaser-card .link:focus-visible{color:var(--yellow-dark);}
+
+  /* service cards (angebot) */
+  .note-box{background:var(--panel);border:2px dashed var(--blue);padding:1.4rem 1.6rem;margin-top:2.2rem;font-size:.94rem;line-height:1.6;color:#2c2c2c;}
+
   /* contact */
   .contact-band{background:var(--ink);color:var(--paper);}
   .contact-grid{display:grid;gap:0;border:2px solid var(--paper);}
@@ -182,29 +211,43 @@
   @media(max-width:899px){.map-frame{border-left:0;border-top:2px solid var(--paper);}}
   .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;filter:grayscale(.3) contrast(1.05);}
 
+  /* legal pages */
+  .legal-notice{
+    background:var(--panel);border:2px solid var(--blue);padding:1.4rem 1.6rem;
+    font-size:.92rem;line-height:1.6;color:#2c2c2c;margin-bottom:2.4rem;
+  }
+  .legal-notice strong{color:var(--blue);}
+  .prose h2{font-size:1.3rem;margin:2.2rem 0 .8rem;}
+  .prose h2:first-child{margin-top:0;}
+  .prose p{font-size:.98rem;line-height:1.75;color:#2c2c2c;margin-bottom:1rem;}
+  .prose ul{margin:0 0 1rem;padding-left:1.3rem;}
+  .prose li{margin-bottom:.5rem;line-height:1.65;color:#2c2c2c;}
+
   footer{background:var(--paper);border-top:2px solid var(--ink);padding:2.6rem 0 1.4rem;}
   .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--line-strong);}
   .footer-brand{font-weight:800;font-size:1.1rem;}
   .footer-note{font-size:.8rem;max-width:34ch;line-height:1.6;color:var(--muted);}
   .footer-bottom{padding-top:1.3rem;font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;}
+  .footer-legal a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong);padding:.2rem 0;}
+  .footer-legal a:hover,.footer-legal a:focus-visible{color:var(--ink);}
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
   .reveal.in{opacity:1;transform:none;}
+
 </style>
 </head>
 <body>
 
-<div class="disclaimer">
-  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Josef Schernberger Elektrotechnik</strong> · keine Verbindung zum Unternehmen
-</div>
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Josef Schernberger Elektrotechnik</strong> · keine Verbindung zum Unternehmen</div>
 
 <header class="site">
   <nav>
-    <a class="brand" href="#top"><span class="mark">JS</span>Elektrotechnik Schernberger</a>
+    <a class="brand" href="index.html"><span class="mark">JS</span>Elektrotechnik Schernberger</a>
     <div class="navlinks" id="navlinks">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ueber">Über uns</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
     </div>
     <a class="navcta" href="tel:+43761820520">Anrufen</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menü öffnen">
@@ -214,127 +257,50 @@
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-main reveal">
-        <div class="tag-row">
-          <span class="tag fill">Ein-Mann-Betrieb</span>
-          <span class="tag">Altmünster</span>
-          <span class="tag">Gmunden · Vöcklabruck</span>
-        </div>
-        <h1>Elektroinstallation,<span class="thin">präzise ausgeführt im privaten Haushalt.</span></h1>
-        <p class="hero-lede">Josef Schernberger Elektrotechnik übernimmt Elektroinstallationen aller Art im privaten Haushalt – persönlich, zuverlässig und mit direktem Ansprechpartner vor Ort im Großraum Gmunden und Vöcklabruck.</p>
-        <div class="hero-cta">
-          <a class="btn btn-solid" href="tel:+43761820520">+43 7618 20520 anrufen</a>
-          <a class="btn btn-outline" href="mailto:office@js-etechnik.at">E-Mail schreiben</a>
-        </div>
-      </div>
-      <div class="hero-panel reveal">
-        <dl class="spec">
-          <dt>Betrieb</dt>
-          <dd>Josef Schernberger Elektrotechnik</dd>
-        </dl>
-        <dl class="spec">
-          <dt>Ansprechperson</dt>
-          <dd>Josef Schernberger</dd>
-        </dl>
-        <dl class="spec">
-          <dt>Tätigkeitsgebiet</dt>
-          <dd>Großraum Gmunden &amp; Vöcklabruck</dd>
-        </dl>
-        <dl class="spec">
-          <dt>Standort</dt>
-          <dd>Dambach 1, 4814 Altmünster</dd>
-        </dl>
-      </div>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Datenschutz</span>
+      <h1>Muster-Datenschutzerklärung.</h1>
     </div>
   </section>
 
-  <section id="leistungen">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Leistungen</span>
-        <h2>Elektroinstallation aus einer Hand.</h2>
+  <section style="padding-top:0;">
+    <div class="wrap" style="max-width:780px;">
+      <div class="legal-notice reveal">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
       </div>
-    </div>
-    <div class="icon-strip reveal">
-      <article class="icon-cell">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4v10M12 12l6 6M28 12l-6 6M6 24h28M20 24v12" stroke-width="2" stroke-linecap="round"/></svg>
-        <h3>Elektroinstallation</h3>
-        <p>Neuinstallation und Erweiterung elektrischer Anlagen im privaten Haushalt.</p>
-      </article>
-      <article class="icon-cell">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="8" y="6" width="24" height="28" rx="2" stroke-width="2"/><line x1="14" y1="14" x2="26" y2="14" stroke-width="2"/><line x1="14" y1="20" x2="26" y2="20" stroke-width="2"/><line x1="14" y1="26" x2="20" y2="26" stroke-width="2"/></svg>
-        <h3>Sanierung &amp; Umbau</h3>
-        <p>Modernisierung bestehender Elektrik bei Renovierung oder Umbau.</p>
-      </article>
-      <article class="icon-cell">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="14" stroke-width="2"/><path d="M20 12v8l6 4" stroke-width="2" stroke-linecap="round"/></svg>
-        <h3>Fehlerbehebung</h3>
-        <p>Rasche, persönliche Fehlersuche und Reparatur bei elektrischen Störungen.</p>
-      </article>
-      <article class="icon-cell">
-        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 32c0-8 5-14 12-14s12 6 12 14" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="12" r="5" stroke-width="2"/></svg>
-        <h3>Persönliche Beratung</h3>
-        <p>Direkter Kontakt zu Josef Schernberger – ohne Umwege über ein Callcenter.</p>
-      </article>
-    </div>
-  </section>
+      <div class="prose reveal">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Josef Schernberger Elektrotechnik, Dambach 1, 4814 Altmünster, Telefon: +43 7618 20520, E-Mail: office@js-etechnik.at</p>
 
-  <section id="ueber">
-    <div class="wrap about-grid">
-      <div class="about-text reveal">
-        <span class="eyebrow">Über den Betrieb</span>
-        <h2 style="margin-bottom:1.2rem;">Ein Ansprechpartner, ein Handschlag.</h2>
-        <p>Josef Schernberger Elektrotechnik ist ein Ein-Mann-Elektrotechnikbetrieb für Elektroinstallationen aller Art im privaten Haushalt. Tätig im Großraum Gmunden und Vöcklabruck, steht Josef Schernberger seinen Kundinnen und Kunden persönlich zur Seite – von der ersten Beratung bis zur fertigen Installation.</p>
-        <p>Wer einen verlässlichen Elektriker mit kurzen Wegen und direkter Kommunikation sucht, ist hier richtig. Termine nach Vereinbarung.</p>
-      </div>
-      <div class="about-card reveal">
-        <h3>Auf einen Blick</h3>
+        <h2>2. Datenverarbeitung bei Website-Nutzung</h2>
+        <p>Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch technische Daten (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in sogenannten Server-Logfiles erfasst. Diese Daten dienen der technischen Bereitstellung der Website und werden nach kurzer Zeit automatisch gelöscht.</p>
+
+        <h2>3. Cookies</h2>
+        <p>Diese Muster-Website verwendet keine Analyse- oder Marketing-Cookies. Sofern technisch notwendige Cookies eingesetzt werden, dienen sie ausschließlich der Funktionsfähigkeit der Website.</p>
+
+        <h2>4. Kontaktaufnahme</h2>
+        <p>Bei Kontaktaufnahme per Telefon oder E-Mail werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage verarbeitet und nicht ohne Ihre Einwilligung an Dritte weitergegeben.</p>
+
+        <h2>5. Google Maps</h2>
+        <p>Auf der Kontaktseite kann eine Karte von Google Maps eingebunden sein. Beim Laden der Karte können Daten an Google LLC übertragen werden. Details entnehmen Sie der Datenschutzerklärung von Google.</p>
+
+        <h2>6. Ihre Rechte</h2>
         <ul>
-          <li>Elektroinstallationen im privaten Haushalt</li>
-          <li>Einsatzgebiet: Gmunden &amp; Vöcklabruck</li>
-          <li>Persönlicher Ansprechpartner: Josef Schernberger</li>
-          <li>Standort: Dambach 1, Altmünster</li>
+          <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+          <li>Recht auf Berichtigung unrichtiger Daten</li>
+          <li>Recht auf Löschung, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen</li>
+          <li>Recht auf Einschränkung der Verarbeitung</li>
+          <li>Recht auf Beschwerde bei der zuständigen Datenschutzbehörde</li>
         </ul>
+
+        <h2>7. Kontakt in Datenschutzfragen</h2>
+        <p>Für Fragen zum Datenschutz wenden Sie sich an: Josef Schernberger Elektrotechnik, Dambach 1, 4814 Altmünster, Telefon: +43 7618 20520, E-Mail: office@js-etechnik.at.</p>
       </div>
     </div>
   </section>
 
-  <section id="kontakt" class="contact-band">
-    <div class="wrap" style="padding-block:clamp(3rem,7vw,5.5rem);">
-      <div class="section-head reveal" style="margin-bottom:2.2rem;">
-        <span class="eyebrow" style="color:var(--yellow);">Kontakt</span>
-        <h2 style="color:#fff;">Anfrage stellen.</h2>
-      </div>
-      <div class="contact-grid reveal">
-        <div class="contact-card">
-          <h3>Josef Schernberger</h3>
-          <dl class="info">
-            <div>
-              <dt>Adresse</dt>
-              <dd>Dambach 1, 4814 Altmünster</dd>
-            </div>
-            <div>
-              <dt>Telefon</dt>
-              <dd><a href="tel:+43761820520">+43 7618 20520</a></dd>
-            </div>
-            <div>
-              <dt>E-Mail</dt>
-              <dd><a href="mailto:office@js-etechnik.at">office@js-etechnik.at</a></dd>
-            </div>
-          </dl>
-          <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap;">
-            <a class="btn btn-solid" href="tel:+43761820520">Anrufen</a>
-            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Dambach%201%2C%204814%20Altm%C3%BCnster">Route planen</a>
-          </div>
-        </div>
-        <div class="map-frame">
-          <iframe title="Karte: Josef Schernberger Elektrotechnik, Dambach 1, Altmünster" loading="lazy" src="https://www.google.com/maps?q=Dambach%201%2C%204814%20Altm%C3%BCnster&output=embed"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -348,7 +314,7 @@
     </div>
     <div class="footer-bottom">
       <span>Dambach 1, 4814 Altmünster</span>
-      <span>Gestaltungs-Vorschau, nicht die echte Website des Betriebs</span>
+      <span class="footer-legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>

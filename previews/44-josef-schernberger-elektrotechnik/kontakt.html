@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Josef Schernberger Elektrotechnik</title>
+<meta name="description" content="Kontakt zu Josef Schernberger Elektrotechnik in Altmünster: Telefon, E-Mail, Adresse und Anfahrt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#161a1d;
+    --paper:#f4f2ec;
+    --panel:#ffffff;
+    --yellow:#f2b705;
+    --yellow-dark:#c99500;
+    --blue:#1d3557;
+    --blue-2:#3a5a86;
+    --line:rgba(22,26,29,.16);
+    --line-strong:rgba(22,26,29,.32);
+    --muted:#565b5f;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html,body{overflow-x:hidden;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;margin:0;font-weight:700;letter-spacing:-.01em;line-height:1.05;}
+  p{margin:0;}
+  a{color:inherit;}
+  svg{display:block;max-width:100%;}
+  .wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(1.1rem,4vw,3rem);}
+
+  .disclaimer{
+    background:var(--ink);color:var(--yellow);font-size:.72rem;letter-spacing:.02em;
+    text-align:center;padding:.6rem 1rem;line-height:1.5;
+  }
+  .disclaimer strong{color:#fff;}
+
+  header.site{
+    position:sticky;top:0;z-index:40;background:rgba(244,242,236,.92);backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--ink);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.9rem clamp(1.1rem,4vw,3rem);max-width:1200px;margin:0 auto;position:relative;}
+  .brand{
+    font-weight:800;font-size:1rem;text-decoration:none;color:var(--ink);
+    display:flex;align-items:center;gap:.55rem;letter-spacing:-.01em;
+  }
+  .brand .mark{
+    width:30px;height:30px;flex:none;background:var(--yellow);border:2px solid var(--ink);
+    display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;
+  }
+  .navlinks{display:flex;gap:1.8rem;font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+  .navlinks a{text-decoration:none;color:var(--ink);padding:.6rem 0;border-bottom:2px solid transparent;}
+  .navlinks a:hover,.navlinks a:focus-visible{color:var(--blue);}
+  .navlinks a.active{color:var(--blue);border-bottom-color:var(--yellow-dark);}
+  .navcta{
+    display:none;align-items:center;min-height:44px;background:var(--ink);color:var(--yellow);text-decoration:none;
+    padding:.6rem 1.1rem;font-size:.8rem;font-weight:700;border:2px solid var(--ink);
+  }
+  .navcta:hover,.navcta:focus-visible{background:var(--blue);color:#fff;}
+  .burger{
+    display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+    background:none;border:2px solid var(--ink);padding:0;cursor:pointer;flex:none;
+  }
+  .burger svg{width:20px;height:20px;}
+  .burger path{stroke:var(--ink);}
+  @media(min-width:780px){
+    .navcta{display:inline-flex;}
+    .burger{display:none;}
+  }
+  @media(max-width:779px){
+    .navlinks{
+      display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);border-bottom:2px solid var(--ink);max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .navlinks a{padding:.9rem clamp(1.1rem,4vw,3rem);width:100%;box-sizing:border-box;border-top:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navlinks.open{max-height:320px;}
+  }
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
+
+  /* hero: swiss grid */
+  .hero{border-bottom:2px solid var(--ink);position:relative;overflow:hidden;}
+  .hero-grid{
+    display:grid;grid-template-columns:1fr;
+  }
+  @media(min-width:900px){
+    .hero-grid{grid-template-columns:1.3fr 1fr;}
+  }
+  .hero-main{
+    padding:clamp(2.5rem,7vw,5rem) clamp(1.1rem,4vw,3rem);
+    border-bottom:2px solid var(--ink);
+  }
+  @media(min-width:900px){
+    .hero-main{border-bottom:0;border-right:2px solid var(--ink);}
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem;}
+  .tag{
+    font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    border:2px solid var(--ink);padding:.35rem .7rem;background:var(--panel);
+  }
+  .tag.fill{background:var(--yellow);}
+  .hero h1{font-size:clamp(2.2rem,6.4vw,4rem);}
+  .hero h1 .thin{font-weight:400;display:block;font-size:.5em;letter-spacing:0;margin-top:.5rem;color:var(--muted);}
+  .hero-lede{margin-top:1.6rem;font-size:1.05rem;line-height:1.7;max-width:46ch;color:#333;}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem;}
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
+    padding:.9rem 1.5rem;font-size:.88rem;font-weight:700;text-decoration:none;
+    border:2px solid var(--ink);transition:background .2s,color .2s,transform .2s;
+  }
+  .btn-solid{background:var(--ink);color:var(--yellow);}
+  .btn-solid:hover,.btn-solid:focus-visible{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-2px);}
+  .btn-outline{background:var(--panel);color:var(--ink);}
+  .btn-outline:hover,.btn-outline:focus-visible{background:var(--yellow);}
+
+  .hero-panel{
+    padding:clamp(2rem,5vw,3rem) clamp(1.1rem,4vw,3rem);
+    background:
+      repeating-linear-gradient(0deg, transparent 0 31px, var(--line) 31px 32px),
+      repeating-linear-gradient(90deg, transparent 0 31px, var(--line) 31px 32px),
+      var(--panel);
+    display:flex;flex-direction:column;justify-content:center;gap:1.5rem;
+  }
+  .spec{border-bottom:1px solid var(--line-strong);padding-bottom:1rem;}
+  .spec:last-child{border-bottom:0;padding-bottom:0;}
+  .spec dt{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;}
+  .spec dd{margin:.3rem 0 0;font-size:1.05rem;font-weight:600;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .eyebrow{
+    display:flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:1rem;
+  }
+  .eyebrow:before{content:"";width:24px;height:2px;background:var(--yellow-dark);display:inline-block;}
+  .section-head{max-width:640px;margin-bottom:2.6rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);}
+
+  /* page hero (subpages) */
+  .page-hero{padding:clamp(2.4rem,6vw,3.6rem) 0 clamp(1.6rem,4vw,2.4rem);border-bottom:2px solid var(--ink);}
+  .page-hero h1{font-size:clamp(2rem,5.6vw,3.2rem);}
+  .page-hero p{margin-top:1.1rem;max-width:60ch;font-size:1.02rem;line-height:1.7;color:#333;}
+
+  /* icon strip */
+  .icon-strip{
+    display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink);border-left:2px solid var(--ink);
+  }
+  @media(min-width:640px){.icon-strip{grid-template-columns:1fr 1fr;}}
+  @media(min-width:980px){.icon-strip{grid-template-columns:repeat(4,1fr);}}
+  .icon-cell{
+    border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
+    padding:1.8rem 1.5rem;background:var(--panel);
+  }
+  .icon-cell svg{width:32px;height:32px;margin-bottom:1rem;}
+  .icon-cell path,.icon-cell circle,.icon-cell rect,.icon-cell line{stroke:var(--blue);}
+  .icon-cell h3{font-size:1.05rem;margin-bottom:.5rem;font-weight:700;}
+  .icon-cell p{font-size:.86rem;color:var(--muted);line-height:1.55;}
+
+  /* about */
+  .about-grid{display:grid;gap:2.4rem;}
+  @media(min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;}}
+  .about-text p{font-size:1.05rem;line-height:1.75;color:#2c2c2c;}
+  .about-text p+p{margin-top:1.1rem;}
+  .about-card{
+    border:2px solid var(--ink);padding:1.8rem;background:var(--panel);
+  }
+  .about-card h3{font-size:1.1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+  .about-card h3:before{content:"";width:10px;height:10px;background:var(--yellow);border:2px solid var(--ink);display:inline-block;}
+  .about-card ul{list-style:none;margin:0;padding:0;display:grid;gap:.65rem;}
+  .about-card li{display:flex;gap:.6rem;font-size:.94rem;}
+  .about-card li:before{content:"→";color:var(--blue);flex:none;font-weight:700;}
+
+  /* timeline (ueber-uns) */
+  .timeline{display:grid;gap:1.4rem;margin-top:1rem;}
+  .tl-item{background:var(--panel);border:2px solid var(--ink);padding:1.6rem 1.8rem;}
+  .tl-item .tl-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:.5rem;}
+  .tl-item h3{font-size:1.1rem;margin-bottom:.5rem;}
+  .tl-item p{font-size:.94rem;line-height:1.65;color:#333;}
+
+  /* teaser cards (home) */
+  .teaser-grid{display:grid;gap:0;grid-template-columns:1fr;border-top:2px solid var(--ink);border-left:2px solid var(--ink);}
+  @media(min-width:760px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+  .teaser-card{background:var(--panel);border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.9rem;display:flex;flex-direction:column;gap:.9rem;}
+  .teaser-card h3{font-size:1.2rem;}
+  .teaser-card p{font-size:.94rem;line-height:1.6;color:var(--muted);flex-grow:1;}
+  .teaser-card .link{
+    display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;text-decoration:none;
+    color:var(--blue);border-bottom:2px solid var(--yellow-dark);align-self:flex-start;min-height:44px;align-items:center;
+  }
+  .teaser-card .link:hover,.teaser-card .link:focus-visible{color:var(--yellow-dark);}
+
+  /* service cards (angebot) */
+  .note-box{background:var(--panel);border:2px dashed var(--blue);padding:1.4rem 1.6rem;margin-top:2.2rem;font-size:.94rem;line-height:1.6;color:#2c2c2c;}
+
+  /* contact */
+  .contact-band{background:var(--ink);color:var(--paper);}
+  .contact-grid{display:grid;gap:0;border:2px solid var(--paper);}
+  @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr;}}
+  .contact-card{padding:2.4rem clamp(1.1rem,4vw,2.6rem);}
+  .contact-card h3{font-size:1.3rem;margin-bottom:1.5rem;color:#fff;}
+  dl.info{display:grid;gap:1.1rem;margin:0;}
+  dl.info dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--yellow);font-weight:700;}
+  dl.info dd{margin:.25rem 0 0;font-size:1.02rem;}
+  dl.info a{text-decoration:none;border-bottom:2px solid var(--yellow);}
+  dl.info a:hover,dl.info a:focus-visible{color:var(--yellow);}
+  .map-frame{border-left:2px solid var(--paper);min-height:280px;}
+  @media(max-width:899px){.map-frame{border-left:0;border-top:2px solid var(--paper);}}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block;filter:grayscale(.3) contrast(1.05);}
+
+  /* legal pages */
+  .legal-notice{
+    background:var(--panel);border:2px solid var(--blue);padding:1.4rem 1.6rem;
+    font-size:.92rem;line-height:1.6;color:#2c2c2c;margin-bottom:2.4rem;
+  }
+  .legal-notice strong{color:var(--blue);}
+  .prose h2{font-size:1.3rem;margin:2.2rem 0 .8rem;}
+  .prose h2:first-child{margin-top:0;}
+  .prose p{font-size:.98rem;line-height:1.75;color:#2c2c2c;margin-bottom:1rem;}
+  .prose ul{margin:0 0 1rem;padding-left:1.3rem;}
+  .prose li{margin-bottom:.5rem;line-height:1.65;color:#2c2c2c;}
+
+  footer{background:var(--paper);border-top:2px solid var(--ink);padding:2.6rem 0 1.4rem;}
+  .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--line-strong);}
+  .footer-brand{font-weight:800;font-size:1.1rem;}
+  .footer-note{font-size:.8rem;max-width:34ch;line-height:1.6;color:var(--muted);}
+  .footer-bottom{padding-top:1.3rem;font-size:.72rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;}
+  .footer-legal a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line-strong);padding:.2rem 0;}
+  .footer-legal a:hover,.footer-legal a:focus-visible{color:var(--ink);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Josef Schernberger Elektrotechnik</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <nav>
+    <a class="brand" href="index.html"><span class="mark">JS</span>Elektrotechnik Schernberger</a>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+    </div>
+    <a class="navcta" href="tel:+43761820520">Anrufen</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Anfrage stellen.</h1>
+      <p>Ob Neuinstallation, Sanierung oder ein akutes Problem – melden Sie sich telefonisch oder per E-Mail, Josef Schernberger meldet sich persönlich zurück. Termine nach Vereinbarung.</p>
+    </div>
+  </section>
+
+  <section class="contact-band" style="padding-top:0;">
+    <div class="wrap" style="padding-block:clamp(2.2rem,5vw,3.5rem);">
+      <div class="contact-grid reveal">
+        <div class="contact-card">
+          <h3>Josef Schernberger</h3>
+          <dl class="info">
+            <div>
+              <dt>Adresse</dt>
+              <dd>Dambach 1, 4814 Altmünster</dd>
+            </div>
+            <div>
+              <dt>Telefon</dt>
+              <dd><a href="tel:+43761820520">+43 7618 20520</a></dd>
+            </div>
+            <div>
+              <dt>E-Mail</dt>
+              <dd><a href="mailto:office@js-etechnik.at">office@js-etechnik.at</a></dd>
+            </div>
+            <div>
+              <dt>Tätigkeitsgebiet</dt>
+              <dd>Großraum Gmunden &amp; Vöcklabruck</dd>
+            </div>
+            <div>
+              <dt>Termine</dt>
+              <dd>nach Vereinbarung</dd>
+            </div>
+          </dl>
+          <div style="margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap;">
+            <a class="btn btn-solid" href="tel:+43761820520">Anrufen</a>
+            <a class="btn btn-outline" href="mailto:office@js-etechnik.at">E-Mail schreiben</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Dambach%201%2C%204814%20Altm%C3%BCnster">Route planen</a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe title="Karte: Josef Schernberger Elektrotechnik, Dambach 1, Altmünster" loading="lazy" src="https://www.google.com/maps?q=Dambach%201%2C%204814%20Altm%C3%BCnster&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Josef Schernberger Elektrotechnik</div>
+        <p class="footer-note" style="margin-top:.6rem;">Elektroinstallationen im privaten Haushalt, Großraum Gmunden &amp; Vöcklabruck.</p>
+      </div>
+      <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Josef Schernberger Elektrotechnik · keine Verbindung zum Unternehmen.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>Dambach 1, 4814 Altmünster</span>
+      <span class="footer-legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var burger=document.getElementById('burger');
+    var navlinks=document.getElementById('navlinks');
+    if(burger&&navlinks){
+      burger.addEventListener('click',function(){
+        var open=navlinks.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open?'true':'false');
+      });
+      navlinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click',function(){
+          navlinks.classList.remove('open');
+          burger.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+    var els=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+        });
+      },{threshold:.14});
+      els.forEach(function(el){io.observe(el);});
+    } else {
+      els.forEach(function(el){el.classList.add('in');});
+    }
+  });
+</script>
+</body>
+</html>

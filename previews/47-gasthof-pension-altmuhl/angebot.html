@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer &amp; Küche — Gasthof-Pension Altmühl</title>
+<meta name="description" content="27 Zimmer, tägliche Mittagsmenüs und selbstgemachte Hausmannskost im Gasthof-Pension Altmühl in Gmunden am Traunsee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf1e4; --brick:#7c2d20; --brick-dark:#5c1f16; --mustard:#d99a2b;
+    --pine:#3c5233; --ink:#2b1c14; --paper:#fff9f0; --line:rgba(43,28,20,.15);
+    --serif:'Playfair Display', Georgia, serif; --sans:'Nunito Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,40px);}
+  ::selection{background:var(--mustard);color:var(--ink);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;}
+
+  .disclosure{background:var(--ink);color:var(--cream);text-align:center;font-size:.78rem;padding:9px 16px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(251,241,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(18px,5vw,40px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--brick);text-decoration:none;}
+  .navlinks{display:flex;gap:6px;align-items:center;}
+  .navlinks a{text-decoration:none;font-weight:700;font-size:.92rem;padding:12px 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:10px;color:var(--ink);}
+  .navlinks a:hover{background:#f4e0c4;}
+  .navlinks a.active{background:#f4e0c4;color:var(--brick);}
+  .navlinks a.cta{background:var(--brick);color:#fff;}
+  .navlinks a.cta:hover{background:var(--brick-dark);}
+  .burger{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:760px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;}
+    .navlinks.open{display:flex;}
+    .burger{display:flex;}
+  }
+
+  .page-header{background:linear-gradient(160deg,var(--brick) 0%,var(--brick-dark) 70%);color:#fff;position:relative;overflow:hidden;}
+  .page-header::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 85% 20%, rgba(217,154,43,.3), transparent 55%);}
+  .page-header-inner{position:relative;padding:clamp(44px,8vw,80px) 0 clamp(36px,6vw,56px);}
+  .page-header .eyebrow{color:var(--mustard);}
+  .page-header h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.1rem,5vw,3.4rem);margin:14px 0 0;max-width:20ch;}
+
+  section{padding:clamp(56px,9vw,100px) 0;}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.09em;font-size:.78rem;color:var(--brick);}
+  h2{font-family:var(--serif);font-size:clamp(1.9rem,3.8vw,2.7rem);font-weight:800;margin:14px 0 16px;color:var(--ink);}
+  h3{font-family:var(--serif);}
+  .lead{font-size:1.05rem;color:#4a382c;max-width:62ch;}
+
+  .bento{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(140px,auto);
+    gap:16px;margin-top:44px;
+  }
+  .bento .card{
+    border-radius:18px;padding:28px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .bento .card h3{font-family:var(--serif);font-size:1.4rem;margin:0 0 8px;font-weight:700;}
+  .bento .card p{margin:0;font-size:.92rem;}
+  .b1{grid-column:span 2;grid-row:span 2;background:var(--pine);color:#fff;}
+  .b2{grid-column:span 2;background:var(--mustard);color:var(--ink);}
+  .b3{grid-column:span 1;background:var(--brick);color:#fff;}
+  .b4{grid-column:span 1;background:#e7d3ae;color:var(--ink);}
+  .b5{grid-column:span 4;background:var(--ink);color:var(--cream);display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .b5 h3{margin:0;font-family:var(--serif);font-size:1.5rem;}
+  .b5 p{margin:0;font-size:.95rem;color:#d8c6ac;}
+  @media (max-width:900px){
+    .bento{grid-template-columns:repeat(2,1fr);}
+    .b1{grid-column:span 2;grid-row:span 1;}
+    .b2,.b3,.b4{grid-column:span 1;}
+    .b5{grid-column:span 2;flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:520px){
+    .bento{grid-template-columns:1fr;}
+    .b1,.b2,.b3,.b4,.b5{grid-column:span 1;}
+  }
+
+  .speise{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px;}
+  @media (max-width:760px){ .menu-grid{grid-template-columns:1fr;} }
+  .menu-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;}
+  .menu-card h3{margin:0 0 10px;font-size:1.25rem;color:var(--brick);}
+  .menu-card ul{margin:0;padding-left:20px;color:#4a382c;font-size:.95rem;display:grid;gap:8px;}
+  .note{margin-top:32px;font-size:.9rem;color:#6b5643;background:#f4e0c4;border-radius:12px;padding:16px 20px;max-width:60ch;}
+
+  .rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
+  @media (max-width:900px){ .rooms-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .rooms-grid{grid-template-columns:1fr;} }
+  .room-card{border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--paper);}
+  .room-card .num{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--brick);}
+  .room-card h3{margin:6px 0 8px;font-size:1.1rem;}
+  .room-card p{margin:0;color:#4a382c;font-size:.92rem;}
+
+  .cta-band{background:var(--brick);color:#fff;text-align:center;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:#f4e0d5;margin:0 auto 28px;}
+  .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:6px;text-decoration:none;font-weight:800;font-size:.95rem;}
+  .btn-mustard{background:var(--mustard);color:var(--ink);}
+  .btn-mustard:hover{background:#c8891f;}
+  .btn-outline{border:2px solid #fff;color:#fff;}
+  .btn-outline:hover{background:#fff;color:var(--brick);}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+
+  footer{background:var(--ink);color:var(--cream);}
+  .footer-top{padding:48px 0 32px;border-bottom:1px solid rgba(255,255,255,.12);}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr;gap:28px;} }
+  .footer-grid h4{font-family:var(--serif);margin:0 0 12px;font-size:1.05rem;color:var(--mustard);}
+  .footer-grid p{color:#e3d3bd;font-size:.9rem;margin:0 0 8px;}
+  .footer-grid a{color:#e3d3bd;text-decoration:none;}
+  .footer-grid a:hover{text-decoration:underline;}
+  .footer-links{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+  .footer-links a{min-height:24px;display:inline-flex;align-items:center;}
+  .footer-bottom{padding:18px 0;font-size:.78rem;color:#b8a488;text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof-Pension Altmühl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Gasthof Altmühl</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Zimmer &amp; Küche</a>
+      <a class="cta" href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="wrap page-header-inner">
+    <span class="eyebrow">Zimmer &amp; Küche</span>
+    <h1>Zimmer, Küche und Service auf einen Blick</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Angebot im Überblick</span>
+    <h2>27 Zimmer und eine bodenständige Küche</h2>
+    <p class="lead">17 Doppel- und 10 Einzelzimmer, eine Küche, die möglichst viel selbst macht, und ein Haus, das Radlergruppen ebenso wie Familien und Stammgäste willkommen heißt.</p>
+    <div class="bento">
+      <div class="card b1">
+        <h3>27 Zimmer</h3>
+        <p>17 Doppel- und 10 Einzelzimmer für den kurzen wie den längeren Aufenthalt am Traunsee.</p>
+      </div>
+      <div class="card b2">
+        <h3>Mittagsmenüs</h3>
+        <p>Täglich wechselnde Menüs mit Hausmannskost aus der eigenen Küche.</p>
+      </div>
+      <div class="card b3">
+        <h3>Radlergruppen</h3>
+        <p>Willkommen mit Rad und Gepäck – bewährter Stopp auf der Tour.</p>
+      </div>
+      <div class="card b4">
+        <h3>Stammgäste</h3>
+        <p>Viele Gäste kommen seit Jahren immer wieder.</p>
+      </div>
+      <div class="card b5">
+        <h3>Alles selbstgemacht</h3>
+        <p>Von Salaten bis Saucen – die Küche macht so viel wie möglich selbst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="speise">
+  <div class="wrap">
+    <span class="eyebrow">Küche</span>
+    <h2>Hausmannskost aus eigener Hand</h2>
+    <p class="lead">Die Küche des Gasthofs setzt auf ehrliche, selbstgemachte Gerichte – ideal für den Mittagstisch, den Feierabend oder die Rast auf der Radtour.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Mittagsmenü</h3>
+        <ul>
+          <li>Täglich wechselndes Tagesmenü</li>
+          <li>Suppe oder Vorspeise nach Wahl</li>
+          <li>Hausgemachte Saucen und Beilagen</li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>Hausmannskost</h3>
+        <ul>
+          <li>Bodenständige, herzhafte Küche</li>
+          <li>Salate frisch aus eigener Zubereitung</li>
+          <li>Klassiker für Stammgäste und Erstbesucher</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Aktuelle Speisekarte und Tagesangebote auf Anfrage – die Küche richtet sich nach Saison und Verfügbarkeit.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Zimmer</span>
+    <h2>Übernachten am Traunsee</h2>
+    <p class="lead">Ob Kurzurlaub, Geschäftsreise oder Zwischenstopp auf der Radtour – die Zimmer bieten Ruhe nach einem Tag am See.</p>
+    <div class="rooms-grid">
+      <div class="room-card">
+        <span class="num">17</span>
+        <h3>Doppelzimmer</h3>
+        <p>Für Paare, Freunde oder Gäste, die sich ein Zimmer teilen möchten.</p>
+      </div>
+      <div class="room-card">
+        <span class="num">10</span>
+        <h3>Einzelzimmer</h3>
+        <p>Für Alleinreisende, Geschäftsgäste und kurze Aufenthalte.</p>
+      </div>
+      <div class="room-card">
+        <span class="num">✓</span>
+        <h3>Für Radgruppen geeignet</h3>
+        <p>Platz für Gepäck und ein herzhaftes Frühstück oder Menü nach der Tour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--mustard);">Reservierung</span>
+    <h2>Fragen Sie Ihr Zimmer oder Ihren Tisch an</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto;">Gerhard Scheuringer und sein Team beraten Sie gerne persönlich.</p>
+    <div class="hero-actions">
+      <a class="btn btn-mustard" href="kontakt.html">Zur Kontaktseite</a>
+      <a class="btn btn-outline" href="tel:+43761264262">+43 7612 64262</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-top">
+    <div class="footer-grid">
+      <div>
+        <h4>Gasthof Altmühl</h4>
+        <p>Ohlsdorfer Straße 50<br>4810 Gmunden</p>
+        <p><a href="tel:+43761264262">+43 7612 64262</a><br><a href="mailto:info@gasthof-altmuehl.at">info@gasthof-altmuehl.at</a></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Zimmer &amp; Küche</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof-Pension Altmühl · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>
