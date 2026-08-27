@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Tischlerei SCHWAB</title>
+<meta name="description" content="Muster-Impressum für Tischlerei SCHWAB (Reinhard Schwab e.U.), Ladendorf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe4;
+    --paper-2:#ece3d1;
+    --walnut:#3a2a1c;
+    --walnut-2:#4f3a26;
+    --oak:#b3854f;
+    --amber:#d97b1c;
+    --ink:#241a10;
+    --line:#cdbb98;
+    --muted:#6b5c46;
+    --maxw:1240px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.2rem,4vw,2rem);}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+  h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;line-height:1.05;margin:0;letter-spacing:-0.01em;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+
+  .disclaimer{background:var(--walnut);color:#e9dcc0;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:#fff;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(244,239,228,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;padding:0.95rem 0;gap:1rem;position:relative;flex-wrap:wrap;}
+  .brand{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:-0.01em;display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+  .brand .sq{width:1.6rem;height:1.6rem;background:var(--amber);border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:700;}
+  .nav-links{display:flex;gap:clamp(1rem,2.5vw,2rem);list-style:none;margin:0;padding:0;font-size:0.9rem;font-weight:500;}
+  .nav-links a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid transparent;}
+  .nav-links a:hover{border-color:var(--amber);}
+  .nav-links a.active{border-color:var(--amber);color:var(--amber);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:0.5rem;background:var(--walnut);color:var(--paper);
+    padding:0.7rem 1.2rem;border-radius:0.4rem;text-decoration:none;font-size:0.85rem;font-weight:600;
+    min-height:44px;white-space:nowrap;
+  }
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;font-size:1.2rem;align-items:center;justify-content:center;color:var(--ink);}
+  @media (max-width:840px){
+    .nav-links{
+      position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:20rem;}
+    .nav-links li{border-top:1px solid var(--line);}
+    .nav-links a{padding:0.9rem clamp(1.2rem,4vw,2rem);width:100%;}
+    .menu-toggle{display:inline-flex;}
+    .nav-cta span.long{display:none;}
+  }
+
+  .page-hero{padding:clamp(2.4rem,6vw,3.4rem) 0 clamp(1.8rem,4vw,2.4rem);background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,2.8rem);}
+
+  section{padding:clamp(2.5rem,6vw,4rem) 0;}
+  .legal-notice{background:var(--paper-2);border:1px solid var(--amber);border-radius:0.7rem;padding:1.2rem 1.4rem;font-size:0.92rem;color:var(--walnut);margin-bottom:2.5rem;font-weight:600;line-height:1.5;}
+  .legal-body{max-width:70ch;}
+  .legal-body h2{font-size:1.3rem;margin:2.2rem 0 0.8rem;font-family:"Space Grotesk",sans-serif;font-weight:600;}
+  .legal-body h2:first-child{margin-top:0;}
+  .legal-body p, .legal-body li{color:var(--muted);font-size:0.98rem;line-height:1.7;}
+  .legal-body ul{padding-left:1.2rem;margin:0.5rem 0;}
+  .legal-body .field{color:var(--ink);font-style:italic;}
+  .legal-body a{color:var(--amber);}
+
+  footer.site{background:var(--walnut);color:#c9b28f;}
+  .foot-top{padding:clamp(2.5rem,6vw,3.5rem) 0 2rem;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;}
+  @media (max-width:700px){.foot-top{grid-template-columns:1fr;gap:1.6rem;}}
+  .foot-top .brand{color:var(--paper);}
+  .foot-top p{margin:0.8rem 0 0;font-size:0.92rem;color:#c9b28f;}
+  .foot-col h4{color:var(--paper);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.9rem;font-weight:600;font-family:"IBM Plex Mono",monospace;}
+  .foot-col a{color:#c9b28f;text-decoration:none;display:inline-flex;align-items:center;min-height:32px;font-size:0.92rem;}
+  .foot-col a:hover{color:var(--paper);}
+  .foot-nav{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.3rem;}
+  .foot-bottom{border-top:1px solid rgba(244,239,228,0.15);padding:1.4rem 0;display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:space-between;font-size:0.82rem;}
+  .foot-legal{font-size:0.76rem;color:#a8916c;text-align:center;padding:0 0 1.4rem;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Tischlerei SCHWAB</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="brand" href="index.html"><span class="sq">S</span> Tischlerei SCHWAB</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Leistungen</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4367683001325"><span class="long">Anrufen ·</span> Anfrage</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links">☰</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+      <div class="legal-body">
+        <h2>Diensteanbieter</h2>
+        <p>Tischlerei SCHWAB (Reinhard Schwab e.U.)<br>
+        Garmanns 19<br>
+        2126 Ladendorf<br>
+        Österreich</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+4367683001325">+43 676 8300 1325</a><br>
+        E-Mail: <a href="mailto:office@tischlerei-werkstatt.at">office@tischlerei-werkstatt.at</a></p>
+
+        <h2>Unternehmensform</h2>
+        <p>Einzelunternehmen (e.U.)<br>
+        Inhaber: Reinhard Schwab</p>
+
+        <h2>Unternehmensgegenstand</h2>
+        <p>Tischlergewerbe (Meisterbetrieb): Maßküchen, Möbel nach Maß, Planung und Montage</p>
+
+        <h2>Firmenbuchnummer / UID</h2>
+        <p>Firmenbuchnummer: <span class="field">[Firmenbuchnummer, falls eingetragen]</span><br>
+        UID-Nummer: <span class="field">[UID-Nummer]</span></p>
+
+        <h2>Zuständige Kammer / Gewerbebehörde</h2>
+        <p>Wirtschaftskammer Niederösterreich, Bezirksstelle Mistelbach — <span class="field">[genaue Bezeichnung auf Anfrage]</span></p>
+
+        <h2>Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-top">
+    <div>
+      <a class="brand" href="index.html"><span class="sq">S</span> Tischlerei SCHWAB</a>
+      <p>Garmanns 19, 2126 Ladendorf<br><a href="tel:+4367683001325">+43 676 8300 1325</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigation</h4>
+      <ul class="foot-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Leistungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Rechtliches</h4>
+      <ul class="foot-nav">
+        <li><a href="impressum.html" class="active">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Tischlerei SCHWAB (Reinhard Schwab e.U.) · Ladendorf</span>
+  </div>
+  <p class="wrap foot-legal">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei SCHWAB · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+    if(toggle && navLinks){
+      toggle.addEventListener('click', function(){
+        var open = navLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          navLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

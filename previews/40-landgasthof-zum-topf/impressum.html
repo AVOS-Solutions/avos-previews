@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Landgasthof zum Topf</title>
+<meta name="description" content="Muster-Impressum des Landgasthof zum Topf, Kaltenbach 26, 3902 Vitis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#2f4a3b;
+    --forest-2:#1f332a;
+    --walnut:#4a3222;
+    --amber:#c98a3c;
+    --amber-light:#e3b877;
+    --cream:#f6f1e4;
+    --cream-2:#ece1c7;
+    --ink:#2a2318;
+    --ink-soft:#5c5140;
+    --white:#fffdf8;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Work Sans',ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Cormorant',Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+  .disclaimer{background:var(--forest-2);color:#e3ddc8;font-size:12px;text-align:center;padding:9px 16px;line-height:1.5}
+  .disclaimer strong{color:var(--amber-light);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(246,241,228,0.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(74,50,34,0.15)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex-shrink:0}
+  .brand-mark{width:44px;height:44px;border-radius:46% 54% 60% 40%/50% 45% 55% 50%;background:var(--forest);color:var(--amber-light);display:flex;align-items:center;justify-content:center;font-family:'Cormorant',serif;font-weight:700;font-size:19px;flex-shrink:0}
+  .brand-name{font-family:'Cormorant',serif;font-size:20px;font-weight:700}
+  nav.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14.5px}
+  nav.links a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--amber)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:.2s ease}
+  .btn-primary{background:var(--forest);color:var(--white)}
+  .btn-primary:hover{background:var(--forest-2)}
+  .menu-toggle{display:none;background:none;border:1.5px solid var(--forest);border-radius:50%;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:var(--forest);position:relative}
+  .menu-toggle span::before{position:absolute;top:-6px}
+  .menu-toggle span::after{position:absolute;top:6px}
+  #mobile-menu a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--ink)}
+
+  .page-hero{padding:56px 0 44px;text-align:center}
+  .kicker{font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:16px}
+  .page-hero h1{font-size:clamp(2.1rem,6vw,3.4rem);color:var(--forest-2)}
+
+  section{padding:56px 0}
+
+  .legal-notice{background:var(--cream-2);border:1.5px solid var(--amber);color:var(--forest-2);padding:18px 22px;font-size:14px;line-height:1.6;margin:0 auto 44px;max-width:760px;border-radius:16px}
+  .legal-notice strong{color:var(--forest-2)}
+  .prose{max-width:760px;margin:0 auto}
+  .prose h2{font-size:1.5rem;margin:40px 0 14px;color:var(--forest-2)}
+  .prose h2:first-child{margin-top:0}
+  .prose p{margin:0 0 16px;color:var(--ink-soft);font-size:15.5px}
+  .prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);font-size:15.5px}
+  .prose li{margin-bottom:8px}
+  .prose strong{color:var(--ink)}
+  .prose a{color:var(--forest)}
+
+  footer.site{background:var(--walnut);color:#dccbb5;padding:44px 0 0}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(220,203,181,0.18)}
+  .foot-brand{font-family:'Cormorant',serif;color:var(--white);font-size:21px;font-weight:700}
+  .foot-links{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;color:#dccbb5}
+  .foot-links a:hover{color:var(--amber-light)}
+  .foot-legal{display:flex;gap:16px;list-style:none;margin:10px 0 0;padding:0;font-size:12px;flex-wrap:wrap}
+  .foot-legal a{text-decoration:none;color:#b39d84}
+  .foot-legal a:hover{color:var(--amber-light)}
+  .foot-note{max-width:1200px;margin:0 auto;padding:20px 24px 26px;font-size:12px;line-height:1.6;color:#b39d84}
+  .foot-note strong{color:#e3b877}
+
+  @media (max-width:720px){
+    nav.links{display:none}
+    .menu-toggle{display:flex}
+    .nav .btn-primary{display:none}
+    section{padding:36px 0}
+    .page-hero{padding:40px 0 32px}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; <strong>keine offizielle Website</strong> des Landgasthof zum Topf &middot; keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">T</span>
+      <span class="brand-name">zum Topf</span>
+    </a>
+    <ul class="links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-primary" href="kontakt.html">Tisch reservieren</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="display:none;border-top:1px solid rgba(74,50,34,0.15);background:var(--cream)">
+    <ul style="list-style:none;margin:0;padding:8px 24px 20px;display:flex;flex-direction:column;gap:2px">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="kicker">Rechtliches</div>
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+
+      <div class="prose">
+        <h2>Angaben gemäß § 5 ECG / § 25 Mediengesetz (Muster)</h2>
+        <p><strong>Diensteanbieter:</strong><br>
+        Landgasthof zum Topf<br>
+        Kaltenbach 26<br>
+        3902 Vitis<br>
+        Österreich</p>
+
+        <h2>Kontakt</h2>
+        <ul>
+          <li>Telefon: <a href="tel:+4328418329">+43 2841 8329</a></li>
+          <li>E-Mail: <a href="mailto:landgasthaus.topf@a1.net">landgasthaus.topf@a1.net</a></li>
+        </ul>
+
+        <h2>Unternehmensangaben</h2>
+        <p>Unternehmensgegenstand: Gastgewerbe (Restaurant, Café)<br>
+        Firmenbuchnummer/UID: <em>[UID-Nummer]</em> (Platzhalter — nicht recherchiert)<br>
+        Zuständige Kammer/Innung: Wirtschaftskammer Niederösterreich (Platzhalter — vor Veröffentlichung zu prüfen)</p>
+
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Landgasthof zum Topf, Anschrift wie oben.</p>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter ec.europa.eu/consumers/odr. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit, sofern gesetzlich nichts anderes vorgeschrieben ist. (Platzhaltertext — vor Veröffentlichung durch echten Betrieb zu prüfen.)</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">Landgasthof zum Topf</div>
+      <p style="font-size:13px;margin:8px 0 0">Kaltenbach 26 &middot; 3902 Vitis</p>
+      <p style="font-size:13px;margin:4px 0 0"><a href="tel:+4328418329">+43 2841 8329</a></p>
+      <ul class="foot-legal">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+  <p class="foot-note wrap">
+    <strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau &middot; erstellt zu Demonstrationszwecken &middot; keine offizielle Website des Landgasthof zum Topf &middot; keine Verbindung zum Unternehmen.
+  </p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  toggle.addEventListener('click', function(){
+    var open = menu.style.display === 'block';
+    menu.style.display = open ? 'none' : 'block';
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display = 'none'; toggle.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+</body>
+</html>
