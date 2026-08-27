@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Gästehaus Egger</title>
+<meta name="description" content="Muster-Datenschutzerklärung für die Gestaltungs-Vorschau von Gästehaus Egger, Straden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf7f2;
+    --panel:#ffffff;
+    --ink:#211f2e;
+    --ink-soft:#5b5870;
+    --line:rgba(33,31,46,0.13);
+    --air:#7fb0d6;
+    --water:#3a6ea5;
+    --fire:#d1602f;
+    --earth:#7a6a3f;
+    --plum:#5b3a63;
+    --focus:#5b3a63;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17151f;
+      --panel:#1f1c29;
+      --ink:#f1eef7;
+      --ink-soft:#c5c0d6;
+      --line:rgba(241,238,247,0.16);
+      --air:#9cc7e8;
+      --water:#7aa8d9;
+      --fire:#ef8555;
+      --earth:#c2ab6e;
+      --plum:#c79fd0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17151f;
+    --panel:#1f1c29;
+    --ink:#f1eef7;
+    --ink-soft:#c5c0d6;
+    --line:rgba(241,238,247,0.16);
+    --air:#9cc7e8;
+    --water:#7aa8d9;
+    --fire:#ef8555;
+    --earth:#c2ab6e;
+    --plum:#c79fd0;
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:0.005em;color:var(--ink);}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+  .disclaimer{background:var(--plum);color:#fbf7fc;text-align:center;font-size:0.77rem;padding:0.55rem 1rem;}
+  :root:not([data-theme="light"]) .disclaimer, :root[data-theme="dark"] .disclaimer{color:var(--ink);}
+
+  header{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1160px;margin:0 auto;}
+  .brand{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.4rem;text-decoration:none;}
+  nav.links{display:flex;align-items:center;gap:1.6rem;font-size:0.9rem;}
+  nav.links a{text-decoration:none;padding:0.6rem 0.2rem;border-bottom:1px solid transparent;}
+  nav.links a:hover{border-color:var(--plum);}
+  nav.links a.active{color:var(--plum);border-color:var(--plum);font-weight:600;}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;color:var(--ink);}
+  @media(max-width:740px){
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    nav.links.open{max-height:20rem;}
+    nav.links a{padding:0.95rem 1.5rem;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navtoggle{display:block;}
+  }
+
+  .page-header{position:relative;padding:clamp(2.8rem,7vw,5rem) 1.5rem clamp(2.2rem,5vw,3.2rem);border-bottom:1px solid var(--line);overflow:hidden;}
+  .page-header .wrap{position:relative;z-index:2;max-width:52rem;}
+  .page-header h1{font-size:clamp(2.1rem,5.5vw,3.4rem);margin:0 0 0.9rem;font-style:italic;}
+
+  .legal{padding:clamp(2.5rem,6vw,4rem) 1.5rem clamp(3.5rem,7vw,6rem);}
+  .legal .wrap{max-width:44rem;}
+  .legal h2{font-size:clamp(1.5rem,3.4vw,1.9rem);margin:2.2rem 0 0.8rem;font-style:italic;}
+  .legal h2:first-of-type{margin-top:0.5rem;}
+  .legal p, .legal li{color:var(--ink-soft);font-size:1rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal a{color:var(--plum);font-weight:600;text-decoration:none;}
+  .legal a:hover{text-decoration:underline;}
+  .legal-note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.3rem;font-size:0.92rem;color:var(--ink);margin-bottom:0.5rem;}
+  .legal-note strong{color:var(--plum);}
+
+  footer{padding:2.5rem 1.5rem 1.5rem;border-top:1px solid var(--line);}
+  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1rem;}
+  .footer-row .brand{font-size:1.15rem;text-decoration:none;}
+  .footer-row p{margin:0.3rem 0 0;color:var(--ink-soft);font-size:0.9rem;}
+  .footer-links{font-size:0.85rem;margin-bottom:1.3rem;}
+  .footer-links a{color:var(--ink-soft);text-decoration:none;font-weight:400;}
+  .footer-links a:hover{color:var(--plum);text-decoration:underline;}
+  .foot-disclaimer{font-size:0.76rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.1rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gästehaus Egger · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Gästehaus Egger</a>
+    <nav class="links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="wrap">
+    <span class="kicker">Rechtliches</span>
+    <h1>Datenschutzerklärung</h1>
+  </div>
+</section>
+
+<section class="legal">
+  <div class="wrap">
+    <div class="legal-note">
+      <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+    </div>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+    Gästehaus Egger, Helene Egger<br>
+    Karla 10, 8345 Straden<br>
+    E-Mail: <a href="mailto:heliegger@gmx.at">heliegger@gmx.at</a></p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Beim Besuch dieser Website werden durch den Hosting-Provider automatisch Informationen in Server-Logfiles gespeichert, die Ihr Browser übermittelt (z. B. IP-Adresse, Datum und Uhrzeit der Anfrage, verwendeter Browser). Diese Daten dienen der technischen Bereitstellung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>3. Cookies</h2>
+    <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Sofern Cookies für Statistik- oder Marketingzwecke eingesetzt werden, geschieht dies nur mit vorheriger Einwilligung der Nutzerin bzw. des Nutzers.</p>
+
+    <h2>4. Kontaktaufnahme</h2>
+    <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, werden Ihre Angaben zur Bearbeitung der Anfrage sowie für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+
+    <h2>5. Rechte der Betroffenen</h2>
+    <p>Sie haben jederzeit das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Ebenso haben Sie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten sowie auf Datenübertragbarkeit und Widerspruch gegen die Verarbeitung, soweit gesetzlich vorgesehen. Bei Fragen zum Datenschutz können Sie sich jederzeit an die oben genannte verantwortliche Stelle wenden. Ihnen steht zudem ein Beschwerderecht bei der österreichischen Datenschutzbehörde zu.</p>
+
+    <h2>6. Externe Inhalte</h2>
+    <p>Diese Seite kann eine eingebettete Google-Maps-Karte enthalten. Beim Aufruf der Karte kann eine Verbindung zu Servern von Google LLC hergestellt werden, wodurch Daten wie Ihre IP-Adresse an Google übermittelt werden können. Näheres dazu regelt die Datenschutzerklärung von Google.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a class="brand" href="index.html">Gästehaus Egger</a>
+        <p>Karla 10 · 8345 Straden</p>
+      </div>
+      <p>+43 664 1173509 · heliegger@gmx.at</p>
+    </div>
+    <div class="footer-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+    <div class="foot-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gästehaus Egger · keine Verbindung zum Unternehmen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

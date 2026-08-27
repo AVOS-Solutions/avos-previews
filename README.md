@@ -8,17 +8,28 @@ erstellt als Sales-Material auf Basis der Recherche `Website-Relaunch Leads Öst
 
 - **`index.html`** — durchsuchbare Übersicht aller 84 Betriebe, gruppiert nach Bundesland
   (Wien, Niederösterreich, Oberösterreich, Steiermark), mit Link zur jeweiligen
-  Vorschau-Seite und zur aktuellen (alten) Website des Betriebs.
-- **`previews/<nr>-<slug>.html`** — je eine eigenständige, in sich geschlossene
-  HTML-Datei pro Betrieb: eine bespoke Redesign-Vorschau, die zeigt, wie eine moderne
-  Website für genau diesen Betrieb aussehen könnte. Kein Bau-Kasten-Template — jede
-  Seite hat ein eigenes Layout, Typografie-Pairing und eine eigene Farbwelt, passend zur
-  Branche.
+  Vorschau-Website und zur aktuellen (alten) Website des Betriebs.
+- **`previews/<nr>-<slug>/`** — je eine vollständige, mehrseitige Website pro Betrieb,
+  bespoke gestaltet (eigenes Layout, Typografie-Pairing, Farbwelt passend zur Branche —
+  kein Bau-Kasten-Template):
+  - `index.html` — Home
+  - `ueber-uns.html` — Über uns / Geschichte
+  - `angebot.html` — Angebot/Leistungen (Label je nach Branche: Speisekarte, Zimmer &amp;
+    Ausstattung, Weine &amp; Angebot, Leistungen, Sortiment, Behandlungen, …)
+  - `kontakt.html` — Kontakt &amp; Anfahrt
+  - `impressum.html` — Muster-Impressum (Platzhalter, siehe unten)
+  - `datenschutz.html` — Muster-Datenschutzerklärung (Platzhalter, siehe unten)
 
-Jede Vorschau-Seite trägt eine klar sichtbare Kennzeichnung ("Unverbindliche
-Gestaltungs-Vorschau … keine offizielle Website von …"), da es sich um unabhängig
-erstellte Konzepte zu Demonstrationszwecken handelt, nicht um die echten Websites der
-Betriebe.
+  Alle 6 Seiten eines Betriebs teilen sich Navigation, Footer und Design-System.
+
+Jede Seite jeder Betriebs-Website trägt eine klar sichtbare Kennzeichnung
+("Unverbindliche Gestaltungs-Vorschau … keine offizielle Website von …"), da es sich um
+unabhängig erstellte Konzepte zu Demonstrationszwecken handelt, nicht um die echten
+Websites der Betriebe. Impressum und Datenschutzerklärung sind ausdrücklich als
+Muster/Platzhalter gekennzeichnet und ersetzen keine rechtliche Prüfung — ein Betrieb,
+der eine dieser Seiten übernehmen möchte, müsste ein rechtskonformes Impressum/eine
+rechtskonforme Datenschutzerklärung durch seine eigene Rechts-/Steuerberatung erstellen
+lassen.
 
 ## Technische Eckpunkte
 
