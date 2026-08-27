@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zum Hölbl — Wein & Genießen, Hietzing</title>
+<meta name="description" content="Kleines Weinlokal mit Vinothek in der Altgasse in Alt-Hietzing nahe Schönbrunn: österreichische Weine, Bier und Antipasti in familiärer Atmosphäre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14110f;
+    --bg-2:#1c1815;
+    --line:rgba(233,222,201,.14);
+    --paper:#e9dec9;
+    --paper-dim:rgba(233,222,201,.65);
+    --gold:#c8a24a;
+    --gold-soft:#d9bd7c;
+    --wine:#7a2333;
+    --ring:#c8a24a;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.02}
+  :focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+
+  .disclaimer{background:#0c0a09;color:var(--paper-dim);font-size:.76rem;text-align:center;padding:.55rem 1rem;border-bottom:1px solid var(--line)}
+  .disclaimer b{color:var(--gold-soft);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(20,17,15,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,2.5rem);max-width:1200px;margin:0 auto}
+  .brand{font-family:'Instrument Serif',serif;font-size:1.5rem;font-style:italic;color:var(--paper)}
+  .brand em{color:var(--gold)}
+  .navlist{display:flex;align-items:center;gap:2.2rem;list-style:none}
+  .navlist a{text-decoration:none;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--paper-dim)}
+  .navlist a:hover{color:var(--gold-soft)}
+  .cta-mini{display:inline-flex;align-items:center;min-height:44px;border:1px solid var(--gold);color:var(--gold-soft);padding:.5rem 1.1rem;border-radius:2px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+  .cta-mini:hover{background:rgba(200,162,74,.12)}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer}
+  @media (max-width:860px){
+    .navlist{position:fixed;top:60px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:2rem clamp(1.25rem,4vw,2.5rem);gap:1.5rem;transform:translateX(100%);transition:transform .3s ease;overflow-y:auto}
+    .navlist.open{transform:translateX(0)}
+    .navlist a{font-size:1.1rem}
+    .menu-toggle{display:flex}
+    .cta-mini{display:none}
+  }
+
+  /* Hero - editorial */
+  .hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(2.5rem,6vw,4rem);position:relative}
+  .hero-num{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem;display:flex;align-items:center;gap:.8rem}
+  .hero-num::after{content:'';flex:1;height:1px;background:var(--line)}
+  .hero h1{font-size:clamp(3rem,11vw,7.5rem);font-style:italic;letter-spacing:-0.01em;color:var(--paper)}
+  .hero h1 .amp{color:var(--gold)}
+  .hero-sub{display:grid;grid-template-columns:1fr;gap:1.6rem;margin-top:2.4rem}
+  @media (min-width:760px){.hero-sub{grid-template-columns:1.3fr 1fr;align-items:end}}
+  .hero-sub p{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--paper-dim);max-width:46ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:flex-start}
+  @media (min-width:760px){.hero-actions{justify-content:flex-end}}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.85rem 1.5rem;border-radius:2px;font-weight:600;font-size:.85rem;letter-spacing:.03em;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
+  .btn-primary{background:var(--gold);color:#1a140c}
+  .btn-primary:hover{background:var(--gold-soft)}
+  .btn-outline{border:1px solid var(--paper-dim);color:var(--paper)}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold-soft)}
+
+  /* Ornament divider */
+  .divider{padding:2rem 0}
+  .divider svg{width:100%;height:24px}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.8rem}
+  .section-head h2{font-size:clamp(2rem,4.5vw,3.2rem);font-style:italic;color:var(--paper)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* About - editorial split with big number */
+  .about{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media (min-width:900px){.about-grid{grid-template-columns:.6fr 1.4fr;gap:4rem}}
+  .about-num{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(4rem,10vw,7rem);color:var(--gold);line-height:.8;opacity:.85}
+  .about-copy p{color:var(--paper-dim);margin-bottom:1.2rem;max-width:60ch;font-size:1.05rem}
+  .badge-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+  .badge{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gold-soft);border:1px solid var(--line);padding:.45rem .9rem;border-radius:2px}
+
+  /* Offer - spec sheet grid */
+  .offer{background:var(--bg)}
+  .offer-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+  @media (min-width:700px){.offer-grid{grid-template-columns:repeat(3,1fr)}}
+  .offer-item{padding:2rem 1.6rem;border-bottom:1px solid var(--line)}
+  @media (min-width:700px){.offer-item{border-right:1px solid var(--line)}.offer-item:nth-child(3n){border-right:none}}
+  .offer-item .oi-num{font-size:.78rem;color:var(--gold);letter-spacing:.1em;margin-bottom:.9rem;display:block}
+  .offer-item h3{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.7rem;color:var(--paper);margin-bottom:.6rem}
+  .offer-item p{font-size:.92rem;color:var(--paper-dim)}
+
+  /* Location feature */
+  .locale{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .locale-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+  @media (min-width:900px){.locale-grid{grid-template-columns:1fr 1fr}}
+  .locale-art{aspect-ratio:5/4;border-radius:4px;overflow:hidden;position:relative}
+  .locale-art svg{width:100%;height:100%}
+  .locale-copy p{color:var(--paper-dim);max-width:48ch;margin-bottom:1rem;font-size:1.02rem}
+
+  /* Contact */
+  .contact{background:var(--bg)}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+  @media (min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{border:1px solid var(--line);border-radius:4px;padding:clamp(1.75rem,4vw,2.5rem)}
+  .contact-card h2{font-style:italic;font-size:2rem;color:var(--paper);margin-bottom:1.6rem}
+  .contact-row{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.2rem}
+  .contact-row svg{flex:none;width:19px;height:19px;stroke:var(--gold);margin-top:.2rem}
+  .contact-row a,.contact-row span{color:var(--paper-dim);text-decoration:none;font-size:.96rem}
+  .contact-row a:hover{color:var(--gold-soft)}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
+  .map-embed{border-radius:4px;overflow:hidden;border:1px solid var(--line);min-height:300px;filter:grayscale(.3) contrast(1.05)}
+  .map-embed iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+
+  footer.site{background:#0c0a09;color:var(--paper-dim);padding:2.5rem clamp(1.25rem,4vw,2.5rem) 2rem;border-top:1px solid var(--line)}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;max-width:1200px;margin:0 auto;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
+  .foot-brand{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.4rem;color:var(--gold-soft)}
+  .foot-note{max-width:1200px;margin:1.3rem auto 0;font-size:.76rem;color:rgba(233,222,201,.45);text-align:center}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <b>keine offizielle Website</b> von Zum Hölbl – Wein &amp; Genießen · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <div class="brand">Zum <em>Hölbl</em></div>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e9dec9" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="navlist" id="navLinks">
+      <li><a href="#ueber">Über uns</a></li>
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#lage">Lage</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a class="cta-mini" href="tel:+436642437575">Anrufen</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-num">Weinlokal &amp; Vinothek — Altgasse, Alt-Hietzing</div>
+    <h1>Wein <span class="amp">&amp;</span> Genießen</h1>
+    <div class="hero-sub">
+      <p>Ein kleines Weinlokal mit Vinothek nahe Schönbrunn: ausgewählte österreichische Weiß- und Rotweine, Bier und Antipasti in familiärer Atmosphäre.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Platz reservieren</a>
+        <a class="btn btn-outline" href="tel:+436642437575">Anrufen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <div class="wrap">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none"><line x1="0" y1="12" x2="1200" y2="12" stroke="#c8a24a" stroke-width="1" opacity="0.4"/><circle cx="600" cy="12" r="4" fill="#c8a24a"/></svg>
+  </div>
+</div>
+
+<section id="ueber" class="about">
+  <div class="wrap about-grid">
+    <div class="about-num reveal" aria-hidden="true">01</div>
+    <div class="about-copy reveal">
+      <div class="kicker">Über uns</div>
+      <h2 style="margin-bottom:1.2rem">Familiär, unaufgeregt, in Alt-Hietzing</h2>
+      <p>In der Altgasse, mitten in Alt-Hietzing und nur einen kurzen Weg von Schönbrunn entfernt, führt Michael Hölbl sein kleines Weinlokal mit angeschlossener Vinothek. Der Anspruch: eine sorgfältig zusammengestellte Auswahl österreichischer Weiß- und Rotweine, dazu Bier und Antipasti — serviert in einer Atmosphäre, die eher an einen guten Freundeskreis erinnert als an ein gewöhnliches Lokal.</p>
+      <p>Als Mitglied der WKO-Fachgruppe Gastronomie steht der Betrieb für Verlässlichkeit und Qualität, ohne dabei die persönliche, familiäre Note zu verlieren.</p>
+      <div class="badge-row">
+        <span class="badge">Österreichische Weine</span>
+        <span class="badge">Vinothek</span>
+        <span class="badge">Antipasti &amp; Bier</span>
+        <span class="badge">WKO Fachgruppe Gastronomie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="angebot" class="offer">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:2.5rem">
+      <div class="kicker">Das Angebot</div>
+      <h2>Wein, Bier &amp; Kleinigkeiten</h2>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0">
+    <div class="offer-grid">
+      <div class="offer-item reveal">
+        <span class="oi-num">— Weißwein</span>
+        <h3>Österreichische Weißweine</h3>
+        <p>Eine ausgewählte Karte heimischer Weißweine, sorgfältig kuratiert für die Vinothek.</p>
+      </div>
+      <div class="offer-item reveal">
+        <span class="oi-num">— Rotwein</span>
+        <h3>Österreichische Rotweine</h3>
+        <p>Kräftige und feine Rotweine österreichischer Herkunft, glasweise oder zum Mitnehmen.</p>
+      </div>
+      <div class="offer-item reveal">
+        <span class="oi-num">— Antipasti</span>
+        <h3>Bier &amp; Antipasti</h3>
+        <p>Kleine, feine Begleiter zum Wein — für den spontanen Besuch ebenso wie für den langen Abend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lage" class="locale">
+  <div class="wrap locale-grid">
+    <div class="locale-art reveal" aria-hidden="true">
+      <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1c1815"/>
+            <stop offset="1" stop-color="#0c0a09"/>
+          </linearGradient>
+        </defs>
+        <rect width="500" height="400" fill="url(#hg)"/>
+        <g stroke="#c8a24a" stroke-width="1" opacity="0.5" fill="none">
+          <circle cx="250" cy="200" r="120"/>
+          <circle cx="250" cy="200" r="90"/>
+          <circle cx="250" cy="200" r="60"/>
+        </g>
+        <path d="M250 90 v220 M140 200 h220" stroke="#c8a24a" stroke-width="0.6" opacity="0.35"/>
+        <circle cx="250" cy="200" r="5" fill="#c8a24a"/>
+        <text x="250" y="330" text-anchor="middle" fill="#d9bd7c" font-family="Instrument Serif, serif" font-style="italic" font-size="26">Altgasse 11</text>
+        <text x="250" y="358" text-anchor="middle" fill="#e9dec9" opacity="0.6" font-family="Space Grotesk, sans-serif" font-size="13" letter-spacing="1">NAHE SCHÖNBRUNN · 1130 WIEN</text>
+      </svg>
+    </div>
+    <div class="locale-copy reveal">
+      <div class="kicker">Lage</div>
+      <h2 style="margin-bottom:1.2rem">In Alt-Hietzing, nahe Schönbrunn</h2>
+      <p>Die Altgasse liegt im historischen Zentrum von Hietzing — ruhige Nachbarschaft, kurze Wege zum Schloss Schönbrunn und doch mit eigenem, unverwechselbarem Charakter.</p>
+      <p>Ideal für einen Umtrunk nach einem Spaziergang durch den Schlosspark oder als fixer Programmpunkt eines Abends in Hietzing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:2.5rem">
+      <div class="kicker">Kontakt &amp; Anfahrt</div>
+      <h2>Reservieren Sie Ihren Platz</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h2>Zum Hölbl</h2>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Altgasse 11, 1130 Wien</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+436642437575">+43 664 2437575</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+          <a href="mailto:mh@zumhoelbl.at">mh@zumhoelbl.at</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg>
+          <span>Inhaber: Michael Hölbl</span>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Öffnungszeiten auf Anfrage</span>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:mh@zumhoelbl.at">E-Mail schreiben</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Altgasse%2011%2C%201130%20Wien" target="_blank" rel="noopener">Route planen</a>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe title="Lage von Zum Hölbl auf der Karte" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Altgasse%2011%2C%201130%20Wien&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="foot-grid">
+    <div class="foot-brand">Zum Hölbl</div>
+    <div style="font-size:.88rem;opacity:.85;max-width:44ch">Altgasse 11 · 1130 Wien · +43 664 2437575 · mh@zumhoelbl.at</div>
+  </div>
+  <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zum Hölbl – Wein &amp; Genießen · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
