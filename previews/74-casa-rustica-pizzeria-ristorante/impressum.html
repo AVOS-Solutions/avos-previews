@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Casa Rustica, Graz-Waltendorf</title>
+<meta name="description" content="Muster-Impressum für Casa Rustica Pizzeria Ristorante, Graz — Platzhalter zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tomato:#d94a2e; --tomato-deep:#a8331d; --basil:#3c6e47; --basil-deep:#25452c;
+    --cream:#fff3e2; --mozz:#fffaf0; --ink:#241a12; --gold:#f0a93a;
+    --display:'Unbounded', system-ui, sans-serif;
+    --body:'Familjen Grotesk', system-ui, -apple-system, sans-serif;
+    --maxw:78rem;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream); color:var(--ink); font-family:var(--body); line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 min(5vw,1.6rem); width:100%;}
+  a{color:inherit;}
+  ::selection{background:var(--gold); color:var(--ink);}
+  :focus-visible{outline:3px solid var(--basil); outline-offset:3px;}
+  h1,h2{font-family:var(--display); line-height:1.05;}
+
+  .disclaimer{background:var(--ink); color:#f3e6d4; font-size:0.72rem; text-align:center; padding:0.55rem 1rem; letter-spacing:0.01em;}
+  .disclaimer strong{color:var(--gold);}
+
+  header.site{position:sticky; top:0; z-index:60; background:var(--mozz); border-bottom:3px solid var(--ink);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:0.9rem min(5vw,1.6rem); max-width:var(--maxw); margin:0 auto; gap:1rem;}
+  .brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; font-family:var(--display); font-weight:800; font-size:clamp(1rem,3.2vw,1.3rem); color:var(--tomato-deep); min-width:0;}
+  .brand svg{width:34px; height:34px; flex-shrink:0;}
+  .brand span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .navlinks{display:none; gap:1.8rem; list-style:none; font-weight:600; font-size:0.95rem;}
+  .navlinks a{text-decoration:none; padding:.4rem 0; border-bottom:3px solid transparent;}
+  .navlinks a:hover{border-color:var(--gold);}
+  .navcta{display:none; background:var(--basil); color:#fff; text-decoration:none; padding:.7rem 1.2rem; border-radius:100px; font-weight:700; font-size:0.9rem; white-space:nowrap;}
+  .burger{background:var(--ink); border:none; border-radius:8px; width:46px; height:46px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;}
+  .burger span, .burger span::before, .burger span::after{content:"";display:block; width:20px; height:2.5px; background:var(--mozz); position:relative;}
+  .burger span::before{position:absolute; top:-7px;}
+  .burger span::after{position:absolute; top:7px;}
+  .mobilemenu{display:none; flex-direction:column; background:var(--mozz); border-bottom:3px solid var(--ink);}
+  .mobilemenu.open{display:flex;}
+  .mobilemenu a{padding:1.1rem min(5vw,1.6rem); text-decoration:none; color:var(--ink); font-weight:700; border-top:1px solid #eaddc6; min-height:44px; display:flex; align-items:center;}
+  @media(min-width:860px){.navlinks{display:flex;} .navcta{display:inline-block;} .burger{display:none;} .mobilemenu{display:none !important;}}
+
+  section{padding:clamp(2.4rem,5vw,3.4rem) 0 clamp(3rem,7vw,5.5rem);}
+  h1{font-size:clamp(1.9rem,5vw,2.8rem); color:var(--tomato-deep); margin-bottom:1.6rem;}
+
+  .legalnotice{background:var(--mozz); border:2px solid var(--ink); border-radius:16px; padding:1.2rem 1.4rem; margin-bottom:2.5rem; font-size:0.92rem; color:#40301f; max-width:52rem;}
+  .legalnotice strong{color:var(--tomato-deep);}
+  .legalbody h2{font-size:1.35rem; color:var(--ink); margin:2rem 0 .8rem; font-family:var(--display); font-weight:600;}
+  .legalbody h2:first-child{margin-top:0;}
+  .legalbody p{margin-bottom:.9rem; color:#3a2c1c; max-width:48rem;}
+  .legalbody dl{display:grid; grid-template-columns:auto 1fr; gap:.6rem 1.2rem; margin-bottom:1.2rem; font-size:0.98rem; max-width:36rem;}
+  .legalbody dt{font-weight:800; color:var(--tomato-deep);}
+  .legalbody dd a{color:var(--tomato-deep); text-decoration:underline;}
+  .placeholder{color:#8a6a52; font-style:italic;}
+
+  footer.site{background:#180f09; color:#b6a488; padding:1.8rem 0; font-size:0.82rem;}
+  .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:0.8rem; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#f0dcc0; text-decoration:underline; text-underline-offset:3px;}
+  .footer-note{margin-top:1rem; font-size:0.74rem; color:#8a7458; max-width:60rem; line-height:1.6;}
+  .footer-note strong{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Casa Rustica Pizzeria Ristorante</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="10.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="11" cy="14.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <span>Casa Rustica</span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="navcta" href="tel:+4367764775001">Anrufen &amp; bestellen</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn"><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4367764775001">Anrufen &amp; bestellen</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h1>Impressum</h1>
+      <div class="legalnotice">
+        <strong>Muster-Impressum — Platzhalter zur Veranschaulichung.</strong> Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+      <div class="legalbody">
+        <h2>Diensteanbieter</h2>
+        <dl>
+          <dt>Name</dt><dd>Casa Rustica Pizzeria Ristorante</dd>
+          <dt>Inhaber/in</dt><dd class="placeholder">[Name der Inhaberin/des Inhabers]</dd>
+          <dt>Anschrift</dt><dd>Waltendorfer Hauptstraße 94, 8010 Graz, Österreich</dd>
+          <dt>Telefon</dt><dd><a href="tel:+4367764775001">+43 677 64775001</a></dd>
+          <dt>E-Mail</dt><dd><a href="mailto:casa_rust_ica@hotmail.com">casa_rust_ica@hotmail.com</a></dd>
+        </dl>
+
+        <h2>Unternehmensangaben</h2>
+        <dl>
+          <dt>Firmenbuchnummer</dt><dd class="placeholder">[Firmenbuchnummer]</dd>
+          <dt>UID-Nummer</dt><dd class="placeholder">[UID-Nummer]</dd>
+          <dt>Gewerbebehörde</dt><dd class="placeholder">[zuständige Gewerbebehörde]</dd>
+          <dt>Kammer</dt><dd class="placeholder">[zuständige Kammer/Innung]</dd>
+        </dl>
+
+        <h2>Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die unter <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a> zu erreichen ist. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© Casa Rustica Pizzeria Ristorante · Waltendorfer Hauptstraße 94, 8010 Graz</span>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Casa Rustica Pizzeria Ristorante</strong> · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); burgerBtn.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

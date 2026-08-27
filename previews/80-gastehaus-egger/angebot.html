@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer &amp; Ausstattung — Gästehaus Egger</title>
+<meta name="description" content="Die vier Themenzimmer des Gästehaus Egger in Karla bei Straden: Luft, Wasser, Feuer und Erde, mit Frühstücksraum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf7f2;
+    --panel:#ffffff;
+    --ink:#211f2e;
+    --ink-soft:#5b5870;
+    --line:rgba(33,31,46,0.13);
+    --air:#7fb0d6;
+    --water:#3a6ea5;
+    --fire:#d1602f;
+    --earth:#7a6a3f;
+    --plum:#5b3a63;
+    --focus:#5b3a63;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17151f;
+      --panel:#1f1c29;
+      --ink:#f1eef7;
+      --ink-soft:#c5c0d6;
+      --line:rgba(241,238,247,0.16);
+      --air:#9cc7e8;
+      --water:#7aa8d9;
+      --fire:#ef8555;
+      --earth:#c2ab6e;
+      --plum:#c79fd0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17151f;
+    --panel:#1f1c29;
+    --ink:#f1eef7;
+    --ink-soft:#c5c0d6;
+    --line:rgba(241,238,247,0.16);
+    --air:#9cc7e8;
+    --water:#7aa8d9;
+    --fire:#ef8555;
+    --earth:#c2ab6e;
+    --plum:#c79fd0;
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:0.005em;color:var(--ink);}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 1.5rem;}
+
+  .disclaimer{background:var(--plum);color:#fbf7fc;text-align:center;font-size:0.77rem;padding:0.55rem 1rem;}
+  :root:not([data-theme="light"]) .disclaimer, :root[data-theme="dark"] .disclaimer{color:var(--ink);}
+
+  header{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1160px;margin:0 auto;}
+  .brand{font-family:'Instrument Serif',serif;font-style:italic;font-size:1.4rem;text-decoration:none;}
+  nav.links{display:flex;align-items:center;gap:1.6rem;font-size:0.9rem;}
+  nav.links a{text-decoration:none;padding:0.6rem 0.2rem;border-bottom:1px solid transparent;}
+  nav.links a:hover{border-color:var(--plum);}
+  nav.links a.active{color:var(--plum);border-color:var(--plum);font-weight:600;}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;font-size:1.1rem;color:var(--ink);}
+  @media(max-width:740px){
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    nav.links.open{max-height:20rem;}
+    nav.links a{padding:0.95rem 1.5rem;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navtoggle{display:block;}
+  }
+
+  .page-header{position:relative;padding:clamp(2.8rem,7vw,5rem) 1.5rem clamp(2.2rem,5vw,3.2rem);border-bottom:1px solid var(--line);overflow:hidden;}
+  .page-header::before{content:"";position:absolute;width:min(300px,50vw);height:min(300px,50vw);background:radial-gradient(circle at 30% 30%, var(--fire), transparent 70%);top:-20%;right:-8%;opacity:0.3;border-radius:50%;}
+  .page-header .wrap{position:relative;z-index:2;max-width:52rem;}
+  .page-header h1{font-size:clamp(2.1rem,5.5vw,3.4rem);margin:0 0 0.9rem;font-style:italic;}
+  .page-header p{color:var(--ink-soft);font-size:1.08rem;max-width:50ch;margin:0;}
+
+  .rooms{padding:clamp(2.5rem,6vw,4.5rem) 1.5rem clamp(3.5rem,7vw,6rem);background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .rooms-head{max-width:44rem;margin-bottom:2.6rem;}
+  .rooms-head h2{font-size:clamp(2rem,4.5vw,2.8rem);margin:0 0 0.8rem;font-style:italic;}
+  .rooms-head p{color:var(--ink-soft);font-size:1.05rem;margin:0;}
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(160px,auto);gap:1rem;}
+  @media(max-width:920px){.bento{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.bento{grid-template-columns:1fr;}}
+  .room{border-radius:16px;padding:1.7rem;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;min-height:200px;}
+  .room.lg{grid-column:span 2;grid-row:span 2;min-height:280px;}
+  @media(max-width:920px){.room.lg{grid-column:span 2;}}
+  @media(max-width:520px){.room.lg{grid-column:span 1;}}
+  .room .glow{position:absolute;inset:0;opacity:0.9;}
+  .room .content{position:relative;z-index:2;}
+  .room .elem-lbl{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;opacity:0.85;margin-bottom:0.5rem;font-weight:600;}
+  .room h3{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.5rem,3vw,2rem);margin:0 0 0.5rem;color:#fff;}
+  .room p{margin:0;font-size:0.92rem;opacity:0.92;max-width:32ch;}
+  .room.air .glow{background:linear-gradient(135deg,var(--air),#4a83b3);}
+  .room.water .glow{background:linear-gradient(135deg,var(--water),#1f3d5c);}
+  .room.fire .glow{background:linear-gradient(135deg,var(--fire),#8f3417);}
+  .room.earth .glow{background:linear-gradient(135deg,var(--earth),#463a1e);}
+
+  .offer{padding:clamp(3rem,6vw,5rem) 1.5rem;}
+  .offer-head{max-width:44rem;margin-bottom:2.4rem;}
+  .offer-head h2{font-size:clamp(1.9rem,4.2vw,2.6rem);margin:0 0 0.7rem;font-style:italic;}
+  .offer-head p{color:var(--ink-soft);font-size:1.05rem;margin:0;}
+  .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  @media(max-width:820px){.offer-grid{grid-template-columns:1fr;}}
+  .offer-card{border:1px solid var(--line);border-radius:14px;padding:1.8rem;background:var(--panel);}
+  .offer-card svg{width:1.8rem;height:1.8rem;color:var(--plum);margin-bottom:1rem;}
+  .offer-card h3{font-size:1.3rem;margin:0 0 0.6rem;font-style:italic;}
+  .offer-card p{color:var(--ink-soft);font-size:0.96rem;margin:0;}
+
+  .cta-band{padding:clamp(3rem,6vw,5rem) 1.5rem;background:var(--plum);text-align:center;}
+  .cta-band h2{color:#fbf7fc;font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 1.4rem;font-style:italic;}
+  :root:not([data-theme="light"]) .cta-band h2, :root[data-theme="dark"] .cta-band h2{color:var(--ink);}
+  .cta-band .hero-cta{display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.85rem 1.5rem;min-height:44px;border-radius:8px;font-size:0.92rem;font-weight:600;text-decoration:none;border:1px solid var(--ink);}
+  .cta-band .btn.primary{background:#fbf7fc;color:var(--plum);border-color:#fbf7fc;}
+  .cta-band .btn.ghost{border-color:#fbf7fc;color:#fbf7fc;}
+  .cta-band .btn.ghost:hover{background:rgba(251,247,252,0.12);}
+
+  .legal{padding:clamp(2.5rem,6vw,4rem) 1.5rem clamp(3.5rem,7vw,6rem);}
+  .legal .wrap{max-width:44rem;}
+  .legal h2{font-size:clamp(1.5rem,3.4vw,1.9rem);margin:2.2rem 0 0.8rem;font-style:italic;}
+  .legal p, .legal li{color:var(--ink-soft);font-size:1rem;}
+
+  footer{padding:2.5rem 1.5rem 1.5rem;border-top:1px solid var(--line);}
+  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1rem;}
+  .footer-row .brand{font-size:1.15rem;text-decoration:none;}
+  .footer-row p{margin:0.3rem 0 0;color:var(--ink-soft);font-size:0.9rem;}
+  .footer-links{font-size:0.85rem;margin-bottom:1.3rem;}
+  .footer-links a{color:var(--ink-soft);text-decoration:none;}
+  .footer-links a:hover{color:var(--plum);text-decoration:underline;}
+  .foot-disclaimer{font-size:0.76rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.1rem;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.revealed{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gästehaus Egger · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Gästehaus Egger</a>
+    <nav class="links" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="wrap">
+    <span class="kicker">Zimmer &amp; Ausstattung</span>
+    <h1>Vier Zimmer, vier Stimmungen.</h1>
+    <p>Jedes Themenzimmer trägt den Namen und Charakter eines Elements — für einen Aufenthalt mit eigener Atmosphäre.</p>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="wrap">
+    <div class="bento">
+      <div class="room lg air reveal">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="content">
+          <span class="elem-lbl">Element I</span>
+          <h3>Luft</h3>
+          <p>Hell, leicht und offen gestaltet — für Gäste, die zum Durchatmen kommen.</p>
+        </div>
+      </div>
+      <div class="room water reveal">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="content">
+          <span class="elem-lbl">Element II</span>
+          <h3>Wasser</h3>
+          <p>Ruhige, kühle Töne für erholsame Nächte.</p>
+        </div>
+      </div>
+      <div class="room fire reveal">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="content">
+          <span class="elem-lbl">Element III</span>
+          <h3>Feuer</h3>
+          <p>Warm und einladend — das Zimmer mit dem besonderen Glanz.</p>
+        </div>
+      </div>
+      <div class="room earth reveal" style="grid-column: span 2;">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="content">
+          <span class="elem-lbl">Element IV</span>
+          <h3>Erde</h3>
+          <p>Erdig, geerdet und gemütlich — ein Zimmer wie ein sicherer Hafen nach einem Tag im Vulkanland.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="offer-head reveal">
+      <h2>Ausstattung</h2>
+      <p>Was zum Aufenthalt im Gästehaus Egger dazugehört.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h16M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M4 10v9M20 10v9M4 19h16"/></svg>
+        <h3>Frühstücksraum</h3>
+        <p>Ein eigener, heller Frühstücksraum für einen ruhigen Start in den Tag vor der Erkundung des Vulkanlandes.</p>
+      </div>
+      <div class="offer-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.2A7 7 0 0 1 12 3a7 7 0 0 1 7 6.8C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        <h3>Lage in Karla, Straden</h3>
+        <p>Ruhige Hoflage im Vulkanland Steiermark — guter Ausgangspunkt für Wein-, Rad- und Wandertouren.</p>
+      </div>
+      <div class="offer-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1.5-4 5-5.5 7-5.5s5.5 1.5 7 5.5"/></svg>
+        <h3>Persönlich betreut</h3>
+        <p>Helene Egger begleitet Sie persönlich durch Ihren Aufenthalt — von der Anfrage bis zur Abreise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ihr Wunschzimmer anfragen.</h2>
+    <div class="hero-cta">
+      <a class="btn primary" href="tel:+43 664 1173509">Jetzt anrufen</a>
+      <a class="btn ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <a class="brand" href="index.html">Gästehaus Egger</a>
+        <p>Karla 10 · 8345 Straden</p>
+      </div>
+      <p>+43 664 1173509 · heliegger@gmx.at</p>
+    </div>
+    <div class="footer-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
+    <div class="foot-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gästehaus Egger · keine Verbindung zum Unternehmen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target);} });
+    }, {threshold:0.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('revealed'); });
+  }
+</script>
+</body>
+</html>
