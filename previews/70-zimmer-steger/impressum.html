@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Zimmer Steger</title>
+<meta name="description" content="Muster-Impressum für Zimmer Steger, Ludersdorf 24, 8342 Gnas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c6e58; --sage-dark:#3c4a39; --clay:#b97a5a; --cream:#f7f3ea;
+    --paper:#fffdf8; --ink:#2c2e28; --line:rgba(44,46,40,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'IBM Plex Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Newsreader', serif;}
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);}
+  :focus-visible{outline:3px solid var(--clay); outline-offset:3px;}
+
+  .disclaimer{background:var(--sage-dark); color:#e9efe6; font-size:.78rem; text-align:center; padding:.6rem 1rem; line-height:1.45;}
+  .disclaimer strong{color:#d9c2a8;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(247,243,234,.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.2rem,4vw,2.5rem); position:relative;}
+  .brand{font-family:'Newsreader',serif; font-weight:500; font-size:1.3rem; text-decoration:none;}
+  .brand em{font-style:italic; color:var(--clay);}
+  nav.links ul{list-style:none; display:flex; gap:2rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; color:var(--ink); padding:.6rem 0; display:inline-block; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--clay);}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; border:2px solid var(--ink); border-radius:8px; background:none; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.2rem,5vw,3.4rem) 0 clamp(1.6rem,4vw,2.2rem); background:linear-gradient(160deg, rgba(92,110,88,.08), transparent 60%); border-bottom:1px solid var(--line);}
+  .page-hero h1{font-size:clamp(1.8rem,4.4vw,2.6rem); font-weight:500;}
+  .breadcrumb{font-size:.82rem; color:var(--clay); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  section{padding:clamp(2.4rem,6vw,4rem) 0;}
+
+  .legal-notice{display:flex; gap:1rem; align-items:flex-start; background:var(--paper); border:1px solid var(--line); border-left:4px solid var(--clay); border-radius:12px; padding:1.3rem 1.5rem; margin-bottom:2.4rem; max-width:60rem;}
+  .legal-notice svg{flex-shrink:0; margin-top:.15rem; color:var(--clay);}
+  .legal-notice p{font-size:.92rem; color:#4a4d43; margin:0;}
+
+  .prose{max-width:60rem;}
+  .prose h2{font-size:clamp(1.3rem,2.8vw,1.6rem); font-weight:500; margin:2rem 0 .8rem;}
+  .prose h2:first-child{margin-top:0;}
+  .prose p, .prose li{color:#4a4d43; font-size:.98rem; margin-bottom:.7rem;}
+  .prose ul{padding-left:1.3rem; margin-bottom:.7rem;}
+  .prose strong{color:var(--sage-dark);}
+  .prose a{color:var(--sage-dark);}
+  .placeholder{background:var(--paper); border:1px solid var(--line); padding:.1rem .4rem; border-radius:4px; font-style:italic;}
+
+  footer{background:var(--sage-dark); color:#e9e4d5; padding:clamp(2rem,5vw,3rem) 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(233,228,213,.15);}
+  .footer-brand{font-family:'Newsreader',serif; font-size:1.3rem; font-style:italic;}
+  footer address{font-style:normal; font-size:.9rem; color:#c7c1ac; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c7c1ac; text-decoration:none;}
+  footer address a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c7c1ac; text-decoration:none;}
+  .footer-nav a:hover{color:#e0c6a8; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.1rem 1rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c7c1ac; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#a8a28e; padding:1rem 1rem 1.5rem; line-height:1.5;}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.2rem,4vw,2.5rem); left:clamp(1.2rem,4vw,2.5rem); background:var(--paper); border:1px solid var(--line); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid var(--line); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Zimmer <em>Steger</em></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer & Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Impressum</p>
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b97a5a" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p><strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.</p>
+      </div>
+
+      <div class="prose">
+        <h2>Diensteanbieter</h2>
+        <p><strong>Zimmer Steger</strong><br>
+        Inhaber: Erich und Maria Steger<br>
+        Ludersdorf 24, 8342 Gnas, Österreich</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+436641364008">+43 664 1364008</a><br>
+        E-Mail: <a href="mailto:info@zimmer-steger.at">info@zimmer-steger.at</a></p>
+
+        <h2>Unternehmensrechtliche Angaben</h2>
+        <p>Firmenbuchnummer/UID: <span class="placeholder">[UID-Nummer]</span><br>
+        Zuständige Kammer/Innung: <span class="placeholder">[Kammer/Innung]</span><br>
+        Gewerbebehörde: <span class="placeholder">[zuständige Bezirksverwaltungsbehörde]</span></p>
+
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Erich und Maria Steger, Ludersdorf 24, 8342 Gnas</p>
+
+        <h2>Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch grundsätzlich bereit, sofern hierzu keine gesetzliche Pflicht besteht.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Zimmer Steger</div>
+      <address>Ludersdorf 24, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+436641364008">+43 664 1364008</a><br>E-Mail: <a href="mailto:info@zimmer-steger.at">info@zimmer-steger.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer & Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zimmer Steger · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
+</html>

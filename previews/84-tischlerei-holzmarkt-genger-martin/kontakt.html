@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Tischlerei Genger, Weißkirchen</title>
+<meta name="description" content="Kontakt und Anfahrt zur Tischlerei & Holzmarkt Genger Martin in Weißkirchen in Steiermark – Telefon, E-Mail, Ansprechperson Martin Genger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oak:#8a5a34; --oak-dark:#5f3c20; --graphite:#242320; --moss:#5c6b45;
+    --off:#f4f1ea; --off-2:#e8e2d3; --line:#d3c9b3;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--off); color:var(--graphite); font-family:'IBM Plex Sans',system-ui,sans-serif; overflow-x:hidden;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  p{line-height:1.65; color:#4a463c;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{width:min(1200px,92%); margin-inline:auto;}
+  :focus-visible{outline:3px solid var(--oak); outline-offset:3px;}
+  .disclaimer{background:var(--graphite); color:var(--off-2); font-size:clamp(.68rem,1.6vw,.78rem); text-align:center; padding:.55rem 1rem; font-family:'IBM Plex Mono',monospace;}
+  header{position:sticky; top:0; z-index:60; background:rgba(244,241,234,.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  nav.bar{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;}
+  .brand{font-weight:700; font-size:clamp(1rem,2.3vw,1.2rem); letter-spacing:-.01em; text-decoration:none;}
+  .brand .mono{color:var(--oak); font-weight:500; font-size:.85em;}
+  .nav-links{display:flex; gap:clamp(1rem,2.4vw,2.2rem); list-style:none; margin:0; padding:0; font-size:.88rem; font-weight:500;}
+  .nav-links a{text-decoration:none; padding:.7rem .1rem; display:inline-block; border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-color:var(--oak);}
+  .nav-links a.active{border-color:var(--oak); color:var(--oak-dark);}
+  .menu-toggle{display:none; background:none; border:2px solid var(--graphite); border-radius:6px; width:46px; height:44px; align-items:center; justify-content:center; cursor:pointer; flex-direction:column; gap:5px;}
+  .menu-toggle span{content:""; display:block; width:20px; height:2px; background:var(--graphite);}
+  @media (max-width:760px){
+    .nav-links{position:absolute; top:100%; left:0; right:0; background:var(--off); flex-direction:column; padding:.5rem 6% 1.2rem; border-bottom:1px solid var(--line); display:none;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.9rem .2rem; width:100%; border-bottom:1px solid var(--line);}
+    .menu-toggle{display:flex;}
+  }
+  .page-hero{border-bottom:1px solid var(--line); padding:clamp(2.5rem,6vw,4rem) 0;}
+  .hero-tag{font-family:'IBM Plex Mono',monospace; font-size:.8rem; letter-spacing:.06em; color:var(--oak-dark); text-transform:uppercase; margin-bottom:.8rem; display:block;}
+  h1.headline{font-size:clamp(2.1rem,5.4vw,3.6rem); line-height:1.05; font-weight:700; letter-spacing:-.015em; margin:0; max-width:18ch;}
+  h1.headline .accent{color:var(--oak);}
+  .hero-lede{max-width:56ch; margin-top:1.4rem; font-size:clamp(1rem,1.8vw,1.1rem);}
+  section{padding:clamp(3rem,6.5vw,5rem) 0;}
+  .section-head{display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; margin-bottom:2rem;}
+  .section-num{grid-column:1/2; font-family:'IBM Plex Mono',monospace; color:var(--oak); font-size:.9rem; font-weight:600;}
+  @media (max-width:600px){ .section-num{grid-column:1/13; margin-bottom:.3rem;} }
+  h2{grid-column:2/9; font-size:clamp(1.7rem,3.8vw,2.5rem); font-weight:700; letter-spacing:-.01em; margin:0;}
+  @media (max-width:600px){ h2{grid-column:1/13;} }
+  .contact-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(2rem,5vw,3.5rem); align-items:start;}
+  @media (max-width:800px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{background:var(--graphite); color:var(--off); border-radius:6px; padding:clamp(1.8rem,4vw,2.4rem);}
+  .contact-card h3{font-size:1.2rem; font-weight:700; margin:0 0 1.2rem;}
+  .contact-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.9rem;}
+  .contact-list a{text-decoration:none; color:var(--off); display:flex; align-items:center; gap:.7rem; min-height:44px; font-family:'IBM Plex Mono',monospace; font-size:.92rem;}
+  .contact-list a:hover{color:var(--oak);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.95rem 1.5rem; border-radius:3px; text-decoration:none; font-weight:600; font-size:.92rem; min-height:44px; transition:transform .18s ease, background .18s ease;}
+  .btn-ghost{border:1.5px solid var(--graphite); color:var(--graphite);}
+  .btn-ghost:hover{background:var(--graphite); color:var(--off);}
+  .map-wrap{margin-top:1.6rem; border:1px solid var(--line);}
+  .map-wrap iframe{width:100%; height:340px; border:0; display:block;}
+  .hours-box{background:var(--off-2); border:1px solid var(--line); padding:1.4rem 1.6rem; margin-top:1.6rem;}
+  .hours-box h3{margin:0 0 .5rem; font-size:1rem; font-weight:700;}
+  .hours-box p{margin:0; font-size:.92rem;}
+  footer{background:var(--off-2); color:#5a5548; padding:2.6rem 0 1.6rem; border-top:1px solid var(--line);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2rem; padding-bottom:1.6rem; border-bottom:1px solid var(--line);}
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; gap:1.6rem;} }
+  .foot-grid h4{color:var(--graphite); font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin:0 0 .8rem; font-family:'IBM Plex Mono',monospace;}
+  .foot-grid p{color:#5a5548; font-size:.9rem; margin:.3rem 0;}
+  .foot-links{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.6rem;}
+  .foot-links a{color:#5a5548; text-decoration:none; font-size:.9rem;}
+  .foot-links a:hover{color:var(--oak-dark);}
+  .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.7rem; font-size:.8rem; font-family:'IBM Plex Mono',monospace; padding-top:1.4rem;}
+  .foot-disclaimer{font-size:.76rem; color:#8a8474; text-align:center; padding-top:1rem; line-height:1.5;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei &amp; Holzmarkt Genger Martin · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="wrap">
+    <nav class="bar">
+      <a class="brand" href="index.html">Tischlerei <span class="mono">Genger</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Leistungen</a></li>
+        <li><a href="kontakt.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="hero-tag">Kontakt & Anfahrt</span>
+      <h1 class="headline">Sprechen wir über Ihr <span class="accent">Projekt</span>.</h1>
+      <p class="hero-lede">Ob Möbel, Zuschnitt oder Restaurierung – melden Sie sich unverbindlich für ein Gespräch.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section-head">
+          <span class="section-num mono">01</span>
+          <h2>Werkstatt</h2>
+        </div>
+        <p>Tischlerei &amp; Holzmarkt Genger Martin<br>Judenburgerstraße 29<br>8741 Weißkirchen in Steiermark</p>
+        <p style="margin-top:.8rem;">Ansprechperson: Martin Genger</p>
+        <a class="btn btn-ghost" style="margin-top:1.2rem;" href="https://www.google.com/maps/search/?api=1&query=Judenburgerstra%C3%9Fe%2029%2C%208741%20Wei%C3%9Fkirchen%20in%20Steiermark" target="_blank" rel="noopener">Anfahrt auf Google Maps</a>
+        <div class="hours-box">
+          <h3>Erreichbarkeit</h3>
+          <p>Öffnungszeiten auf Anfrage.</p>
+        </div>
+        <div class="map-wrap">
+          <iframe src="https://maps.google.com/maps?q=Judenburgerstra%C3%9Fe%2029%2C%208741%20Wei%C3%9Fkirchen%20in%20Steiermark&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Karte: Tischlerei Genger, Judenburgerstraße 29, 8741 Weißkirchen in Steiermark"></iframe>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Direkt erreichbar</h3>
+        <ul class="contact-list">
+          <li><a href="tel:+436645237793">☎ +43 664 5237793</a></li>
+          <li><a href="mailto:martin.genger.mg@gmail.com">✉ martin.genger.mg@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Tischlerei &amp; Holzmarkt Genger Martin</h4>
+        <p>Judenburgerstraße 29<br>8741 Weißkirchen in Steiermark</p>
+        <p><a href="tel:+436645237793" style="color:#5a5548;">+43 664 5237793</a></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="foot-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul class="foot-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Gestaltungs-Vorschau · Tischlerei &amp; Holzmarkt Genger Martin</span>
+      <span>Weißkirchen in Steiermark · Murtal</span>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Tischlerei &amp; Holzmarkt Genger Martin · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  var t = document.getElementById('menuToggle');
+  var n = document.getElementById('navLinks');
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

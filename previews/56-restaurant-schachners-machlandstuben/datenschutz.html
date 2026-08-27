@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Restaurant Schachners Machlandstuben</title>
+<meta name="description" content="Muster-Datenschutzerklärung des Restaurant Schachners Machlandstuben — generischer Platzhaltertext zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal-deep:#100c0a;
+    --wine:#5c1a2b;
+    --gold:#c9a15a;
+    --cream:#f4ecdd;
+    --bg:#fbf7ef;
+    --ink:#241a15;
+    --ink-soft:#5c4c3f;
+    --line:rgba(36,26,21,0.14);
+    --focus:#5c1a2b;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,.serif{font-family:'Libre Caslon Text',Georgia,serif;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:800px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+
+  .disclaimer{background:var(--charcoal-deep);color:#d9c9b4;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:var(--gold);font-weight:700;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(251,247,239,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.1rem,4vw,3rem);gap:1rem;position:relative;max-width:1180px;margin:0 auto;}
+  .brand{font-family:'Libre Caslon Text',serif;font-weight:700;font-size:1.3rem;text-decoration:none;color:var(--charcoal-deep);white-space:nowrap;}
+  .brand em{font-style:italic;color:var(--wine);}
+  nav.links{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;}
+  nav.links a{text-decoration:none;font-weight:600;font-size:0.9rem;color:var(--ink-soft);padding:0.2rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--wine);}
+  .nav-cta{display:inline-flex;align-items:center;min-height:44px;background:var(--wine);color:var(--cream);padding:0.7rem 1.2rem;border-radius:2px;text-decoration:none;font-weight:700;font-size:0.85rem;white-space:nowrap;}
+  .burger{display:none;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:4px;min-width:44px;min-height:44px;padding:0;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--charcoal-deep);margin:4px 0;}
+
+  main{padding:clamp(2.4rem,6vw,4rem) 0 clamp(3rem,6vw,5rem);}
+  h1{font-size:clamp(1.8rem,4.5vw,2.5rem);font-weight:400;margin:0 0 1.6rem;color:var(--charcoal-deep);}
+  .legal-notice{background:#fbeee0;border:1.5px solid var(--wine);color:var(--ink);padding:clamp(1rem,3vw,1.5rem);font-size:0.92rem;margin:0 0 2.4rem;}
+  .legal-notice strong{color:var(--wine);}
+  .legal-content h2{font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:400;color:var(--charcoal-deep);margin:2rem 0 0.7rem;}
+  .legal-content h2:first-of-type{margin-top:0;}
+  .legal-content p,.legal-content li{color:var(--ink-soft);font-size:0.98rem;}
+  .legal-content ul{padding-left:1.3rem;margin:0.4rem 0 0.9rem;}
+  .legal-content a{color:var(--wine);}
+
+  footer{background:var(--charcoal-deep);color:#a3907a;padding:2.5rem 0 1.5rem;}
+  .foot-disclaimer{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid rgba(244,236,221,0.1);margin-bottom:1.5rem;font-size:0.78rem;}
+  .foot-row{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.85rem;}
+  .foot-links{max-width:1180px;margin:0 auto 1rem;padding:0 clamp(1.1rem,4vw,3rem);display:flex;gap:1.4rem;font-size:0.85rem;}
+  .foot-links a{color:#d9c9b4;text-decoration:none;}
+  .foot-links a:hover{color:var(--gold);}
+
+  @media (max-width:860px){
+    nav.links,.nav-cta{display:none;}
+    .burger{display:flex;}
+    .nav.open nav.links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1.2rem clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid var(--line);gap:0.2rem;z-index:60;}
+    .nav.open nav.links a{min-height:44px;display:flex;align-items:center;}
+    .nav.open .nav-cta{display:inline-flex;margin-top:0.6rem;justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer"><strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Restaurant Schachners Machlandstuben · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav" id="nav">
+    <a href="index.html" class="brand">Schachner<em>s</em></a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte &amp; Zimmer</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="kontakt.html">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    <div class="legal-notice">
+      <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+    </div>
+    <div class="legal-content">
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>Restaurant Schachners Machlandstuben, Cornelia Schachner, Hauptplatz 14, 4320 Perg, Österreich<br>E-Mail: <a href="mailto:kontakt@restaurant-schachner.at">kontakt@restaurant-schachner.at</a> · Telefon: <a href="tel:+43726252339">+43 7262 52339</a></p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Die Verarbeitung personenbezogener Daten erfolgt regelmäßig nur nach Einwilligung des Nutzers oder auf sonstiger gesetzlicher Grundlage.</p>
+
+      <h2>3. Server-Logfiles / Hosting</h2>
+      <p>Beim Aufruf dieser Website können durch den Hosting-Provider automatisch Informationen in Server-Logfiles erfasst werden, die Ihr Browser übermittelt (z. B. Browsertyp, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage, IP-Adresse). Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+      <h2>4. Cookies</h2>
+      <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen sicherzustellen. Sofern über die Nutzung hinausgehende Cookies (z. B. für Statistik, Reservierungstools oder Marketing) eingesetzt werden sollen, erfolgt dies nur nach vorheriger Einwilligung der Nutzer im Rahmen eines Cookie-Consent-Tools.</p>
+
+      <h2>5. Kontaktaufnahme und Reservierung</h2>
+      <p>Wenn Sie per Telefon, E-Mail oder über sonstige Kontaktmöglichkeiten mit uns in Verbindung treten (z. B. für eine Tischreservierung oder Zimmeranfrage), werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, gewünschter Termin) zum Zweck der Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen bei uns gespeichert und verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. f DSGVO.</p>
+
+      <h2>6. Einbindung von Google Maps</h2>
+      <p>Auf dieser Website kann eine Kartendarstellung des Dienstes Google Maps (Google Ireland Limited) eingebunden sein. Beim Aufruf der entsprechenden Seite können Daten an Google übertragen und dort verarbeitet werden. Details entnehmen Sie der Datenschutzerklärung von Google unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+      <h2>7. Ihre Rechte als betroffene Person</h2>
+      <p>Ihnen stehen im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit folgende Rechte zu:</p>
+      <ul>
+        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+        <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>Recht auf Beschwerde bei einer Aufsichtsbehörde, in Österreich der Datenschutzbehörde (dsb.gv.at)</li>
+      </ul>
+
+      <h2>8. Speicherdauer</h2>
+      <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für die Erfüllung der jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten dies verlangen.</p>
+
+      <h2>9. Änderungen dieser Datenschutzerklärung</h2>
+      <p>Diese Muster-Datenschutzerklärung dient ausschließlich der Veranschaulichung im Rahmen dieser Gestaltungs-Vorschau und ist keine rechtsverbindliche Erklärung. Eine endgültige, rechtskonforme Datenschutzerklärung ist vom Betrieb mit fachkundiger Beratung zu erstellen.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Restaurant Schachners Machlandstuben · keine Verbindung zum Unternehmen</div>
+  <div class="foot-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+  <div class="foot-row">
+    <span>© Restaurant Schachners Machlandstuben</span>
+    <span>Hauptplatz 14, 4320 Perg · +43 7262 52339</span>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burgerBtn');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.links a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>
