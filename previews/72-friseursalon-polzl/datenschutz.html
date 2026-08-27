@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Friseursalon Pölzl</title>
+<meta name="description" content="Muster-Datenschutzerklärung für die Gestaltungs-Vorschau von Friseursalon Pölzl am Lendplatz in Graz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141210; --cream:#f3ece0; --cream-2:#e9ddc7;
+    --rust:#e8542c; --rust-dark:#b5391b; --muted:#6b6357;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Familjen Grotesk', sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,.display{font-family:'Unbounded', sans-serif;}
+  a{color:inherit;}
+  svg{display:block; max-width:100%;}
+  .wrap{max-width:800px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);}
+  :focus-visible{outline:3px solid var(--rust); outline-offset:3px;}
+
+  .disclaimer{background:var(--ink); color:var(--cream); font-size:.78rem; text-align:center; padding:.6rem 1rem; line-height:1.45;}
+  .disclaimer strong{color:var(--rust);}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(243,236,224,.96); backdrop-filter:blur(6px); border-bottom:2px solid var(--ink);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem clamp(1.2rem,4vw,2.5rem); position:relative; max-width:1200px; margin:0 auto;}
+  .brand{font-family:'Unbounded',sans-serif; font-weight:700; font-size:1.05rem; text-transform:uppercase; letter-spacing:.02em; text-decoration:none;}
+  .brand span{color:var(--rust);}
+  nav.links ul{list-style:none; display:flex; gap:1.8rem;}
+  nav.links a{text-decoration:none; font-size:.85rem; font-weight:600; text-transform:uppercase; letter-spacing:.03em; color:var(--ink); padding:.7rem 0; display:inline-block; border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--rust);}
+  nav.links a.active{color:var(--rust-dark); border-bottom-color:var(--rust);}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; border:2px solid var(--ink); border-radius:0; background:none; font-size:1.2rem; cursor:pointer;}
+
+  main{padding:clamp(2.6rem,6vw,4rem) 0 clamp(3rem,7vw,5rem);}
+  h1{font-size:clamp(1.9rem,4.6vw,2.6rem); text-transform:uppercase; margin-bottom:1.6rem;}
+  h2{font-size:1.2rem; text-transform:uppercase; margin:2.2rem 0 .8rem;}
+  p{margin-bottom:.9rem; color:var(--ink);}
+  ul{margin:0 0 1rem 1.2rem; color:var(--ink);}
+  li{margin-bottom:.4rem;}
+  .muted{color:var(--muted);}
+
+  .legal-notice{display:flex; gap:.9rem; align-items:flex-start; background:#fff; border:2px solid var(--rust); padding:1.3rem 1.5rem; margin-bottom:2.4rem;}
+  .legal-notice svg{flex-shrink:0; margin-top:.15rem; color:var(--rust-dark);}
+  .legal-notice p{font-size:.92rem; color:var(--ink); margin:0;}
+
+  footer{background:var(--ink); color:var(--cream); padding:clamp(2rem,5vw,3rem) 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(243,236,224,.15); max-width:1200px; margin:0 auto; padding-left:clamp(1.2rem,4vw,2.5rem); padding-right:clamp(1.2rem,4vw,2.5rem);}
+  .footer-brand{font-family:'Unbounded',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase;}
+  .footer-brand span{color:var(--rust);}
+  footer address{font-style:normal; font-size:.9rem; color:#c9c0ac; margin-top:.6rem; line-height:1.7;}
+  .footer-links{list-style:none; display:flex; flex-direction:column; gap:.5rem;}
+  .footer-links a{color:#c9c0ac; text-decoration:none; font-size:.9rem;}
+  .footer-links a:hover{color:var(--rust);}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#9c9280; padding:1.1rem 1rem 1.5rem; line-height:1.5;}
+
+  @media (max-width:820px){
+    nav.links{display:none; position:absolute; top:100%; left:0; right:0; background:var(--cream); border-bottom:2px solid var(--ink); box-shadow:0 20px 40px -24px rgba(0,0,0,.4);}
+    nav.links.open{display:block;}
+    nav.links ul{flex-direction:column; gap:0; padding:.6rem clamp(1.2rem,4vw,2.5rem) 1.2rem;}
+    nav.links a{padding:.9rem 0; width:100%;}
+    .navToggle{display:flex;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Friseursalon Pölzl · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="brand">Pölzl<span>.</span></a>
+    <nav class="links" id="navLinks" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Leistungen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+
+    <div class="legal-notice">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+      <p><strong>Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung</strong>, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</p>
+    </div>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:</p>
+    <p>Friseursalon Pölzl, Lendplatz 27 &amp; 30, 8020 Graz · Tel: <a href="tel:+43316715218">+43 316 715218</a> · E-Mail: <a href="mailto:r.karnitschnigg@gmx.at">r.karnitschnigg@gmx.at</a></p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p class="muted">Beim Besuch dieser Website können automatisch Informationen (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seiten, verwendeter Browser) durch den Hosting-Anbieter in Server-Logfiles erfasst werden. Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>3. Cookies</h2>
+    <p class="muted">Diese Website verwendet, sofern nicht anders angegeben, keine Tracking- oder Marketing-Cookies. Sollten technisch notwendige Cookies zum Einsatz kommen, dienen sie ausschließlich der Funktionsfähigkeit der Seite.</p>
+
+    <h2>4. Kontaktaufnahme</h2>
+    <p class="muted">Wenn Sie per Telefon, E-Mail oder über verlinkte Kontaktmöglichkeiten mit uns in Verbindung treten, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) zum Zweck der Bearbeitung Ihres Anliegens gespeichert und verarbeitet. Eine Weitergabe an Dritte erfolgt nicht, sofern keine gesetzliche Verpflichtung besteht.</p>
+
+    <h2>5. Rechte der betroffenen Personen</h2>
+    <p class="muted">Nach der Datenschutz-Grundverordnung (DSGVO) haben Sie insbesondere folgende Rechte:</p>
+    <ul>
+      <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+    </ul>
+
+    <h2>6. Kontakt für Datenschutzanliegen</h2>
+    <p class="muted">Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Pölzl<span>.</span></div>
+      <address>Lendplatz 27 &amp; 30, 8020 Graz<br>Damen- &amp; Herrensalon</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+43316715218" style="color:inherit;">+43 316 715218</a><br>E-Mail: <a href="mailto:r.karnitschnigg@gmx.at" style="color:inherit;">r.karnitschnigg@gmx.at</a></address>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Friseursalon Pölzl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var navList = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = navList.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
+</html>

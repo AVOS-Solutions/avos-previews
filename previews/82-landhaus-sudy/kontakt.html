@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt &amp; Anfahrt – Landhaus Sudy, Straden</title>
+<meta name="description" content="Kontaktieren Sie Elfriede und Rudolf Sudy im Landhaus Sudy, Kronnersdorf 40, 8345 Straden – telefonisch, per E-Mail oder direkt vor Ort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#efe6d3; --sand-2:#e2d5b6; --sage:#5b6b52; --sage-dark:#3d4a38;
+    --ink:#25281f; --gold:#bd9648; --paper:#f8f4ea;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk',system-ui,sans-serif; overflow-x:hidden; }
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Instrument Serif', Georgia, serif; font-weight:400; margin:0;}
+  p{line-height:1.7; color:#4c4f3f;}
+  .wrap{width:min(1180px,92%); margin-inline:auto;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{ background:var(--sage-dark); color:var(--sand); font-size:clamp(.68rem,1.6vw,.78rem); text-align:center; padding:.55rem 1rem; }
+
+  header{ position:sticky; top:0; z-index:60; background:rgba(248,244,234,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--sand-2); }
+  nav.bar{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;}
+  .brand{ font-family:'Instrument Serif', serif; font-style:italic; font-size:clamp(1.2rem,2.8vw,1.6rem); letter-spacing:.01em; text-decoration:none; }
+  .nav-links{display:flex; gap:clamp(1rem,2.4vw,2.4rem); list-style:none; margin:0; padding:0; font-size:.88rem; font-weight:500; text-transform:uppercase; letter-spacing:.05em; align-items:center;}
+  .nav-links a{text-decoration:none; padding:.7rem .1rem; display:inline-block; border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-color:var(--gold);}
+  .nav-links a.active{color:var(--sage-dark); border-color:var(--gold);}
+  .menu-toggle{
+    display:none; background:none; border:2px solid var(--ink); border-radius:10px;
+    width:46px; height:44px; align-items:center; justify-content:center; cursor:pointer;
+    flex-direction:column; gap:5px;
+  }
+  .menu-toggle span{display:block; width:20px; height:2px; background:var(--ink);}
+  @media (max-width:780px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0; background:var(--paper);
+      flex-direction:column; padding:.5rem 6% 1.2rem; border-bottom:1px solid var(--sand-2);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.9rem .2rem; width:100%; border-bottom:1px solid var(--sand-2); min-height:44px;}
+    .menu-toggle{display:flex;}
+  }
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(1.4rem,3vw,2rem);}
+  .eyebrow{ font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:1.1rem; display:flex; align-items:center; gap:.6rem; }
+  .eyebrow::before{content:"◆"; color:var(--gold); font-size:.7rem;}
+  h1.headline{ font-size:clamp(2.2rem,5.6vw,3.6rem); font-style:italic; line-height:1.05; max-width:22ch; }
+  .page-lede{max-width:56ch; margin-top:1.3rem; font-size:clamp(1rem,1.8vw,1.12rem);}
+
+  section{padding:clamp(2rem,5vw,3.5rem) 0;}
+  .section-tag{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:.8rem;}
+  h2{font-size:clamp(1.5rem,3vw,1.9rem); font-style:italic; line-height:1.15;}
+
+  .contact{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.6rem,4vw,3rem); align-items:start; }
+  @media (max-width:800px){ .contact{grid-template-columns:1fr;} }
+  .contact-card{ background:var(--sage-dark); color:var(--sand); border-radius:20px; padding:clamp(1.8rem,4vw,2.6rem); }
+  .contact-card h3{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.6rem; color:#fff; margin-bottom:1.2rem;}
+  .contact-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.9rem;}
+  .contact-list a{text-decoration:none; color:var(--sand); display:flex; align-items:center; gap:.7rem; min-height:44px; font-size:1.02rem;}
+  .contact-list a:hover{color:var(--gold);}
+  .info-card{ background:var(--sand); border:1px solid var(--sand-2); border-radius:20px; padding:clamp(1.8rem,4vw,2.6rem); }
+  .info-card dt{font-weight:600; color:var(--ink); margin-top:1.1rem;}
+  .info-card dt:first-child{margin-top:0;}
+  .info-card dd{margin:.25rem 0 0; color:#4c4f3f;}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    padding:.95rem 1.6rem; border-radius:4px; text-decoration:none;
+    font-weight:600; font-size:.92rem; min-height:44px; text-transform:uppercase; letter-spacing:.04em;
+    transition:transform .18s ease, background .18s ease; margin-top:1.6rem;
+  }
+  .btn-primary{background:var(--gold); color:var(--ink);}
+  .btn-primary:hover{transform:translateY(-2px);}
+
+  .map-embed{ margin-top:2.5rem; border-radius:16px; overflow:hidden; border:1px solid var(--sand-2); }
+  .map-embed iframe{width:100%; height:min(420px,60vw); border:0; display:block;}
+
+  footer{background:var(--ink); color:#c9c8b8; padding:clamp(2.2rem,5vw,3.2rem) 0 1.5rem;}
+  .foot-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:2.5rem; }
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; gap:2rem;} }
+  footer h3{font-family:'Instrument Serif',serif; font-style:italic; font-size:1.4rem; color:#fff; margin-bottom:.8rem;}
+  footer p, footer a{color:#c9c8b8; font-size:.95rem; text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .foot-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.6rem;}
+  .foot-list a{display:inline-block; min-height:44px; line-height:44px;}
+  .foot-bottom{ border-top:1px solid #454838; margin-top:2rem; padding-top:1.3rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:.7rem; font-size:.82rem; color:#98977f; }
+  .foot-bottom a{color:#98977f;}
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Landhaus Sudy · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="wrap">
+    <nav class="bar">
+      <a class="brand" href="index.html">Landhaus Sudy</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+        <li><a href="kontakt.html" class="active">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt &amp; Anfahrt</span>
+      <h1 class="headline">Wir freuen uns auf Ihre Anfrage.</h1>
+      <p class="page-lede">Elfriede und Rudolf Sudy beantworten Ihre Fragen zu Zimmern, Badeteich und Verfügbarkeit gerne persönlich.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact">
+      <div class="contact-card reveal">
+        <h3>Direkt erreichbar</h3>
+        <ul class="contact-list">
+          <li><a href="tel:+4334738287">☎ +43 3473 8287</a></li>
+          <li><a href="mailto:mail@sudy.info">✉ mail@sudy.info</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Kronnersdorf%2040%2C%208345%20Straden" target="_blank" rel="noopener">➜ Route berechnen</a></li>
+        </ul>
+      </div>
+      <div class="info-card reveal">
+        <span class="section-tag">Angaben</span>
+        <dl>
+          <dt>Adresse</dt>
+          <dd>Kronnersdorf 40, 8345 Straden, Steiermark</dd>
+          <dt>Ansprechpersonen</dt>
+          <dd>Elfriede und Rudolf Sudy</dd>
+          <dt>Öffnungszeiten</dt>
+          <dd>Zimmeranfragen auf Anfrage – bitte telefonisch oder per E-Mail kontaktieren.</dd>
+        </dl>
+        <a class="btn btn-primary" href="tel:+4334738287">Jetzt anrufen</a>
+      </div>
+    </div>
+
+    <div class="wrap map-embed reveal">
+      <iframe title="Karte: Landhaus Sudy, Kronnersdorf 40, 8345 Straden" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Kronnersdorf+40,+8345+Straden&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Landhaus Sudy</h3>
+      <p>Kronnersdorf 40<br>8345 Straden, Steiermark</p>
+      <p style="margin-top:1rem;">Ansprechpersonen: Elfriede und Rudolf Sudy</p>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Kontakt</h3>
+      <ul class="foot-list">
+        <li><a href="tel:+4334738287">+43 3473 8287</a></li>
+        <li><a href="mailto:mail@sudy.info">mail@sudy.info</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Navigation</h3>
+      <ul class="foot-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© Gestaltungs-Vorschau · Landhaus Sudy</span>
+    <span>Elfriede &amp; Rudolf Sudy · Straden</span>
+  </div>
+</footer>
+
+<script>
+  var t = document.getElementById('menuToggle');
+  var n = document.getElementById('navLinks');
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
