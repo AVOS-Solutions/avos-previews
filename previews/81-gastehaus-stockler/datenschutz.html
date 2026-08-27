@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz – Gästehaus Stöckler</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Gestaltungs-Vorschau für Gästehaus Stöckler, Radochen, Straden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf3e9; --cream-2:#f2e6d4; --rust:#a8451f; --rust-dark:#7d3216;
+    --olive:#51603c; --ink:#2c2417; --ink-soft:#5b4f3f; --line:#e2d2ba; --gold:#c78a3d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{color:inherit;}
+  h1,h2{font-family:'Fraunces',Georgia,serif; margin:0; font-weight:500;}
+  p,li{line-height:1.65; color:var(--ink-soft);}
+  .wrap{width:min(760px, 92%); margin-inline:auto;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{ background:var(--ink); color:#f2e6d4; font-size:clamp(.68rem,1.6vw,.78rem); text-align:center; padding:.55rem 1rem; letter-spacing:.01em; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(250,243,233,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); }
+  nav.bar{ width:min(1120px, 92%); margin-inline:auto; display:flex; align-items:center; justify-content:space-between; padding:.9rem 0; }
+  .brand{ font-family:'Fraunces',serif; font-weight:600; font-size:clamp(1.05rem,2.4vw,1.35rem); letter-spacing:.01em; text-decoration:none; }
+  .brand span{color:var(--rust);}
+  .nav-links{ display:flex; gap:clamp(1rem,2.5vw,2.2rem); list-style:none; margin:0; padding:0; font-size:.94rem; font-weight:500; align-items:center; }
+  .nav-links a{ text-decoration:none; padding:.6rem .2rem; display:inline-block; border-bottom:2px solid transparent; }
+  .nav-links a:hover{border-color:var(--rust);}
+  .menu-toggle{ display:none; background:none; border:2px solid var(--ink); border-radius:10px; width:46px; height:44px; align-items:center; justify-content:center; cursor:pointer; flex-direction:column; gap:5px; }
+  .menu-toggle span{ display:block; width:20px; height:2px; background:var(--ink); }
+  @media (max-width:760px){
+    .nav-links{ position:absolute; top:100%; left:0; right:0; flex-direction:column; background:var(--cream); border-bottom:1px solid var(--line); padding:.5rem 6% 1.2rem; gap:0; display:none; }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.9rem .2rem; width:100%; border-bottom:1px solid var(--line); min-height:44px;}
+    .menu-toggle{display:flex;}
+  }
+
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3rem,7vw,5rem);}
+  h1{font-size:clamp(1.9rem,4.6vw,2.6rem); font-style:italic; margin-bottom:1.5rem;}
+  .notice{
+    background:var(--cream-2); border:1px solid var(--gold); border-radius:14px;
+    padding:1.2rem 1.4rem; font-size:.95rem; color:var(--rust-dark); font-weight:500;
+    margin-bottom:2.2rem; line-height:1.55;
+  }
+  h2{font-size:1.15rem; font-style:normal; font-weight:600; margin-top:2rem; margin-bottom:.6rem; color:var(--ink);}
+  ul{padding-left:1.2rem; margin:.4rem 0 0;}
+  li{margin-bottom:.4rem;}
+
+  footer{ background:var(--ink); color:var(--cream-2); padding:clamp(2.5rem,6vw,4rem) 0 1.5rem; }
+  .foot-grid{ width:min(1120px, 92%); margin-inline:auto; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:2.5rem; }
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; gap:2rem;} }
+  footer h3{font-family:'Fraunces',serif; font-style:italic; font-size:1.4rem; color:#fff; margin-bottom:.8rem; font-weight:500;}
+  footer p, footer a{color:#d9cdb8; font-size:.95rem; text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .foot-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:.6rem;}
+  .foot-list a{display:inline-block; min-height:44px; line-height:44px;}
+  .foot-bottom{ width:min(1120px, 92%); margin-inline:auto; border-top:1px solid #4a4030; margin-top:2.5rem; padding-top:1.3rem; display:flex; flex-wrap:wrap; justify-content:space-between; gap:.6rem; font-size:.82rem; color:#a8987e; }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gästehaus Stöckler · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <nav class="bar">
+    <a class="brand" href="index.html">Gästehaus <span>Stöckler</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    <p class="notice">Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</p>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+    Gästehaus Stöckler, Josef und Margarete Stöckler, Radochen 75, 8345 Straden.<br>
+    E-Mail: <a href="mailto:gaestehaus.stoeckler@gmx.at">gaestehaus.stoeckler@gmx.at</a></p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Beim Aufruf dieser Website werden durch den verwendeten Browser automatisch bestimmte technische Informationen (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) verarbeitet. Diese Daten dienen der technischen Bereitstellung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>3. Cookies</h2>
+    <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Für darüber hinausgehende Cookies (z. B. Statistik oder Marketing) würde vor deren Einsatz eine Einwilligung eingeholt werden.</p>
+
+    <h2>4. Kontaktaufnahme</h2>
+    <p>Wenn Sie per Telefon, E-Mail oder über ein Kontaktformular mit uns in Verbindung treten, werden Ihre Angaben (z. B. Name, Kontaktdaten, Nachrichteninhalt) zur Bearbeitung Ihrer Anfrage sowie für den Fall etwaiger Anschlussfragen bei uns gespeichert. Diese Daten geben wir ohne Ihre Einwilligung nicht weiter.</p>
+
+    <h2>5. Rechte der betroffenen Personen</h2>
+    <ul>
+      <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+      <li>Recht auf Berichtigung unrichtiger Daten</li>
+      <li>Recht auf Löschung, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht</li>
+      <li>Recht auf Einschränkung der Verarbeitung</li>
+      <li>Recht auf Datenübertragbarkeit</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+      <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+    </ul>
+
+    <h2>6. Speicherdauer</h2>
+    <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorsehen.</p>
+
+    <h2>7. Kontakt zur Datenschutzbehörde</h2>
+    <p>Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h3>Gästehaus Stöckler</h3>
+      <p>Radochen 75<br>8345 Straden, Steiermark</p>
+      <p style="margin-top:1rem;">Ansprechpersonen: Josef und Margarete Stöckler</p>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Kontakt</h3>
+      <ul class="foot-list">
+        <li><a href="tel:+436643740169">+43 664 3740169</a></li>
+        <li><a href="mailto:gaestehaus.stoeckler@gmx.at">gaestehaus.stoeckler@gmx.at</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;">Navigation</h3>
+      <ul class="foot-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Gestaltungs-Vorschau · Gästehaus Stöckler</span>
+    <span>Steirisches Vulkanland</span>
+  </div>
+</footer>
+
+<script>
+  var t = document.getElementById('menuToggle');
+  var n = document.getElementById('navLinks');
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

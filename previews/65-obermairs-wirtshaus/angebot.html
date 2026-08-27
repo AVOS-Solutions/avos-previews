@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — Obermairs' Wirtshaus</title>
+<meta name="description" content="Hausmannskost und moderne leichte Küche bei Obermairs' Wirtshaus in Wels-Wimpassing. Geöffnet Mittwoch bis Sonntag, Reservierung empfohlen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;0,9..144,680;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6efe2;
+    --cream-2:#efe4cf;
+    --rust:#8a3324;
+    --rust-dark:#5f2118;
+    --green:#3c4a30;
+    --ink:#2a2118;
+    --mustard:#c98a2e;
+    --line: rgba(42,33,24,0.14);
+    --max: 74rem;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:680;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 min(6vw,1.5rem);}
+  :focus-visible{outline:3px solid var(--mustard); outline-offset:2px;}
+
+  .disclaimer{
+    background:var(--rust-dark);
+    color:#f3e6d8;
+    font-size:0.76rem;
+    text-align:center;
+    padding:0.5rem 1rem;
+    letter-spacing:0.01em;
+  }
+  .disclaimer strong{font-weight:600;}
+
+  header.site{
+    padding:1.3rem 0;
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0;
+    background:rgba(246,239,226,0.94);
+    backdrop-filter:blur(6px);
+    z-index:20;
+  }
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;position:relative;}
+  .brand{display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap;text-decoration:none;}
+  .brand-mark{
+    font-family:'Fraunces',serif;font-weight:680;font-size:1.35rem;color:var(--rust-dark);
+  }
+  .brand-sub{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green);}
+  .header-right{display:flex;align-items:center;gap:0.9rem;}
+  nav.main{display:flex;}
+  nav.main a{
+    text-decoration:none;font-size:0.92rem;margin-left:1.6rem;color:var(--ink);
+    border-bottom:2px solid transparent;padding:0.6rem 0.1rem;transition:border-color .2s;
+    display:inline-flex;align-items:center;min-height:44px;
+  }
+  nav.main a:hover{border-color:var(--mustard);}
+  nav.main a.active{border-color:var(--rust);font-weight:600;color:var(--rust-dark);}
+  .call-btn{
+    background:var(--rust);color:#fff;padding:0.7rem 1.1rem;border-radius:2px;
+    font-size:0.85rem;text-decoration:none;font-weight:600;white-space:nowrap;
+    transition:background .2s;display:inline-flex;align-items:center;justify-content:center;
+    min-height:44px;box-sizing:border-box;
+  }
+  .call-btn:hover{background:var(--rust-dark);}
+  .nav-toggle{
+    display:none; width:44px;height:44px; border:1px solid var(--line); border-radius:2px;
+    background:transparent; cursor:pointer; align-items:center; justify-content:center;
+    flex-direction:column; gap:5px; flex-shrink:0;
+  }
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--rust-dark);}
+  @media (max-width:760px){
+    nav.main{
+      display:none; position:absolute; left:0; right:0; top:100%;
+      background:var(--cream); border-bottom:1px solid var(--line);
+      flex-direction:column; padding:0.5rem min(6vw,1.5rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.75rem 0; border-bottom:1px solid var(--line);}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .subhero{
+    padding:clamp(2.6rem,7vw,4rem) 0 clamp(2rem,5vw,3rem);
+    position:relative; overflow:hidden;
+  }
+  .subhero::before{
+    content:"";position:absolute; right:-10%; top:-30%; width:34rem;height:34rem;max-width:100vw;
+    background:radial-gradient(circle at center, var(--mustard) 0%, transparent 70%); opacity:0.14; border-radius:50%;
+  }
+  .subhero .wrap{position:relative;}
+  .subhero h1{font-size:clamp(2.1rem,5.2vw,3.4rem); color:var(--rust-dark); max-width:24ch;}
+  .subhero p{margin-top:1rem; font-size:clamp(1rem,2vw,1.1rem); max-width:44ch; color:#4a3d2e;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  section{padding:clamp(3rem,7vw,4.5rem) 0;}
+  .section-head{max-width:46rem; margin-bottom:clamp(1.6rem,4vw,2.6rem);}
+  .kicker{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--green);
+    font-weight:600; margin-bottom:0.7rem;
+  }
+  h2{font-size:clamp(1.8rem,3.6vw,2.7rem); color:var(--rust-dark);}
+  p.lede{font-size:clamp(1rem,2vw,1.1rem); max-width:60ch; color:#4a3d2e;}
+
+  .offer-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem;}
+  @media (max-width:760px){.offer-grid{grid-template-columns:1fr;}}
+  .offer-card{
+    background:#fff; border:1px solid var(--line); border-radius:4px;
+    padding:1.9rem 1.9rem 1.9rem 2.2rem; position:relative; overflow:hidden;
+  }
+  .offer-card::after{
+    content:""; position:absolute; left:0; top:0; width:4px; height:100%;
+    background:var(--rust);
+  }
+  .offer-card h3{font-size:1.3rem; color:var(--rust-dark); margin-bottom:0.6rem;}
+  .offer-card p{margin:0; font-size:0.95rem; color:#4a3d2e;}
+  .offer-card ul{margin:0.8rem 0 0; padding:0; list-style:none; display:grid; gap:0.5rem;}
+  .offer-card li{font-size:0.92rem; color:#4a3d2e; padding-left:1rem; position:relative;}
+  .offer-card li::before{content:"–"; position:absolute; left:0; color:var(--rust);}
+  .hours-note{
+    margin-top:2.4rem; display:inline-flex; gap:0.6rem; align-items:center;
+    background:var(--green); color:var(--cream); padding:0.85rem 1.2rem; border-radius:3px;
+    font-size:0.9rem;
+  }
+  .price-note{
+    margin-top:1.4rem; font-size:0.86rem; color:#6b5c47; max-width:52ch;
+  }
+
+  .contact{background:var(--rust-dark); color:var(--cream);}
+  .contact h2{color:var(--cream);}
+  .contact .kicker{color:var(--mustard);}
+  .cta-row{display:flex; gap:0.9rem; margin-top:1.6rem; flex-wrap:wrap;}
+  .cta-row a{
+    padding:0.85rem 1.4rem; border-radius:2px; font-size:0.92rem; font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; min-height:44px; box-sizing:border-box;
+  }
+  .cta-primary{background:var(--mustard); color:var(--rust-dark);}
+  .cta-secondary{border:1px solid rgba(246,239,226,0.5); color:var(--cream);}
+
+  footer.site{
+    background:var(--ink); color:#cbbfae; padding:2.4rem 0; font-size:0.85rem;
+  }
+  footer.site .wrap{display:flex; justify-content:space-between; gap:1rem 2rem; flex-wrap:wrap; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#cbbfae; text-decoration:underline; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-note{max-width:34rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Obermairs' Wirtshaus</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">Obermairs'</span>
+      <span class="brand-sub">Wirtshaus · Wels-Wimpassing</span>
+    </a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="header-right">
+      <a class="call-btn" href="tel:+43724245689">Tisch reservieren</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <p class="eyebrow" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--rust);font-weight:600;margin-bottom:1rem;">Speisekarte</p>
+    <h1>Hausmannskost mit leichter Hand</h1>
+    <p>Bodenständige Wirtshausküche, ergänzt um moderne, leichtere Gerichte – für jeden Anlass.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h3>Klassische Hausmannskost</h3>
+        <p>Bewährte Wirtshausgerichte, wie man sie aus der Region kennt – herzhaft, sättigend und mit Liebe zum Detail zubereitet.</p>
+        <ul>
+          <li>Deftige Suppen &amp; Vorspeisen</li>
+          <li>Braten &amp; Schnitzel-Klassiker</li>
+          <li>Bodenständige Beilagen &amp; Saucen</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <h3>Moderne, leichte Küche</h3>
+        <p>Für alle, die es etwas leichter mögen: frische Varianten und saisonale Akzente ergänzen die Wirtshausklassiker.</p>
+        <ul>
+          <li>Saisonale Salate &amp; Gemüsegerichte</li>
+          <li>Leichtere Fisch- &amp; Fleischvariationen</li>
+          <li>Wechselnde saisonale Akzente</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <h3>Für besondere Anlässe</h3>
+        <p>Ob Familienfeier, Firmenessen oder spontanes Abendessen mit Freunden – bei Obermairs' ist Platz für große und kleine Anlässe.</p>
+        <ul>
+          <li>Tische für Gruppen &amp; Feiern</li>
+          <li>Reservierung empfohlen</li>
+        </ul>
+      </div>
+      <div class="offer-card">
+        <h3>Getränke</h3>
+        <p>Eine Auswahl an regionalen und klassischen Getränken begleitet die Küche passend zu jedem Gericht.</p>
+      </div>
+    </div>
+    <p class="price-note">Die genaue tagesaktuelle Speisekarte mit Preisen erhalten Sie direkt im Wirtshaus oder auf Anfrage telefonisch.</p>
+    <div class="hours-note">
+      <span aria-hidden="true">🕒</span> Geöffnet Mittwoch bis Sonntag · Reservierung empfohlen
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Reservierung</p>
+      <h2>Sichern Sie sich Ihren Tisch</h2>
+    </div>
+    <div class="cta-row">
+      <a class="cta-primary" href="tel:+43724245689">Jetzt anrufen</a>
+      <a class="cta-secondary" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-note">
+      <div>© Obermairs' Wirtshaus · Wimpassinger Straße 100, 4600 Wels · <a href="tel:+43724245689" style="color:#cbbfae;">+43 7242 45689</a></div>
+      <div style="margin-top:0.4rem;">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Obermairs' Wirtshaus · keine Verbindung zum Unternehmen</div>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+  });
+</script>
+</body>
+</html>

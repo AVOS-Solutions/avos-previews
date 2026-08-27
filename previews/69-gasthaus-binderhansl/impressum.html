@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Gasthaus Binderhansl</title>
+<meta name="description" content="Muster-Impressum für Gasthaus Binderhansl, Katzendorf 39, 8342 Gnas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#6f2c26; --wine-dark:#4a1c19; --cream:#f6ecdd; --cream-2:#efe1c9;
+    --brown:#2b2019; --gold:#b6813f; --ink:#2b2019;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Work Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,1.5rem);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{background:var(--wine-dark); color:#f3e3d3; font-size:.78rem; text-align:center; padding:.55rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:#e9c9a5;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(246,236,221,.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(43,32,25,.1);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,1.5rem); position:relative;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; letter-spacing:.01em; text-decoration:none;}
+  .brand span{color:var(--wine);}
+  nav.links ul{list-style:none; display:flex; gap:1.8rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink); position:relative; display:inline-block; padding:.5rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--wine);transition:width .25s;}
+  nav.links a:hover::after{width:100%;}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; background:none; border:2px solid var(--ink); border-radius:8px; padding:.4rem .6rem; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.2rem,5vw,3.4rem) 0 clamp(1.6rem,4vw,2.2rem); background:linear-gradient(180deg,#f9f1e3,var(--cream) 70%); border-bottom:1px solid rgba(43,32,25,.08);}
+  .page-hero h1{font-size:clamp(1.8rem,4.4vw,2.6rem); font-weight:500; color:var(--wine-dark);}
+  .breadcrumb{font-size:.82rem; color:var(--wine); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  section{padding:clamp(2.4rem,6vw,4rem) 0;}
+
+  .legal-notice{display:flex; gap:1rem; align-items:flex-start; background:var(--cream-2); border-left:4px solid var(--wine); border-radius:12px; padding:1.3rem 1.5rem; margin-bottom:2.4rem; max-width:60rem;}
+  .legal-notice svg{flex-shrink:0; margin-top:.15rem; color:var(--wine);}
+  .legal-notice p{font-size:.92rem; color:#4a3a2c; margin:0;}
+
+  .prose{max-width:60rem;}
+  .prose h2{font-size:clamp(1.3rem,2.8vw,1.6rem); font-weight:500; margin:2rem 0 .8rem;}
+  .prose h2:first-child{margin-top:0;}
+  .prose p, .prose li{color:#4a3a2c; font-size:.98rem; margin-bottom:.7rem;}
+  .prose ul{padding-left:1.3rem; margin-bottom:.7rem;}
+  .prose strong{color:var(--wine-dark);}
+  .placeholder{background:var(--cream-2); padding:.1rem .4rem; border-radius:4px; font-style:italic;}
+
+  footer{background:var(--brown); color:#e8dbc8; padding:2.6rem 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(232,219,200,.15);}
+  .footer-brand{font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500;}
+  .footer-brand span{color:#e2b078;}
+  footer address{font-style:normal; font-size:.92rem; color:#c9b89e; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c9b89e; text-decoration:none;}
+  footer address a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c9b89e; text-decoration:none;}
+  .footer-nav a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.2rem 1.5rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c9b89e; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#b7a488; padding:1rem 1.5rem 1.6rem; line-height:1.5;}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.1rem,4vw,1.5rem); left:clamp(1.1rem,4vw,1.5rem); background:var(--cream); border:1px solid rgba(43,32,25,.12); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid rgba(43,32,25,.08); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Binderhansl<span>.</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Impressum</p>
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="legal-notice">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6f2c26" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p><strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.</p>
+      </div>
+
+      <div class="prose">
+        <h2>Diensteanbieter</h2>
+        <p><strong>Gasthaus Binderhansl</strong><br>
+        Inhaber: Familie Binderhansl<br>
+        Katzendorf 39, 8342 Gnas, Österreich</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+433151 2365">+43 3151 2365</a><br>
+        E-Mail: <a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></p>
+
+        <h2>Unternehmensrechtliche Angaben</h2>
+        <p>Firmenbuchnummer/UID: <span class="placeholder">[UID-Nummer]</span><br>
+        Zuständige Kammer/Innung: <span class="placeholder">[Kammer/Innung]</span><br>
+        Gewerbebehörde: <span class="placeholder">[zuständige Bezirksverwaltungsbehörde]</span></p>
+
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Familie Binderhansl, Katzendorf 39, 8342 Gnas</p>
+
+        <h2>Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch grundsätzlich bereit, sofern hierzu keine gesetzliche Pflicht besteht.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Gasthaus <span>Binderhansl</span></div>
+      <address>Katzendorf 39, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+433151 2365">+43 3151 2365</a><br>E-Mail: <a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
+</html>

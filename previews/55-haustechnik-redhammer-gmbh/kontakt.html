@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Haustechnik Redhammer GmbH</title>
+<meta name="description" content="Kontakt zur Haustechnik Redhammer GmbH in Ort im Innkreis: Telefon, E-Mail, Adresse und Anfahrt. Ansprechpartner Christian Redhammer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f1f3f4;
+    --panel:#ffffff;
+    --ink:#151f27;
+    --ink-soft:#495860;
+    --steel:#1c2b36;
+    --steel-deep:#0f1922;
+    --orange:#e8730a;
+    --orange-deep:#c05e06;
+    --line:rgba(21,31,39,0.14);
+    --focus:#c05e06;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+
+  .disclaimer{background:var(--steel-deep);color:#c7d2d8;font-size:0.78rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:var(--orange);font-weight:700;}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(241,243,244,0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.1rem,4vw,3rem);gap:1rem;position:relative;}
+  .brand{font-weight:700;font-size:1.15rem;letter-spacing:0.02em;text-decoration:none;color:var(--steel-deep);text-transform:uppercase;white-space:nowrap;}
+  .brand span{color:var(--orange-deep);}
+  nav.links{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;}
+  nav.links a{text-decoration:none;font-weight:500;font-size:0.92rem;color:var(--ink-soft);padding:0.2rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--orange-deep);}
+  nav.links a.active{color:var(--orange-deep);font-weight:700;border-bottom-color:var(--orange-deep);}
+  .nav-cta{display:inline-flex;align-items:center;min-height:44px;background:var(--orange-deep);color:#fff;padding:0.7rem 1.2rem;text-decoration:none;font-weight:600;font-size:0.86rem;white-space:nowrap;}
+  .burger{display:none;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);min-width:44px;min-height:44px;padding:0;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--steel-deep);margin:4px 0;}
+
+  .page-hero{position:relative;overflow:hidden;background:var(--steel-deep);color:#e7edf0;padding:clamp(2.6rem,7vw,4.4rem) 0 clamp(2rem,5vw,3rem);}
+  .page-hero::before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(231,237,240,0.06) 1px, transparent 1px),linear-gradient(90deg, rgba(231,237,240,0.06) 1px, transparent 1px);background-size:min(7vw,48px) min(7vw,48px);-webkit-mask-image:radial-gradient(ellipse at 80% 20%, black 0%, transparent 70%);mask-image:radial-gradient(ellipse at 80% 20%, black 0%, transparent 70%);}
+  .page-hero .in{position:relative;z-index:1;}
+  .page-hero .kicker{display:inline-flex;align-items:center;gap:0.6rem;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.06em;color:var(--orange);margin-bottom:1rem;}
+  .page-hero .kicker::before{content:"//";color:var(--orange);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 0.8rem;max-width:20ch;color:#f5f8f9;}
+  .page-hero p{max-width:56ch;font-size:1.02rem;color:#aebac1;margin:0;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;display:block;font-size:0.78rem;letter-spacing:0.06em;color:var(--orange-deep);margin-bottom:0.7rem;}
+
+  .kontakt{background:var(--bg);}
+  .k-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,3.5rem);}
+  .k-panel{background:var(--panel);border:1px solid var(--line);padding:clamp(1.6rem,3vw,2.4rem);}
+  .k-list{list-style:none;margin:1.4rem 0 2rem;padding:0;display:grid;gap:1.1rem;}
+  .k-list li{display:flex;gap:0.9rem;align-items:flex-start;font-size:1rem;}
+  .k-list svg{width:20px;height:20px;flex-shrink:0;margin-top:0.15rem;color:var(--orange-deep);}
+  .k-list a{text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);}
+  .k-list a:hover{border-color:var(--orange-deep);color:var(--orange-deep);}
+  .map-frame{border:1px solid var(--line);overflow:hidden;min-height:280px;}
+  .map-embed{width:100%;height:100%;min-height:280px;border:0;filter:grayscale(35%) contrast(1.05);}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;gap:0.55rem;padding:0.85rem 1.6rem;font-weight:600;font-size:0.92rem;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+  .btn-primary{background:var(--orange);color:#181008;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(232,115,10,0.5);}
+  .btn-ghost{border:1.5px solid #4a5960;color:#e7edf0;}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange);}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem;}
+
+  .hours{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--line);}
+  .hours h3{margin:0 0 0.5rem;font-size:0.95rem;font-weight:700;color:var(--steel-deep);}
+  .hours p{margin:0;color:var(--ink-soft);font-size:0.92rem;}
+
+  footer{background:var(--steel-deep);color:#8a969c;padding:2.5rem 0 1.5rem;}
+  .foot-disclaimer{max-width:1220px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid rgba(231,237,240,0.1);margin-bottom:1.5rem;font-size:0.78rem;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:1.6rem;}
+  .foot-grid h4{font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:#c7d2d8;margin:0 0 0.9rem;}
+  .foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:0.55rem;}
+  .foot-grid a{text-decoration:none;color:#8a969c;font-size:0.88rem;}
+  .foot-grid a:hover{color:var(--orange);}
+  .foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:0.85rem;font-family:'IBM Plex Mono',monospace;}
+  @media (max-width:700px){.foot-grid{grid-template-columns:1fr;gap:1.4rem;}}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (max-width:860px){
+    nav.links,.nav-cta{display:none;}
+    .burger{display:flex;}
+    .nav.open nav.links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--bg);padding:1.2rem clamp(1.1rem,4vw,3rem) 1.5rem;border-bottom:1px solid var(--line);gap:0.2rem;z-index:60;}
+    .nav.open nav.links a{min-height:44px;display:flex;align-items:center;}
+    .nav.open .nav-cta{display:inline-flex;margin-top:0.6rem;justify-content:center;}
+    .k-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer"><strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Haustechnik Redhammer GmbH · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav" id="nav">
+    <a href="index.html" class="brand">Red<span>hammer</span></a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Leistungen</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4377517989">Anfrage stellen</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap in">
+      <span class="kicker">Kontakt</span>
+      <h1>Anfrage stellen</h1>
+      <p>Wir melden uns zeitnah mit einer ersten Einschätzung zu Ihrem Sanitär- oder Heizungsprojekt.</p>
+    </div>
+  </section>
+
+  <section class="kontakt">
+    <div class="wrap k-grid">
+      <div class="k-panel reveal">
+        <span class="eyebrow">Direkt erreichbar</span>
+        <ul class="k-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Ort im Innkreis 197, 4974 Ort im Innkreis</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <a href="tel:+4377517989">+43 7751 7989</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            <a href="mailto:office@haustechnik-redhammer.at">office@haustechnik-redhammer.at</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+            <span>Ansprechpartner: Christian Redhammer</span>
+          </li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+4377517989">Jetzt anrufen</a>
+          <a class="btn btn-ghost" style="border-color:var(--line);color:var(--steel-deep);" href="mailto:office@haustechnik-redhammer.at">E-Mail schreiben</a>
+          <a class="btn btn-ghost" style="border-color:var(--line);color:var(--steel-deep);" href="https://www.google.com/maps/search/?api=1&query=Ort+im+Innkreis+197%2C+4974+Ort+im+Innkreis" target="_blank" rel="noopener">Route berechnen</a>
+        </div>
+        <div class="hours">
+          <h3>Erreichbarkeit</h3>
+          <p>Öffnungszeiten auf Anfrage — für Termine und Auskünfte am besten telefonisch oder per E-Mail melden.</p>
+        </div>
+      </div>
+      <div class="reveal map-frame">
+        <iframe class="map-embed" loading="lazy" title="Lage von Haustechnik Redhammer auf der Karte" src="https://www.google.com/maps?q=Ort+im+Innkreis+197%2C+4974+Ort+im+Innkreis&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Haustechnik Redhammer GmbH · keine Verbindung zum Unternehmen</div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Haustechnik Redhammer GmbH</h4>
+        <p style="margin:0;font-size:0.88rem;max-width:36ch;">Sanitär- und Heizungstechnik im Innviertel — Christian Redhammer.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Leistungen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-row">
+      <span>© Haustechnik Redhammer GmbH</span>
+      <span>Ort im Innkreis 197 · +43 7751 7989</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burgerBtn');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.links a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

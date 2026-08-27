@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Keramikhotel Goldener Brunnen</title>
+<meta name="description" content="Muster-Impressum der Gestaltungs-Vorschau für das Keramikhotel Goldener Brunnen in Gmunden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#171d1a; --night-2:#1f2723; --gold:#c8a24d; --gold-soft:#e4c987;
+    --ceramic:#2f6e5c; --ceramic-light:#4c9482; --cream:#f4efe4; --line:rgba(244,239,228,.14);
+    --serif:'Libre Caslon Text', Georgia, serif; --sans:'Manrope', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--night);color:var(--cream);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 clamp(18px,5vw,44px);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold-soft);outline-offset:2px;}
+
+  .disclosure{background:#0f1310;color:#cfc6b0;text-align:center;font-size:.76rem;padding:9px 16px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(23,29,26,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(18px,5vw,44px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-size:1.25rem;letter-spacing:.01em;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--ceramic-light);box-shadow:0 0 0 3px rgba(76,148,130,.25);}
+  .navlinks{display:flex;gap:6px;align-items:center;}
+  .navlinks a{text-decoration:none;font-weight:600;font-size:.88rem;padding:12px 14px;min-height:44px;display:inline-flex;align-items:center;color:#e9e3d2;letter-spacing:.02em;border-radius:4px;}
+  .navlinks a:hover{color:var(--gold-soft);}
+  .navlinks a.cta{background:var(--gold);color:var(--night);border-radius:4px;font-weight:700;}
+  .navlinks a.cta:hover{background:var(--gold-soft);color:var(--night);}
+  .burger{display:none;background:none;border:1.5px solid var(--line);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--cream);margin:4px 0;}
+  @media (max-width:820px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;}
+    .navlinks.open{display:flex;}
+    .burger{display:flex;}
+  }
+
+  main{padding:clamp(44px,7vw,80px) 0 clamp(56px,8vw,96px);}
+  .eyebrow{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);font-weight:700;}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.1rem,4.8vw,3rem);margin:16px 0 26px;}
+  h2{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin:36px 0 10px;color:var(--gold-soft);}
+  p{color:#cfc6b0;font-size:.98rem;max-width:65ch;}
+  .legal-notice{background:var(--night-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:2px;padding:20px 24px;margin:0 0 32px;font-size:.92rem;color:var(--cream);max-width:70ch;}
+  .legal-notice strong{color:var(--gold-soft);}
+  .field-list{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+  .field-list li{border-top:1px solid var(--line);padding-top:10px;}
+  .field-list .k{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-soft);margin-bottom:2px;}
+  .field-list a{color:var(--cream);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+  .placeholder{color:#8d8570;font-style:italic;}
+
+  footer{background:#0f1310;color:var(--cream);}
+  .footer-top{padding:48px 0 32px;border-bottom:1px solid var(--line);}
+  .footer-grid{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,44px);display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr;gap:28px;} }
+  .footer-grid h4{font-family:var(--serif);font-weight:400;margin:0 0 12px;font-size:1.05rem;color:var(--gold-soft);}
+  .footer-grid p{color:#a99b83;font-size:.9rem;margin:0 0 8px;}
+  .footer-grid a{color:#a99b83;text-decoration:none;}
+  .footer-grid a:hover{text-decoration:underline;color:var(--gold-soft);}
+  .footer-links{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+  .footer-links a{min-height:24px;display:inline-flex;align-items:center;}
+  .footer-bottom{padding:18px 0;font-size:.78rem;color:#77705d;text-align:center;max-width:1180px;margin:0 auto;padding-left:clamp(18px,5vw,44px);padding-right:clamp(18px,5vw,44px);}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Keramikhotel Goldener Brunnen · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="dot" aria-hidden="true"></span>Goldener Brunnen</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Geschichte</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a class="cta" href="kontakt.html">Anfragen</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Impressum</h1>
+    <div class="legal-notice">
+      <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+
+    <h2>Diensteanbieter</h2>
+    <ul class="field-list">
+      <li><span class="k">Unternehmen</span><span>Keramikhotel Goldener Brunnen</span></li>
+      <li><span class="k">Anschrift</span><span>Traungasse 10, 4810 Gmunden, Österreich</span></li>
+    </ul>
+
+    <h2>Kontakt</h2>
+    <ul class="field-list">
+      <li><span class="k">Telefon</span><a href="tel:+43761264431">+43 7612 64431-0</a></li>
+      <li><span class="k">E-Mail</span><a href="mailto:office@goldenerbrunnen.at">office@goldenerbrunnen.at</a></li>
+    </ul>
+
+    <h2>Unternehmensangaben</h2>
+    <ul class="field-list">
+      <li><span class="k">Firmenbuchnummer</span><span class="placeholder">[Firmenbuchnummer]</span></li>
+      <li><span class="k">UID-Nummer</span><span class="placeholder">[UID-Nummer]</span></li>
+      <li><span class="k">Zuständige Kammer/Behörde</span><span class="placeholder">[Kammer/Gewerbebehörde]</span></li>
+    </ul>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht verpflichtet und nehmen an einem solchen Verfahren derzeit nicht teil, sofern hier keine anderslautende Angabe erfolgt.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-grid">
+      <div>
+        <h4>Goldener Brunnen</h4>
+        <p>Traungasse 10<br>4810 Gmunden</p>
+        <p><a href="tel:+43761264431">+43 7612 64431-0</a><br><a href="mailto:office@goldenerbrunnen.at">office@goldenerbrunnen.at</a></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Geschichte</a></li>
+          <li><a href="angebot.html">Zimmer &amp; Ausstattung</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Keramikhotel Goldener Brunnen · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

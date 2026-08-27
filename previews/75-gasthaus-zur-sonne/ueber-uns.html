@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Gasthaus Zur Sonne</title>
+<meta name="description" content="Seit 2014 führt Gerti Kristandl das Gasthaus Zur Sonne in Graz-Gösting: steirische Hausmannskost, Nachbarschaftsatmosphäre und ein beliebter Gastgarten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --amber:#e2933a;
+  --amber-deep:#b9701f;
+  --terracotta:#c1602c;
+  --brown:#3a2417;
+  --brown-deep:#2a1a10;
+  --cream:#fff8ec;
+  --cream-2:#fbf0dc;
+  --green:#5f7f45;
+  --green-deep:#3f5730;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --maxw:76rem;
+  --line: rgba(58,36,23,0.14);
+  --legal-note-bg:#fff3de;
+  --legal-note-fg:#5c3d1c;
+  --legal-note-border:#e9c98c;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream); color:var(--brown); font-family:var(--sans); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 min(6vw,1.6rem); width:100%;}
+img,svg{display:block; max-width:100%;}
+a{color:inherit;}
+h1,h2,h3{font-family:var(--serif); line-height:1.08; font-weight:500;}
+p{line-height:1.65;}
+::selection{background:var(--amber); color:var(--brown-deep);}
+:focus-visible{outline:3px solid var(--terracotta); outline-offset:3px;}
+
+.disclaimer{background:var(--brown-deep); color:#f3e3cf; font-size:0.72rem; text-align:center; padding:0.55rem 1rem;}
+.disclaimer strong{color:var(--amber);}
+
+header.site{position:sticky; top:0; z-index:60; background:rgba(255,248,236,0.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:0.9rem min(6vw,1.6rem); max-width:var(--maxw); margin:0 auto; gap:1rem;}
+.brand{display:flex; align-items:center; gap:.6rem; text-decoration:none; font-family:var(--serif); font-size:clamp(1.1rem,3vw,1.4rem); color:var(--terracotta); min-width:0;}
+.brand svg{width:32px; height:32px; flex-shrink:0;}
+.brand span{white-space:nowrap;}
+.navlinks{display:none; gap:2rem; list-style:none; font-weight:600; font-size:0.94rem;}
+.navlinks a{text-decoration:none; color:var(--brown); border-bottom:2px solid transparent; padding-bottom:2px;}
+.navlinks a:hover{border-color:var(--amber);}
+.navlinks a.active{color:var(--terracotta); border-color:var(--terracotta);}
+.navcta{display:none; background:var(--terracotta); color:#fff8ec; text-decoration:none; padding:0.7rem 1.2rem; border-radius:6px; font-weight:700; font-size:0.9rem; white-space:nowrap; min-height:44px; align-items:center;}
+.burger{background:none; border:2px solid var(--terracotta); border-radius:8px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;}
+.burger span, .burger span::before, .burger span::after{content:"";display:block; width:20px; height:2px; background:var(--terracotta); position:relative;}
+.burger span::before{position:absolute; top:-6px;}
+.burger span::after{position:absolute; top:6px;}
+.mobilemenu{display:none; flex-direction:column; background:var(--cream); border-bottom:1px solid var(--line);}
+.mobilemenu.open{display:flex;}
+.mobilemenu a{padding:1.05rem min(6vw,1.6rem); text-decoration:none; color:var(--brown); font-weight:600; border-top:1px solid rgba(58,36,23,0.08); min-height:44px; display:flex; align-items:center;}
+.mobilemenu a.active{color:var(--terracotta);}
+@media(min-width:860px){
+  .navlinks{display:flex;} .navcta{display:inline-flex;} .burger{display:none;} .mobilemenu{display:none !important;}
+}
+
+.hero{display:grid; gap:0;}
+@media(min-width:900px){.hero{grid-template-columns:1.05fr 0.95fr; min-height:min(88vh,720px); align-items:stretch;}}
+.hero-text{display:flex; flex-direction:column; justify-content:center; padding:clamp(2.5rem,6vw,4.5rem) min(6vw,1.6rem);}
+.hero-visual{position:relative; min-height:min(60vw,380px); display:flex; align-items:center; justify-content:center; overflow:hidden;
+  background: linear-gradient(160deg, var(--amber) 0%, var(--terracotta) 55%, #8f3f1f 100%);
+}
+@media(min-width:900px){.hero-visual{min-height:0;}}
+.sun{position:absolute; width:min(60vw,340px); height:min(60vw,340px); border-radius:50%; background:radial-gradient(circle at 35% 30%, #fff2d2, var(--amber) 55%, var(--terracotta) 100%); box-shadow:0 0 0 18px rgba(255,242,210,0.12), 0 0 90px 30px rgba(255,200,120,0.35);}
+.rays{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;}
+.rays svg{width:min(95vw,620px); height:min(95vw,620px); opacity:0.35;}
+.hero-visual .caption{position:absolute; bottom:1.6rem; left:1.6rem; right:1.6rem; color:#fff3de; font-family:var(--serif); font-size:clamp(1rem,2.4vw,1.3rem); font-style:italic; z-index:2;}
+
+.eyebrow{font-size:0.76rem; text-transform:uppercase; letter-spacing:0.16em; font-weight:700; color:var(--green-deep); margin-bottom:1rem; display:flex; align-items:center; gap:.6rem;}
+.eyebrow::before{content:"";width:2rem; height:2px; background:var(--green-deep);}
+.hero h1{font-size:clamp(2.3rem,6.5vw,4.4rem); color:var(--brown-deep);}
+.hero h1 em{color:var(--terracotta); font-style:italic;}
+.hero-sub{margin-top:1.4rem; max-width:34rem; font-size:clamp(1rem,2.2vw,1.15rem); color:#4a3624;}
+.hero-actions{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem;}
+.btn{display:inline-flex; align-items:center; gap:.55rem; padding:0.9rem 1.5rem; border-radius:8px; text-decoration:none; font-weight:700; font-size:0.94rem; min-height:44px; transition:transform .2s ease;}
+.btn-primary{background:var(--terracotta); color:#fff8ec;}
+.btn-primary:hover{transform:translateY(-2px);}
+.btn-outline{border:2px solid var(--brown); color:var(--brown);}
+.btn-outline:hover{background:var(--brown); color:var(--cream);}
+.hero-meta{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem 1.8rem; font-size:0.9rem; font-weight:600; color:var(--brown-deep);}
+.hero-meta span{display:flex; align-items:center; gap:.5rem;}
+.hero-meta svg{width:16px;height:16px;}
+
+.page-hero{position:relative; overflow:hidden; padding:clamp(2.8rem,7vw,5rem) 0 clamp(2.4rem,6vw,3.5rem); background:linear-gradient(160deg, var(--cream) 0%, var(--cream-2) 100%);}
+.page-hero h1{font-size:clamp(2.1rem,5.5vw,3.5rem); color:var(--brown-deep); max-width:20ch;}
+.page-hero p{margin-top:1rem; max-width:52ch; color:#4a3624; font-size:1.05rem;}
+
+section{padding:clamp(3rem,7vw,5.5rem) 0;}
+.section-head{max-width:40rem; margin-bottom:2.4rem;}
+.section-head h2{font-size:clamp(1.8rem,4.5vw,2.6rem); color:var(--brown-deep);}
+
+.geschichte{background:var(--cream-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.geschichte-grid{display:grid; gap:2rem;}
+@media(min-width:860px){.geschichte-grid{grid-template-columns:0.9fr 1.1fr; gap:3.2rem;}}
+.geschichte-grid p{font-size:1.02rem; color:#4a3624; margin-bottom:1rem;}
+.avatar-card{background:var(--cream); border:1px solid var(--line); border-radius:16px; padding:1.8rem; text-align:center; align-self:start;}
+.avatar{width:74px; height:74px; border-radius:50%; margin:0 auto 1rem; background:radial-gradient(circle at 35% 30%, #fff2d2, var(--amber) 60%, var(--terracotta) 100%); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:1.6rem; color:var(--brown-deep); font-weight:600;}
+.avatar-card h3{font-size:1.15rem; margin-bottom:0.3rem;}
+.avatar-card span{font-size:0.85rem; color:#6b5540;}
+
+.philo-grid{display:grid; gap:1.4rem; grid-template-columns:1fr;}
+@media(min-width:700px){.philo-grid{grid-template-columns:repeat(3,1fr);}}
+.philo-card{background:var(--cream); border:1px solid var(--line); border-radius:16px; padding:1.8rem;}
+.philo-card h3{font-size:1.15rem; color:var(--brown-deep); margin-bottom:0.6rem;}
+.philo-card p{font-size:0.94rem; color:#5a4530;}
+
+.teaser-grid{display:grid; gap:1.4rem; grid-template-columns:1fr;}
+@media(min-width:860px){.teaser-grid{grid-template-columns:repeat(3,1fr);}}
+.teaser-card{background:var(--cream); border:1px solid var(--line); border-radius:22px 22px 22px 6px; padding:1.9rem 1.7rem; display:flex; flex-direction:column;}
+.teaser-card h3{font-size:1.2rem; margin-bottom:0.6rem; color:var(--brown-deep);}
+.teaser-card p{font-size:0.94rem; color:#5a4530; flex:1;}
+.teaser-card a.more{margin-top:1.1rem; font-weight:700; color:var(--terracotta); text-decoration:none; font-size:0.92rem;}
+.teaser-card a.more:hover{text-decoration:underline;}
+
+.angebot-grid{display:grid; gap:1.4rem; grid-template-columns:1fr;}
+@media(min-width:640px){.angebot-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:980px){.angebot-grid{grid-template-columns:repeat(4,1fr);}}
+.a-card{background:var(--cream); border:1px solid var(--line); border-radius:22px 22px 22px 6px; padding:2rem 1.7rem; position:relative; transition:transform .3s ease, box-shadow .3s ease;}
+.a-card:hover{transform:translateY(-5px); box-shadow:0 20px 34px -22px rgba(58,36,23,0.4);}
+.a-card svg{width:34px;height:34px; color:var(--terracotta); margin-bottom:1rem;}
+.a-card h3{font-size:1.2rem; margin-bottom:0.6rem; color:var(--brown-deep);}
+.a-card p{font-size:0.92rem; color:#5a4530;}
+.angebot-note{margin-top:2rem; max-width:44rem; font-size:0.95rem; color:#5a4530; background:var(--cream); border:1px solid var(--line); border-radius:14px; padding:1.2rem 1.4rem;}
+.angebot-note a{color:var(--terracotta); font-weight:700; text-decoration:underline;}
+
+.garten{position:relative; background:linear-gradient(120deg, var(--green), var(--green-deep)); color:#f2f0e4; overflow:hidden;}
+.garten::before{content:""; position:absolute; width:min(50vw,420px); height:min(50vw,420px); border-radius:50%; background:rgba(255,255,255,0.06); top:-15%; right:-10%;}
+.garten-inner{position:relative; z-index:1; display:grid; gap:2rem; align-items:center;}
+@media(min-width:860px){.garten-inner{grid-template-columns:1.2fr 0.8fr;}}
+.garten h2{color:#fbf5e4; font-size:clamp(1.8rem,4.5vw,2.6rem);}
+.garten p{margin-top:1rem; max-width:34rem; font-size:1.02rem; color:#e6e6d4;}
+.garten-badges{display:flex; flex-direction:column; gap:0.9rem;}
+.g-badge{display:flex; gap:0.8rem; align-items:center; background:rgba(255,255,255,0.1); border-radius:12px; padding:0.9rem 1.1rem; font-weight:600; font-size:0.95rem;}
+.g-badge svg{width:22px;height:22px; flex-shrink:0;}
+
+.kontakt{background:var(--brown-deep); color:#f3e3cf;}
+.kontakt .eyebrow{color:var(--amber);}
+.kontakt .eyebrow::before{background:var(--amber);}
+.kontakt .section-head h2, .kontakt .page-hero h1{color:#fbf0dc;}
+.kontakt-grid{display:grid; gap:2.2rem;}
+@media(min-width:900px){.kontakt-grid{grid-template-columns:1fr 1fr; gap:3rem;}}
+.contact-list{list-style:none; display:grid; gap:1.1rem; font-size:1rem;}
+.contact-list li{display:flex; gap:0.9rem; align-items:flex-start;}
+.contact-list svg{flex-shrink:0; width:22px; height:22px; color:var(--amber); margin-top:.1rem;}
+.contact-list a{text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(243,227,207,0.4); font-weight:600;}
+.contact-list a:hover{text-decoration-color:var(--amber);}
+.cta-row{margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem;}
+.btn-light{background:var(--amber); color:var(--brown-deep);}
+.btn-light:hover{transform:translateY(-2px);}
+.btn-ghost-dark{border:2px solid rgba(243,227,207,0.4); color:#f3e3cf;}
+.btn-ghost-dark:hover{border-color:var(--amber); color:var(--amber);}
+.mapwrap{border-radius:16px; overflow:hidden; border:1px solid rgba(243,227,207,0.25); aspect-ratio:4/3.4; width:100%;}
+.mapwrap iframe{width:100%; height:100%; border:0;}
+
+.legal .page-hero, .kontakt.page-hero-wrap{background:none;}
+.legal-note{background:var(--legal-note-bg); color:var(--legal-note-fg); border:1px solid var(--legal-note-border); border-radius:14px; padding:1.1rem 1.3rem; font-size:0.92rem; line-height:1.55; max-width:70ch; margin:0 auto 2rem;}
+.legal-block{max-width:70ch; margin:0 auto; margin-top:2rem;}
+.legal-block h2{font-family:var(--serif); font-weight:600; font-size:1.2rem; margin-bottom:0.6rem; color:var(--brown-deep);}
+.legal-block p{color:#4a3624;}
+.legal-dl{display:grid; grid-template-columns:auto 1fr; gap:0.6rem 1.2rem; margin-top:1rem; font-size:0.95rem;}
+.legal-dl dt{font-weight:700; color:var(--brown-deep);}
+.legal-dl dd{margin:0; color:#4a3624;}
+@media(max-width:640px){.legal-dl{grid-template-columns:1fr; gap:.1rem 0;} .legal-dl dt{margin-top:.7rem;}}
+
+footer.site{background:#1d1209; color:#a8927a; padding:1.8rem 0; font-size:0.82rem;}
+.footer-top{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center; padding-bottom:1rem; margin-bottom:1rem; border-bottom:1px solid rgba(168,146,122,0.2);}
+.footer-brand{font-family:var(--serif); color:#f3e3cf; font-size:1.05rem;}
+.footer-links{display:flex; gap:1.4rem; font-size:0.85rem;}
+.footer-links a{text-decoration:none; color:#c9b294;}
+.footer-links a:hover{text-decoration:underline;}
+.footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:0.8rem;}
+
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Gasthaus Zur Sonne</strong> · keine Verbindung zum Unternehmen</div>
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+      <span>Zur Sonne</span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+      <li><a href="angebot.html">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="navcta" href="tel:+436641795811">Tisch reservieren</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn"><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active" aria-current="page">Über uns</a>
+    <a href="angebot.html">Speisekarte</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+436641795811">Tisch reservieren</a>
+  </div>
+</header>
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Über uns</p>
+      <h1>Seit 2014 mit Herz geführt</h1>
+      <p>Gertrude „Gerti" Kristandl führt das Gasthaus Zur Sonne seit 2014 — als städtisches Gasthaus mit echter Nachbarschaftsatmosphäre am Schloßplatz in Graz-Gösting.</p>
+    </div>
+  </section>
+
+  <section class="geschichte">
+    <div class="wrap geschichte-grid">
+      <div class="reveal">
+        <p class="eyebrow">Unsere Geschichte</p>
+        <h2>Ein Gasthaus für die ganze Nachbarschaft</h2>
+        <p>Auf den Tisch kommt bei uns traditionelle steirische Hausmannskost, dazu wechselnde Mittagsmenüs für die schnelle Pause zwischendurch. Wir kochen so, wie man es aus einem echten Nachbarschaftsgasthaus kennt — bodenständig, verlässlich und ohne unnötigen Schnickschnack.</p>
+        <p>Direkt an der Bus-Endhaltestelle gelegen, ist das Gasthaus ein leicht erreichbarer Anlaufpunkt für Gäste aus Gösting und ganz Graz — bekannt vor allem für seinen naturbelassenen Gastgarten, in dem man auch an ruhigeren Tagen gerne länger sitzen bleibt.</p>
+        <p>Was uns wichtig ist: dass sich Gäste bei uns wie in der Nachbarschaft fühlen — ob zum kurzen Mittagsmenü oder zum gemütlichen Abend im Freien.</p>
+      </div>
+      <div class="avatar-card reveal">
+        <div class="avatar">GK</div>
+        <h3>Gertrude „Gerti" Kristandl</h3>
+        <span>Gastgeberin seit 2014</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Was uns wichtig ist</p>
+        <h2>Bodenständig, gastfreundlich, unkompliziert</h2>
+      </div>
+      <div class="philo-grid">
+        <div class="philo-card reveal">
+          <h3>Hausmannskost</h3>
+          <p>Traditionelle steirische Gerichte, so wie man sie von einem echten Nachbarschaftsgasthaus erwartet.</p>
+        </div>
+        <div class="philo-card reveal">
+          <h3>Nachbarschaftlichkeit</h3>
+          <p>Ein Gasthaus, in dem man sich kennt — mitten in Graz-Gösting, gut erreichbar für alle.</p>
+        </div>
+        <div class="philo-card reveal">
+          <h3>Der Gastgarten</h3>
+          <p>Naturbelassen und beliebt: unser Gastgarten ist für viele Gäste der eigentliche Grund für den Besuch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <span class="footer-brand">Gasthaus Zur Sonne</span>
+      <nav class="footer-links" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="footer-row">
+      <span>© Gasthaus Zur Sonne · Schloßplatz 1, 8051 Graz</span>
+      <span>Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Zur Sonne · keine Verbindung zum Unternehmen.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); burgerBtn.setAttribute('aria-expanded','false'); });
+  });
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Gasthof Huber</title>
+<meta name="description" content="Muster-Impressum des Gasthof Huber in Wels — Platzhalter zur Veranschaulichung im Rahmen einer Gestaltungs-Vorschau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5f1c26;
+    --wine-2:#7a2530;
+    --terracotta:#c1653a;
+    --gold:#cf9b46;
+    --cream:#f8efe1;
+    --paper:#fffaf1;
+    --ink:#2c1a15;
+    --line:rgba(44,26,21,.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,.disp{font-family:'Fraunces', Georgia, serif; margin:0; line-height:1.08;}
+  a{color:inherit;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 1.5rem; width:100%;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:3px;}
+
+  .disclaimer{
+    background:var(--wine); color:#f3e2c8; font-size:.72rem; letter-spacing:.02em;
+    text-align:center; padding:.55rem 1rem; line-height:1.5;
+  }
+  .disclaimer strong{color:var(--gold); font-weight:600;}
+
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(248,239,225,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:.9rem 1.5rem; min-height:64px; gap:1rem;}
+  .logo{display:flex; align-items:center; gap:.7rem; text-decoration:none; color:var(--ink); flex-shrink:0;}
+  .logo .mark{
+    width:42px;height:42px;border-radius:10px;
+    background:linear-gradient(150deg,var(--wine),var(--terracotta));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--cream); font-family:'Fraunces'; font-weight:700; font-size:1.15rem;
+  }
+  .logo .word{font-family:'Fraunces'; font-weight:600; font-size:1.2rem;}
+  .nav-links{display:flex; gap:1.9rem; list-style:none; margin:0; padding:0; font-size:.94rem; font-weight:500; align-items:center;}
+  .nav-links a{text-decoration:none; opacity:.82; display:inline-flex; align-items:center; min-height:44px;}
+  .nav-links a:hover{opacity:1; color:var(--terracotta);}
+  .nav-links a[aria-current="page"]{opacity:1; color:var(--wine); font-weight:700; border-bottom:2px solid var(--terracotta);}
+  .nav-cta{
+    display:inline-flex; align-items:center; min-height:44px; padding:0 1.2rem;
+    background:var(--wine); color:var(--cream); border-radius:8px;
+    text-decoration:none; font-weight:600; font-size:.88rem; white-space:nowrap;
+  }
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:.5rem; min-width:44px; min-height:44px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--ink); margin:5px auto; border-radius:2px;}
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed; inset:64px 0 0 auto; height:calc(100dvh - 64px);
+      background:var(--paper); width:min(80vw,320px);
+      flex-direction:column; gap:0; padding:1rem 1.5rem; align-items:stretch;
+      transform:translateX(100%); transition:transform .3s ease;
+      box-shadow:-10px 0 30px rgba(0,0,0,.12); overflow-y:auto;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex; align-items:center; min-height:52px;}
+    .burger{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .page-hero{
+    padding:clamp(2.2rem,6vw,3.4rem) 0 clamp(1.6rem,4vw,2.2rem);
+    border-bottom:1px solid var(--line);
+  }
+  .page-hero .kicker{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--terracotta); font-weight:700;}
+  .page-hero h1{font-size:clamp(1.9rem,5vw,2.8rem); color:var(--wine); margin-top:.6rem; font-weight:600;}
+  .crumb{font-size:.85rem; color:#8a6a5c; margin-bottom:.6rem;}
+  .crumb a{text-decoration:none; color:var(--terracotta);}
+  .crumb a:hover{text-decoration:underline;}
+
+  .section{padding:clamp(2.5rem,6vw,4rem) 0;}
+
+  .legal-notice{
+    background:#fff2df; border:1.5px solid var(--gold); border-radius:14px;
+    padding:1.2rem 1.4rem; margin:0 0 clamp(2rem,5vw,3rem); font-size:.92rem; line-height:1.6; color:#4a3129;
+  }
+  .legal-notice strong{color:var(--wine);}
+  .legal-body{max-width:70ch;}
+  .legal-body h2{font-size:clamp(1.25rem,3vw,1.5rem); color:var(--wine); margin-top:2.2rem; font-family:'Fraunces'; font-weight:600;}
+  .legal-body h2:first-of-type{margin-top:0;}
+  .legal-body p, .legal-body li{color:#4a3129; line-height:1.7; font-size:.98rem;}
+  .legal-body ul{padding-left:1.2rem;}
+  .legal-body .field{color:#8a6a5c; font-style:italic;}
+  .legal-body a{color:var(--terracotta); text-decoration:underline;}
+
+  footer.site{background:var(--wine); color:#e3c8ba; padding:3rem 0 1.5rem;}
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem;}
+  footer .foot-brand{font-family:'Fraunces'; color:var(--cream); font-weight:600; font-size:1.2rem;}
+  footer small{color:#c9a598; display:block; margin-top:.8rem; line-height:1.6;}
+  .foot-links{list-style:none; margin:.8rem 0 0; padding:0; display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .foot-links a{color:#e3c8ba; text-decoration:none; font-size:.85rem; min-height:32px; display:inline-flex; align-items:center;}
+  .foot-links a:hover{color:var(--cream); text-decoration:underline;}
+  .foot-bottom{
+    border-top:1px solid rgba(248,239,225,.16); margin-top:2rem; padding-top:1.4rem;
+    font-size:.72rem; color:#c9a598; text-align:center; line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Gasthof Huber · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="logo" href="index.html">
+      <span class="mark">GH</span>
+      <span class="word">Gasthof Huber</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Küche &amp; Zimmer</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4372424530">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> / Impressum</div>
+      <span class="kicker">Rechtliche Angaben</span>
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="legal-notice">
+        <strong>Hinweis:</strong> Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </div>
+      <div class="legal-body">
+        <h2>Diensteanbieter</h2>
+        <p>Siegfried Huber Gasthaus GmbH &amp; Co. KG<br>
+        (handelnd als „Gasthof Huber")</p>
+
+        <h2>Anschrift</h2>
+        <p>Wiesenstraße 69<br>4600 Wels<br>Österreich</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: <a href="tel:+4372424530">+43 7242 45030</a><br>
+        E-Mail: <a href="mailto:office@gasthaus-huber.at">office@gasthaus-huber.at</a></p>
+
+        <h2>Vertretungsberechtigt</h2>
+        <p>Familie Huber</p>
+
+        <h2>Unternehmensrechtliche Angaben</h2>
+        <p>Firmenbuchnummer: <span class="field">[Firmenbuchnummer]</span><br>
+        Firmenbuchgericht: <span class="field">[Firmenbuchgericht]</span><br>
+        UID-Nummer: <span class="field">[UID-Nummer]</span></p>
+
+        <h2>Zuständige Aufsichtsbehörde / Kammer</h2>
+        <p><span class="field">[Zuständige Bezirkshauptmannschaft / Gewerbebehörde]</span><br>
+        Mitglied der Wirtschaftskammer Österreich, Fachgruppe Gastronomie</p>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit, sofern gesetzlich nichts anderes vorgeschrieben ist.</p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>Diese Seite ist eine unverbindliche Gestaltungs-Vorschau zu Demonstrationszwecken. Sämtliche Inhalte dienen ausschließlich der Veranschaulichung eines möglichen Website-Relaunches und stellen keine offizielle, rechtsverbindliche Website des genannten Betriebs dar.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <span class="foot-brand">Gasthof Huber</span>
+      <small>Wiesenstraße 69, 4600 Wels · Familie Huber</small>
+      <ul class="foot-links">
+        <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div>
+      <small>+43 7242 45030<br>office@gasthaus-huber.at</small>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof Huber · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Fahrschule Staudinger Steyr</title>
+<meta name="description" content="Die Fahrschule Staudinger Steyr ist Schwesterbetrieb der Fahrschulen Staudinger in Kirchdorf und Krems — Erfahrung und Verlässlichkeit an mehreren Standorten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101c2e; --navy-2:#16273d; --paper:#f4f6f5; --ink:#101c2e; --ink-soft:#3f5169;
+    --amber:#f0a333; --amber-deep:#d4831a; --teal:#2c8a7a; --line:rgba(16,28,46,0.14); --focus:#d4831a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0d1520; --navy:#f4f6f5; --navy-2:#0a121c; --ink:#f0eee8; --ink-soft:#a9b6c6;
+      --amber:#f6b856; --amber-deep:#f6c274; --teal:#5cc4b0; --line:rgba(240,238,232,0.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0d1520; --navy:#f4f6f5; --navy-2:#0a121c; --ink:#f0eee8; --ink-soft:#a9b6c6;
+    --amber:#f6b856; --amber-deep:#f6c274; --teal:#5cc4b0; --line:rgba(240,238,232,0.16);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Familjen Grotesk',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}
+  h1,h2,h3{font-family:'Unbounded',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .eyebrow{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber-deep);font-weight:600;font-family:'Familjen Grotesk'}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+  header.site{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1.25rem,4vw,3.5rem);max-width:1200px;margin:0 auto}
+  .brand{text-decoration:none;display:flex;flex-direction:column}
+  .brand-name{font-family:'Unbounded';font-weight:700;font-size:1rem;line-height:1.2}
+  .brand-sub{font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{text-decoration:none;font-size:0.9rem;font-weight:500;padding:0.3rem 0;border-bottom:2px solid transparent}
+  nav.links a:hover{color:var(--amber-deep)}
+  nav.links a.active{color:var(--amber-deep);border-bottom-color:var(--amber-deep)}
+  .nav-cta{display:none;background:var(--amber);color:var(--navy-2);text-decoration:none;padding:0.7rem 1.3rem;border-radius:8px;font-size:0.85rem;font-weight:700}
+  .burger{background:none;border:1px solid var(--line);border-radius:8px;width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.2rem;height:1.2rem}
+  @media(min-width:880px){nav.links{display:flex}.nav-cta{display:inline-block}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;border-top:1px solid var(--line);background:var(--paper)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:1rem clamp(1.25rem,4vw,3.5rem);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+  #mobile-menu a.active{color:var(--amber-deep);font-weight:700}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .page-hero{background:var(--navy);color:#f0eee8;padding:clamp(2.6rem,7vw,4.5rem) 0}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#f4f6f5;line-height:1.05}
+  .page-hero p{margin-top:1.1rem;max-width:56ch;font-size:1.05rem;color:#c3cede}
+  .page-hero .eyebrow{color:var(--amber)}
+
+  .section-head{max-width:640px;margin-bottom:2.6rem}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-top:0.6rem}
+  .section-head p{color:var(--ink-soft);margin-top:0.9rem;font-size:1.02rem}
+
+  .timeline{display:flex;flex-direction:column;gap:2.2rem;max-width:760px}
+  .timeline-item{padding-left:1.6rem;border-left:2px solid var(--line);position:relative}
+  .timeline-item::before{content:"";position:absolute;left:-7px;top:0.3rem;width:12px;height:12px;border-radius:50%;background:var(--amber-deep)}
+  .timeline-item h3{font-size:1.25rem;margin-bottom:0.4rem;font-family:'Unbounded'}
+  .timeline-item p{color:var(--ink-soft)}
+
+  .group-band{background:var(--navy-2);color:#e9edf2}
+  .group-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+  @media(min-width:900px){.group-grid{grid-template-columns:1fr 1fr}}
+  .group-band h2{color:#f4f6f5}
+  .group-band p{color:#b9c5d6;margin-top:1.1rem;font-size:1.03rem;max-width:48ch}
+  .badge-row{display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1.4rem}
+  .badge-row span{border:1px solid rgba(233,237,242,0.3);padding:0.5rem 1rem;border-radius:999px;font-size:0.82rem}
+  .group-figure{aspect-ratio:1/1;max-width:320px;margin:0 auto;position:relative}
+  .group-figure svg{width:100%;height:100%}
+
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;padding:0 1.5rem;text-decoration:none;font-weight:600;font-size:0.92rem;border-radius:8px}
+  .btn-primary{background:var(--amber);color:var(--navy-2)}
+  .btn-primary:hover{background:var(--amber-deep)}
+  .btn-outline{border:1.5px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1.6rem;background:var(--paper)}
+  .foot-grid{display:flex;flex-direction:column;gap:1.4rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-family:'Unbounded';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+  .foot-links{display:flex;gap:1.1rem;flex-wrap:wrap;margin-top:0.6rem}
+  .foot-links a{text-decoration:underline;text-underline-offset:3px}
+  .foot-disclaimer{font-size:0.74rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:1.2rem;margin-top:1.8rem;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Staudinger</span>
+      <span class="brand-sub">Fahrschule · Steyr</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4372525436">Anmelden</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html" class="active">Über uns</a>
+    <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+4372525436">Anrufen: +43 7252 54366</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow reveal">Über uns</span>
+      <h1 class="reveal">Teil der Fahrschule Staudinger Gruppe</h1>
+      <p class="reveal">Erfahrung, Verlässlichkeit und ein klarer Ausbildungsanspruch an mehreren Standorten in Oberösterreich.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Geschichte &amp; Verbund</span>
+        <h2>Ein Name, mehrere Standorte</h2>
+        <p>Die Fahrschule Staudinger Steyr ist Schwesterbetrieb der Fahrschule Staudinger in Kirchdorf und Krems. Gemeinsam bilden die Standorte einen Verbund mit gebündelter Erfahrung und demselben Anspruch an Qualität und Verlässlichkeit in der Fahrausbildung.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Breites Ausbildungsangebot</h3>
+          <p>Von der Klasse B über Motorrad und Lkw bis zu Moped und Microcar deckt die Fahrschule Staudinger Steyr ein umfangreiches Spektrum an Führerscheinklassen ab.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>Standort Steyr</h3>
+          <p>In der Pachergasse 12 in Steyr steht das Team für persönliche Beratung, praxisnahe Ausbildung und die Organisation der verpflichtenden Mehrphasenausbildung zur Verfügung.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <h3>Verbund mit Kirchdorf &amp; Krems</h3>
+          <p>Als Teil der Staudinger-Gruppe profitieren Fahrschüler in Steyr von der gebündelten Erfahrung der Schwesterbetriebe in Kirchdorf und Krems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="group-band">
+    <div class="wrap group-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--teal)">Standorte</span>
+        <h2>Steyr, Kirchdorf, Krems</h2>
+        <p>Drei Standorte, ein gemeinsamer Anspruch: kompetente, freundliche Ausbildung auf den Punkt gebracht — für alle Führerscheinklassen von Moped bis Lkw.</p>
+        <div class="badge-row">
+          <span>Steyr</span><span>Kirchdorf</span><span>Krems</span>
+        </div>
+      </div>
+      <div class="group-figure reveal" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <circle cx="150" cy="150" r="140" fill="none" stroke="#2c8a7a" stroke-width="2" opacity="0.5"/>
+          <circle cx="150" cy="150" r="100" fill="none" stroke="#f0a333" stroke-width="2" opacity="0.6"/>
+          <circle cx="150" cy="150" r="60" fill="#f0a333" opacity="0.9"/>
+          <circle cx="150" cy="150" r="60" fill="none" stroke="#101c2e" stroke-width="1.5"/>
+          <line x1="150" y1="10" x2="150" y2="290" stroke="#e9edf2" stroke-width="1" opacity="0.15"/>
+          <line x1="10" y1="150" x2="290" y2="150" stroke="#e9edf2" stroke-width="1" opacity="0.15"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="text-align:center">
+      <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,2.6rem)">Bereit für den ersten Schritt?</h2>
+      <p class="reveal" style="color:var(--ink-soft);margin-top:0.8rem;max-width:52ch;margin-inline:auto">Sehen Sie sich unsere Führerscheinklassen an oder nehmen Sie direkt Kontakt auf.</p>
+      <div class="reveal" style="display:flex;gap:0.9rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem">
+        <a class="btn btn-primary" href="angebot.html">Klassen &amp; Kurse ansehen</a>
+        <a class="btn btn-outline" href="kontakt.html">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Fahrschule Staudinger Steyr</div>
+        <div>Pachergasse 12, 4400 Steyr</div>
+        <div><a href="tel:+4372525436">+43 7252 54366</a></div>
+      </div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="angebot.html">Führerscheinklassen &amp; Kurse</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Fahrschule Staudinger Steyr</strong> · keine Verbindung zum Unternehmen</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

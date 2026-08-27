@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Frühstückspension Sydler</title>
+<meta name="description" content="Muster-Impressum der Gestaltungs-Vorschau für Frühstückspension Sydler, Bad Goisern am Hallstättersee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf4e9;--cream-2:#f1e6d0;--forest:#2f4a3a;--forest-dark:#1f3327;
+    --terracotta:#c1653f;--terracotta-dark:#a04e2e;--ink:#26241d;--line:rgba(38,36,29,.14);
+    --serif:'Fraunces', Georgia, serif;--sans:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+  ::selection{background:var(--terracotta);color:#fff;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--terracotta);outline-offset:2px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(250,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(20px,5vw,40px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;text-decoration:none;}
+  .brand small{display:block;font-family:var(--sans);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-dark);margin-top:2px;}
+  .navlinks{display:flex;gap:8px;align-items:center;}
+  .navlinks a{text-decoration:none;font-size:.92rem;font-weight:500;padding:12px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:20px;}
+  .navlinks a:hover, .navlinks a.active{background:var(--cream-2);}
+  .navlinks a.callbtn{background:var(--forest);color:#fff;padding:12px 20px;}
+  .navlinks a.callbtn:hover{background:var(--forest-dark);}
+  .burger{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;padding:10px;min-width:44px;min-height:44px;cursor:pointer;align-items:center;justify-content:center;}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:760px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;}
+    .navlinks.open{display:flex;}
+    .navlinks a{border-radius:8px;}
+    .burger{display:flex;}
+  }
+
+  .page-hero{padding:clamp(40px,7vw,64px) 0 28px;}
+  .kicker{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-dark);font-weight:600;display:block;margin-bottom:14px;}
+  .page-hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4.4vw,2.8rem);margin:0;}
+
+  section{padding:0 0 clamp(56px,9vw,100px);}
+  .legal-banner{background:var(--cream-2);border:1px solid var(--terracotta);border-left:4px solid var(--terracotta-dark);padding:18px 20px;margin:0 0 40px;font-size:.92rem;color:#463f30;border-radius:10px;max-width:80ch;}
+  .legal-banner strong{color:var(--terracotta-dark);}
+  .legal-body{max-width:74ch;}
+  .legal-body h2{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:36px 0 12px;}
+  .legal-body h2:first-of-type{margin-top:0;}
+  .legal-body p, .legal-body li{color:#463f30;font-size:.98rem;}
+  .legal-body ul{padding-left:20px;margin:8px 0;}
+  .legal-body a{color:var(--terracotta-dark);text-decoration:underline;text-underline-offset:2px;}
+  .placeholder{background:var(--cream-2);padding:1px 6px;border-radius:4px;font-size:.92em;}
+
+  footer{padding:32px 0 28px;font-size:.85rem;color:#5a5340;border-top:1px solid var(--line);background:var(--cream-2);}
+  .foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .foot-row a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-links a{margin-right:16px;display:inline-flex;min-height:44px;align-items:center;}
+  .footer-disclosure{font-size:.75rem;color:#786f56;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);max-width:90ch;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Pension Sydler<small>Bad Goisern am Hallstättersee</small></a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a class="callbtn" href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="page-hero">
+      <span class="kicker">Rechtliches</span>
+      <h1>Impressum</h1>
+    </div>
+    <div class="legal-banner">
+      <strong>Hinweis:</strong> Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+    </div>
+    <div class="legal-body">
+      <h2>Diensteanbieter</h2>
+      <p>
+        Frühstückspension Sydler<br>
+        Inhaber: Brigitte &amp; Leonhard Sydler<br>
+        Konrad-Deubler-Gasse 8-8a<br>
+        4822 Bad Goisern am Hallstättersee<br>
+        Österreich
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href="tel:+4361358395">+43 6135 8395</a><br>
+        E-Mail: <a href="mailto:pension@sydler.at">pension@sydler.at</a>
+      </p>
+
+      <h2>Unternehmensangaben</h2>
+      <p>
+        Rechtsform: <span class="placeholder">[Rechtsform, z. B. Einzelunternehmen]</span><br>
+        Gewerbeberechtigung: Beherbergung von Gästen (Frühstückspension)<br>
+        UID-Nummer: <span class="placeholder">[UID-Nummer]</span><br>
+        Zuständige Kammer: <span class="placeholder">[zuständige Kammer/Innung, z. B. WKO Oberösterreich]</span>
+      </p>
+
+      <h2>Berufsrechtliche Angaben</h2>
+      <p>Es gelten die Vorschriften der Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>.</p>
+
+      <h2>Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit, sofern gesetzlich nicht anders vorgeschrieben.</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Die Inhalte dieser Vorschau-Website wurden zu Demonstrationszwecken sorgfältig erstellt, erheben jedoch keinen Anspruch auf Vollständigkeit, Aktualität oder Richtigkeit.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>
+      <strong>Frühstückspension Sydler</strong><br>
+      Konrad-Deubler-Gasse 8-8a, 4822 Bad Goisern am Hallstättersee<br>
+      <a href="tel:+4361358395">+43 6135 8395</a> · <a href="mailto:pension@sydler.at">pension@sydler.at</a>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="wrap footer-disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Frühstückspension Sydler · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

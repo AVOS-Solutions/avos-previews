@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Gasthaus Binderhansl</title>
+<meta name="description" content="Kontakt und Anfahrt zum Gasthaus Binderhansl in Katzendorf 39, 8342 Gnas – Reservierung telefonisch oder per E-Mail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#6f2c26; --wine-dark:#4a1c19; --cream:#f6ecdd; --cream-2:#efe1c9;
+    --brown:#2b2019; --gold:#b6813f; --ink:#2b2019;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Work Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,1.5rem);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{background:var(--wine-dark); color:#f3e3d3; font-size:.78rem; text-align:center; padding:.55rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:#e9c9a5;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(246,236,221,.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(43,32,25,.1);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,1.5rem); position:relative;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; letter-spacing:.01em; text-decoration:none;}
+  .brand span{color:var(--wine);}
+  nav.links ul{list-style:none; display:flex; gap:1.8rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink); position:relative; display:inline-block; padding:.5rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--wine);transition:width .25s;}
+  nav.links a:hover::after, nav.links a.active::after{width:100%;}
+  nav.links a.active{color:var(--wine-dark); font-weight:600;}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; background:none; border:2px solid var(--ink); border-radius:8px; padding:.4rem .6rem; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,5vw,3rem); background:radial-gradient(60% 70% at 90% 0%, rgba(182,129,63,.3), transparent 70%), linear-gradient(180deg,#f9f1e3,var(--cream) 70%); border-bottom:1px solid rgba(43,32,25,.08);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); font-weight:500; color:var(--wine-dark); max-width:24ch;}
+  .page-hero p.lead{margin-top:1.1rem; max-width:48ch; color:#4a3a2c; font-size:clamp(1rem,2vw,1.08rem);}
+  .breadcrumb{font-size:.82rem; color:var(--wine); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  .eyebrow{display:inline-flex; align-items:center; gap:.6rem; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:1rem;}
+  .eyebrow::before{content:""; width:2.2rem; height:2px; background:var(--gold); flex-shrink:0;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+
+  .contact-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:2.4rem;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:#fff; border-radius:22px; padding:clamp(1.5rem,4vw,2.4rem); box-shadow:0 30px 60px -35px rgba(43,32,25,.35); border:1px solid rgba(43,32,25,.06);}
+  .contact-card h3{font-size:1.4rem; font-weight:500; margin-bottom:1.4rem;}
+  .contact-list{list-style:none; display:flex; flex-direction:column; gap:1.1rem;}
+  .contact-list li{display:flex; gap:.9rem; align-items:flex-start; font-size:.98rem;}
+  .contact-list svg{flex-shrink:0; margin-top:.15rem; color:var(--wine);}
+  .contact-list a{text-decoration:none; font-weight:500;}
+  .contact-list a:hover{text-decoration:underline;}
+  .map-embed{border-radius:22px; overflow:hidden; border:1px solid rgba(43,32,25,.08); min-height:280px; background:var(--cream-2); display:flex; align-items:center; justify-content:center;}
+  .map-embed iframe{width:100%; height:100%; min-height:280px; border:0;}
+
+  .cta-row{display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.8rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.85rem 1.5rem; border-radius:999px; font-weight:600; font-size:.95rem; text-decoration:none; transition:transform .2s, box-shadow .2s;}
+  .btn-primary{background:var(--wine); color:#fbeee0; box-shadow:0 10px 24px -10px rgba(111,44,38,.55);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--wine); color:var(--wine-dark);}
+  .btn-ghost:hover{background:rgba(111,44,38,.08);}
+
+  .note{display:flex; gap:1rem; align-items:flex-start; background:var(--cream-2); border-left:4px solid var(--gold); border-radius:12px; padding:1.4rem 1.6rem; margin-top:2.4rem; max-width:60rem;}
+  .note svg{flex-shrink:0; margin-top:.15rem; color:var(--wine);}
+  .note p{font-size:.95rem; color:#4a3a2c;}
+
+  footer{background:var(--brown); color:#e8dbc8; padding:2.6rem 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(232,219,200,.15);}
+  .footer-brand{font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500;}
+  .footer-brand span{color:#e2b078;}
+  footer address{font-style:normal; font-size:.92rem; color:#c9b89e; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c9b89e; text-decoration:none;}
+  footer address a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c9b89e; text-decoration:none;}
+  .footer-nav a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.2rem 1.5rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c9b89e; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#b7a488; padding:1rem 1.5rem 1.6rem; line-height:1.5;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.1rem,4vw,1.5rem); left:clamp(1.1rem,4vw,1.5rem); background:var(--cream); border:1px solid rgba(43,32,25,.12); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid rgba(43,32,25,.08); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+  .nav-panel a.active{color:var(--wine);}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+  @media (max-width:760px){ section{padding:2.8rem 0;} .contact-card{padding:1.6rem;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Binderhansl<span>.</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Kontakt</p>
+      <p class="eyebrow">Kontakt & Anfahrt</p>
+      <h1>Wir freuen uns auf Ihren Besuch</h1>
+      <p class="lead">Für Tischreservierungen und Fragen erreichen Sie die Familie Binderhansl am besten telefonisch.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Familie Binderhansl</h3>
+          <ul class="contact-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Katzendorf 39, 8342 Gnas <br><a href="https://www.google.com/maps/search/?api=1&query=Katzendorf%2039%2C%208342%20Gnas" target="_blank" rel="noopener">Route planen →</a></span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:+433151 2365">+43 3151 2365</a></span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <span><a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Öffnungszeiten auf Anfrage – bitte telefonisch erfragen.</span>
+            </li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:+433151 2365">Jetzt anrufen</a>
+            <a class="btn btn-ghost" href="mailto:binderhansl@gmx.at">E-Mail schreiben</a>
+          </div>
+        </div>
+        <div class="map-embed reveal">
+          <iframe title="Lage Gasthaus Binderhansl" loading="lazy" src="https://www.google.com/maps?q=Katzendorf%2039%2C%208342%20Gnas&output=embed"></iframe>
+        </div>
+      </div>
+      <div class="note reveal">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6f2c26" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p>Freundlicher Hinweis: Bei uns wird traditionell bar bezahlt – wir bitten um Verständnis. Für Reservierungen und aktuelle Betriebsferien-Zeiten rufen Sie uns bitte einfach an.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Gasthaus <span>Binderhansl</span></div>
+      <address>Katzendorf 39, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+433151 2365">+43 3151 2365</a><br>E-Mail: <a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

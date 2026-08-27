@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte — Die Herzl, Graz</title>
+<meta name="description" content="Altsteirische Küche, Mittagsmenüs und Weine aus der Steiermark bei Die Herzl in der Grazer Innenstadt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine: #5c1620; --wine-deep: #3c0e15; --cream: #f4ecdd; --cream-2: #ece0c9;
+    --gold: #c9a24b; --forest: #33473a; --ink: #241512;
+    --serif: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+    --sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --maxw: 76rem;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.5rem;}
+  h1,h2,h3{font-family:var(--serif); font-weight:400; line-height:1.05; letter-spacing:-0.01em;}
+  ::selection{background:var(--gold); color:var(--wine-deep);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{background: var(--wine-deep); color: #e8d9c8; font-size: 0.72rem; letter-spacing: 0.02em; text-align:center; padding: 0.5rem 1rem;}
+  .disclaimer strong{color:var(--gold); font-weight:700;}
+
+  header.site{position: sticky; top:0; z-index:50; background: rgba(244,236,221,0.94); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(92,22,32,0.15);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding: 1rem 1.5rem; max-width: var(--maxw); margin:0 auto; gap:1rem;}
+  .brand{font-family: var(--serif); font-size:1.35rem; color:var(--wine); text-decoration:none; display:flex; align-items:center; gap:.6rem; min-width:0;}
+  .brand svg{width:28px; height:28px; flex-shrink:0;}
+  .navlinks{display:none; gap:2rem; list-style:none; font-size:0.92rem; font-weight:600;}
+  .navlinks a{text-decoration:none; color:var(--wine-deep); position:relative; padding:.3rem 0;}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--gold);transition:width .25s;}
+  .navlinks a:hover::after{width:100%;}
+  .navlinks a.active{color:var(--wine);}
+  .navlinks a.active::after{width:100%;}
+  .navcta{display:none; background:var(--wine); color:var(--cream); text-decoration:none; padding:.55rem 1.1rem; border-radius:2px; font-size:0.85rem; font-weight:700; letter-spacing:.02em;}
+  .burger{background:none;border:2px solid var(--wine); border-radius:4px; width:44px;height:44px; display:flex; align-items:center;justify-content:center; cursor:pointer; flex-shrink:0;}
+  .burger span, .burger span::before, .burger span::after{content:"";display:block;width:20px;height:2px;background:var(--wine); position:relative; transition:.2s;}
+  .burger span::before{position:absolute; top:-6px;}
+  .burger span::after{position:absolute; top:6px;}
+  .mobilemenu{display:none; flex-direction:column; gap:0; background:var(--cream); border-bottom:1px solid rgba(92,22,32,0.15);}
+  .mobilemenu.open{display:flex;}
+  .mobilemenu a{padding:1rem 1.5rem; text-decoration:none; color:var(--wine-deep); border-top:1px solid rgba(92,22,32,0.1); font-weight:600; min-height:44px; display:flex; align-items:center;}
+  .mobilemenu a.active{color:var(--wine); font-weight:800;}
+  @media(min-width:840px){.navlinks{display:flex;} .navcta{display:inline-block;} .burger{display:none;} .mobilemenu{display:none !important;}}
+
+  .pagehero{position:relative; padding:3.4rem 0 3rem; overflow:hidden; border-bottom:1px solid rgba(92,22,32,0.12);}
+  .pagehero::before{content:""; position:absolute; inset:0; background: radial-gradient(circle at 90% 0%, rgba(201,162,75,0.16), transparent 55%); pointer-events:none;}
+  .pagehero .wrap{position:relative; z-index:1;}
+  .pagehero h1{font-size:clamp(2.1rem,5.5vw,3.4rem); color:var(--wine);}
+  .pagehero p{margin-top:1rem; max-width:38rem; font-size:1.05rem; color:#4a332c;}
+  .eyebrow{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em; font-weight:800; color:var(--forest); margin-bottom:1.1rem; display:flex; align-items:center; gap:.6rem;}
+  .eyebrow::before{content:"";width:2.2rem;height:2px;background:var(--forest); flex-shrink:0;}
+
+  section{padding: 5rem 0;}
+  .section-head{max-width:40rem; margin-bottom:2.8rem;}
+  .section-head .eyebrow{color:var(--wine);}
+  .section-head .eyebrow::before{background:var(--wine);}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.9rem); color:var(--wine-deep);}
+
+  .angebot-list{display:grid; gap:1.3rem; grid-template-columns:1fr;}
+  @media(min-width:640px){.angebot-list{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1050px){.angebot-list{grid-template-columns:repeat(3,1fr);}}
+  .angebot-card{background:var(--cream-2); border:1px solid rgba(92,22,32,0.18); border-radius:2px; padding:1.9rem 1.7rem; position:relative; transition: transform .3s ease, box-shadow .3s ease;}
+  .angebot-card:hover{transform:translateY(-4px); box-shadow:0 18px 32px -20px rgba(60,14,21,0.4);}
+  .angebot-card svg{width:34px;height:34px; color:var(--forest); margin-bottom:1rem;}
+  .angebot-card h3{font-size:1.3rem; color:var(--wine-deep); margin-bottom:.6rem;}
+  .angebot-card p{font-size:0.94rem; color:#4a3830;}
+  .angebot-card .num{position:absolute; top:1.3rem; right:1.4rem; font-family:var(--serif); font-size:0.85rem; color:var(--gold); font-weight:700;}
+  .angebot-card ul{margin-top:.7rem; padding-left:1.1rem; font-size:0.9rem; color:#4a3830;}
+  .angebot-card li{margin-bottom:.3rem;}
+
+  .hinweis{background:var(--cream-2); border-left:3px solid var(--gold); padding:1.2rem 1.5rem; font-size:0.92rem; color:#4a332c; max-width:44rem; margin-top:1rem;}
+
+  .kontaktcta{background:var(--wine-deep); color:#f0e4d3;}
+  .kontaktcta .section-head .eyebrow{color:var(--gold);}
+  .kontaktcta .section-head .eyebrow::before{background:var(--gold);}
+  .kontaktcta .section-head h2{color:#f7ecd9;}
+  .kontaktcta-row{display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;}
+  .kontaktcta-info{font-size:1rem; max-width:30rem;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:1rem;}
+  .btn{display:inline-flex; align-items:center; gap:.55rem; padding:0.9rem 1.5rem; border-radius:2px; text-decoration:none; font-weight:700; font-size:0.92rem; letter-spacing:.02em; transition: transform .2s ease, background .2s ease; min-height:44px;}
+  .btn-primary{background:var(--gold); color:var(--wine-deep);}
+  .btn-primary:hover{transform:translateY(-2px); background:#dab766;}
+  .btn-ghost{border:1.5px solid rgba(240,228,211,0.45); color:#f0e4d3;}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  footer.site{background:var(--wine-deep); border-top:1px solid rgba(240,228,211,0.15); color:#c9b8a4; padding:2.2rem 0 1.4rem; font-size:0.85rem;}
+  .footer-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#e8d9c8; text-decoration:underline; text-underline-offset:3px;}
+  .footer-note{margin-top:1.2rem; font-size:0.76rem; color:#a8927c; max-width:60rem; line-height:1.6;}
+  .footer-note strong{color:#c9a24b;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Die Herzl</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 3h8l-1 8a3 3 0 0 1-3 3 3 3 0 0 1-3-3L8 3Z"/><path d="M12 14v6"/><path d="M8 21h8"/></svg>
+      Die Herzl
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html" class="active" aria-current="page">Speisekarte</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="navcta" href="tel:+43316824300">Tisch reservieren</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn"><span></span></button>
+  </nav>
+  <div class="mobilemenu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html" class="active" aria-current="page">Speisekarte</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+43316824300">Tisch reservieren</a>
+  </div>
+</header>
+
+<main>
+  <section class="pagehero">
+    <div class="wrap">
+      <p class="eyebrow">Speisekarte</p>
+      <h1>Altsteirisch, herzhaft, ohne viel Aufhebens.</h1>
+      <p>Ein Auszug aus unserer Küche — die vollständige Karte mit allen Tagesangeboten liegt im Lokal auf oder ist telefonisch zu erfragen.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Unsere Küche</p>
+        <h2>Steirische Klassiker aus der Wirtshausküche.</h2>
+      </div>
+      <div class="angebot-list">
+        <div class="angebot-card reveal"><span class="num">01</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19h16"/><path d="M6 19V9l6-5 6 5v10"/><path d="M10 19v-6h4v6"/></svg>
+          <h3>Altsteirische Hausmannskost</h3>
+          <p>Regionale Klassiker aus der Wirtshausküche — so wie man sie in Graz seit Generationen kennt.</p>
+          <ul>
+            <li>Steirische Fleischgerichte</li>
+            <li>Hausgemachte Beilagen</li>
+            <li>Saisonale Gerichte</li>
+          </ul>
+        </div>
+        <div class="angebot-card reveal"><span class="num">02</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <h3>Mittagsmenü</h3>
+          <p>Werktags ein wechselndes Menü für die kurze Mittagspause mitten in der Innenstadt.</p>
+          <ul>
+            <li>Suppe oder Vorspeise</li>
+            <li>Tagesgericht</li>
+            <li>Wechselnd, werktags</li>
+          </ul>
+        </div>
+        <div class="angebot-card reveal"><span class="num">03</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3h8l-1 8a3 3 0 0 1-3 3 3 3 0 0 1-3-3L8 3Z"/><path d="M12 14v6"/><path d="M8 21h8"/></svg>
+          <h3>Aus dem Weinkeller</h3>
+          <p>Die Wurzeln als Weinstube leben weiter — mit einer Auswahl steirischer Weine zum Essen oder für sich allein.</p>
+          <ul>
+            <li>Steirische Weine</li>
+            <li>Offene Ausschank</li>
+          </ul>
+        </div>
+        <div class="angebot-card reveal"><span class="num">04</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          <h3>Terrassen-Genuss</h3>
+          <p>Im Sommer auf der Altstadtterrasse über der Herrengasse — dasselbe Angebot, mit besserer Aussicht.</p>
+        </div>
+      </div>
+      <div class="hinweis reveal">
+        Aus Rücksicht auf Verfügbarkeit und Saison führen wir hier keine feste Preisliste. Die aktuelle Speisekarte mit Tagesangeboten erfragen Sie am einfachsten telefonisch oder direkt im Lokal.
+      </div>
+    </div>
+  </section>
+
+  <section class="kontaktcta">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Appetit bekommen?</p>
+        <h2>Reservieren Sie einen Tisch.</h2>
+      </div>
+      <div class="kontaktcta-row reveal">
+        <p class="kontaktcta-info">Prokopigasse 12 / Mehlplatz, 8010 Graz — telefonische Reservierung empfohlen.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+43316824300">Jetzt anrufen</a>
+          <a class="btn btn-ghost" href="kontakt.html">Kontaktdetails &amp; Karte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <span>© Die Herzl · Prokopigasse 12, 8010 Graz · <a href="tel:+43316824300" style="color:#e8d9c8;">+43 316 824 300</a></span>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <p class="footer-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Die Herzl</strong> · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); burgerBtn.setAttribute('aria-expanded','false'); });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

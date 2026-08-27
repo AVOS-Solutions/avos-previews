@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gasthaus Binderhansl – Landgasthaus im Steirischen Vulkanland seit 1878</title>
+<meta name="description" content="Gasthaus Binderhansl in Katzendorf bei Gnas: seit 1878 in Familienbesitz, steirische Spezialitäten und regionale Küche im Herzen des Vulkanlands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#6f2c26;
+    --wine-dark:#4a1c19;
+    --cream:#f6ecdd;
+    --cream-2:#efe1c9;
+    --brown:#2b2019;
+    --gold:#b6813f;
+    --ink:#2b2019;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,1.5rem);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{
+    background:var(--wine-dark);
+    color:#f3e3d3;
+    font-size:.78rem;
+    text-align:center;
+    padding:.55rem 1rem;
+    line-height:1.4;
+  }
+  .disclaimer strong{color:#e9c9a5;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,236,221,.95);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(43,32,25,.1);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,1.5rem); position:relative;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; letter-spacing:.01em; text-decoration:none;}
+  .brand span{color:var(--wine);}
+  nav.links ul{list-style:none; display:flex; gap:1.8rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink); position:relative; display:inline-block; padding:.5rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--wine);transition:width .25s;}
+  nav.links a:hover::after,
+  nav.links a.active::after{width:100%;}
+  nav.links a.active{color:var(--wine-dark); font-weight:600;}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; background:none; border:2px solid var(--ink); border-radius:8px; padding:.4rem .6rem; font-size:1.2rem; cursor:pointer;}
+
+  /* hero */
+  .hero{
+    position:relative; overflow:hidden;
+    padding:clamp(3rem,7vw,5.5rem) 0 clamp(3rem,7vw,6rem);
+    background:
+      radial-gradient(60% 55% at 85% 10%, rgba(182,129,63,.35), transparent 70%),
+      radial-gradient(65% 60% at 10% 90%, rgba(111,44,38,.28), transparent 70%),
+      linear-gradient(180deg,#f9f1e3,var(--cream) 60%);
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.6rem;
+    font-size:.8rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--wine); font-weight:600; margin-bottom:1.4rem;
+  }
+  .eyebrow::before{content:""; width:2.2rem; height:2px; background:var(--gold); flex-shrink:0;}
+  .hero h1{
+    font-size:clamp(2.2rem, 6vw, 4.4rem);
+    font-weight:500;
+    line-height:1.04;
+    max-width:16ch;
+    color:var(--wine-dark);
+  }
+  .hero h1 em{font-style:italic; color:var(--wine);}
+  .hero p.lead{
+    margin-top:1.6rem; max-width:42ch; font-size:clamp(1rem,2vw,1.14rem); color:#4a3a2c;
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.2rem;}
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem; min-height:48px;
+    padding:.85rem 1.5rem; border-radius:999px; font-weight:600; font-size:.95rem;
+    text-decoration:none; transition:transform .2s, box-shadow .2s;
+  }
+  .btn-primary{background:var(--wine); color:#fbeee0; box-shadow:0 10px 24px -10px rgba(111,44,38,.55);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--wine); color:var(--wine-dark);}
+  .btn-ghost:hover{background:rgba(111,44,38,.08);}
+
+  .kicker-row{
+    margin-top:3rem; display:flex; gap:2.2rem; flex-wrap:wrap;
+    padding-top:2rem; border-top:1px solid rgba(43,32,25,.15);
+  }
+  .kicker-row div{font-size:.85rem; color:#5b4a3a;}
+  .kicker-row strong{display:block; font-family:'Fraunces',serif; font-size:1.5rem; color:var(--wine-dark); font-weight:500;}
+
+  /* page hero for subpages */
+  .page-hero{
+    padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,5vw,3rem);
+    background:
+      radial-gradient(60% 70% at 90% 0%, rgba(182,129,63,.3), transparent 70%),
+      linear-gradient(180deg,#f9f1e3,var(--cream) 70%);
+    border-bottom:1px solid rgba(43,32,25,.08);
+  }
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); font-weight:500; color:var(--wine-dark); max-width:24ch;}
+  .page-hero p.lead{margin-top:1.1rem; max-width:48ch; color:#4a3a2c; font-size:clamp(1rem,2vw,1.08rem);}
+  .breadcrumb{font-size:.82rem; color:var(--wine); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .section-head{max-width:38rem; margin-bottom:2.6rem;}
+  .section-head .eyebrow{margin-bottom:1rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.6rem); font-weight:500; line-height:1.15;}
+
+  /* story timeline */
+  .story{background:linear-gradient(180deg,var(--cream),#fbf4e8);}
+  .timeline{position:relative; padding-left:2.4rem;}
+  .timeline::before{
+    content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(180deg,var(--gold),var(--wine));
+  }
+  .t-item{position:relative; padding-bottom:2.6rem;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:""; position:absolute; left:-2.4rem; top:.35rem; width:16px; height:16px;
+    border-radius:50%; background:var(--cream); border:3px solid var(--wine);
+  }
+  .t-year{font-family:'Fraunces',serif; font-size:1.35rem; color:var(--wine); font-weight:600; margin-bottom:.3rem;}
+  .t-item p{max-width:52ch; color:#4a3a2c;}
+  .t-item h3{font-size:1.12rem; margin-bottom:.4rem; font-weight:600; font-family:'Work Sans';}
+
+  /* offerings */
+  .offer{background:var(--wine-dark); color:#f4e6d3;}
+  .offer .section-head{max-width:44rem;}
+  .offer .eyebrow{color:#e2b078;}
+  .offer .eyebrow::before{background:#e2b078;}
+  .offer-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.4rem;
+  }
+  .offer-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(244,230,211,.18);
+    border-radius:18px; padding:1.8rem;
+    transition:transform .25s, background .25s;
+  }
+  .offer-card:hover{transform:translateY(-4px); background:rgba(255,255,255,.09);}
+  .offer-card .num{font-family:'Fraunces',serif; font-size:.9rem; color:#e2b078; letter-spacing:.08em;}
+  .offer-card h3{margin:.6rem 0 .6rem; font-size:1.2rem; font-weight:500;}
+  .offer-card p{font-size:.93rem; color:#e0cdb6;}
+
+  .note{
+    display:flex; gap:1rem; align-items:flex-start;
+    background:var(--cream-2); border-left:4px solid var(--gold);
+    border-radius:12px; padding:1.4rem 1.6rem; margin-top:3rem; max-width:52rem;
+  }
+  .note svg{flex-shrink:0; margin-top:.15rem;}
+  .note p{font-size:.95rem; color:#4a3a2c;}
+
+  /* teaser cards on home */
+  .teaser-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem;}
+  @media (max-width:860px){.teaser-grid{grid-template-columns:1fr;}}
+  .teaser-card{
+    background:#fff; border-radius:20px; padding:2rem;
+    border:1px solid rgba(43,32,25,.08);
+    box-shadow:0 24px 48px -32px rgba(43,32,25,.3);
+    display:flex; flex-direction:column; gap:.9rem;
+  }
+  .teaser-card h3{font-size:1.3rem; font-weight:500;}
+  .teaser-card p{color:#4a3a2c; font-size:.96rem; flex-grow:1;}
+  .teaser-card a{font-weight:600; color:var(--wine); text-decoration:none; font-size:.92rem;}
+  .teaser-card a:hover{text-decoration:underline;}
+
+  /* contact */
+  .contact{background:linear-gradient(180deg,#fbf4e8,var(--cream));}
+  .contact-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:2.4rem;}
+  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{
+    background:#fff; border-radius:22px; padding:clamp(1.5rem,4vw,2.4rem);
+    box-shadow:0 30px 60px -35px rgba(43,32,25,.35);
+    border:1px solid rgba(43,32,25,.06);
+  }
+  .contact-card h3{font-size:1.4rem; font-weight:500; margin-bottom:1.4rem;}
+  .contact-list{list-style:none; display:flex; flex-direction:column; gap:1.1rem;}
+  .contact-list li{display:flex; gap:.9rem; align-items:flex-start; font-size:.98rem;}
+  .contact-list svg{flex-shrink:0; margin-top:.15rem; color:var(--wine);}
+  .contact-list a{text-decoration:none; font-weight:500;}
+  .contact-list a:hover{text-decoration:underline;}
+  .map-embed{
+    border-radius:22px; overflow:hidden; border:1px solid rgba(43,32,25,.08);
+    min-height:280px; background:var(--cream-2);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .map-embed iframe{width:100%; height:100%; min-height:280px; border:0;}
+
+  /* prose (impressum/datenschutz) */
+  .prose{max-width:60rem;}
+  .prose h2{font-size:clamp(1.4rem,3vw,1.8rem); font-weight:500; margin:2.2rem 0 .9rem;}
+  .prose h2:first-child{margin-top:0;}
+  .prose p, .prose li{color:#4a3a2c; font-size:.98rem; margin-bottom:.8rem;}
+  .prose ul{padding-left:1.3rem; margin-bottom:.8rem;}
+  .legal-notice{
+    display:flex; gap:1rem; align-items:flex-start;
+    background:var(--cream-2); border-left:4px solid var(--wine);
+    border-radius:12px; padding:1.3rem 1.5rem; margin-bottom:2.4rem; max-width:60rem;
+  }
+  .legal-notice svg{flex-shrink:0; margin-top:.15rem; color:var(--wine);}
+  .legal-notice p{font-size:.92rem; color:#4a3a2c; margin:0;}
+
+  footer{background:var(--brown); color:#e8dbc8; padding:2.6rem 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(232,219,200,.15);}
+  .footer-brand{font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500;}
+  .footer-brand span{color:#e2b078;}
+  footer address{font-style:normal; font-size:.92rem; color:#c9b89e; margin-top:.6rem; line-height:1.7;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c9b89e; text-decoration:none;}
+  .footer-nav a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.2rem 1.5rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c9b89e; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{
+    text-align:center; font-size:.78rem; color:#b7a488; padding:1rem 1.5rem 1.6rem; line-height:1.5;
+  }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* mobile nav panel */
+  .nav-panel{
+    display:none; position:absolute; top:100%; right:clamp(1.1rem,4vw,1.5rem); left:clamp(1.1rem,4vw,1.5rem);
+    background:var(--cream); border:1px solid rgba(43,32,25,.12); border-radius:14px;
+    box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;
+  }
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid rgba(43,32,25,.08); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+  .nav-panel a.active{color:var(--wine);}
+
+  @media (max-width:860px){
+    nav.links{display:none;}
+    .navToggle{display:flex;}
+  }
+  @media (max-width:760px){
+    .kicker-row{gap:1.6rem;}
+    section{padding:2.8rem 0;}
+    .contact-card{padding:1.6rem;}
+  }
+  @media (max-width:400px){
+    .btn{padding:.85rem 1.2rem; font-size:.9rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Binderhansl<span>.</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Gasthaus · Katzendorf, Gnas · Steirisches Vulkanland</p>
+      <h1>Seit 1878 gedeckte Tische im <em>Vulkanland</em></h1>
+      <p class="lead">Vier Generationen Gastfreundschaft, steirische Spezialitäten und ehrliche regionale Küche – im Familienbesitz der Familie Binderhansl in Katzendorf bei Gnas.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+433151 2365">Tisch reservieren – anrufen</a>
+        <a class="btn btn-ghost" href="angebot.html">Zur Speisekarte</a>
+      </div>
+      <div class="kicker-row">
+        <div><strong>1878</strong>Gründungsjahr</div>
+        <div><strong>4.</strong>Generation am Herd</div>
+        <div><strong>Bar</strong>Zahlung vor Ort</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Willkommen</p>
+        <h2>Ein Landgasthaus mit fast 150 Jahren Geschichte</h2>
+      </div>
+      <div class="teaser-grid">
+        <article class="teaser-card reveal">
+          <h3>Über uns</h3>
+          <p>Vier Generationen Familie Binderhansl, ein Haus im Steirischen Vulkanland und eine Geschichte, die bis 1878 zurückreicht.</p>
+          <a href="ueber-uns.html">Unsere Geschichte lesen →</a>
+        </article>
+        <article class="teaser-card reveal">
+          <h3>Speisekarte</h3>
+          <p>Steirische Spezialitäten und regionale Küche, bodenständig und mit Liebe zubereitet.</p>
+          <a href="angebot.html">Speisekarte ansehen →</a>
+        </article>
+        <article class="teaser-card reveal">
+          <h3>Kontakt & Anfahrt</h3>
+          <p>Katzendorf 39, 8342 Gnas – wir freuen uns auf Ihren Besuch und Ihre Reservierung.</p>
+          <a href="kontakt.html">Kontakt & Route →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Steirische Küche</p>
+        <h2>Regional, bodenständig, mit Liebe zubereitet</h2>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card reveal">
+          <div class="num">01</div>
+          <h3>Steirische Spezialitäten</h3>
+          <p>Klassiker der Region, so wie sie im Vulkanland auf den Tisch gehören – deftig, frisch und mit regionalen Zutaten.</p>
+        </article>
+        <article class="offer-card reveal">
+          <div class="num">02</div>
+          <h3>Regionale Küche</h3>
+          <p>Was die Umgebung hergibt, landet auf dem Teller – saisonal und mit kurzen Wegen aus dem Vulkanland.</p>
+        </article>
+        <article class="offer-card reveal">
+          <div class="num">03</div>
+          <h3>Für Gruppen & Feiern</h3>
+          <p>Familienfeiern, Vereinsausflüge oder ein gemütlicher Abend mit Freunden – bei uns findet sich der passende Rahmen.</p>
+        </article>
+      </div>
+      <div class="note reveal" style="background:rgba(255,255,255,.06); border-color:#e2b078;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e2b078" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+        <p style="color:#e9dcc7;">Freundlicher Hinweis: Bei uns wird traditionell bar bezahlt – wir bitten um Verständnis.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Gasthaus <span>Binderhansl</span></div>
+      <address>Katzendorf 39, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+433151 2365">+43 3151 2365</a><br>E-Mail: <a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

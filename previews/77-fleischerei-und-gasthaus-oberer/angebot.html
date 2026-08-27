@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speisekarte & Sortiment — Fleischerei und Gasthaus Oberer</title>
+<meta name="description" content="Steirische Gasthausküche und eigene Wurst- und Schinkenproduktion nach Familienrezepten bei Fleischerei und Gasthaus Oberer in Mureck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f4ead9;
+    --cream-2:#ece0c9;
+    --paper:#fbf6ec;
+    --ink:#2c1810;
+    --ink-soft:#4a3325;
+    --burgundy:#5c1a1f;
+    --burgundy-deep:#3d1013;
+    --terracotta:#a8492f;
+    --gold:#b08d3e;
+    --line:rgba(44,24,16,0.16);
+    --focus:#a8492f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#231613;
+      --cream-2:#2b1a16;
+      --paper:#1c1210;
+      --ink:#f2e6d8;
+      --ink-soft:#d9c4b0;
+      --burgundy:#e0a9a0;
+      --burgundy-deep:#f2c9be;
+      --terracotta:#e0916f;
+      --gold:#d9b872;
+      --line:rgba(242,230,216,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#231613;
+    --cream-2:#2b1a16;
+    --paper:#1c1210;
+    --ink:#f2e6d8;
+    --ink-soft:#d9c4b0;
+    --burgundy:#e0a9a0;
+    --burgundy-deep:#f2c9be;
+    --terracotta:#e0916f;
+    --gold:#d9b872;
+    --line:rgba(242,230,216,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem;}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+
+  .disclaimer{
+    background:var(--burgundy-deep);
+    color:var(--cream);
+    font-size:0.78rem;
+    text-align:center;
+    padding:0.55rem 1rem;
+    letter-spacing:0.01em;
+  }
+  :root:not([data-theme="light"]) .disclaimer,
+  :root[data-theme="dark"] .disclaimer{color:var(--ink);}
+
+  header.site{
+    position:sticky;top:0;z-index:20;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;max-width:1120px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:0.65rem;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;text-decoration:none;}
+  .brand .mark{
+    width:2.1rem;height:2.1rem;border-radius:50%;
+    background:var(--burgundy);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.85rem;font-weight:700;flex:none;
+  }
+  nav.links{display:flex;gap:1.75rem;font-size:0.92rem;}
+  nav.links a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
+  nav.links a:hover{border-color:var(--terracotta);}
+  nav.links a.active{color:var(--burgundy);border-color:var(--terracotta);font-weight:600;}
+  :root:not([data-theme="light"]) nav.links a.active, :root[data-theme="dark"] nav.links a.active{color:var(--terracotta);}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:0.6rem 0.8rem;font-size:1.1rem;min-width:44px;min-height:44px;}
+  @media (max-width:760px){
+    nav.links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper);
+      flex-direction:column;gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height 0.3s ease;
+    }
+    nav.links.open{max-height:24rem;}
+    nav.links a{padding:0.85rem 1.5rem;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .navtoggle{display:block;}
+  }
+
+  .hero{
+    position:relative;
+    padding:5rem 1.5rem 4.5rem;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.20), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+    overflow:hidden;
+  }
+  :root:not([data-theme="light"]) .hero, :root[data-theme="dark"] .hero{
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.12), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--terracotta);font-weight:600;margin-bottom:1.5rem;
+  }
+  .kicker::before{content:"";width:1.6rem;height:1px;background:var(--terracotta);}
+  h1.display{
+    font-size:clamp(2.4rem,6vw,4.6rem);
+    line-height:1.03;
+    margin:0 0 1.4rem;
+    max-width:16ch;
+  }
+  h1.display em{font-style:italic;color:var(--burgundy);}
+  .hero p.lead{
+    font-size:1.2rem;color:var(--ink-soft);max-width:46ch;margin:0 0 2.2rem;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:0.9rem;}
+  .btn{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    padding:0.85rem 1.5rem;border-radius:2px;min-height:44px;
+    font-size:0.95rem;font-weight:600;text-decoration:none;
+    border:1px solid var(--burgundy);transition:all .2s ease;
+  }
+  .btn.primary{background:var(--burgundy);color:var(--cream);}
+  .btn.primary:hover{background:var(--burgundy-deep);}
+  .btn.ghost{color:var(--ink);border-color:var(--line);}
+  .btn.ghost:hover{border-color:var(--burgundy);}
+
+  .hero-figure{
+    margin-top:3.5rem;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:var(--line);
+    border:1px solid var(--line);
+  }
+  .hero-figure div{background:var(--paper);padding:1.3rem 1rem;text-align:center;}
+  .hero-figure .num{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--burgundy);display:block;}
+  .hero-figure .lbl{font-size:0.75rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.05em;}
+  @media(max-width:640px){.hero-figure{grid-template-columns:repeat(2,1fr);}}
+
+  .page-hero{
+    padding:3.4rem 1.5rem 3rem;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.20), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+  :root:not([data-theme="light"]) .page-hero, :root[data-theme="dark"] .page-hero{
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(176,141,62,0.12), transparent 55%),
+      linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
+  }
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 0.8rem;max-width:20ch;}
+  .page-hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:50ch;margin:0;}
+
+  .story{padding:5.5rem 1.5rem;background:var(--paper);}
+  .story-head{max-width:38rem;margin-bottom:3.5rem;}
+  .story-head .kicker{color:var(--gold);}
+  .story-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 1rem;}
+  .story-head p{color:var(--ink-soft);font-size:1.06rem;}
+
+  .timeline{position:relative;max-width:760px;margin:0 auto;}
+  .timeline::before{
+    content:"";position:absolute;left:1.05rem;top:0.4rem;bottom:0.4rem;
+    width:2px;background:linear-gradient(var(--line),var(--gold),var(--line));
+  }
+  .tl-item{position:relative;padding-left:3.5rem;margin-bottom:3rem;opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .tl-item.revealed{opacity:1;transform:none;}
+  .tl-item::before{
+    content:"";position:absolute;left:0.55rem;top:0.35rem;
+    width:1rem;height:1rem;border-radius:50%;
+    background:var(--paper);border:2px solid var(--terracotta);
+  }
+  .tl-item .yr{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--terracotta);display:block;margin-bottom:0.3rem;}
+  .tl-item h3{font-size:1.2rem;margin:0 0 0.4rem;}
+  .tl-item p{color:var(--ink-soft);margin:0;max-width:52ch;}
+
+  .philosophy{padding:0 1.5rem 5.5rem;}
+  .philosophy .wrap{max-width:760px;}
+  .philosophy blockquote{
+    margin:0;font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.3rem,3vw,1.7rem);color:var(--burgundy);line-height:1.4;
+    border-left:3px solid var(--terracotta);padding-left:1.5rem;
+  }
+  :root:not([data-theme="light"]) .philosophy blockquote, :root[data-theme="dark"] .philosophy blockquote{color:var(--terracotta);}
+
+  .offer{
+    padding:5.5rem 1.5rem;
+    background:var(--burgundy);color:var(--cream);
+  }
+  :root:not([data-theme="light"]) .offer, :root[data-theme="dark"] .offer{
+    background:var(--burgundy-deep);color:var(--ink);
+  }
+  .offer .story-head p, .offer .story-head .kicker{color:rgba(244,234,217,0.78);}
+  :root:not([data-theme="light"]) .offer .story-head p, :root[data-theme="dark"] .offer .story-head p{color:var(--ink-soft);}
+  .offer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(244,234,217,0.18);border:1px solid rgba(244,234,217,0.18);}
+  .offer-card{background:var(--burgundy);padding:2.2rem 2rem;}
+  :root:not([data-theme="light"]) .offer-card, :root[data-theme="dark"] .offer-card{background:var(--burgundy-deep);}
+  .offer-card h3{color:var(--cream);font-size:1.3rem;margin:0 0 0.7rem;}
+  :root:not([data-theme="light"]) .offer-card h3, :root[data-theme="dark"] .offer-card h3{color:var(--ink);}
+  .offer-card p{color:rgba(244,234,217,0.82);margin:0;}
+  :root:not([data-theme="light"]) .offer-card p, :root[data-theme="dark"] .offer-card p{color:var(--ink-soft);}
+  .offer-card .tag{display:inline-block;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;}
+  @media(max-width:700px){.offer-grid{grid-template-columns:1fr;}}
+
+  .menu-section{padding:5.5rem 1.5rem;background:var(--paper);}
+  .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;}
+  @media(max-width:700px){.menu-grid{grid-template-columns:1fr;}}
+  .menu-card{border:1px solid var(--line);border-radius:6px;padding:1.8rem 1.7rem;background:var(--cream);}
+  .menu-card h3{font-size:1.15rem;margin:0 0 0.6rem;color:var(--burgundy);}
+  :root:not([data-theme="light"]) .menu-card h3, :root[data-theme="dark"] .menu-card h3{color:var(--terracotta);}
+  .menu-card p{color:var(--ink-soft);margin:0;font-size:0.96rem;}
+  .note-box{
+    margin-top:2.5rem;padding:1.1rem 1.4rem;border-left:4px solid var(--terracotta);
+    background:var(--cream);border-radius:4px;font-size:0.92rem;color:var(--ink-soft);max-width:60ch;
+  }
+
+  .teaser{padding:5rem 1.5rem;}
+  .teaser.alt{background:var(--cream);}
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+  @media(max-width:900px){.teaser-grid{grid-template-columns:1fr;}}
+  .teaser-card{border:1px solid var(--line);border-radius:6px;padding:2rem 1.8rem;background:var(--paper);display:flex;flex-direction:column;}
+  .teaser-card h3{font-size:1.25rem;margin:0 0 0.7rem;}
+  .teaser-card p{color:var(--ink-soft);margin:0 0 1.2rem;flex:1;}
+  .teaser-card a.more{color:var(--burgundy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--terracotta);padding-bottom:2px;align-self:flex-start;}
+  :root:not([data-theme="light"]) .teaser-card a.more, :root[data-theme="dark"] .teaser-card a.more{color:var(--terracotta);}
+
+  .cta-band{padding:4.5rem 1.5rem;text-align:center;background:var(--burgundy);color:var(--cream);}
+  :root:not([data-theme="light"]) .cta-band, :root[data-theme="dark"] .cta-band{background:var(--burgundy-deep);color:var(--ink);}
+  .cta-band h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 1rem;}
+  .cta-band p{color:rgba(244,234,217,0.82);margin:0 0 2rem;max-width:46ch;margin-inline:auto;}
+  :root:not([data-theme="light"]) .cta-band p, :root[data-theme="dark"] .cta-band p{color:var(--ink-soft);}
+  .cta-band .hero-cta{justify-content:center;}
+  .cta-band .btn.ghost{border-color:rgba(244,234,217,0.5);color:var(--cream);}
+  :root:not([data-theme="light"]) .cta-band .btn.ghost, :root[data-theme="dark"] .cta-band .btn.ghost{color:var(--ink);border-color:var(--line);}
+  .cta-band .btn.primary{background:var(--cream);color:var(--burgundy);border-color:var(--cream);}
+
+  .contact{padding:5.5rem 1.5rem;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:start;}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+  .contact h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 1.2rem;}
+  .contact p.intro{color:var(--ink-soft);font-size:1.05rem;max-width:44ch;margin:0 0 2rem;}
+  .cards{display:flex;flex-direction:column;gap:1rem;}
+  .info-card{
+    border:1px solid var(--line);border-radius:4px;padding:1.2rem 1.4rem;
+    display:flex;gap:1rem;align-items:flex-start;background:var(--cream);
+  }
+  .info-card svg{flex:none;width:1.4rem;height:1.4rem;color:var(--terracotta);margin-top:0.15rem;}
+  .info-card .lbl{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);margin-bottom:0.2rem;}
+  .info-card a{text-decoration:none;font-weight:600;word-break:break-word;display:inline-block;padding:0.3rem 0;min-height:44px;align-content:center;}
+  .info-card a:hover{color:var(--terracotta);}
+  .info-card > div{min-width:0;}
+  .map-frame{border:1px solid var(--line);border-radius:4px;overflow:hidden;height:100%;min-height:320px;background:var(--cream-2);}
+  .map-frame iframe{width:100%;height:100%;min-height:320px;border:0;display:block;}
+  .cta-buttons{display:flex;flex-wrap:wrap;gap:0.9rem;margin-top:2rem;}
+
+  .legal{padding:3.5rem 1.5rem 5.5rem;}
+  .legal .wrap{max-width:760px;}
+  .notice-box{
+    background:var(--cream);border-left:4px solid var(--terracotta);border-radius:4px;
+    padding:1.2rem 1.4rem;margin-bottom:2.5rem;font-size:0.92rem;color:var(--ink-soft);
+  }
+  .notice-box strong{color:var(--ink);}
+  .legal h1{font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 2rem;}
+  .legal h2{font-size:1.3rem;margin:2.2rem 0 0.8rem;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p,.legal li{color:var(--ink-soft);font-size:1rem;}
+  .legal ul{padding-left:1.2rem;}
+  .field-table{width:100%;border-collapse:collapse;margin:1rem 0 2rem;}
+  .field-table tr{border-bottom:1px solid var(--line);}
+  .field-table td{padding:0.6rem 0.5rem;font-size:0.95rem;vertical-align:top;}
+  .field-table td:first-child{color:var(--ink-soft);width:38%;}
+  .field-table a{color:var(--burgundy);text-decoration:none;}
+  :root:not([data-theme="light"]) .field-table a, :root[data-theme="dark"] .field-table a{color:var(--terracotta);}
+
+  footer.site{
+    border-top:1px solid var(--line);
+    padding:2.5rem 1.5rem 1.5rem;
+    background:var(--cream);
+  }
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;margin-bottom:1.5rem;}
+  .footer-grid .brand{font-size:1.05rem;}
+  .footer-grid p{color:var(--ink-soft);font-size:0.92rem;max-width:32ch;margin:0.4rem 0 0;}
+  .footer-nav{display:flex;flex-direction:column;gap:0.5rem;}
+  .footer-nav a{color:var(--ink-soft);text-decoration:none;font-size:0.9rem;}
+  .footer-nav a:hover{color:var(--burgundy);}
+  :root:not([data-theme="light"]) .footer-nav a:hover, :root[data-theme="dark"] .footer-nav a:hover{color:var(--terracotta);}
+  .footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap;}
+  .foot-disclaimer{
+    font-size:0.78rem;color:var(--ink-soft);border-top:1px solid var(--line);
+    padding-top:1.2rem;line-height:1.5;
+  }
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.revealed{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei und Gasthaus Oberer · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="mark">O</span> Oberer</a>
+    <nav class="links" id="navlinks">
+      <a href="index.html" class="">Home</a>
+      <a href="ueber-uns.html" class="">Über uns</a>
+      <a href="angebot.html" class="active">Speisekarte &amp; Sortiment</a>
+      <a href="kontakt.html" class="">Kontakt</a>
+    </nav>
+    <button class="navtoggle" id="navtoggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="kicker">Speisekarte &amp; Sortiment</span>
+    <h1>Zwei Handwerke, ein Haus.</h1>
+    <p class="lead">Was tagsüber in der Fleischerei entsteht, landet abends oft direkt auf dem Teller im Gastraum nebenan.</p>
+  </div>
+</section>
+
+<section class="offer" id="angebot">
+  <div class="wrap">
+    <div class="offer-grid">
+      <div class="offer-card reveal">
+        <span class="tag">Fleischerei</span>
+        <h3>Wurst &amp; Schinken nach Familienrezept</h3>
+        <p>Eigene Produktion mit Rezepten, die über Generationen weitergegeben wurden — vom klassischen Aufschnitt bis zu steirischen Spezialitäten aus der eigenen Räucherkammer.</p>
+      </div>
+      <div class="offer-card reveal">
+        <span class="tag">Gasthaus</span>
+        <h3>Bodenständige steirische Küche</h3>
+        <p>Rund 60 Sitzplätze im Gastraum, dazu das gemütliche Stüberl und der historische Keller für kleinere und größere Runden — von der Familienfeier bis zum Vereinsstammtisch.</p>
+      </div>
+      <div class="offer-card reveal">
+        <span class="tag">Qualität</span>
+        <h3>AMA-Gastrosiegel-Mitglied</h3>
+        <p>Herkunft und Qualität, die nachvollziehbar sind — ein Gütezeichen, das für den bewussten Umgang mit regionalem Fleisch steht.</p>
+      </div>
+      <div class="offer-card reveal">
+        <span class="tag">Anlässe</span>
+        <h3>Stüberl &amp; Keller für Feiern</h3>
+        <p>Ob kleine Feier im Stüberl oder größere Gesellschaft im Gewölbekeller — das Haus bietet Raum für unterschiedlichste Anlässe abseits der Speisekarte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section">
+  <div class="wrap">
+    <div class="story-head reveal">
+      <span class="kicker">Aus der Gasthausküche</span>
+      <h2>Speisekarte</h2>
+      <p>Bodenständige steirische Hausmannskost mit Fleisch aus eigener Produktion. Die genaue Karte wechselt je nach Saison — hier die Kategorien, die Sie bei uns erwarten dürfen.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <h3>Suppen &amp; Vorspeisen</h3>
+        <p>Klassische steirische Suppen und kleine Vorspeisen als Einstieg.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Fleischgerichte aus eigener Produktion</h3>
+        <p>Hauptgerichte mit Fleisch, Wurst und Schinken direkt aus der hauseigenen Fleischerei.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Steirische Klassiker</h3>
+        <p>Bodenständige Gasthausküche, wie man sie in der Region seit Generationen kennt.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Nachspeisen</h3>
+        <p>Hausgemachte Süßspeisen zum Abschluss.</p>
+      </div>
+    </div>
+    <div class="note-box">Aktuelle Tageskarte und saisonale Gerichte auf Anfrage direkt im Gasthaus oder telefonisch. Konkrete Preise nennen wir gerne persönlich.</div>
+  </div>
+</section>
+
+<section class="menu-section" style="background:var(--cream);padding-top:0;">
+  <div class="wrap">
+    <div class="story-head reveal">
+      <span class="kicker">Aus der Fleischerei</span>
+      <h2>Sortiment an der Theke</h2>
+      <p>Eigene Herstellung statt Zukauf — nach Rezepten, die seit vier Generationen weitergegeben werden.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card reveal">
+        <h3>Wurstwaren</h3>
+        <p>Hausgemachte Wurst nach Familienrezepten, klassisch und steirisch.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Schinken &amp; Geräuchertes</h3>
+        <p>Schinken und Räucherspezialitäten aus der eigenen Räucherkammer.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Frischfleisch</h3>
+        <p>Fleisch für den täglichen Einkauf, mit AMA-Gastrosiegel für nachvollziehbare Herkunft.</p>
+      </div>
+      <div class="menu-card reveal">
+        <h3>Bestellungen für Feiern</h3>
+        <p>Größere Mengen für Familienfeiern oder Vereinsanlässe auf Vorbestellung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Jetzt Tisch reservieren oder Bestellung aufgeben.</h2>
+    <p>Wir freuen uns auf Ihren Anruf — persönlich, unkompliziert.</p>
+    <div class="hero-cta">
+      <a class="btn primary" href="tel:+4334722109">+43 3472 2109 anrufen</a>
+      <a class="btn ghost" href="kontakt.html">Kontakt &amp; Anfahrt</a>
+    </div>
+  </div>
+</section>
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">Fleischerei und Gasthaus Oberer</div>
+        <p>Hauptplatz 16 · 8480 Mureck</p>
+      </div>
+      <div>
+        <p><a href="tel:+4334722109" style="color:inherit;text-decoration:none;">+43 3472 2109</a><br><a href="mailto:j.oberer@aon.at" style="color:inherit;text-decoration:none;">j.oberer@aon.at</a></p>
+      </div>
+      <nav class="footer-nav">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="foot-disclaimer">
+      Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fleischerei und Gasthaus Oberer · keine Verbindung zum Unternehmen.
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); });
+  });
+
+  var els = document.querySelectorAll('.reveal, .tl-item');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('revealed'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('revealed'); });
+  }
+</script>
+
+</body>
+</html>

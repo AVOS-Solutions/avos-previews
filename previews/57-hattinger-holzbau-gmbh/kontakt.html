@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt — Hattinger Holzbau GmbH</title>
+<meta name="description" content="Kontakt zu Hattinger Holzbau GmbH in Pramet: Adresse, Telefon, E-Mail und Anfahrt zum Hartlhof 14.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ede1;--cream-2:#eae1d0;--ink:#2b2118;--ink-soft:#5c4c3a;
+    --walnut:#3c2c1c;--amber:#b5652a;--amber-deep:#8f4c1c;--line:#c9bba1;
+    --green:#4a5d3a;--focus:#8f4c1c;--radius:2px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1b1712;--cream-2:#221c15;--ink:#f1e9d8;--ink-soft:#c9bba1;
+      --walnut:#f1e9d8;--amber:#e0965a;--amber-deep:#e8a76d;--line:#4a3e2c;--green:#8fa578;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#1b1712;--cream-2:#221c15;--ink:#f1e9d8;--ink-soft:#c9bba1;
+    --walnut:#f1e9d8;--amber:#e0965a;--amber-deep:#e8a76d;--line:#4a3e2c;--green:#8fa578;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;text-transform:uppercase;font-size:0.72rem}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .disclaimer{background:var(--walnut);color:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.02em;text-align:center;padding:0.5rem 1rem;line-height:1.4}
+  .disclaimer strong{font-weight:600}
+  header.site{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);max-width:1180px;margin:0 auto}
+  .brand{display:flex;flex-direction:column;gap:0.1rem;text-decoration:none}
+  .brand-name{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.05rem}
+  .brand-sub{font-family:'IBM Plex Mono';font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{font-size:0.85rem;text-decoration:none;font-weight:500;position:relative;padding:0.4rem 0;min-height:44px;display:inline-flex;align-items:center}
+  nav.links a:hover{color:var(--amber-deep)}
+  nav.links a.active{color:var(--amber-deep);font-weight:700;border-bottom:2px solid var(--amber-deep)}
+  .nav-cta{display:none;font-family:'IBM Plex Mono';font-size:0.72rem;background:var(--amber);color:#fff;padding:0.75rem 1.1rem;text-decoration:none;border-radius:var(--radius);min-height:44px;align-items:center}
+  .burger{background:none;border:1px solid var(--line);border-radius:var(--radius);width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.1rem;height:1.1rem}
+  @media(min-width:860px){nav.links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);background:var(--cream-2)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;font-size:0.95rem;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+  #mobile-menu a.active{color:var(--amber-deep);font-weight:700}
+  .page-hero{position:relative;padding:clamp(2.4rem,6vw,4rem) 0 clamp(2rem,5vw,3rem);
+    background-image:repeating-linear-gradient(to right, var(--line) 0, var(--line) 1px, transparent 1px, transparent calc(100%/12)), linear-gradient(var(--cream), var(--cream));
+    border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);max-width:22ch;margin-top:0.8rem}
+  .page-hero p{max-width:52ch;color:var(--ink-soft);font-size:1.05rem;margin-top:1rem}
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;padding:0 1.4rem;text-decoration:none;font-weight:600;font-size:0.92rem;border-radius:var(--radius)}
+  .btn-primary{background:var(--walnut);color:var(--cream)}
+  .btn-primary:hover{background:var(--amber-deep)}
+  .btn-outline{border:1px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+  .contact-grid{display:grid;gap:2.5rem;grid-template-columns:1fr}
+  @media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+  .contact-card{border:1px solid var(--line);border-radius:var(--radius);padding:2rem;background:var(--cream-2)}
+  .contact-card h3{font-size:1.3rem;margin-bottom:1.2rem}
+  .contact-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+  .contact-list li{display:flex;gap:0.9rem;align-items:flex-start;font-size:0.98rem}
+  .contact-list svg{width:1.25rem;height:1.25rem;flex-shrink:0;margin-top:0.15rem;color:var(--amber-deep)}
+  .contact-list a{text-decoration:underline;text-underline-offset:3px}
+  .map-frame{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;height:100%;min-height:280px}
+  .map-frame iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1.5rem}
+  .foot-grid{display:flex;flex-direction:column;gap:1.5rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+  .foot-legal{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:0.6rem}
+  .foot-legal a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
+  .foot-disclaimer{font-size:0.78rem;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:2rem;padding-top:1.4rem;max-width:1180px}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Hattinger Holzbau GmbH</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Hattinger Holzbau</span>
+      <span class="brand-sub">Zimmerei · Pramet</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Leistungen</a>
+      <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+436506133527">+43 650 6133527</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html">Leistungen</a>
+    <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    <a href="tel:+436506133527">Anrufen: +43 650 6133527</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="mono section-num">Kontakt</span>
+      <h1>Projekt besprechen</h1>
+      <p>Ob Neubau, Sanierung oder Anbau — Johann Hattinger berät Sie gerne persönlich. Termine nach Vereinbarung.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Hartlhof 14 · Pramet</h3>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hartlhof 14, 4925 Pramet<br><a href="https://www.google.com/maps/search/?api=1&query=Hartlhof%2014%2C%204925%20Pramet" target="_blank" rel="noopener">Route berechnen →</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:+436506133527">+43 650 6133527</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>
+              <span><a href="mailto:office@hattinger-holzbau.at">office@hattinger-holzbau.at</a></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <span>Ansprechpartner: Johann Hattinger</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span>Termine nach Vereinbarung — Anruf oder E-Mail genügt.</span>
+            </li>
+          </ul>
+          <div style="margin-top:1.6rem;display:flex;gap:0.8rem;flex-wrap:wrap">
+            <a class="btn btn-primary" href="tel:+436506133527">Jetzt anrufen</a>
+            <a class="btn btn-outline" href="mailto:office@hattinger-holzbau.at">E-Mail schreiben</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Hartlhof%2014%2C%204925%20Pramet" target="_blank" rel="noopener">Route berechnen</a>
+          </div>
+        </div>
+        <div class="map-frame reveal">
+          <iframe title="Standort Hattinger Holzbau GmbH auf der Karte" loading="lazy" src="https://www.google.com/maps?q=Hartlhof%2014%2C%204925%20Pramet&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Hattinger Holzbau GmbH</div>
+        <div>Hartlhof 14, 4925 Pramet · Bezirk Ried im Innkreis</div>
+        <div><a href="tel:+436506133527">+43 650 6133527</a> · <a href="mailto:office@hattinger-holzbau.at">office@hattinger-holzbau.at</a></div>
+        <div class="foot-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div>
+        <nav class="links" style="display:flex">
+          <a href="index.html">Home</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="angebot.html">Leistungen</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Hattinger Holzbau GmbH · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

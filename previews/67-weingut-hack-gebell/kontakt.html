@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt &amp; Anfahrt – Weingut Hack-Gebell</title>
+<meta name="description" content="Kontakt und Anfahrt zum Weingut Hack-Gebell in Gamlitz: Eckberg 100, 8462 Gamlitz. Telefon, E-Mail und Route zum Buschenschank.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#3a0f16;
+    --wine-2:#2a0a10;
+    --wine-3:#4d151d;
+    --gold:#c9a35e;
+    --gold-soft:#e4cd9c;
+    --cream:#f4ecdd;
+    --line:rgba(228,205,156,0.22);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--wine); color:var(--cream);
+    font-family:'Manrope',system-ui,sans-serif; line-height:1.7;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Libre Caslon Text',Georgia,serif; margin:0; font-weight:400;}
+  a{color:inherit;}
+  .wrap{max-width:70rem; margin:0 auto; padding:0 min(6vw,1.7rem); width:100%;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  img,svg{display:block; max-width:100%; height:auto;}
+
+  .disclaimer{
+    background:var(--wine-2); color:var(--gold-soft); font-size:0.76rem; text-align:center;
+    padding:0.55rem 1rem; letter-spacing:0.01em; border-bottom:1px solid var(--line);
+  }
+  .disclaimer strong{font-weight:700; color:#fff;}
+
+  header.site{
+    padding:1.1rem 0; position:sticky; top:0; z-index:30;
+    background:rgba(58,15,22,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; position:relative;}
+  .brand{font-family:'Libre Caslon Text',serif; font-size:clamp(1.1rem,3vw,1.4rem); letter-spacing:0.02em; color:var(--gold-soft); text-decoration:none;}
+  .brand small{display:block; font-family:'Manrope',sans-serif; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--gold); font-weight:600; margin-top:0.15rem;}
+  nav.main{display:flex; align-items:center;}
+  nav.main a{
+    text-decoration:none; font-size:0.88rem; margin-left:1.5rem; color:var(--cream);
+    display:inline-flex; align-items:center; min-height:44px; border-bottom:2px solid transparent; opacity:0.85;
+  }
+  nav.main a:hover{border-color:var(--gold); opacity:1;}
+  nav.main a.active{border-color:var(--gold); opacity:1; color:#fff;}
+  .nav-toggle{
+    display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:2px;
+    background:transparent; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--gold-soft); display:block;}
+  @media (max-width:780px){
+    nav.main{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--wine-2); border-bottom:1px solid var(--line); flex-direction:column;
+      padding:0.4rem min(6vw,1.7rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.7rem 0; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .hero{
+    position:relative; padding:clamp(4rem,10vw,7rem) 0 clamp(3rem,7vw,5rem); overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(201,163,94,0.16), transparent 60%),
+      radial-gradient(ellipse at 10% 100%, rgba(201,163,94,0.1), transparent 55%);
+  }
+  .hero .wrap{position:relative;}
+  .eyebrow{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold);
+    font-weight:600; margin-bottom:1.2rem;
+  }
+  h1.headline{
+    font-size:clamp(2.6rem,9vw,5.6rem); line-height:1.02; color:var(--gold-soft); max-width:16ch;
+  }
+  h1.headline em{font-style:italic; color:#fff;}
+  .hero-sub{margin-top:1.6rem; font-size:clamp(1rem,2vw,1.2rem); max-width:44ch; color:#e4d9c8;}
+  .hero-cta{display:flex; gap:0.9rem; margin-top:2.4rem; flex-wrap:wrap;}
+  .btn{
+    padding:0.85rem 1.5rem; border-radius:1px; font-size:0.9rem; font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; min-height:44px; box-sizing:border-box;
+    transition:background .2s, color .2s; border:1.5px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--gold); color:var(--wine-2);}
+  .btn-primary:hover{background:var(--gold-soft);}
+  .btn-outline{border:1.5px solid var(--gold); color:var(--gold-soft);}
+  .btn-outline:hover{background:rgba(201,163,94,0.12);}
+
+  .hero-tags{display:flex; gap:0.9rem; margin-top:2.6rem; flex-wrap:wrap;}
+  .tag{
+    border:1px solid var(--line); border-radius:2px; padding:0.5rem 0.9rem; font-size:0.82rem;
+    color:var(--gold-soft); letter-spacing:0.02em;
+  }
+
+  .page-hero{padding:clamp(3.2rem,8vw,4.6rem) 0 clamp(2rem,5vw,3rem);
+    background:radial-gradient(ellipse at 80% 0%, rgba(201,163,94,0.14), transparent 60%);
+  }
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.6rem); color:var(--gold-soft); max-width:20ch;}
+  .page-hero p{margin-top:1.1rem; max-width:52ch; color:#e4d9c8; font-size:clamp(1rem,2vw,1.12rem);}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .section-head{max-width:44rem; margin-bottom:clamp(1.8rem,4vw,2.6rem);}
+  .kicker{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--gold);
+    font-weight:600; margin-bottom:0.7rem;
+  }
+  h2{font-size:clamp(1.9rem,4.4vw,2.9rem); color:var(--gold-soft);}
+  p.lede{font-size:clamp(1rem,2vw,1.12rem); max-width:60ch; color:#e4d9c8;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  .contact{background:var(--wine-2); border-top:1px solid var(--line);}
+  .contact-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(1.6rem,4vw,3rem); align-items:start; margin-top:2rem;
+  }
+  @media (max-width:840px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-list{list-style:none; margin:0; padding:0; display:grid; gap:1.1rem;}
+  .contact-list li{display:flex; gap:0.9rem; align-items:flex-start; font-size:0.98rem;}
+  .contact-list a{text-decoration:underline; text-underline-offset:3px; color:var(--gold-soft);}
+  .cta-row{display:flex; gap:0.9rem; margin-top:2rem; flex-wrap:wrap;}
+  .map-embed{
+    border:1px solid var(--line); border-radius:4px; overflow:hidden; aspect-ratio:4/3; filter:grayscale(0.15) sepia(0.08);
+  }
+  .map-embed iframe{width:100%; height:100%; border:0;}
+  .hours-note{margin-top:1.6rem; font-size:0.9rem; color:#c9b696; border-left:2px solid var(--gold); padding-left:0.9rem;}
+
+  .legal-notice{border:1.5px solid var(--gold); background:rgba(201,163,94,0.08); border-radius:4px; padding:1.2rem 1.4rem; margin:0 0 2.4rem; font-size:0.92rem; color:var(--gold-soft); line-height:1.6;}
+  .legal-notice strong{color:#fff;}
+  .legal-content h2{margin-top:2.4rem; font-size:clamp(1.4rem,3vw,1.8rem);}
+  .legal-content h2:first-of-type{margin-top:0;}
+  .legal-content p, .legal-content li{color:#e4d9c8; font-size:0.98rem;}
+  .legal-content ul{padding-left:1.3rem;}
+  .legal-content dl{display:grid; grid-template-columns:auto 1fr; gap:0.5rem 1rem; margin:1rem 0;}
+  .legal-content dt{color:var(--gold); font-weight:600;}
+  .legal-content dd{margin:0;}
+
+  footer.site{
+    background:var(--wine-2); color:#b8a487; padding:clamp(2.4rem,6vw,3.4rem) 0 1.6rem; border-top:1px solid var(--line);
+  }
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(1.6rem,4vw,3rem); margin-bottom:2.2rem;}
+  @media (max-width:780px){ .footer-grid{grid-template-columns:1fr; gap:2rem;} }
+  .footer-brand{font-family:'Libre Caslon Text',serif; font-size:1.3rem; color:var(--gold-soft); margin-bottom:0.7rem;}
+  .footer-about{font-size:0.88rem; max-width:32ch; color:#c9b696;}
+  .footer-col h4{font-size:0.76rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); margin-bottom:0.9rem; font-weight:700;}
+  .footer-col ul{list-style:none; margin:0; padding:0; display:grid; gap:0.6rem;}
+  .footer-col a{text-decoration:none; color:#e4d9c8; font-size:0.92rem;}
+  .footer-col a:hover{text-decoration:underline;}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:1.4rem; display:flex; flex-wrap:wrap; gap:0.8rem 1.4rem; justify-content:space-between; font-size:0.8rem; color:#b8a487;}
+  .footer-disclaimer{font-size:0.76rem; color:#a8956f; max-width:76ch; line-height:1.55; margin-top:1.2rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Weinguts Hack-Gebell</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Hack-Gebell<small>Weingut &amp; Buschenschank · Gamlitz</small></a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Weine &amp; Angebot</a>
+      <a href="kontakt.html" class="active" aria-current="page">Kontakt</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Kontakt &amp; Anfahrt</p>
+    <h1>Besuchen Sie uns am Eckberg</h1>
+    <p>Ob Buschenschank, Übernachtung oder Weinanfrage — Familie Hack freut sich auf Ihre Nachricht.</p>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <ul class="contact-list">
+          <li><span aria-hidden="true">📍</span> <span>Eckberg 100<br>8462 Gamlitz, Steiermark</span></li>
+          <li><span aria-hidden="true">📞</span> <a href="tel:+433454303">+43 3454 303</a></li>
+          <li><span aria-hidden="true">✉️</span> <a href="mailto:office@weingut-hack.at">office@weingut-hack.at</a></li>
+          <li><span aria-hidden="true">🍇</span> <span>Ihre Gastgeber: Philipp und Brigitte Hack</span></li>
+        </ul>
+        <p class="hours-note">Öffnungszeiten des Buschenschanks auf Anfrage — bitte kontaktieren Sie uns vorab, insbesondere bei größeren Gruppen oder für die Zimmerreservierung.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+433454303">Jetzt anrufen</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Eckberg%20100%2C%208462%20Gamlitz" target="_blank" rel="noopener">Route berechnen</a>
+          <a class="btn btn-outline" href="mailto:office@weingut-hack.at">E-Mail schreiben</a>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Eckberg%20100%2C%208462%20Gamlitz&output=embed" title="Lage des Weinguts Hack-Gebell auf der Karte" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Hack-Gebell</div>
+        <p class="footer-about">Weingut &amp; Buschenschank mit Gästezimmern an der Südsteirischen Weinstraße. Eckberg 100, 8462 Gamlitz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt &amp; Rechtliches</h4>
+        <ul>
+          <li><a href="tel:+433454303">+43 3454 303</a></li>
+          <li><a href="mailto:office@weingut-hack.at">office@weingut-hack.at</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Weingut Hack-Gebell · Eckberg 100, 8462 Gamlitz</span>
+      <span>Gestaltungs-Vorschau — keine offizielle Website</span>
+    </div>
+    <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weingut Hack-Gebell · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+  });
+</script>
+</body>
+</html>

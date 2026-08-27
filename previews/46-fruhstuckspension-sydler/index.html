@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frühstückspension Sydler · Bad Goisern am Hallstättersee</title>
+<meta name="description" content="Familien- und kinderfreundliche Frühstückspension Sydler in Bad Goisern am Hallstättersee, wenige Gehminuten vom Zentrum im UNESCO-Welterbe Salzkammergut – 3 Häuser, 13 Zimmer, WLAN und Leihfahrräder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf4e9;--cream-2:#f1e6d0;--forest:#2f4a3a;--forest-dark:#1f3327;
+    --terracotta:#c1653f;--terracotta-dark:#a04e2e;--ink:#26241d;--line:rgba(38,36,29,.14);
+    --serif:'Fraunces', Georgia, serif;--sans:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+  ::selection{background:var(--terracotta);color:#fff;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--terracotta);outline-offset:2px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(250,244,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px clamp(20px,5vw,40px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;text-decoration:none;}
+  .brand small{display:block;font-family:var(--sans);font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-dark);margin-top:2px;}
+  .navlinks{display:flex;gap:8px;align-items:center;}
+  .navlinks a{text-decoration:none;font-size:.92rem;font-weight:500;padding:12px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:20px;}
+  .navlinks a:hover, .navlinks a.active{background:var(--cream-2);}
+  .navlinks a.callbtn{background:var(--forest);color:#fff;padding:12px 20px;}
+  .navlinks a.callbtn:hover{background:var(--forest-dark);}
+  .burger{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;padding:10px;min-width:44px;min-height:44px;cursor:pointer;align-items:center;justify-content:center;}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:760px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;}
+    .navlinks.open{display:flex;}
+    .navlinks a{border-radius:8px;}
+    .burger{display:flex;}
+  }
+
+  .hero{border-bottom:1px solid var(--line);}
+  .hero-split{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(640px,88vh);}
+  @media (max-width:880px){ .hero-split{grid-template-columns:1fr;min-height:auto;} }
+  .hero-text{padding:clamp(40px,7vw,88px) clamp(20px,5vw,56px);display:flex;flex-direction:column;justify-content:center;gap:22px;}
+  .hero-kicker{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-dark);font-weight:600;}
+  .hero-text h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.3rem,5.6vw,4.2rem);line-height:1.04;margin:0;letter-spacing:-.01em;}
+  .hero-text h1 em{font-style:italic;color:var(--forest);}
+  .hero-text p{max-width:46ch;font-size:1.08rem;color:#463f30;margin:0;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;}
+  .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:30px;text-decoration:none;font-weight:600;font-size:.95rem;}
+  .btn-solid{background:var(--forest);color:#fff;}
+  .btn-solid:hover{background:var(--forest-dark);}
+  .btn-line{border:1.5px solid var(--ink);}
+  .btn-line:hover{background:var(--ink);color:var(--cream);}
+
+  .hero-scene{position:relative;overflow:hidden;background:linear-gradient(180deg,#dce9e0 0%, #cfe0d3 55%, var(--cream-2) 100%);min-height:280px;}
+  .hero-scene svg{position:absolute;inset:0;width:100%;height:100%;}
+
+  section{padding:clamp(56px,9vw,100px) 0;}
+  .kicker{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-dark);font-weight:600;display:block;margin-bottom:14px;}
+
+  .story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:start;}
+  @media (max-width:820px){ .story-grid{grid-template-columns:1fr;} }
+  .story h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:600;margin:0 0 18px;line-height:1.12;}
+  .story p{font-size:1.05rem;color:#463f30;max-width:62ch;}
+
+  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px;}
+  @media (max-width:820px){ .teaser-grid{grid-template-columns:1fr;} }
+  .teaser{background:var(--cream-2);border:1px solid var(--line);border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;gap:12px;}
+  .teaser h3{font-family:var(--serif);font-weight:600;margin:0;font-size:1.3rem;}
+  .teaser p{margin:0;color:#463f30;font-size:.95rem;flex:1;}
+  .teaser a.more{font-size:.88rem;font-weight:600;color:var(--forest);text-decoration:none;border-bottom:2px solid var(--terracotta);align-self:flex-start;min-height:44px;display:inline-flex;align-items:center;}
+  .teaser a.more:hover{color:var(--terracotta-dark);}
+
+  .houses{background:var(--forest);color:var(--cream);}
+  .houses h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:600;margin:0 0 12px;}
+  .houses > .wrap > p{color:#d7e2da;max-width:60ch;margin:0 0 48px;font-size:1.05rem;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(250,244,233,.18);border:1px solid rgba(250,244,233,.18);}
+  @media (max-width:820px){ .steps{grid-template-columns:1fr;} }
+  .step{background:var(--forest);padding:32px 28px;}
+  .step .num{font-family:var(--serif);font-size:2.4rem;color:var(--terracotta);display:block;margin-bottom:10px;font-weight:600;}
+  .step h3{margin:0 0 8px;font-size:1.15rem;font-weight:600;}
+  .step p{margin:0;color:#cddace;font-size:.95rem;}
+
+  .kontakt-cta{background:var(--forest-dark);color:var(--cream);border-radius:28px;padding:clamp(32px,6vw,64px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:center;}
+  @media (max-width:820px){ .kontakt-cta{grid-template-columns:1fr;border-radius:20px;} }
+  .kontakt-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,3.6vw,2.5rem);margin:0 0 16px;font-weight:600;}
+  .kontakt-cta p{color:#d7e2da;max-width:44ch;}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .kontakt-cta .btn-solid{background:var(--terracotta);}
+  .kontakt-cta .btn-solid:hover{background:var(--terracotta-dark);}
+  .kontakt-cta .btn-line{border-color:var(--cream);}
+  .kontakt-cta .btn-line:hover{background:var(--cream);color:var(--forest-dark);}
+
+  footer{padding:32px 0 28px;font-size:.85rem;color:#5a5340;border-top:1px solid var(--line);background:var(--cream-2);}
+  .foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .foot-row a{text-decoration:underline;text-underline-offset:3px;}
+  .footer-links a{margin-right:16px;display:inline-flex;min-height:44px;align-items:center;}
+  .footer-disclosure{font-size:.75rem;color:#786f56;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);max-width:90ch;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Pension Sydler<small>Bad Goisern am Hallstättersee</small></a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a class="callbtn" href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-split">
+    <div class="hero-text">
+      <span class="hero-kicker">Bad Goisern am Hallstättersee</span>
+      <h1>Zuhause ankommen, <em>mitten im Salzkammergut.</em></h1>
+      <p>Familien- und kinderfreundliche Frühstückspension, wenige Gehminuten vom Zentrum von Bad Goisern – im UNESCO-Welterbe Salzkammergut, mit Gratis-WLAN und Leihfahrrädern für alle Gäste.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="kontakt.html">Zimmer anfragen</a>
+        <a class="btn btn-line" href="tel:+4361358395">+43 6135 8395 anrufen</a>
+      </div>
+    </div>
+    <div class="hero-scene" aria-hidden="true">
+      <svg viewBox="0 0 600 500" preserveAspectRatio="xMidYMax slice" role="img" aria-hidden="true">
+        <circle cx="470" cy="90" r="46" fill="#f3d38a"/>
+        <polygon points="0,420 140,220 260,420" fill="#4c6f5a"/>
+        <polygon points="120,420 300,150 480,420" fill="#3a5c48"/>
+        <polygon points="330,420 470,240 600,420" fill="#2f4a3a"/>
+        <rect x="0" y="415" width="600" height="85" fill="#9fc2c7"/>
+        <path d="M0 430 Q 75 420 150 430 T 300 430 T 450 430 T 600 430 V500 H0 Z" fill="#b7d6d9" opacity=".7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap story-grid">
+    <div>
+      <span class="kicker">Willkommen</span>
+      <h2>Familiär geführt, mit Herz dabei</h2>
+    </div>
+    <div>
+      <p>In der Frühstückspension Sydler stehen kurze Wege und echte Gastfreundschaft im Mittelpunkt: wenige Gehminuten vom Zentrum von Bad Goisern entfernt, eingebettet in die Bergwelt des UNESCO-Welterbes Salzkammergut. Auf drei Häuser verteilt bieten wir 13 Zimmer für 35 bis 40 Personen – Platz für kleine und größere Gruppen, und doch persönlich genug, dass man sich schnell wie zuhause fühlt.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="teaser-grid">
+      <div class="teaser">
+        <h3>Über uns</h3>
+        <p>Lernen Sie Brigitte &amp; Leonhard Sydler und die Geschichte unserer Pension kennen.</p>
+        <a class="more" href="ueber-uns.html">Mehr erfahren →</a>
+      </div>
+      <div class="teaser">
+        <h3>Zimmer &amp; Ausstattung</h3>
+        <p>13 Zimmer in drei Häusern, Gratis-WLAN und Leihfahrräder für einen entspannten Aufenthalt.</p>
+        <a class="more" href="angebot.html">Zimmer ansehen →</a>
+      </div>
+      <div class="teaser">
+        <h3>Kontakt</h3>
+        <p>Fragen Sie Ihre Zimmer an – wir melden uns gerne persönlich zurück.</p>
+        <a class="more" href="kontakt.html">Jetzt anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="houses">
+  <div class="wrap">
+    <h2>Drei Häuser, ein Zuhause</h2>
+    <p>Verteilt über drei Häuser, aber mit einer gemeinsamen Idee: unkompliziert, gastfreundlich, familientauglich.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>13 Zimmer</h3>
+        <p>Für Paare, Familien und Gruppen bis rund 40 Personen – aufgeteilt auf drei Häuser rund um die Pension.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Frühstück inklusive</h3>
+        <p>Ein herzhaftes Frühstück zum Start in den Tag im Salzkammergut – ob vor der Wanderung oder der Radtour.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Kinderfreundlich</h3>
+        <p>Familien sind bei uns besonders willkommen – von der Zimmerwahl bis zur Ausstattung vor Ort.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt">
+  <div class="wrap">
+    <div class="kontakt-cta">
+      <div>
+        <h2>Wir freuen uns auf Sie</h2>
+        <p>Ob Anfrage für den Sommer oder Planung im Voraus – schreiben Sie uns oder rufen Sie an, wir melden uns gerne persönlich zurück.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="mailto:pension@sydler.at">E-Mail schreiben</a>
+        <a class="btn btn-line" href="kontakt.html">Zur Kontaktseite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>
+      <strong>Frühstückspension Sydler</strong><br>
+      Konrad-Deubler-Gasse 8-8a, 4822 Bad Goisern am Hallstättersee<br>
+      <a href="tel:+4361358395">+43 6135 8395</a> · <a href="mailto:pension@sydler.at">pension@sydler.at</a>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="wrap footer-disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Frühstückspension Sydler · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

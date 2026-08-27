@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Gasthaus Binderhansl</title>
+<meta name="description" content="Die Geschichte des Gasthaus Binderhansl in Katzendorf bei Gnas: seit 1878 in Familienbesitz, vier Generationen steirische Gastfreundschaft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#6f2c26; --wine-dark:#4a1c19; --cream:#f6ecdd; --cream-2:#efe1c9;
+    --brown:#2b2019; --gold:#b6813f; --ink:#2b2019;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Work Sans', sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,1.5rem);}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
+
+  .disclaimer{background:var(--wine-dark); color:#f3e3d3; font-size:.78rem; text-align:center; padding:.55rem 1rem; line-height:1.4;}
+  .disclaimer strong{color:#e9c9a5;}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(246,236,221,.95); backdrop-filter:blur(6px); border-bottom:1px solid rgba(43,32,25,.1);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:1rem clamp(1.1rem,4vw,1.5rem); position:relative;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; letter-spacing:.01em; text-decoration:none;}
+  .brand span{color:var(--wine);}
+  nav.links ul{list-style:none; display:flex; gap:1.8rem;}
+  nav.links a{text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink); position:relative; display:inline-block; padding:.5rem 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--wine);transition:width .25s;}
+  nav.links a:hover::after, nav.links a.active::after{width:100%;}
+  nav.links a.active{color:var(--wine-dark); font-weight:600;}
+  .navToggle{display:none; align-items:center; justify-content:center; min-width:44px; min-height:44px; background:none; border:2px solid var(--ink); border-radius:8px; padding:.4rem .6rem; font-size:1.2rem; cursor:pointer;}
+
+  .page-hero{padding:clamp(2.6rem,6vw,4rem) 0 clamp(2rem,5vw,3rem); background:radial-gradient(60% 70% at 90% 0%, rgba(182,129,63,.3), transparent 70%), linear-gradient(180deg,#f9f1e3,var(--cream) 70%); border-bottom:1px solid rgba(43,32,25,.08);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem); font-weight:500; color:var(--wine-dark); max-width:24ch;}
+  .page-hero p.lead{margin-top:1.1rem; max-width:48ch; color:#4a3a2c; font-size:clamp(1rem,2vw,1.08rem);}
+  .breadcrumb{font-size:.82rem; color:var(--wine); margin-bottom:1rem;}
+  .breadcrumb a{text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+
+  .eyebrow{display:inline-flex; align-items:center; gap:.6rem; font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; color:var(--wine); font-weight:600; margin-bottom:1rem;}
+  .eyebrow::before{content:""; width:2.2rem; height:2px; background:var(--gold); flex-shrink:0;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .section-head{max-width:38rem; margin-bottom:2.6rem;}
+  .section-head h2{font-size:clamp(1.7rem,3.6vw,2.6rem); font-weight:500; line-height:1.15;}
+
+  .story{background:linear-gradient(180deg,var(--cream),#fbf4e8);}
+  .timeline{position:relative; padding-left:2.4rem;}
+  .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background:linear-gradient(180deg,var(--gold),var(--wine));}
+  .t-item{position:relative; padding-bottom:2.6rem;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{content:""; position:absolute; left:-2.4rem; top:.35rem; width:16px; height:16px; border-radius:50%; background:var(--cream); border:3px solid var(--wine);}
+  .t-year{font-family:'Fraunces',serif; font-size:1.35rem; color:var(--wine); font-weight:600; margin-bottom:.3rem;}
+  .t-item p{max-width:56ch; color:#4a3a2c;}
+  .t-item h3{font-size:1.12rem; margin-bottom:.4rem; font-weight:600; font-family:'Work Sans';}
+
+  .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;}
+  @media (max-width:760px){.values-grid{grid-template-columns:1fr;}}
+  .value-card{background:#fff; border-radius:18px; padding:1.8rem; border:1px solid rgba(43,32,25,.08); box-shadow:0 24px 48px -32px rgba(43,32,25,.3);}
+  .value-card h3{font-size:1.1rem; font-weight:500; margin-bottom:.6rem;}
+  .value-card p{color:#4a3a2c; font-size:.94rem;}
+
+  .cta-row{display:flex; flex-wrap:wrap; gap:1rem; margin-top:1rem;}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; min-height:48px; padding:.85rem 1.5rem; border-radius:999px; font-weight:600; font-size:.95rem; text-decoration:none; transition:transform .2s, box-shadow .2s;}
+  .btn-primary{background:var(--wine); color:#fbeee0; box-shadow:0 10px 24px -10px rgba(111,44,38,.55);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1.5px solid var(--wine); color:var(--wine-dark);}
+  .btn-ghost:hover{background:rgba(111,44,38,.08);}
+
+  footer{background:var(--brown); color:#e8dbc8; padding:2.6rem 0 0;}
+  .footer-grid{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; padding-bottom:2rem; border-bottom:1px solid rgba(232,219,200,.15);}
+  .footer-brand{font-family:'Fraunces',serif; font-size:1.4rem; font-weight:500;}
+  .footer-brand span{color:#e2b078;}
+  footer address{font-style:normal; font-size:.92rem; color:#c9b89e; margin-top:.6rem; line-height:1.7;}
+  footer address a{color:#c9b89e; text-decoration:none;}
+  footer address a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-nav{display:flex; flex-direction:column; gap:.5rem;}
+  .footer-nav a{font-size:.88rem; color:#c9b89e; text-decoration:none;}
+  .footer-nav a:hover{color:#e2b078; text-decoration:underline;}
+  .footer-legal{display:flex; gap:1.4rem; flex-wrap:wrap; justify-content:center; padding:1.2rem 1.5rem 0; font-size:.8rem;}
+  .footer-legal a{color:#c9b89e; text-decoration:none;}
+  .footer-legal a:hover{text-decoration:underline;}
+  .footer-disclaimer{text-align:center; font-size:.78rem; color:#b7a488; padding:1rem 1.5rem 1.6rem; line-height:1.5;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .nav-panel{display:none; position:absolute; top:100%; right:clamp(1.1rem,4vw,1.5rem); left:clamp(1.1rem,4vw,1.5rem); background:var(--cream); border:1px solid rgba(43,32,25,.12); border-radius:14px; box-shadow:0 24px 48px -20px rgba(0,0,0,.35); padding:.6rem 1rem; z-index:60;}
+  .nav-panel.open{display:block;}
+  .nav-panel ul{list-style:none; display:flex; flex-direction:column;}
+  .nav-panel a{display:block; padding:.85rem .2rem; text-decoration:none; color:var(--ink); font-weight:500; font-size:1rem; border-bottom:1px solid rgba(43,32,25,.08); min-height:44px;}
+  .nav-panel li:last-child a{border-bottom:none;}
+  .nav-panel a.active{color:var(--wine);}
+
+  @media (max-width:860px){ nav.links{display:none;} .navToggle{display:flex;} }
+  @media (max-width:760px){ section{padding:2.8rem 0;} }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  <strong>Unverbindliche Gestaltungs-Vorschau</strong> · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen
+</div>
+
+<header>
+  <div class="nav wrap">
+    <a href="index.html" class="brand">Binderhansl<span>.</span></a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="navToggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navPanel">☰</button>
+    <nav class="nav-panel" id="navPanel" aria-label="Mobile Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
+        <li><a href="angebot.html">Speisekarte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Über uns</p>
+      <p class="eyebrow">Unsere Geschichte</p>
+      <h1>Eine Familie, ein Haus, seit fast 150 Jahren</h1>
+      <p class="lead">Was 1878 als kleine Dorfwirtschaft im Steirischen Vulkanland begann, ist bis heute im Besitz der Familie Binderhansl – über Generationen gewachsen, der Idee aber treu geblieben.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="wrap">
+      <div class="timeline">
+        <div class="t-item reveal">
+          <div class="t-year">1878</div>
+          <h3>Der Anfang in Katzendorf</h3>
+          <p>Am heutigen Standort in Katzendorf bei Gnas eröffnete die erste Generation der Familie Binderhansl ihre Gaststube. Aus einer kleinen Dorfwirtschaft ist im Lauf der Zeit ein Landgasthaus geworden, das bis heute in Familienhand liegt.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-year">Generationen</div>
+          <h3>Rezepte, die weitergegeben werden</h3>
+          <p>Steirische Küche lebt von Erfahrung, die von einer Generation an die nächste weitergegeben wird. Was einst die Großeltern kochten, steht heute – behutsam weiterentwickelt – wieder auf dem Tisch. Vier Generationen stehen mittlerweile in der Verantwortung für Haus und Herd.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-year">Heute</div>
+          <h3>Landgasthaus mit Herz</h3>
+          <p>Das Gasthaus Binderhansl ist heute ein Ort für den Sonntagsbraten mit der Familie, für Wanderer aus dem Vulkanland und für alle, die ehrliche, regionale Küche zu schätzen wissen. Die steirischen Spezialitäten und die regionale Küche bleiben dabei der rote Faden.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-year">Sie</div>
+          <h3>Als Gast willkommen</h3>
+          <p>Ob spontane Einkehr, ein geplantes Mittagessen oder eine größere Feier – bei uns ist für jeden Anlass ein Platz reserviert, und Sie werden persönlich von der Familie Binderhansl empfangen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Was uns wichtig ist</p>
+        <h2>Bodenständig, familiär, ehrlich</h2>
+      </div>
+      <div class="values-grid">
+        <article class="value-card reveal">
+          <h3>Familienbesitz</h3>
+          <p>Seit 1878 in den Händen der Familie Binderhansl – Verantwortung, die über Generationen weitergegeben wird.</p>
+        </article>
+        <article class="value-card reveal">
+          <h3>Regionale Küche</h3>
+          <p>Steirische Spezialitäten und Zutaten aus dem Vulkanland, so nah wie möglich an der Herkunft.</p>
+        </article>
+        <article class="value-card reveal">
+          <h3>Persönlicher Empfang</h3>
+          <p>Als Gast bei uns sind Sie keine Nummer – die Familie Binderhansl empfängt Sie persönlich.</p>
+        </article>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="angebot.html">Zur Speisekarte</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt & Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-brand">Gasthaus <span>Binderhansl</span></div>
+      <address>Katzendorf 39, 8342 Gnas<br>Steirisches Vulkanland</address>
+    </div>
+    <div>
+      <address>Tel: <a href="tel:+433151 2365">+43 3151 2365</a><br>E-Mail: <a href="mailto:binderhansl@gmx.at">binderhansl@gmx.at</a></address>
+    </div>
+    <nav class="footer-nav" aria-label="Seiten">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthaus Binderhansl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('navPanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

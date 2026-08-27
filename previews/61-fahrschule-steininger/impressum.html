@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Fahrschule Steininger</title>
+<meta name="description" content="Muster-Impressum der Fahrschule Steininger — Platzhalter zur Veranschaulichung im Rahmen dieser Gestaltungs-Vorschau.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800;900&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f1b30;
+    --navy-2:#16233d;
+    --amber:#f6a821;
+    --amber-2:#ffcf6e;
+    --cream:#f7f3ea;
+    --paper:#fffdf8;
+    --ink:#14213d;
+    --line: rgba(20,33,61,.14);
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Familjen Grotesk', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.disp{
+    font-family:'Unbounded', system-ui, sans-serif;
+    line-height:1.05;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 1.5rem;}
+  .visually-hidden{position:absolute; width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--amber);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* Disclaimer strip */
+  .disclaimer{
+    background:var(--navy);
+    color:#cfd8ea;
+    font-size:.72rem;
+    letter-spacing:.02em;
+    text-align:center;
+    padding:.55rem 1rem;
+    line-height:1.5;
+  }
+  .disclaimer strong{color:var(--amber-2); font-weight:600;}
+
+  /* Nav */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(247,243,234,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:.9rem; padding-bottom:.9rem;
+    min-height:44px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:.6rem;
+    font-family:'Unbounded'; font-weight:800; font-size:1.05rem;
+    text-decoration:none; color:var(--navy);
+  }
+  .logo .mark{
+    width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--amber),var(--amber-2));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--navy); font-weight:900; font-size:1rem;
+    box-shadow:0 4px 14px rgba(246,168,33,.4);
+    flex-shrink:0;
+  }
+  .nav-links{display:flex; gap:1.9rem; list-style:none; margin:0; padding:0; font-weight:500; font-size:.95rem;}
+  .nav-links a{text-decoration:none; opacity:.85; transition:opacity .2s; position:relative;}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a.active{opacity:1; font-weight:700; color:var(--navy);}
+  .nav-links a.active::after{
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:var(--amber);
+  }
+  .nav-cta{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:var(--navy); color:var(--paper);
+    padding:.6rem 1.1rem; border-radius:99px;
+    text-decoration:none; font-weight:600; font-size:.9rem;
+    white-space:nowrap; min-height:44px;
+  }
+  .burger{display:none; background:none;border:none; cursor:pointer; padding:.4rem; min-width:44px; min-height:44px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--navy); margin:5px auto; border-radius:2px;}
+
+  @media (max-width:820px){
+    .nav-links{
+      position:fixed; inset:0 0 0 auto; top:64px; height:calc(100dvh - 64px);
+      background:var(--paper); width:min(78vw,320px);
+      flex-direction:column; gap:0; padding:1rem;
+      transform:translateX(100%); transition:transform .3s ease;
+      box-shadow:-8px 0 24px rgba(0,0,0,.08);
+      overflow-y:auto;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex; align-items:center; min-height:52px; padding:0 .3rem;}
+    .nav-links a.active::after{display:none;}
+    .nav-links a.active{color:var(--amber);}
+    .burger{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  /* Hero split */
+  .hero{
+    background:linear-gradient(180deg,var(--cream), var(--paper));
+    position:relative; overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:3rem;
+    padding-top:4.5rem; padding-bottom:4rem; align-items:center;
+  }
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr; padding-top:2.5rem; padding-bottom:2.5rem;}
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:rgba(246,168,33,.16); color:#8a5b03;
+    padding:.4rem .9rem; border-radius:99px;
+    font-size:.8rem; font-weight:600; letter-spacing:.03em;
+    margin-bottom:1.4rem;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);}
+  h1.hero-title{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    font-weight:800;
+    color:var(--navy);
+  }
+  h1.hero-title em{
+    font-style:normal; color:var(--amber); position:relative;
+  }
+  .hero p.lead{
+    margin-top:1.4rem; font-size:1.15rem; line-height:1.6; color:#3c4560;
+    max-width:46ch;
+  }
+  .hero-ctas{display:flex; gap:.9rem; margin-top:2.2rem; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:.55rem; min-height:44px;
+    padding:.85rem 1.5rem; border-radius:99px; text-decoration:none;
+    font-weight:700; font-size:.98rem; border:2px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--amber); color:var(--navy); box-shadow:0 10px 24px rgba(246,168,33,.35);}
+  .btn-ghost{border-color:var(--navy); color:var(--navy);}
+
+  .hero-art{position:relative;}
+  .road-svg{width:100%; height:auto;}
+
+  /* page header (subpages) */
+  .page-header{
+    background:linear-gradient(180deg,var(--cream), var(--paper));
+    padding:clamp(2.6rem,6vw,4.2rem) 0 2.4rem;
+  }
+  .page-header h1{
+    font-size:clamp(2.1rem,4.6vw,3.4rem); color:var(--navy); font-weight:800;
+  }
+  .page-header p.lead{margin-top:1rem; font-size:1.08rem; line-height:1.6; color:#4a5375; max-width:60ch;}
+
+  /* categories bento */
+  .section{padding:5.5rem 0;}
+  @media (max-width:640px){.section{padding:3.2rem 0;}}
+  .section-head{max-width:640px; margin-bottom:3rem;}
+  .kicker{
+    font-weight:700; text-transform:uppercase; letter-spacing:.14em;
+    font-size:.78rem; color:#8a5b03;
+  }
+  h2.section-title{font-size:clamp(1.9rem,3.4vw,2.6rem); margin-top:.6rem; color:var(--navy); font-weight:700;}
+  p.section-sub{margin-top:1rem; color:#4a5375; font-size:1.05rem; line-height:1.6;}
+
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:1rem;
+  }
+  @media (max-width:1000px){.cat-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:600px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  .cat-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:1.6rem 1.1rem; text-align:center;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .cat-card:hover{transform:translateY(-6px); box-shadow:0 14px 30px rgba(15,27,48,.1); border-color:var(--amber);}
+  .cat-card svg{width:44px;height:44px; margin:0 auto .8rem;}
+  .cat-card .code{
+    font-family:'Unbounded'; font-weight:800; font-size:1.4rem; color:var(--navy);
+  }
+  .cat-card .label{font-size:.85rem; color:#5b638a; margin-top:.25rem;}
+
+  /* offer cards (angebot page) */
+  .offer-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;}
+  @media (max-width:900px){.offer-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.offer-grid{grid-template-columns:1fr;}}
+  .offer-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:20px;
+    padding:1.8rem 1.6rem;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .offer-card:hover{transform:translateY(-5px); box-shadow:0 14px 30px rgba(15,27,48,.1); border-color:var(--amber);}
+  .offer-card .head{display:flex; align-items:center; gap:.9rem; margin-bottom:.9rem;}
+  .offer-card svg{width:38px;height:38px; flex-shrink:0;}
+  .offer-card .code{font-family:'Unbounded'; font-weight:800; font-size:1.3rem; color:var(--navy);}
+  .offer-card .name{font-size:.85rem; color:#8a5b03; font-weight:700; text-transform:uppercase; letter-spacing:.04em;}
+  .offer-card p{color:#4a5375; line-height:1.6; font-size:.96rem;}
+
+  .process-list{display:grid; gap:1.1rem; margin-top:2.5rem;}
+  .process-step{
+    display:flex; gap:1.2rem; align-items:flex-start;
+    background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:1.3rem 1.5rem;
+  }
+  .process-step .n{
+    font-family:'Unbounded'; font-weight:900; font-size:1.1rem; color:var(--navy);
+    background:rgba(246,168,33,.18); border-radius:50%;
+    width:2.6rem;height:2.6rem; min-width:2.6rem; display:flex; align-items:center; justify-content:center;
+  }
+  .process-step h3{font-size:1.05rem; font-weight:700; color:var(--navy); font-family:'Familjen Grotesk';}
+  .process-step p{margin-top:.35rem; color:#565f80; font-size:.94rem; line-height:1.6;}
+
+  /* about split */
+  .about{background:var(--navy); color:#e7ecf7;}
+  .about .wrap{display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:center;}
+  @media (max-width:900px){.about .wrap{grid-template-columns:1fr;}}
+  .about h2{color:#fff; font-size:clamp(1.9rem,3.4vw,2.5rem);}
+  .about p{line-height:1.75; color:#c3cbe4; font-size:1.05rem; margin-top:1.2rem;}
+  .stat-row{display:flex; gap:2.2rem; margin-top:2.2rem; flex-wrap:wrap;}
+  .stat b{font-family:'Unbounded'; font-size:1.9rem; color:var(--amber); display:block;}
+  .stat span{font-size:.85rem; color:#a9b3d4;}
+  .locations{display:grid; gap:1.1rem;}
+  .loc-card{
+    background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14);
+    border-radius:16px; padding:1.4rem 1.5rem;
+  }
+  .loc-card h3{font-family:'Familjen Grotesk'; font-weight:700; font-size:1.15rem; color:#fff;}
+  .loc-card p{margin-top:.35rem; color:#aeb7d6; font-size:.95rem;}
+  .loc-card .tag{
+    display:inline-block; margin-top:.6rem; font-size:.72rem; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--amber-2); font-weight:700;
+  }
+
+  /* story blocks (ueber-uns) */
+  .story-grid{display:grid; gap:1.6rem; grid-template-columns:repeat(2,1fr); margin-top:2.5rem;}
+  @media (max-width:760px){.story-grid{grid-template-columns:1fr;}}
+  .story-card{background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:2rem;}
+  .story-card h3{font-size:1.2rem; color:var(--navy); font-weight:700; font-family:'Familjen Grotesk';}
+  .story-card p{margin-top:.7rem; color:#4a5375; line-height:1.7; font-size:1rem;}
+
+  /* why grid */
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem;}
+  @media (max-width:820px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{
+    background:var(--paper); border-radius:20px; padding:2rem 1.7rem;
+    border:1px solid var(--line);
+  }
+  .why-card .num{
+    font-family:'Unbounded'; font-weight:900; font-size:1rem; color:var(--amber);
+    display:inline-block; width:2.4rem;height:2.4rem; line-height:2.4rem;
+    text-align:center; background:rgba(246,168,33,.15); border-radius:50%;
+    margin-bottom:1.1rem;
+  }
+  .why-card h3{font-size:1.15rem; font-weight:700; color:var(--navy); font-family:'Familjen Grotesk';}
+  .why-card p{margin-top:.6rem; color:#565f80; line-height:1.6; font-size:.96rem;}
+
+  /* contact */
+  .contact{background:linear-gradient(180deg,var(--paper),var(--cream));}
+  .contact-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:3rem;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{
+    background:var(--navy); color:#fff; border-radius:24px; padding:2.6rem;
+    position:relative; overflow:hidden;
+  }
+  .contact-card::before{
+    content:""; position:absolute; right:-60px; top:-60px; width:220px;height:220px;
+    background:radial-gradient(circle, rgba(246,168,33,.35), transparent 70%);
+  }
+  .contact-list{list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:1rem;}
+  .contact-list a, .contact-list span{
+    display:flex; align-items:center; gap:.8rem; text-decoration:none; color:#e7ecf7;
+    font-size:1.02rem; min-height:32px;
+  }
+  .contact-list svg{flex-shrink:0; width:20px;height:20px; color:var(--amber);}
+  .contact-list a:hover{color:var(--amber-2);}
+  .map-frame{
+    border-radius:20px; overflow:hidden; border:1px solid var(--line); height:100%;
+    min-height:320px; background:var(--paper); display:flex;
+  }
+  .map-frame iframe{width:100%; height:100%; border:0; min-height:320px;}
+  .cta-row{display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2rem;}
+  .cta-row .btn-ghost-light{border:2px solid rgba(255,255,255,.4); color:#fff;}
+  .cta-row .btn-ghost-light:hover{border-color:var(--amber);}
+
+  /* legal pages */
+  .legal{padding:clamp(3rem,6vw,4.5rem) 0 6rem;}
+  .legal .notice{
+    background:rgba(246,168,33,.14); border:1px solid rgba(246,168,33,.45);
+    border-radius:14px; padding:1.2rem 1.4rem; font-size:.92rem; line-height:1.65;
+    color:#5b4108; margin-bottom:2.6rem; max-width:72ch;
+  }
+  .legal h2{margin-top:2.4rem; margin-bottom:.8rem; font-size:1.3rem; color:var(--navy); font-weight:700;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p, .legal li{color:#3c4560; line-height:1.75; font-size:1rem;}
+  .legal ul{padding-left:1.3rem; margin:.6rem 0;}
+  .legal a{color:var(--navy); text-decoration:underline;}
+
+  footer.site{
+    background:var(--navy); color:#aeb7d6; padding:3rem 0 1.5rem;
+  }
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.8rem; align-items:flex-start;}
+  footer .foot-brand{font-family:'Unbounded'; color:#fff; font-weight:700;}
+  footer small{color:#7d87ab; display:block; margin-top:1rem; line-height:1.6;}
+  .foot-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .foot-links a{color:#c3cbe4; text-decoration:none; font-size:.88rem;}
+  .foot-links a:hover{color:var(--amber-2);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.1); margin-top:2rem; padding-top:1.4rem;
+    font-size:.72rem; color:#8590b3; text-align:center; line-height:1.6;
+  }
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Fahrschule Steininger · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="logo" href="index.html">
+      <span class="mark">FS</span>
+      Fahrschule Steininger
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="angebot.html">Ausbildung</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+43725253561">📞 +43 7252 53561</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="page-header">
+    <div class="wrap reveal">
+      <span class="eyebrow"><span class="dot"></span> Impressum</span>
+      <h1 style="font-size:clamp(1.9rem,4vw,2.8rem);">Impressum</h1>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="wrap reveal">
+      <p class="notice">
+        <strong>Muster-Impressum</strong> — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+      </p>
+
+      <h2>Diensteanbieter</h2>
+      <p>
+        Fahrschule Steininger<br>
+        Bergerweg 1<br>
+        4400 Steyr<br>
+        Österreich
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href="tel:+43725253561">+43 7252 53561</a><br>
+        E-Mail: <a href="mailto:office@fahrschule-steininger.at">office@fahrschule-steininger.at</a>
+      </p>
+
+      <h2>Unternehmensgegenstand</h2>
+      <p>Fahrschulbetrieb / Ausbildung für Führerscheinklassen AM, A, B, C, BE und F.</p>
+
+      <h2>Firmenbuchnummer / UID</h2>
+      <p>[UID-Nummer] — im Rahmen dieser Gestaltungs-Vorschau nicht recherchiert; vom Betrieb bzw. dessen Steuerberatung zu ergänzen.</p>
+
+      <h2>Aufsichtsbehörde / Gewerberecht</h2>
+      <p>Für Fahrschulen in Österreich gelten die Bestimmungen des Kraftfahrgesetzes (KFG) sowie der jeweils zuständigen Bezirkshauptmannschaft als Gewerbebehörde. Genaue Angaben zur zuständigen Behörde und zur Gewerbeberechtigung sind vom Betrieb zu ergänzen.</p>
+
+      <h2>Streitschlichtung</h2>
+      <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit, sofern gesetzlich nicht anders vorgesehen.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <span class="foot-brand">Fahrschule Steininger</span>
+      <small>Bergerweg 1, 4400 Steyr · Steyr &amp; Weyer, Oberösterreich</small>
+    </div>
+    <div>
+      <small>+43 7252 53561<br>office@fahrschule-steininger.at</small>
+    </div>
+    <div class="foot-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Fahrschule Steininger · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

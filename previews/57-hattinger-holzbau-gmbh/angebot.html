@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leistungen — Hattinger Holzbau GmbH</title>
+<meta name="description" content="Leistungen der Zimmerei Hattinger Holzbau: Dachstühle, Holzriegelbau, Gartenhäuser, Sanierungen, Terrassen, Balkone, Fassaden und Dämmung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ede1;--cream-2:#eae1d0;--ink:#2b2118;--ink-soft:#5c4c3a;
+    --walnut:#3c2c1c;--amber:#b5652a;--amber-deep:#8f4c1c;--line:#c9bba1;
+    --green:#4a5d3a;--focus:#8f4c1c;--radius:2px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#1b1712;--cream-2:#221c15;--ink:#f1e9d8;--ink-soft:#c9bba1;
+      --walnut:#f1e9d8;--amber:#e0965a;--amber-deep:#e8a76d;--line:#4a3e2c;--green:#8fa578;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#1b1712;--cream-2:#221c15;--ink:#f1e9d8;--ink-soft:#c9bba1;
+    --walnut:#f1e9d8;--amber:#e0965a;--amber-deep:#e8a76d;--line:#4a3e2c;--green:#8fa578;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:700;letter-spacing:-0.01em}
+  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:0.02em;text-transform:uppercase;font-size:0.72rem}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .disclaimer{background:var(--walnut);color:var(--cream);font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.02em;text-align:center;padding:0.5rem 1rem;line-height:1.4}
+  .disclaimer strong{font-weight:600}
+  header.site{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:0.9rem clamp(1.25rem,4vw,3rem);max-width:1180px;margin:0 auto}
+  .brand{display:flex;flex-direction:column;gap:0.1rem;text-decoration:none}
+  .brand-name{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.05rem}
+  .brand-sub{font-family:'IBM Plex Mono';font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft)}
+  nav.links{display:none;gap:2rem}
+  nav.links a{font-size:0.85rem;text-decoration:none;font-weight:500;position:relative;padding:0.4rem 0;min-height:44px;display:inline-flex;align-items:center}
+  nav.links a:hover{color:var(--amber-deep)}
+  nav.links a.active{color:var(--amber-deep);font-weight:700;border-bottom:2px solid var(--amber-deep)}
+  .nav-cta{display:none;font-family:'IBM Plex Mono';font-size:0.72rem;background:var(--amber);color:#fff;padding:0.75rem 1.1rem;text-decoration:none;border-radius:var(--radius);min-height:44px;align-items:center}
+  .burger{background:none;border:1px solid var(--line);border-radius:var(--radius);width:2.9rem;height:2.9rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .burger svg{width:1.1rem;height:1.1rem}
+  @media(min-width:860px){nav.links{display:flex}.nav-cta{display:inline-flex}.burger{display:none}}
+  #mobile-menu{display:none;flex-direction:column;gap:0;border-top:1px solid var(--line);background:var(--cream-2)}
+  #mobile-menu.open{display:flex}
+  #mobile-menu a{padding:0.9rem clamp(1.25rem,4vw,3rem);text-decoration:none;font-size:0.95rem;font-weight:500;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center}
+  #mobile-menu a.active{color:var(--amber-deep);font-weight:700}
+  .page-hero{position:relative;padding:clamp(2.4rem,6vw,4rem) 0 clamp(2rem,5vw,3rem);
+    background-image:repeating-linear-gradient(to right, var(--line) 0, var(--line) 1px, transparent 1px, transparent calc(100%/12)), linear-gradient(var(--cream), var(--cream));
+    border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);max-width:22ch;margin-top:0.8rem}
+  .page-hero p{max-width:52ch;color:var(--ink-soft);font-size:1.05rem;margin-top:1rem}
+  section{padding:clamp(3rem,7vw,5.5rem) 0}
+  .section-head{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2.6rem;border-bottom:1px solid var(--line);padding-bottom:1.4rem}
+  .section-num{color:var(--amber-deep)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.6rem)}
+  .svc-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(min-width:640px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+  .svc-card{background:var(--cream);padding:2rem 1.7rem;transition:background 0.25s ease}
+  .svc-card:hover{background:var(--cream-2)}
+  .svc-icon{width:2.4rem;height:2.4rem;margin-bottom:1.2rem;color:var(--amber-deep)}
+  .svc-card h3{font-size:1.08rem;margin-bottom:0.5rem}
+  .svc-card p{font-size:0.9rem;color:var(--ink-soft)}
+  .svc-num{font-family:'IBM Plex Mono';font-size:0.7rem;color:var(--line);display:block;margin-bottom:0.8rem}
+  .stat-strip{background:var(--walnut);color:var(--cream);padding:clamp(2.5rem,6vw,4rem) 0}
+  .stat-inner{display:grid;gap:2rem;grid-template-columns:1fr;align-items:center}
+  @media(min-width:800px){.stat-inner{grid-template-columns:0.9fr 1.1fr}}
+  .big-stat{font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(3.5rem,10vw,6rem);line-height:0.9;color:var(--amber)}
+  .stat-strip p{color:#e4d9c3;font-size:1.05rem;max-width:44ch}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease, transform 0.7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+  .btn{display:inline-flex;align-items:center;gap:0.5rem;min-height:44px;padding:0 1.4rem;text-decoration:none;font-weight:600;font-size:0.92rem;border-radius:var(--radius)}
+  .btn-primary{background:var(--walnut);color:var(--cream)}
+  .btn-primary:hover{background:var(--amber-deep)}
+  .btn-outline{border:1px solid var(--ink);color:var(--ink)}
+  .btn-outline:hover{border-color:var(--amber-deep);color:var(--amber-deep)}
+  footer.site{border-top:1px solid var(--line);padding:2.5rem 0 1.5rem}
+  .foot-grid{display:flex;flex-direction:column;gap:1.5rem;font-size:0.85rem;color:var(--ink-soft)}
+  @media(min-width:700px){.foot-grid{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+  .foot-brand{font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:0.3rem}
+  .foot-legal{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:0.6rem}
+  .foot-legal a{text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
+  .foot-disclaimer{font-size:0.78rem;color:var(--ink-soft);border-top:1px solid var(--line);margin-top:2rem;padding-top:1.4rem;max-width:1180px}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von Hattinger Holzbau GmbH</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-name">Hattinger Holzbau</span>
+      <span class="brand-sub">Zimmerei · Pramet</span>
+    </a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html" class="active" aria-current="page">Leistungen</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+436506133527">+43 650 6133527</a>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="angebot.html" class="active" aria-current="page">Leistungen</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="tel:+436506133527">Anrufen: +43 650 6133527</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="mono section-num">Leistungen</span>
+      <h1>Vom Dachstuhl bis zur Fassade</h1>
+      <p>Zimmereiarbeiten für Neubau und Sanierung im Bezirk Ried im Innkreis — durchgängig aus 100&nbsp;% nachhaltigem Holz.</p>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="mono section-num">01 — Übersicht</span>
+        <h2>Unsere Leistungen im Detail</h2>
+      </div>
+      <div class="svc-grid">
+        <article class="svc-card reveal">
+          <span class="svc-num">01</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12 12 4l9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          <h3>Dachstühle</h3>
+          <p>Statisch durchdachte Konstruktionen, präzise abgebunden und montiert — für Neubau und Umbau.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">02</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="10" x2="9" y2="20"/><line x1="15" y1="10" x2="15" y2="20"/></svg>
+          <h3>Holzriegelbau</h3>
+          <p>Wohnbau in Holzriegelbauweise — wärmegedämmt, ökologisch und stabil geplant.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">03</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          <h3>Gartenhäuser</h3>
+          <p>Individuell geplante Gartenhäuser und Nebengebäude, passend zum Hauptgebäude.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">04</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-5h6v5"/></svg>
+          <h3>Sanierungen</h3>
+          <p>Statische Ertüchtigung und Erneuerung bestehender Holzkonstruktionen.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">05</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="14" width="18" height="7" rx="1"/><line x1="7" y1="14" x2="7" y2="8"/><line x1="17" y1="14" x2="17" y2="8"/><line x1="7" y1="8" x2="17" y2="8"/></svg>
+          <h3>Terrassen &amp; Balkone</h3>
+          <p>Witterungsbeständige Holzterrassen und Balkonkonstruktionen nach Maß.</p>
+        </article>
+        <article class="svc-card reveal">
+          <span class="svc-num">06</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/></svg>
+          <h3>Fassaden &amp; Dämmung</h3>
+          <p>Fassadenverkleidung und Dämmpakete für dauerhaften Werterhalt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="stat-strip">
+    <div class="wrap stat-inner">
+      <div class="big-stat reveal">100%</div>
+      <p class="reveal">Hattinger Holzbau setzt nach eigenen Angaben durchgängig auf nachhaltiges Holz — von der Konstruktion bis zur Fassade. Regional gedacht, solide gebaut.</p>
+    </div>
+  </div>
+
+  <section style="text-align:center">
+    <div class="wrap" style="max-width:640px;margin:0 auto">
+      <h2 style="margin-bottom:1.2rem;">Passt Ihr Projekt dazu?</h2>
+      <p style="color:var(--ink-soft);margin-bottom:1.8rem;">Sprechen Sie mit Johann Hattinger über Ihr Vorhaben — unverbindlich und persönlich.</p>
+      <div style="display:flex;justify-content:center;gap:0.9rem;flex-wrap:wrap">
+        <a class="btn btn-primary" href="kontakt.html">Jetzt anfragen</a>
+        <a class="btn btn-outline" href="tel:+436506133527">Anrufen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Hattinger Holzbau GmbH</div>
+        <div>Hartlhof 14, 4925 Pramet · Bezirk Ried im Innkreis</div>
+        <div><a href="tel:+436506133527">+43 650 6133527</a> · <a href="mailto:office@hattinger-holzbau.at">office@hattinger-holzbau.at</a></div>
+        <div class="foot-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+      <div>
+        <nav class="links" style="display:flex">
+          <a href="index.html">Home</a>
+          <a href="ueber-uns.html">Über uns</a>
+          <a href="angebot.html">Leistungen</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Hattinger Holzbau GmbH · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', function(){
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+    var els = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, {threshold:0.15});
+      els.forEach(function(el){ io.observe(el); });
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Wok &amp; More Asia-Restaurant Linz</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Gestaltungs-Vorschau für Wok & More Asia-Restaurant in Linz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char:#161311; --char-2:#1e1a17; --char-3:#28221e;
+    --paper:#f4ede2; --paper-dim:#c9beac;
+    --chili:#e2521f; --chili-deep:#a83a15;
+    --teal:#2f9e8f; --teal-deep:#1f6d62;
+    --gold:#e0a13d; --line:rgba(244,237,226,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--char);color:var(--paper);font-family:"Sora",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,.display{font-family:"Fahkwang",system-ui,sans-serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.1rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--chili);outline-offset:3px;}
+
+  .disclaimer{background:#0e0c0a;color:#cbb98d;font-size:0.76rem;text-align:center;padding:0.55rem 1rem;}
+  .disclaimer strong{color:var(--gold);}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(22,19,17,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;}
+  .brand .mark{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:radial-gradient(circle at 35% 30%, var(--chili), var(--chili-deep));display:flex;align-items:center;justify-content:center;color:#fff2e6;font-weight:700;font-family:"Fahkwang",sans-serif;}
+  .brand .name{font-family:"Fahkwang",sans-serif;font-weight:700;font-size:1.2rem;color:var(--paper);}
+  .brand .name .amp{color:var(--chili);}
+  nav.links{display:flex;gap:1.8rem;font-size:0.92rem;}
+  nav.links a{text-decoration:none;color:var(--paper-dim);padding:0.3rem 0;border-bottom:2px solid transparent;}
+  nav.links a:hover{color:var(--paper);}
+  .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:var(--chili);color:#fff2e6;padding:0.6rem 1.2rem;border-radius:9px;text-decoration:none;font-weight:600;font-size:0.88rem;box-shadow:0 6px 18px -6px rgba(226,82,31,0.55);}
+  .nav-right{display:flex;align-items:center;gap:0.8rem;}
+  .menu-toggle{display:none;min-width:44px;min-height:44px;align-items:center;justify-content:center;background:none;border:1.5px solid var(--line);border-radius:9px;cursor:pointer;}
+  .menu-toggle span{display:block;width:19px;height:2px;background:var(--paper);margin:4px auto;}
+  .mobile-links{display:none;flex-direction:column;background:var(--char-2);border-bottom:1px solid var(--line);}
+  .mobile-links a{padding:0.95rem 0;text-decoration:none;color:var(--paper);border-top:1px solid var(--line);font-weight:600;min-height:44px;display:flex;align-items:center;}
+  .mobile-links.open{display:flex;}
+
+  .page-hero{padding:clamp(2.6rem,7vw,4rem) 0 clamp(2rem,5vw,3rem);border-bottom:1px solid var(--line);background:linear-gradient(160deg,var(--char-2),var(--char));}
+  .page-hero h1{font-size:clamp(2rem,5vw,2.8rem);}
+
+  section{padding:clamp(2.6rem,6vw,4rem) 0;}
+  .legal{max-width:74ch;}
+  .legal h2{font-size:clamp(1.4rem,3.6vw,1.8rem);margin-top:2.2rem;}
+  .legal h2:first-of-type{margin-top:0;}
+  .legal p,.legal li{color:var(--paper-dim);font-size:0.98rem;margin-top:0.8rem;}
+  .legal ul{padding-left:1.2rem;}
+  .legal a{color:var(--teal);text-decoration:underline;text-underline-offset:3px;}
+  .legal-notice{background:rgba(224,161,61,0.12);border:1px solid rgba(224,161,61,0.4);border-radius:14px;padding:1.1rem 1.3rem;font-size:0.92rem;color:var(--paper);margin-bottom:2.4rem;}
+  .legal-notice strong{color:var(--gold);}
+
+  .footer-legal{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:0.82rem;}
+  .footer-legal a{text-decoration:underline;text-underline-offset:3px;color:#cbb98d;}
+  footer{background:#0e0c0a;color:#cbb98d;padding:2.6rem 0 2rem;margin-top:1rem;}
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;}
+  footer .name{font-family:"Fahkwang",sans-serif;font-weight:700;font-size:1.1rem;color:var(--paper);}
+  footer .addr{font-size:0.85rem;margin-top:0.5rem;}
+  .footer-note{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(203,185,141,0.14);font-size:0.76rem;line-height:1.6;}
+  .footer-note strong{color:var(--gold);}
+
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .menu-toggle{display:inline-flex;}
+  }
+  @media (max-width:480px){
+    .nav-cta{padding:0.6rem 0.9rem;font-size:0.82rem;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Wok &amp; More Asia-Restaurant · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">W</span>
+      <span class="name">Wok <span class="amp">&amp;</span> More</span>
+    </a>
+    <nav class="links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="tel:+436769512432">Anrufen</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-links" id="mobileLinks">
+    <div class="wrap" style="padding-top:0;">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Speisekarte</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Datenschutzerklärung</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap legal">
+      <div class="legal-notice">
+        <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+      </div>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:<br>
+      Wok &amp; More Asia-Restaurant, Hamoderstraße 6a, 4020 Linz, Österreich<br>
+      E-Mail: <a href="mailto:xiaowei.nick@hotmail.com">xiaowei.nick@hotmail.com</a> · Telefon: <a href="tel:+436769512432">+43 676 9512432</a></p>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>Diese Website wird als unverbindliche Gestaltungs-Vorschau bereitgestellt. Beim Besuch der Website können durch den Hosting-Anbieter automatisch technische Informationen erfasst werden (z. B. IP-Adresse, Browsertyp, Datum und Uhrzeit des Zugriffs) — sogenannte Server-Logfiles. Diese Daten dienen der technischen Bereitstellung und Absicherung der Website.</p>
+
+      <h2>3. Cookies</h2>
+      <p>Diese Website verwendet keine Analyse- oder Marketing-Cookies. Sollten technisch notwendige Cookies eingesetzt werden, dienen diese ausschließlich der grundlegenden Funktionalität der Seite.</p>
+
+      <h2>4. Kontaktaufnahme</h2>
+      <p>Wenn Sie per Telefon oder E-Mail Kontakt mit uns aufnehmen, werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. f DSGVO (Vertragsanbahnung bzw. berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+
+      <h2>5. Eingebundene Inhalte Dritter</h2>
+      <p>Für die Darstellung von Kartenausschnitten kann ein eingebetteter Google-Maps-Dienst genutzt werden. Beim Laden der Karte können Daten an Google LLC übertragen werden. Details entnehmen Sie der Datenschutzerklärung von Google.</p>
+
+      <h2>6. Speicherdauer</h2>
+      <p>Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck erforderlich ist, bzw. so lange gesetzliche Aufbewahrungspflichten bestehen.</p>
+
+      <h2>7. Ihre Rechte</h2>
+      <ul>
+        <li>Recht auf Auskunft über die verarbeiteten Daten</li>
+        <li>Recht auf Berichtigung unrichtiger Daten</li>
+        <li>Recht auf Löschung</li>
+        <li>Recht auf Einschränkung der Verarbeitung</li>
+        <li>Recht auf Datenübertragbarkeit</li>
+        <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+        <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>)</li>
+      </ul>
+
+      <h2>8. Kontakt bei Datenschutzfragen</h2>
+      <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannten Kontaktdaten.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <div class="name">Wok &amp; More</div>
+        <div class="addr">Hamoderstraße 6a · 4020 Linz</div>
+        <div class="addr">Tel: <a href="tel:+436769512432">+43 676 9512432</a><br>E-Mail: <a href="mailto:xiaowei.nick@hotmail.com">xiaowei.nick@hotmail.com</a></div>
+      </div>
+      <nav class="footer-legal" aria-label="Rechtliches">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <div class="footer-note"><strong>Hinweis:</strong> Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Wok &amp; More Asia-Restaurant · keine Verbindung zum Unternehmen.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var mobileLinks = document.getElementById('mobileLinks');
+    if(toggle && mobileLinks){
+      toggle.addEventListener('click', function(){
+        var open = mobileLinks.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      mobileLinks.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){
+          mobileLinks.classList.remove('open');
+          toggle.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

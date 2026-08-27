@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — Gasthof-Pension Altmühl</title>
+<meta name="description" content="Muster-Datenschutzerklärung der Gestaltungs-Vorschau für den Gasthof-Pension Altmühl in Gmunden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf1e4; --brick:#7c2d20; --brick-dark:#5c1f16; --mustard:#d99a2b;
+    --pine:#3c5233; --ink:#2b1c14; --paper:#fff9f0; --line:rgba(43,28,20,.15);
+    --serif:'Playfair Display', Georgia, serif; --sans:'Nunito Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;}
+  img,svg{max-width:100%;display:block;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 clamp(18px,5vw,40px);}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;}
+
+  .disclosure{background:var(--ink);color:var(--cream);text-align:center;font-size:.78rem;padding:9px 16px;}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(251,241,228,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(18px,5vw,40px);flex-wrap:wrap;row-gap:8px;}
+  .brand{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--brick);text-decoration:none;}
+  .navlinks{display:flex;gap:6px;align-items:center;}
+  .navlinks a{text-decoration:none;font-weight:700;font-size:.92rem;padding:12px 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:10px;color:var(--ink);}
+  .navlinks a:hover{background:#f4e0c4;}
+  .navlinks a.cta{background:var(--brick);color:#fff;}
+  .navlinks a.cta:hover{background:var(--brick-dark);}
+  .burger{display:none;background:none;border:1.5px solid var(--ink);border-radius:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;cursor:pointer;}
+  .burger span{display:block;width:20px;height:2px;background:var(--ink);margin:4px 0;}
+  @media (max-width:760px){
+    .navlinks{display:none;width:100%;flex-direction:column;align-items:stretch;}
+    .navlinks.open{display:flex;}
+    .burger{display:flex;}
+  }
+
+  main{padding:clamp(40px,7vw,72px) 0 clamp(56px,8vw,90px);}
+  .eyebrow{font-weight:800;text-transform:uppercase;letter-spacing:.09em;font-size:.78rem;color:var(--brick);}
+  h1{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.8rem);font-weight:800;margin:14px 0 26px;}
+  h2{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin:34px 0 10px;color:var(--brick);}
+  p,li{color:#4a382c;font-size:.98rem;max-width:68ch;}
+  ul{padding-left:20px;}
+  .legal-notice{background:#f4e0c4;border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:0 0 32px;font-size:.92rem;color:var(--ink);max-width:70ch;}
+  .legal-notice strong{color:var(--brick);}
+
+  footer{background:var(--ink);color:var(--cream);}
+  .footer-top{padding:48px 0 32px;border-bottom:1px solid rgba(255,255,255,.12);}
+  .footer-grid{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,40px);display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr;gap:28px;} }
+  .footer-grid h4{font-family:var(--serif);margin:0 0 12px;font-size:1.05rem;color:var(--mustard);}
+  .footer-grid p{color:#e3d3bd;font-size:.9rem;margin:0 0 8px;}
+  .footer-grid a{color:#e3d3bd;text-decoration:none;}
+  .footer-grid a:hover{text-decoration:underline;}
+  .footer-links{list-style:none;padding:0;margin:0;display:grid;gap:10px;}
+  .footer-links a{min-height:24px;display:inline-flex;align-items:center;}
+  .footer-bottom{padding:18px 0;font-size:.78rem;color:#b8a488;text-align:center;max-width:1180px;margin:0 auto;padding-left:clamp(18px,5vw,40px);padding-right:clamp(18px,5vw,40px);}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof-Pension Altmühl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Gasthof Altmühl</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navlinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Küche</a>
+      <a class="cta" href="kontakt.html">Kontakt</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Datenschutzerklärung</h1>
+    <div class="legal-notice">
+      <strong>Muster-Datenschutzerklärung</strong> — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+    </div>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist:<br>
+    Gasthof-Pension Altmühl, Ohlsdorfer Straße 50, 4810 Gmunden, Österreich.<br>
+    E-Mail: <a href="mailto:info@gasthof-altmuehl.at">info@gasthof-altmuehl.at</a>, Telefon: <a href="tel:+43761264262">+43 7612 64262</a>.</p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Beim Besuch dieser Website werden durch den Hosting-Anbieter automatisch technische Informationen erfasst (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser). Diese Daten dienen der technischen Bereitstellung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>3. Cookies</h2>
+    <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Sofern Cookies zu Analyse- oder Marketingzwecken eingesetzt werden, erfolgt dies nur mit vorheriger Einwilligung der Nutzerinnen und Nutzer.</p>
+
+    <h2>4. Kontaktaufnahme</h2>
+    <p>Bei einer Kontaktaufnahme per E-Mail oder Telefon werden die mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) ausschließlich zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Eine Weitergabe an Dritte erfolgt nicht, sofern keine gesetzliche Verpflichtung besteht.</p>
+
+    <h2>5. Rechte der Betroffenen</h2>
+    <p>Nutzerinnen und Nutzer haben im Rahmen der geltenden gesetzlichen Bestimmungen (insbesondere DSGVO) das Recht auf:</p>
+    <ul>
+      <li>Auskunft über die verarbeiteten personenbezogenen Daten</li>
+      <li>Berichtigung unrichtiger Daten</li>
+      <li>Löschung der gespeicherten Daten</li>
+      <li>Einschränkung der Verarbeitung</li>
+      <li>Datenübertragbarkeit</li>
+      <li>Widerspruch gegen die Verarbeitung</li>
+      <li>Beschwerde bei der zuständigen Aufsichtsbehörde (in Österreich: Österreichische Datenschutzbehörde)</li>
+    </ul>
+
+    <h2>6. Kontakt für Datenschutzanliegen</h2>
+    <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-grid">
+      <div>
+        <h4>Gasthof Altmühl</h4>
+        <p>Ohlsdorfer Straße 50<br>4810 Gmunden</p>
+        <p><a href="tel:+43761264262">+43 7612 64262</a><br><a href="mailto:info@gasthof-altmuehl.at">info@gasthof-altmuehl.at</a></p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Zimmer &amp; Küche</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof-Pension Altmühl · keine Verbindung zum Unternehmen</div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burger');
+  var links = document.getElementById('navlinks');
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>

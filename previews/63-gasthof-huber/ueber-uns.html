@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Gasthof Huber</title>
+<meta name="description" content="Familie Huber führt den Gasthof Huber in Wels mit persönlicher Gastfreundschaft: Küche, Säle für Feiern, Gastgarten und Zimmervermietung unter einem Dach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#5f1c26;
+    --wine-2:#7a2530;
+    --terracotta:#c1653a;
+    --gold:#cf9b46;
+    --cream:#f8efe1;
+    --paper:#fffaf1;
+    --ink:#2c1a15;
+    --line:rgba(44,26,21,.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.disp{font-family:'Fraunces', Georgia, serif; margin:0; line-height:1.08;}
+  a{color:inherit;}
+  img,svg{max-width:100%;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 1.5rem; width:100%;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:3px; border-radius:3px;}
+
+  .disclaimer{
+    background:var(--wine); color:#f3e2c8; font-size:.72rem; letter-spacing:.02em;
+    text-align:center; padding:.55rem 1rem; line-height:1.5;
+  }
+  .disclaimer strong{color:var(--gold); font-weight:600;}
+
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(248,239,225,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:.9rem 1.5rem; min-height:64px; gap:1rem;}
+  .logo{display:flex; align-items:center; gap:.7rem; text-decoration:none; color:var(--ink); flex-shrink:0;}
+  .logo .mark{
+    width:42px;height:42px;border-radius:10px;
+    background:linear-gradient(150deg,var(--wine),var(--terracotta));
+    display:flex;align-items:center;justify-content:center;
+    color:var(--cream); font-family:'Fraunces'; font-weight:700; font-size:1.15rem;
+  }
+  .logo .word{font-family:'Fraunces'; font-weight:600; font-size:1.2rem;}
+  .nav-links{display:flex; gap:1.9rem; list-style:none; margin:0; padding:0; font-size:.94rem; font-weight:500; align-items:center;}
+  .nav-links a{text-decoration:none; opacity:.82; display:inline-flex; align-items:center; min-height:44px;}
+  .nav-links a:hover{opacity:1; color:var(--terracotta);}
+  .nav-links a[aria-current="page"]{opacity:1; color:var(--wine); font-weight:700; border-bottom:2px solid var(--terracotta);}
+  .nav-cta{
+    display:inline-flex; align-items:center; min-height:44px; padding:0 1.2rem;
+    background:var(--wine); color:var(--cream); border-radius:8px;
+    text-decoration:none; font-weight:600; font-size:.88rem; white-space:nowrap;
+  }
+  .burger{display:none; background:none; border:none; cursor:pointer; padding:.5rem; min-width:44px; min-height:44px;}
+  .burger span{display:block; width:24px; height:2px; background:var(--ink); margin:5px auto; border-radius:2px;}
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed; inset:64px 0 0 auto; height:calc(100dvh - 64px);
+      background:var(--paper); width:min(80vw,320px);
+      flex-direction:column; gap:0; padding:1rem 1.5rem; align-items:stretch;
+      transform:translateX(100%); transition:transform .3s ease;
+      box-shadow:-10px 0 30px rgba(0,0,0,.12); overflow-y:auto;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:flex; align-items:center; min-height:52px;}
+    .burger{display:block;}
+    .nav-cta{display:none;}
+  }
+
+  .page-hero{
+    padding:clamp(2.6rem,7vw,4.2rem) 0 clamp(2rem,5vw,3rem);
+    background:radial-gradient(ellipse at 85% 0%, rgba(207,155,70,.2), transparent 55%);
+    border-bottom:1px solid var(--line);
+  }
+  .page-hero .kicker{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--terracotta); font-weight:700;}
+  .page-hero h1{font-size:clamp(2.1rem,6vw,3.6rem); color:var(--wine); margin-top:.6rem; font-weight:600;}
+  .page-hero p{margin-top:1rem; font-size:1.05rem; line-height:1.65; color:#5a4137; max-width:60ch;}
+  .crumb{font-size:.85rem; color:#8a6a5c; margin-bottom:.6rem;}
+  .crumb a{text-decoration:none; color:var(--terracotta);}
+  .crumb a:hover{text-decoration:underline;}
+
+  .section{padding:clamp(3.5rem,8vw,6rem) 0;}
+  .kicker{font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--terracotta); font-weight:700;}
+  h2.section-title{font-size:clamp(1.9rem,4.4vw,2.8rem); font-weight:600; color:var(--wine); margin-top:.6rem;}
+  p.section-sub{margin-top:1rem; color:#5a4137; font-size:1.05rem; line-height:1.65; max-width:60ch;}
+
+  .timeline{margin-top:clamp(2.5rem,6vw,4rem); position:relative;}
+  .timeline::before{
+    content:""; position:absolute; left:22px; top:0; bottom:0; width:2px;
+    background:linear-gradient(var(--terracotta), var(--gold));
+  }
+  @media (max-width:640px){.timeline::before{left:16px;}}
+  .t-item{position:relative; padding-left:60px; margin-bottom:2.6rem;}
+  @media (max-width:640px){.t-item{padding-left:46px;}}
+  .t-item:last-child{margin-bottom:0;}
+  .t-dot{
+    position:absolute; left:8px; top:2px; width:30px;height:30px; border-radius:50%;
+    background:var(--paper); border:3px solid var(--terracotta);
+    display:flex; align-items:center; justify-content:center;
+  }
+  @media (max-width:640px){.t-dot{left:2px; width:28px;height:28px;}}
+  .t-dot svg{width:15px;height:15px; color:var(--wine);}
+  .t-item h3{font-family:'Fraunces'; font-weight:600; font-size:1.35rem; color:var(--wine);}
+  .t-item p{margin-top:.5rem; color:#5a4137; line-height:1.65; font-size:.98rem; max-width:60ch;}
+
+  .band{
+    background:var(--wine); color:var(--cream); text-align:center;
+    padding:clamp(3rem,7vw,4.5rem) 0;
+  }
+  .band p{
+    font-family:'Fraunces'; font-style:italic; font-weight:500;
+    font-size:clamp(1.4rem,4vw,2.2rem); max-width:26ch; margin:0 auto; line-height:1.35;
+  }
+  .band .who{margin-top:1.2rem; font-family:'Inter'; font-style:normal; font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold);}
+
+  .cta-band{background:var(--terracotta); color:#fff8ef; text-align:center; padding:clamp(2.6rem,6vw,3.8rem) 0;}
+  .cta-band h2{font-size:clamp(1.6rem,4.4vw,2.3rem); font-weight:600;}
+  .cta-band p{margin-top:.8rem; font-size:1.02rem; opacity:.95;}
+  .cta-band .hero-ctas{justify-content:center; display:flex; gap:1rem; margin-top:2.2rem; flex-wrap:wrap;}
+  .cta-band .btn-primary{background:var(--wine); border-color:var(--wine);}
+  .cta-band .btn-ghost{color:#fff8ef; border-color:#fff8ef;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; min-height:48px;
+    padding:0 1.6rem; border-radius:8px; text-decoration:none;
+    font-weight:600; font-size:.95rem; border:1.5px solid var(--wine);
+    transition:transform .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--wine); color:var(--cream);}
+  .btn-ghost{background:transparent; color:var(--wine);}
+
+  .philosophy{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,3.5rem); align-items:start;}
+  @media (max-width:860px){.philosophy{grid-template-columns:1fr;}}
+  .philosophy p{color:#5a4137; line-height:1.75; font-size:1.03rem; margin:0 0 1.1rem;}
+  .philosophy p:last-child{margin-bottom:0;}
+  .fact-card{background:var(--paper); border:1px solid var(--line); border-radius:20px; padding:1.8rem;}
+  .fact-card dl{margin:0; display:grid; gap:1rem;}
+  .fact-card dt{font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; color:var(--terracotta); font-weight:700;}
+  .fact-card dd{margin:.25rem 0 0; font-size:1.02rem; color:var(--ink);}
+
+  footer.site{background:var(--wine); color:#e3c8ba; padding:3rem 0 1.5rem;}
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1.5rem;}
+  footer .foot-brand{font-family:'Fraunces'; color:var(--cream); font-weight:600; font-size:1.2rem;}
+  footer small{color:#c9a598; display:block; margin-top:.8rem; line-height:1.6;}
+  .foot-links{list-style:none; margin:.8rem 0 0; padding:0; display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .foot-links a{color:#e3c8ba; text-decoration:none; font-size:.85rem; min-height:32px; display:inline-flex; align-items:center;}
+  .foot-links a:hover{color:var(--cream); text-decoration:underline;}
+  .foot-bottom{
+    border-top:1px solid rgba(248,239,225,.16); margin-top:2rem; padding-top:1.4rem;
+    font-size:.72rem; color:#c9a598; text-align:center; line-height:1.6;
+  }
+
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website</strong> von Gasthof Huber · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <nav class="wrap">
+    <a class="logo" href="index.html">
+      <span class="mark">GH</span>
+      <span class="word">Gasthof Huber</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ueber-uns.html" aria-current="page">Über uns</a></li>
+      <li><a href="angebot.html">Küche &amp; Zimmer</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:+4372424530">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="index.html">Home</a> / Über uns</div>
+      <span class="kicker">Unsere Geschichte</span>
+      <h1>Ein Haus für Familienfeste — geführt von Familie Huber</h1>
+      <p>Was den Gasthof Huber besonders macht, ist die persönliche Note: Familie Huber führt das Haus mit spürbarer Gastfreundschaft, ob beim spontanen Mittagessen oder bei der großen Familienfeier.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap philosophy">
+      <div class="reveal">
+        <p>In Wels ist der Gasthof Huber seit Langem eine feste Anlaufstelle — nicht durch lautes Auftreten, sondern durch Verlässlichkeit: gute Küche, ein offenes Haus für Feiern und ein Team, das seine Gäste kennt. Familie Huber steht dabei selbst am Herd, im Saal und an der Rezeption der Zimmer.</p>
+        <p>Die Küche verbindet bewusst drei Linien: internationale Gerichte für alle, die Abwechslung suchen, regionale Klassiker für alle, die das Vertraute schätzen, und eine durchdachte vegetarische Auswahl, damit wirklich jeder am Tisch etwas findet.</p>
+        <p>Wer größer feiern möchte, findet in den zwei Sälen mit Platz für bis zu 80 Personen den passenden Rahmen — von der Firmenfeier bis zur runden Geburtstagsrunde. Und wer nach dem Fest nicht mehr nach Hause fahren möchte, bleibt einfach: in einem der Zimmer mit Frühstücksbuffet am nächsten Morgen.</p>
+      </div>
+      <div class="fact-card reveal">
+        <div class="disp" style="font-size:1rem; color:var(--wine); font-weight:600; margin-bottom:1rem;">Der Betrieb auf einen Blick</div>
+        <dl>
+          <div>
+            <dt>Geführt von</dt>
+            <dd>Familie Huber</dd>
+          </div>
+          <div>
+            <dt>Küche</dt>
+            <dd>International, regional &amp; vegetarisch</dd>
+          </div>
+          <div>
+            <dt>Räume</dt>
+            <dd>Zwei Säle, bis zu 80 Personen</dd>
+          </div>
+          <div>
+            <dt>Außenbereich</dt>
+            <dd>Gastgarten mit Kinderspielplatz</dd>
+          </div>
+          <div>
+            <dt>Übernachtung</dt>
+            <dd>Zimmer inkl. Frühstücksbuffet</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--paper); padding-top:0;">
+    <div class="wrap">
+      <div class="timeline">
+        <div class="t-item reveal">
+          <span class="t-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+          <h3>Küche mit Weitblick</h3>
+          <p>Internationale Gerichte treffen auf regionale Klassiker und eine bewusst gute vegetarische Auswahl — für jeden Geschmack am Tisch etwas Passendes.</p>
+        </div>
+        <div class="t-item reveal">
+          <span class="t-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></span>
+          <h3>Raum für große Feste</h3>
+          <p>Zwei Säle mit Platz für bis zu 80 Personen machen den Gasthof Huber zur gefragten Adresse für Betriebs- und Familienfeiern in Wels.</p>
+        </div>
+        <div class="t-item reveal">
+          <span class="t-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
+          <h3>Gastgarten für die ganze Familie</h3>
+          <p>Ein Kinderspielplatz im Gastgarten sorgt dafür, dass auch die Kleinsten gerne mitkommen, während die Erwachsenen entspannt sitzen bleiben.</p>
+        </div>
+        <div class="t-item reveal">
+          <span class="t-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+          <h3>Übernachten mit Frühstück</h3>
+          <p>Wer länger bleiben möchte, bucht eines unserer Zimmer inklusive Frühstücksbuffet — praktisch für Geschäftsreisende ebenso wie für Feiergäste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="reveal">„Bei uns sitzt man nicht nur am Tisch — man wird Teil der Familie."</p>
+      <div class="who">Familie Huber, Gasthof Huber</div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Lernen Sie unser Angebot kennen</h2>
+      <p>Küche, Säle, Gastgarten und Zimmer im Überblick.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="angebot.html">Zum Angebot</a>
+        <a class="btn btn-ghost" href="kontakt.html">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <span class="foot-brand">Gasthof Huber</span>
+      <small>Wiesenstraße 69, 4600 Wels · Familie Huber</small>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+    <div>
+      <small>+43 7242 45030<br>office@gasthaus-huber.at</small>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Gasthof Huber · keine Verbindung zum Unternehmen
+  </div>
+</footer>
+
+<script>
+  var burger = document.getElementById('burgerBtn');
+  var nav = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  var els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{threshold:.15});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

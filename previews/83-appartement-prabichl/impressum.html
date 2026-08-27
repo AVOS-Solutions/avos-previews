@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum — Appartement Präbichl</title>
+<meta name="description" content="Muster-Impressum des Appartement Präbichl in Vordernberg.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#312e2b; --stone-2:#1e1c1a; --rust:#c1481d; --rust-2:#8f3313;
+    --ice:#9dc3d1; --paper:#f3efe8; --paper-2:#e8e1d4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; background:var(--paper); color:var(--stone); font-family:'Bricolage Grotesque',system-ui,sans-serif; overflow-x:hidden;}
+  img,svg{max-width:100%; display:block;}
+  a{color:inherit;}
+  p{line-height:1.65; color:#4b463f;}
+  .wrap{width:min(880px,92%); margin-inline:auto;}
+  :focus-visible{outline:3px solid var(--rust); outline-offset:3px;}
+  .disclaimer{background:var(--stone-2); color:var(--paper-2); font-size:clamp(.68rem,1.6vw,.78rem); text-align:center; padding:.55rem 1rem;}
+  header{position:sticky; top:0; z-index:60; background:rgba(243,239,232,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--paper-2);}
+  .wrap-nav{width:min(1160px,92%); margin-inline:auto;}
+  nav.bar{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0;}
+  .brand{font-weight:800; font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:-.01em; text-decoration:none;}
+  .brand span{color:var(--rust);}
+  .nav-links{display:flex; gap:clamp(1rem,2.4vw,2.2rem); list-style:none; margin:0; padding:0; font-size:.92rem; font-weight:600;}
+  .nav-links a{text-decoration:none; padding:.7rem .1rem; display:inline-block; border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-color:var(--rust);}
+  .menu-toggle{display:none; background:none; border:2px solid var(--stone); border-radius:10px; width:46px; height:44px; align-items:center; justify-content:center; cursor:pointer; flex-direction:column; gap:5px;}
+  .menu-toggle span{content:""; display:block; width:20px; height:2px; background:var(--stone);}
+  @media (max-width:760px){
+    .nav-links{position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column; padding:.5rem 6% 1.2rem; border-bottom:1px solid var(--paper-2); display:none;}
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:.9rem .2rem; width:100%; border-bottom:1px solid var(--paper-2);}
+    .menu-toggle{display:flex;}
+  }
+  main{padding:clamp(2.5rem,6vw,4rem) 0 clamp(3rem,7vw,5rem);}
+  .notice{background:#fff4e8; border:1.5px solid var(--rust); border-radius:12px; padding:1.2rem 1.4rem; font-size:.92rem; line-height:1.55; margin-bottom:2.4rem;}
+  .notice strong{color:var(--rust-2);}
+  h1{font-size:clamp(1.9rem,4.6vw,2.7rem); font-weight:800; letter-spacing:-.01em; margin:0 0 1.8rem;}
+  h2{font-size:1.2rem; font-weight:700; margin:2rem 0 .6rem;}
+  dl{margin:0;}
+  dt{font-weight:700; margin-top:.9rem;}
+  dd{margin:.15rem 0 0; color:#4b463f;}
+  footer{background:var(--stone-2); color:#a89e8c; padding:2.6rem 0 1.6rem;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2rem; padding-bottom:1.6rem; border-bottom:1px solid #3a352f; width:min(1160px,92%); margin-inline:auto;}
+  @media (max-width:700px){ .foot-grid{grid-template-columns:1fr; gap:1.6rem;} }
+  .foot-grid h4{color:var(--paper-2); font-size:.85rem; letter-spacing:.08em; text-transform:uppercase; margin:0 0 .8rem;}
+  .foot-grid p{color:#a89e8c; font-size:.9rem; margin:.3rem 0;}
+  .foot-links{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.6rem;}
+  .foot-links a{color:#a89e8c; text-decoration:none; font-size:.9rem;}
+  .foot-links a:hover{color:var(--paper);}
+  .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.7rem; font-size:.82rem; padding-top:1.4rem; width:min(1160px,92%); margin-inline:auto;}
+  .foot-disclaimer{font-size:.76rem; color:#7d7669; text-align:center; padding-top:1rem; line-height:1.5; width:min(1160px,92%); margin-inline:auto;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Appartement Präbichl · keine Verbindung zum Unternehmen</div>
+
+<header>
+  <div class="wrap-nav">
+    <nav class="bar">
+      <a class="brand" href="index.html">Appartement <span>Präbichl</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Wohnung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="notice"><strong>Hinweis:</strong> Muster-Impressum — Platzhalter zur Veranschaulichung. Ersetzt keine rechtliche Prüfung; der Betrieb muss ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.</div>
+
+    <h1>Impressum</h1>
+
+    <h2>Diensteanbieter</h2>
+    <dl>
+      <dt>Unternehmen</dt>
+      <dd>Appartement Präbichl</dd>
+      <dt>Anschrift</dt>
+      <dd>Hauptstraße 81, 8794 Vordernberg, Österreich</dd>
+      <dt>Firmenbuchnummer / UID</dt>
+      <dd>[UID-Nummer]</dd>
+    </dl>
+
+    <h2>Kontakt</h2>
+    <dl>
+      <dt>Telefon</dt>
+      <dd><a href="tel:+436644198851">+43 664 4198851</a></dd>
+      <dt>E-Mail</dt>
+      <dd><a href="mailto:office@appartement-praebichl.at">office@appartement-praebichl.at</a></dd>
+    </dl>
+
+    <h2>Zuständige Aufsichtsbehörde</h2>
+    <p>[Zuständige Bezirkshauptmannschaft / Gewerbebehörde — vom Betrieb zu ergänzen]</p>
+
+    <h2>Verbraucherstreitbeilegung</h2>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen, sofern hierzu keine gesonderte Erklärung des Betriebs vorliegt.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Appartement Präbichl</h4>
+      <p>Hauptstraße 81<br>8794 Vordernberg</p>
+      <p><a href="tel:+436644198851" style="color:#a89e8c;">+43 664 4198851</a></p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul class="foot-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="angebot.html">Wohnung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul class="foot-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Gestaltungs-Vorschau · Appartement Präbichl</span>
+    <span>Vordernberg · Steirische Eisenstraße</span>
+  </div>
+  <p class="foot-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Appartement Präbichl · keine Verbindung zum Unternehmen</p>
+</footer>
+
+<script>
+  var t = document.getElementById('menuToggle');
+  var n = document.getElementById('navLinks');
+  t.addEventListener('click', function(){
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ n.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+</script>
+</body>
+</html>
