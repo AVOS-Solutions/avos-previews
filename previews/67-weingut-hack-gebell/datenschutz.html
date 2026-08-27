@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz – Weingut Hack-Gebell</title>
+<meta name="description" content="Muster-Datenschutzerklärung für die Gestaltungs-Vorschau von Weingut Hack-Gebell in Gamlitz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#3a0f16;
+    --wine-2:#2a0a10;
+    --wine-3:#4d151d;
+    --gold:#c9a35e;
+    --gold-soft:#e4cd9c;
+    --cream:#f4ecdd;
+    --line:rgba(228,205,156,0.22);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--wine); color:var(--cream);
+    font-family:'Manrope',system-ui,sans-serif; line-height:1.7;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Libre Caslon Text',Georgia,serif; margin:0; font-weight:400;}
+  a{color:inherit;}
+  .wrap{max-width:70rem; margin:0 auto; padding:0 min(6vw,1.7rem); width:100%;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  img,svg{display:block; max-width:100%; height:auto;}
+
+  .disclaimer{
+    background:var(--wine-2); color:var(--gold-soft); font-size:0.76rem; text-align:center;
+    padding:0.55rem 1rem; letter-spacing:0.01em; border-bottom:1px solid var(--line);
+  }
+  .disclaimer strong{font-weight:700; color:#fff;}
+
+  header.site{
+    padding:1.1rem 0; position:sticky; top:0; z-index:30;
+    background:rgba(58,15,22,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; position:relative;}
+  .brand{font-family:'Libre Caslon Text',serif; font-size:clamp(1.1rem,3vw,1.4rem); letter-spacing:0.02em; color:var(--gold-soft); text-decoration:none;}
+  .brand small{display:block; font-family:'Manrope',sans-serif; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--gold); font-weight:600; margin-top:0.15rem;}
+  nav.main{display:flex; align-items:center;}
+  nav.main a{
+    text-decoration:none; font-size:0.88rem; margin-left:1.5rem; color:var(--cream);
+    display:inline-flex; align-items:center; min-height:44px; border-bottom:2px solid transparent; opacity:0.85;
+  }
+  nav.main a:hover{border-color:var(--gold); opacity:1;}
+  nav.main a.active{border-color:var(--gold); opacity:1; color:#fff;}
+  .nav-toggle{
+    display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:2px;
+    background:transparent; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--gold-soft); display:block;}
+  @media (max-width:780px){
+    nav.main{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--wine-2); border-bottom:1px solid var(--line); flex-direction:column;
+      padding:0.4rem min(6vw,1.7rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.7rem 0; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .page-hero{padding:clamp(3.2rem,8vw,4.6rem) 0 clamp(2rem,5vw,3rem);
+    background:radial-gradient(ellipse at 80% 0%, rgba(201,163,94,0.14), transparent 60%);
+  }
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.6rem); color:var(--gold-soft); max-width:20ch;}
+  .page-hero p{margin-top:1.1rem; max-width:52ch; color:#e4d9c8; font-size:clamp(1rem,2vw,1.12rem);}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+
+  .legal-notice{border:1.5px solid var(--gold); background:rgba(201,163,94,0.08); border-radius:4px; padding:1.2rem 1.4rem; margin:0 0 2.4rem; font-size:0.92rem; color:var(--gold-soft); line-height:1.6;}
+  .legal-notice strong{color:#fff;}
+  .legal-content h2{margin-top:2.4rem; font-size:clamp(1.4rem,3vw,1.8rem); color:var(--gold-soft);}
+  .legal-content h2:first-of-type{margin-top:0;}
+  .legal-content p, .legal-content li{color:#e4d9c8; font-size:0.98rem;}
+  .legal-content ul{padding-left:1.3rem;}
+  .legal-content .wrap{max-width:52rem;}
+
+  footer.site{
+    background:var(--wine-2); color:#b8a487; padding:clamp(2.4rem,6vw,3.4rem) 0 1.6rem; border-top:1px solid var(--line);
+  }
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:clamp(1.6rem,4vw,3rem); margin-bottom:2.2rem;}
+  @media (max-width:780px){ .footer-grid{grid-template-columns:1fr; gap:2rem;} }
+  .footer-brand{font-family:'Libre Caslon Text',serif; font-size:1.3rem; color:var(--gold-soft); margin-bottom:0.7rem;}
+  .footer-about{font-size:0.88rem; max-width:32ch; color:#c9b696;}
+  .footer-col h4{font-size:0.76rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); margin-bottom:0.9rem; font-weight:700;}
+  .footer-col ul{list-style:none; margin:0; padding:0; display:grid; gap:0.6rem;}
+  .footer-col a{text-decoration:none; color:#e4d9c8; font-size:0.92rem;}
+  .footer-col a:hover{text-decoration:underline;}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:1.4rem; display:flex; flex-wrap:wrap; gap:0.8rem 1.4rem; justify-content:space-between; font-size:0.8rem; color:#b8a487;}
+  .footer-disclaimer{font-size:0.76rem; color:#a8956f; max-width:76ch; line-height:1.55; margin-top:1.2rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website des Weinguts Hack-Gebell</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Hack-Gebell<small>Weingut &amp; Buschenschank · Gamlitz</small></a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="angebot.html">Weine &amp; Angebot</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Datenschutz</p>
+    <h1>Datenschutzerklärung</h1>
+  </div>
+</section>
+
+<section class="legal-content">
+  <div class="wrap">
+    <div class="legal-notice">
+      <strong>Hinweis:</strong> Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.
+    </div>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist: Weingut Hack-Gebell, Eckberg 100, 8462 Gamlitz. Kontakt: <a href="tel:+433454303">+43 3454 303</a>, <a href="mailto:office@weingut-hack.at">office@weingut-hack.at</a>.</p>
+
+    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <p>Beim Besuch dieser Website werden durch den Hosting-Anbieter automatisch technische Informationen erfasst (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Browsertyp). Diese Daten dienen der technischen Bereitstellung der Website und werden nicht mit anderen Datenquellen zusammengeführt.</p>
+
+    <h2>3. Cookies</h2>
+    <p>Diese Website kann technisch notwendige Cookies verwenden, um grundlegende Funktionen zu ermöglichen. Werden darüber hinaus Cookies zu Analyse- oder Marketingzwecken eingesetzt, erfolgt dies nur mit vorheriger Einwilligung der Nutzerin bzw. des Nutzers gemäß den geltenden datenschutzrechtlichen Bestimmungen.</p>
+
+    <h2>4. Kontaktaufnahme</h2>
+    <p>Bei Kontaktaufnahme per Telefon oder E-Mail werden die von Ihnen mitgeteilten Daten (z. B. Name, Kontaktdaten, Inhalt der Anfrage) ausschließlich zur Bearbeitung Ihrer Anfrage und für den Fall daran anschließender Fragen gespeichert und verarbeitet. Eine Weitergabe an Dritte erfolgt nicht, sofern keine gesetzliche Verpflichtung besteht.</p>
+
+    <h2>5. Rechte der Betroffenen</h2>
+    <p>Nach der Datenschutz-Grundverordnung (DSGVO) haben Sie insbesondere folgende Rechte:</p>
+    <ul>
+      <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+      <li>Recht auf Berichtigung unrichtiger Daten</li>
+      <li>Recht auf Löschung Ihrer Daten</li>
+      <li>Recht auf Einschränkung der Verarbeitung</li>
+      <li>Recht auf Datenübertragbarkeit</li>
+      <li>Recht auf Widerspruch gegen die Verarbeitung</li>
+      <li>Recht auf Beschwerde bei der österreichischen Datenschutzbehörde</li>
+    </ul>
+
+    <h2>6. Kontakt in Datenschutzfragen</h2>
+    <p>Für Fragen zum Datenschutz wenden Sie sich bitte an die oben genannte verantwortliche Stelle.</p>
+
+    <h2>7. Änderungen dieser Erklärung</h2>
+    <p>Diese Datenschutzerklärung ist ein generischer Platzhaltertext im Rahmen einer Gestaltungs-Vorschau und muss bei tatsächlicher Inbetriebnahme der Website durch eine individuell geprüfte, rechtsverbindliche Fassung ersetzt werden.</p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Hack-Gebell</div>
+        <p class="footer-about">Weingut &amp; Buschenschank mit Gästezimmern an der Südsteirischen Weinstraße. Eckberg 100, 8462 Gamlitz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="angebot.html">Weine &amp; Angebot</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt &amp; Rechtliches</h4>
+        <ul>
+          <li><a href="tel:+433454303">+43 3454 303</a></li>
+          <li><a href="mailto:office@weingut-hack.at">office@weingut-hack.at</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html" class="active" aria-current="page">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Weingut Hack-Gebell · Eckberg 100, 8462 Gamlitz</span>
+      <span>Gestaltungs-Vorschau — keine offizielle Website</span>
+    </div>
+    <p class="footer-disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Weingut Hack-Gebell · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

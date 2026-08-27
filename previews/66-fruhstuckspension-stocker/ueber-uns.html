@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Über uns — Frühstückspension Stocker</title>
+<meta name="description" content="Die Geschichte der Frühstückspension Stocker in Bad Aussee: familiär geführt von Elisabeth Liesinger, mit großem Garten an der Altausseer Traun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#5c6e50;
+    --sage-dark:#3d4a36;
+    --cream:#faf6ec;
+    --cream-2:#f0ead9;
+    --rust:#b5623a;
+    --ink:#2c2a22;
+    --line:rgba(44,42,34,0.15);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:'Work Sans',system-ui,sans-serif; line-height:1.65;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant',Georgia,serif; margin:0; font-weight:600;}
+  a{color:inherit;}
+  .wrap{max-width:72rem; margin:0 auto; padding:0 min(6vw,1.6rem); width:100%;}
+  :focus-visible{outline:3px solid var(--rust); outline-offset:2px;}
+  img,svg{display:block; max-width:100%; height:auto;}
+
+  .disclaimer{
+    background:var(--sage-dark); color:#eef1e8; font-size:0.76rem; text-align:center;
+    padding:0.55rem 1rem; letter-spacing:0.01em;
+  }
+  .disclaimer strong{font-weight:600;}
+
+  header.site{
+    padding:1.1rem 0; position:sticky; top:0; z-index:30;
+    background:rgba(250,246,236,0.94); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; gap:1rem; position:relative;}
+  .brand{font-family:'Cormorant',serif; font-weight:600; font-size:clamp(1.2rem,3vw,1.5rem); color:var(--sage-dark); text-decoration:none;}
+  .brand small{display:block; font-family:'Work Sans',sans-serif; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--rust); font-weight:500;}
+  nav.main{display:flex; align-items:center;}
+  nav.main a{
+    text-decoration:none; font-size:0.9rem; margin-left:1.5rem; color:var(--ink);
+    display:inline-flex; align-items:center; min-height:44px; border-bottom:2px solid transparent;
+  }
+  nav.main a:hover{border-color:var(--rust);}
+  nav.main a.active{border-color:var(--sage-dark); font-weight:600; color:var(--sage-dark);}
+  .nav-toggle{
+    display:none; width:44px; height:44px; border:1px solid var(--line); border-radius:50%;
+    background:#fff; cursor:pointer; align-items:center; justify-content:center; flex-direction:column; gap:5px; flex-shrink:0;
+  }
+  .nav-toggle span{width:18px; height:2px; background:var(--sage-dark); display:block;}
+  @media (max-width:780px){
+    nav.main{
+      display:none; position:absolute; top:calc(100% + 1px); left:0; right:0;
+      background:var(--cream); border-bottom:1px solid var(--line); flex-direction:column;
+      padding:0.4rem min(6vw,1.6rem) 1rem;
+    }
+    nav.main.open{display:flex;}
+    nav.main a{margin-left:0; padding:0.7rem 0; border-bottom:1px solid var(--line); width:100%;}
+    .nav-toggle{display:inline-flex;}
+  }
+
+  .subhero{
+    padding:clamp(2.6rem,7vw,4.2rem) 0 clamp(2rem,5vw,3rem); position:relative; overflow:hidden;
+    background:linear-gradient(160deg, var(--cream) 60%, var(--cream-2) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .subhero .wrap{position:relative;}
+  .subhero h1{font-size:clamp(2.2rem,5.6vw,3.6rem); color:var(--sage-dark); font-style:italic; max-width:22ch;}
+  .subhero p{margin-top:1rem; font-size:clamp(1rem,2vw,1.1rem); max-width:44ch; color:#4a4636;}
+
+  section{padding:clamp(3rem,7vw,5.5rem) 0;}
+  .section-head{max-width:44rem; margin-bottom:clamp(1.6rem,4vw,2.4rem);}
+  .kicker{
+    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.16em; color:var(--rust);
+    font-weight:600; margin-bottom:0.6rem;
+  }
+  h2{font-size:clamp(1.8rem,4vw,2.6rem); color:var(--sage-dark); font-style:italic;}
+  p.lede{font-size:clamp(1rem,2vw,1.1rem); max-width:60ch; color:#4a4636;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  .story{background:var(--cream-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .timeline{position:relative; margin-top:2rem; padding-left:2.2rem; border-left:2px solid var(--sage);}
+  .tl-item{position:relative; padding-bottom:2.2rem;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-2.5rem; top:0.2rem; width:0.8rem; height:0.8rem; border-radius:50%;
+    background:var(--rust); border:3px solid var(--cream-2); box-shadow:0 0 0 2px var(--sage);
+  }
+  .tl-title{font-family:'Cormorant',serif; font-weight:600; font-size:1.3rem; color:var(--sage-dark); font-style:italic;}
+  .tl-text{max-width:44rem; margin-top:0.4rem; color:#4a4636;}
+
+  .bento{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;
+  }
+  @media (max-width:820px){ .bento{grid-template-columns:1fr;} }
+  .bento-card{
+    background:#fff; border:1px solid var(--line); border-radius:6px; padding:1.6rem;
+  }
+  .bento-card h3{font-size:1.25rem; color:var(--sage-dark); font-style:italic; margin-bottom:0.5rem;}
+  .bento-card p{margin:0; font-size:0.94rem; color:#4a4636;}
+
+  .contact-card{
+    background:var(--sage-dark); color:#eef1e8; border-radius:8px; padding:clamp(1.6rem,4vw,2.4rem);
+  }
+  .contact-card h2{color:#fff;}
+  .cta-row{display:flex; gap:0.8rem; margin-top:1.6rem; flex-wrap:wrap;}
+  .btn{
+    padding:0.8rem 1.4rem; border-radius:2px; font-size:0.9rem; font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; justify-content:center; min-height:44px; box-sizing:border-box;
+  }
+
+  footer.site{
+    background:var(--ink); color:#cabf9f; padding:2.2rem 0; font-size:0.85rem;
+  }
+  footer.site .wrap{display:flex; justify-content:space-between; gap:1rem 2rem; flex-wrap:wrap; align-items:flex-start;}
+  .footer-links{display:flex; gap:1.2rem; flex-wrap:wrap;}
+  .footer-links a{color:#cabf9f; text-decoration:underline; text-underline-offset:3px; min-height:44px; display:inline-flex; align-items:center;}
+  .footer-note{max-width:34rem;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">
+  Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website der Frühstückspension Stocker</strong> · keine Verbindung zum Unternehmen
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Pension Stocker<small>Bad Aussee · Ausseerland</small></a>
+    <nav class="main" id="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="angebot.html">Zimmer &amp; Ausstattung</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <p class="eyebrow" style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--rust);font-weight:600;margin-bottom:1rem;">Über uns</p>
+    <h1>Ihr Zuhause auf Zeit im Ausseerland</h1>
+    <p>Familiär, persönlich, mit Blick auf die Traun – die Geschichte der Frühstückspension Stocker.</p>
+  </div>
+</section>
+
+<section class="story reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Unsere Geschichte</p>
+      <h2>Geführt mit Herzblut, mitten im Ausseerland</h2>
+      <p class="lede">Die Frühstückspension Stocker liegt rund 500 Meter vom Zentrum Bad Aussees entfernt – nah genug für kurze Wege ins Ortszentrum, ruhig genug für echte Erholung im großen Garten direkt an der Altausseer Traun.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-title">Familiär geführt</div>
+        <p class="tl-text">Elisabeth Liesinger führt die Pension persönlich und mit viel Herzblut. Gäste sind hier keine Nummer, sondern Besuch, der willkommen geheißen wird – so wie es eine echte Frühstückspension im Ausseerland ausmacht.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-title">Ein Garten an der Traun</div>
+        <p class="tl-text">Der große Garten der Pension grenzt direkt an die Altausseer Traun – ein ruhiger Rückzugsort nach einem Tag im Salzkammergut, der die Lage des Hauses besonders macht.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-title">Individuell benannte Zimmer</div>
+        <p class="tl-text">Jedes Zimmer der Pension trägt seinen eigenen Namen und Charakter. Zum Start in den Tag gehört ein Frühstücksbuffet mit frischem Gebäck, das im gemütlichen Rahmen serviert wird.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Was uns wichtig ist</p>
+      <h2>Gastfreundschaft mit Ausseerland-Charme</h2>
+    </div>
+    <div class="bento">
+      <div class="bento-card">
+        <h3>Persönlich</h3>
+        <p>Als familiär geführtes Haus kennt man seine Gäste – kurze Wege, direkter Kontakt.</p>
+      </div>
+      <div class="bento-card">
+        <h3>Zentrumsnah &amp; ruhig</h3>
+        <p>Rund 500 m vom Zentrum Bad Aussees, aber mit der Ruhe eines Gartens an der Traun.</p>
+      </div>
+      <div class="bento-card">
+        <h3>Frisches Frühstück</h3>
+        <p>Ein reichhaltiges Buffet mit frischem Gebäck startet jeden Aufenthalt richtig.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="contact-card">
+      <p class="kicker" style="color:#e7dfc4;">Neugierig geworden?</p>
+      <h2>Entdecken Sie unsere Zimmer</h2>
+      <div class="cta-row">
+        <a class="btn" style="background:#e7dfc4; color:var(--sage-dark);" href="angebot.html">Zimmer &amp; Ausstattung</a>
+        <a class="btn" style="border:1.5px solid #e7dfc4; color:#fff;" href="kontakt.html">Kontakt &amp; Anfrage</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-note">
+      <div>© Frühstückspension Stocker · Altausseerstraße 245, 8990 Bad Aussee · <a href="tel:+43362252484" style="color:#cabf9f;">+43 3622 52484</a></div>
+      <div style="margin-top:0.4rem;">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website der Frühstückspension Stocker · keine Verbindung zum Unternehmen</div>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.getElementById('nav-toggle');
+    var nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    var items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+  });
+</script>
+</body>
+</html>
