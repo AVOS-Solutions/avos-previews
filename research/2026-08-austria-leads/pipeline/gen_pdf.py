@@ -104,11 +104,14 @@ def lead_page(c, ld, idx, total, shots_dir):
     # estimate top right
     c.setFillColor(GOLD)
     c.setFont("DVB", 15)
-    est = f"{eur(ld['est_low'])} – {eur(ld['est_high'])}"
-    c.drawRightString(W - 40, H - 60, est)
+    tot = f"{eur(ld.get('tot_lo', ld['est_low']))} – {eur(ld.get('tot_hi', ld['est_high']))}"
+    c.drawRightString(W - 40, H - 58, tot)
     c.setFillColor(PAPER_DIM)
-    c.setFont("DV", 7.5)
-    c.drawRightString(W - 40, H - 74, f"realistisches Projektvolumen · Mitte {eur(ld['est_mid'])}")
+    c.setFont("DV", 7.2)
+    c.drawRightString(W - 40, H - 70, f"3-Jahres-Potenzial · Projekt {eur(ld['est_low'])}–{eur(ld['est_high'])}")
+    mon_lo = ld.get("care_lo", 0) + ld.get("ai_lo", 0)
+    mon_hi = ld.get("care_hi", 0) + ld.get("ai_hi", 0)
+    c.drawRightString(W - 40, H - 80, f"+ laufend {eur(mon_lo)}–{eur(mon_hi)} / Monat (Betreuung + KI)")
 
     # badges
     bx, by = 40, H - 112
@@ -171,7 +174,12 @@ def lead_page(c, ld, idx, total, shots_dir):
     for cn in ld.get("contact_names", [])[:3]:
         y = out_line(lx, y, "👤 " + cn if False else cn, bold=True)
     if ld.get("address"):
-        y = out_line(lx, y, ld["address"])
+        c.setFillColor(SLATE)
+        c.setFont("DVB", 7)
+        c.drawString(lx, y, "STANDORT")
+        y -= 9.5
+        for line in wrap(c, ld["address"], "DV", 8, colw)[:2]:
+            y = out_line(lx, y, line)
     for p in ld.get("phones", [])[:2]:
         y = out_line(lx, y, "Tel: " + p)
     for e in ld.get("emails", [])[:2]:
@@ -232,6 +240,21 @@ def lead_page(c, ld, idx, total, shots_dir):
         c.drawString(rx, ry, "Keine öffentlichen Bewertungs-/Eventdaten erhoben")
         ry -= ln_h
     ry -= 6
+    ry = sec_head(c, rx, ry, "LAUFENDE ERLÖSE (MONATLICH)")
+    c.setFillColor(INK)
+    c.setFont("DV", 7.5)
+    c.drawString(rx, ry, f"Website-Betreuung (Hosting, Wartung, SEO): {eur(ld.get('care_lo',0))}–{eur(ld.get('care_hi',0))}/Mon.")
+    ry -= 10
+    c.setFillColor(GOLD_DIM)
+    c.setFont("DVB", 7.5)
+    c.drawString(rx, ry, f"KI-Assistent: {eur(ld.get('ai_lo',0))}–{eur(ld.get('ai_hi',0))}/Mon.")
+    ry -= 10
+    c.setFillColor(INK)
+    c.setFont("DV", 7.2)
+    for line in wrap(c, ld.get("ai_use") or "", "DV", 7.2, colw)[:3]:
+        c.drawString(rx, ry, line)
+        ry -= 9
+    ry -= 6
     ry = sec_head(c, rx, ry, "EINSCHÄTZUNG / PITCH")
     c.setFillColor(INK)
     c.setFont("DV", 7.5)
@@ -260,13 +283,13 @@ def cover(c, leads):
     c.setLineWidth(2)
     c.line(60, H - 265, 300, H - 265)
     n = len(leads)
-    tot_lo = sum(l["est_low"] for l in leads)
-    tot_hi = sum(l["est_high"] for l in leads)
+    tot_lo = sum(l.get("tot_lo", l["est_low"]) for l in leads)
+    tot_hi = sum(l.get("tot_hi", l["est_high"]) for l in leads)
     stats = [
         (f"{n}", "aktive Betriebe mit veralteter Website"),
-        (f"{eur(tot_lo)} – {eur(tot_hi)}", "kumuliertes Auftragspotenzial"),
+        (f"{eur(tot_lo)} – {eur(tot_hi)}", "kumuliertes Auftragspotenzial über 3 Jahre (Projekt + Betreuung + KI-Assistent)"),
         ("1 Seite pro Betrieb", "Screenshot · Kontakte · Impressum · Bewertung · Pitch"),
-        ("aufsteigend sortiert", "nach realistischem Projektvolumen (Mitte)"),
+        ("aufsteigend sortiert", "nach 3-Jahres-Potenzial (Mitte): Projekt + 36 Monate Betreuung & KI"),
     ]
     y = H - 330
     for big, small in stats:
@@ -300,8 +323,8 @@ def summary(c, leads):
     c.setFillColor(INK)
     c.setFont("DV", 9)
     for r, n in reg.most_common():
-        sub_lo = sum(l["est_low"] for l in leads if l["region"] == r)
-        sub_hi = sum(l["est_high"] for l in leads if l["region"] == r)
+        sub_lo = sum(l.get("tot_lo", l["est_low"]) for l in leads if l["region"] == r)
+        sub_hi = sum(l.get("tot_hi", l["est_high"]) for l in leads if l["region"] == r)
         c.setFont("DVB", 9)
         c.drawString(48, y, f"{r}: {n} Leads")
         c.setFont("DV", 8)
@@ -329,8 +352,8 @@ def summary(c, leads):
             "fehlendes HTTPS, Tabellen-Layouts, SEO-Spam-Befall. Nur erreichbare, aktive Betriebe mit klar veralteter "
             "Website (Score ≥ 3) wurden aufgenommen. Kontakte stammen aus Impressum/Kontaktseiten der Websites sowie "
             "dem Herold-Eintrag; Bewertungen aus Herold (Sterne, Anzahl, letzte Bewertung). Termine/Events wurden aus "
-            "den Websites extrahiert. Die Honorar-Schätzung folgt marktüblichen österreichischen Agentursätzen je "
-            "Branche und Umfang (Brochure-Site bis Booking/Shop), moduliert nach Zustand und Potenzial. "
+            "den Websites extrahiert. Die Projekt-Schätzung folgt marktüblichen österreichischen Agentursätzen je "
+            "Branche und Umfang (Brochure-Site bis Booking/Shop), moduliert nach Zustand und Potenzial. Das ausgewiesene Gesamtpotenzial rechnet zusätzlich 36 Monate laufende Website-Betreuung (Hosting, Wartung, SEO-Pflege) sowie einen branchenspezifischen KI-Assistenten (Chat auf der Website: Reservierung, Terminbuchung, Anfrage-Qualifizierung) als monatliche Gebühr ein — beide Positionen sind je Lead getrennt ausgewiesen. "
             "Alle Angaben ohne Gewähr; fehlende Daten sind als solche gekennzeichnet — nichts wurde geschätzt oder erfunden.")
     c.setFillColor(INK)
     c.setFont("DV", 8.5)
@@ -368,7 +391,7 @@ def index_pages(c, leads):
         y = H - 78
         c.setFont("DVB", 7)
         c.setFillColor(SLATE)
-        for label, x in [("#", 40), ("BETRIEB", 65), ("ORT", 255), ("BRANCHE", 350), ("REGION", 455), ("POTENZIAL", 505)]:
+        for label, x in [("#", 40), ("BETRIEB", 65), ("ORT", 255), ("BRANCHE", 350), ("REGION", 455), ("POTENZIAL 3J", 505)]:
             c.drawString(x, y, label)
         y -= 4
         c.setStrokeColor(LINE)
@@ -386,7 +409,7 @@ def index_pages(c, leads):
             c.drawString(350, y, (l.get("category") or "")[:24])
             c.drawString(455, y, {"Wien": "W", "Niederösterreich": "NÖ", "Oberösterreich": "OÖ", "Steiermark": "STMK"}.get(l["region"], l["region"])[:4])
             c.setFillColor(GOLD_DIM)
-            c.drawString(505, y, f"{eur(l['est_mid'])}")
+            c.drawString(505, y, f"{eur(l.get('tot_mid', l['est_mid']))}")
             c.setFillColor(INK)
             y -= 14.2
         footer(c, "Index")
@@ -396,7 +419,7 @@ def main():
     leads = json.load(open(sys.argv[1]))
     out = sys.argv[2]
     shots_dir = sys.argv[3] if len(sys.argv) > 3 else "."
-    leads.sort(key=lambda l: (l["est_mid"], l["est_high"], l["name"]))
+    leads.sort(key=lambda l: (l.get("tot_mid", l["est_mid"]), l["est_high"], l["name"]))
     c = canvas.Canvas(out, pagesize=A4)
     c.setTitle("AVOS Solutions — Website-Relaunch Leads Österreich 2026")
     c.setAuthor("AVOS Solutions")

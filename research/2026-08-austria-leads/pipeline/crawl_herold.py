@@ -67,10 +67,29 @@ BRANCHES = {
     "fu%C3%9Fpflegeinstitute": "Fußpflege",
     "sattlerei": "Sattlerei",
     "tapezierer-u-dekorateure": "Tapezierer / Raumausstattung",
+    "kfz-reparatur": "KFZ-Werkstätte",
+    "massage": "Massage-Institut",
+    "heilmassage": "Heilmassage",
+    "pension-privatzimmer": "Pension",
+    "reiseb%C3%BCro": "Reisebüro",
+    "steuerberater": "Steuerberatung",
+    "eisenwaren": "Eisenwaren / Fachhandel",
+    "catering": "Catering / Partyservice",
+    "partyservice": "Catering / Partyservice",
+    "nagelstudio": "Nagelstudio",
+    "restaurant-italienisch": "Restaurant",
+    "restaurant-griechisch": "Restaurant",
+    "restaurant-chinesisch": "Restaurant",
+    "restaurant-asiatisch": "Restaurant",
+    "restaurant-balkan": "Restaurant",
+    "autohandel": "Autohaus / KFZ-Handel",
+    "baumschulen": "Baumschule / Gärtnerei",
+    "fischzucht": "Fischzucht / Direktvermarktung",
+    "ab-hof-verkauf": "Ab-Hof-Verkauf / Hofladen",
 }
 
-MAX_PAGES = 3          # listing pages per branch x region
-DETAIL_QUOTA = 32      # detail fetches per branch x region
+MAX_PAGES = 8          # listing pages per branch x region
+DETAIL_QUOTA = 100000  # detail fetches per branch x region (all)
 DELAY = (0.45, 0.9)
 
 def get(url, tries=5):
@@ -204,22 +223,24 @@ def main():
         random.shuffle(items)
         order.extend(items[:DETAIL_QUOTA])
     random.shuffle(order)
+    order = [c for c in order if c["id"] not in details]
     print(f"fetching {len(order)} detail pages", flush=True)
-    n = 0
-    for c in order:
-        if c["id"] in details:
-            continue
+    from concurrent.futures import ThreadPoolExecutor
+    n = [0]
+    def work(c):
         t = get(c["detail"])
-        n += 1
         if t is None:
             details[c["id"]] = {"error": "fetch_failed"}
         else:
             details[c["id"]] = parse_detail(t)
-        if n % 25 == 0:
-            json.dump(details, open(detf, "w"), ensure_ascii=False)
+        n[0] += 1
+        if n[0] % 100 == 0:
+            json.dump(dict(details), open(detf, "w"), ensure_ascii=False)
             got = sum(1 for v in details.values() if v.get("website"))
-            print(f"[detail] {n}/{len(order)} fetched, {got} with website", flush=True)
+            print(f"[detail] {n[0]}/{len(order)} fetched, {got} with website", flush=True)
         time.sleep(random.uniform(*DELAY))
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        list(ex.map(work, order))
     json.dump(details, open(detf, "w"), ensure_ascii=False)
     got = sum(1 for v in details.values() if v.get("website"))
     print(f"DONE details: {len(details)} fetched, {got} with website", flush=True)

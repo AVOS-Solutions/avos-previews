@@ -90,6 +90,10 @@ def badges_for(audit, cat):
 
 def mode_jobs():
     cands = json.load(open(os.path.join(SC, "herold_candidates.json")))
+    v1p = os.path.join(SC, "herold_candidates_v1.json")
+    if os.path.exists(v1p):
+        _seen = {c["id"] for c in cands}
+        cands += [c for c in json.load(open(v1p)) if c["id"] not in _seen]
     details = json.load(open(os.path.join(SC, "herold_details.json")))
     existing = json.load(open(os.path.join(REPO, "businesses.json")))
     known_hosts = {host_of(b["oldWebsite"]) for b in existing}
@@ -110,6 +114,65 @@ def mode_jobs():
         jobs.append({"key": c["id"], "url": d["website"]})
     json.dump(jobs, open(os.path.join(SC, "jobs_new.json"), "w"))
     print(f"{len(jobs)} new sites to audit")
+
+# --- recurring revenue model -------------------------------------------------
+# monthly care retainer (hosting, wartung, updates, seo-light) and
+# AI assistant (chat client on the site, monthly saas fee) per canonical category
+HORIZON_MONTHS = 36
+
+def recurring_for(cat):
+    """returns (care_lo, care_hi, ai_lo, ai_hi, ai_use) per month in EUR"""
+    C = canon_cat(cat)
+    T = {
+        "Hotel / Gasthof": (120, 250, 150, 300, "KI-Concierge: beantwortet Buchungsanfragen, Zimmer-/Preisfragen und FAQ mehrsprachig rund um die Uhr, übergibt an die Rezeption"),
+        "Pension": (80, 150, 80, 150, "KI-Buchungsassistent: Verfügbarkeit, Anreise, Frühstückszeiten — entlastet die private Vermietung"),
+        "Privatzimmer / Pension": (60, 120, 60, 120, "KI-Buchungsassistent für Anfragen & Belegung"),
+        "Restaurant": (90, 180, 60, 120, "KI-Reservierungs- & FAQ-Chat: Tischreservierung, Öffnungszeiten, Karte, Allergene"),
+        "Gasthaus / Gasthof": (90, 180, 60, 120, "KI-Reservierungs-Chat: Tische, Feiern, Menüfragen"),
+        "Kaffeehaus / Café": (80, 150, 50, 100, "KI-Gäste-Chat: Öffnungszeiten, Reservierung, Events"),
+        "Konditorei / Café": (80, 150, 50, 110, "KI-Bestellassistent: Tortenanfragen (Anlass, Größe, Abholtermin)"),
+        "Bar / Café": (80, 150, 50, 100, "KI-Gäste-Chat: Events, Reservierung"),
+        "Weinstube / Vinothek": (80, 150, 50, 110, "KI-Wein-Berater: Sortiment, Verkostungen, Click&Collect"),
+        "Heuriger / Buschenschank": (80, 150, 50, 110, "KI-Ausg'steckt-Auskunft: Termine, Reservierung, Buschenschank-Kalender"),
+        "Weinbau / Winzer": (90, 180, 50, 110, "KI-Sommelier: Weinempfehlung, Lagen/Jahrgänge, Shop-Beratung, Verkostungstermine"),
+        "Bäckerei": (80, 160, 40, 90, "KI-Vorbestell-Assistent: Sortiment, Filialen, Großbestellungen"),
+        "Fleischerei": (80, 160, 40, 90, "KI-Bestellassistent: Platten/Catering-Anfragen, Wochenangebot"),
+        "Ab-Hof-Verkauf / Hofladen": (60, 120, 30, 70, "KI-Hofladen-FAQ: Abholzeiten, Saisonware, Vorbestellung"),
+        "Imkerei": (60, 120, 30, 70, "KI-Produkt-FAQ: Sorten, Versand, Ab-Hof-Zeiten"),
+        "Fischzucht / Direktvermarktung": (60, 120, 30, 70, "KI-FAQ: Frischfisch-Vorbestellung, Abholung"),
+        "Friseur": (70, 140, 50, 100, "KI-Terminassistent: Buchung, Preisliste, Erinnerungen — spart Telefonzeit im Salon"),
+        "Kosmetikinstitut": (70, 140, 50, 100, "KI-Terminassistent: Behandlungen, Buchung, Gutscheine"),
+        "Nagelstudio": (60, 120, 40, 90, "KI-Terminassistent: Buchung & Preisliste"),
+        "Fußpflege": (60, 120, 40, 90, "KI-Terminassistent: Buchung & Hausbesuchs-Anfragen"),
+        "Massage-Institut": (70, 140, 50, 100, "KI-Terminassistent: Behandlungsarten, Buchung"),
+        "Heilmassage": (70, 140, 50, 100, "KI-Terminassistent inkl. Kassen-/Zuweisungsfragen"),
+        "Physiotherapie": (80, 150, 60, 120, "KI-Praxis-Assistent: Termin, Kassen-/Wahltherapeut-Fragen, Erstinfo"),
+        "Fahrschule": (90, 180, 80, 150, "KI-Kursberater: Führerscheinklassen, Kurstermine, Preise, Online-Anmeldung — Zielgruppe chattet lieber als sie anruft"),
+        "Optiker": (80, 160, 50, 100, "KI-Berater: Sehtest-Termin, Marken, Kontaktlinsen-Nachbestellung"),
+        "Uhrmacher / Juwelier": (80, 160, 50, 100, "KI-Berater: Reparaturanfragen, Ankauf, Anlassgeschenke"),
+        "Buchhandlung": (80, 160, 50, 100, "KI-Buchberater: Empfehlungen, Verfügbarkeit, Abholservice"),
+        "Eisenwaren / Fachhandel": (80, 160, 50, 100, "KI-Produktfinder: Verfügbarkeit, Alternativen, Beratung"),
+        "Autohaus / KFZ-Handel": (90, 180, 80, 150, "KI-Verkaufsassistent: Fahrzeugbestand, Probefahrt-Termine, Finanzierungsfragen"),
+        "KFZ-Werkstätte": (80, 160, 60, 120, "KI-Werkstatt-Assistent: §57a-Pickerl-Termine, Reifenwechsel, Kostenschätzung"),
+        "Steuerberatung": (100, 200, 100, 200, "KI-Mandanten-Assistent: Unterlagen-Checklisten, Fristen, Terminvereinbarung, Erstfragen"),
+        "Reisebüro": (90, 170, 80, 160, "KI-Reiseberater: Zielgebiets-FAQ, Angebotsanfragen, Reisedokumente"),
+        "Catering / Partyservice": (80, 160, 60, 120, "KI-Angebotsassistent: Menüs, Personenzahl, Termin — qualifiziert Anfragen vor"),
+        "Fotostudio": (60, 120, 40, 80, "KI-Buchungs-Chat: Pakete, Preise, Termin"),
+        "Schneiderei": (60, 120, 30, 70, "KI-FAQ: Preise, Abholzeiten"),
+        "Textilreinigung": (60, 120, 30, 70, "KI-FAQ: Preisliste, Abhol-/Lieferservice"),
+        "Blumenhandel": (70, 140, 40, 90, "KI-Bestellassistent: Sträuße, Hochzeits-/Trauerfloristik-Anfragen"),
+        "Gärtnerei": (80, 150, 50, 100, "KI-Pflanzenberater: Sortiment, Saison, Pflegetipps, Projektanfragen"),
+        "Baumschule / Gärtnerei": (80, 150, 50, 100, "KI-Pflanzenberater: Sortiment & Projektanfragen"),
+    }
+    if C in T:
+        return T[C]
+    TRADES = {"Tischlerei", "Installateur (HKLS)", "Elektrotechnik", "Malerei", "Dachdeckerei",
+              "Spenglerei", "Schlosserei / Metallbau", "Zimmerei / Holzbau", "Steinmetz",
+              "Hafner / Kachelöfen", "Glaserei", "Sattlerei", "Tapezierer / Raumausstattung",
+              "Fahrradwerkstatt", "Drechslerei", "Schuhmacher"}
+    if C in TRADES:
+        return (80, 160, 60, 120, "KI-Anfrage-Qualifizierer: nimmt Projektanfragen strukturiert auf (Art, Maße, Fotos, Wunschtermin) und liefert vorqualifizierte Leads")
+    return (80, 150, 50, 100, "KI-Anfrage-Assistent: FAQ, Öffnungszeiten, strukturierte Kontaktaufnahme")
 
 PITCH = {
     "Gasthaus / Gasthof": "Wirtshaus mit Stammpublikum, aber Web-Auftritt aus einer anderen Zeit: Ein Relaunch mit aktueller Speisekarte, Reservierungsanfrage, Google-Maps-Anbindung und mobiler Darstellung holt Laufkundschaft und Feiern-Buchungen ab.",
@@ -214,6 +277,21 @@ def fix_lead_texts(l):
             l[k] = [fix_mojibake(x) for x in l[k]]
     return l
 
+ADDR_IMP_RE = re.compile(
+    r"([A-ZÄÖÜ][\w.ßäöü -]{1,32}?(?:gasse|straße|strasse|weg|platz|allee|markt|zeile|ring|siedlung)\s*\d+[a-zA-Z]?"
+    r"(?:\s*[/-]\s*\d+[a-zA-Z]?)*)[,\s]+(?:A-?)?(\d{4})\s+([A-ZÄÖÜ][A-Za-zäöüß.\- ]{2,28})")
+ZIP_CITY_RE = re.compile(r"\b([1-9]\d{3})\s+([A-ZÄÖÜ][A-Za-zäöüß.\-]{2,28}(?:\s[A-ZÄÖÜ][A-Za-zäöüß.\-]+){0,2})")
+
+def addr_from_impressum(imp):
+    m = ADDR_IMP_RE.search(imp)
+    if m:
+        street, z, city = m.groups()
+        return f"{street.strip()}, {z} {city.strip().rstrip('.,-')}"
+    m = ZIP_CITY_RE.search(imp)
+    if m:
+        return f"{m.group(1)} {m.group(2).strip().rstrip('.,-')}"
+    return None
+
 def dedup_phones(phones):
     seen, out = set(), []
     for p in phones:
@@ -226,6 +304,10 @@ def dedup_phones(phones):
 
 def mode_final():
     cands = {c["id"]: c for c in json.load(open(os.path.join(SC, "herold_candidates.json")))}
+    v1p = os.path.join(SC, "herold_candidates_v1.json")
+    if os.path.exists(v1p):
+        for c in json.load(open(v1p)):
+            cands.setdefault(c["id"], c)
     details = json.load(open(os.path.join(SC, "herold_details.json")))
     audits_new = {a["key"]: a for a in json.load(open(os.path.join(SC, "audit_new.json")))}
     audits_old = {a["key"]: a for a in json.load(open(os.path.join(SC, "audit_existing.json")))}
@@ -238,6 +320,10 @@ def mode_final():
     clf = os.path.join(SC, "contact_cleanup.json")
     if os.path.exists(clf):
         cleans = json.load(open(clf))
+    haddr = {}
+    hap = os.path.join(SC, "herold_addresses.json")
+    if os.path.exists(hap):
+        haddr = json.load(open(hap))
 
     leads = []
     # existing 84 (prior vetted research) — keep all alive ones
@@ -256,7 +342,8 @@ def mode_final():
             "slug": b["slug"], "name": b["name"], "category": cat, "region": reg, "town": town,
             "website": b["oldWebsite"], "final_url": a.get("final_url"),
             "phones": a.get("phones", []), "emails": a.get("emails", []),
-            "contact_names": a.get("contact_names", []), "address": None,
+            "contact_names": a.get("contact_names", []),
+            "address": addr_from_impressum(a.get("impressum_text") or ""),
             "impressum_text": a.get("impressum_text", ""),
             "screenshot": b["slug"] + ".jpg",
             "score": a.get("outdated_score"), "signals": a.get("signals", []),
@@ -287,8 +374,14 @@ def mode_final():
             continue
         cat = c["category"]
         lo, hi, mid, rat = estimate_cat_lookup(cat, a)
-        town = d.get("city") or prettify_ort(c["ort_slug"])
-        addr = ", ".join(x for x in (d.get("street"), " ".join(y for y in (zipc, d.get("city") or prettify_ort(c["ort_slug"])) if y)) if x)
+        ha = haddr.get(key, {})
+        street = ha.get("street") or d.get("street")
+        zipc = ha.get("zip") or zipc
+        city = ha.get("city") or d.get("city") or prettify_ort(c["ort_slug"])
+        town = city
+        addr = ", ".join(x for x in (street, " ".join(y for y in (zipc, city) if y)) if x)
+        if not addr:
+            addr = addr_from_impressum(a.get("impressum_text") or "")
         phones = a.get("phones", []) or ([d["phone"]] if d.get("phone") else [])
         emails = a.get("emails", []) or ([d["email"]] if d.get("email") else [])
         slug = f"h-{key}-{slugify(c['name'])[:40]}"
@@ -313,6 +406,8 @@ def mode_final():
     for l in leads:
         fix_lead_texts(l)
         l["phones"] = dedup_phones(l.get("phones", []))
+        if not l.get("address"):
+            l["address"] = ", ".join(x for x in (l.get("town"), l.get("region")) if x) or l.get("region")
         ov = overrides.get(l["slug"])
         if ov:
             if ov.get("activity_note"):
@@ -333,7 +428,29 @@ def mode_final():
                 l["emails"] = cl["emails"]
         if l["source"] == "bestand" and (l.get("score") or 0) < 3:
             l["signals"] = (l.get("signals") or []) + ["manuell als Relaunch-Kandidat eingestuft (Recherche 27.08.2026)"]
+        # recurring revenue: care retainer + AI assistant, 36-month horizon
+        care_lo, care_hi, ai_lo, ai_hi, ai_use = recurring_for(l["category"])
+        l.update({"care_lo": care_lo, "care_hi": care_hi, "ai_lo": ai_lo, "ai_hi": ai_hi,
+                  "ai_use": ai_use, "horizon_months": HORIZON_MONTHS})
+        l["tot_lo"] = l["est_low"] + HORIZON_MONTHS * (care_lo + ai_lo)
+        l["tot_hi"] = l["est_high"] + HORIZON_MONTHS * (care_hi + ai_hi)
+        l["tot_mid"] = int(round((l["tot_lo"] + l["tot_hi"]) / 2, -2))
     leads = [l for l in leads if not l.get("_remove")]
+    # cap: keep report usable — bestand always; herold ranked by contact quality + score
+    CAP = 1500
+    if len(leads) > CAP:
+        bestand = [l for l in leads if l["source"] == "bestand"]
+        herold = [l for l in leads if l["source"] != "bestand"]
+        def qual(l):
+            return (bool(l.get("phones")) + bool(l.get("emails")),
+                    bool(l.get("contact_names")),
+                    l.get("score") or 0,
+                    bool(l.get("rating")))
+        herold.sort(key=qual, reverse=True)
+        keep = bestand + herold[:CAP - len(bestand)]
+        dropped = len(leads) - len(keep)
+        print(f"capped: kept {len(keep)}, dropped {dropped} lowest-quality herold leads")
+        leads = keep
     json.dump(leads, open(os.path.join(SC, "leads_full.json"), "w"), ensure_ascii=False, indent=1)
     from collections import Counter
     print(len(leads), "leads", Counter(l["region"] for l in leads))

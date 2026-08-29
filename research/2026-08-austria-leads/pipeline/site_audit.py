@@ -10,10 +10,23 @@ import requests, urllib3
 urllib3.disable_warnings()
 
 CA = "/root/.ccr/ca-bundle.crt"
-PROXIES_HTTPS = {"https": "http://127.0.0.1:43137"}
+PROXIES_HTTPS = {"https": os.environ.get("HTTPS_PROXY", "http://127.0.0.1:43137")}
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36",
       "Accept-Language": "de-AT,de;q=0.9,en;q=0.5",
       "Accept": "text/html,application/xhtml+xml,*/*;q=0.8"}
+
+import random as _random
+
+def _get_retry(s, u, timeout, **kw):
+    """retry transient proxy/connection failures with backoff"""
+    last = None
+    for i in range(4):
+        try:
+            return s.get(u, timeout=timeout, **kw)
+        except (requests.exceptions.ProxyError, requests.exceptions.ConnectionError) as e:
+            last = e
+            time.sleep(1.2 * (i + 1) + _random.random())
+    raise last
 
 def fetch(url, timeout=22):
     """Fetch URL; https via proxy, http direct. Returns (final_url, resp) or raises."""
@@ -21,13 +34,13 @@ def fetch(url, timeout=22):
     s.headers.update(UA)
     s.max_redirects = 8
     if url.startswith("https:"):
-        return s.get(url, timeout=timeout, proxies=PROXIES_HTTPS, verify=CA, allow_redirects=True)
+        return _get_retry(s, url, timeout, proxies=PROXIES_HTTPS, verify=CA, allow_redirects=True)
     # http: go direct, but a redirect to https must go through proxy -> handle manually
     u = url
     for _ in range(8):
         if u.startswith("https:"):
-            return s.get(u, timeout=timeout, proxies=PROXIES_HTTPS, verify=CA, allow_redirects=True)
-        r = s.get(u, timeout=timeout, allow_redirects=False)
+            return _get_retry(s, u, timeout, proxies=PROXIES_HTTPS, verify=CA, allow_redirects=True)
+        r = _get_retry(s, u, timeout, allow_redirects=False)
         if r.status_code in (301, 302, 303, 307, 308) and r.headers.get("location"):
             from urllib.parse import urljoin
             u = urljoin(u, r.headers["location"])

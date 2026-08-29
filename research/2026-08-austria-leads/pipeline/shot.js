@@ -13,7 +13,7 @@ const outdir = process.argv[3];
 const CONC = parseInt(process.argv[4] || '4', 10);
 fs.mkdirSync(outdir, { recursive: true });
 
-const pa = new ProxyAgent('http://127.0.0.1:43137');
+const pa = new ProxyAgent(process.env.HTTPS_PROXY || 'http://127.0.0.1:43137');
 
 async function proxyFetch(url, headers) {
   let u = url;
