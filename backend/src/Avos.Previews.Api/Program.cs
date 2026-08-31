@@ -51,7 +51,14 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 builder.Services.AddAuthorization(o =>
-    o.AddPolicy("StaffOnly", p => p.RequireRole("Staff")));
+{
+    o.AddPolicy("StaffOnly", p => p.RequireRole("Staff"));
+    // Mirrors avos-vault: FallbackPolicy applies to any endpoint lacking [AllowAnonymous]/
+    // .AllowAnonymous(), even ones with no explicit .RequireAuthorization() at all — so a new
+    // endpoint is protected by default instead of accidentally public.
+    o.DefaultPolicy = o.GetPolicy("StaffOnly")!;
+    o.FallbackPolicy = o.GetPolicy("StaffOnly")!;
+});
 
 builder.Services.AddRateLimiter(o =>
 {
@@ -77,6 +84,7 @@ app.Use(async (ctx, next) =>
     await next();
 });
 app.UseAuthentication();
+app.UseMiddleware<SessionRevocationMiddleware>();
 app.UseAuthorization();
 // Serves the theme CSS + favicon used by the share gate pages.
 app.UseStaticFiles();
@@ -87,7 +95,7 @@ var devLoginEnabled = app.Environment.IsDevelopment()
 
 string ShareBaseUrl() => (app.Configuration["App:PublicUrl"] ?? "").TrimEnd('/');
 
-app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
+app.MapGet("/health", () => Results.Ok(new { status = "ok" })).AllowAnonymous();
 
 // ---------------------------------------------------------------------------
 // Auth (called server-to-server by the Next.js frontend)
@@ -98,7 +106,7 @@ app.MapGet("/api/public/auth/sso/authorize-url", (LicensingSso sso, string redir
     if (!sso.Configured)
         return Results.Problem(statusCode: 503, title: "AVOS Licensing ist nicht konfiguriert.");
     return Results.Ok(new { url = sso.AuthorizeUrl(redirectUri, state) });
-});
+}).AllowAnonymous();
 
 app.MapPost("/api/public/auth/sso/exchange", async (AppDb db, LicensingSso sso, TokenService tokens,
     SsoExchangeRequest req, CancellationToken ct) =>
@@ -123,7 +131,7 @@ app.MapPost("/api/public/auth/sso/exchange", async (AppDb db, LicensingSso sso, 
             statusCode: StatusCodes.Status403Forbidden);
     return Results.Ok(await IssueAuthResponseAsync(db, tokens, identity.UserId, identity.Email,
         identity.FullName ?? identity.Email));
-}).RequireRateLimiting("login");
+}).RequireRateLimiting("login").AllowAnonymous();
 
 if (devLoginEnabled)
 {
@@ -135,7 +143,7 @@ if (devLoginEnabled)
         if (!ok)
             return Results.Json(new { message = "Falsches Passwort." }, statusCode: StatusCodes.Status401Unauthorized);
         return Results.Ok(await IssueAuthResponseAsync(db, tokens, "dev", "dev@avos-solutions.com", "Dev-Login"));
-    }).RequireRateLimiting("login");
+    }).RequireRateLimiting("login").AllowAnonymous();
 }
 
 app.MapPost("/api/public/auth/refresh", async (AppDb db, TokenService tokens, RefreshRequest req) =>
@@ -147,7 +155,7 @@ app.MapPost("/api/public/auth/refresh", async (AppDb db, TokenService tokens, Re
     stored.RevokedAt = DateTimeOffset.UtcNow;
     var response = await IssueAuthResponseAsync(db, tokens, stored.UserId, stored.Email, stored.FullName);
     return Results.Ok(response);
-});
+}).AllowAnonymous();
 
 app.MapPost("/api/public/auth/logout", async (AppDb db, RefreshRequest req) =>
 {
@@ -159,15 +167,17 @@ app.MapPost("/api/public/auth/logout", async (AppDb db, RefreshRequest req) =>
         await db.SaveChangesAsync();
     }
     return Results.NoContent();
-});
+}).AllowAnonymous();
 
 async Task<object> IssueAuthResponseAsync(AppDb db, TokenService tokens, string userId, string email, string fullName)
 {
-    var (accessToken, expiresAt) = tokens.CreateAccessToken(userId, email, fullName);
+    // Generated up front so the same id both names the RefreshToken row and rides along as the
+    // access token's "sid" claim — see SessionRevocationMiddleware.
+    var sessionId = Guid.NewGuid();
     var refreshToken = TokenService.GenerateRefreshToken();
     db.RefreshTokens.Add(new RefreshToken
     {
-        Id = Guid.NewGuid(),
+        Id = sessionId,
         UserId = userId,
         Email = email,
         FullName = fullName,
@@ -176,6 +186,7 @@ async Task<object> IssueAuthResponseAsync(AppDb db, TokenService tokens, string 
         CreatedAt = DateTimeOffset.UtcNow,
     });
     await db.SaveChangesAsync();
+    var (accessToken, expiresAt) = tokens.CreateAccessToken(userId, email, fullName, sessionId);
     return new
     {
         accessToken,
@@ -279,7 +290,7 @@ app.MapGet("/api/previews/{slug}/{**rest}", (string slug, string? rest) =>
 // Public share links (browser-facing; the shared edge routes /s/* to this API)
 // ---------------------------------------------------------------------------
 
-app.MapGet("/s/{token}", (string token) => Results.Redirect($"/s/{token}/index.html"));
+app.MapGet("/s/{token}", (string token) => Results.Redirect($"/s/{token}/index.html")).AllowAnonymous();
 
 app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token) =>
 {
@@ -295,7 +306,7 @@ app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtecti
     }
     SetUnlockCookie(ctx, dp, link);
     return Results.Redirect($"/s/{token}/index.html");
-}).RequireRateLimiting("unlock");
+}).RequireRateLimiting("unlock").AllowAnonymous();
 
 app.MapGet("/s/{token}/{**rest}", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token, string? rest) =>
 {
@@ -326,7 +337,7 @@ app.MapGet("/s/{token}/{**rest}", async (HttpContext ctx, AppDb db, IDataProtect
     }
 
     return ServePreviewFile(link.Slug, rest);
-});
+}).AllowAnonymous();
 
 app.Run();
 
