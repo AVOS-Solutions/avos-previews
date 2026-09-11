@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — baufranz-technic</title>
+<meta name="description" content="Muster-Datenschutzerklärung von baufranz-technic.">
+<meta name="theme-color" content="#0f2236">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f2236'/%3E%3Cg stroke='%23e8871e' stroke-width='7' stroke-linecap='round' fill='none'%3E%3Cline x1='50' y1='12' x2='50' y2='50'/%3E%3Cline x1='12' y1='50' x2='88' y2='50'/%3E%3Cline x1='50' y1='50' x2='68' y2='32'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='7' fill='%23e8871e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0f2236;--navy-800:#1d4e73;--steel:#54636c;--safety:#e8871e;
+    --paper:#f6f4ee;--paper-2:#ece8dc;--ink:#1c2430;--ink-soft:#4c5a66;--line:rgba(28,36,48,.18);--focus:#1d4e73;
+    --font-head:'IBM Plex Sans',system-ui,sans-serif;--font-mono:'IBM Plex Mono',monospace;
+    --legal-note-bg:#fff7e6;--legal-note-fg:#5c4020;--legal-note-border:#e5cd9e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-head);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2{font-weight:600;margin:0;line-height:1.12;overflow-wrap:break-word;}
+  p{line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+
+  .disclaimer{background:var(--navy-950);color:#dce9f2;font-size:.78rem;text-align:center;padding:.55rem 1rem;letter-spacing:.01em;}
+  .disclaimer strong{color:#fff;font-weight:600;}
+
+  header.site{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:2px solid var(--navy-950);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:.85rem;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);}
+  .brand .valve-icon{width:30px;height:30px;color:var(--navy-800);}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{font-size:1.05rem;font-weight:700;}
+  .brand-text small{font-family:var(--font-mono);font-weight:500;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);}
+  nav.links{display:flex;gap:1.8rem;font-size:.9rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding-block:.2rem;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--safety);transition:width .2s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.4rem;border-radius:3px;font-weight:600;font-size:.92rem;text-decoration:none;min-height:44px;}
+  .btn-primary{background:var(--navy-800);color:#fff;box-shadow:0 3px 0 var(--navy-950);}
+  .nav-cta{font-size:.85rem;padding:.7rem 1.1rem;}
+  .menu-toggle{display:none;background:var(--paper);border:1.5px solid var(--navy-950);border-radius:3px;min-width:44px;min-height:44px;font-size:1.1rem;}
+  @media (max-width:840px){
+    nav.links{position:fixed;inset:57px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.3rem 1.25rem .6rem;border-bottom:2px solid var(--navy-950);transform:translateY(-130%);opacity:0;transition:transform .25s ease, opacity .25s ease;max-height:calc(100vh - 57px);overflow-y:auto;}
+    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links a{padding:.9rem 0;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
+    .nav-cta{display:none;}
+  }
+
+  .tech-label{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--steel);margin-bottom:.3rem;}
+
+  .legal{padding-block:clamp(2.6rem,7vw,5rem);}
+  .legal h1{font-size:clamp(2rem,4.5vw,3rem);margin-top:.5rem;color:var(--navy-950);}
+  .legal-note{background:var(--legal-note-bg);color:var(--legal-note-fg);border:1px solid var(--legal-note-border);border-radius:6px;padding:1rem 1.3rem;font-size:.92rem;line-height:1.55;max-width:70ch;margin-bottom:1.8rem;}
+  .legal-block{max-width:70ch;margin-top:2.2rem;}
+  .legal-block h2{font-weight:600;font-size:1.2rem;margin-bottom:.6rem;color:var(--navy-950);}
+  .legal-block p{color:var(--ink-soft);}
+
+  footer.site{background:var(--navy-950);color:rgba(220,233,242,.85);padding-block:2.2rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;align-items:center;padding-block:.6rem;}
+  .foot-grid .brand{color:#fff;}
+  .foot-grid .brand .valve-icon{color:var(--safety);}
+  .foot-grid .brand-text small{color:var(--safety);}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:70ch;padding-top:.8rem;border-top:1px solid rgba(220,233,242,.15);margin-top:.4rem;}
+  .foot-links{display:flex;gap:1.4rem;font-size:.85rem;}
+  .foot-links a{text-decoration:none;opacity:.85;color:rgba(220,233,242,.9);}
+  .foot-links a:hover{text-decoration:underline;opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von baufranz-technic</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg class="valve-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><line x1="50" y1="12" x2="50" y2="50"/><line x1="12" y1="50" x2="88" y2="50"/><line x1="50" y1="50" x2="68" y2="32"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/></svg>
+      <span class="brand-text"><strong>baufranz-technic</strong><small>Wasserabsperr- &amp; Entleerungssystem</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
+    <nav class="links" id="mainNav">
+      <a href="index.html">Willkommen!</a>
+      <a href="das-problem.html">Das Problem!</a>
+      <a href="unsere-loesung.html">Unsere Lösung!</a>
+      <a href="technik-und-info.html">Technik und Info</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="kontakt.html">Kontakt aufnehmen</a>
+  </div>
+</header>
+
+<main>
+  <section class="legal">
+    <div class="wrap">
+      <div class="legal-note">Muster-Datenschutzerklärung — generischer Platzhaltertext zur Veranschaulichung, keine rechtsverbindliche Datenschutzerklärung für diesen Betrieb.</div>
+      <span class="tech-label">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+
+      <div class="legal-block">
+        <h2>1. Verantwortliche Stelle</h2>
+        <p>Verantwortlich für die Datenverarbeitung im Zusammenhang mit dieser Website ist der im Impressum genannte Betrieb.</p>
+      </div>
+      <div class="legal-block">
+        <h2>2. Verarbeitung beim Besuch der Website</h2>
+        <p>Beim Aufruf dieser Website können durch den Hosting-Anbieter automatisch technische Daten verarbeitet werden (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser). Diese Daten dienen der technischen Bereitstellung und Absicherung der Website.</p>
+      </div>
+      <div class="legal-block">
+        <h2>3. Kontaktformular</h2>
+        <p>Bei Nutzung des Kontaktformulars werden die mitgeteilten Daten (z. B. Name, Kontaktdaten, KGV/Anschrift/Gruppe/Parzelle, Nachricht) ausschließlich zur Bearbeitung der Anfrage verwendet.</p>
+      </div>
+      <div class="legal-block">
+        <h2>4. Rechte der betroffenen Personen</h2>
+        <p>Ihnen stehen nach der Datenschutz-Grundverordnung (DSGVO) grundsätzlich das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten zu. Außerdem besteht ein Beschwerderecht bei der zuständigen Datenschutzbehörde.</p>
+      </div>
+      <div class="legal-block">
+        <h2>5. Änderungen</h2>
+        <p>Diese Muster-Datenschutzerklärung kann bei Bedarf angepasst werden, um sie an geänderte Rechtslagen oder Änderungen der Website anzupassen.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <a class="brand" href="index.html">
+      <svg class="valve-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><line x1="50" y1="12" x2="50" y2="50"/><line x1="12" y1="50" x2="88" y2="50"/><line x1="50" y1="50" x2="68" y2="32"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/></svg>
+      <span class="brand-text"><strong>baufranz-technic</strong><small>Wasserabsperr- &amp; Entleerungssystem</small></span>
+    </a>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von baufranz-technic · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+</body>
+</html>
