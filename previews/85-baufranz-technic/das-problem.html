@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Das Problem — baufranz-technic</title>
+<meta name="description" content="Warum die Gartenwasserleitung vor dem Winter abgedreht werden muss und weshalb das bisher ein Klettern in den Schacht erfordert.">
+<meta name="theme-color" content="#0f2236">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f2236'/%3E%3Cg stroke='%23e8871e' stroke-width='7' stroke-linecap='round' fill='none'%3E%3Cline x1='50' y1='12' x2='50' y2='50'/%3E%3Cline x1='12' y1='50' x2='88' y2='50'/%3E%3Cline x1='50' y1='50' x2='68' y2='32'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='7' fill='%23e8871e'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="baufranz-technic">
+<meta property="og:title" content="Das Problem — baufranz-technic">
+<meta property="og:description" content="Warum die Gartenwasserleitung vor dem Winter abgedreht werden muss und weshalb das bisher ein Klettern in den Schacht erfordert.">
+<meta property="og:locale" content="de_AT">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0f2236;
+    --navy-800:#1d4e73;
+    --blue-600:#2e6f9e;
+    --blue-pale:#dce9f2;
+    --steel:#54636c;
+    --safety:#e8871e;
+    --safety-dark:#a5590a;
+    --paper:#f6f4ee;
+    --paper-2:#ece8dc;
+    --ink:#1c2430;
+    --ink-soft:#4c5a66;
+    --line:rgba(28,36,48,.18);
+    --focus:#1d4e73;
+    --font-head:'IBM Plex Sans',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',monospace;
+    --legal-note-bg:#fff7e6;
+    --legal-note-fg:#5c4020;
+    --legal-note-border:#e5cd9e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-head);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-weight:600;margin:0;line-height:1.12;overflow-wrap:break-word;}
+  p{line-height:1.65;}
+  .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(1.25rem,4vw,3rem);}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
+  .icon{width:1em;height:1em;flex:none;}
+  code, .mono{font-family:var(--font-mono);}
+
+  .disclaimer{background:var(--navy-950);color:#dce9f2;font-size:.78rem;text-align:center;padding:.55rem 1rem;letter-spacing:.01em;}
+  .disclaimer strong{color:#fff;font-weight:600;}
+
+  header.site{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:2px solid var(--navy-950);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:.85rem;gap:1rem;}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);}
+  .brand .valve-icon{width:30px;height:30px;color:var(--navy-800);}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{font-size:1.05rem;font-weight:700;}
+  .brand-text small{font-family:var(--font-mono);font-weight:500;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);}
+  nav.links{display:flex;gap:1.8rem;font-size:.9rem;font-weight:500;}
+  nav.links a{text-decoration:none;position:relative;padding-block:.2rem;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--safety);transition:width .2s ease;}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%;}
+  nav.links a.active{color:var(--navy-800);font-weight:700;}
+  nav.links a.active::after{width:100%;}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.4rem;border-radius:3px;font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .1s ease, box-shadow .1s ease;min-height:44px;border:1.5px solid transparent;}
+  .btn-primary{background:var(--navy-800);color:#fff;box-shadow:0 3px 0 var(--navy-950);}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--navy-950);}
+  .btn-primary:active{transform:translateY(2px);box-shadow:0 1px 0 var(--navy-950);}
+  .btn-accent{background:var(--safety);color:var(--navy-950);box-shadow:0 3px 0 var(--safety-dark);}
+  .btn-accent:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--safety-dark);}
+  .btn-accent:active{transform:translateY(2px);box-shadow:0 1px 0 var(--safety-dark);}
+  .btn-ghost{border-color:var(--navy-800);color:var(--navy-800);background:transparent;}
+  .btn-ghost:hover{background:var(--blue-pale);}
+  .nav-cta{font-size:.85rem;padding:.7rem 1.1rem;}
+  .menu-toggle{display:none;background:var(--paper);border:1.5px solid var(--navy-950);border-radius:3px;min-width:44px;min-height:44px;font-size:1.1rem;}
+  @media (max-width:840px){
+    nav.links{position:fixed;inset:57px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;padding:.3rem 1.25rem .6rem;border-bottom:2px solid var(--navy-950);transform:translateY(-130%);opacity:0;transition:transform .25s ease, opacity .25s ease;max-height:calc(100vh - 57px);overflow-y:auto;}
+    nav.links.open{transform:translateY(0);opacity:1;}
+    nav.links a{padding:.9rem 0;border-bottom:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+    .menu-toggle{display:inline-flex;align-items:center;justify-content:center;}
+    .nav-cta{display:none;}
+  }
+
+  .blueprint-bg{
+    background-image:
+      linear-gradient(rgba(29,78,115,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29,78,115,.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .page-hero{position:relative;overflow:hidden;padding-block:clamp(2.6rem,6vw,4rem) clamp(2.2rem,5vw,3rem);background:var(--paper);}
+  .page-hero h1{font-size:clamp(2rem,5vw,3.2rem);color:var(--navy-950);max-width:20ch;}
+  .page-hero p{margin-top:1rem;max-width:55ch;color:var(--ink-soft);font-size:1.05rem;}
+
+  .tech-label{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--steel);margin-bottom:1.1rem;}
+  .tech-label svg{width:26px;height:10px;color:var(--safety);}
+
+  .diagram-frame{position:relative;background:#fff;border:1.5px solid var(--navy-950);padding:1rem;}
+  .diagram-frame::before{content:"";position:absolute;top:-1.5px;left:-1.5px;width:16px;height:16px;border-top:3px solid var(--safety);border-left:3px solid var(--safety);}
+  .diagram-frame::after{content:"";position:absolute;bottom:-1.5px;right:-1.5px;width:16px;height:16px;border-bottom:3px solid var(--safety);border-right:3px solid var(--safety);}
+  .diagram-frame .fig-label{position:absolute;top:.5rem;left:.6rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;color:var(--steel);background:#fff;padding:0 .3rem;}
+
+  section{padding-block:clamp(2.6rem,7vw,5rem);}
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+  @media (max-width:900px){.problem-grid{grid-template-columns:1fr;}}
+  .problem-list{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:1.1rem;}
+  .problem-list li{display:flex;gap:.9rem;align-items:flex-start;font-size:.98rem;color:var(--ink-soft);}
+  .problem-list svg{flex:none;width:22px;height:22px;color:var(--safety-dark);margin-top:.15rem;}
+
+  .quote-band{background:var(--navy-950);color:#dce9f2;}
+  .quote-band blockquote{margin:0;font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:500;max-width:56ch;color:#fff;}
+  .quote-band cite{display:block;margin-top:1rem;font-family:var(--font-mono);font-size:.82rem;color:var(--safety);font-style:normal;}
+
+  footer.site{background:var(--navy-950);color:rgba(220,233,242,.85);padding-block:2.2rem;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.2rem;align-items:center;padding-block:.6rem;}
+  .foot-grid .brand{color:#fff;}
+  .foot-grid .brand .valve-icon{color:var(--safety);}
+  .foot-grid .brand-text small{color:var(--safety);}
+  .foot-note{font-size:.8rem;line-height:1.6;max-width:70ch;padding-top:.8rem;border-top:1px solid rgba(220,233,242,.15);margin-top:.4rem;}
+  .foot-links{display:flex;gap:1.4rem;font-size:.85rem;}
+  .foot-links a{text-decoration:none;opacity:.85;color:rgba(220,233,242,.9);}
+  .foot-links a:hover{text-decoration:underline;opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · <strong>keine offizielle Website von baufranz-technic</strong> · keine Verbindung zum Unternehmen</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <svg class="valve-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><line x1="50" y1="12" x2="50" y2="50"/><line x1="12" y1="50" x2="88" y2="50"/><line x1="50" y1="50" x2="68" y2="32"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/></svg>
+      <span class="brand-text"><strong>baufranz-technic</strong><small>Wasserabsperr- &amp; Entleerungssystem</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Menü öffnen">☰</button>
+    <nav class="links" id="mainNav">
+      <a href="index.html">Willkommen!</a>
+      <a href="das-problem.html" class="active" aria-current="page">Das Problem!</a>
+      <a href="unsere-loesung.html">Unsere Lösung!</a>
+      <a href="technik-und-info.html">Technik und Info</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="kontakt.html">Kontakt aufnehmen</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero blueprint-bg">
+    <div class="wrap">
+      <span class="tech-label"><svg viewBox="0 0 40 10" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="0" y1="5" x2="40" y2="5"/><line x1="0" y1="1" x2="0" y2="9"/><line x1="40" y1="1" x2="40" y2="9"/></svg>Das Problem</span>
+      <h1>Jeden Winter dasselbe: in den Schacht klettern</h1>
+      <p>Die Wasserleitung in Ihrem Garten muss während der Wintermonate wegen Frost abgedreht und entleert werden — steht sie in einem Schacht, führt bisher kein Weg am Hinabsteigen vorbei.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap problem-grid">
+      <div class="diagram-frame">
+        <span class="fig-label">ABB. 2 — IST-ZUSTAND</span>
+        <svg viewBox="0 0 340 420" width="100%">
+          <g stroke="#54636c" stroke-width="1" opacity=".7">
+            <line x1="0" y1="12" x2="14" y2="0"/><line x1="0" y1="26" x2="28" y2="0"/><line x1="0" y1="40" x2="42" y2="0"/>
+            <line x1="298" y1="60" x2="326" y2="32"/><line x1="312" y1="60" x2="340" y2="32"/><line x1="326" y1="60" x2="340" y2="46"/>
+          </g>
+          <g stroke="#2e6f9e" stroke-width="1.6" fill="none" opacity=".6">
+            <path d="M30 18 L30 30 M24 24 L36 24 M25.5 19.5 L34.5 28.5 M34.5 19.5 L25.5 28.5"/>
+            <path d="M305 26 L305 38 M299 32 L311 32 M300.5 27.5 L309.5 36.5 M309.5 27.5 L300.5 36.5"/>
+          </g>
+          <line x1="0" y1="60" x2="340" y2="60" stroke="#1c2430" stroke-width="2"/>
+          <ellipse cx="55" cy="42" rx="30" ry="9" fill="#1d4e73" transform="rotate(-18 55 42)"/>
+          <line x1="90" y1="60" x2="90" y2="380" stroke="#1c2430" stroke-width="2"/>
+          <line x1="250" y1="60" x2="250" y2="380" stroke="#1c2430" stroke-width="2"/>
+          <line x1="90" y1="380" x2="250" y2="380" stroke="#1c2430" stroke-width="2"/>
+          <g stroke="#4c5a66" stroke-width="4" stroke-linecap="round">
+            <line x1="150" y1="66" x2="150" y2="368"/>
+            <line x1="190" y1="66" x2="190" y2="368"/>
+          </g>
+          <g stroke="#4c5a66" stroke-width="3">
+            <line x1="150" y1="90" x2="190" y2="90"/>
+            <line x1="150" y1="130" x2="190" y2="130"/>
+            <line x1="150" y1="170" x2="190" y2="170"/>
+            <line x1="150" y1="210" x2="190" y2="210"/>
+            <line x1="150" y1="250" x2="190" y2="250"/>
+            <line x1="150" y1="290" x2="190" y2="290"/>
+            <line x1="150" y1="330" x2="190" y2="330"/>
+          </g>
+          <g stroke="#1c2430" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="170" cy="150" r="12" fill="#e8871e" stroke="none"/>
+            <line x1="170" y1="162" x2="170" y2="200"/>
+            <line x1="170" y1="200" x2="155" y2="215"/>
+            <line x1="170" y1="200" x2="185" y2="215"/>
+            <line x1="170" y1="185" x2="150" y2="175"/>
+            <line x1="170" y1="185" x2="192" y2="200"/>
+          </g>
+          <line x1="90" y1="350" x2="250" y2="350" stroke="#1c2430" stroke-width="6"/>
+          <circle cx="170" cy="350" r="10" fill="#dce9f2" stroke="#1d4e73" stroke-width="3"/>
+        </svg>
+      </div>
+      <div>
+        <h2 style="font-size:1.6rem;color:var(--navy-950);">Die bisherige Prozedur</h2>
+        <ul class="problem-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M4 8l8-6 8 6M4 16l8 6 8-6"/></svg>
+            <span>In den Schacht klettern, um überhaupt an die Armaturen zu gelangen.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <span>Das Absperrventil für die Gartenleitung von Hand abdrehen.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z"/></svg>
+            <span>Das kleine Hähnchen zur Entleerung der Leitung separat aufdrehen.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8V6a5 5 0 00-10 0v2M5 8h14v13H5z"/></svg>
+            <span>Und das Ganze im Frühling wieder in umgekehrter Reihenfolge.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="wrap">
+      <blockquote>„Sie müssen nie wieder in den Schacht steigen, um das Wasser abzudrehen, aufzudrehen oder die Leitung zu entleeren.“</blockquote>
+      <cite>— baufranz-technic</cite>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <a class="brand" href="index.html">
+      <svg class="valve-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><line x1="50" y1="12" x2="50" y2="50"/><line x1="12" y1="50" x2="88" y2="50"/><line x1="50" y1="50" x2="68" y2="32"/><circle cx="50" cy="50" r="7" fill="currentColor" stroke="none"/></svg>
+      <span class="brand-text"><strong>baufranz-technic</strong><small>Wasserabsperr- &amp; Entleerungssystem</small></span>
+    </a>
+    <nav class="foot-links" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="foot-note">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von baufranz-technic · keine Verbindung zum Unternehmen.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+</body>
+</html>

@@ -838,5 +838,15 @@
   "location": "Weißkirchen in Steiermark, Steiermark",
   "description": "Familiengeführte Tischlerei und Holzmarkt im Murtal, ansässig im ehemaligen Betrieb der Tischlerei Zechner. Massivmöbelbau (Eiche, Zirbe,…",
   "oldWebsite": "http://www.tischlerei-genger.at/"
+ },
+ {
+  "num": 85,
+  "slug": "85-baufranz-technic",
+  "name": "baufranz-technic",
+  "category": "Haustechnik / Erfindung",
+  "region": "Wien",
+  "location": "Großraum Wien, Wien",
+  "description": "Patentierte Wasserabsperr- und Entleerungsverlängerung für die Gartenwasserleitung: Absperren, Entleeren und Aufdrehen direkt beim Schachtdeckel, ohne in den Schacht steigen zu…",
+  "oldWebsite": "http://www.baufranz-technic.com"
  }
 ]
