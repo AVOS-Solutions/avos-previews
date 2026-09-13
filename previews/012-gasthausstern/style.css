@@ -1,0 +1,219 @@
+/* Gasthaus Stern, Braunhubergasse 6, 1110 Wien
+   Gestaltungs-Vorschau AVOS Solutions
+   Motiv: "Sternbild" — typografisch geführt, ohne Fotomaterial:
+   Nachtblau, Messinglinien, Sternsignet, Medaillons und gesetzte Karten */
+
+:root{
+  --nacht:#0f1317;
+  --tinte:#1b232b;
+  --messing:#c19a52;
+  --messing-hell:#ddbd7c;
+  --bone:#f4f0e7;
+  --bone-2:#e9e2d4;
+  --bordeaux:#7b2f33;
+  --muted:#5a6067;
+  --line:rgba(15,19,23,.16);
+  --line-light:rgba(244,240,231,.24);
+  --maxw:1100px;
+  --display:"Cormorant Garamond","Hoefler Text",Garamond,Georgia,serif;
+  --body:"Jost","Futura","Segoe UI",Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bone);color:var(--nacht);
+  font-family:var(--body);font-size:clamp(1rem,.96rem + .22vw,1.08rem);line-height:1.72;
+  font-weight:400;overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--bordeaux);text-underline-offset:3px}
+a:hover{color:var(--nacht)}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.15;margin:0 0 .5em;letter-spacing:.005em}
+h1{font-size:clamp(2.3rem,1.5rem + 3.6vw,4.4rem);font-weight:300}
+h2{font-size:clamp(1.7rem,1.3rem + 1.9vw,2.8rem);font-weight:300}
+h3{font-size:clamp(1.15rem,1.05rem + .5vw,1.45rem);font-weight:600}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.15em}
+li{margin-bottom:.4em}
+:focus-visible{outline:2px solid var(--messing);outline-offset:4px}
+
+.skip{position:absolute;left:-9999px;background:var(--nacht);color:var(--bone);padding:.7rem 1rem;z-index:99}
+.skip:focus{left:.5rem;top:.5rem}
+
+.wrap{width:min(100% - 2rem,var(--maxw));margin-inline:auto}
+.narrow{width:min(100% - 2rem,52rem);margin-inline:auto}
+section{padding-block:clamp(2.8rem,2rem + 3.2vw,5rem)}
+.bg-bone{background:var(--bone)}
+.bg-bone2{background:var(--bone-2)}
+.bg-night{background:var(--nacht);color:var(--bone)}
+.bg-ink{background:var(--tinte);color:var(--bone)}
+.bg-night h1,.bg-night h2,.bg-night h3,.bg-ink h1,.bg-ink h2,.bg-ink h3{color:#fff}
+.bg-night a,.bg-ink a{color:var(--messing-hell)}
+
+/* Sternfeld als Hintergrundtextur (rein CSS) */
+.starfield{
+  background-color:var(--nacht);
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 22%,rgba(224,201,142,.55),transparent),
+    radial-gradient(1.3px 1.3px at 28% 68%,rgba(224,201,142,.4),transparent),
+    radial-gradient(1.8px 1.8px at 47% 14%,rgba(224,201,142,.5),transparent),
+    radial-gradient(1.2px 1.2px at 63% 54%,rgba(224,201,142,.42),transparent),
+    radial-gradient(2px 2px at 78% 28%,rgba(224,201,142,.55),transparent),
+    radial-gradient(1.4px 1.4px at 88% 72%,rgba(224,201,142,.38),transparent),
+    radial-gradient(1.2px 1.2px at 36% 88%,rgba(224,201,142,.35),transparent),
+    radial-gradient(1600px 700px at 50% -10%,rgba(193,154,82,.18),transparent 70%);
+}
+
+/* Kopf */
+.preview-bar{background:#000;color:#ded4bd;font-size:.76rem;letter-spacing:.03em;text-align:center;padding:.55rem 1rem;margin:0}
+.preview-bar strong{color:var(--messing)}
+.site-head{background:var(--nacht);color:var(--bone);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(193,154,82,.45)}
+.head-inner{display:flex;align-items:center;gap:1rem;padding-block:.7rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--bone);margin-right:auto}
+.brand svg{width:34px;height:34px;flex:none}
+.brand-name{font-family:var(--display);font-size:1.5rem;font-weight:500;line-height:1;display:block;letter-spacing:.12em;text-transform:uppercase}
+.brand-sub{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--messing)}
+.nav-toggle{background:transparent;border:1px solid var(--messing);color:var(--messing);padding:.45rem .9rem;
+  font:inherit;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+#nav{display:none;width:100%;order:3}
+#nav.open{display:block}
+#nav ul{list-style:none;margin:0 0 .6rem;padding:0}
+#nav a{display:block;padding:.55rem 0;border-bottom:1px solid rgba(244,240,231,.14);color:var(--bone);
+  text-decoration:none;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
+#nav a[aria-current="page"]{color:var(--messing)}
+.head-cta{display:none}
+@media (min-width:64rem){
+  .nav-toggle{display:none}
+  #nav{display:block;width:auto;order:0}
+  #nav ul{display:flex;gap:1.4rem;margin:0}
+  #nav a{border:0;padding:.2rem 0;font-size:.7rem}
+  #nav a:hover{color:var(--messing)}
+  .head-cta{display:inline-flex}
+}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1.6rem;border:1px solid var(--messing);
+  font-family:var(--body);font-size:.74rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;background:transparent;color:var(--nacht);transition:background .2s,color .2s}
+.btn:hover{background:var(--messing);color:var(--nacht)}
+.btn-solid{background:var(--messing);color:var(--nacht)}
+.btn-solid:hover{background:var(--nacht);color:var(--messing)}
+.bg-night .btn,.bg-ink .btn{color:var(--bone)}
+.bg-night .btn:hover,.bg-ink .btn:hover{color:var(--nacht)}
+.bg-night .btn-solid,.bg-ink .btn-solid{color:var(--nacht)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.8rem}
+
+/* Sterntrenner */
+.star-rule{display:flex;align-items:center;gap:1rem;justify-content:center;color:var(--messing);margin:0 0 1.6rem}
+.star-rule::before,.star-rule::after{content:"";height:1px;background:currentColor;flex:1;max-width:10rem;opacity:.6}
+.star-rule span{font-size:1rem;letter-spacing:.4em}
+.eyebrow{display:block;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:1rem;font-weight:500}
+.bg-night .eyebrow,.bg-ink .eyebrow{color:var(--messing)}
+.center{text-align:center}
+.center .btn-row{justify-content:center}
+.center .star-rule{justify-content:center}
+.lead{font-size:clamp(1.05rem,1rem + .4vw,1.24rem);max-width:44rem}
+.center .lead{margin-inline:auto}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:var(--bone);text-align:center}
+.hero-inner{padding-block:clamp(3.4rem,2rem + 8vw,7.6rem);position:relative}
+.hero h1{letter-spacing:.02em}
+.hero .hero-star{width:56px;height:56px;margin:0 auto 1.4rem;display:block;color:var(--messing)}
+.hero-hours{display:inline-flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:center;margin-top:2rem;
+  border-top:1px solid var(--line-light);border-bottom:1px solid var(--line-light);padding:.9rem 0;
+  font-size:.82rem;letter-spacing:.12em;text-transform:uppercase}
+
+/* Raster */
+.grid{display:grid;gap:1.6rem}
+.cols-2{grid-template-columns:1fr}
+.cols-3{grid-template-columns:1fr}
+.cols-4{grid-template-columns:repeat(2,1fr)}
+@media (min-width:46rem){.cols-2{grid-template-columns:1fr 1fr}.cols-3{grid-template-columns:1fr 1fr}}
+@media (min-width:62rem){.cols-3{grid-template-columns:repeat(3,1fr)}.cols-4{grid-template-columns:repeat(4,1fr)}}
+.split{display:grid;gap:2rem;align-items:center}
+@media (min-width:54rem){.split{grid-template-columns:1fr 1fr;gap:3.4rem}.split.rev>*:first-child{order:2}}
+
+/* Rahmenkarten */
+.frame{border:1px solid var(--line);padding:1.8rem 1.6rem;background:rgba(255,255,255,.5);position:relative}
+.bg-night .frame,.bg-ink .frame{border-color:rgba(193,154,82,.4);background:rgba(255,255,255,.04)}
+.frame h3{margin-top:0}
+.frame-gold{border:1px solid var(--messing);padding:2rem 1.6rem;text-align:center}
+
+/* Medaillons */
+.medal{width:104px;height:104px;border-radius:50%;border:1px solid var(--messing);display:grid;place-items:center;
+  margin:0 auto 1rem;background:radial-gradient(circle at 50% 30%,rgba(193,154,82,.2),transparent 70%);text-align:center}
+.medal b{font-family:var(--display);font-size:1.65rem;font-weight:600;line-height:1;display:block}
+.medal small{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--messing)}
+
+/* Teller / Raumgrafik */
+.plate{aspect-ratio:1;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 50% 40%,#fff 0 52%,rgba(193,154,82,.16) 53% 56%,#fff 57% 100%);padding:1rem}
+.bg-night .plate,.bg-ink .plate{border-color:rgba(193,154,82,.45);
+  background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.07) 0 52%,rgba(193,154,82,.3) 53% 56%,rgba(255,255,255,.04) 57% 100%)}
+.plate .n{font-family:var(--display);font-size:2.5rem;line-height:1;display:block}
+.plate .t{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.bg-night .plate .t,.bg-ink .plate .t{color:var(--messing)}
+
+/* Karten-/Listen-Typografie */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:flex;justify-content:space-between;gap:1.2rem;align-items:baseline;padding:.7rem 0;
+  border-bottom:1px solid var(--line);margin:0}
+.bg-night .rows li,.bg-ink .rows li{border-color:rgba(244,240,231,.16)}
+.rows .v{font-family:var(--display);font-size:1.08rem;white-space:nowrap;color:var(--bordeaux)}
+.bg-night .rows .v,.bg-ink .rows .v{color:var(--messing-hell)}
+.tick{list-style:none;padding:0;margin:0}
+.tick li{padding-left:1.6rem;position:relative;margin-bottom:.6rem}
+.tick li::before{content:"\2733";position:absolute;left:0;top:.05em;color:var(--messing);font-size:.85rem}
+
+.note{border-left:2px solid var(--messing);padding:1rem 1.3rem;background:rgba(193,154,82,.09);font-size:.96rem}
+.quote{margin:0;border-top:1px solid var(--messing);border-bottom:1px solid var(--messing);padding:1.4rem 0;text-align:center}
+.quote p{font-family:var(--display);font-size:clamp(1.2rem,1.05rem + .8vw,1.7rem);font-weight:300;margin-bottom:.4rem}
+.quote footer{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.bg-night .quote footer,.bg-ink .quote footer{color:var(--messing)}
+
+/* Formulare */
+.form-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:44rem){.form-grid{grid-template-columns:1fr 1fr}.form-grid .full{grid-column:1 / -1}}
+label{display:block;font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.bg-night label,.bg-ink label{color:var(--messing)}
+input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:.7rem .2rem;border:0;border-bottom:1px solid var(--line);
+  background:transparent;color:inherit;border-radius:0}
+.bg-night input,.bg-night select,.bg-night textarea,.bg-ink input,.bg-ink select,.bg-ink textarea{
+  border-bottom-color:rgba(244,240,231,.35);color:var(--bone)}
+.bg-night option,.bg-ink option{color:#111}
+textarea{min-height:7rem;resize:vertical}
+fieldset{border:0;border-top:1px solid var(--line);padding:1.4rem 0 0;margin:0 0 2rem}
+.bg-night fieldset,.bg-ink fieldset{border-top-color:rgba(193,154,82,.4)}
+legend{font-family:var(--display);font-size:1.3rem;padding-right:1rem}
+.hint{font-size:.86rem;color:var(--muted)}
+.bg-night .hint,.bg-ink .hint{color:#bcb6a8}
+.form-note{border:1px solid var(--messing);padding:.95rem 1.2rem;margin-top:1.2rem;background:rgba(193,154,82,.12)}
+.check{display:flex;gap:.7rem;align-items:flex-start}
+.check input{width:auto;margin-top:.45rem}
+.check label{text-transform:none;letter-spacing:0;font-size:.9rem;color:inherit}
+
+details{border-bottom:1px solid var(--line);padding:.2rem 0}
+summary{cursor:pointer;font-family:var(--display);font-size:1.15rem;padding:.85rem 0}
+details[open] summary{color:var(--bordeaux)}
+
+.map{border:1px solid var(--line);padding:.9rem;background:#fff}
+.map svg{width:100%;height:auto;display:block}
+.table-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:20rem}
+th,td{padding:.7rem .8rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* Footer */
+.site-foot{background:var(--nacht);color:#c9c3b6;padding-block:3rem 1.6rem;font-size:.92rem}
+.site-foot h3{color:#fff;font-size:1.2rem}
+.site-foot a{color:var(--messing-hell)}
+.foot-grid{display:grid;gap:1.8rem;grid-template-columns:1fr}
+@media (min-width:48rem){.foot-grid{grid-template-columns:repeat(3,1fr)}}
+.foot-list{list-style:none;margin:0;padding:0}
+.foot-list a{text-decoration:none}
+.foot-list a:hover{text-decoration:underline}
+.foot-bottom{border-top:1px solid rgba(193,154,82,.35);margin-top:2rem;padding-top:1.1rem;font-size:.78rem;color:#8e887c}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.mt{margin-top:1.8rem}

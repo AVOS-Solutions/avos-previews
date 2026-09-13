@@ -1,0 +1,220 @@
+/* KFZ-Werkstätte Walter Flath GmbH · Vorschau-Design "Werkstatt-Raster"
+   Palette: Graphit #14181d · Stahl #2a313a · Signalorange #ff6a13 · Sand #f4f2ee
+   Schriften: Barlow Condensed (Display) + Inter (Text) */
+:root{
+  --ink:#14181d; --ink2:#1b2127; --steel:#2a313a; --steel-l:#4b5663;
+  --sig:#ff6a13; --sig-d:#c44b00; --sand:#f4f2ee; --paper:#fffdfa;
+  --line:#d6d1c8; --line-d:#39424c; --txt:#20262d; --muted:#5c6773;
+  --w:76rem; --pad:clamp(1rem,4vw,2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--txt);
+  font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:clamp(1rem,.96rem + .2vw,1.06rem);
+  line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4,.display{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  font-weight:700;line-height:1.02;letter-spacing:.005em;text-transform:uppercase;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,1.4rem + 5vw,4.6rem)}
+h2{font-size:clamp(1.8rem,1.2rem + 2.6vw,3rem)}
+h3{font-size:clamp(1.15rem,1rem + .8vw,1.5rem)}
+p,ul,ol,dl,table{margin:0 0 1.1em}
+a{color:var(--sig-d);text-decoration-thickness:.08em;text-underline-offset:.18em}
+a:hover{color:var(--ink)}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--sig);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--sig);color:#14181d;
+  font-weight:700;padding:.7rem 1.1rem}
+.skip:focus{left:.5rem;top:.5rem}
+.wrap{width:min(var(--w),100% - 2*var(--pad));margin-inline:auto}
+.plain{list-style:none;padding:0}
+.plain li{margin-bottom:.3rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.previewbar{margin:0;background:#0d1014;color:#cfd6de;font-size:.76rem;letter-spacing:.02em;
+  padding:.5rem var(--pad);text-align:center;border-bottom:1px solid #222a33}
+.previewbar__dot{display:inline-block;width:.5rem;height:.5rem;background:var(--sig);
+  border-radius:50%;margin-right:.5rem;vertical-align:.05em}
+
+/* ---------- Kopf ---------- */
+.site{position:sticky;top:0;z-index:40;background:var(--ink);color:var(--sand);
+  border-bottom:2px solid var(--sig)}
+.site__in{display:flex;align-items:center;gap:1rem;min-height:4.4rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.55rem;color:inherit;text-decoration:none;margin-right:auto;padding:.6rem 0}
+.brand__mark{font-family:"Barlow Condensed",Arial,sans-serif;font-size:2.4rem;color:var(--sig);line-height:1}
+.brand__txt b{font-family:"Barlow Condensed",Arial,sans-serif;font-size:1.75rem;letter-spacing:.1em;display:block;line-height:1}
+.brand__txt small{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:#9aa6b3}
+.navtoggle{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--sand);
+  border:1px solid var(--steel-l);font:600 .85rem/1 Inter,Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.12em;padding:.65rem .9rem;cursor:pointer}
+.navtoggle__bars{width:1.1rem;height:.7rem;border-top:2px solid var(--sig);border-bottom:2px solid var(--sig);
+  position:relative}
+.navtoggle__bars::after{content:"";position:absolute;inset:.25rem 0 auto;border-top:2px solid var(--sig)}
+.nav{display:none;width:100%;padding-bottom:1rem}
+.nav.is-open{display:block}
+.nav ul{list-style:none;margin:0 0 .8rem;padding:0;border-top:1px solid var(--line-d)}
+.nav a{display:block;color:var(--sand);text-decoration:none;font-family:"Barlow Condensed",Arial,sans-serif;
+  font-size:1.2rem;text-transform:uppercase;letter-spacing:.08em;padding:.6rem 0;border-bottom:1px solid var(--line-d)}
+.nav a:hover,.nav a.is-active{color:var(--sig)}
+.nav__cta{display:inline-block}
+@media (min-width:60rem){
+  .navtoggle{display:none}
+  .nav{display:flex;align-items:center;gap:1.4rem;width:auto;padding:0}
+  .nav ul{display:flex;gap:1.25rem;margin:0;border:0}
+  .nav a{border:0;padding:.2rem 0;font-size:1.05rem;position:relative}
+  .nav a.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-.35rem;height:2px;background:var(--sig)}
+}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;font:700 .92rem/1 Inter,Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.1em;padding:.95rem 1.5rem;text-decoration:none;border:2px solid transparent;
+  transition:transform .12s ease,background .15s ease,color .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn--sig{background:var(--sig);color:#14181d;border-color:var(--sig)}
+.btn--sig:hover{background:#ff7f33;color:#14181d}
+.btn--ghost{border-color:currentColor;color:inherit}
+.btn--dark{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+.btn--dark:hover{color:var(--sig)}
+.btnrow{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.6rem 0 0}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--ink);color:var(--sand);position:relative;overflow:hidden;
+  padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.hero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:2.6rem 2.6rem;mask-image:radial-gradient(120% 90% at 80% 10%,#000 35%,transparent 75%)}
+.hero::after{content:"";position:absolute;right:-12%;top:-30%;width:44rem;height:44rem;
+  background:radial-gradient(circle,rgba(255,106,19,.22),transparent 62%)}
+.hero__in{position:relative;z-index:1;max-width:46rem}
+.kicker{font:600 .78rem/1 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.26em;
+  color:var(--sig);margin:0 0 1.1rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:"";width:2.4rem;height:2px;background:var(--sig)}
+.hero h1{margin-bottom:.35em}
+.hero h1 em{font-style:normal;color:var(--sig)}
+.hero__lead{font-size:clamp(1.05rem,1rem + .5vw,1.3rem);color:#cfd6de;max-width:38rem}
+.hero__facts{position:relative;z-index:1;display:grid;gap:1px;background:var(--line-d);
+  grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));margin-top:clamp(2.5rem,6vw,4rem);border:1px solid var(--line-d)}
+.hero__facts div{background:var(--ink2);padding:1.1rem 1.2rem}
+.hero__facts b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:1.9rem;color:var(--sig);line-height:1}
+.hero__facts span{font-size:.82rem;color:#9aa6b3;text-transform:uppercase;letter-spacing:.1em}
+
+/* ---------- Signal-Band ---------- */
+.band{background:var(--sig);color:#14181d}
+.band__in{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;padding:1.1rem 0}
+.band p{margin:0;font-weight:700}
+.band .btn--dark{margin-left:auto}
+.stripes{height:.85rem;background:repeating-linear-gradient(135deg,var(--sig) 0 1.1rem,#14181d 1.1rem 2.2rem)}
+
+/* ---------- Abschnitte ---------- */
+.sec{padding:clamp(3rem,7vw,5.5rem) 0}
+.sec--paper{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec--dark{background:var(--ink);color:var(--sand)}
+.sec--dark a{color:var(--sig)}
+.sec__head{max-width:44rem;margin-bottom:clamp(1.8rem,4vw,3rem)}
+.sec__head p{color:var(--muted);font-size:1.05rem}
+.sec--dark .sec__head p{color:#aab4be}
+.lead{font-size:clamp(1.05rem,1rem + .4vw,1.2rem)}
+
+/* ---------- Karten-Raster ---------- */
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr))}
+.card{background:var(--paper);border:2px solid var(--ink);padding:1.5rem 1.4rem;position:relative;
+  transition:transform .14s ease,box-shadow .14s ease}
+.card:hover{transform:translateY(-3px);box-shadow:8px 8px 0 rgba(20,24,29,.14)}
+.card__no{font-family:"Barlow Condensed",Arial,sans-serif;font-size:.95rem;letter-spacing:.2em;
+  color:var(--sig-d);display:block;margin-bottom:.4rem}
+.card h3{margin-bottom:.4rem}
+.card p:last-child{margin-bottom:0}
+.card ul{padding-left:1.1rem;margin-bottom:0}
+.card li{margin-bottom:.25rem}
+.card--sig{background:var(--sig);border-color:var(--sig)}
+.card--sig h3,.card--sig p{color:#14181d}
+.sec--dark .card{background:var(--ink2);border-color:var(--line-d);color:var(--sand)}
+.sec--dark .card__no{color:var(--sig)}
+
+/* ---------- Zweispalter ---------- */
+.split{display:grid;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+@media (min-width:52rem){.split{grid-template-columns:1.15fr .85fr}
+  .split--even{grid-template-columns:1fr 1fr}}
+.panel{border:2px solid var(--ink);background:var(--paper);padding:clamp(1.3rem,3vw,2rem)}
+.panel--dark{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+.panel--dark a{color:var(--sig)}
+.panel h3:first-child,.panel h2:first-child{margin-top:0}
+
+/* ---------- Listen / Daten ---------- */
+.speclist{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.speclist li{display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between;
+  padding:.75rem 0;border-bottom:1px solid var(--line)}
+.speclist b{font-weight:700}
+.speclist span{color:var(--muted)}
+.sec--dark .speclist,.sec--dark .speclist li{border-color:var(--line-d)}
+.sec--dark .speclist span,.panel--dark .speclist span{color:#aab4be}
+.ticks{list-style:none;padding:0}
+.ticks li{position:relative;padding-left:1.9rem;margin-bottom:.55rem}
+.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:1.05rem;height:.5rem;
+  border-left:2px solid var(--sig);border-bottom:2px solid var(--sig);transform:rotate(-45deg)}
+.tag{display:inline-block;font:700 .72rem/1 Inter,Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.14em;background:var(--ink);color:var(--sig);padding:.4rem .7rem;margin:0 .4rem .4rem 0}
+
+/* ---------- Pickerl-Plakette ---------- */
+.plaque{display:grid;place-items:center;gap:1rem;text-align:center}
+.plaque svg{width:min(15rem,60vw);height:auto}
+
+/* ---------- Akkordeon ---------- */
+.acc{border-top:2px solid var(--ink)}
+.acc__item{border-bottom:1px solid var(--line)}
+.acc h3{margin:0;font-size:1rem}
+.acc__q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:none;border:0;cursor:pointer;text-align:left;padding:1.05rem .2rem;
+  font:700 1.12rem/1.3 "Barlow Condensed",Arial,sans-serif;text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.acc__q:hover{color:var(--sig-d)}
+.acc__q i{width:1rem;height:1rem;border-right:2px solid var(--sig);border-bottom:2px solid var(--sig);
+  transform:rotate(45deg);flex:none;margin-bottom:.35rem;transition:transform .15s ease}
+.acc__q[aria-expanded="true"] i{transform:rotate(-135deg);margin:.35rem 0 0}
+.acc__a{padding:0 .2rem 1.1rem;max-width:52rem}
+.acc__a p{margin:0}
+
+/* ---------- Formular ---------- */
+.form{display:grid;gap:1rem}
+@media (min-width:40rem){.form__row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}}
+.field label{display:block;font:600 .78rem/1 Inter,Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.12em;margin-bottom:.4rem;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;font:inherit;color:var(--txt);background:#fff;
+  border:2px solid var(--ink);padding:.75rem .8rem;border-radius:0}
+.field textarea{min-height:8.5rem;resize:vertical}
+.field--check{display:flex;gap:.6rem;align-items:flex-start}
+.field--check input{width:auto;margin-top:.3rem}
+.field--check label{text-transform:none;letter-spacing:0;font-size:.9rem;font-weight:400;line-height:1.5}
+.hint{font-size:.85rem;color:var(--muted);margin:.2rem 0 0}
+.formnote{border-left:4px solid var(--sig);background:#fff4ec;padding:1rem 1.1rem;margin:0}
+.formnote b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:1.2rem;text-transform:uppercase}
+
+/* ---------- Karte (SVG) ---------- */
+.map{border:2px solid var(--ink);background:#eae6df}
+.map svg{width:100%;height:auto;display:block}
+
+/* ---------- Zitat / Bewertung ---------- */
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.4rem;border:2px solid var(--sig);
+  padding:1.1rem 1.3rem;background:var(--paper)}
+.rating__score{font-family:"Barlow Condensed",Arial,sans-serif;font-size:2.6rem;line-height:1;color:var(--ink)}
+.rating p{margin:0}
+.sec--dark .rating{background:var(--ink2);color:var(--sand)}
+.sec--dark .rating__score{color:var(--sig)}
+
+/* ---------- Fuß ---------- */
+.foot{background:var(--ink);color:#c3cbd4;font-size:.93rem;padding:clamp(2.5rem,6vw,4rem) 0 1.5rem;
+  border-top:.85rem solid var(--sig);
+  border-image:repeating-linear-gradient(135deg,var(--sig) 0 1.1rem,#14181d 1.1rem 2.2rem) 14}
+.foot a{color:#e7ebef;text-decoration:none}
+.foot a:hover{color:var(--sig);text-decoration:underline}
+.foot h2{font-size:1.05rem;color:var(--sand);letter-spacing:.1em}
+.foot__grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr))}
+.foot__logo{font-family:"Barlow Condensed",Arial,sans-serif;font-size:2rem;letter-spacing:.12em;
+  color:var(--sand);margin:0 0 .6rem}
+.foot__logo span{color:var(--sig)}
+.foot__hours b{color:var(--sand)}
+.foot__hours span{color:#8d99a5}
+.foot__note{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--line-d)}
+.foot__note p{font-size:.8rem;color:#8d99a5;margin:0;max-width:62rem}
+.muster{background:#fff4ec;border:2px solid var(--sig);padding:1rem 1.2rem;margin:0 0 2rem}
+.muster p{margin:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

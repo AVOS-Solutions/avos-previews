@@ -1,0 +1,492 @@
+/* ===========================================================
+   Gasthof & Weingut Palz, Klöch — Gestaltungs-Vorschau
+   Motiv: "Weinlaube" — Rebzeilen-Raster, Goldhaarlinien,
+   Editorial-Satz in Marcellus über warmem Kalkweiß.
+   =========================================================== */
+
+:root {
+  --wine: #5a1b2e;
+  --wine-deep: #38101e;
+  --wine-soft: #8a4055;
+  --gold: #b3853c;
+  --gold-light: #d8b878;
+  --leaf: #5e7048;
+  --cream: #fbf5ec;
+  --cream-dark: #f2e8d9;
+  --paper: #ffffff;
+  --ink: #241a1c;
+  --ink-soft: #574a4d;
+  --line: #e0d2bd;
+
+  --serif: "Marcellus", "Hoefler Text", "Times New Roman", Georgia, serif;
+  --sans: "Source Sans 3", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --wrap: 1140px;
+  --gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+  line-height: 1.68;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+  margin: 0 0 0.5em;
+  color: var(--wine-deep);
+}
+
+h1 { font-size: clamp(2.3rem, 1.5rem + 3.6vw, 4.3rem); }
+h2 { font-size: clamp(1.7rem, 1.25rem + 2vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem); }
+h4 { font-size: 1.08rem; }
+
+p { margin: 0 0 1.05em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--wine); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--gold); }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* --- Hilfsklassen ---------------------------------------- */
+
+.wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
+.wrap-narrow { width: min(100% - 2rem, 760px); margin-inline: auto; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold-light), transparent);
+}
+
+.lede { font-size: clamp(1.08rem, 1rem + 0.5vw, 1.3rem); color: var(--ink-soft); }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; z-index: 999;
+  background: var(--wine); color: #fff; padding: 0.75rem 1.25rem;
+  font-weight: 700;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+/* --- Vorschau-Leiste -------------------------------------- */
+
+.preview-bar {
+  background: var(--wine-deep);
+  color: #f0dcc6;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  padding: 0.55rem 1rem;
+  text-align: center;
+}
+.preview-bar strong { color: var(--gold-light); font-weight: 600; }
+
+/* --- Kopfzeile / Navigation ------------------------------- */
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(251, 245, 236, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem; padding: 0.7rem 0;
+}
+
+.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.brand-mark {
+  width: 42px; height: 42px; flex: none;
+  border: 1px solid var(--gold);
+  display: grid; place-items: center;
+  font-family: var(--serif); font-size: 1.3rem; color: var(--wine);
+  background: var(--paper);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name {
+  font-family: var(--serif); font-size: 1.32rem; color: var(--wine-deep);
+  letter-spacing: 0.1em;
+}
+.brand-sub {
+  font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-toggle {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--wine); color: #fff; border: 0;
+  font: inherit; font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.6rem 0.95rem; cursor: pointer;
+}
+.nav-toggle:hover { background: var(--wine-deep); }
+
+.nav { display: none; flex-basis: 100%; }
+.nav.is-open { display: block; }
+.nav ul {
+  list-style: none; margin: 0; padding: 0 0 0.8rem;
+  display: flex; flex-direction: column; gap: 0.1rem;
+}
+.nav a {
+  display: block; padding: 0.62rem 0.2rem;
+  font-size: 0.92rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; text-decoration: none;
+  color: var(--ink); border-bottom: 1px solid var(--line);
+}
+.nav a:hover, .nav a[aria-current="page"] { color: var(--wine); }
+.nav a[aria-current="page"] { border-bottom-color: var(--gold); }
+
+/* --- Schaltflächen ---------------------------------------- */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: var(--sans); font-size: 0.86rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 0.95rem 1.7rem; border: 1px solid var(--wine);
+  background: var(--wine); color: #fff; text-decoration: none; cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn:hover { background: var(--wine-deep); border-color: var(--wine-deep); color: #fff; }
+
+.btn-ghost { background: transparent; color: var(--wine); }
+.btn-ghost:hover { background: var(--wine); color: #fff; }
+
+.btn-light { background: var(--gold); border-color: var(--gold); color: #21150a; }
+.btn-light:hover { background: var(--gold-light); border-color: var(--gold-light); color: #21150a; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.6rem; }
+
+/* --- Hero ------------------------------------------------- */
+
+.hero { position: relative; background: var(--wine-deep); }
+.hero-media { position: relative; }
+.hero-media img {
+  width: 100%; height: clamp(300px, 56vw, 620px); object-fit: cover;
+  object-position: center 32%; opacity: 0.85;
+}
+.hero-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(56,16,30,0.55) 0%, rgba(56,16,30,0.1) 45%, rgba(56,16,30,0.8) 100%);
+}
+.hero-body {
+  position: relative; margin-top: -5.5rem; padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.hero-card {
+  background: var(--cream); border-top: 4px solid var(--gold);
+  padding: clamp(1.6rem, 4vw, 3rem);
+  max-width: 44rem;
+  box-shadow: 0 24px 50px -30px rgba(56,16,30,0.6);
+}
+.hero-card h1 { margin-bottom: 0.4em; }
+.hero-claim {
+  font-family: var(--serif); font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.4rem);
+  color: var(--wine); margin-bottom: 1rem;
+}
+
+/* --- Rebzeilen-Band (Motiv) ------------------------------- */
+
+.vine-rule {
+  height: 26px;
+  background-image: repeating-linear-gradient(90deg, var(--gold-light) 0 1px, transparent 1px 22px);
+  opacity: 0.55;
+}
+
+/* --- Sektionen -------------------------------------------- */
+
+.section { padding: clamp(2.8rem, 6vw, 5.2rem) 0; }
+.section-tight { padding: clamp(2rem, 4vw, 3.2rem) 0; }
+.section-paper { background: var(--paper); }
+.section-cream { background: var(--cream-dark); }
+.section-wine { background: var(--wine-deep); color: #f4e6d6; }
+.section-wine h2, .section-wine h3 { color: #fff; }
+.section-wine .eyebrow { color: var(--gold-light); }
+.section-wine .lede { color: #e6d2be; }
+.section-wine a { color: var(--gold-light); }
+
+.split {
+  display: grid; gap: var(--gap); align-items: center;
+  grid-template-columns: 1fr;
+}
+.split-media img { width: 100%; object-fit: cover; }
+.split figure { margin: 0; }
+figcaption {
+  font-size: 0.8rem; color: var(--ink-soft); padding-top: 0.55rem;
+  border-top: 1px solid var(--line); margin-top: 0.55rem;
+}
+.section-wine figcaption { color: #c9b3a0; border-top-color: rgba(216,184,120,0.35); }
+
+.frame { border: 1px solid var(--gold); padding: 0.5rem; background: var(--paper); }
+
+/* --- Karten ----------------------------------------------- */
+
+.grid { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+
+.card {
+  background: var(--paper); border-top: 3px solid var(--gold);
+  padding: clamp(1.3rem, 2.5vw, 1.9rem);
+  display: flex; flex-direction: column; gap: 0.35rem;
+  box-shadow: 0 12px 30px -26px rgba(56,16,30,0.55);
+}
+.card h3 { margin-bottom: 0.35em; }
+.card-num {
+  font-family: var(--serif); font-size: 2rem; color: var(--gold-light);
+  line-height: 1; margin-bottom: 0.4rem;
+}
+.section-cream .card { background: var(--paper); }
+.section-wine .card {
+  background: rgba(255,255,255,0.05); border-top-color: var(--gold);
+  color: #eeddcb; box-shadow: none;
+}
+
+/* --- Fakten / Listen --------------------------------------- */
+
+.facts { margin: 0; }
+.facts div {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1rem;
+  padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+}
+.facts dt {
+  flex: 0 0 11rem; font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--wine);
+}
+.facts dd { margin: 0; flex: 1 1 14rem; }
+.section-wine .facts div { border-bottom-color: rgba(216,184,120,0.28); }
+.section-wine .facts dt { color: var(--gold-light); }
+
+.price-list { list-style: none; margin: 0; padding: 0; }
+.price-list li {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem;
+  padding: 0.8rem 0; border-bottom: 1px dotted var(--line);
+}
+.price-list .pl-name { font-family: var(--serif); font-size: 1.12rem; color: var(--wine-deep); }
+.price-list .pl-dots { flex: 1 1 2rem; border-bottom: 1px dotted var(--line); transform: translateY(-0.3em); min-width: 1.5rem; }
+.price-list .pl-price { font-weight: 700; color: var(--wine); white-space: nowrap; }
+.price-list .pl-note { flex-basis: 100%; font-size: 0.9rem; color: var(--ink-soft); }
+
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li { position: relative; padding: 0.32rem 0 0.32rem 1.7rem; }
+.checklist li::before {
+  content: "❧"; position: absolute; left: 0; top: 0.3rem;
+  color: var(--gold); font-size: 0.95rem;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 1.2rem 0 0; padding: 0; }
+.tags li {
+  border: 1px solid var(--line); background: var(--paper);
+  padding: 0.35rem 0.8rem; font-size: 0.8rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--wine);
+}
+
+/* --- Zeitleiste (Generationen) ---------------------------- */
+
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline::before {
+  content: ""; position: absolute; left: 9px; top: 0.6rem; bottom: 0.6rem;
+  width: 1px; background: var(--gold-light);
+}
+.timeline li { position: relative; padding: 0 0 2rem 3rem; }
+.timeline li::before {
+  content: ""; position: absolute; left: 3px; top: 0.55rem;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--cream); border: 2px solid var(--gold);
+}
+.timeline .tl-year {
+  display: block; font-family: var(--serif); font-size: 1.1rem;
+  color: var(--gold); letter-spacing: 0.12em;
+}
+.timeline h3 { margin: 0.1em 0 0.35em; }
+
+/* --- Hinweis-Box ------------------------------------------ */
+
+.notice {
+  border-left: 4px solid var(--gold);
+  background: var(--paper);
+  padding: 1.1rem 1.3rem;
+  font-size: 0.95rem;
+}
+.notice strong { color: var(--wine); }
+
+.callout {
+  background: var(--wine); color: #fff; padding: clamp(1.5rem, 4vw, 2.6rem);
+  border-top: 4px solid var(--gold);
+}
+.callout h2, .callout h3 { color: #fff; }
+.callout a { color: var(--gold-light); }
+.callout .btn-light { color: #21150a; }
+
+.phone-big {
+  font-family: var(--serif); font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.6rem);
+  color: var(--gold-light); text-decoration: none; letter-spacing: 0.04em;
+  display: inline-block; margin-top: 0.3rem;
+}
+.phone-big:hover { color: #fff; }
+
+/* --- Formulare -------------------------------------------- */
+
+.form { display: grid; gap: 1.1rem; }
+.form-row { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field label {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--wine);
+}
+.field input, .field select, .field textarea {
+  font: inherit; font-size: 1rem;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+  border-radius: 0;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--gold); outline: 2px solid var(--gold-light); outline-offset: 1px;
+}
+.field textarea { min-height: 8rem; resize: vertical; }
+.field-hint { font-size: 0.82rem; color: var(--ink-soft); }
+.check {
+  display: flex; gap: 0.6rem; align-items: flex-start;
+  font-size: 0.9rem; color: var(--ink-soft);
+}
+.check input { margin-top: 0.28rem; }
+.form-status {
+  border: 1px solid var(--gold); background: var(--cream-dark);
+  padding: 1rem 1.15rem; font-size: 0.94rem;
+}
+.form-status[hidden] { display: none; }
+
+fieldset { border: 1px solid var(--line); padding: 1.2rem; margin: 0; background: var(--paper); }
+legend {
+  font-family: var(--serif); font-size: 1.15rem; color: var(--wine);
+  padding: 0 0.5rem;
+}
+
+/* --- Weinsorten-Tabelle (Bestellung) ---------------------- */
+
+.order-line {
+  display: grid; gap: 0.6rem 1rem; grid-template-columns: 1fr;
+  padding: 0.9rem 0; border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.order-line:last-of-type { border-bottom: 0; }
+.order-line .ol-qty { max-width: 7rem; }
+
+/* --- Galerie ---------------------------------------------- */
+
+.gallery { display: grid; gap: 0.9rem; grid-template-columns: repeat(2, 1fr); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+/* --- Anfahrt / Karte -------------------------------------- */
+
+.map-card { background: var(--paper); border: 1px solid var(--line); padding: 0.9rem; }
+.route-steps { counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.route-steps li {
+  counter-increment: step; position: relative;
+  padding: 0.3rem 0 0.3rem 2.4rem; font-size: 0.95rem;
+}
+.route-steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 0.35rem;
+  width: 1.6rem; height: 1.6rem; display: grid; place-items: center;
+  border: 1px solid var(--gold); color: var(--wine); font-size: 0.78rem; font-weight: 700;
+}
+
+/* --- Akkordeon (FAQ) -------------------------------------- */
+
+details.faq {
+  background: var(--paper); border-bottom: 1px solid var(--line);
+  padding: 0.4rem 0;
+}
+details.faq summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--serif); font-size: 1.12rem; color: var(--wine-deep);
+  padding: 0.85rem 2rem 0.85rem 0.9rem; position: relative;
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after {
+  content: "+"; position: absolute; right: 0.9rem; top: 0.72rem;
+  color: var(--gold); font-size: 1.4rem; line-height: 1;
+}
+details.faq[open] summary::after { content: "–"; }
+details.faq .faq-body { padding: 0 0.9rem 1rem; font-size: 0.97rem; color: var(--ink-soft); }
+
+/* --- Fußzeile --------------------------------------------- */
+
+.site-footer {
+  background: var(--wine-deep); color: #d9c4b0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 1.5rem;
+  font-size: 0.94rem;
+}
+.site-footer h3 {
+  color: #fff; font-size: 1.05rem; letter-spacing: 0.14em;
+  text-transform: uppercase; font-family: var(--sans); font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.site-footer a { color: var(--gold-light); }
+.site-footer a:hover { color: #fff; }
+.footer-grid { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+.footer-grid ul { list-style: none; margin: 0; padding: 0; }
+.footer-grid li { padding: 0.2rem 0; }
+.footer-bottom {
+  margin-top: 2.5rem; padding-top: 1.3rem;
+  border-top: 1px solid rgba(216,184,120,0.28);
+  font-size: 0.8rem; color: #b79d8b;
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; justify-content: space-between;
+}
+
+/* --- Breakpoints ------------------------------------------ */
+
+@media (min-width: 640px) {
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+  .order-line { grid-template-columns: 1fr auto 7rem; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .nav-toggle { display: none; }
+  .nav { display: block; flex-basis: auto; }
+  .nav ul { flex-direction: row; gap: 1.4rem; padding: 0; align-items: center; }
+  .nav a { border-bottom: 2px solid transparent; padding: 0.35rem 0; font-size: 0.82rem; }
+  .nav a[aria-current="page"] { border-bottom-color: var(--gold); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .split-2 { grid-template-columns: 1fr 1fr; }
+  .split-media-wide { grid-template-columns: 1.25fr 1fr; }
+  .split-text-wide { grid-template-columns: 1fr 1.25fr; }
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+  .hero-body { margin-top: -7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
