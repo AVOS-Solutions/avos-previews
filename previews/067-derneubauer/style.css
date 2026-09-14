@@ -81,7 +81,8 @@ hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
   .nav a{border:0;padding:.45rem .7rem;font-size:.95rem}
   .nav a:hover{background:var(--petrol-soft)}
   .nav a[aria-current="page"]{box-shadow:inset 0 -3px 0 var(--signal)}
-  .hd__cta{display:inline-flex;flex:none}
+  .nav{order:2}
+  .hd__cta{display:inline-flex;flex:none;order:3;margin-left:.4rem}
 }
 
 /* ---------- Buttons ---------- */

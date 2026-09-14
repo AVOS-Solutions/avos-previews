@@ -280,3 +280,4 @@ table{max-width:100%}
 @media(min-width:1040px){.head-cta{display:inline-flex}}
 /* Hero liegt auf dunklem Grund */
 .hero .eyebrow{color:var(--gold-l)}
+.hero__crest svg{width:100%;height:auto;display:block}
