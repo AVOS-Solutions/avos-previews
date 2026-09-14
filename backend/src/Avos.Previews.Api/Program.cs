@@ -12,10 +12,17 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var dataDir = builder.Configuration["App:DataDir"] ?? Path.Combine(builder.Environment.ContentRootPath, "data");
+// appsettings.json ships these keys empty, so fall back on blank and not just on null —
+// otherwise the "zero infrastructure" local run dies on Directory.CreateDirectory("").
+var dataDir = builder.Configuration["App:DataDir"];
+if (string.IsNullOrWhiteSpace(dataDir))
+    dataDir = Path.Combine(builder.Environment.ContentRootPath, "data");
 Directory.CreateDirectory(dataDir);
-var previewsRoot = Path.GetFullPath(builder.Configuration["Previews:Root"]
-    ?? Path.Combine(builder.Environment.ContentRootPath, "..", "..", "..", "previews"));
+
+var previewsSetting = builder.Configuration["Previews:Root"];
+if (string.IsNullOrWhiteSpace(previewsSetting))
+    previewsSetting = Path.Combine(builder.Environment.ContentRootPath, "..", "..", "..", "previews");
+var previewsRoot = Path.GetFullPath(previewsSetting);
 
 // Postgres in normal operation (ERP parity); SQLite fallback when no connection string is
 // configured, so the API runs locally with zero infrastructure.
@@ -95,7 +102,25 @@ var devLoginEnabled = app.Environment.IsDevelopment()
 
 string ShareBaseUrl() => (app.Configuration["App:PublicUrl"] ?? "").TrimEnd('/');
 
-app.MapGet("/health", () => Results.Ok(new { status = "ok" })).AllowAnonymous();
+// Also reports what the running image actually carries, so a deploy can be checked from the
+// outside: "businesses" is the catalogue baked into the image, "built" the API binary's stamp.
+// If either lags behind the repository, the image was not rebuilt.
+var entryPath = System.Reflection.Assembly.GetEntryAssembly()?.Location;
+var builtAt = !string.IsNullOrEmpty(entryPath) && File.Exists(entryPath)
+    ? File.GetLastWriteTimeUtc(entryPath).ToString("u")
+    : null;
+
+IResult Health() => Results.Ok(new
+{
+    status = "ok",
+    businesses = BusinessCatalog.Load(previewsRoot).Count,
+    built = builtAt,
+});
+
+app.MapGet("/health", Health).AllowAnonymous();
+// The edge only routes /s/*, /api/public/* and /assets/* here, so the deploy check needs a
+// public-prefixed twin to be reachable from outside the Docker network.
+app.MapGet("/api/public/health", Health).AllowAnonymous();
 
 // ---------------------------------------------------------------------------
 // Auth (called server-to-server by the Next.js frontend)
@@ -291,9 +316,14 @@ app.MapGet("/api/previews/{slug}/{**rest}", (string slug, string? rest) =>
 // Public share links (browser-facing; the shared edge routes /s/* to this API)
 // ---------------------------------------------------------------------------
 
-// The share link itself is the page. Only the trailing slash is added, so that relative
-// URLs inside the preview resolve against the token and not against "/s/".
-app.MapGet("/s/{token}", (string token) => Results.Redirect($"/s/{token}/")).AllowAnonymous();
+// The share link itself is the page: /s/<token> only picks up its trailing slash, so that
+// relative URLs inside the preview resolve against the token and not against "/s/".
+// Route matching ignores a trailing slash, so this endpoint is hit for both spellings —
+// redirecting unconditionally would loop. Hence the check on the raw path.
+app.MapGet("/s/{token}", (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token) =>
+    ctx.Request.Path.Value!.EndsWith('/')
+        ? ServeShared(ctx, db, dp, token, null)
+        : Task.FromResult<IResult>(Results.Redirect($"/s/{token}/"))).AllowAnonymous();
 
 app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token) =>
 {
@@ -311,7 +341,10 @@ app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtecti
     return Results.Redirect($"/s/{token}/");
 }).RequireRateLimiting("unlock").AllowAnonymous();
 
-app.MapGet("/s/{token}/{**rest}", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token, string? rest) =>
+app.MapGet("/s/{token}/{**rest}", (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token, string? rest) =>
+    ServeShared(ctx, db, dp, token, rest)).AllowAnonymous();
+
+async Task<IResult> ServeShared(HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token, string? rest)
 {
     var link = await db.ShareLinks.FirstOrDefaultAsync(l => l.Token == token);
     var check = CheckLink(link);
@@ -340,7 +373,7 @@ app.MapGet("/s/{token}/{**rest}", async (HttpContext ctx, AppDb db, IDataProtect
     }
 
     return ServePreviewFile(link.Slug, rest);
-}).AllowAnonymous();
+}
 
 app.Run();
 

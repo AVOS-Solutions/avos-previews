@@ -42,7 +42,19 @@ docker compose -f docker-compose.prod.yml --env-file .env up -d --build
 
 Migrations/Schema entstehen automatisch beim ersten API-Start (`EnsureCreated`).
 Die statischen Preview-Sites und `businesses.json` werden ins API-Image gebacken —
-nach Änderungen an `previews/` einfach neu deployen.
+nach Änderungen an `previews/` einfach neu deployen. **`--build` ist dabei Pflicht:**
+ohne das Flag startet Compose das alte Image weiter, ein `git pull` allein ändert nichts.
+
+Ob das Update angekommen ist, sagt der Health-Endpunkt:
+
+```
+curl -s https://<domain>/api/public/health
+# {"status":"ok","businesses":206,"built":"2026-09-14 15:21:32Z"}
+```
+
+`businesses` ist der Katalog im laufenden Image, `built` der Zeitstempel der API-Binary.
+Bleibt einer der beiden hinter dem Repo zurück, lief der Rebuild nicht. Hilft das nicht
+weiter, `docker compose -f docker-compose.prod.yml build --no-cache api` erzwingen.
 
 ## 5. Edge-Routing
 
