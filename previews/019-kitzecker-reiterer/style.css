@@ -1,0 +1,312 @@
+/* ============================================================
+   Weingut Kitzecker Reiterer — "Selective Colour"
+   Monochrome Editorial, ein Farbakzent. AVOS Solutions Vorschau.
+   ============================================================ */
+
+:root{
+  --ink:#16181c;
+  --ink-soft:#2a2d33;
+  --bone:#f4f1ec;
+  --bone-2:#e8e4dc;
+  --line:#c9c3b8;
+  --muted:#55595f;
+  --muted-dark:#b9b4ac;
+  --accent:#b00058;        /* Text auf hellem Grund */
+  --accent-btn:#c4006a;    /* Flächen mit weißer Schrift */
+  --accent-soft:#ff7fb2;   /* Text auf dunklem Grund */
+  --amber:#f5b841;
+  --shadow:0 18px 40px -28px rgba(22,24,28,.55);
+  --maxw:1180px;
+  --step:clamp(3.5rem,7vw,7rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bone);
+  color:var(--ink);
+  font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+  font-size:clamp(1rem,.97rem + .2vw,1.075rem);
+  line-height:1.62;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--accent-btn);outline-offset:3px}
+
+h1,h2,h3,h4{
+  font-family:"Bodoni Moda",Georgia,"Times New Roman",serif;
+  font-weight:600;line-height:1.06;margin:0 0 .5em;letter-spacing:-.01em;
+}
+h1{font-size:clamp(2.6rem,1.6rem + 4.6vw,5.4rem)}
+h2{font-size:clamp(1.9rem,1.35rem + 2.4vw,3.2rem)}
+h3{font-size:clamp(1.25rem,1.1rem + .8vw,1.7rem)}
+h4{font-size:1.05rem;font-family:"Karla",Arial,sans-serif;font-weight:700;letter-spacing:.02em}
+p{margin:0 0 1.1em}
+.lede{font-size:clamp(1.1rem,1.02rem + .5vw,1.4rem);line-height:1.5;color:var(--ink-soft)}
+
+/* ---------- Grundlayout ---------- */
+.wrap{width:min(100% - 2.4rem,var(--maxw));margin-inline:auto}
+.narrow{width:min(100% - 2.4rem,760px);margin-inline:auto}
+section{padding-block:var(--step)}
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:99;
+  background:var(--ink);color:var(--bone);padding:.8rem 1.2rem;font-weight:700;text-decoration:none;
+}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.preview-bar{
+  background:var(--ink);color:#ddd8d0;
+  font-size:.76rem;letter-spacing:.04em;line-height:1.5;
+  padding:.55rem 1.2rem;text-align:center;
+}
+.preview-bar strong{color:#fff;font-weight:700}
+
+/* ---------- Kopf ---------- */
+.site-head{
+  position:sticky;top:0;z-index:40;
+  background:var(--bone);border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);line-height:1.05}
+.brand:hover{text-decoration:none}
+.brand b{font-family:"Bodoni Moda",Georgia,serif;font-size:1.45rem;font-weight:600;letter-spacing:-.01em}
+.brand span{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+.nav-toggle{
+  font:inherit;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  background:var(--ink);color:var(--bone);border:0;padding:.65rem 1rem;cursor:pointer;
+}
+nav#nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.35rem;margin:0;padding:0}
+nav#nav a{
+  color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.15em;
+  text-transform:uppercase;font-weight:700;padding-block:.35rem;display:inline-block;
+  border-bottom:2px solid transparent;
+}
+nav#nav a:hover{border-bottom-color:var(--accent-btn)}
+nav#nav a[aria-current="page"]{border-bottom-color:var(--ink)}
+
+@media (max-width:900px){
+  nav#nav{display:none;width:100%;order:3;border-top:1px solid var(--line);padding-block:.8rem}
+  nav#nav.open{display:block}
+  nav#nav ul{flex-direction:column;gap:.15rem}
+  nav#nav a{padding:.6rem 0;font-size:.9rem;width:100%}
+  .head-inner{flex-wrap:wrap}
+}
+@media (min-width:901px){.nav-toggle{display:none}}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;font-family:"Karla",Arial,sans-serif;font-weight:700;
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.95rem 1.7rem;text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:transform .15s ease, background .15s ease;
+}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn-pink{background:var(--accent-btn);color:#fff}
+.btn-pink:hover{background:#a30058;color:#fff}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-ink:hover{background:#000;color:#fff}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bone)}
+.btn-line-light{background:transparent;color:var(--bone);border-color:#8d8a84}
+.btn-line-light:hover{background:var(--bone);color:var(--ink)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
+
+/* ---------- Label / Kicker ---------- */
+.kicker{
+  display:flex;align-items:center;gap:.9rem;
+  font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;font-weight:700;
+  color:var(--accent);margin:0 0 1.2rem;
+}
+.kicker::after{content:"";height:1px;background:var(--line);flex:1}
+.kicker-light{color:var(--accent-soft)}
+.kicker-light::after{background:#4a4d53}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--ink);color:var(--bone);overflow:hidden;isolation:isolate}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(35%) contrast(105%);opacity:.42;z-index:-1;
+}
+.hero-inner{padding-block:clamp(4.5rem,12vw,9.5rem)}
+.hero h1{color:var(--bone);max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--accent-soft)}
+.hero .lede{color:#e2ded7;max-width:52ch}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;margin-top:2.6rem;
+  border-top:1px solid #41454b;padding-top:1.6rem;
+}
+.hero-facts div{min-width:9rem}
+.hero-facts dt,.hero-facts .ft{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:.35rem}
+.hero-facts .fv{font-family:"Bodoni Moda",Georgia,serif;font-size:1.35rem;color:var(--bone)}
+
+/* ---------- Bänder ---------- */
+.band-dark{background:var(--ink);color:var(--bone)}
+.band-dark h2,.band-dark h3{color:var(--bone)}
+.band-dark p{color:#ddd9d2}
+.band-dark a{color:var(--accent-soft)}
+.band-dark a.btn-pink,.band-dark a.btn-pink:hover{color:#fff}
+.band-dark a.btn-line-light{color:var(--bone)}
+.band-dark a.btn-line-light:hover{color:var(--ink)}
+.band-dark a.btn-line{color:var(--bone);border-color:#8d8a84}
+.band-dark a.btn-line:hover{color:var(--ink);background:var(--bone)}
+.band-dark a.btn-ink{color:var(--bone)}
+.band-bone2{background:var(--bone-2)}
+
+/* ---------- Raster ---------- */
+.grid{display:grid;gap:clamp(1.4rem,3vw,2.6rem)}
+.g-2{grid-template-columns:1fr}
+.g-3{grid-template-columns:1fr}
+.split{display:grid;gap:clamp(1.8rem,4vw,4rem);align-items:center;grid-template-columns:1fr}
+@media (min-width:760px){
+  .g-2{grid-template-columns:repeat(2,1fr)}
+  .g-3{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1.05fr .95fr}
+  .split.rev .split-media{order:2}
+}
+@media (min-width:1040px){.g-3{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- Karten ---------- */
+.card{background:var(--bone);border:1px solid var(--line);padding:clamp(1.4rem,3vw,2.1rem);display:flex;flex-direction:column}
+.card h3{margin-bottom:.35rem}
+.card p:last-child{margin-bottom:0}
+.card-dark{background:#1d2026;border-color:#383c43;color:#ddd9d2}
+.card-dark h3{color:var(--bone)}
+.card .tag{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.6rem}
+.card-dark .tag{color:var(--accent-soft)}
+.card-link{margin-top:auto;padding-top:1.1rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+
+/* ---------- Bilder ---------- */
+figure{margin:0}
+.ph{position:relative;background:var(--ink-soft)}
+.ph img{width:100%;filter:grayscale(15%)}
+.ph figcaption{
+  font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  padding-top:.7rem;line-height:1.5;
+}
+.band-dark .ph figcaption{color:var(--muted-dark)}
+.ph-tall img{aspect-ratio:3/4;object-fit:cover}
+.ph-wide img{aspect-ratio:16/10;object-fit:cover}
+.ph-sq img{aspect-ratio:1/1;object-fit:cover}
+
+.gallery{display:grid;gap:.9rem;grid-template-columns:repeat(2,1fr)}
+@media (min-width:820px){.gallery{grid-template-columns:repeat(4,1fr)}
+  .gallery .span2{grid-column:span 2;grid-row:span 2}}
+
+/* ---------- Listen / Karte (Speisen, Weine) ---------- */
+.menu-list{list-style:none;margin:0;padding:0}
+.menu-list li{
+  display:grid;grid-template-columns:1fr auto;gap:.3rem 1.2rem;align-items:baseline;
+  padding:1.05rem 0;border-bottom:1px solid var(--line);
+}
+.menu-list .mi-name{font-weight:700}
+.menu-list .mi-desc{grid-column:1/-1;color:var(--muted);font-size:.94rem;margin:0}
+.menu-list .mi-price{font-family:"Bodoni Moda",Georgia,serif;font-size:1.2rem;white-space:nowrap}
+.band-dark .menu-list li{border-bottom-color:#3a3e45}
+.band-dark .menu-list .mi-desc{color:#c6c2ba}
+
+/* ---------- Zahlenreihe ---------- */
+.stats{display:grid;gap:1.6rem;grid-template-columns:repeat(2,1fr)}
+@media (min-width:860px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{border-top:2px solid var(--accent-btn);padding-top:1rem}
+.band-dark .stat{border-top-color:var(--accent-soft)}
+.stat b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(2rem,1.4rem + 2vw,2.9rem);line-height:1}
+.stat span{display:block;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.band-dark .stat span{color:var(--muted-dark)}
+
+/* ---------- Auszeichnungen ---------- */
+.awards{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.awards li{display:flex;gap:.8rem;align-items:baseline;border-bottom:1px dotted var(--line);padding-bottom:.5rem;font-size:.95rem}
+.awards li b{font-weight:700;color:var(--accent)}
+.band-dark .awards li{border-bottom-color:#3a3e45}
+.band-dark .awards li b{color:var(--accent-soft)}
+
+/* ---------- Zeitleiste / Definitionslisten ---------- */
+.dl{display:grid;gap:.1rem;margin:0}
+.dl div{display:grid;grid-template-columns:1fr;gap:.1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+@media (min-width:620px){.dl div{grid-template-columns:12rem 1fr;gap:1.2rem}}
+.dl dt{font-weight:700}
+.dl dd{margin:0;color:var(--muted)}
+.band-dark .dl div{border-bottom-color:#3a3e45}
+.band-dark .dl dd{color:#c6c2ba}
+
+/* ---------- Formulare ---------- */
+.form-box{background:var(--bone-2);border:1px solid var(--line);padding:clamp(1.5rem,4vw,2.6rem)}
+.form-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:660px){
+  .form-grid{grid-template-columns:repeat(2,1fr)}
+  .form-grid .full{grid-column:1/-1}
+}
+label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:.4rem;color:var(--ink)}
+input,select,textarea{
+  width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#fff;
+  border:1px solid #9b958a;padding:.8rem .9rem;border-radius:0;
+}
+textarea{min-height:9rem;resize:vertical}
+input::placeholder,textarea::placeholder{color:#6b6f76}
+fieldset{border:1px solid var(--line);padding:1.1rem;margin:0}
+legend{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding-inline:.5rem}
+.check{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.6rem}
+.check input{width:1.15rem;height:1.15rem;flex:0 0 auto;margin-top:.2rem}
+.check label{text-transform:none;letter-spacing:0;font-weight:400;font-size:.95rem;margin:0}
+.hint{font-size:.86rem;color:var(--muted);margin-top:.3rem}
+.form-note{
+  background:var(--ink);color:var(--bone);padding:1rem 1.2rem;margin-top:1.4rem;
+  font-size:.95rem;border-left:4px solid var(--accent-soft);
+}
+
+/* ---------- FAQ ---------- */
+.faq details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+.faq summary{
+  cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none;
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;color:var(--ink);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"Bodoni Moda",Georgia,serif;font-size:1.5rem;color:var(--accent);line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:.9rem;color:var(--muted)}
+
+/* ---------- Info-Box ---------- */
+.note{border-left:4px solid var(--accent-btn);background:var(--bone-2);padding:1.1rem 1.3rem;font-size:.95rem}
+.note p:last-child{margin-bottom:0}
+.band-dark .note{background:#1d2026;border-left-color:var(--accent-soft);color:#ddd9d2}
+
+/* ---------- Karte (SVG-Anfahrt) ---------- */
+.mapbox{background:var(--bone-2);border:1px solid var(--line);padding:1.2rem}
+.mapbox svg{width:100%;height:auto;display:block}
+
+/* ---------- Fuß ---------- */
+.site-foot{background:var(--ink);color:#ddd9d2;padding-block:clamp(3rem,6vw,4.5rem) 2rem;font-size:.95rem}
+.site-foot h4{color:var(--bone);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1rem}
+.foot-grid{display:grid;gap:2.2rem;grid-template-columns:1fr}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.site-foot a{color:#f0ece5}
+.site-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.foot-brand{font-family:"Bodoni Moda",Georgia,serif;font-size:1.7rem;color:var(--bone);margin-bottom:.6rem}
+.foot-bottom{
+  border-top:1px solid #3a3e45;margin-top:2.6rem;padding-top:1.4rem;
+  display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;justify-content:space-between;
+  font-size:.82rem;color:var(--muted-dark);
+}
+.foot-bottom a{color:var(--muted-dark)}
+
+/* ---------- Hilfen ---------- */
+.mt0{margin-top:0}
+.mb0{margin-bottom:0}
+.center{text-align:center}
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 0;padding:0;list-style:none}
+.tag-row li{border:1px solid var(--line);padding:.35rem .8rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.band-dark .tag-row li{border-color:#4a4d53}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+.page-head{padding-block:clamp(2.8rem,6vw,4.6rem) clamp(1.6rem,3vw,2.4rem)}
+.page-head h1{max-width:18ch}
+.page-head .lede{max-width:58ch}
+
+@media print{.preview-bar,.site-head,.btn-row{display:none}}
+
+/* --- lange Wörter und Adressen sicher umbrechen --- */
+body{overflow-wrap:break-word}
+a,dd,td,th,li,p{overflow-wrap:anywhere}

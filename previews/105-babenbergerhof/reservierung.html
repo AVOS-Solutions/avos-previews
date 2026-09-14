@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer anfragen &amp; Tisch reservieren — Babenbergerhof Mödling</title>
+<meta name="description" content="Zimmeranfrage und Tischreservierung im Babenbergerhof Mödling: direkt beim Haus, ohne Portal, mit persönlicher Bestätigung durch die Rezeption.">
+<link rel="canonical" href="https://www.babenbergerhof.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Hotel &amp; Restaurant Babenbergerhof">
+<meta property="og:title" content="Zimmer anfragen &amp; Tisch reservieren — Babenbergerhof Mödling">
+<meta property="og:description" content="Zimmeranfrage und Tischreservierung im Babenbergerhof Mödling: direkt beim Haus, ohne Portal, mit persönlicher Bestätigung durch die Rezeption.">
+<meta property="og:image" content="img/01.jpg">
+<meta property="og:url" content="https://www.babenbergerhof.com/">
+<meta name="theme-color" content="#141920">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<p class="ribbon">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des Hotel &amp; Restaurant Babenbergerhof · erstellt von <strong>AVOS Solutions</strong></p>
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html"><b>Babenbergerhof</b><span>Hotel · Wirtsstube · Café</span></a>
+    <button class="navtoggle" type="button" id="navbtn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+     <ul>
+      <li><a href="index.html">Hotel</a></li>
+      <li><a href="zimmer.html">Zimmer & Preise</a></li>
+      <li><a href="speisekarte.html">Speisen &amp; Weine</a></li>
+      <li><a href="feiern.html">Feste &amp; Feiern</a></li>
+      <li><a href="angebote.html">Angebote</a></li>
+      <li><a href="reservierung.html" aria-current="page">Reservieren</a></li>
+      <li><a href="kontakt.html">Kontakt &amp; Lage</a></li>
+     </ul>
+    </nav>
+    <a class="btn btn--primary" href="reservierung.html">Zimmer buchen</a>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--tight sec--dark">
+  <div class="wrap">
+    <span class="eyebrow">Reservieren &amp; Buchen</span>
+    <h1>Zimmer anfragen oder Tisch reservieren — in zwei Minuten.</h1>
+    <p class="lede">Sie schicken uns Ihre Wünsche, wir antworten persönlich mit Verfügbarkeit und
+    Bestätigung. Kein Portal, keine Vermittlungsgebühr — direkt beim Haus.</p>
+    <div class="btnrow"><a class="btn btn--brass" href="#zimmer">Zimmeranfrage</a>
+      <a class="btn btn--line" href="#tisch">Tischreservierung</a></div>
+  </div>
+</section>
+
+<section class="sec" id="zimmer">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Zimmeranfrage</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="z-an">Anreise</label><input type="date" id="z-an" name="anreise" required></div>
+              <div class="field"><label for="z-ab">Abreise</label><input type="date" id="z-ab" name="abreise" required></div>
+              <div class="field"><label for="z-kat">Zimmerkategorie</label>
+                <select id="z-kat" name="kategorie">
+                  <option>Standard-Einzelzimmer — € 92,–</option>
+                  <option>Komfortzimmer — ab € 107,– / ab € 155,–</option>
+                  <option>De Luxe-Zimmer — € 120,– / € 180,–</option>
+                  <option>Dachterrassen-Zimmer — € 145,– / € 190,–</option>
+                  <option>Dachappartment — € 155,– / € 220,–</option>
+                  <option>Living Suite — auf Anfrage</option>
+                  <option>Wien-Wochenend-Package</option>
+                </select></div>
+              <div class="field"><label for="z-pers">Personen</label>
+                <select id="z-pers" name="personen"><option>1</option><option>2</option><option>3</option><option>4 oder mehr</option></select></div>
+              <div class="field"><label for="z-name">Name</label><input type="text" id="z-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="z-mail">E-Mail</label><input type="email" id="z-mail" name="email" autocomplete="email" required></div>
+              <div class="field"><label for="z-tel">Telefon</label><input type="tel" id="z-tel" name="telefon" autocomplete="tel"></div>
+              <div class="field"><label for="z-ank">Voraussichtliche Ankunftszeit</label>
+                <select id="z-ank" name="ankunft"><option>vor 14 Uhr</option><option>14–18 Uhr</option><option>18–21 Uhr</option><option>nach 21 Uhr</option></select></div>
+            </div>
+            <div class="field"><label for="z-txt">Anmerkungen</label>
+              <textarea id="z-txt" name="nachricht" placeholder="Parkplatz, E-Ladestation, ruhiges Zimmer, Allergien …"></textarea></div>
+            <p class="checkline"><input type="checkbox" id="z-ds" name="dsgvo" required>
+              <label for="z-ds" style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)">
+              Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</label></p>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Unverbindlich anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb geht diese Anfrage direkt an die
+          Rezeption des Babenbergerhofs (hotel@babenbergerhof.com) und wird meist noch am selben Tag beantwortet.</p>
+        </form>
+      </div>
+      <div>
+        <span class="eyebrow">Gut zu wissen</span>
+        <h2>Ihre Anfrage, direkt im Haus</h2>
+        <ul>
+          <li>Alle Zimmerpreise inklusive Genussfrühstücksbuffet</li>
+          <li>Rezeption Mo–Fr bis 23.00 Uhr besetzt, Sa bis 14.00 Uhr</li>
+          <li>An Sonn- und Feiertagen ist die Rezeption ab 14.00 Uhr nicht besetzt</li>
+          <li>Sauna täglich 9.00–23.00 Uhr für Hotelgäste</li>
+          <li>Klimaanlage, Lift, kostenloses WLAN, Minibar, Zimmersafe (je nach Kategorie)</li>
+          <li>E-Ladestation mit Typ-2-Steckdose am Haus</li>
+        </ul>
+        <p class="note">Lieber telefonisch? <a href="tel:+43223622246">+43 2236 222 46</a> —
+        oder per E-Mail an <a href="mailto:hotel@babenbergerhof.com">hotel@babenbergerhof.com</a>.</p>
+        <div class="btnrow"><a class="btn btn--line" href="zimmer.html">Zimmer im Detail</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--bone2" id="tisch">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div>
+        <span class="eyebrow">Wirtsstube, Café, Garten &amp; Terrasse</span>
+        <h2>Tisch reservieren</h2>
+        <p>Wir bitten um Tischreservierung — besonders am Wochenende zum Genussfrühstück PLUS und in der
+        Wildsaison ab Mitte September.</p>
+        <ul class="hours">
+          <li><span>Frühstücksbuffet Mo–Fr</span><span>6.30–10.30</span></li>
+          <li><span>Mittag Mo–Fr</span><span>11.45–14.30</span></li>
+          <li><span>Abend Mo–Fr</span><span>18.00–21.00</span></li>
+          <li><span>Genussfrühstück PLUS Sa, So &amp; Feiertag</span><span>7.30–13.00</span></li>
+        </ul>
+        <p class="note">Samstag ab 14.00 Uhr ist das Restaurant geschlossen; an Sonn- und Feiertagen sind
+        Restaurant und Rezeption ab 14.00 Uhr geschlossen.</p>
+      </div>
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Tischreservierung</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="t-datum">Datum</label><input type="date" id="t-datum" name="datum" required></div>
+              <div class="field"><label for="t-zeit">Uhrzeit</label><input type="time" id="t-zeit" name="zeit" required></div>
+              <div class="field"><label for="t-pers">Personen</label><input type="number" id="t-pers" name="personen" min="1" max="40" value="2"></div>
+              <div class="field"><label for="t-ort">Lieblings-Genussort</label>
+                <select id="t-ort" name="ort"><option>Wirtsstube</option><option>Café</option><option>Hotelgarten</option><option>Terrasse</option><option>egal</option></select></div>
+              <div class="field"><label for="t-name">Name</label><input type="text" id="t-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="t-mail">E-Mail</label><input type="email" id="t-mail" name="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="t-txt">Anmerkungen</label>
+              <textarea id="t-txt" name="nachricht" style="min-height:5.5rem" placeholder="Kinderstuhl, Unverträglichkeiten, Anlass …"></textarea></div>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Tisch anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb landet Ihre Reservierung direkt bei
+          der Wirtsstube (Telefon 02236 22246, hotel@babenbergerhof.com).</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--dark">
+  <div class="wrap wrap--narrow" style="text-align:center">
+    <h2>Größere Runde?</h2>
+    <p class="lede" style="margin-inline:auto">Ab etwa 15 Personen planen wir Ihre Feier gerne persönlich —
+    mit eigenem Menü oder Buffet in der Wirtsstube.</p>
+    <div class="btnrow" style="justify-content:center">
+      <a class="btn btn--brass" href="feiern.html#anfrage">Feier anfragen</a>
+      <a class="btn btn--line" href="angebote.html#gutschein">Gutschein bestellen</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>Babenbergerhof</h4>
+        <p style="margin-bottom:.5rem"><strong style="color:#F1EADB">Babenbergerhof C. Breyer GmbH</strong><br>
+        Hotel &amp; Restaurant<br>Babenbergergasse 6, 2340 Mödling, Österreich</p>
+        <p>T <a href="tel:+43223622246">+43 2236 222 46</a> (Fax DW 6)<br>
+        <a href="mailto:hotel@babenbergerhof.com">hotel@babenbergerhof.com</a></p>
+        <p><a href="https://www.facebook.com/babehof/" rel="noopener">Facebook</a> ·
+           <a href="https://www.linkedin.com/in/hotel-babenbergerhof-8465a0157/" rel="noopener">LinkedIn</a></p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="index.html">Hotel</a></li>
+          <li><a href="zimmer.html">Zimmer &amp; Preise</a></li>
+          <li><a href="speisekarte.html">Speisen &amp; Weine</a></li>
+          <li><a href="feiern.html">Feste &amp; Feiern</a></li>
+          <li><a href="angebote.html">Angebote &amp; Gutscheine</a></li>
+          <li><a href="reservierung.html">Reservieren &amp; Buchen</a></li>
+          <li><a href="kontakt.html">Kontakt, Lage &amp; Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gut zu wissen</h4>
+        <ul>
+          <li>Frühstücksbuffet ab 6.30 Uhr</li>
+          <li>Sauna täglich 9–23 Uhr</li>
+          <li>Klimaanlage, Lift, kostenloses WLAN</li>
+          <li>E-Ladestation am Haus</li>
+          <li>Mitten in der Fußgängerzone</li>
+        </ul>
+        <p style="margin-top:1rem"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Gestaltungs-Vorschau von AVOS Solutions — Inhalte und Preise stammen von der bestehenden Website des Betriebs.</span>
+      <span>Das Bildmaterial stammt von der bestehenden Website des Babenbergerhofs.</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('navbtn'),n=document.getElementById('nav');
+  if(b&&n){b.addEventListener('click',function(){
+    var o=n.getAttribute('data-open')==='true';
+    n.setAttribute('data-open',String(!o));b.setAttribute('aria-expanded',String(!o));});}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var m=f.querySelector('.msg');
+      if(m){m.setAttribute('data-show','true');m.setAttribute('role','status');m.scrollIntoView({block:'center',behavior:'smooth'});}
+      f.querySelectorAll('input,textarea,select').forEach(function(i){if(i.type!=='checkbox')i.value='';});
+    });
+  });
+})();
+</script>
+</body>
+</html>

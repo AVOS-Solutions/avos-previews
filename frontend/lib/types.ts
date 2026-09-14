@@ -22,6 +22,14 @@ export type BusinessSummary = {
   oldWebsite: string | null;
   activeLinks: number;
   totalViews: number;
+  grade?: string | null;
+  score?: number | null;
+  pitchHook?: string | null;
+  priceLow?: number | null;
+  priceHigh?: number | null;
+  phone?: string | null;
+  email?: string | null;
+  contactPerson?: string | null;
 };
 
 export type ShareLinkDto = {

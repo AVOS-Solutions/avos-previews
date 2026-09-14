@@ -1,0 +1,304 @@
+/* Weingut Hack-Gebell, Gamlitz — Gestaltungs-Vorschau AVOS Solutions
+   Motiv: Südsteirisches Panorama. Viel Weißraum, feine Linien,
+   Rebgrün, Traubenrot und Strohgelb, Panoramabilder über die volle Breite. */
+
+:root{
+  --rebe:#2E4A2B;
+  --rebe-d:#22391F;
+  --rebe-h:#3F6039;
+  --tinte:#1F2A1C;
+  --tinte-2:#4A5B3C;
+  --wein:#7A2740;
+  --stroh:#E4C978;
+  --blatt:#D9E2C8;
+  --creme:#FAF7EF;
+  --sand:#EFE9DB;
+  --papier:#FFFFFF;
+  --linie:#DED5C2;
+  --linie-d:#4C6647;
+  --max:1220px;
+  --raum:clamp(3.4rem,7vw,7rem);
+  --schrift-d:"Cormorant Garamond",Garamond,"Palatino Linotype",Georgia,serif;
+  --schrift-t:"Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--creme);color:var(--tinte);font-family:var(--schrift-t);
+  font-size:clamp(1rem,.95rem + .22vw,1.1rem);line-height:1.72;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--wein)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2px solid var(--wein);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--schrift-d);font-weight:600;line-height:1.06;margin:0 0 .45em;color:var(--rebe-d);
+  letter-spacing:-.005em}
+h1{font-size:clamp(2.6rem,1.6rem + 4.4vw,5rem);font-weight:500}
+h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem);font-weight:500}
+h3{font-size:clamp(1.3rem,1.15rem + .7vw,1.7rem)}
+h4{font-size:1.12rem;font-family:var(--schrift-t);font-weight:700;letter-spacing:.02em}
+p{margin:0 0 1.15em}
+.bahn{width:min(100% - 2.6rem,var(--max));margin-inline:auto}
+.eng{width:min(100% - 2.6rem,780px);margin-inline:auto}
+
+.sprung{position:absolute;left:-9999px;background:var(--rebe);color:var(--creme);padding:.7rem 1.1rem;z-index:70}
+.sprung:focus{left:.5rem;top:.5rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.leiste{background:var(--rebe-d);color:#E8EBDF;text-align:center;padding:.55rem 1rem;font-size:.8rem;letter-spacing:.02em}
+.leiste b{color:var(--stroh);font-weight:700}
+
+/* ---------- Kopf ---------- */
+.haupt-kopf{background:var(--creme);border-bottom:1px solid var(--linie);position:sticky;top:0;z-index:60}
+.kopf-zeile{display:flex;align-items:center;gap:1.2rem;padding:.9rem 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;margin-right:auto;color:var(--rebe-d)}
+.logo svg{width:40px;height:40px;flex:0 0 auto}
+.logo-n{font-family:var(--schrift-d);font-size:1.5rem;line-height:1;display:block;color:var(--rebe-d);font-weight:600}
+.logo-s{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--tinte-2);display:block;margin-top:.3rem}
+.wegweiser ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.wegweiser a{color:var(--rebe-d);text-decoration:none;font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;
+  padding-bottom:.2rem;border-bottom:1px solid transparent}
+.wegweiser a:hover{border-bottom-color:var(--wein);color:var(--wein)}
+.wegweiser a[aria-current="page"]{border-bottom-color:var(--rebe)}
+.kopf-schalter{display:none;background:none;border:1px solid var(--rebe);color:var(--rebe-d);
+  font-family:var(--schrift-t);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.55rem .9rem;cursor:pointer}
+
+/* ---------- Aktionen ---------- */
+.knopf{display:inline-block;text-decoration:none;font-family:var(--schrift-t);font-size:.8rem;letter-spacing:.15em;
+  text-transform:uppercase;font-weight:700;padding:.95rem 1.8rem;background:var(--rebe);color:#FFFFFF;
+  border:1px solid var(--rebe);cursor:pointer}
+.knopf:hover{background:var(--rebe-d);border-color:var(--rebe-d);color:#FFFFFF}
+.knopf-fein{background:transparent;color:var(--rebe-d);border-color:var(--rebe)}
+.knopf-fein:hover{background:var(--rebe);color:#FFFFFF}
+.knopf-hell{background:var(--stroh);border-color:var(--stroh);color:#22391F}
+.knopf-hell:hover{background:#F0DEA1;border-color:#F0DEA1;color:#22391F}
+.knopf-rand-hell{background:transparent;border-color:var(--stroh);color:#FFFFFF}
+.knopf-rand-hell:hover{background:var(--stroh);color:#22391F}
+.knopf-s{padding:.6rem 1.1rem;font-size:.74rem}
+.aktionen{display:flex;gap:.9rem;flex-wrap:wrap}
+
+/* ---------- Abschnitte ---------- */
+section{padding-block:var(--raum)}
+.fl-creme{background:var(--creme)}
+.fl-papier{background:var(--papier)}
+.fl-sand{background:var(--sand)}
+.fl-rebe{background:var(--rebe);color:#EAEEE1}
+.fl-rebe h1,.fl-rebe h2,.fl-rebe h3,.fl-rebe h4{color:#FFFFFF}
+.fl-rebe a:not(.knopf){color:var(--stroh)}
+.marke{display:block;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--wein);
+  margin-bottom:1rem;font-weight:700}
+.fl-rebe .marke{color:var(--stroh)}
+.strich{width:52px;height:1px;background:var(--rebe);margin-bottom:1.8rem}
+.fl-rebe .strich{background:var(--stroh)}
+.fuehrung{font-family:var(--schrift-d);font-size:clamp(1.25rem,1.1rem + .9vw,1.75rem);line-height:1.42;
+  color:var(--rebe-d);max-width:38ch;font-weight:500}
+.fl-rebe .fuehrung{color:#FFFFFF}
+.text-w{max-width:64ch}
+.fein{font-size:.88rem;color:var(--tinte-2)}
+.fl-rebe .fein{color:#CBD3BD}
+.mitte-t{text-align:center}
+.auto-x{margin-inline:auto}
+.ob0{margin-top:0}.un0{margin-bottom:0}
+.ob-g{margin-top:2.4rem}.ob-m{margin-top:1.7rem}.ob-k{margin-top:1rem}
+
+/* ---------- Panorama-Auftakt ---------- */
+.panorama{position:relative;background:var(--rebe-d)}
+.panorama img{width:100%;height:clamp(280px,46vh,460px);object-fit:cover;opacity:.92}
+.panorama-text{background:var(--rebe);color:#EAEEE1;padding-block:clamp(2.4rem,5vw,3.6rem)}
+.panorama-text h1{color:#FFFFFF;max-width:15ch}
+.panorama-text p{color:#D5DCC9;max-width:56ch;font-size:clamp(1.02rem,.98rem + .35vw,1.22rem)}
+.auftakt{background:var(--creme);padding-block:clamp(2.6rem,6vw,4.6rem) 0}
+.auftakt h1{max-width:14ch}
+.auftakt .fuehrung{max-width:44ch}
+.streifen{display:flex;flex-wrap:wrap;gap:.4rem 2rem;margin-top:1.7rem;padding-top:1.2rem;
+  border-top:1px solid var(--linie);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-2)}
+.fl-rebe .streifen{border-top-color:var(--linie-d);color:#CBD3BD}
+
+/* ---------- Raster ---------- */
+.reihe{display:grid;gap:clamp(1.4rem,3.5vw,2.8rem)}
+.s2{grid-template-columns:1fr}
+.s3{grid-template-columns:1fr}
+.paar{display:grid;gap:clamp(1.8rem,4.5vw,3.6rem);align-items:center}
+
+.feld{background:var(--papier);padding:clamp(1.4rem,3vw,2.1rem);border-top:3px solid var(--rebe)}
+.feld h3{margin-top:0}
+.feld p:last-child{margin-bottom:0}
+.feld-sand{background:var(--sand);border-top-color:var(--wein)}
+.feld-dunkel{background:var(--rebe-d);border-top-color:var(--stroh);color:#EAEEE1}
+.feld-dunkel h3{color:#FFFFFF}
+.zahl{font-family:var(--schrift-d);font-size:clamp(2.4rem,2rem + 1.6vw,3.4rem);line-height:1;color:var(--wein);
+  display:block;margin-bottom:.35rem}
+.fl-rebe .zahl{color:var(--stroh)}
+
+figure.foto{margin:0}
+figure.foto img{width:100%;object-fit:cover}
+figure.foto figcaption{font-size:.85rem;color:var(--tinte-2);padding-top:.6rem;font-family:var(--schrift-d);
+  font-size:1.02rem;font-style:italic}
+.fl-rebe figure.foto figcaption{color:#CBD3BD}
+
+/* ---------- Weinkarte ---------- */
+.karte{border-top:1px solid var(--linie)}
+.karte-zeile{display:grid;grid-template-columns:1fr auto;gap:.4rem 1.4rem;padding:1.15rem 0;
+  border-bottom:1px solid var(--linie);align-items:baseline}
+.karte-zeile h4{margin:0 0 .2rem;font-family:var(--schrift-d);font-size:1.28rem;font-weight:600;color:var(--rebe-d);
+  letter-spacing:0}
+.karte-zeile .jahr{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wein);display:block;
+  margin-bottom:.35rem}
+.karte-zeile p{margin:0;font-size:.95rem;color:var(--tinte-2);max-width:58ch}
+.preise{display:flex;gap:1.4rem;align-items:baseline;white-space:nowrap;font-family:var(--schrift-d);font-size:1.18rem;
+  color:var(--rebe-d)}
+.preise span small{display:block;font-family:var(--schrift-t);font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tinte-2);margin-bottom:.15rem}
+.fl-rebe .karte{border-top-color:var(--linie-d)}
+.fl-rebe .karte-zeile{border-bottom-color:var(--linie-d)}
+.fl-rebe .karte-zeile h4{color:#FFFFFF}
+.fl-rebe .karte-zeile .jahr{color:var(--stroh)}
+.fl-rebe .karte-zeile p{color:#CBD3BD}
+.fl-rebe .preise{color:var(--stroh)}
+.fl-rebe .preise span small{color:#CBD3BD}
+
+/* ---------- Jausenkarte ---------- */
+.speise{display:flex;gap:1.2rem;align-items:baseline;padding:.8rem 0;border-bottom:1px solid var(--linie)}
+.speise:last-child{border-bottom:0}
+.speise-t{flex:1}
+.speise-t strong{display:block;font-family:var(--schrift-d);font-size:1.2rem;font-weight:600;color:var(--rebe-d);
+  line-height:1.25}
+.speise-t span{display:block;font-size:.9rem;color:var(--tinte-2);margin-top:.15rem}
+.speise-p{font-family:var(--schrift-d);font-size:1.18rem;color:var(--wein);white-space:nowrap}
+.vegan{display:inline-block;font-family:var(--schrift-t);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  color:#FFFFFF;background:var(--rebe);padding:.18rem .45rem;vertical-align:.18em;margin-left:.45rem;font-weight:700}
+
+/* ---------- Listen ---------- */
+.punkte{list-style:none;margin:0;padding:0}
+.punkte li{position:relative;padding:.42rem 0 .42rem 1.5rem}
+.punkte li::before{content:"";position:absolute;left:0;top:1.05rem;width:7px;height:7px;border-radius:50%;
+  background:var(--wein)}
+.fl-rebe .punkte li::before{background:var(--stroh)}
+.daten{margin:0}
+.daten-zeile{display:flex;gap:1.2rem;justify-content:space-between;align-items:baseline;padding:.62rem 0;
+  border-bottom:1px solid var(--linie)}
+.daten-zeile:last-child{border-bottom:0}
+.daten-zeile dt,.daten-zeile .bez{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-2)}
+.daten-zeile dd,.daten-zeile .wert{margin:0;text-align:right;font-family:var(--schrift-d);font-size:1.14rem;
+  color:var(--rebe-d)}
+.fl-rebe .daten-zeile{border-bottom-color:var(--linie-d)}
+.fl-rebe .daten-zeile dt,.fl-rebe .daten-zeile .bez{color:#CBD3BD}
+.fl-rebe .daten-zeile dd,.fl-rebe .daten-zeile .wert{color:var(--stroh)}
+
+/* ---------- Zeitleiste ---------- */
+.chronik{border-left:1px solid var(--linie);padding-left:clamp(1.2rem,3vw,2.2rem);margin:0}
+.chronik-punkt{position:relative;padding-bottom:2.2rem}
+.chronik-punkt::before{content:"";position:absolute;left:calc(-1 * clamp(1.2rem,3vw,2.2rem) - 5px);top:.75rem;
+  width:9px;height:9px;border-radius:50%;background:var(--wein)}
+.chronik-punkt:last-child{padding-bottom:0}
+.chronik-jahr{font-family:var(--schrift-d);font-size:1.9rem;color:var(--wein);line-height:1;display:block;
+  margin-bottom:.3rem}
+.chronik-punkt p:last-child{margin-bottom:0}
+
+/* ---------- Hinweise ---------- */
+.merker{background:var(--sand);padding:1.2rem 1.4rem;margin-bottom:1.8rem;border-left:3px solid var(--wein)}
+.merker strong{color:var(--wein)}
+.merker p:last-child{margin-bottom:0}
+.merker-gruen{border-left-color:var(--rebe)}
+.merker-gruen strong{color:var(--rebe-d)}
+
+/* ---------- Formulare ---------- */
+.form{background:var(--papier);padding:clamp(1.5rem,3.4vw,2.4rem);border-top:3px solid var(--rebe)}
+.zeile-f{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-bottom:1.1rem}
+label{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tinte-2);
+  margin-bottom:.4rem;font-weight:700}
+input,select,textarea{width:100%;font-family:var(--schrift-t);font-size:1rem;padding:.75rem .85rem;
+  border:1px solid #9B9784;background:#FFFFFF;color:var(--tinte);border-radius:0}
+textarea{min-height:130px;resize:vertical}
+.notiz{font-size:.85rem;color:var(--tinte-2);margin-top:.4rem}
+.kasterl{display:flex;gap:.65rem;align-items:flex-start;margin-bottom:1.2rem}
+.kasterl input{width:auto;margin-top:.4rem}
+.kasterl label{text-transform:none;letter-spacing:0;font-weight:400;font-size:.93rem;color:var(--tinte-2)}
+.antwort-demo{display:none;background:var(--rebe);color:#FFFFFF;padding:1rem 1.2rem;margin-top:1.2rem;
+  border-left:3px solid var(--stroh)}
+.antwort-demo.sichtbar{display:block}
+
+/* ---------- Fragen ---------- */
+.fragenliste details{border-bottom:1px solid var(--linie)}
+.fragenliste summary{cursor:pointer;padding:1.05rem 0;font-family:var(--schrift-d);font-size:1.28rem;
+  color:var(--rebe-d);list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.fragenliste summary::-webkit-details-marker{display:none}
+.fragenliste summary::after{content:"+";color:var(--wein);font-size:1.3rem;line-height:1}
+.fragenliste details[open] summary::after{content:"\2013"}
+.fragenliste .inhalt{padding:0 0 1.2rem;color:var(--tinte-2)}
+.fragenliste .inhalt p:last-child{margin-bottom:0}
+
+/* ---------- Karte ---------- */
+.lageplan{background:var(--papier);padding:1rem;border-top:3px solid var(--rebe)}
+.lageplan svg{width:100%;height:auto;display:block}
+
+/* ---------- Galerie ---------- */
+.bildband{display:grid;grid-template-columns:1fr;gap:1.2rem}
+.bildband img{width:100%;object-fit:cover;aspect-ratio:12/5}
+.galerie-drei{display:grid;grid-template-columns:1fr;gap:1.4rem}
+.galerie-drei img{width:100%;object-fit:cover}
+
+/* ---------- Tabelle ---------- */
+.tabellenrahmen{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:440px;background:var(--papier)}
+th,td{text-align:left;padding:.8rem .9rem;border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--tinte-2);font-weight:700}
+tbody th{font-family:var(--schrift-d);font-size:1.08rem;letter-spacing:0;text-transform:none;color:var(--rebe-d)}
+caption{caption-side:bottom;text-align:left;font-size:.85rem;color:var(--tinte-2);padding-top:.7rem}
+
+/* ---------- Fuß ---------- */
+.fussbereich{background:var(--rebe-d);color:#C9D2BE;padding-block:clamp(2.8rem,5vw,4.2rem) 1.5rem;font-size:.95rem}
+.fussbereich h3{color:#FFFFFF;font-size:1.15rem}
+.fussbereich a{color:#E8EBDF;text-decoration:none;border-bottom:1px solid var(--linie-d)}
+.fussbereich a:hover{color:var(--stroh);border-bottom-color:var(--stroh)}
+.fuss-raster{display:grid;gap:2.2rem;grid-template-columns:1fr}
+.fussbereich ul{list-style:none;margin:0;padding:0}
+.fussbereich li{margin-bottom:.45rem}
+.fuss-schluss{border-top:1px solid var(--linie-d);margin-top:2.6rem;padding-top:1.4rem;font-size:.82rem;color:#AEB89F}
+.fuss-schluss p{margin:0 0 .5rem}
+
+@media (min-width:640px){
+  .s2{grid-template-columns:1fr 1fr}
+  .galerie-drei{grid-template-columns:1fr 1fr}
+  .zeile-f.zwei{grid-template-columns:1fr 1fr}
+  .zeile-f.drei{grid-template-columns:1fr 1fr 1fr}
+  .bildband{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .s3{grid-template-columns:repeat(3,1fr)}
+  .galerie-drei{grid-template-columns:repeat(3,1fr)}
+  .paar{grid-template-columns:1fr 1fr}
+  .paar.links-gross{grid-template-columns:1.4fr .6fr}
+  .paar.rechts-gross{grid-template-columns:.6fr 1.4fr}
+}
+@media (max-width:899px){
+  .kopf-schalter{display:inline-block;order:3}
+  .wegweiser{display:none;order:4;width:100%;border-top:1px solid var(--linie);margin-top:.5rem;padding-top:.7rem}
+  .wegweiser.offen{display:block}
+  .wegweiser ul{flex-direction:column;gap:0}
+  .wegweiser li{border-bottom:1px solid var(--linie)}
+  .wegweiser a{display:block;padding:.7rem 0;border-bottom:0}
+  .kopf-aktion{display:none}
+  .karte-zeile{grid-template-columns:1fr}
+  .preise{margin-top:.4rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.aktionen.zentriert{justify-content:center}
+
+/* ---------- Korrekturen ---------- */
+.panorama-text .marke{color:var(--stroh)}
+.speise-t .vegan,.speise-t strong .vegan{display:inline-block;color:#FFFFFF;background:var(--rebe);
+  font-family:var(--schrift-t);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.18rem .45rem;margin:0 0 0 .45rem;vertical-align:.18em;font-weight:700;line-height:1.5}
+.fl-rebe .chronik{border-left-color:var(--linie-d)}
+.fl-rebe .chronik-jahr{color:var(--stroh)}
+.fl-rebe .chronik-punkt::before{background:var(--stroh)}
+
+/* ---------- Mobile Feinschliff ---------- */
+p,li,dd,td,th,figcaption,address{overflow-wrap:break-word}
+.paar > *,.reihe > *,.bahn > *{min-width:0}
+@media (max-width:620px){
+  .daten-zeile{flex-wrap:wrap}
+  .daten-zeile dd,.daten-zeile .wert{text-align:left}
+}
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}

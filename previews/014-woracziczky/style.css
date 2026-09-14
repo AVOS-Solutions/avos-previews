@@ -1,0 +1,267 @@
+/* ============================================================
+   Woracziczky Gasthaus, Spengergasse 52, 1050 Wien
+   Gestaltungsidee: Wiener Beisl als reine Typografie.
+   Kein Bildmaterial vorhanden - die Seite arbeitet mit
+   Schrift, Haarlinien, Flaechen und CSS-Mustern.
+   Palette: Tinte, Papier, Rost, Messing
+   ============================================================ */
+
+:root{
+  --ink:#16181c;
+  --ink-2:#23272e;
+  --ink-3:#3a4049;
+  --paper:#f4f1ea;
+  --paper-2:#eae5da;
+  --paper-3:#fbfaf6;
+  --rust:#9e4b24;
+  --rust-dark:#8a3f1c;
+  --brass:#c9a227;
+  --muted:#5a5348;
+  --line:#cdc5b4;
+  --line-dark:#3c414a;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:clamp(1rem,.95rem + .22vw,1.08rem);
+  line-height:1.68;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+
+/* ---------- Typografie ---------- */
+h1,h2,h3,.display{
+  font-family:"Fraunces",Georgia,"Iowan Old Style","Times New Roman",serif;
+  font-weight:600;line-height:1.06;letter-spacing:-.015em;margin:0 0 .5em;
+}
+h1{font-size:clamp(2.3rem,1.1rem + 5.4vw,4.6rem)}
+h2{font-size:clamp(1.6rem,1.1rem + 2.2vw,2.7rem)}
+h3{font-size:clamp(1.12rem,1rem + .6vw,1.4rem);letter-spacing:-.005em}
+p{margin:0 0 1.05em}
+a{color:var(--rust-dark);text-underline-offset:3px}
+a:hover{color:var(--rust)}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+.lead{font-size:clamp(1.1rem,1rem + .6vw,1.35rem);line-height:1.55;color:var(--ink-2)}
+.eyebrow{
+  display:block;font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--rust-dark);margin-bottom:1rem;
+}
+.muted{color:var(--muted)}
+.small{font-size:.87rem;line-height:1.55}
+.serif-note{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:1.05rem;color:var(--ink-2)}
+
+/* ---------- Raster ---------- */
+.wrap{width:min(1100px,100% - 2.4rem);margin-inline:auto}
+.narrow{width:min(720px,100% - 2.4rem);margin-inline:auto}
+section{padding-block:clamp(2.8rem,1.8rem + 3.6vw,5rem)}
+.skip{position:absolute;left:-999px;top:0;z-index:99;background:var(--ink);color:var(--paper);padding:.7rem 1.1rem}
+.skip:focus{left:.6rem;top:.6rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.preview-bar{
+  background:var(--ink);color:#d8d2c4;text-align:center;
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.6rem 1rem;line-height:1.5;border-bottom:1px solid var(--line-dark);
+}
+
+/* ---------- Kopf ---------- */
+.site-head{background:var(--ink);color:var(--paper)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:1rem}
+.brand{text-decoration:none;color:var(--paper);display:block;line-height:1.1}
+.brand b{
+  font-family:"Fraunces",Georgia,serif;font-size:1.25rem;font-weight:600;letter-spacing:.02em;display:block;
+}
+.brand span{display:block;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#b6ae9d;margin-top:.25rem}
+.nav-toggle{
+  background:transparent;color:var(--paper);border:1px solid #5b6169;padding:.55rem .9rem;
+  font:inherit;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+}
+.nav-toggle:hover{border-color:var(--brass);color:var(--brass)}
+.nav{display:none}
+.nav.open{display:block}
+.nav ul{list-style:none;margin:0;padding:0 0 1.1rem;display:grid;gap:0}
+.nav a{
+  display:block;color:#e6e1d5;text-decoration:none;padding:.66rem 0;
+  font-size:.86rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--line-dark);
+}
+.nav a:hover{color:var(--brass)}
+.nav a[aria-current="page"]{color:var(--brass)}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:var(--ink);color:var(--paper);padding-block:clamp(3rem,1.6rem + 6vw,6.5rem);
+  border-bottom:1px solid var(--line-dark);position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg,rgba(201,162,39,.05) 0 2px,transparent 2px 22px);
+}
+.hero>*{position:relative;z-index:1}
+.hero h1{color:var(--paper);letter-spacing:-.03em}
+.hero .eyebrow{color:var(--brass)}
+.hero p{color:#cfc9bb;max-width:48ch}
+.phonetic{
+  font-size:.82rem;letter-spacing:.34em;text-transform:uppercase;color:var(--brass);
+  margin:0 0 1.6rem;border-top:1px solid var(--line-dark);padding-top:1rem;display:inline-block;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;background:var(--rust);color:#fbf8f2;border:1px solid var(--rust);
+  padding:.78rem 1.5rem;text-decoration:none;font-size:.83rem;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:600;cursor:pointer;font-family:inherit;
+}
+.btn:hover{background:var(--rust-dark);border-color:var(--rust-dark);color:#fbf8f2}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.hero .btn-line,.on-dark .btn-line{color:var(--paper);border-color:#6d737c}
+.hero .btn-line:hover,.on-dark .btn-line:hover{background:var(--paper);color:var(--ink)}
+
+/* ---------- Fakten-Leiste ---------- */
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{border-bottom:1px solid var(--line);padding:1rem 0}
+.facts dt,.facts .f-k{
+  display:block;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rust-dark);margin-bottom:.3rem;
+}
+.facts dd,.facts .f-v{display:block;margin:0;font-family:"Fraunces",Georgia,serif;font-size:1.16rem;color:var(--ink)}
+.hero .facts{border-color:var(--line-dark)}
+.hero .facts div{border-color:var(--line-dark)}
+.hero .facts .f-k{color:var(--brass)}
+.hero .facts .f-v{color:var(--paper)}
+
+/* ---------- Flächen ---------- */
+.on-dark{background:var(--ink);color:#d6d0c2}
+.on-dark h2,.on-dark h3{color:var(--paper)}
+.on-dark .eyebrow{color:var(--brass)}
+.on-dark a{color:var(--brass)}
+.on-dark .btn{color:#fbf8f2}
+.on-dark .btn:hover{color:#fbf8f2}
+.on-paper2{background:var(--paper-2)}
+.ruled{border-top:3px solid var(--ink)}
+
+/* ---------- Spalten ---------- */
+.cols{display:grid;gap:2.2rem}
+.cols-3{display:grid;gap:1.6rem}
+.stack-lines{border-top:1px solid var(--line)}
+.stack-lines>article{border-bottom:1px solid var(--line);padding:1.5rem 0;display:grid;gap:.5rem}
+.on-dark .stack-lines,.on-dark .stack-lines>article{border-color:var(--line-dark)}
+.idx{
+  font-family:"Fraunces",Georgia,serif;font-size:.95rem;color:var(--rust-dark);
+  letter-spacing:.1em;
+}
+.on-dark .idx{color:var(--brass)}
+
+/* ---------- Karten ---------- */
+.card{background:var(--paper-3);border:1px solid var(--line);padding:1.6rem}
+.on-dark .card{background:var(--ink-2);border-color:var(--line-dark);color:#d6d0c2}
+.card h3{margin-bottom:.5rem}
+
+/* ---------- Zitate / Auszeichnungen ---------- */
+blockquote{
+  margin:0;padding:1.4rem 0 1.4rem 1.6rem;border-left:3px solid var(--rust);
+  font-family:"Fraunces",Georgia,serif;font-size:1.2rem;line-height:1.45;color:var(--ink);
+}
+blockquote cite{display:block;margin-top:.7rem;font-family:"Inter",Arial,sans-serif;font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+.awards{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.awards li{display:flex;gap:1rem;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.9rem}
+.awards b{font-family:"Fraunces",Georgia,serif;font-size:1.35rem;color:var(--rust-dark);min-width:4.5rem}
+.on-dark .awards li{border-color:var(--line-dark)}
+.on-dark .awards b{color:var(--brass)}
+
+/* ---------- Zeiten ---------- */
+.hours{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;gap:1.2rem;padding:.72rem 0;border-bottom:1px solid var(--line)}
+.hours b{font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.hours span{font-family:"Fraunces",Georgia,serif;font-size:1.05rem;color:var(--ink)}
+.on-dark .hours,.on-dark .hours li{border-color:var(--line-dark)}
+.on-dark .hours b{color:#b6ae9d}
+.on-dark .hours span{color:var(--paper)}
+.closed span{color:var(--rust-dark)}
+
+/* ---------- Hinweis ---------- */
+.note{background:var(--paper-2);border-left:3px solid var(--rust);padding:1.1rem 1.3rem;margin:1.6rem 0}
+.note p:last-child{margin-bottom:0}
+.on-dark .note{background:var(--ink-2);border-color:var(--brass);color:#d6d0c2}
+
+/* ---------- Formulare ---------- */
+form{margin-top:1.6rem}
+fieldset{border:1px solid var(--line);padding:1.5rem;margin:0 0 1.5rem;background:var(--paper-3)}
+legend{
+  font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rust-dark);
+  padding:0 .6rem;font-weight:600;
+}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.4rem;font-weight:600}
+input,select,textarea{
+  width:100%;font:inherit;font-size:1rem;padding:.7rem .8rem;background:#fff;
+  border:1px solid var(--line);color:var(--ink);border-radius:0;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--rust);outline:none}
+textarea{min-height:130px;resize:vertical}
+.field-row{display:grid;gap:1.1rem}
+.check{display:flex;gap:.7rem;align-items:flex-start}
+.check input{width:auto;margin-top:.3rem}
+.check label{text-transform:none;letter-spacing:0;font-size:.9rem;font-weight:400;color:var(--ink-2)}
+.form-msg{display:none;margin-top:1.1rem;border:1px solid var(--rust);background:var(--paper-2);padding:1rem 1.2rem;color:var(--ink)}
+.form-msg.show{display:block}
+
+/* ---------- Akkordeon ---------- */
+details{border-bottom:1px solid var(--line)}
+summary{
+  cursor:pointer;padding:1.05rem 0;font-family:"Fraunces",Georgia,serif;font-size:1.1rem;color:var(--ink);
+}
+summary::marker{color:var(--rust)}
+.details-body{padding:0 0 1.2rem}
+.details-body p:last-child{margin-bottom:0}
+
+/* ---------- Karte ---------- */
+.map{border:1px solid var(--line);background:var(--paper-3)}
+.map svg{display:block;width:100%;height:auto}
+
+/* ---------- Wortmarke als Muster ---------- */
+.wordmark{
+  font-family:"Fraunces",Georgia,serif;font-size:clamp(2rem,1rem + 6vw,5rem);
+  letter-spacing:.06em;color:var(--muted);line-height:1;margin:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.2rem 0;
+  overflow:hidden;white-space:nowrap;
+}
+
+/* ---------- Fuß ---------- */
+.site-foot{background:var(--ink);color:#b6ae9d;padding-block:3rem 1.5rem;font-size:.93rem}
+.site-foot h3{color:var(--paper);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-family:"Inter",Arial,sans-serif;font-weight:600}
+.site-foot a{color:#e6e1d5}
+.site-foot a:hover{color:var(--brass)}
+.foot-grid{display:grid;gap:2rem}
+.foot-list{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.foot-bottom{margin-top:2.4rem;border-top:1px solid var(--line-dark);padding-top:1.2rem;font-size:.78rem;color:#9c958a;display:grid;gap:.5rem}
+
+/* ---------- Responsive ---------- */
+@media (min-width:640px){
+  .facts{grid-template-columns:1fr 1fr}
+  .facts div{padding-right:1.5rem}
+  .field-row{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .cols-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:900px){
+  .nav-toggle{display:none}
+  .nav{display:block}
+  .nav ul{display:flex;gap:1.4rem;padding:0}
+  .nav a{border-bottom:0;padding:.3rem 0;font-size:.75rem;letter-spacing:.18em}
+  .nav a[aria-current="page"]{border-bottom:1px solid var(--brass)}
+  .cols{grid-template-columns:1fr 1fr;gap:3.4rem}
+  .cols-wide{grid-template-columns:1.4fr .6fr}
+  .cols-narrow{grid-template-columns:.6fr 1.4fr}
+  .cols-3{grid-template-columns:repeat(3,1fr)}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .foot-grid{grid-template-columns:1.3fr 1fr 1fr}
+  .hero-split{display:grid;grid-template-columns:1.3fr .7fr;gap:3.4rem;align-items:end}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{.preview-bar,.nav,.hero-actions{display:none}}

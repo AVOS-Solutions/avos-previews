@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisch reservieren &amp; Saal anfragen – Gasthaus Zöchling Steyr</title>
+<meta name="description" content="Online Tisch reservieren, Saal für Feiern von 20 bis 250 Personen anfragen oder Gutschein bestellen – beim Gasthaus Zöchling in Steyr-Münichholz.">
+<link rel="canonical" href="https://www.gasthaus-zoechling.at/reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gasthaus Zöchling">
+<meta property="og:title" content="Tisch reservieren &amp; Saal anfragen – Gasthaus Zöchling Steyr">
+<meta property="og:description" content="Online Tisch reservieren, Saal für Feiern von 20 bis 250 Personen anfragen oder Gutschein bestellen – beim Gasthaus Zöchling in Steyr-Münichholz.">
+<meta property="og:locale" content="de_AT">
+<meta property="og:image" content="img/03.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&amp;family=Karla:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="previewbar">Unverbindliche <b>Gestaltungs-Vorschau</b> · keine offizielle Website des Gasthaus Zöchling · erstellt von AVOS&nbsp;Solutions</div>
+<header class="site">
+  <div class="site__in">
+    <a class="brand" href="index.html">
+      <span class="brand__k">Gasthaus</span>
+      <span class="brand__n">Zöchling</span>
+      <span class="brand__o">Steyr · Münichholz</span>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="index.html">Gasthaus</a></li>
+        <li><a href="speisekarte.html">Menü &amp; Speisen</a></li>
+        <li><a href="raeumlichkeiten.html">Räume &amp; Feiern</a></li>
+        <li><a href="gastgarten.html">Gastgarten</a></li>
+        <li><a href="reservierung.html" aria-current="page">Reservierung</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="reservierung.html">Tisch reservieren</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--paper2">
+  <div class="wrap">
+    <p class="eyebrow">Reservierung</p>
+    <h1>Tisch reservieren oder<br>Raum anfragen</h1>
+    <p class="lead">Beides geht hier in einer Minute &ndash; ohne Anruf, auch abends und an unseren Ruhetagen. Sie bekommen von uns eine Bestätigung mit allen Details.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="split split--wide-l" style="align-items:start">
+      <div>
+        <form class="form" data-demo id="tisch">
+          <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an das Gasthaus Zöchling (07252 72013). Aktuell wird nichts versendet und nichts gespeichert.</p>
+          <h2>Tisch reservieren</h2>
+          <fieldset>
+            <legend>Ihr Besuch</legend>
+            <div class="formgrid formgrid--2">
+              <div class="field">
+                <label for="r-datum">Datum</label>
+                <input type="date" id="r-datum" name="datum" required>
+              </div>
+              <div class="field">
+                <label for="r-zeit">Uhrzeit</label>
+                <input type="time" id="r-zeit" name="zeit" required>
+              </div>
+              <div class="field">
+                <label for="r-pers">Personen</label>
+                <input type="number" id="r-pers" name="personen" min="1" max="40" value="2" required>
+              </div>
+              <div class="field">
+                <label for="r-bereich">Bereich</label>
+                <select id="r-bereich" name="bereich">
+                  <option>Gastraum</option>
+                  <option>Gastgarten</option>
+                  <option>Gaststüberl (Bar)</option>
+                  <option>egal – bitte einteilen</option>
+                </select>
+              </div>
+            </div>
+            <p class="hint">Küchenzeiten: Mittwoch bis Samstag 11.30–20.00 Uhr, Sonntag 11.00–15.00 Uhr. Montag und Dienstag Ruhetag.</p>
+          </fieldset>
+          <fieldset>
+            <legend>Ihre Kontaktdaten</legend>
+            <div class="formgrid formgrid--2">
+              <div class="field">
+                <label for="r-name">Name</label>
+                <input type="text" id="r-name" name="name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="r-tel">Telefon</label>
+                <input type="tel" id="r-tel" name="telefon" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-mail">E-Mail</label>
+              <input type="email" id="r-mail" name="email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="r-anm">Anmerkung (Kinderstuhl, Allergien, Anlass)</label>
+              <textarea id="r-anm" name="anmerkung"></textarea>
+            </div>
+            <p class="check"><input type="checkbox" id="r-dsgvo" required> <label for="r-dsgvo" style="font-weight:400">Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Reservierung verwendet werden. <a href="datenschutz.html">Datenschutz</a></label></p>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Reservierung absenden</button>
+          <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Reservierung jetzt beim Gasthaus Zöchling. Dies ist eine Vorschau &ndash; bitte reservieren Sie derzeit telefonisch unter 07252 72013.</p>
+        </form>
+      </div>
+
+      <aside>
+        <div class="callout">
+          <h3>Lieber telefonisch?</h3>
+          <p>Gasthaus: <a href="tel:+43725272013">07252 72013</a><br>
+             Bestellungen &amp; Abholung: <a href="tel:+436645108673">0664 510 86 73</a></p>
+          <p class="note">Am Montag und Dienstag ist Ruhetag &ndash; das Formular nimmt Ihre Anfrage trotzdem entgegen.</p>
+        </div>
+        <div class="callout" style="margin-top:1.5rem">
+          <h3>Gutschein bestellen</h3>
+          <p>Ein Gutschein für Menü, Jause oder Feier &ndash; als Geschenk immer passend. Betrag frei wählbar, Abholung im Haus.</p>
+          <form data-demo>
+            <div class="field">
+              <label for="g-betrag">Betrag</label>
+              <select id="g-betrag" name="betrag">
+                <option>€ 25</option><option>€ 50</option><option>€ 100</option><option>anderer Betrag</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="g-name">Ihr Name</label>
+              <input type="text" id="g-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="g-kontakt">Telefon oder E-Mail</label>
+              <input type="text" id="g-kontakt" name="kontakt" required>
+            </div>
+            <button class="btn btn--ghost" type="submit">Gutschein anfragen</button>
+            <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Gutscheinbestellung jetzt beim Gasthaus. Vorschau &ndash; bitte melden Sie sich derzeit telefonisch.</p>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="saal">
+  <div class="wrap">
+    <p class="eyebrow">Saal- und Raumanfrage</p>
+    <h2>Feier, Sitzung, Hochzeit oder Busgruppe</h2>
+    <p class="lead">Sagen Sie uns Anlass, Termin und Personenzahl &ndash; wir melden uns mit dem passenden Raum und einem Vorschlag für Speisen und Getränke.</p>
+    <div class="split" style="margin-top:2rem;align-items:start">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an das Gasthaus Zöchling.</p>
+        <fieldset>
+          <legend>Ihre Veranstaltung</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field">
+              <label for="s-anlass">Anlass</label>
+              <select id="s-anlass" name="anlass">
+                <option>Geburtstagsfeier</option><option>Hochzeit</option><option>Weihnachtsfeier</option>
+                <option>Firmen- oder Vereinsfeier</option><option>Sitzung / Vortrag</option>
+                <option>Ball / Tanzveranstaltung</option><option>Busgruppe</option><option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="s-raum">Wunschraum</label>
+              <select id="s-raum" name="raum">
+                <option>Vorschlag erbeten</option>
+                <option>Stüberl im 1. Stock (20)</option>
+                <option>Gaststüberl (25)</option>
+                <option>Extrastüberl (36)</option>
+                <option>Saal klein (40–90)</option>
+                <option>Saal groß (100–250)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="s-datum">Wunschtermin</label>
+              <input type="date" id="s-datum" name="datum" required>
+            </div>
+            <div class="field">
+              <label for="s-pers">Personen</label>
+              <input type="number" id="s-pers" name="personen" min="10" max="250" value="60" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="s-wunsch">Was ist Ihnen wichtig? (Menü, Buffet, Schank, Technik, Dekoration)</label>
+            <textarea id="s-wunsch" name="wunsch"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field">
+              <label for="s-name">Name / Firma</label>
+              <input type="text" id="s-name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="s-tel">Telefon</label>
+              <input type="tel" id="s-tel" name="telefon" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="s-mail">E-Mail</label>
+            <input type="email" id="s-mail" name="email">
+          </div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Unverbindlich anfragen</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Saal-Anfrage jetzt beim Gasthaus Zöchling. Dies ist eine Vorschau &ndash; bitte rufen Sie derzeit unter 07252 72013 an.</p>
+      </form>
+      <div>
+        <h3>Das spricht für eine Feier bei uns</h3>
+        <ul>
+          <li>Fünf Räume von 20 bis 250 Personen unter einem Dach</li>
+          <li>Großer Saal auch für Bälle und Tanzveranstaltungen</li>
+          <li>Eigene Schankanlage im kleinen Saal</li>
+          <li>Gratis WLAN in Extrastüberl und Gaststüberl</li>
+          <li>Großer Parkplatz und Busparkplatz direkt am Haus</li>
+          <li>Gastgarten im Grünen für den Sektempfang im Sommer</li>
+        </ul>
+        <p><a href="raeumlichkeiten.html">Alle Räume mit Sitzplätzen und Ausstattung ansehen</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Gasthaus Zöchling KG</h3>
+        <ul>
+          <li>Franz-Schuhmeierstraße 2, A-4400 Steyr</li>
+          <li>Telefon: <a href="tel:+43725272013">+43 7252 72013</a></li>
+          <li>Mobil (Bestellungen): <a href="tel:+436645108673">+43 664 5108673</a></li>
+          <li><a href="https://www.facebook.com/Gasthaus-Z%C3%B6chling-287782444679772/" rel="noopener">Facebook-Seite</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <ul>
+          <li>Mittwoch bis Samstag: warme Küche 11.30–20.00 Uhr</li>
+          <li>Sonntag: warme Küche 11.00–15.00 Uhr</li>
+          <li>Ruhetage: Montag &amp; Dienstag</li>
+          <li>Busse willkommen · großer Parkplatz</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Seiten</h3>
+        <ul>
+          <li><a href="speisekarte.html">Menü &amp; Speisen</a></li>
+          <li><a href="raeumlichkeiten.html">Räume &amp; Feiern</a></li>
+          <li><a href="gastgarten.html">Gastgarten &amp; Galerie</a></li>
+          <li><a href="reservierung.html">Reservierung &amp; Saal-Anfrage</a></li>
+          <li><a href="jobs.html">Jobs &amp; Lehre</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+          <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <p>Das gesamte Bildmaterial dieser Vorschau stammt von der bestehenden Website des Gasthaus Zöchling (gasthaus-zoechling.at) und bleibt Eigentum des Betriebs.</p>
+      <p>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions · kein Vertragsangebot, keine offizielle Website.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.getElementById('navtoggle'), n=document.getElementById('nav');
+  function sync(){ if(window.matchMedia('(min-width:920px)').matches){ n.hidden=false; }
+    else { n.hidden = t.getAttribute('aria-expanded')!=='true'; } }
+  t.addEventListener('click',function(){
+    var open=t.getAttribute('aria-expanded')==='true';
+    t.setAttribute('aria-expanded',String(!open)); n.hidden=open;
+  });
+  window.addEventListener('resize',sync); sync();
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var box=f.querySelector('.formdone');
+      if(box){ box.hidden=false; box.setAttribute('tabindex','-1'); box.focus(); box.scrollIntoView({block:'center'}); }
+    });
+  });
+  var lb=document.getElementById('lightbox');
+  if(lb){
+    var img=lb.querySelector('img');
+    document.querySelectorAll('.gallery button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var s=b.querySelector('img');
+        img.src=s.src; img.alt=s.alt; lb.classList.add('is-open');
+        lb.querySelector('.lightbox__close').focus();
+      });
+    });
+    function close(){ lb.classList.remove('is-open'); }
+    lb.querySelector('.lightbox__close').addEventListener('click',close);
+    lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+})();
+</script>
+</body>
+</html>

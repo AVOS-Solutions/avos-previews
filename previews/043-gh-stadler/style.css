@@ -1,0 +1,327 @@
+/* Gasthof Stadler "zur Haltestelle", Lasberg
+   Gestaltungsmotiv: Fahrplan / Haltestellen-Tafel.
+   Messingtafel auf Tannengruen, Zeitspalten, Perforationskarten. */
+
+:root{
+  --ink:#14231b;
+  --ink-soft:#3c5044;
+  --cream:#f6f1e6;
+  --paper:#fffdf7;
+  --green:#12291f;
+  --green-2:#1d3a2c;
+  --brass:#7a5418;
+  --brass-bright:#d0a13b;
+  --red:#9c2f1c;
+  --line:#d8cdb4;
+  --line-dark:#3a5546;
+  --rad:3px;
+  --wrap:1140px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"Karla","Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:clamp(16px,0.55vw + 15px,18px);
+  line-height:1.65;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brass)}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3,h4{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;
+  font-weight:500;letter-spacing:.01em;line-height:1.08;
+  margin:0 0 .5em;text-transform:uppercase;
+}
+h1{font-size:clamp(2.1rem,6.2vw,4.1rem)}
+h2{font-size:clamp(1.6rem,3.6vw,2.5rem)}
+h3{font-size:clamp(1.15rem,2vw,1.45rem)}
+h4{font-size:1.02rem;letter-spacing:.06em}
+p{margin:0 0 1rem}
+.small{font-size:.88rem;color:var(--ink-soft)}
+.lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--ink-soft)}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--green);color:var(--cream);padding:.7rem 1rem;z-index:99}
+.skip:focus{left:0}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+
+/* ---------- Vorschau-Leiste + Kopf ---------- */
+.preview-bar{
+  background:var(--green);color:#e7e0cc;
+  font-size:.78rem;letter-spacing:.045em;text-transform:uppercase;
+  text-align:center;padding:.55rem 16px;
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;
+}
+.site-head{
+  position:sticky;top:0;z-index:40;
+  background:var(--paper);
+  border-bottom:2px solid var(--ink);
+}
+.head-in{display:flex;align-items:center;gap:1rem;padding-block:.6rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand-mark{color:var(--brass);display:block}
+.brand-txt b{
+  display:block;font-family:"Oswald","Arial Narrow",Arial,sans-serif;
+  font-size:1.3rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;line-height:1;
+}
+.brand-txt i{display:block;font-style:normal;font-size:.72rem;letter-spacing:.19em;text-transform:uppercase;color:var(--brass)}
+.burger{
+  font:600 .85rem/1 "Oswald","Arial Narrow",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--green);color:var(--cream);border:0;padding:.62rem .9rem;border-radius:var(--rad);cursor:pointer;
+}
+.mainnav{display:none;width:100%;padding-bottom:.7rem}
+.mainnav.is-open{display:block}
+.mainnav ul{list-style:none;margin:0 0 .7rem;padding:0;display:flex;flex-direction:column;gap:1px}
+.mainnav a{
+  display:block;padding:.55rem .2rem;text-decoration:none;color:var(--ink);
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;font-size:.93rem;
+  border-bottom:1px dotted var(--line);
+}
+.mainnav a:hover,.mainnav a[aria-current]{color:var(--red)}
+.mainnav a[aria-current]{box-shadow:inset 0 -3px 0 var(--brass)}
+.nav-cta{display:inline-block}
+
+@media (min-width:940px){
+  .burger{display:none}
+  .mainnav{display:flex;align-items:center;gap:1.3rem;width:auto;padding:0}
+  .mainnav ul{flex-direction:row;gap:1.15rem;margin:0}
+  .mainnav a{border:0;padding:.25rem 0}
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;font-family:"Oswald","Arial Narrow",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.09em;font-size:.9rem;font-weight:500;
+  padding:.78rem 1.35rem;border-radius:var(--rad);text-decoration:none;border:2px solid transparent;cursor:pointer;
+}
+a.btn--primary,.btn--primary{background:var(--brass);color:#fff8e8;border-color:var(--brass)}
+a.btn--primary:hover,a.btn--primary:focus-visible,.btn--primary:hover{background:#5f400f;border-color:#5f400f;color:#fff8e8}
+a.btn--ink,.btn--ink{background:var(--green);color:var(--cream);border-color:var(--green)}
+a.btn--ink:hover,a.btn--ink:focus-visible{background:#0a1a13;color:#fff}
+a.btn--ghost,.btn--ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+a.btn--ghost:hover,a.btn--ghost:focus-visible{background:var(--ink);color:var(--cream)}
+a.btn--light,.btn--light{background:var(--cream);color:var(--green);border-color:var(--cream)}
+a.btn--light:hover,a.btn--light:focus-visible{background:#fff;color:var(--green)}
+.btnrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+
+/* ---------- Abschnitte ---------- */
+section{padding-block:clamp(2.6rem,6vw,4.6rem)}
+.sec--paper{background:var(--paper)}
+.sec--dark{background:var(--green);color:#ece5d3}
+.sec--dark h1,.sec--dark h2,.sec--dark h3{color:#fff}
+.sec--dark .lead,.sec--dark .small{color:#cdc4ad}
+.sec--dark a:not(.btn){color:var(--brass-bright)}
+.sec--dark a:not(.btn):hover{color:#fff}
+.sec--brass{background:#efe6d1}
+.eyebrow{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.22em;font-size:.76rem;color:var(--brass);margin:0 0 .7rem;
+}
+.sec--dark .eyebrow{color:var(--brass-bright)}
+.sechead{max-width:62ch;margin-bottom:2rem}
+
+/* ---------- Hero: Haltestellen-Tafel ---------- */
+.hero{
+  background:var(--green);color:#efe8d6;
+  padding-block:clamp(3rem,8vw,6rem);
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:14px;
+  background:repeating-linear-gradient(90deg,var(--brass-bright) 0 26px,transparent 26px 52px);
+  opacity:.5;
+}
+.hero-grid{display:grid;gap:2.4rem}
+.hero h1{color:#fff}
+.hero h1 em{display:block;font-style:normal;color:var(--brass-bright);font-size:.44em;letter-spacing:.22em;margin-bottom:.5rem}
+.hero p{color:#d6cdb6;max-width:52ch}
+.hero .btnrow a{font-size:.95rem}
+.board{
+  border:2px solid var(--line-dark);background:#0c1f16;border-radius:var(--rad);
+  padding:1.15rem 1.25rem;
+}
+.board caption,.board .board-t{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;
+  font-size:.76rem;color:var(--brass-bright);display:block;margin-bottom:.8rem;text-align:left;
+}
+.board table{width:100%;border-collapse:collapse;font-size:.95rem}
+.board th,.board td{text-align:left;padding:.45rem 0;border-bottom:1px dotted #3c5a49;color:#e7e0cc}
+.board th{font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.board td{text-align:right;font-variant-numeric:tabular-nums;color:#cfc6ae}
+.board tr:last-child th,.board tr:last-child td{border-bottom:0}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.35fr .95fr;align-items:center;gap:3.5rem}
+}
+
+/* ---------- Fahrplan-Zeilen (Termine) ---------- */
+.plan{border-top:2px solid var(--ink);margin-top:1.6rem}
+.plan-row{
+  display:grid;gap:.2rem .9rem;padding:1rem 0;border-bottom:1px solid var(--line);
+  grid-template-columns:1fr;
+}
+.plan-when{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.05rem;letter-spacing:.05em;
+  color:var(--brass);text-transform:uppercase;font-variant-numeric:tabular-nums;
+}
+.plan-what{font-weight:700}
+.plan-note{font-size:.9rem;color:var(--ink-soft)}
+.plan-price{font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.1rem;color:var(--ink)}
+@media (min-width:760px){
+  .plan-row{grid-template-columns:9.5rem 1fr 7rem;align-items:baseline}
+  .plan-price{text-align:right}
+}
+
+/* ---------- Karten / Perforation ---------- */
+.grid{display:grid;gap:1.4rem}
+.g2{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+@media (min-width:700px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.g3{grid-template-columns:repeat(3,1fr)}}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--rad);
+  padding:1.5rem 1.4rem;position:relative;
+}
+.sec--paper .card{background:var(--cream)}
+.card h3{margin-bottom:.4rem}
+.card .cap{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  font-size:.74rem;color:var(--brass);display:block;margin-bottom:.55rem;
+}
+.stub{
+  background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--brass);
+  padding:1.4rem 1.4rem 1.4rem 1.5rem;border-radius:var(--rad);
+}
+.stub .num{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:2.3rem;line-height:1;color:var(--brass);display:block;
+}
+.stub .num small{font-size:.9rem;letter-spacing:.12em;display:block;color:var(--ink-soft);text-transform:uppercase;margin-top:.3rem}
+
+/* ---------- Speisekarte ---------- */
+.menu-block{margin-bottom:2.6rem}
+.menu-block > h3{
+  border-bottom:2px solid var(--ink);padding-bottom:.4rem;margin-bottom:1.1rem;
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.dish{display:grid;grid-template-columns:1fr auto;gap:.2rem .9rem;padding:.8rem 0;border-bottom:1px dotted var(--line)}
+.dish:last-child{border-bottom:0}
+.dish-n{font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.06rem;letter-spacing:.03em;text-transform:uppercase;grid-column:1}
+.dish-p{font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.06rem;color:var(--brass);white-space:nowrap;grid-column:2;text-align:right}
+.dish-d{grid-column:1/-1;font-size:.92rem;color:var(--ink-soft);margin:0}
+
+/* ---------- Tabellen ---------- */
+.tbl-scroll{overflow-x:auto}
+table.data{width:100%;border-collapse:collapse;font-size:.95rem;min-width:460px}
+table.data th,table.data td{text-align:left;padding:.65rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+table.data thead th{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;
+  font-size:.8rem;background:var(--green);color:#fff;border-bottom:0;
+}
+table.data tbody th{font-weight:700;white-space:nowrap}
+
+/* ---------- Bild / Aushang ---------- */
+figure{margin:0}
+.poster{
+  background:var(--paper);border:1px solid var(--line);padding:.9rem;border-radius:var(--rad);
+}
+.poster img{border:1px solid var(--line)}
+.poster figcaption{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem}
+.split{display:grid;gap:2rem;align-items:center}
+@media (min-width:880px){.split{grid-template-columns:1fr 1fr;gap:3rem}}
+
+/* ---------- Zeitleiste ---------- */
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--brass)}
+.timeline li{position:relative;padding:0 0 1.7rem 1.6rem}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;background:var(--brass);border-radius:50%}
+.timeline b{
+  display:block;font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.2rem;
+  color:var(--brass);letter-spacing:.05em;
+}
+
+/* ---------- Formulare ---------- */
+.form{background:var(--paper);border:1px solid var(--line);border-radius:var(--rad);padding:clamp(1.3rem,3vw,2.1rem)}
+.sec--dark .form{background:#0e2118;border-color:var(--line-dark)}
+.sec--dark .form label{color:#e7e0cc}
+.fgrid{display:grid;gap:1rem}
+@media (min-width:680px){.fgrid.two{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:.3rem}
+.field.full{grid-column:1/-1}
+label{font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+input,select,textarea{
+  font:inherit;font-size:1rem;padding:.7rem .8rem;border:1px solid #b9ac8e;border-radius:var(--rad);
+  background:#fff;color:var(--ink);width:100%;
+}
+textarea{min-height:130px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--brass);outline-offset:1px}
+.check{flex-direction:row;align-items:flex-start;gap:.6rem}
+.check input{width:auto;margin-top:.35rem}
+.check label{text-transform:none;letter-spacing:0;font-family:inherit;font-size:.9rem}
+.formnote{
+  margin-top:1rem;background:#efe6d1;border-left:5px solid var(--brass);
+  padding:.85rem 1rem;font-size:.93rem;color:var(--ink);border-radius:var(--rad);
+}
+.sec--dark .formnote{background:#173427;color:#ece5d3;border-left-color:var(--brass-bright)}
+
+/* ---------- Akkordeon / FAQ ---------- */
+.acc{border-top:1px solid var(--line)}
+.acc-q{
+  width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);
+  padding:1.05rem 2rem 1.05rem 0;cursor:pointer;position:relative;color:var(--ink);
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;font-size:1.03rem;letter-spacing:.03em;text-transform:uppercase;
+}
+.acc-q::after{content:"+";position:absolute;right:.2rem;top:.9rem;color:var(--brass);font-size:1.4rem;line-height:1}
+.acc-q[aria-expanded="true"]::after{content:"\2013"}
+.acc-a{padding:.9rem 0 1.3rem;border-bottom:1px solid var(--line)}
+.acc-a p:last-child{margin-bottom:0}
+
+/* ---------- Karte (SVG) ---------- */
+.map{background:var(--paper);border:1px solid var(--line);border-radius:var(--rad);padding:1rem}
+.map svg{width:100%;height:auto;display:block}
+
+/* ---------- Galerie ---------- */
+.gal{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media (min-width:720px){.gal{grid-template-columns:1fr 1fr}}
+
+/* ---------- Hinweisband ---------- */
+.ribbon{
+  background:var(--brass);color:#fff8e8;padding:1.1rem 0;
+}
+.ribbon .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;align-items:center;justify-content:space-between}
+.ribbon p{margin:0;font-family:"Oswald","Arial Narrow",Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;font-size:.95rem}
+.ribbon a:not(.btn){color:#fff8e8}
+
+/* ---------- Fuss ---------- */
+.site-foot{background:var(--green);color:#cdc4ad;padding-block:3rem 1.6rem;font-size:.94rem}
+.site-foot a{color:#e7e0cc;text-decoration:none;border-bottom:1px solid #4d6a59}
+.site-foot a:hover{color:#fff;border-color:#fff}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:800px){.foot-grid{grid-template-columns:repeat(3,1fr);gap:2.6rem}}
+.foot-name{
+  font-family:"Oswald","Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;
+  color:#fff;font-size:.9rem;margin-bottom:.8rem;
+}
+.foot-hours{width:100%;border-collapse:collapse;font-size:.9rem}
+.foot-hours th,.foot-hours td{text-align:left;padding:.25rem 0;color:#cdc4ad;font-weight:400}
+.foot-hours td{text-align:right}
+.foot-links{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.site-foot .small{color:#a9a08c}
+.foot-note{border-top:1px solid #2d4939;margin-top:2.4rem;padding-top:1.2rem}
+.foot-note p{margin:0 0 .35rem;font-size:.82rem;color:#a9a08c}
+
+/* ---------- Rechtstexte ---------- */
+.legal{max-width:74ch}
+.legal h2{margin-top:2.2rem}
+.legal h3{margin-top:1.6rem}
+.muster{
+  background:#efe6d1;border:1px solid var(--brass);border-radius:var(--rad);
+  padding:1.1rem 1.2rem;margin-bottom:2rem;
+}
+.muster p{margin:0;color:var(--ink)}
+
+/* Grid-/Flex-Kinder duerfen schrumpfen, damit breite Tabellen scrollen statt die Seite zu dehnen */
+.grid > *,.split > *,.stats > *,.gal > *,.fgrid > *,.hero-in > *,.hero-grid > *,.foot-grid > *{min-width:0}
+.tbl-scroll{max-width:100%}

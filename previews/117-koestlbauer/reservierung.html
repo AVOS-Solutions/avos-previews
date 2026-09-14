@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tisch reservieren – Café Konditorei Köstlbauer, Tulln</title>
+  <meta name="description" content="Online einen Tisch im Café Köstlbauer oder im Schanigarten am Tullner Hauptplatz reservieren – mit Wunschbereich, Personenzahl und Anlass.">
+  <link rel="canonical" href="https://www.koestlbauer.at/reservierung.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_AT">
+  <meta property="og:site_name" content="Café Konditorei Köstlbauer">
+  <meta property="og:title" content="Tisch reservieren – Café Konditorei Köstlbauer, Tulln">
+  <meta property="og:description" content="Online einen Tisch im Café Köstlbauer oder im Schanigarten am Tullner Hauptplatz reservieren – mit Wunschbereich, Personenzahl und Anlass.">
+  <meta property="og:image" content="https://www.koestlbauer.at/img/04.jpg">
+  <meta property="og:url" content="https://www.koestlbauer.at/reservierung.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Direkt zum Inhalt</a>
+<div class="previewbar"><div class="wrap"><p>Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des Café Konditorei Köstlbauer · erstellt von <b>AVOS Solutions</b></p></div></div>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">KÖ</span>
+      <span class="brand__txt"><b>Café Konditorei Köstlbauer</b><small>Tulln an der Donau</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation">Menü</button>
+    <nav class="nav" id="hauptnavigation" aria-label="Hauptnavigation"><ul><li><a href="index.html">Start</a></li><li><a href="speisekarte.html">Speisekarte</a></li><li><a href="konditorei.html">Mehlspeisen &amp; Eis</a></li><li><a href="bestellung.html">Vorbestellen</a></li><li><a href="reservierung.html" aria-current="page">Tisch reservieren</a></li><li><a href="ueber-uns.html">Haus &amp; Geschichte</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="band-paper2" style="padding-block:clamp(2rem,5vw,3.4rem)">
+  <div class="wrap">
+    <p class="hero__kicker">Neu: online statt nur telefonisch</p>
+    <h1>Tisch reservieren</h1>
+    <p class="lead">Im Kaffeehaus, im Wintergartenbereich oder – von Frühling bis Herbst – im großen schattigen Schanigarten am Hauptplatz. Sagen Sie uns, wann Sie kommen, wir halten den Platz frei.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="split split--wide" style="align-items:start">
+      <form class="form" data-demo novalidate>
+        <fieldset>
+          <legend>Ihr Besuch</legend>
+          <div class="fgrid">
+            <div class="field"><label for="r-datum">Datum</label><input type="date" id="r-datum" name="datum" required></div>
+            <div class="field"><label for="r-zeit">Uhrzeit</label><input type="time" id="r-zeit" name="zeit" required>
+              <span class="hint">Di–Fr 07:30–19:00, Sa 07:30–18:00, So &amp; Feiertag 09:00–18:00</span></div>
+            <div class="field"><label for="r-pers">Personen</label>
+              <select id="r-pers" name="personen">
+                <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option><option>mehr als 8</option>
+              </select></div>
+            <div class="field"><label for="r-bereich">Wunschbereich</label>
+              <select id="r-bereich" name="bereich">
+                <option>Kaffeehaus (innen)</option>
+                <option>Schanigarten am Hauptplatz</option>
+                <option>egal – Hauptsache Platz</option>
+              </select></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Anlass &amp; Wünsche</legend>
+          <div class="fgrid">
+            <div class="field"><label for="r-anlass">Anlass (optional)</label>
+              <select id="r-anlass" name="anlass">
+                <option>Kaffee &amp; Mehlspeise</option><option>Frühstück</option><option>Eis mit Kindern</option>
+                <option>Geburtstag</option><option>Familientreffen</option><option>Sonstiges</option>
+              </select></div>
+            <div class="field"><label for="r-kinder">Kinderstuhl / Kinderwagen</label>
+              <select id="r-kinder" name="kinder"><option>nicht nötig</option><option>ja, bitte</option></select></div>
+          </div>
+          <div class="field" style="margin-top:1rem"><label for="r-text">Nachricht</label>
+            <textarea id="r-text" name="nachricht" placeholder="z. B. Tisch im Schatten, Allergien, Torte zum Geburtstag mitbringen"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="fgrid">
+            <div class="field"><label for="r-name">Name</label><input type="text" id="r-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="r-tel">Telefon</label><input type="tel" id="r-tel" name="telefon" autocomplete="tel" required></div>
+            <div class="field"><label for="r-mail">E-Mail</label><input type="email" id="r-mail" name="email" autocomplete="email"></div>
+          </div>
+          <div class="checks" style="margin-top:1rem"><div class="check"><input type="checkbox" id="dsg" name="dsg" required><label for="dsg">Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen. (Muster-Text)</label></div></div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Reservierung anfragen</button>
+        <p class="formmsg" hidden tabindex="-1">Vorschau – im Live-Betrieb geht diese Anfrage direkt an die Café Konditorei Köstlbauer, Hauptplatz 31, 3430 Tulln.</p>
+        <p class="formnote">Demonstrationsformular ohne Datenübertragung. Kurzfristig? Rufen Sie uns einfach an: <a href="tel:+43227262266">02272 / 62266</a>.</p>
+      </form>
+
+      <aside class="stack-sm">
+        <div class="card">
+          <h3>Öffnungszeiten</h3>
+          <ul class="hours "><li><span>Dienstag bis Freitag</span><span class="t">07:30 – 19:00</span></li><li><span>Samstag</span><span class="t">07:30 – 18:00</span></li><li><span>Sonn- und Feiertage</span><span class="t">09:00 – 18:00</span></li><li><span>Montag (außer Feiertag)</span><span class="t">Ruhetag</span></li></ul>
+        </div>
+        <div class="card" style="margin-top:1rem">
+          <h3>Gut zu wissen</h3>
+          <p>Der Schanigarten ist groß und schattig – an Sommer-Wochenenden ist er trotzdem rasch voll. Eine Reservierung lohnt sich besonders vormittags und am späten Nachmittag.</p>
+          <p class="mb0">Größere Runden (ab 8 Personen) besprechen wir gerne telefonisch.</p>
+        </div>
+        <figure class="figframe" style="margin-top:1rem">
+          <img src="img/02.jpg" width="1600" height="1200" loading="lazy" alt="Gedeckte Tische im Schanigarten unter gelben Sonnenschirmen">
+          <figcaption>Schanigarten mit Blick auf den Tullner Hauptplatz.</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>Café Konditorei Köstlbauer</h2>
+        <ul>
+          <li>Familie Köstlbauer</li>
+          <li>Hauptplatz 31, 3430 Tulln an der Donau</li>
+          <li><a href="tel:+43227262266">02272 / 62266</a></li>
+          <li><a href="mailto:konditorei@koestlbauer.at">konditorei@koestlbauer.at</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Öffnungszeiten</h2>
+        <ul class="hours "><li><span>Dienstag bis Freitag</span><span class="t">07:30 – 19:00</span></li><li><span>Samstag</span><span class="t">07:30 – 18:00</span></li><li><span>Sonn- und Feiertage</span><span class="t">09:00 – 18:00</span></li><li><span>Montag (außer Feiertag)</span><span class="t">Ruhetag</span></li></ul>
+      </div>
+      <div>
+        <h2>Schnellzugriff</h2>
+        <ul>
+          <li><a href="speisekarte.html">Speisekarte &amp; Preise</a></li>
+          <li><a href="konditorei.html">Mehlspeisen &amp; hausgemachtes Eis</a></li>
+          <li><a href="bestellung.html">Torten- und Eis-Vorbestellung</a></li>
+          <li><a href="reservierung.html">Tisch reservieren</a></li>
+          <li><a href="ueber-uns.html">Geschichte seit 1666</a></li>
+          <li><a href="kontakt.html">Kontakt, Anfahrt &amp; FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Rechtliches</h2>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+        <p class="muted" style="margin-top:.8rem">Alle Preise in Euro inkl. gesetzlicher Abgaben.</p>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>Das verwendete Bildmaterial stammt von der bestehenden Website des Café Konditorei Köstlbauer (koestlbauer.at) und bleibt Eigentum des Betriebs.</p>
+      <p>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions. Formulare sind Demonstrationen ohne Datenübertragung.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'),n=document.getElementById('hauptnavigation');
+  if(t&&n){t.addEventListener('click',function(){
+    var open=n.classList.toggle('is-open');t.setAttribute('aria-expanded',open?'true':'false');
+  });}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var m=f.querySelector('.formmsg');
+      if(m){m.hidden=false;m.setAttribute('role','status');m.focus&&m.focus();
+        m.scrollIntoView({behavior:'smooth',block:'center'});}
+    });
+  });
+})();
+</script>
+</body>
+</html>

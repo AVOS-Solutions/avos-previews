@@ -1,0 +1,302 @@
+
+/* =========================================================
+   Hengl-Haselbrunner  |  Gestaltungs-Vorschau AVOS Solutions
+   Motiv: Wiener Anschlagzettel / Heurigen-Programmplakat
+   ========================================================= */
+:root{
+  --creme:#f7f1e5;
+  --creme-2:#efe6d3;
+  --papier:#fffaf1;
+  --tinte:#1d1013;
+  --tinte-2:#54443f;
+  --wein:#5c1626;
+  --wein-tief:#3b1019;
+  --gold:#7a5412;
+  --gold-linie:#c19a45;
+  --reb:#3f5a32;
+  --linie:#d7c9ae;
+  --max:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--creme);color:var(--tinte);
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.075rem);line-height:1.65;
+  overflow-wrap:break-word;
+}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{font-family:"Bodoni Moda","Didot","Times New Roman",serif;font-weight:700;line-height:1.08;margin:0 0 .5em}
+h1{font-size:clamp(2.3rem,1.4rem + 4vw,4.4rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,1.2rem + 2.1vw,2.85rem)}
+h3{font-size:clamp(1.15rem,1rem + .7vw,1.5rem)}
+h4{font-size:1.05rem;font-family:"Archivo",Arial,sans-serif;font-weight:700;letter-spacing:.02em}
+p{margin:0 0 1rem}
+a{color:var(--wein)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--gold-linie);outline-offset:2px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.25rem)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:.5rem;top:.5rem;z-index:60;background:var(--wein);color:#fff;padding:.6rem 1rem;border-radius:2px}
+
+/* ---- Vorschau-Leiste ---- */
+.vorschau{background:var(--tinte);color:#efe2cf;font-size:.775rem;letter-spacing:.05em}
+.vorschau__in{padding-block:.5rem;text-transform:uppercase}
+
+/* ---- Kopf ---- */
+.top{position:sticky;top:0;z-index:40;background:var(--creme);border-bottom:1px solid var(--linie);
+  box-shadow:0 1px 0 rgba(122,84,18,.18)}
+.top__in{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--tinte);margin-right:auto;min-width:0}
+.brand__mark{display:grid;place-items:center;width:2.6rem;height:2.6rem;flex:0 0 auto;
+  border:2px solid var(--wein);color:var(--wein);font-family:"Bodoni Moda",serif;font-size:1.5rem;font-weight:700;
+  border-radius:50%}
+.brand__txt{display:flex;flex-direction:column;min-width:0}
+.brand__txt b{font-family:"Bodoni Moda",serif;font-size:1.22rem;line-height:1.1;letter-spacing:.005em}
+.brand__txt i{font-style:normal;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-2)}
+.burger{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--wein);background:var(--papier);
+  color:var(--wein);font:inherit;font-size:.88rem;padding:.45rem .8rem;cursor:pointer;border-radius:2px}
+.nav{flex-basis:100%;display:none}
+.nav--open{display:block}
+.nav ul{list-style:none;margin:.6rem 0 .3rem;padding:0;display:flex;flex-direction:column;gap:.1rem}
+.nav a{display:block;padding:.55rem .2rem;text-decoration:none;color:var(--tinte);font-size:.95rem;
+  letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--linie)}
+.nav a:hover{color:var(--wein)}
+.nav a[aria-current="page"]{color:var(--wein);font-weight:700}
+@media(min-width:56rem){
+  .burger{display:none}
+  .nav{display:block;flex-basis:auto}
+  .nav ul{flex-direction:row;gap:1.35rem;margin:0}
+  .nav a{border-bottom:2px solid transparent;padding:.35rem 0;font-size:.8rem}
+  .nav a[aria-current="page"]{border-bottom-color:var(--wein)}
+}
+
+/* ---- Buttons ---- */
+.btn{display:inline-block;font:inherit;font-size:.86rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.85rem 1.5rem;border-radius:2px;text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:background .15s,color .15s}
+a.btn--primary,.btn--primary{background:var(--wein);color:#fff8ec;border-color:var(--wein)}
+a.btn--primary:hover,a.btn--primary:focus-visible,.btn--primary:hover{background:var(--wein-tief);color:#fff8ec;border-color:var(--wein-tief)}
+a.btn--line,.btn--line{background:transparent;color:var(--wein);border-color:var(--wein)}
+a.btn--line:hover,a.btn--line:focus-visible{background:var(--wein);color:#fff8ec}
+a.btn--hell,.btn--hell{background:var(--creme);color:var(--wein-tief);border-color:var(--creme)}
+a.btn--hell:hover,a.btn--hell:focus-visible{background:#fff;color:var(--wein-tief)}
+.btnrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.5rem}
+
+/* ---- Bausteine ---- */
+.sec{padding-block:clamp(2.8rem,6vw,5rem)}
+.sec--pap{background:var(--papier)}
+.sec--dunkel{background:var(--wein-tief);color:#f4e9d8}
+.sec--dunkel h2,.sec--dunkel h3{color:#fff6e6}
+.sec--dunkel a:not(.btn){color:#f0d6a4}
+.sec--wein{background:var(--wein);color:#fbf3e6}
+.sec--wein h2,.sec--wein h3{color:#fff6e6}
+.sec--wein a:not(.btn){color:#f6ddb0}
+.auge{display:block;font-family:"Archivo",Arial,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 .9rem}
+.sec--dunkel .auge,.sec--wein .auge{color:#e3bd76}
+.lead{font-size:clamp(1.08rem,1rem + .5vw,1.3rem);line-height:1.6;color:var(--tinte-2);max-width:60ch}
+.sec--dunkel .lead,.sec--wein .lead{color:#e8dac4}
+.regel{border:0;border-top:1px solid var(--linie);border-bottom:1px solid var(--linie);height:4px;margin:2.5rem 0}
+.sec--dunkel .regel,.sec--wein .regel{border-color:rgba(224,190,124,.45)}
+
+/* ---- Hero ---- */
+.hero{position:relative;background-color:var(--wein-tief);color:#fdf6ea;
+  background-image:linear-gradient(180deg,rgba(30,8,13,.72),rgba(59,16,25,.88)),url("img/09.jpg");
+  background-size:cover;background-position:center 62%}
+.hero__in{padding-block:clamp(3.4rem,10vw,7.5rem);max-width:56rem}
+.hero h1{color:#fff7ea;margin-bottom:.35em}
+.hero__kicker{display:block;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:#e9c483;margin-bottom:1.2rem}
+.hero__sub{font-size:clamp(1.05rem,1rem + .55vw,1.35rem);color:#efe1c9;max-width:46ch}
+.hero__fakten{display:flex;flex-wrap:wrap;gap:.5rem 2.2rem;margin-top:2.2rem;padding-top:1.3rem;
+  border-top:1px solid rgba(228,193,129,.4);list-style:none;padding-left:0}
+.hero__fakten li{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:#e6d3b4}
+.hero__fakten b{display:block;font-family:"Bodoni Moda",serif;font-size:1.55rem;letter-spacing:0;text-transform:none;color:#fff3e0}
+
+/* ---- Raster ---- */
+.grid{display:grid;gap:clamp(1.2rem,3vw,2.1rem)}
+.grid--2{grid-template-columns:1fr}
+.grid--3{grid-template-columns:1fr}
+.grid--4{grid-template-columns:1fr 1fr}
+@media(min-width:46rem){.grid--2{grid-template-columns:1fr 1fr}.grid--3{grid-template-columns:1fr 1fr}}
+@media(min-width:62rem){.grid--3{grid-template-columns:repeat(3,1fr)}.grid--4{grid-template-columns:repeat(4,1fr)}}
+.grid>*{min-width:0}
+.split{display:grid;gap:clamp(1.4rem,4vw,3rem);align-items:center}
+@media(min-width:56rem){.split{grid-template-columns:1.05fr .95fr}.split--um>:first-child{order:2}}
+.split>*{min-width:0}
+
+/* ---- Karten ---- */
+.karte{background:var(--papier);border:1px solid var(--linie);padding:clamp(1.2rem,3vw,1.8rem);border-radius:2px}
+.karte h3{margin-bottom:.35em}
+.karte p:last-child{margin-bottom:0}
+.karte--wein{border-left:4px solid var(--wein)}
+.sec--dunkel .karte,.sec--wein .karte{background:rgba(255,246,230,.07);border-color:rgba(224,190,124,.35);color:#f2e6d3}
+.sec--dunkel .karte p,.sec--wein .karte p{color:#e9dbc4}
+
+/* ---- Programmtafel ---- */
+.tafel{list-style:none;margin:0;padding:0;border-top:1px solid var(--linie)}
+.tafel li{display:grid;grid-template-columns:4.6rem 1fr;gap:.3rem 1.1rem;align-items:baseline;
+  padding:1rem 0;border-bottom:1px solid var(--linie)}
+.tafel .tag{font-family:"Bodoni Moda",serif;font-size:1.7rem;line-height:1;color:var(--wein)}
+.tafel .tag small{display:block;font-family:"Archivo",Arial,sans-serif;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tinte-2);margin-top:.25rem}
+.tafel .was{font-weight:600}
+.tafel .wann{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-2)}
+.sec--dunkel .tafel,.sec--dunkel .tafel li{border-color:rgba(224,190,124,.3)}
+.sec--dunkel .tafel .tag{color:#f0c987}
+.sec--dunkel .tafel .tag small,.sec--dunkel .tafel .wann{color:#dcc9a8}
+@media(min-width:48rem){
+  .tafel li{grid-template-columns:5.2rem 1fr 11rem}
+  .tafel .wann{text-align:right}
+}
+
+/* ---- Weinliste ---- */
+.weinliste{margin:0;padding:0;list-style:none}
+.wein{border-top:2px solid var(--wein);padding:1.5rem 0 1.3rem}
+.wein__kopf{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .9rem;margin-bottom:.6rem}
+.wein__name{font-family:"Bodoni Moda",serif;font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);font-weight:700;margin:0}
+.wein__lage{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--gold-linie);padding:.18rem .55rem;border-radius:2px}
+.wein dl{margin:.4rem 0 0;display:grid;gap:.2rem .9rem}
+.wein dt{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tinte-2);font-weight:700}
+.wein dd{margin:0 0 .7rem}
+@media(min-width:42rem){.wein dl{grid-template-columns:9rem 1fr}.wein dd{margin-bottom:.45rem}}
+
+/* ---- Faktenliste ---- */
+.fakten{list-style:none;margin:0;padding:0;display:grid;gap:.1rem}
+.fakten li{display:flex;justify-content:space-between;gap:1.2rem;padding:.72rem 0;border-bottom:1px dotted var(--linie)}
+.fakten b{font-weight:600}
+.fakten span{color:var(--tinte-2);text-align:right}
+.sec--dunkel .fakten li{border-color:rgba(224,190,124,.3)}
+.sec--dunkel .fakten span{color:#dcc9a8}
+
+/* ---- Marken / Auszeichnungen ---- */
+.marken{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.marken li{border:1px solid var(--linie);background:var(--papier);padding:.5rem .9rem;font-size:.8rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-2)}
+.sec--dunkel .marken li,.sec--wein .marken li{background:rgba(255,246,230,.08);border-color:rgba(224,190,124,.4);color:#ecdcc0}
+
+/* ---- Bilder ---- */
+.bild{border:1px solid var(--linie);background:var(--papier);padding:.55rem}
+.bild img{width:100%}
+.bild figcaption{font-size:.78rem;color:var(--tinte-2);padding:.6rem .25rem .15rem;letter-spacing:.03em}
+.galerie{display:grid;gap:.8rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:52rem){.galerie{grid-template-columns:repeat(4,1fr)}}
+.galerie a{display:block;border:1px solid var(--linie);background:var(--papier);padding:.35rem}
+.galerie img{aspect-ratio:4/3;object-fit:cover;width:100%}
+#lb{position:fixed;inset:0;z-index:80;background:rgba(20,8,12,.93);display:grid;place-items:center;padding:1rem}
+#lb img{max-height:82vh;width:auto;max-width:100%;border:.4rem solid var(--creme)}
+#lb button{position:absolute;top:1rem;right:1rem;background:var(--creme);color:var(--wein-tief);border:0;
+  font:inherit;font-weight:700;padding:.5rem 1rem;cursor:pointer;border-radius:2px}
+
+/* ---- Zitat ---- */
+.zitat{border-left:4px solid var(--gold-linie);margin:0;padding:.2rem 0 .2rem 1.3rem;
+  font-family:"Bodoni Moda",serif;font-size:clamp(1.15rem,1.05rem + .7vw,1.6rem);line-height:1.35;font-style:italic}
+.zitat cite{display:block;margin-top:.7rem;font:inherit;font-family:"Archivo",Arial,sans-serif;font-size:.8rem;
+  font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--tinte-2)}
+.sec--dunkel .zitat cite,.sec--wein .zitat cite{color:#dcc9a8}
+
+/* ---- Akkordeon ---- */
+.akk{border-bottom:1px solid var(--linie)}
+.akk summary{cursor:pointer;list-style:none;padding:1rem 2rem 1rem 0;position:relative;font-weight:600}
+.akk summary::-webkit-details-marker{display:none}
+.akk summary::after{content:"+";position:absolute;right:.2rem;top:.85rem;font-size:1.4rem;color:var(--wein);line-height:1}
+.akk[open] summary::after{content:"\2013"}
+.akk__in{padding:0 0 1.2rem}
+.akk__in p:last-child{margin-bottom:0}
+
+/* ---- Formulare ---- */
+.form{background:var(--papier);border:1px solid var(--linie);padding:clamp(1.2rem,3.5vw,2.2rem);border-radius:2px}
+.sec--dunkel .form,.sec--wein .form{background:rgba(255,250,241,.96);color:var(--tinte)}
+.form fieldset{border:0;padding:0;margin:0 0 1.4rem;min-inline-size:0}
+.form legend{padding:0;font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:.8rem}
+.feld{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem;min-width:0}
+.feld label{font-size:.82rem;font-weight:600;letter-spacing:.04em}
+.feld input,.feld select,.feld textarea{font:inherit;font-size:1rem;width:100%;max-width:100%;
+  padding:.7rem .8rem;border:1px solid #b9a888;background:#fff;color:var(--tinte);border-radius:2px}
+.feld textarea{min-height:7.5rem;resize:vertical}
+.feld--hinweis{font-size:.8rem;color:var(--tinte-2)}
+.felder{display:grid;gap:0 1.1rem}
+@media(min-width:40rem){.felder--2{grid-template-columns:1fr 1fr}.felder--3{grid-template-columns:repeat(3,1fr)}}
+.felder>*{min-width:0}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;margin-bottom:1rem}
+.check input{margin-top:.3rem;flex:0 0 auto;width:auto}
+.formnote{display:block;margin-top:1rem;font-size:.9rem;color:var(--wein);border-left:3px solid var(--gold-linie);
+  padding-left:.9rem;min-height:0}
+.formnote--on{padding-block:.5rem;background:#fdf3e2}
+
+/* ---- Tabelle ---- */
+.tabhuelle{overflow-x:auto;border:1px solid var(--linie);background:var(--papier)}
+table{border-collapse:collapse;width:100%;min-width:30rem;font-size:.94rem}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--linie)}
+th{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-2);background:var(--creme-2)}
+
+/* ---- CTA-Band ---- */
+.cta{background:var(--wein);color:#fdf5e9;text-align:center}
+.cta h2{color:#fff7ea}
+.cta p{color:#f0e0c6;max-width:52ch;margin-inline:auto}
+.cta .btnrow{justify-content:center}
+.cta a:not(.btn){color:#f6ddb0}
+
+/* ---- Fuss ---- */
+.foot{background:var(--tinte);color:#d9cbb6;padding-block:clamp(2.5rem,6vw,4rem) 1.5rem;font-size:.92rem}
+.foot__grid{display:grid;gap:2rem}
+@media(min-width:40rem){.foot__grid{grid-template-columns:1fr 1fr}}
+@media(min-width:64rem){.foot__grid{grid-template-columns:1.2fr 1fr 1fr 1fr}}
+.foot__grid>*{min-width:0}
+.foot__logo{font-family:"Bodoni Moda",serif;font-size:1.45rem;color:#fdf3e3;margin:0 0 .5rem}
+.foot__h{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#e0bd7d;margin:0 0 .6rem;font-weight:700}
+.foot a{color:#f0e2cb}
+.foot a:hover{color:#fff}
+.foot__nav{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.foot__note{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(224,190,124,.28)}
+.foot__note p{font-size:.8rem;color:#c3b39c;margin:0;max-width:75ch}
+.muster{background:#fdf3e2;border:1px solid var(--gold-linie);padding:1rem 1.2rem;border-radius:2px;margin-bottom:2rem}
+.muster p{margin:0;font-size:.92rem;color:#54331a}
+
+/* ---- Seitenk&ouml;pfe ---- */
+.hero--seite .hero__in{padding-block:clamp(2.4rem,7vw,5rem);max-width:52rem}
+.hero--seite h1{font-size:clamp(2rem,1.3rem + 3vw,3.5rem)}
+.hero--bs{background-image:linear-gradient(180deg,rgba(30,8,13,.74),rgba(59,16,25,.9)),url("img/02.jpg");background-position:center 45%}
+.hero--wn{background-image:linear-gradient(180deg,rgba(30,8,13,.76),rgba(59,16,25,.92)),url("img/08.jpg");background-position:center 40%}
+.hero--wg{background-image:linear-gradient(180deg,rgba(30,8,13,.7),rgba(59,16,25,.9)),url("img/07.jpg");background-position:center 55%}
+.hero--ku{background-image:linear-gradient(180deg,rgba(30,8,13,.76),rgba(59,16,25,.92)),url("img/03.jpg");background-position:center 30%}
+.hero--re{background-image:linear-gradient(180deg,rgba(30,8,13,.74),rgba(59,16,25,.9)),url("img/06.jpg");background-position:center 35%}
+.hero--ko{background-image:linear-gradient(180deg,rgba(30,8,13,.76),rgba(59,16,25,.92)),url("img/09.jpg");background-position:center 60%}
+.hero--rt{background-image:linear-gradient(180deg,rgba(30,8,13,.8),rgba(59,16,25,.94))}
+.anker{scroll-margin-top:5.5rem}
+.spalten{columns:1;column-gap:2.4rem}
+@media(min-width:52rem){.spalten{columns:2}}
+.spalten>*{break-inside:avoid}
+.kuenstler{border-top:1px solid var(--linie);padding:1.1rem 0;margin:0}
+.kuenstler h3{margin-bottom:.25em}
+.kuenstler p{margin-bottom:.4rem}
+.kuenstler p:last-child{margin-bottom:0}
+.kuenstler .kontaktzeile{font-size:.85rem;color:var(--tinte-2);overflow-wrap:anywhere}
+.karteart{display:grid;gap:1.1rem}
+.plan{border:1px solid var(--linie);background:var(--papier);padding:1rem;border-radius:2px}
+.plan svg{width:100%;height:auto;display:block}
+.linien{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.5rem}
+.linien li{display:flex;gap:.7rem;align-items:baseline;font-size:.95rem}
+.linien .sig{flex:0 0 auto;min-width:2.6rem;text-align:center;font-weight:700;font-size:.78rem;letter-spacing:.06em;
+  padding:.2rem .45rem;border-radius:2px;background:var(--wein);color:#fff6e8}
+.jahr{font-family:"Bodoni Moda",serif;font-size:2.1rem;color:var(--wein);line-height:1;margin:0 0 .3rem}
+.sec--dunkel .jahr,.sec--wein .jahr{color:#f0c987}
+.zeit{list-style:none;margin:0;padding:0}
+.zeit li{position:relative;padding:0 0 1.6rem 1.6rem;border-left:2px solid var(--gold-linie)}
+.zeit li:last-child{border-left-color:transparent;padding-bottom:0}
+.zeit li::before{content:"";position:absolute;left:-.42rem;top:.45rem;width:.7rem;height:.7rem;background:var(--wein);
+  border-radius:50%}
+.sec--dunkel .zeit li::before{background:#f0c987}
+.hinweisbox{border:1px solid var(--gold-linie);background:#fdf3e2;padding:1.1rem 1.3rem;border-radius:2px;color:#4c3216}
+.hinweisbox p{margin:0}
+.hinweisbox p + p{margin-top:.6rem}
+/* ---- Formular auf farbigen B&auml;ndern ---- */
+.cta .auge{color:#e9c483}
+.cta .form,.sec--dunkel .form,.sec--wein .form{background:#fffaf1;color:var(--tinte)}
+.cta .form label,.sec--dunkel .form label,.sec--wein .form label,
+.cta .form p,.sec--dunkel .form p,.sec--wein .form p{color:var(--tinte)}
+.cta .form legend,.sec--dunkel .form legend,.sec--wein .form legend{color:var(--gold)}
+.cta .form .feld--hinweis,.sec--dunkel .form .feld--hinweis{color:var(--tinte-2)}
+.cta .form .formnote,.sec--dunkel .form .formnote,.sec--wein .form .formnote{color:var(--wein)}

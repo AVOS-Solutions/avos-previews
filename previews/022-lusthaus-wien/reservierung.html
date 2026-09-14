@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisch reservieren – Café-Restaurant Lusthaus, Freudenau 1020 Wien</title>
+<meta name="description" content="Online-Tischreservierung für das Café-Restaurant Lusthaus im Prater: Restaurant, Terrasse, Balkon, Brunch im Jagdsaal oder Picknickkorb. Geöffnet Mo, Do, Fr 12–21 Uhr, Sa, So, Feiertag 12–17 Uhr.">
+<link rel="canonical" href="https://www.lusthaus-wien.at/reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tisch reservieren im Lusthaus">
+<meta property="og:description" content="Weil wir häufig ausgebucht sind: Reservierung online, in unter einer Minute.">
+<meta property="og:locale" content="de_AT">
+<meta property="og:image" content="img/01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ReserveAction",
+  "name": "Tischreservierung Café-Restaurant Lusthaus",
+  "target": { "@type": "EntryPoint", "urlTemplate": "https://www.lusthaus-wien.at/reservierung.html" },
+  "object": { "@type": "FoodEstablishmentReservation", "provider": { "@type": "Restaurant", "name": "Café-Restaurant Lusthaus", "telephone": "+43 1 728 95 65" } }
+}
+</script>
+</head>
+<body>
+<p class="previewbar">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des Café-Restaurant Lusthaus · erstellt von <strong>AVOS Solutions</strong></p>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand__mark" viewBox="0 0 40 40" role="img" aria-label="Oktogon-Signet des Lusthauses">
+        <polygon points="12,2 28,2 38,12 38,28 28,38 12,38 2,28 2,12" fill="none" stroke="#C8A233" stroke-width="2"></polygon>
+        <polygon points="16,10 24,10 30,16 30,24 24,30 16,30 10,24 10,16" fill="#23361F"></polygon>
+      </svg>
+      <span>
+        <span class="brand__name">Lusthaus</span>
+        <span class="brand__sub">Wiener Prater · Freudenau</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainnav">Menü</button>
+    <nav class="mainnav" id="mainnav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="speisekarte.html">Karte</a></li>
+        <li><a href="feiern.html">Feiern</a></li>
+        <li><a href="aktuelles.html">Aktuelles</a></li>
+        <li><a href="ueber-uns.html">Haus &amp; Geschichte</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a class="btn btn--gold btn--sm" href="reservierung.html" aria-current="page">Tisch reservieren</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap">
+      <p class="eyebrow">Reservierung</p>
+      <h1>Tisch sichern</h1>
+      <p>Liebe Gäste, da wir häufig ausgebucht sind oder unser Restaurant wegen Veranstaltungen geschlossen bleiben muss, ersuchen wir um Tischreservierung. Neu: Sie können Ihren Wunsch direkt hier hinterlegen.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <form class="form form--2" id="resform" novalidate>
+          <div class="field">
+            <label for="r-name">Name</label>
+            <input id="r-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="r-mail">E-Mail</label>
+            <input id="r-mail" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="r-tel">Telefon</label>
+            <input id="r-tel" name="tel" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="r-pers">Personen</label>
+            <input id="r-pers" name="personen" type="number" min="1" max="60" step="1" value="2">
+          </div>
+          <div class="field">
+            <label for="r-datum">Datum</label>
+            <input id="r-datum" name="datum" type="date" required>
+          </div>
+          <div class="field">
+            <label for="r-zeit">Uhrzeit</label>
+            <input id="r-zeit" name="zeit" type="time" min="12:00" max="21:00" required>
+          </div>
+          <div class="field">
+            <label for="r-anlass">Anlass</label>
+            <select id="r-anlass" name="anlass">
+              <option>Mittagessen / Kaffeehaus</option>
+              <option>Abendessen</option>
+              <option id="brunch">Brunch im Jagdsaal</option>
+              <option>Torte &amp; Patisserie</option>
+              <option id="picknick">Picknickkorb (Vorbestellung)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-platz">Platzwunsch</label>
+            <select id="r-platz" name="platz">
+              <option>Restaurant</option>
+              <option>Terrasse (teilweise überdacht)</option>
+              <option>Balkon</option>
+              <option>Kein Wunsch</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="r-text">Anmerkungen</label>
+            <textarea id="r-text" name="nachricht" placeholder="Kinderstuhl, Unverträglichkeiten, Geburtstagstorte, Hund …"></textarea>
+          </div>
+          <div class="full">
+            <label class="check"><input type="checkbox" name="dsgvo" required> <span>Ich stimme zu, dass meine Angaben zur Bearbeitung der Reservierung gespeichert werden. (<a href="datenschutz.html">Datenschutz</a>)</span></label>
+          </div>
+          <div class="full">
+            <button class="btn btn--gold" type="submit">Reservierung anfragen</button>
+            <p class="formnote" id="r-note">Vorschau – im Live-Betrieb geht diese Anfrage direkt an office@lusthaus-wien.at und Sie erhalten eine Bestätigung.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="stack">
+        <div class="card">
+          <h3>Öffnungszeiten</h3>
+          <table class="hours">
+            <caption class="small" style="text-align:left;padding-bottom:.6rem">Küche und Café zu den angegebenen Zeiten</caption>
+            <tbody>
+              <tr><th scope="row">Montag</th><td>12:00 – 21:00</td></tr>
+              <tr><th scope="row">Dienstag</th><td>Ruhetag</td></tr>
+              <tr><th scope="row">Mittwoch</th><td>Ruhetag</td></tr>
+              <tr><th scope="row">Donnerstag</th><td>12:00 – 21:00</td></tr>
+              <tr><th scope="row">Freitag</th><td>12:00 – 21:00</td></tr>
+              <tr><th scope="row">Samstag</th><td>12:00 – 17:00</td></tr>
+              <tr><th scope="row">Sonn- &amp; Feiertag</th><td>12:00 – 17:00</td></tr>
+            </tbody>
+          </table>
+          <p class="small">Veranstaltungen jederzeit – auch außerhalb der Öffnungszeiten.</p>
+        </div>
+        <div class="card">
+          <h3>Lieber telefonisch?</h3>
+          <p>Tel.: <a href="tel:+4317289565">+43 1 728 95 65</a><br>Fax: +43 1 253 303 313 17<br><a href="mailto:office@lusthaus-wien.at">office@lusthaus-wien.at</a></p>
+          <p class="small">Café-Restaurant Lusthaus, Dr. Helmut Raftl, Freudenau 254, A-1020 Wien</p>
+        </div>
+        <div class="card">
+          <h3>Größere Runden</h3>
+          <p>Ab etwa 20 Personen, für Hochzeiten, Firmenevents oder die Laterne planen wir Ihr Fest individuell.</p>
+          <p><a class="btn btn--outline btn--sm" href="feiern.html#anfrage">Zur Event-Anfrage</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--green">
+    <div class="wrap">
+      <div class="sectionhead">
+        <p class="eyebrow">Gut zu wissen</p>
+        <h2>Häufige Fragen zur Reservierung</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Warum soll ich reservieren?</summary>
+          <p>Weil wir häufig ausgebucht sind oder das Restaurant wegen einer Veranstaltung geschlossen bleiben muss. Mit einer Reservierung sind Sie auf der sicheren Seite.</p>
+        </details>
+        <details>
+          <summary>Wann ist geschlossen?</summary>
+          <p>Dienstag und Mittwoch sind Ruhetage. An allen anderen Tagen haben wir ab 12:00 Uhr geöffnet – Montag, Donnerstag und Freitag bis 21:00 Uhr, Samstag, Sonntag und an Feiertagen bis 17:00 Uhr.</p>
+        </details>
+        <details>
+          <summary>Gibt es Plätze im Freien?</summary>
+          <p>Ja. Die teilweise überdachte Terrasse bietet 120 Sitzplätze, der Balkon weitere 50 – mit Blick über die Praterwipfel.</p>
+        </details>
+        <details>
+          <summary>Wie komme ich zum Lusthaus?</summary>
+          <p>Mit dem Auto ausschließlich über den Handelskai – Aspernallee; Parkplätze gibt es rund um das Haus. Öffentlich: U3 Schlachthausgasse oder U2 Donaumarina, weiter mit dem Autobus 77A direkt zum Lusthaus. Details auf der Seite <a href="kontakt.html">Kontakt &amp; Anfahrt</a>.</p>
+        </details>
+        <details>
+          <summary>Kann ich einen Brunch-Platz reservieren?</summary>
+          <p>Ja – wählen Sie im Formular den Anlass „Brunch im Jagdsaal“. Die Termine 2026 finden Sie unter <a href="aktuelles.html">Aktuelles</a>: 5. Juli, 6. September und 4. Oktober, jeweils 12:00–15:00 Uhr, € 41,– pro Person.</p>
+        </details>
+        <details>
+          <summary>Und der Picknickkorb?</summary>
+          <p>Der Korb für 2 Personen kostet € 80,– und benötigt eine Vorbestellung. Wählen Sie im Formular „Picknickkorb (Vorbestellung)“.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Café-Restaurant Lusthaus</h2>
+        <p>Freudenau 254<br>A-1020 Wien</p>
+        <p>Tel.: <a href="tel:+4317289565">+43 1 728 95 65</a><br>
+           Fax: +43 1 253 303 313 17<br>
+           <a href="mailto:office@lusthaus-wien.at">office@lusthaus-wien.at</a></p>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <ul>
+          <li>Mo, Do, Fr: 12:00–21:00 Uhr</li>
+          <li>Sa, So, Feiertag: 12:00–17:00 Uhr</li>
+          <li>Dienstag &amp; Mittwoch: Ruhetag</li>
+          <li>Veranstaltungen jederzeit</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Seiten</h3>
+        <ul>
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="feiern.html">Feste &amp; Veranstaltungen</a></li>
+          <li><a href="aktuelles.html">Aktuelles &amp; Brunch</a></li>
+          <li><a href="reservierung.html">Reservierung</a></li>
+          <li><a href="ueber-uns.html">Haus &amp; Geschichte</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="https://www.facebook.com/Lusthaus1/" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <p>Das verwendete Bildmaterial stammt von der bestehenden Website des Café-Restaurant Lusthaus.</p>
+      <p>Gestaltungs-Vorschau von AVOS Solutions · unverbindlich</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('mainnav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var form = document.getElementById('resform');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var note = document.getElementById('r-note');
+      note.className = 'form-msg';
+      note.textContent = 'Vorschau – im Live-Betrieb geht diese Reservierung direkt an office@lusthaus-wien.at. Wir würden uns umgehend bei Ihnen melden.';
+    });
+  }
+})();
+</script>
+</body>
+</html>

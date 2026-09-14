@@ -12,10 +12,13 @@ export async function GET(request: NextRequest) {
   const expectedState = request.cookies.get("avos_previews_sso_state")?.value;
   const next = request.cookies.get("avos_previews_sso_next")?.value;
 
+  // Every redirect below must be built from APP_PUBLIC_URL, never request.nextUrl — this
+  // server sits behind a Caddy TLS sidecar bound to 127.0.0.1:3000, so request.nextUrl.origin
+  // reflects that internal address, not the public domain the browser is actually on.
+  const publicUrl = process.env.APP_PUBLIC_URL ?? request.nextUrl.origin;
+
   const fail = (message: string) => {
-    const login = request.nextUrl.clone();
-    login.pathname = "/login";
-    login.search = "";
+    const login = new URL("/login", publicUrl);
     login.searchParams.set("error", message);
     const response = NextResponse.redirect(login);
     response.cookies.delete("avos_previews_sso_state");
@@ -27,7 +30,6 @@ export async function GET(request: NextRequest) {
     return fail("SSO-Anmeldung fehlgeschlagen (ungültiger Zustand). Bitte erneut versuchen.");
   }
 
-  const publicUrl = process.env.APP_PUBLIC_URL ?? request.nextUrl.origin;
   const redirectUri = `${publicUrl.replace(/\/$/, "")}/auth/callback`;
 
   const response = await fetch(`${API_URL}/api/public/auth/sso/exchange`, {
@@ -47,9 +49,7 @@ export async function GET(request: NextRequest) {
   const auth = (await response.json()) as AuthResponse;
   await setSession(auth);
 
-  const target = request.nextUrl.clone();
-  target.pathname = next && next.startsWith("/") ? next : "/dashboard";
-  target.search = "";
+  const target = new URL(next && next.startsWith("/") ? next : "/dashboard", publicUrl);
   const redirect = NextResponse.redirect(target);
   redirect.cookies.delete("avos_previews_sso_state");
   redirect.cookies.delete("avos_previews_sso_next");

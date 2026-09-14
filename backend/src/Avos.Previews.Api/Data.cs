@@ -68,7 +68,11 @@ public class AppDb(DbContextOptions<AppDb> options) : DbContext(options)
 
 public record Business(
     int Num, string Slug, string Name, string Category,
-    string Region, string Location, string Description, string? OldWebsite);
+    string Region, string Location, string Description, string? OldWebsite,
+    string? Grade = null, double? Score = null, string? PitchHook = null,
+    int? PriceLow = null, int? PriceHigh = null,
+    string? Phone = null, string? Email = null, string? ContactPerson = null,
+    List<string>? Pages = null);
 
 public static class BusinessCatalog
 {

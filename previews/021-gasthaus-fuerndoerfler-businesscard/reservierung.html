@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisch reservieren – Gasthaus Fürndörfler, Hitzendorf</title>
+<meta name="description" content="Online einen Tisch im Gasthaus Fürndörfler in Hitzendorf reservieren: Gaststube, Stüberl oder Gastgarten, für kleine Runden und Gruppen ab 50 Personen auch am Ruhetag.">
+<link rel="canonical" href="https://www.gasthaus-fuerndoerfler.at/reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Gasthaus Fürndörfler">
+<meta property="og:title" content="Tisch reservieren – Gasthaus Fürndörfler, Hitzendorf">
+<meta property="og:description" content="Online einen Tisch im Gasthaus Fürndörfler in Hitzendorf reservieren: Gaststube, Stüberl oder Gastgarten, für kleine Runden und Gruppen ab 50 Personen auch am Ruhetag.">
+<meta property="og:image" content="img/02.jpg">
+<meta name="theme-color" content="#1e3b2b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="preview-bar">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des <strong>Gasthauses Fürndörfler</strong> · erstellt von AVOS Solutions</div>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html"><b>Gasthaus Fürndörfler</b><span>Steirisches Wirtshaus · Hitzendorf</span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="speisekarte.html">Speisekarte</a></li>
+        <li><a href="tagesmenue.html">Tagesmenü &amp; Take away</a></li>
+        <li><a href="feiern.html">Feiern</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="reservierung.html" aria-current="page">Reservierung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap page-head">
+  <p class="kicker">Neu: Online-Reservierung</p>
+  <h1>Tisch reservieren.</h1>
+  <p class="lede">Bisher ging das nur telefonisch. Sagen Sie uns hier, wann Sie kommen – wir halten den Platz frei und melden uns mit einer Bestätigung.</p>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap split">
+    <div>
+      <form class="form-box" data-demo>
+        <div class="form-grid">
+          <div><label for="r-name">Name</label><input id="r-name" name="name" type="text" autocomplete="name" required placeholder="Vor- und Nachname"></div>
+          <div><label for="r-mail">E-Mail</label><input id="r-mail" name="email" type="email" autocomplete="email" required placeholder="name@beispiel.at"></div>
+          <div><label for="r-tel">Telefon</label><input id="r-tel" name="tel" type="tel" autocomplete="tel" placeholder="für kurzfristige Rückfragen"></div>
+          <div><label for="r-pers">Personen</label>
+            <select id="r-pers" name="personen">
+              <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7 – 10</option><option>11 – 20</option><option>21 – 30</option>
+              <option>31 – 50</option><option>mehr als 50</option>
+            </select></div>
+          <div><label for="r-datum">Datum</label><input id="r-datum" name="datum" type="date" required></div>
+          <div><label for="r-zeit">Uhrzeit</label><input id="r-zeit" name="zeit" type="time" value="12:00" required></div>
+          <div class="full"><label for="r-platz">Wunschplatz</label>
+            <select id="r-platz" name="platz">
+              <option>Gaststube</option><option>Extrastüberl</option>
+              <option>Stüberl im 1. Stock</option><option>Gastgarten / Terrasse</option><option>egal</option>
+            </select></div>
+          <div class="full">
+            <fieldset>
+              <legend>Gut zu wissen</legend>
+              <div class="check"><input id="r-kinder" type="checkbox" name="wunsch" value="kinder"><label for="r-kinder">Wir kommen mit Kindern – gerne in der Nähe des Spielplatzes</label></div>
+              <div class="check"><input id="r-hund" type="checkbox" name="wunsch" value="hund"><label for="r-hund">Wir bringen einen Hund mit</label></div>
+              <div class="check"><input id="r-barrier" type="checkbox" name="wunsch" value="barrierefrei"><label for="r-barrier">Barrierefreier Zugang wird benötigt</label></div>
+              <div class="check"><input id="r-spez" type="checkbox" name="wunsch" value="spezialitaeten"><label for="r-spez">Wir kommen wegen der Spezialitätenwoche</label></div>
+            </fieldset>
+          </div>
+          <div class="full"><label for="r-text">Nachricht</label><textarea id="r-text" name="nachricht" placeholder="Anlass, Unverträglichkeiten, Ankunftszeit …"></textarea></div>
+        </div>
+        <div class="btn-row"><button class="btn btn-gold" type="submit">Reservierung senden</button></div>
+        <p class="form-note" hidden></p>
+        <p class="hint">Für heute oder morgen bitte kurz anrufen: <a href="tel:+4331372279">+43 3137 2279</a>.</p>
+      </form>
+    </div>
+    <div>
+      <div class="note">
+        <p><strong>Ab 50 Personen auch am Ruhetag</strong></p>
+        <p class="mb0">Montag und Dienstag sind Ruhetage. Bei besonderen Anlässen ab 50 Personen öffnen wir gerne auch dann – fragen Sie einfach an.</p>
+      </div>
+      <div style="margin-top:2rem">
+      <table class="hours">
+        <caption>Öffnungszeiten</caption>
+        <tbody>
+          <tr><th scope="row">Montag &amp; Dienstag</th><td>Ruhetag</td></tr>
+          <tr><th scope="row">Mittwoch</th><td>10 – 23 Uhr</td></tr>
+          <tr><th scope="row">Donnerstag</th><td>10 – 17 Uhr</td></tr>
+          <tr><th scope="row">Freitag &amp; Samstag</th><td>10 – 23 Uhr</td></tr>
+          <tr><th scope="row">Sonn- &amp; Feiertag</th><td>9 – 18 Uhr</td></tr>
+        </tbody>
+      </table>
+      <table class="hours" style="margin-top:2rem">
+        <caption>Küchenzeiten</caption>
+        <tbody>
+          <tr><th scope="row">Mittwoch</th><td>11 – 20 Uhr</td></tr>
+          <tr><th scope="row">Donnerstag</th><td>11 – 16 Uhr</td></tr>
+          <tr><th scope="row">Freitag</th><td>11 – 20 Uhr</td></tr>
+          <tr><th scope="row">Samstag</th><td>11 – 20 Uhr</td></tr>
+          <tr><th scope="row">Sonntag</th><td>11 – 17 Uhr</td></tr>
+          <tr><th scope="row">Feiertag</th><td>11 – 17 Uhr</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="hint">Speisenbestellung und Küchenannahme jeweils eine halbe Stunde vor Küchenschluss.</p>
+      <div class="btn-row">
+        <a class="btn btn-line" href="feiern.html#anfrage">Größere Feier anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-forest">
+  <div class="wrap">
+    <p class="kicker light">Bevor Sie kommen</p>
+    <h2 class="mt0">Drei Dinge, die oft gefragt werden.</h2>
+    <div class="grid g3" style="margin-top:2rem">
+      <article class="card card-forest">
+        <h3>Kinder willkommen</h3>
+        <p class="mb0">Großer Spielplatz, eigene Kindergerichte von Kinderwiener bis Fischstäbchen und Platz im Gastgarten.</p>
+      </article>
+      <article class="card card-forest">
+        <h3>Hund darf mit</h3>
+        <p class="mb0">Hunde sind im Haus und auf der Terrasse gestattet.</p>
+      </article>
+      <article class="card card-forest">
+        <h3>Zahlung</h3>
+        <p class="mb0">Bar und mit Bankomatkarte ab 50 Euro. Bei der Speisenabholung ist nur Barzahlung möglich.</p>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Gasthaus Fürndörfler</p>
+        <p>Steirisches Wirtshaus und Familienbetrieb in dritter Generation. Heidi &amp; Andreas Fürndörfler und das gesamte Fürnis-Team.</p>
+        <p class="mb0">Hitzendorf 228, 8151 Hitzendorf<br>
+        Tel. <a href="tel:+4331372279">+43 3137 2279</a><br>
+        <a href="mailto:office@gasthaus-fuerndoerfler.at">office@gasthaus-fuerndoerfler.at</a></p>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul>
+          <li>Montag &amp; Dienstag Ruhetag</li>
+          <li>Mittwoch, Freitag, Samstag 10 – 23 Uhr</li>
+          <li>Donnerstag 10 – 17 Uhr</li>
+          <li>Sonn- &amp; Feiertag 9 – 18 Uhr</li>
+          <li>Küche Mi, Fr, Sa 11 – 20 Uhr</li>
+          <li>Küche Do 11 – 16, So &amp; Feiertag 11 – 17 Uhr</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="speisekarte.html">Speisekarte</a></li>
+          <li><a href="tagesmenue.html">Tagesmenü &amp; Take away</a></li>
+          <li><a href="feiern.html">Feiern &amp; Räumlichkeiten</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="reservierung.html">Tisch reservieren</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Gestaltungs-Vorschau von AVOS Solutions. Das Bildmaterial stammt von der bestehenden Website des Gasthauses Fürndörfler.</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),n=document.getElementById('nav');
+  if(t&&n){t.addEventListener('click',function(){
+    var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');
+  });}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var b=f.querySelector('.form-note');
+      if(b){b.hidden=false;b.textContent='Vorschau — im Live-Betrieb geht diese Anfrage direkt an office@gasthaus-fuerndoerfler.at und an das Wirtshaus in Hitzendorf.';}
+    });
+  });
+})();
+</script>
+</body>
+</html>
