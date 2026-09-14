@@ -129,6 +129,9 @@ section{padding-block:clamp(2.8rem,6.5vw,5rem)}
   background-size:40px 40px;
 }
 .hero .wrap{position:relative}
+.hero .lead{color:#b9c1c7}
+.hero .small{color:#a4adb4}
+.hero p{color:#d5dade}
 .hero h1{color:#fff}
 .hero h1 span{display:block;color:var(--wood-br);font-size:.34em;letter-spacing:.2em;font-weight:700;margin-bottom:.9rem}
 .hero-grid{display:grid;gap:2.6rem}
@@ -273,3 +276,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
 .legal h2{margin-top:2.2rem}
 .muster{background:var(--paper-2);border:2px solid var(--wood);padding:1.1rem 1.2rem;margin-bottom:2rem}
 .muster p{margin:0}
+
+/* Grid-/Flex-Kinder duerfen schrumpfen, damit breite Tabellen scrollen statt die Seite zu dehnen */
+.grid > *,.split > *,.stats > *,.gal > *,.fgrid > *,.hero-in > *,.hero-grid > *,.foot-grid > *{min-width:0}
+.tbl-scroll{max-width:100%}

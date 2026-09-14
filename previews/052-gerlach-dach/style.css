@@ -30,9 +30,9 @@ a{color:var(--signal-d)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
   outline:3px solid var(--signal);outline-offset:2px
 }
-h1,h2,h3,h4{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;line-height:1.02;margin:0;letter-spacing:.005em}
-h1{font-size:clamp(2.5rem,7.2vw,5.1rem);text-transform:uppercase}
-h2{font-size:clamp(1.9rem,4vw,3.1rem);text-transform:uppercase}
+h1,h2,h3,h4{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;line-height:1.02;margin:0;letter-spacing:.005em;overflow-wrap:break-word;hyphens:auto}
+h1{font-size:clamp(2rem,6.6vw,5.1rem);text-transform:uppercase}
+h2{font-size:clamp(1.55rem,4vw,3.1rem);text-transform:uppercase}
 h3{font-size:clamp(1.25rem,1.7vw,1.6rem);text-transform:uppercase}
 p{margin:0 0 1rem}
 ul{margin:0 0 1rem;padding-left:1.15rem}
@@ -130,16 +130,19 @@ a.btn--light:hover,a.btn--light:focus-visible{background:#fff;color:var(--ink)}
 .hero-facts b{display:block;font-family:"Barlow Condensed",Arial,sans-serif;font-size:1.5rem;color:#fff;letter-spacing:.03em}
 .hero-facts span{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-d)}
 .tilefield{
-  min-height:190px;
-  background:
-    repeating-linear-gradient(0deg,rgba(232,160,75,.16) 0 1px,transparent 1px 38px),
-    repeating-linear-gradient(90deg,rgba(232,160,75,.16) 0 1px,transparent 1px 26px),
+  min-height:230px;
+  background-color:#10141a;
+  background-image:
+    repeating-radial-gradient(circle at 50% 0,rgba(232,160,75,.20) 0 1px,transparent 1px 30px),
+    repeating-linear-gradient(90deg,rgba(232,160,75,.20) 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 34px),
     linear-gradient(160deg,#1d232b,#10141a);
+  background-size:34px 34px,auto,auto,auto;
   border-top:1px solid var(--line-dark);position:relative
 }
 .tilefield::after{
   content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 22% 18%,rgba(176,58,11,.42),transparent 58%)
+  background:radial-gradient(circle at 24% 16%,rgba(176,58,11,.45),transparent 62%)
 }
 @media(min-width:900px){
   .hero-grid{grid-template-columns:1.25fr .75fr;align-items:stretch}
@@ -261,3 +264,8 @@ th{font:700 .74rem/1.3 "Inter",Arial,sans-serif;letter-spacing:.13em;text-transf
 .legal h2{margin-top:2.4rem}
 .legal h3{margin-top:1.6rem;font-size:1.2rem}
 .legal p,.legal li{color:var(--muted);max-width:78ch}
+
+.grid>*,.f2>*,.srv>*{min-width:0}
+.form,.card,.mapbox{min-width:0}
+.field input,.field select,.field textarea{max-width:100%;min-width:0}
+@media(max-width:560px){.kv b{flex-basis:100%}}

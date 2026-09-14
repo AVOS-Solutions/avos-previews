@@ -13,7 +13,7 @@
   --teal-d:#0f545f;
   --aqua:#7ecbd6;
   --gold:#e8b567;
-  --brass:#8f6420;
+  --brass:#7d5618;
   --sand:#f6f1e9;
   --sand2:#ece4d7;
   --line:#ddd2c0;
@@ -201,7 +201,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:.5em 0 .35e
 .loc-grid{display:grid;gap:1.2rem;grid-template-columns:1fr;margin-top:1.8rem}
 .loc{background:var(--white);border-radius:var(--r-l);padding:1.5rem;box-shadow:var(--sh);position:relative}
 .loc-n{position:absolute;top:1rem;right:1.3rem;margin:0;font-family:var(--serif);font-weight:700;
-  font-size:2.3rem;color:var(--sand2);line-height:1}
+  font-size:2.3rem;color:#74949a;line-height:1}
 .loc h3{margin:.1rem 0 .5rem}
 .loc-a{margin:0 0 .5rem;font-size:1.02rem}
 .loc-tel{font-weight:700;text-decoration:none;font-size:1.05rem}

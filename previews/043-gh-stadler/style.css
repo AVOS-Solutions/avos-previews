@@ -321,3 +321,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
   padding:1.1rem 1.2rem;margin-bottom:2rem;
 }
 .muster p{margin:0;color:var(--ink)}
+
+/* Grid-/Flex-Kinder duerfen schrumpfen, damit breite Tabellen scrollen statt die Seite zu dehnen */
+.grid > *,.split > *,.stats > *,.gal > *,.fgrid > *,.hero-in > *,.hero-grid > *,.foot-grid > *{min-width:0}
+.tbl-scroll{max-width:100%}

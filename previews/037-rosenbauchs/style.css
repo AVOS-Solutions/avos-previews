@@ -253,7 +253,7 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 /* ---------- Utilities ---------- */
 .center{text-align:center}
 .mt0{margin-top:0}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+.tag{display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   background:var(--brass);color:var(--paper);padding:.3rem .6rem;margin-bottom:.8rem}
 .tag--moss{background:var(--moss)}
 .tag--rose{background:var(--rose)}

@@ -522,6 +522,16 @@ a.btn-outline-light:hover, button.btn-outline-light:hover,
 .section-paper .phone-big:hover, .section-sand .phone-big:hover { color: var(--brass-ink); }
 .section-night .phone-big, .section-forest .phone-big, .hero .phone-big { color: var(--brass-light); }
 
+
+/* --- Mobiler Umbruch: Grid-Kinder duerfen schrumpfen ------- */
+fieldset { min-inline-size: 0; }
+.field input, .field select, .field textarea { min-width: 0; width: 100%; max-width: 100%; }
+/* --- Mobiler Umbruch: Grid-Kinder duerfen schrumpfen ------- */
+.split > *, .grid > *, .form-row > *, .footer-grid > *, .stat-row > *,
+.hero-grid > *, .gallery > *, .award-grid > * { min-width: 0; }
+.facts dd, .facts dt, .card p, .notice p, .dish-desc, .dish-name,
+.hours th, .hours td, .field-hint, .checklist li { overflow-wrap: anywhere; }
+
 /* --- Breakpoints ------------------------------------------ */
 
 @media (min-width: 640px) {

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservieren — Tisch, Kegelbahn, Feier und Gutscheine beim KräuterWirt</title>
+<meta name="description" content="Tisch reservieren, Kegelbahn buchen (€ 12,– pro Bahn und Stunde), Hochzeit oder Seminar anfragen und Gutscheine bestellen — beim KräuterWirt Dunzinger in Hirschbach.">
+<link rel="canonical" href="https://www.kraeuterwirt.at/reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="KräuterWirt Dunzinger">
+<meta property="og:title" content="Reservieren — KräuterWirt Dunzinger">
+<meta property="og:description" content="Tisch reservieren, Kegelbahn buchen (€ 12,– pro Bahn und Stunde), Hochzeit oder Seminar anfragen und Gutscheine bestellen — beim KräuterWirt Dunzinger in Hirschbach.">
+<meta property="og:image" content="img/02.jpg">
+<meta property="og:url" content="https://www.kraeuterwirt.at/reservierung.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="preview-bar">
+  Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des KräuterWirt Dunzinger · erstellt von <strong>AVOS Solutions</strong>
+</div>
+
+<header class="site-header">
+  <div class="topline">
+    <span>Guttenbrunn 18 · 4242 Hirschbach im Mühlkreis</span>
+    <a href="tel:+437948390">07948 / 390</a>
+    <a href="mailto:info@kraeuter-wirt.at">info@kraeuter-wirt.at</a>
+    <span>Freitag &amp; Samstag ab 10 Uhr</span>
+  </div>
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand-leaf" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M28 5C14 5 6 12 6 22c0 3 1 5 2 7 1-9 7-15 16-18-7 4-11 9-13 18 11 2 19-6 19-16 0-3-1-6-2-8z" fill="#a9d3ae"/></svg>
+      <span>
+        <span class="brand-name">KräuterWirt Dunzinger</span>
+        <span class="brand-sub">Wirtshaus · Event-Stadl · Hirschbach</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnav">Menü</button>
+    <nav class="nav" id="hauptnav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="speisekarte.html">Speisekarte</a></li>
+        <li><a href="feiern.html">Feiern &amp; Seminare</a></li>
+        <li><a href="erleben.html">Erleben</a></li>
+        <li><a href="kalender.html">Kalender</a></li>
+        <li><a href="reservierung.html" aria-current="page">Reservieren</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="sec sec--tight sec--dark">
+    <div class="wrap">
+      <p class="eyebrow">Reservieren</p>
+      <h1>Tisch, Bahn oder Stadl — in zwei Minuten angefragt</h1>
+      <p class="lead" style="max-width:60ch">Lieber telefonisch? Wir sind unter
+      <a href="tel:+437948390">07948 / 390</a> und
+      <a href="tel:+436644395013">0664 / 4395013</a> erreichbar,
+      per Mail unter <a href="mailto:info@kraeuter-wirt.at">info@kraeuter-wirt.at</a>.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Art der Reservierung">
+        <button class="tab" type="button" role="tab" id="t1" aria-controls="p1" aria-selected="true">Tisch</button>
+        <button class="tab" type="button" role="tab" id="t2" aria-controls="p2" aria-selected="false">Kegelbahn</button>
+        <button class="tab" type="button" role="tab" id="t3" aria-controls="p3" aria-selected="false">Feier &amp; Seminar</button>
+        <button class="tab" type="button" role="tab" id="t4" aria-controls="p4" aria-selected="false">Gutschein</button>
+      </div>
+
+      <div class="tabpanel" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div class="split split--wide">
+          <form class="form" data-demo="Tischreservierung">
+            <h2>Tisch reservieren</h2>
+            <fieldset class="fieldset">
+              <legend>Wann dürfen wir decken?</legend>
+              <div class="frow three">
+                <div><label for="r-datum">Datum</label><input id="r-datum" type="date" required></div>
+                <div><label for="r-zeit">Uhrzeit</label><input id="r-zeit" type="time" required></div>
+                <div><label for="r-pers">Personen</label><input id="r-pers" type="number" min="1" max="120" value="2" required></div>
+              </div>
+              <div class="frow two">
+                <div>
+                  <label for="r-bereich">Wunschbereich</label>
+                  <select id="r-bereich">
+                    <option>egal — bitte entscheidet ihr</option>
+                    <option>Gaststube</option>
+                    <option>Stüberl (bis 20 Personen)</option>
+                    <option>Saal</option>
+                    <option>Gastgarten (bei Schönwetter)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="r-anlass">Anlass</label>
+                  <select id="r-anlass">
+                    <option>Einfach essen gehen</option>
+                    <option>Wildbuffet (Wildwochen)</option>
+                    <option>Geburtstag</option>
+                    <option>Familienfeier</option>
+                    <option>Wanderung / Radtour</option>
+                    <option>Busgruppe</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend>Ihre Daten</legend>
+              <div class="frow two">
+                <div><label for="r-name">Name</label><input id="r-name" type="text" required></div>
+                <div><label for="r-mail">E-Mail</label><input id="r-mail" type="email" required></div>
+              </div>
+              <div class="frow two">
+                <div><label for="r-tel">Telefon</label><input id="r-tel" type="tel"></div>
+                <div><label for="r-kinder">Kinder dabei?</label>
+                  <select id="r-kinder"><option>Nein</option><option>Ja — Spielplatz ist ein Muss</option></select>
+                </div>
+              </div>
+              <div><label for="r-text">Anmerkungen</label><textarea id="r-text" placeholder="Allergien, Kinderstuhl, Holzofenbratl vorbestellen …"></textarea></div>
+            </fieldset>
+            <div class="check">
+              <input type="checkbox" id="r-ds" required>
+              <label for="r-ds">Ich akzeptiere die <a href="datenschutz.html">Datenschutzbestimmungen</a> und stimme der Nutzung meiner Daten zu.</label>
+            </div>
+            <button class="btn btn--primary" type="submit">Reservierung senden</button>
+            <p class="formnote" hidden data-note></p>
+          </form>
+          <div class="stack">
+            <div class="note">
+              <h3>Geöffnet</h3>
+              <ul class="hours small mb0">
+                <li><span class="d">Freitag &amp; Samstag</span><span>10 – 22 Uhr</span></li>
+                <li><span class="d">Küche</span><span>11:30 – 20:00 Uhr</span></li>
+                <li><span class="d">Sonderöffnungstage</span><span>Küche bis 14, Wirtshaus bis 15 Uhr</span></li>
+              </ul>
+            </div>
+            <div class="note note--ocher">
+              <h3>Bratl vorbestellen</h3>
+              <p class="small mb0">Sur- und Schweinsbratl kommt frisch aus dem Holzofen und ist
+              deshalb nicht immer verfügbar — am besten gleich bei der Reservierung mitbestellen.</p>
+            </div>
+            <div class="note">
+              <h3>Größere Runden</h3>
+              <p class="small mb0">Ab 25 Personen stellen wir gerne ein eigenes Menü oder Buffet
+              zusammen — auch außerhalb der Öffnungszeiten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div class="split split--wide">
+          <form class="form" data-demo="Kegelbahn-Buchung" id="kegelbahn">
+            <h2>Kegelbahn buchen</h2>
+            <fieldset class="fieldset">
+              <legend>Bahn und Zeit</legend>
+              <div class="frow three">
+                <div><label for="k-datum">Datum</label><input id="k-datum" type="date" required></div>
+                <div><label for="k-zeit">Beginn</label><input id="k-zeit" type="time" required></div>
+                <div>
+                  <label for="k-bahnen">Bahnen</label>
+                  <select id="k-bahnen"><option>1 Bahn</option><option>2 Bahnen</option></select>
+                </div>
+              </div>
+              <div class="frow two">
+                <div>
+                  <label for="k-dauer">Dauer</label>
+                  <select id="k-dauer">
+                    <option>2 Stunden (üblich)</option><option>1 Stunde</option>
+                    <option>3 Stunden</option><option>4 Stunden</option>
+                  </select>
+                </div>
+                <div><label for="k-pers">Personen</label><input id="k-pers" type="number" min="1" value="6"></div>
+              </div>
+              <div class="note note--berry small">
+                Mittwoch, Donnerstag und Sonntag mit Selbstbedienung bei den Getränken,
+                Freitag und Samstag mit Rund-um-Service. Nur mit Sportschuhen mit heller Sohle.
+                Preis pro Bahn und Stunde € 12,– (für Vereinsgruppen Sonderpreise).
+              </div>
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend>Ihre Daten</legend>
+              <div class="frow two">
+                <div><label for="k-name">Name / Verein</label><input id="k-name" type="text" required></div>
+                <div><label for="k-mail">E-Mail</label><input id="k-mail" type="email" required></div>
+              </div>
+              <div class="frow two">
+                <div><label for="k-tel">Telefon</label><input id="k-tel" type="tel"></div>
+                <div><label for="k-jause">Jause dazu?</label>
+                  <select id="k-jause"><option>Nein, danke</option><option>Ja — bitte um Vorschlag</option></select>
+                </div>
+              </div>
+            </fieldset>
+            <div class="check">
+              <input type="checkbox" id="k-ds" required>
+              <label for="k-ds">Ich akzeptiere die <a href="datenschutz.html">Datenschutzbestimmungen</a> und stimme der Nutzung meiner Daten zu.</label>
+            </div>
+            <button class="btn btn--primary" type="submit">Bahn anfragen</button>
+            <p class="formnote" hidden data-note></p>
+          </form>
+          <div class="stack">
+            <div class="note">
+              <h3>Kegeln ist 24/5 möglich</h3>
+              <p class="small mb0">Von Mittwoch bis Sonntag jederzeit buchbar — einfach Termin
+              ausmachen, und schon geht’s los.</p>
+            </div>
+            <div class="note note--ocher">
+              <h3>Eisstockschießen</h3>
+              <p class="small mb0">Im Winter stehen sechs beleuchtete Bahnen bereit. Anfrage einfach
+              im Nachrichtenfeld vermerken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div class="split split--wide">
+          <form class="form" data-demo="Feier- und Seminaranfrage" id="feier">
+            <h2>Feier oder Seminar anfragen</h2>
+            <fieldset class="fieldset">
+              <legend>Ihr Anlass</legend>
+              <div class="frow two">
+                <div>
+                  <label for="f-anlass">Anlass</label>
+                  <select id="f-anlass">
+                    <option>Hochzeit</option><option>Geburtstag</option><option>Taufe</option>
+                    <option>Firmung / Erstkommunion</option><option>Klassentreffen</option>
+                    <option>Weihnachtsfeier</option><option>Seminar / Teambuilding</option>
+                    <option>Busgruppe / Ausflug</option><option>Begräbnis / Totenmahl</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="f-raum">Wunschraum</label>
+                  <select id="f-raum">
+                    <option>Beratung erwünscht</option>
+                    <option>Saal (bis 120 Personen)</option>
+                    <option>Event-Stadl (bis 60 Personen)</option>
+                    <option>Stüberl (bis 20 Personen)</option>
+                    <option>Gaststube</option>
+                    <option>Gastgarten</option>
+                  </select>
+                </div>
+              </div>
+              <div class="frow three">
+                <div><label for="f-datum">Wunschtermin</label><input id="f-datum" type="date"></div>
+                <div><label for="f-alt">Ausweichtermin</label><input id="f-alt" type="date"></div>
+                <div><label for="f-pers">Personen</label><input id="f-pers" type="number" min="2" value="30"></div>
+              </div>
+              <div class="frow two">
+                <div>
+                  <label for="f-kulinarik">Kulinarik</label>
+                  <select id="f-kulinarik">
+                    <option>Buffet</option><option>Menü</option>
+                    <option>Bratl in der Rein aus dem Holzofen</option>
+                    <option>Wildbuffet (ab 25 Personen)</option>
+                    <option>Jause / Kaffee und Kuchen</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="f-extra">Rahmenprogramm</label>
+                  <select id="f-extra">
+                    <option>ohne</option><option>Kegelbahn</option><option>Eisstockschießen</option>
+                    <option>Glühmostempfang im Garten</option><option>Weihnachtsengerl</option>
+                    <option>Ausflug / Führung organisieren</option>
+                    <option>Rundflug oder Tandemsprung</option>
+                  </select>
+                </div>
+              </div>
+              <div><label for="f-text">Was schwebt Ihnen vor?</label><textarea id="f-text" placeholder="Ablauf, Dekoration, Technik, Übernachtung mit Wohnmobil …"></textarea></div>
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend>Ihre Daten</legend>
+              <div class="frow two">
+                <div><label for="f-name">Name / Firma</label><input id="f-name" type="text" required></div>
+                <div><label for="f-mail">E-Mail</label><input id="f-mail" type="email" required></div>
+              </div>
+              <div><label for="f-tel">Telefon</label><input id="f-tel" type="tel"></div>
+            </fieldset>
+            <div class="check">
+              <input type="checkbox" id="f-ds" required>
+              <label for="f-ds">Ich akzeptiere die <a href="datenschutz.html">Datenschutzbestimmungen</a> und stimme der Nutzung meiner Daten zu.</label>
+            </div>
+            <button class="btn btn--primary" type="submit">Anfrage senden</button>
+            <p class="formnote" hidden data-note></p>
+          </form>
+          <div class="stack">
+            <div class="note">
+              <h3>Gerne beraten wir vor Ort</h3>
+              <p class="small mb0">Besonders bei Hochzeiten: Wir gehen mit euch durch die Räume und
+              stellen Menü oder Buffet zusammen. Wir freuen uns auf eure Anfrage!</p>
+            </div>
+            <div class="note note--ocher">
+              <h3>Weihnachtsfeier</h3>
+              <p class="small mb0">Bio-Glühmostempfang mit Keksen und Lagerfeuer € 6,20 pro Person,
+              Weihnachtsengerl € 45,00. Event-Stadel für 30 – 50 Personen.</p>
+            </div>
+            <div class="note">
+              <h3>Gerne werden wir Ihre Anfrage so rasch wie möglich beantworten.</h3>
+              <p class="small mb0">Telefonisch: <a href="tel:+437948390">07948 / 390</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabpanel" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div class="split split--wide">
+          <form class="form" data-demo="Gutschein-Bestellung">
+            <h2>Gutschein bestellen</h2>
+            <p>Ein Gutschein vom KräuterWirt passt immer: fürs Wildbuffet, für eine Kegelpartie oder
+            einfach für einen gemütlichen Abend im Wirtshaus.</p>
+            <fieldset class="fieldset">
+              <legend>Gutschein</legend>
+              <div class="frow two">
+                <div>
+                  <label for="g-art">Art</label>
+                  <select id="g-art">
+                    <option>Wertgutschein</option>
+                    <option>Kegelpartie (2 Stunden, 1 Bahn)</option>
+                    <option>Wildbuffet für zwei Personen</option>
+                    <option>Ruck-Zuck-Geschenksbox</option>
+                  </select>
+                </div>
+                <div><label for="g-wert">Wert in Euro</label><input id="g-wert" type="number" min="10" step="5" value="50"></div>
+              </div>
+              <div class="frow two">
+                <div><label for="g-fuer">Name der beschenkten Person</label><input id="g-fuer" type="text"></div>
+                <div>
+                  <label for="g-versand">Zustellung</label>
+                  <select id="g-versand">
+                    <option>Abholung im Wirtshaus</option>
+                    <option>Zusendung per Post</option>
+                    <option>PDF per E-Mail</option>
+                  </select>
+                </div>
+              </div>
+              <div><label for="g-text">Widmung</label><textarea id="g-text" placeholder="Alles Gute zum Geburtstag …"></textarea></div>
+            </fieldset>
+            <fieldset class="fieldset">
+              <legend>Ihre Daten</legend>
+              <div class="frow two">
+                <div><label for="g-name">Name</label><input id="g-name" type="text" required></div>
+                <div><label for="g-mail">E-Mail</label><input id="g-mail" type="email" required></div>
+              </div>
+              <div><label for="g-adresse">Adresse (bei Postversand)</label><input id="g-adresse" type="text"></div>
+            </fieldset>
+            <div class="check">
+              <input type="checkbox" id="g-ds" required>
+              <label for="g-ds">Ich akzeptiere die <a href="datenschutz.html">Datenschutzbestimmungen</a> und stimme der Nutzung meiner Daten zu.</label>
+            </div>
+            <button class="btn btn--primary" type="submit">Gutschein bestellen</button>
+            <p class="formnote" hidden data-note></p>
+          </form>
+          <div class="stack">
+            <div class="note note--berry">
+              <h3>Ruck Zuck zum Verschenken</h3>
+              <p class="small mb0">Die Ruck-Zuck-Gläser gibt es auch als Geschenksbox — individuell
+              je nach Anlass und Budget zusammengestellt.
+              <a href="mailto:ruckzuck@kraeuterwirt.at">ruckzuck@kraeuterwirt.at</a></p>
+            </div>
+            <div class="note">
+              <h3>Kräutersäfte zum Mitnehmen</h3>
+              <p class="small mb0">Unsere Kräutersäfte gibt es in der 0,5-l-Flasche auch für
+              zu Hause — ein schönes Mitbringsel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>KräuterWirt Dunzinger</h4>
+        <p>Schimpl OG<br>Guttenbrunn 18<br>4242 Hirschbach im Mühlkreis</p>
+        <p><a href="tel:+437948390">07948 / 390</a> · <a href="tel:+436644395013">0664 / 4395013</a><br>
+        <a href="mailto:info@kraeuter-wirt.at">info@kraeuter-wirt.at</a></p>
+      </div>
+      <div>
+        <h4>Geöffnet</h4>
+        <ul>
+          <li>Freitag und Samstag 10 – 22 Uhr</li>
+          <li>Küche 11:30 – 20:00 Uhr</li>
+          <li>Kegelbahn Mittwoch bis Sonntag</li>
+          <li>Gruppen auf Anfrage auch außerhalb der Öffnungszeiten</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rundgang</h4>
+        <ul>
+          <li><a href="speisekarte.html">Speise- und Getränkekarte</a></li>
+          <li><a href="feiern.html">Feiern, Hochzeit, Seminare</a></li>
+          <li><a href="erleben.html">Kegelbahn, Camping, Aktiv</a></li>
+          <li><a href="kalender.html">Kulinarischer Kalender</a></li>
+          <li><a href="reservierung.html">Reservieren &amp; Gutscheine</a></li>
+          <li><a href="https://www.facebook.com/Holzofenbratl" rel="noopener">Facebook „Holzofenbratl“</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Post vom KräuterWirt</h4>
+        <p class="small">Wildwochen, Exklusiv-Öffnungstage und Ruck-Zuck-Neuheiten —
+        ein paar Mal im Jahr, nie öfter.</p>
+        <form class="nl-form" data-demo="Newsletter">
+          <label class="vh" for="nl-mail">E-Mail-Adresse</label>
+          <input type="email" id="nl-mail" name="mail" placeholder="ihre@adresse.at" required>
+          <button class="btn btn--primary" type="submit">Anmelden</button>
+        </form>
+        <p class="formnote" hidden data-note></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Das Bildmaterial stammt von der bestehenden Website des KräuterWirt Dunzinger.</span>
+      <span>
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a> ·
+        <a href="kontakt.html">Kontakt &amp; Anfahrt</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle'), n=document.getElementById('hauptnav');
+  if(t&&n){t.addEventListener('click',function(){
+    var o=n.getAttribute('data-open')==='true';
+    n.setAttribute('data-open',String(!o));t.setAttribute('aria-expanded',String(!o));
+  });}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var note=f.parentNode.querySelector('[data-note]')||f.querySelector('[data-note]');
+      if(note){note.hidden=false;
+        note.textContent='Vorschau — im Live-Betrieb geht diese Anfrage ('+f.getAttribute('data-demo')+') direkt an den KräuterWirt Dunzinger in Guttenbrunn.';
+        note.setAttribute('tabindex','-1');note.focus();}
+    });
+  });
+  var tabs=document.querySelectorAll('[role="tab"]');
+  tabs.forEach(function(tb){
+    tb.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        o.setAttribute('aria-selected','false');
+        document.getElementById(o.getAttribute('aria-controls')).hidden=true;
+      });
+      tb.setAttribute('aria-selected','true');
+      document.getElementById(tb.getAttribute('aria-controls')).hidden=false;
+    });
+  });
+})();
+</script>
+</body>
+</html>

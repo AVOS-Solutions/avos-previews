@@ -451,6 +451,16 @@ a.btn-ghost:hover, button.btn-ghost:hover { background: var(--petrol); color: #f
 .section-paper .phone-big:hover, .section-sand .phone-big:hover { color: var(--petrol); }
 .section-petrol .phone-big, .callout .phone-big { color: #fff; }
 
+
+/* --- Mobiler Umbruch: Grid-Kinder duerfen schrumpfen ------- */
+fieldset { min-inline-size: 0; }
+.field input, .field select, .field textarea { min-width: 0; width: 100%; max-width: 100%; }
+/* --- Mobiler Umbruch: Grid-Kinder duerfen schrumpfen ------- */
+.split > *, .grid > *, .form-row > *, .footer-grid > *, .stat-row > *,
+.hero-grid > *, .gallery > *, .award-grid > * { min-width: 0; }
+.facts dd, .facts dt, .card p, .notice p, .dish-desc, .dish-name,
+.hours th, .hours td, .field-hint, .checklist li { overflow-wrap: anywhere; }
+
 /* --- Breakpoints ------------------------------------------ */
 
 @media (min-width: 640px) {

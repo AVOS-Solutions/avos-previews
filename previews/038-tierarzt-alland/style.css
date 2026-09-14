@@ -90,8 +90,11 @@ section{padding-block:clamp(3rem,7vw,5.6rem)}
 .pill-dark:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
 .pill-line{background:transparent;color:var(--text);border-color:var(--text)}
 .pill-line:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
-.dunkel .pill-line{color:var(--sand);border-color:var(--sand)}
-.dunkel .pill-line:hover{background:var(--sand);color:var(--ink)}
+.dunkel .pill-line,.dunkel-2 .pill-line,.hero .pill-line,.seitenkopf .pill-line{color:var(--sand);border-color:var(--sand)}
+.dunkel .pill-line:hover,.dunkel-2 .pill-line:hover,.hero .pill-line:hover,.seitenkopf .pill-line:hover{background:var(--sand);color:var(--ink)}
+.dunkel a.pill,.dunkel-2 a.pill,.hero a.pill,.seitenkopf a.pill{color:var(--ink)}
+.dunkel a.pill:hover,.dunkel-2 a.pill:hover{color:var(--white)}
+.dunkel a.pill-dark,.dunkel-2 a.pill-dark{color:var(--white)}
 .knopfreihe{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
 
 /* ---------- Labels ---------- */
