@@ -352,7 +352,7 @@ figcaption{font-size:.85rem;color:var(--muted);padding:.55rem .8rem;}
 /* ---------- CTA ---------- */
 .cta-band{background:var(--copper);color:#fff;}
 .cta-band h2{color:#fff;}
-.cta-band p{color:#fbe6da;}
+.cta-band p{color:#ffeee4;}
 .cta-band a:not(.btn){color:#fff;}
 .cta-inner{display:grid;gap:1.3rem;align-items:center;padding-block:clamp(2.2rem,5vw,3.4rem);}
 @media(min-width:52rem){.cta-inner{grid-template-columns:1.5fr auto;}}
