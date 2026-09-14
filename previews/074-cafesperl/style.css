@@ -14,7 +14,7 @@
   --paper:#fffcf6;
   --billiard:#1f4436;
   --billiard-2:#173428;
-  --brass:#8a5e1c;
+  --brass:#7d5115;
   --brass-lite:#dcb35e;
   --burgundy:#6d2029;
   --rule:#cfc2ad;
@@ -216,6 +216,8 @@ section{padding:clamp(2.8rem,6vw,5.4rem) 0}
 .awards span{font-family:var(--body);font-size:1.1rem;font-weight:600;display:block}
 .sec--green .awards li{background:rgba(255,255,255,.07);border-color:rgba(246,241,230,.3);color:#f0e9da}
 .sec--green .awards b{color:var(--brass-lite)}
+.sec--dark .awards li{background:#31251d;border-color:rgba(236,226,210,.28);color:#f0e9da}
+.sec--dark .awards b{color:var(--brass-lite)}
 
 /* --- Formulare --- */
 form{max-width:740px}

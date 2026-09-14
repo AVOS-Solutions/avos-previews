@@ -110,6 +110,9 @@ a.btn--ghost-light:hover,.btn--ghost-light:hover{background:var(--chalk);color:v
 .sec--wine{background:var(--ink-2);color:var(--chalk)}
 .sec--wine h2,.sec--wine h3{color:var(--chalk)}
 .sec--wine a:not(.btn){color:var(--gold)}
+.sec--wine a:not(.btn):hover{color:#E4C384}
+.sec--wine .kicker{color:var(--gold)}
+.sec--wine .note,.sec--dark .note{color:var(--sand)}
 
 .kicker{font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-ink);
   font-weight:700;margin:0 0 .7rem;display:block}

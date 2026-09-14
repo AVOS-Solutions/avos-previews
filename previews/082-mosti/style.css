@@ -258,3 +258,7 @@ legend{font-family:"Fraunces",Georgia,serif;font-size:1.1rem;font-weight:600;pad
 .foot-nav li{margin-bottom:.42rem}
 .foot-bottom{border-top:1px solid var(--bark-3);margin-top:2.2rem;padding-top:1.2rem;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;font-size:.8rem;color:#B8A484}
 .foot-bottom p{margin:0}
+
+.pill a{color:var(--ocher-dk);text-decoration:none;border-bottom:1px solid rgba(138,84,16,.45)}
+.pill a:hover{border-bottom-color:var(--ocher-dk)}
+.sec--bark .pill a:not(.btn){color:#FFF6E6;border-bottom-color:rgba(255,246,230,.5)}
