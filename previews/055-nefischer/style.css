@@ -329,3 +329,6 @@ textarea{min-height:150px;resize:vertical;}
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
 }
+
+/* Kontrast: Kicker auf Sandflächen eine Stufe satter */
+.card--sand .kicker,.band-sand .kicker{color:#6d4510;}

@@ -36,6 +36,7 @@ body{
   color:var(--ink);
   background:var(--paper);
   overflow-x:hidden;
+  overflow-wrap:break-word;
 }
 img{max-width:100%;height:auto;display:block;}
 
@@ -198,9 +199,12 @@ a.btn--onDark:hover,a.btn--onDark:focus-visible{background:#fff;color:var(--ink)
 
 /* ---------- Raster ---------- */
 .grid{display:grid;gap:clamp(1rem,2.4vw,1.8rem);}
+.grid>*{min-width:0;}
+.split>*{min-width:0;}
 .g2{grid-template-columns:1fr;}
 .g3{grid-template-columns:1fr;}
-.g4{grid-template-columns:1fr 1fr;}
+.g4{grid-template-columns:1fr;}
+@media(min-width:30rem){.g4{grid-template-columns:1fr 1fr;}}
 @media(min-width:46rem){
   .g2{grid-template-columns:1fr 1fr;}
   .g3{grid-template-columns:repeat(2,1fr);}
