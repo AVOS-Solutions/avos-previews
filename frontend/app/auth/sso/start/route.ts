@@ -19,9 +19,7 @@ export async function GET(request: NextRequest) {
   );
 
   if (!response.ok) {
-    const login = request.nextUrl.clone();
-    login.pathname = "/login";
-    login.search = "";
+    const login = new URL("/login", publicUrl);
     login.searchParams.set("error", "AVOS Licensing ist nicht konfiguriert oder nicht erreichbar.");
     return NextResponse.redirect(login);
   }
