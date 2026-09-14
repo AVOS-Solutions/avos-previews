@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Gasthof &amp; Weingut Palz">
 <meta property="og:title" content="Zimmer &amp; Preise – Gasthof Palz in Klöch">
 <meta property="og:description" content="Schöne PALZ-Tage, gute PALZ-Nächte: zwei Doppelzimmer mit Balkon und Blick in die Weinberge.">
-<meta property="og:image" content="img/03.jpg">
+<meta property="og:image" content="img/58.jpg">
 <meta property="og:url" content="https://www.gasthof-palz.at/zimmer.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,8 +82,8 @@
         </div>
         <div>
           <figure class="frame">
-            <img src="img/03.jpg" loading="lazy" width="650" height="433" alt="Blick über die Rebzeilen am Klöchberg bei Sonnenuntergang – die Aussicht rund um den Gasthof Palz">
-            <figcaption>Rundherum Weingärten: der Blick vom Klöchberg.</figcaption>
+            <img src="img/58.jpg" loading="lazy" width="400" height="267" alt="Gast liest auf dem Bett eines Gästezimmers mit hellem Holzbett, blauer Bettwäsche und Fenster zum Weinberg">
+            <figcaption>Ausgeschlafen und ausgelesen: ein Doppelzimmer im Haus, rundherum die Weingärten des Klöchbergs.</figcaption>
           </figure>
         </div>
       </div>
@@ -153,6 +153,17 @@
           <p style="margin-top:1.2rem"><a href="tradition.html#golf">Mehr zum Backhendlturnier</a></p>
         </div>
       </div>
+      <div style="margin-top:2.4rem">
+        <div class="gallery">
+          <figure><button class="shot" type="button"><img src="img/22.jpg" loading="lazy" width="350" height="233" alt="Golferin beim Abschlag, daneben wartet ein Mitspieler mit Golfbag"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/23.jpg" loading="lazy" width="350" height="233" alt="Spielbahn der Traminer-Golfanlage mit Teich und bewaldetem Hang"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/24.jpg" loading="lazy" width="350" height="233" alt="Gepflegtes Fairway mit Wasserhindernis und Bunkern im Vulkanland"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/25.jpg" loading="lazy" width="350" height="233" alt="Grün mit Fahnenstange und Teich in der Abendsonne"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/26.jpg" loading="lazy" width="350" height="233" alt="Weiter Blick über die Golfanlage mit See und Baumreihen"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/27.jpg" loading="lazy" width="350" height="233" alt="Golfrunde beim gemeinsamen Essen unter dem Sonnenschirm der Clubterrasse"></button></figure>
+        </div>
+      </div>
+      <p class="gallery-note">Bild antippen oder anklicken für die große Ansicht.</p>
     </div>
   </section>
 
@@ -189,6 +200,13 @@
     </div>
   </section>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="lightbox-close" type="button" id="lightboxClose">Schließen</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="img/22.jpg" loading="lazy" width="350" height="233" alt="Vergrößerte Ansicht des ausgewählten Bildes">
+      <p class="lightbox-cap" id="lightboxCap"></p>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -245,6 +263,37 @@
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    var lbImg = document.getElementById('lightboxImg');
+    var lbCap = document.getElementById('lightboxCap');
+    var lbClose = document.getElementById('lightboxClose');
+    var lbLast = null;
+    var lbHide = function () {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lbLast) { lbLast.focus(); lbLast = null; }
+    };
+    document.querySelectorAll('.shot').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pic = btn.querySelector('img');
+        lbImg.setAttribute('src', pic.getAttribute('src'));
+        lbImg.setAttribute('width', pic.getAttribute('width'));
+        lbImg.setAttribute('height', pic.getAttribute('height'));
+        lbImg.setAttribute('alt', pic.getAttribute('alt'));
+        lbCap.textContent = btn.getAttribute('data-cap') || pic.getAttribute('alt');
+        lbLast = btn;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      });
+    });
+    lbClose.addEventListener('click', lbHide);
+    lb.addEventListener('click', function (ev) { if (ev.target === lb) lbHide(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && lb.classList.contains('is-open')) lbHide();
     });
   }
   document.querySelectorAll('form[novalidate]').forEach(function (form) {

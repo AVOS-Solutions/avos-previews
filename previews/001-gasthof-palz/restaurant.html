@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Gasthof &amp; Weingut Palz">
 <meta property="og:title" content="Restaurant &amp; Feiern – Backhendlgasthof Palz">
 <meta property="og:description" content="Palz-Hendl vom Bauernhof Janitsch, Weinlaubenterrasse, Spielplatz und 450 Sitzplätze für Feste jeder Art.">
-<meta property="og:image" content="img/01.jpg">
+<meta property="og:image" content="img/10.jpg">
 <meta property="og:url" content="https://www.gasthof-palz.at/restaurant.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,10 +80,13 @@
           <p>Bei uns werden nicht nur Köstlichkeiten vom Huhn, sondern auch internationale Gerichte serviert.</p>
         </div>
         <div>
-          <figure class="frame">
-            <img src="img/01.jpg" loading="lazy" width="650" height="443" alt="Familie Palz mit Weinflaschen in den Rebzeilen oberhalb des Gasthofs">
-            <figcaption>Hendl und Wein kommen beim Palz aus einer Hand.</figcaption>
-          </figure>
+          <div class="gallery gallery-2">
+            <figure><button class="shot" type="button"><img src="img/10.jpg" loading="lazy" width="350" height="233" alt="Paniertes Fleisch mit Pommes frites und Blattsalat, daneben eine Flasche Palz-Wein"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/09.jpg" loading="lazy" width="350" height="233" alt="Portion Backhendl auf weißem Teller, im Hintergrund Gäste an gedeckten Tischen"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/39.jpg" loading="lazy" width="350" height="233" alt="Flasche Traminer Rosé aus dem Haus zwischen Weißweingläsern auf gedecktem Tisch"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/08.jpg" loading="lazy" width="350" height="233" alt="Zwei Gäste stoßen am Fenstertisch mit Weißwein an, vor ihnen Salat und Brot"></button></figure>
+          </div>
+          <p class="gallery-note">Bild antippen oder anklicken für die große Ansicht.</p>
         </div>
       </div>
     </div>
@@ -110,6 +113,32 @@
           <p>Mit insgesamt 450 Sitzplätzen ist Platz für die Zweisamkeit genauso wie für die große Gesellschaft. Die Räume schmücken und decken wir nach Ihrem Geschmack.</p>
         </article>
       </div>
+      <div style="margin-top:2rem">
+        <div class="gallery">
+          <figure><button class="shot" type="button"><img src="img/33.jpg" loading="lazy" width="350" height="233" alt="Kinder rutschen auf dem beschatteten Spielplatz neben der Terrasse, eine Mutter sieht zu"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/35.jpg" loading="lazy" width="350" height="233" alt="Lange Tafel in der Stube, mit Gläsern, Servietten und Blumenschmuck für eine Feier eingedeckt"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/32.jpg" loading="lazy" width="350" height="233" alt="Fünf Köchinnen und Köche in weißer Kochkleidung mit angerichteten Tellern"></button></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-cream" id="kueche">
+    <div class="wrap">
+      <p class="eyebrow">Aus der Küche</p>
+      <h2>Was neben dem Hendl auf den Tisch kommt</h2>
+      <p class="lede">Traditionell-Bodenständiges aus der steirischen Wirtshausküche, internationale Gerichte und Süßes zum Abschluss – gekocht wird mit dem, was die Saison hergibt.</p>
+      <div style="margin-top:2rem">
+        <div class="gallery">
+          <figure><button class="shot" type="button"><img src="img/11.jpg" loading="lazy" width="350" height="233" alt="Gefüllte Palatschinke mit Schlagobers und Fruchtspiegel als Dessert"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/12.jpg" loading="lazy" width="350" height="233" alt="Pfanne mit gerösteten Erdäpfeln, Fleischstücken und Kräuterdip"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/13.jpg" loading="lazy" width="350" height="233" alt="Kurzgebratenes mit Gemüse und Kartoffeln, dahinter eine Flasche Palz-Rotwein"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/14.jpg" loading="lazy" width="350" height="233" alt="Medaillons mit Reis und glasierten Karotten auf länglichem Teller"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/15.jpg" loading="lazy" width="350" height="233" alt="Wiener Schnitzel mit Reis und Petersilie, daneben ein gelber Blumenstrauß"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/16.jpg" loading="lazy" width="350" height="233" alt="Blattsalat mit Geröstetem, Kürbiskernöl und Tomaten neben einer Flasche Hauswein"></button></figure>
+        </div>
+      </div>
+      <p class="gallery-note">Bild antippen oder anklicken für die große Ansicht.</p>
     </div>
   </section>
 
@@ -225,6 +254,13 @@
     </div>
   </section>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="lightbox-close" type="button" id="lightboxClose">Schließen</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="img/10.jpg" loading="lazy" width="350" height="233" alt="Vergrößerte Ansicht des ausgewählten Bildes">
+      <p class="lightbox-cap" id="lightboxCap"></p>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -281,6 +317,37 @@
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    var lbImg = document.getElementById('lightboxImg');
+    var lbCap = document.getElementById('lightboxCap');
+    var lbClose = document.getElementById('lightboxClose');
+    var lbLast = null;
+    var lbHide = function () {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lbLast) { lbLast.focus(); lbLast = null; }
+    };
+    document.querySelectorAll('.shot').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pic = btn.querySelector('img');
+        lbImg.setAttribute('src', pic.getAttribute('src'));
+        lbImg.setAttribute('width', pic.getAttribute('width'));
+        lbImg.setAttribute('height', pic.getAttribute('height'));
+        lbImg.setAttribute('alt', pic.getAttribute('alt'));
+        lbCap.textContent = btn.getAttribute('data-cap') || pic.getAttribute('alt');
+        lbLast = btn;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      });
+    });
+    lbClose.addEventListener('click', lbHide);
+    lb.addEventListener('click', function (ev) { if (ev.target === lb) lbHide(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && lb.classList.contains('is-open')) lbHide();
     });
   }
   document.querySelectorAll('form[novalidate]').forEach(function (form) {

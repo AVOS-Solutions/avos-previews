@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="Gasthof &amp; Weingut Palz">
 <meta property="og:title" content="Weingut Palz – Klöcher Traminer &amp; Degustationsraum">
 <meta property="og:description" content="Prämierte Weine vom Klöchberg, Degustationsraum am Haus und Weinversand ab Hof.">
-<meta property="og:image" content="img/03.jpg">
+<meta property="og:image" content="img/51.jpg">
 <meta property="og:url" content="https://www.gasthof-palz.at/weingut.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,10 +79,20 @@
           <p>Wir sind Mitglied bei den <strong>Winzern Vulkanland Steiermark</strong>, einem Verein mit 85 Mitgliedsbetrieben – von Leitbetrieben bis zu sehr kleinen Weingütern, die sich gegenseitig bereichern.</p>
         </div>
         <div>
-          <figure class="frame">
-            <img src="img/03.jpg" loading="lazy" width="650" height="433" alt="Familie Palz mit Weinflaschen und Gläsern zwischen den Rebzeilen bei Abendlicht">
-            <figcaption>Die Weingärten der Familie Palz am Klöchberg.</figcaption>
-          </figure>
+          <div class="gallery gallery-2">
+            <figure><button class="shot" type="button"><img src="img/51.jpg" loading="lazy" width="350" height="233" alt="Rebzeilen des Weinguts Palz, die sich im Abendlicht über den Hügel ziehen"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/52.jpg" loading="lazy" width="350" height="233" alt="Nahaufnahme einer reifen Traminertraube im Laub der Rebe"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/53.jpg" loading="lazy" width="350" height="233" alt="Winzerin hält ein Glas Weißwein zwischen den Rebzeilen ins Licht"></button></figure>
+            <figure><button class="shot" type="button"><img src="img/57.jpg" loading="lazy" width="350" height="233" alt="Winzerin mit Weinglas im Weingarten, hinter ihr geht die Sonne über dem Klöchberg unter"></button></figure>
+          </div>
+          <p class="gallery-note">Bild antippen oder anklicken für die große Ansicht.</p>
+        </div>
+      </div>
+      <div style="margin-top:2.2rem">
+        <div class="gallery">
+          <figure><button class="shot" type="button"><img src="img/54.jpg" loading="lazy" width="350" height="233" alt="Winzerin mit Weinglas vor einer blühenden roten Rosenwand am Weingut"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/55.jpg" loading="lazy" width="350" height="254" alt="Winzerpaar zeigt prämierte Flaschen und eine Auszeichnungsurkunde vor der Rosenwand"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/56.jpg" loading="lazy" width="350" height="233" alt="Weinflasche im Vordergrund, dahinter spazieren zwei Personen durch die Rebzeilen"></button></figure>
         </div>
       </div>
     </div>
@@ -111,6 +121,16 @@
           </dl>
         </div>
       </div>
+      <div style="margin-top:2.4rem">
+        <div class="gallery">
+          <figure><button class="shot" type="button"><img src="img/03.jpg" loading="lazy" width="350" height="233" alt="Zwei Gäste stoßen unter der Weinlaube mit Weißwein an"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/04.jpg" loading="lazy" width="350" height="233" alt="Gastgeberpaar in Tracht vor der Tafel „Klöcher Traminer“ im Degustationsraum"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/05.jpg" loading="lazy" width="350" height="233" alt="Zwei Frauen in Tracht verkosten Weißwein vor dem Flaschenregal"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/06.jpg" loading="lazy" width="350" height="233" alt="Weißweinglas vor den beleuchteten Wandnischen mit Flaschen des Hauses"></button></figure>
+          <figure><button class="shot" type="button"><img src="img/07.jpg" loading="lazy" width="350" height="233" alt="Flaschen, Gläser und Weintrauben auf dem Verkostungstisch dekoriert"></button></figure>
+        </div>
+      </div>
+      <p class="gallery-note">Bild antippen oder anklicken für die große Ansicht.</p>
     </div>
   </section>
 
@@ -210,6 +230,10 @@
           <h2>Ein Gutschein für Menschen, die Freude am Genießen haben</h2>
           <p>Beschenken Sie liebe Menschen, die Freude am Genießen haben – oder bekommen sollen. Der Palz-Genussgutschein gilt für ein Hendlessen im Gasthof, für Weine aus unserem Keller und auch für einen Aufenthalt in unseren Gästezimmern.</p>
           <p>Wählen Sie einen Betrag, wir bereiten den Gutschein vor – zur Abholung oder mit Zustellung per Post.</p>
+          <figure class="frame" style="margin-top:1.8rem">
+            <img src="img/28.jpg" loading="lazy" width="500" height="225" alt="Vorlage des Palz-Genussgutscheins mit Feldern für Name, Betrag und Datum, daneben ein Tellerfoto">
+            <figcaption>So sieht der Palz-Genussgutschein aus: Betrag, Widmung und Datum trägt das Haus für Sie ein.</figcaption>
+          </figure>
         </div>
         <div>
           <form class="form" id="gutscheinForm" novalidate>
@@ -254,6 +278,13 @@
     </div>
   </section>
 
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="lightbox-close" type="button" id="lightboxClose">Schließen</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="img/51.jpg" loading="lazy" width="350" height="233" alt="Vergrößerte Ansicht des ausgewählten Bildes">
+      <p class="lightbox-cap" id="lightboxCap"></p>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -309,6 +340,37 @@
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    var lbImg = document.getElementById('lightboxImg');
+    var lbCap = document.getElementById('lightboxCap');
+    var lbClose = document.getElementById('lightboxClose');
+    var lbLast = null;
+    var lbHide = function () {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lbLast) { lbLast.focus(); lbLast = null; }
+    };
+    document.querySelectorAll('.shot').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var pic = btn.querySelector('img');
+        lbImg.setAttribute('src', pic.getAttribute('src'));
+        lbImg.setAttribute('width', pic.getAttribute('width'));
+        lbImg.setAttribute('height', pic.getAttribute('height'));
+        lbImg.setAttribute('alt', pic.getAttribute('alt'));
+        lbCap.textContent = btn.getAttribute('data-cap') || pic.getAttribute('alt');
+        lbLast = btn;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      });
+    });
+    lbClose.addEventListener('click', lbHide);
+    lb.addEventListener('click', function (ev) { if (ev.target === lb) lbHide(); });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && lb.classList.contains('is-open')) lbHide();
     });
   }
   document.querySelectorAll('form[novalidate]').forEach(function (form) {
