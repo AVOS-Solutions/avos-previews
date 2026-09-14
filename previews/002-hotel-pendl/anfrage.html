@@ -124,8 +124,13 @@
         <div>
           <p class="eyebrow">Formular 2</p>
           <h2>Zimmer anfragen</h2>
-          <p>Liebevoll eingerichtete G&auml;stezimmer im Ortszentrum von Kalsdorf. Nennen Sie uns Zeitraum und Personenzahl &ndash; wir melden uns mit Verf&uuml;gbarkeit und Preis.</p>
-          <p><a href="zimmer.html">Mehr zu den Zimmern</a></p>
+          <p>27 liebevoll eingerichtete G&auml;stezimmer im Ortszentrum von Kalsdorf &ndash; Ein- und Zweibettzimmer sowie ein Familien-Appartement, alle mit Dusche, WC, Telefon, Safe und Kabel-TV. Nennen Sie uns Zeitraum und Personenzahl, wir melden uns mit Verf&uuml;gbarkeit und Preis.</p>
+          <ul class="checklist">
+            <li>Kleiner Fitnessraum im Haus</li>
+            <li>E-Bike-Verleih, Murradweg in der N&auml;he</li>
+            <li>Wirtshaus und Fr&uuml;hst&uuml;ck im selben Haus</li>
+          </ul>
+          <p style="margin-top:1rem"><a href="zimmer.html">Mehr zu den Zimmern</a> &middot; <a href="umgebung.html">Ausflugsziele rundum</a></p>
         </div>
         <div>
           <form class="form" novalidate>
@@ -143,15 +148,28 @@
                 <div class="field"><label for="z-pers">Personen</label><input type="number" id="z-pers" name="personen" min="1" max="20" value="2" inputmode="numeric"></div>
                 <div class="field"><label for="z-zimmer">Zimmer</label><input type="number" id="z-zimmer" name="zimmer" min="1" max="10" value="1" inputmode="numeric"></div>
               </div>
-              <div class="field" style="margin-top:1.1rem">
-                <label for="z-anlass">Anlass</label>
-                <select id="z-anlass" name="anlass">
-                  <option>Privater Aufenthalt</option>
-                  <option>Gesch&auml;ftsreise</option>
-                  <option>Feier im Haus</option>
-                  <option>Seminar im Haus</option>
-                </select>
+              <div class="form-row" style="margin-top:1.1rem">
+                <div class="field">
+                  <label for="z-kategorie">Zimmerkategorie</label>
+                  <select id="z-kategorie" name="kategorie">
+                    <option>Einbettzimmer</option>
+                    <option>Zweibettzimmer</option>
+                    <option>Familien-Appartement</option>
+                    <option>egal &ndash; bitte vorschlagen</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="z-anlass">Anlass</label>
+                  <select id="z-anlass" name="anlass">
+                    <option>Privater Aufenthalt</option>
+                    <option>Gesch&auml;ftsreise</option>
+                    <option>Feier im Haus</option>
+                    <option>Seminar im Haus</option>
+                    <option>Radtour am Murradweg</option>
+                  </select>
+                </div>
               </div>
+              <label class="check" style="margin-top:1.1rem"><input type="checkbox" name="ebike"> Ich m&ouml;chte E-Bikes aus dem Hausverleih reservieren.</label>
               <div class="field" style="margin-top:1.1rem">
                 <label for="z-text">Ihre Anmerkung</label>
                 <textarea id="z-text" name="anmerkung" placeholder="Abendessen im Wirtshaus gew&uuml;nscht, sp&auml;te Anreise &hellip;"></textarea>
