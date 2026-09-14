@@ -31,7 +31,7 @@ body{
   line-height:1.7;overflow-x:hidden;letter-spacing:.005em
 }
 img{max-width:100%;height:auto;display:block}
-h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.08;margin:0 0 .45em;letter-spacing:0}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.08;margin:0 0 .45em;letter-spacing:0;overflow-wrap:break-word;hyphens:auto}
 h1{font-size:clamp(2.5rem,1.6rem + 4vw,5rem)}
 h2{font-size:clamp(1.9rem,1.35rem + 2.4vw,3.2rem)}
 h3{font-size:clamp(1.3rem,1.15rem + .7vw,1.7rem)}

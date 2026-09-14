@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tickets, Anmeldung &amp; Gutscheine – Almerlebnispark Teichalm</title>
+<meta name="description" content="Ticket für den Hochseilgarten reservieren, Anmeldung für Einzelpersonen, Familien und Gruppen online ausfüllen oder einen Gutschein bestellen – Almerlebnispark Teichalm.">
+<link rel="canonical" href="https://www.almpark.at/tickets.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Almerlebnispark Teichalm">
+<meta property="og:title" content="Tickets, Anmeldung &amp; Gutscheine – Almerlebnispark Teichalm">
+<meta property="og:description" content="Ticket für den Hochseilgarten reservieren, Anmeldung für Einzelpersonen, Familien und Gruppen online ausfüllen oder einen Gutschein bestellen – Almerlebnispark Teichalm.">
+<meta property="og:locale" content="de_AT">
+<meta property="og:image" content="img/01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&amp;family=Barlow:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="previewbar">Unverbindliche <b>Gestaltungs-Vorschau</b> · keine offizielle Website des Almerlebnispark Teichalm · erstellt von AVOS&nbsp;Solutions</div>
+<header class="site">
+  <div class="site__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">AP</span>
+      <span class="brand__t">
+        <span class="brand__n">Almerlebnispark</span>
+        <span class="brand__s">Teichalm · Naturpark Almenland</span>
+      </span>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="index.html">Der Park</a></li>
+        <li><a href="hochseilgarten.html">Hochseilgarten</a></li>
+        <li><a href="waldbewegungsgarten.html">Waldgarten &amp; Jausnerei</a></li>
+        <li><a href="preise.html">Preise 2026</a></li>
+        <li><a href="gruppen-schulen.html">Gruppen &amp; Schulen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="tickets.html">Tickets sichern</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--soft">
+  <div class="wrap">
+    <span class="tag">Neu: online statt Formular</span>
+    <h1>Tickets, Anmeldung<br>und Gutscheine</h1>
+    <p class="lead">Ausflug am Handy planen: Wunschtag reservieren, Anmeldung vorab ausfüllen und das Warten an der Kassa verkürzen. Gutscheine gibt es hier ebenfalls.</p>
+    <div class="btnrow">
+      <a class="btn btn--primary" href="#ticket">Ticket reservieren</a>
+      <a class="btn btn--line" href="#anmeldung">Anmeldung ausfüllen</a>
+      <a class="btn btn--line" href="#gutschein">Gutschein bestellen</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="ticket">
+  <div class="wrap">
+    <div class="split split--l">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Reservierung direkt an den Almerlebnispark (info@almpark.at). Aktuell wird nichts versendet und nichts gespeichert.</p>
+        <h2 style="margin-top:0">Ticket reservieren</h2>
+        <fieldset>
+          <legend>Wann und mit wem?</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="t-datum">Wunschtag</label><input type="date" id="t-datum" name="datum" required></div>
+            <div class="field"><label for="t-zeit">Geplante Ankunft</label>
+              <select id="t-zeit" name="zeit">
+                <option>10:00 – 11:00</option><option>11:00 – 12:00</option><option>12:00 – 13:00</option>
+                <option>13:00 – 14:00</option><option>ab 14:00</option>
+              </select>
+            </div>
+            <div class="field"><label for="t-erw">Erwachsene (ab 18)</label><input type="number" id="t-erw" name="erwachsene" min="0" max="60" value="2"></div>
+            <div class="field"><label for="t-jug">Jugendliche (9 – 18)</label><input type="number" id="t-jug" name="jugend" min="0" max="60" value="0"></div>
+            <div class="field"><label for="t-kind">Kinder (bis 9)</label><input type="number" id="t-kind" name="kinder" min="0" max="60" value="2"></div>
+            <div class="field"><label for="t-karte">Vorteilskarte</label>
+              <select id="t-karte" name="karte">
+                <option>keine</option><option>Steiermark Card (−30 %)</option><option>Genuss Card (−20 %)</option>
+              </select>
+            </div>
+          </div>
+          <p class="hint">Öffnungszeiten täglich 10 bis 18 Uhr; maximale Aufenthaltsdauer 4 Stunden inklusive Einschulung. Die Öffnungszeiten sind wetterabhängig.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="t-name">Name</label><input type="text" id="t-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="t-mail">E-Mail</label><input type="email" id="t-mail" name="email" autocomplete="email" required></div>
+            <div class="field"><label for="t-tel">Telefon</label><input type="tel" id="t-tel" name="telefon" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="t-anm">Anmerkung</label><textarea id="t-anm" name="anmerkung" placeholder="Kindergeburtstag, erste Kletterversuche, Fragen zu den Parcours …"></textarea></div>
+          <p class="check"><input type="checkbox" id="t-ok" required> <label for="t-ok" style="font-weight:400">Ich habe die <a href="hochseilgarten.html#regeln">Teilnahmebedingungen</a> gelesen und bin einverstanden.</label></p>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Ticket reservieren</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Reservierung jetzt beim Almerlebnispark. Dies ist eine Vorschau &ndash; bitte melden Sie sich derzeit unter info@almpark.at oder +43 664 88248202.</p>
+      </form>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Preise auf einen Blick</h3>
+          <div class="prow"><span class="prow__n"><b>Kinder bis 9 Jahre</b></span><span class="prow__p">€ 18,00</span></div>
+          <div class="prow"><span class="prow__n"><b>9 bis 15 Jahre</b></span><span class="prow__p">€ 23,00</span></div>
+          <div class="prow"><span class="prow__n"><b>15 bis 18 Jahre</b></span><span class="prow__p">€ 26,00</span></div>
+          <div class="prow"><span class="prow__n"><b>Erwachsene</b></span><span class="prow__p">€ 29,00</span></div>
+          <p class="note" style="margin-top:.8rem">Kombitickets für Familien ab € 44,00. <a href="preise.html">Alle Preise 2026</a></p>
+        </div>
+        <div class="card" style="margin-top:1.4rem" id="gutschein">
+          <h3 style="margin-top:0">Gutschein bestellen</h3>
+          <p>Ein Klettertag als Geschenk &ndash; für Kinder, Familien oder das ganze Team.</p>
+          <form data-demo>
+            <div class="field"><label for="g-art">Gutschein für</label>
+              <select id="g-art" name="art">
+                <option>Tageskarte Erwachsene (€ 29,00)</option>
+                <option>Tageskarte Kind (€ 18,00)</option>
+                <option>Kombiticket Familie</option>
+                <option>Wertgutschein</option>
+              </select>
+            </div>
+            <div class="field"><label for="g-betrag">Anzahl bzw. Betrag</label><input type="text" id="g-betrag" name="betrag" value="1"></div>
+            <div class="field"><label for="g-name">Ihr Name</label><input type="text" id="g-name" name="name" required></div>
+            <div class="field"><label for="g-mail">E-Mail</label><input type="email" id="g-mail" name="email" required></div>
+            <button class="btn btn--pine" type="submit">Gutschein anfragen</button>
+            <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Gutscheinbestellung jetzt beim Almerlebnispark. Vorschau &ndash; bitte schreiben Sie derzeit an info@almpark.at.</p>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="anmeldung">
+  <div class="wrap">
+    <div class="split split--top">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; ersetzt das PDF „Teilnahmebedingungen Einzelpersonen und Familien“ zum Ausdrucken.</p>
+        <h2 style="margin-top:0">Anmeldung für Einzelpersonen &amp; Familien</h2>
+        <fieldset>
+          <legend>Teilnehmerdaten</legend>
+          <p class="hint" style="margin-top:0">Alle teilnehmenden (kletternden) Personen müssen eingetragen werden.</p>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="a-nach">Nachname</label><input type="text" id="a-nach" name="nachname" required></div>
+            <div class="field"><label for="a-vor">Vorname</label><input type="text" id="a-vor" name="vorname" required></div>
+            <div class="field"><label for="a-geb">Geburtsdatum</label><input type="date" id="a-geb" name="geburtsdatum"></div>
+            <div class="field"><label for="a-nat">Nationalität</label><input type="text" id="a-nat" name="nationalitaet"></div>
+          </div>
+          <div class="field"><label for="a-adr">Adresse</label><input type="text" id="a-adr" name="adresse"></div>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="a-plz">PLZ</label><input type="text" id="a-plz" name="plz"></div>
+            <div class="field"><label for="a-ort">Ort</label><input type="text" id="a-ort" name="ort"></div>
+          </div>
+          <div class="field"><label for="a-mail">E-Mail</label><input type="email" id="a-mail" name="email" required></div>
+          <div class="field"><label for="a-kinder">Mitkletternde Kinder (Name und Geburtsdatum, je Zeile ein Kind)</label><textarea id="a-kinder" name="kinder"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Erklärung</legend>
+          <p class="check"><input type="checkbox" id="a-ok1" required> <label for="a-ok1" style="font-weight:400">Ich habe die <a href="hochseilgarten.html#regeln">Teilnahmebedingungen</a> zur Kenntnis genommen und bin damit einverstanden. Unter meiner Aufsicht stehende Kinder und Jugendliche wurden darüber aufgeklärt.</label></p>
+          <p class="check"><input type="checkbox" id="a-ok2" required> <label for="a-ok2" style="font-weight:400">Ich bestätige meine volle psychische und physische Zurechnungs- und Handlungsfähigkeit.</label></p>
+          <p class="check"><input type="checkbox" id="a-ok3"> <label for="a-ok3" style="font-weight:400">Ich bin einverstanden, dass meine Daten für Werbe- und Marketingzwecke der Pierer Gastronomie GmbH verwendet werden (freiwillig).</label></p>
+          <div class="field"><label for="a-einv">Einverständniserklärung für allein kletternde Kinder zwischen 14 und 18 Jahren (Name des Kindes)</label><input type="text" id="a-einv" name="einverstaendnis"><p class="hint">Als erziehungsberechtigte Person erlauben Sie damit Ihrem unter 18-jährigen Kind, den Almerlebnispark ohne Begleitung zu begehen, und übernehmen die Verantwortung hinsichtlich gesundheitlicher Einschränkungen.</p></div>
+        </fieldset>
+        <button class="btn btn--sun" type="submit">Anmeldung absenden</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Anmeldung jetzt beim Almerlebnispark und müsste an der Kassa nur noch unterschrieben werden. Vorschau &ndash; aktuell bitte das PDF der bestehenden Website verwenden.</p>
+      </form>
+
+      <form class="form" data-demo id="gruppe">
+        <p class="formnote">Vorschau &ndash; ersetzt das PDF „Teilnahmebedingungen Gruppenanmeldung“ zum Ausdrucken.</p>
+        <h2 style="margin-top:0">Gruppenanmeldung</h2>
+        <fieldset>
+          <legend>Ansprechperson</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="gr-firma">Firma / Schule / Verein</label><input type="text" id="gr-firma" name="firma" required></div>
+            <div class="field"><label for="gr-tel">Telefonnummer</label><input type="tel" id="gr-tel" name="telefon" required></div>
+            <div class="field"><label for="gr-nach">Nachname</label><input type="text" id="gr-nach" name="nachname" required></div>
+            <div class="field"><label for="gr-vor">Vorname</label><input type="text" id="gr-vor" name="vorname" required></div>
+          </div>
+          <div class="field"><label for="gr-mail">E-Mail</label><input type="email" id="gr-mail" name="email" required></div>
+        </fieldset>
+        <fieldset>
+          <legend>Veranstaltung</legend>
+          <div class="field"><label for="gr-titel">Titel der Veranstaltung</label><input type="text" id="gr-titel" name="titel"></div>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="gr-datum">Wunschtermin</label><input type="date" id="gr-datum" name="datum" required></div>
+            <div class="field"><label for="gr-paket">Paket</label>
+              <select id="gr-paket" name="paket">
+                <option>nur Eintritt (Gruppenrabatt ab 10 Personen)</option>
+                <option>Schülerpaket: Eintritt + Essen + Klettermaxiwasser</option>
+                <option>Firmen: Eintritt + OFYR-Grillen (€ 49,90)</option>
+                <option>Firmen: Frühstück + Eintritt + OFYR-Grillen (€ 59,90)</option>
+                <option>Frühstück ab 10 Personen</option>
+              </select>
+            </div>
+            <div class="field"><label for="gr-k14">Kinder unter 14</label><input type="number" id="gr-k14" name="kinder_unter_14" min="0" max="200" value="0"></div>
+            <div class="field"><label for="gr-k14p">Kinder über 14</label><input type="number" id="gr-k14p" name="kinder_ueber_14" min="0" max="200" value="0"></div>
+            <div class="field"><label for="gr-erw">Erwachsene</label><input type="number" id="gr-erw" name="erwachsene" min="0" max="200" value="0"></div>
+            <div class="field"><label for="gr-bet">Betreuerinnen und Betreuer</label><input type="number" id="gr-bet" name="betreuer" min="0" max="60" value="0"></div>
+          </div>
+          <p class="check"><input type="checkbox" id="gr-ok" required> <label for="gr-ok" style="font-weight:400">Die <a href="hochseilgarten.html#regeln">Teilnahmebedingungen</a> wurden zur Kenntnis genommen; die betreuten Kinder und Jugendlichen wurden darüber aufgeklärt.</label></p>
+        </fieldset>
+        <button class="btn btn--sun" type="submit">Gruppe anmelden</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Gruppenanmeldung jetzt beim Almerlebnispark-Team. Vorschau &ndash; bitte schreiben Sie derzeit an info@almpark.at.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap wrap--mid">
+    <span class="tag">Häufige Fragen</span>
+    <h2>Rund um Ticket und Anmeldung</h2>
+    <div class="faq" style="margin-top:1.6rem">
+      <details open>
+        <summary>Brauche ich eine Reservierung?</summary>
+        <p>Für Einzelpersonen und Familien nicht zwingend. Für Gruppen ab 10 Personen sowie für alle Pakete mit Essen ist eine Vorbestellung notwendig.</p>
+      </details>
+      <details>
+        <summary>Muss ich die Anmeldung ausdrucken?</summary>
+        <p>Auf der bestehenden Website stehen die Teilnahmebedingungen als PDF zum Ausdrucken bereit. In dieser Vorschau lässt sich die Anmeldung online ausfüllen &ndash; unterschrieben wird an der Kassa.</p>
+      </details>
+      <details>
+        <summary>Wie werden die Rabatte verrechnet?</summary>
+        <p>Steiermark Card −30 % und Genuss Card −20 % gelten auf die Tageskarten für den Hochseilgarten. Gruppen ab 10 Personen erhalten −10 % auf den Einzelpreis. Rabatte werden an der Kassa berücksichtigt.</p>
+      </details>
+      <details>
+        <summary>Was passiert, wenn wir absagen müssen?</summary>
+        <p>Bitte melden Sie sich möglichst früh telefonisch unter +43 664 88248202 oder per E-Mail an info@almpark.at. Sperrt der Park aus Sicherheitsgründen &ndash; etwa wegen der Witterung &ndash;, erfolgt keine Rückerstattung eines bereits bezahlten Eintritts.</p>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Almerlebnis&shy;park Teichalm</h3>
+        <ul>
+          <li>Betrieb: Pierer Gastronomie GmbH</li>
+          <li>Teichalm 77, 8163 Fladnitz an der Teichalm</li>
+          <li>Telefon: <a href="tel:+43664 88248202">+43 664 88248202</a></li>
+          <li>E-Mail: <a href="mailto:info@almpark.at">info@almpark.at</a></li>
+          <li>Almwellness-Hotel Pierer: <a href="tel:+4331797172">03179 7172</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Saison 2026</h4>
+        <ul>
+          <li>Mai: Donnerstag bis Sonntag</li>
+          <li>Juni: Donnerstag bis Sonntag</li>
+          <li>30. Juni – 13. September: täglich</li>
+          <li>14. – 27. September: Donnerstag bis Sonntag</li>
+          <li>Täglich 10 bis 18 Uhr</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="hochseilgarten.html">Hochseilgarten &amp; Parcours</a></li>
+          <li><a href="waldbewegungsgarten.html">Waldbewegungsgarten &amp; Jausnerei</a></li>
+          <li><a href="preise.html">Preise 2026</a></li>
+          <li><a href="gruppen-schulen.html">Gruppen, Schulen, Firmen</a></li>
+          <li><a href="tickets.html">Tickets &amp; Gutscheine</a></li>
+          <li><a href="kontakt.html">Kontakt, Anfahrt, Webcam</a></li>
+          <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <p>Das Bildmaterial dieser Vorschau stammt von der bestehenden Website des Almerlebnispark Teichalm (almpark.at). Fotocredits laut Betreiber: Harald Eisenberger, Pierer Gastronomie GmbH, turbohapster – istockphoto.com, Almholz VertriebsgmbH.</p>
+      <p>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions · keine offizielle Website, kein Vertragsangebot.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.getElementById('navtoggle'), n=document.getElementById('nav');
+  function sync(){ if(window.matchMedia('(min-width:1000px)').matches){ n.hidden=false; }
+    else { n.hidden = t.getAttribute('aria-expanded')!=='true'; } }
+  t.addEventListener('click',function(){
+    var open=t.getAttribute('aria-expanded')==='true';
+    t.setAttribute('aria-expanded',String(!open)); n.hidden=open;
+  });
+  window.addEventListener('resize',sync); sync();
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var box=f.querySelector('.formdone');
+      if(box){ box.hidden=false; box.setAttribute('tabindex','-1'); box.focus(); box.scrollIntoView({block:'center'}); }
+    });
+  });
+  var lb=document.getElementById('lightbox');
+  if(lb){
+    var img=lb.querySelector('img');
+    document.querySelectorAll('.gallery button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var s=b.querySelector('img'); img.src=s.src; img.alt=s.alt;
+        lb.classList.add('is-open'); lb.querySelector('.lightbox__close').focus();
+      });
+    });
+    function close(){ lb.classList.remove('is-open'); }
+    lb.querySelector('.lightbox__close').addEventListener('click',close);
+    lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+  var calc=document.getElementById('ticketcalc');
+  if(calc){
+    var P={erw:29,jug2:26,jug1:23,kind:18};
+    function upd(){
+      var s=0, out=document.getElementById('calcout');
+      for(var k in P){ s += P[k]*(parseInt(document.getElementById('c-'+k).value,10)||0); }
+      var rab=document.getElementById('c-rabatt').value;
+      var pers=0; for(var k2 in P){ pers += (parseInt(document.getElementById('c-'+k2).value,10)||0); }
+      var txt='';
+      if(rab==='steiermark'){ s=s*0.7; txt=' (inkl. −30 % Steiermark Card)'; }
+      else if(rab==='genuss'){ s=s*0.8; txt=' (inkl. −20 % Genuss Card)'; }
+      else if(rab==='gruppe' && pers>=10){ s=s*0.9; txt=' (inkl. −10 % Gruppenrabatt ab 10 Personen)'; }
+      else if(rab==='gruppe'){ txt=' (Gruppenrabatt gilt erst ab 10 Personen)'; }
+      out.textContent = 'Richtwert: € ' + s.toFixed(2).replace('.',',') + txt;
+    }
+    calc.addEventListener('input',upd); upd();
+  }
+})();
+</script>
+</body>
+</html>

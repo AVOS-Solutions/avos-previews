@@ -34,7 +34,7 @@ body{
   overflow-x:hidden;
 }
 img{max-width:100%;height:auto;display:block}
-h1,h2,h3,h4{font-family:var(--font-display);line-height:1.12;margin:0 0 .5em;font-weight:600;letter-spacing:-.01em}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.12;margin:0 0 .5em;font-weight:600;letter-spacing:-.01em;overflow-wrap:break-word;hyphens:auto}
 h1{font-size:clamp(2.1rem,1.4rem + 3.2vw,3.9rem)}
 h2{font-size:clamp(1.65rem,1.25rem + 1.7vw,2.6rem)}
 h3{font-size:clamp(1.18rem,1.05rem + .6vw,1.5rem)}
