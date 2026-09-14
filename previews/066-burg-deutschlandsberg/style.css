@@ -278,3 +278,5 @@ table{max-width:100%}
 .card a,footer a,.rates a{overflow-wrap:anywhere}
 .head-cta{display:none}
 @media(min-width:1040px){.head-cta{display:inline-flex}}
+/* Hero liegt auf dunklem Grund */
+.hero .eyebrow{color:var(--gold-l)}
