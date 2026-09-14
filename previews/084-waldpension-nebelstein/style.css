@@ -12,6 +12,7 @@
   --forest-deep:#14301f;
   --moss:#356b4c;
   --gold:#8a6414;
+  --gold-ink:#73520e;
   --gold-bright:#e0b53f;
   --berry:#8a2f3a;
   --line:#d9cdb0;
@@ -118,7 +119,7 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fff;co
 /* ---------- Kapitel-Marke ---------- */
 .kicker{
   display:inline-flex;align-items:center;gap:.55rem;font-size:.74rem;letter-spacing:.22em;
-  text-transform:uppercase;font-weight:700;color:var(--gold);margin:0 0 .8rem;
+  text-transform:uppercase;font-weight:700;color:var(--gold-ink);margin:0 0 .8rem;
 }
 .kicker::before{content:"";width:26px;height:1px;background:var(--line-strong)}
 .kicker--light{color:var(--gold-bright)}
@@ -150,12 +151,14 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fff;co
 .sec{padding:clamp(2.6rem,6vw,4.6rem) 0}
 .sec--paper2{background:var(--paper-2)}
 .sec--dark{background:var(--forest-deep);color:#ece2ca}
-.sec--dark h2,.sec--dark h3{color:#fffdf5}
+.sec--dark h1,.sec--dark h2,.sec--dark h3{color:#fffdf5}
+.sec--dark strong{color:#fffdf5}
 .sec--dark h4{color:var(--gold-bright)}
 .sec--dark p,.sec--dark li{color:#e3d9bf}
 .sec--dark a:not(.btn){color:var(--gold-bright)}
 .sec--moss{background:var(--moss);color:#fff}
-.sec--moss h2,.sec--moss h3{color:#fff}
+.sec--moss h1,.sec--moss h2,.sec--moss h3{color:#fff}
+.sec--moss strong{color:#fff}
 .sec--moss p,.sec--moss li{color:#f2fbf5}
 .sec--moss a:not(.btn){color:#fff}
 .sec__head{max-width:60ch;margin-bottom:2rem}
@@ -199,6 +202,18 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fff;co
 .sec--dark .card p,.sec--dark .card li{color:#e3d9bf}
 .sec--dark .card__meta{color:#cfc4a6}
 .sec--dark .card__price{color:var(--gold-bright)}
+
+/* Helle Karten auf farbigen Bändern behalten dunkle Schrift */
+.sec--moss .card h2,.sec--moss .card h3{color:var(--forest-deep)}
+.sec--moss .card h4{color:var(--forest)}
+.sec--moss .card p,.sec--moss .card li,.sec--moss .card .t{color:var(--ink)}
+.sec--moss .card strong{color:var(--forest-deep)}
+.sec--moss .card a:not(.btn){color:var(--forest)}
+.sec--moss .card__meta{color:var(--ink-soft)}
+.sec--moss .card .facts li::before{background:var(--gold)}
+.sec--moss .card .hours li{border-color:var(--line)}
+.sec--moss .card .hours .d{color:var(--forest-deep)}
+.sec--moss .card .hours .t{color:var(--ink-soft)}
 
 /* Nummerierte Kapitelkarten */
 .chapter{position:relative;padding-top:2.4rem}
@@ -315,7 +330,8 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--berry);outline-o
 
 /* ---------- CTA-Band ---------- */
 .cta{background:var(--forest);color:#fff;padding:clamp(2.2rem,5vw,3.4rem) 0;text-align:center}
-.cta h2{color:#fff}
+.cta h1,.cta h2{color:#fff}
+.cta strong{color:#fff}
 .cta p{color:#e6f0e9;max-width:50ch;margin-inline:auto}
 .cta .btnrow{justify-content:center}
 .cta a:not(.btn){color:#fff}

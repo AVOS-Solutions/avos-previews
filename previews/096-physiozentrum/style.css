@@ -91,7 +91,7 @@ a:hover{color:var(--teal)}
   color:var(--ink);text-decoration:none;border-bottom:1px solid var(--mist);
 }
 .site-nav a[aria-current="page"]{color:var(--teal);font-weight:700}
-.head-cta{display:none}
+a.btn.head-cta{display:none}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -358,7 +358,7 @@ details.acc .acc-body p:last-child,details.acc .acc-body ul:last-child{margin-bo
   .site-nav a{border-bottom:0;padding:.45rem .7rem;border-radius:999px;font-size:.94rem}
   .site-nav a:hover{background:var(--mist)}
   .site-nav a[aria-current="page"]{background:var(--mist);color:var(--teal-deep)}
-  .head-cta{display:inline-flex}
+  a.btn.head-cta{display:inline-flex}
   .hero-grid{grid-template-columns:1.02fr .98fr;gap:3rem;align-items:center}
   .hero-badge{margin-inline:0;margin-top:-3rem;max-width:330px}
   .grid-3{grid-template-columns:repeat(3,1fr)}
