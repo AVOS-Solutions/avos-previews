@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anfrage &amp; Buchung &ndash; Sch&uuml;ttkasten Geras</title>
+<meta name="description" content="Zimmer, Seminar, Feier, Pauschale oder Gutschein im Sch&uuml;ttkasten Geras anfragen &ndash; die Rezeption meldet sich mit Verf&uuml;gbarkeit und Preis.">
+<link rel="canonical" href="https://www.schuettkasten-geras.at/anfrage.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:title" content="Anfrage &amp; Buchung &ndash; Sch&uuml;ttkasten Geras">
+<meta property="og:description" content="Zimmer, Seminar, Feier, Pauschale oder Gutschein im Sch&uuml;ttkasten Geras anfragen &ndash; die Rezeption meldet sich mit Verf&uuml;gbarkeit und Preis.">
+<meta property="og:site_name" content="Sch&uuml;ttkasten Geras">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vorschau"><div class="wrap vorschau__in">Unverbindliche Gestaltungs-Vorschau &middot; keine offizielle Website des Kunst &amp; Kultur Seminarhotels Sch&uuml;ttkasten Geras &middot; erstellt von AVOS&nbsp;Solutions</div></div>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap top__in">
+    <a class="sig" href="index.html">
+      <span class="sig__bogen" aria-hidden="true">
+        <svg viewBox="0 0 34 40" width="30" height="35">
+          <path d="M3 38V17a14 14 0 0 1 28 0v21" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <path d="M11 38V19a6 6 0 0 1 12 0v19" fill="none" stroke="currentColor" stroke-width="1.4"
+            opacity=".65"/>
+        </svg></span>
+      <span class="sig__txt"><b>Sch&uuml;ttkasten Geras</b><i>Kunst &amp; Kultur Seminarhotel &middot;
+        Waldviertel</i></span>
+    </a>
+    <a class="ruf" href="tel:+432912300">+43 2912 300</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Men&uuml;</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation"><ul><li><a href="index.html">Das Haus</a></li><li><a href="zimmer.html">Wohnen</a></li><li><a href="haus.html">Tagen &amp; Feiern</a></li><li><a href="angebote.html">Angebote</a></li><li><a href="kunst-kultur.html">Kunst &amp; Kultur</a></li><li><a href="anfrage.html" aria-current="page">Anfrage</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero hero--klein">
+  <div class="wrap hero__in">
+    <span class="marke">Anfrage &amp; Buchung</span>
+    <h1>In zwei Minuten zum Angebot</h1>
+    <p class="hero__sub">Zimmer, Seminar, Feier oder Gutschein &ndash; sagen Sie uns, was Sie vorhaben.
+      Die Rezeption meldet sich mit Verf&uuml;gbarkeit und Preis.</p>
+    <div class="btnrow"><a class="btn btn--kalk" href="tel:+432912300">Lieber anrufen: +43 (0) 29 12 300</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap split">
+    <form class="form" data-demo>
+      <fieldset>
+        <legend>Ihr Aufenthalt</legend>
+        <div class="feld">
+          <label for="anlass">Anlass / Angebot</label>
+          <select id="anlass" name="anlass">
+            <option value="Zimmer ohne Paket">Zimmer ohne Paket</option>
+            <option value="Chillen im gr&uuml;nen Waldviertel">Chillen im gr&uuml;nen Waldviertel</option>
+            <option value="Waldviertler Kuscheltage &ndash; Zeit zu zweit">Waldviertler Kuscheltage &ndash; Zeit zu zweit</option>
+            <option value="Guten Start in die Woche">Guten Start in die Woche</option>
+            <option value="Herbst im Waldviertel">Herbst im Waldviertel</option>
+            <option value="Gansl Wochenende">Gansl Wochenende</option>
+            <option value="Abfischfest in Geras">Abfischfest in Geras</option>
+            <option value="Auszeit">Auszeit</option>
+            <option value="Kurs &amp; Wohnen">Kurs &amp; Wohnen</option>
+            <option value="Malerei mit Prof. Attersee">Malerei mit Prof. Attersee</option>
+            <option value="Seminar / Tagung">Seminar / Tagung</option>
+            <option value="Feier / Festsaal">Feier / Festsaal</option>
+          </select>
+        </div>
+        <div class="felder felder--2">
+          <div class="feld"><label for="von">Anreise</label><input id="von" name="von" type="date"></div>
+          <div class="feld"><label for="bis">Abreise</label><input id="bis" name="bis" type="date"></div>
+        </div>
+        <div class="felder felder--3">
+          <div class="feld"><label for="erw">Erwachsene</label>
+            <input id="erw" name="erw" type="number" min="1" max="250" value="2" inputmode="numeric"></div>
+          <div class="feld"><label for="kin">Kinder</label>
+            <input id="kin" name="kin" type="number" min="0" max="50" value="0" inputmode="numeric"></div>
+          <div class="feld"><label for="zim">Zimmer</label>
+            <input id="zim" name="zim" type="number" min="1" max="70" value="1" inputmode="numeric"></div>
+        </div>
+        <div class="feld feld--hint">Das Haus verf&uuml;gt &uuml;ber 70 Zimmer &ndash; auch gro&szlig;e
+          Gruppen finden bei uns Platz.</div>
+      </fieldset>
+      <fieldset>
+        <legend>F&uuml;r Seminare und Feiern</legend>
+        <div class="felder felder--2">
+          <div class="feld"><label for="pers">Personen im Raum</label>
+            <input id="pers" name="pers" type="number" min="1" max="250" placeholder="z. B. 40" inputmode="numeric"></div>
+          <div class="feld"><label for="raum">Wunschraum</label>
+            <select id="raum" name="raum">
+              <option>Vorschlag erbeten</option>
+              <option>Seminarraum ab 50 m&sup2;</option>
+              <option>Seminarraum bis 110 m&sup2;</option>
+              <option>Festsaal bis 250 Personen</option>
+              <option>Restaurant</option>
+              <option>Atelier</option>
+            </select></div>
+        </div>
+        <div class="feld"><label for="verpf">Verpflegung</label>
+          <select id="verpf" name="verpf"><option>nur Fr&uuml;hst&uuml;ck</option>
+            <option>Halbpension</option><option>Vollpension</option>
+            <option>Tagungspauschale</option><option>Men&uuml; f&uuml;r die Feier</option>
+            <option>noch offen</option></select></div>
+      </fieldset>
+      <fieldset>
+        <legend>Ihre Kontaktdaten</legend>
+        <div class="felder felder--2">
+          <div class="feld"><label for="nam">Name</label><input id="nam" name="nam" type="text" autocomplete="name"></div>
+          <div class="feld"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="feld"><label for="mail">E-Mail</label><input id="mail" name="mail" type="email" autocomplete="email"></div>
+        <div class="feld"><label for="nachr">Ihre Nachricht</label><textarea id="nachr" name="nachr"
+          placeholder="Besondere W&uuml;nsche, Barrierefreiheit, Anreisezeit, Technik f&uuml;r das Seminar &hellip;"></textarea></div>
+        <div class="check"><input id="ok" name="ok" type="checkbox"><label for="ok">Ich bin einverstanden,
+          dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</label></div>
+      </fieldset>
+      <button class="btn btn--ocker" type="submit">Anfrage absenden</button>
+      <p class="formnote" tabindex="-1"></p>
+    </form>
+    <div>
+      <span class="marke">So geht es weiter</span>
+      <h2>Von der Anfrage zur Buchung</h2>
+      <ul class="liste">
+        <li><div><h4>1. Ihre Anfrage</h4>Unverbindlich und in zwei Minuten ausgef&uuml;llt.</div></li>
+        <li><div><h4>2. Unser Angebot</h4>Mit Verf&uuml;gbarkeit, Leistungen und Preis &ndash; auch f&uuml;r
+          die Pauschalen, die auf der bisherigen Website ohne Preis stehen.</div></li>
+        <li><div><h4>3. Ihre Best&auml;tigung</h4>Sie sagen zu, wir reservieren.</div></li>
+        <li><div><h4>4. Ihr Aufenthalt</h4>Ruhe, Erholung, Genuss und Komfort.</div></li>
+      </ul>
+      <div class="hinweis" style="margin-top:1.8rem">
+        <p><strong>Rezeption:</strong> <a href="tel:+432912300">+43 (0) 29 12 300</a><br>
+          <a href="mailto:rezeption@schuettkasten-geras.at">rezeption@schuettkasten-geras.at</a></p>
+      </div>
+
+      <h3 class="anker" id="gutschein" style="margin-top:2.4rem">Gutschein bestellen</h3>
+      <form class="form" data-demo style="margin-top:1rem">
+        <div class="felder felder--2">
+          <div class="feld"><label for="gwert">Betrag in Euro</label>
+            <input id="gwert" name="gwert" type="number" min="20" step="10" value="100" inputmode="numeric"></div>
+          <div class="feld"><label for="gart">&Uuml;bergabe</label>
+            <select id="gart" name="gart"><option>Versand per Post</option>
+              <option>Abholung an der Rezeption</option></select></div>
+        </div>
+        <div class="felder felder--2">
+          <div class="feld"><label for="gname">Ihr Name</label><input id="gname" name="gname" type="text" autocomplete="name"></div>
+          <div class="feld"><label for="gmail">E-Mail</label><input id="gmail" name="gmail" type="email" autocomplete="email"></div>
+        </div>
+        <div class="feld"><label for="gwid">Widmung (optional)</label><input id="gwid" name="gwid" type="text"></div>
+        <button class="btn btn--gruen" type="submit">Gutschein anfragen</button>
+        <p class="formnote" tabindex="-1"></p>
+      </form>
+
+      <h3 class="anker" id="katalog" style="margin-top:2.4rem">Katalog der Akademie anfordern</h3>
+      <form class="form" data-demo style="margin-top:1rem">
+        <div class="felder felder--2">
+          <div class="feld"><label for="kname">Name</label><input id="kname" name="kname" type="text" autocomplete="name"></div>
+          <div class="feld"><label for="kmail">E-Mail</label><input id="kmail" name="kmail" type="email" autocomplete="email"></div>
+        </div>
+        <div class="feld"><label for="kadr">Postadresse (f&uuml;r die gedruckte Ausgabe)</label>
+          <input id="kadr" name="kadr" type="text" autocomplete="street-address"></div>
+        <button class="btn btn--gruen" type="submit">Katalog anfordern</button>
+        <p class="formnote" tabindex="-1"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__logo">Sch&uuml;ttkasten Geras</p>
+      <p>Kunst &amp; Kultur Seminarhotel<br>Vorstadt 11, 2093 Geras<br>Waldviertel, Nieder&ouml;sterreich</p>
+      <p><a href="tel:+432912300">+43 (0) 29 12 300</a><br>
+         <a href="mailto:rezeption@schuettkasten-geras.at">rezeption@schuettkasten-geras.at</a></p>
+    </div>
+    <div>
+      <p class="foot__h">K&uuml;chenzeiten</p>
+      <p>Montag bis Sonntag<br>11:30&ndash;20:00 Uhr</p>
+      <p>Fallweise Ruhetage &ndash; diese geben wir gesondert auf der Website bekannt.</p>
+    </div>
+    <div>
+      <p class="foot__h">Das Haus</p>
+      <ul class="foot__nav">
+        <li><a href="zimmer.html">Historisch wohnen</a></li>
+        <li><a href="haus.html#tagen">Erfolgreich tagen</a></li>
+        <li><a href="haus.html#geniessen">Lustvoll genie&szlig;en</a></li>
+        <li><a href="kunst-kultur.html">Kreativ entspannen</a></li>
+        <li><a href="haus.html#feiern">Unbeschwert feiern</a></li>
+        <li><a href="angebote.html">Angebote &amp; Pauschalen</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot__h">Service</p>
+      <ul class="foot__nav">
+        <li><a href="anfrage.html">Anfrage &amp; Buchung</a></li>
+        <li><a href="anfrage.html#gutschein">Gutschein</a></li>
+        <li><a href="kontakt.html#anreise">Anreise</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot__note">
+    <p>Unverbindliche Gestaltungs-Vorschau von AVOS&nbsp;Solutions. Die bestehende Website des Betriebs
+      stellte kein Bildmaterial zur &Uuml;bernahme bereit; die Fl&auml;chen, Muster und Zeichnungen dieser
+      Vorschau wurden daher eigens gestaltet und zeigen keine Innenaufnahmen des Hauses. S&auml;mtliche
+      Formulare sind Demonstrationen ohne Daten&uuml;bertragung.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('nav--open');
+    b.setAttribute('aria-expanded',o?'true':'false');});}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){e.preventDefault();
+      var m=f.querySelector('.formnote');
+      if(m){m.textContent='Vorschau \u2014 im Live-Betrieb geht diese Anfrage direkt an die Rezeption des Sch\u00fcttkastens (rezeption@schuettkasten-geras.at).';
+        m.classList.add('formnote--on');m.focus();}});});
+  document.querySelectorAll('[data-paket]').forEach(function(a){
+    a.addEventListener('click',function(){
+      try{sessionStorage.setItem('paket',a.getAttribute('data-paket'));}catch(e){}});});
+  var sel=document.getElementById('anlass');
+  if(sel){try{var p=sessionStorage.getItem('paket');
+    if(p){for(var i=0;i<sel.options.length;i++){if(sel.options[i].value===p){sel.selectedIndex=i;}}}}catch(e){}}
+})();
+</script>
+</body>
+</html>
