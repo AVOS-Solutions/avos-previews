@@ -291,7 +291,9 @@ app.MapGet("/api/previews/{slug}/{**rest}", (string slug, string? rest) =>
 // Public share links (browser-facing; the shared edge routes /s/* to this API)
 // ---------------------------------------------------------------------------
 
-app.MapGet("/s/{token}", (string token) => Results.Redirect($"/s/{token}/index.html")).AllowAnonymous();
+// The share link itself is the page. Only the trailing slash is added, so that relative
+// URLs inside the preview resolve against the token and not against "/s/".
+app.MapGet("/s/{token}", (string token) => Results.Redirect($"/s/{token}/")).AllowAnonymous();
 
 app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token) =>
 {
@@ -306,7 +308,7 @@ app.MapPost("/s/{token}/unlock", async (HttpContext ctx, AppDb db, IDataProtecti
             "text/html", statusCode: StatusCodes.Status401Unauthorized);
     }
     SetUnlockCookie(ctx, dp, link);
-    return Results.Redirect($"/s/{token}/index.html");
+    return Results.Redirect($"/s/{token}/");
 }).RequireRateLimiting("unlock").AllowAnonymous();
 
 app.MapGet("/s/{token}/{**rest}", async (HttpContext ctx, AppDb db, IDataProtectionProvider dp, string token, string? rest) =>
