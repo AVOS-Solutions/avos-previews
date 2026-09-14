@@ -92,7 +92,7 @@ hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
 }
 .nav a:hover{color:var(--lake)}
 .nav a[aria-current="page"]{color:#6f4a12;font-weight:600}
-.head-cta{display:none}
+a.head-cta{display:none}
 
 @media(min-width:1040px){
   .nav-toggle{display:none}
@@ -100,7 +100,9 @@ hr{border:0;border-top:1px solid var(--rule);margin:2.5rem 0}
   .nav ul{flex-direction:row;gap:.1rem;margin:0;flex-wrap:wrap}
   .nav a{border-bottom:0;padding:.4rem .62rem;font-size:.87rem;border-radius:2px}
   .nav a[aria-current="page"]{background:var(--foam)}
-  .head-cta{display:inline-flex}
+}
+@media(min-width:1300px){
+  a.head-cta{display:inline-flex}
 }
 
 /* ---------- Buttons ---------- */

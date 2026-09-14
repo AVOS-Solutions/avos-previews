@@ -81,13 +81,15 @@ hr{border:0;border-top:3px dotted var(--line);margin:2.4rem 0}
 .nav a{display:block;padding:.55rem .7rem;border-radius:var(--radius-sm);text-decoration:none;color:var(--ink);font-weight:600;font-size:.96rem}
 .nav a:hover{background:var(--cream-2)}
 .nav a[aria-current="page"]{background:var(--loden);color:#fff}
-.head-cta{display:none}
+a.head-cta{display:none}
 @media(min-width:1080px){
   .nav-toggle{display:none}
   .nav{display:block;width:auto;margin-left:auto}
   .nav ul{flex-direction:row;margin:0;gap:.1rem;flex-wrap:wrap}
   .nav a{padding:.45rem .68rem;font-size:.9rem}
-  .head-cta{display:inline-flex}
+}
+@media(min-width:1340px){
+  a.head-cta{display:inline-flex}
 }
 
 /* ---------- Buttons ---------- */

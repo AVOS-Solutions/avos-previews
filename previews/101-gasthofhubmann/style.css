@@ -135,7 +135,8 @@ a.btn--ghost-light:hover,a.btn--ghost-light:focus-visible{background:#FFFFFF;col
 .lead{font-size:clamp(1.07rem,1rem + .5vw,1.28rem);line-height:1.6;color:var(--muted)}
 
 /* --- Hügelbogen ----------------------------------------------------------- */
-.hills{display:block;width:100%;height:clamp(28px,4vw,54px);color:var(--cream)}
+.hills{display:block;width:100%;height:clamp(28px,4vw,54px);color:var(--cream);background:var(--cream)}
+.hills--from-brown{background:var(--brown)}
 .hills svg{display:block;width:100%;height:100%}
 .hills--white{color:var(--white)}
 .hills--cream2{color:var(--cream-2)}
