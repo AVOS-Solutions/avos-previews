@@ -347,3 +347,30 @@ caption{caption-side:bottom;text-align:left;padding:.75rem 1rem;font-size:.85rem
 .muster strong{color:var(--orange)}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* --- Korrekturen: helle Bausteine in dunklen Abschnitten ------------------- */
+.tablewrap{color:var(--ink)}
+.tablewrap table,.tablewrap th,.tablewrap td,.tablewrap caption{color:var(--ink)}
+.tablewrap th[scope="row"],.tablewrap thead th{color:var(--brown)}
+.tablewrap caption{color:var(--muted)}
+.sec--brown .tablewrap td,.sec--brown .tablewrap th{color:var(--ink)}
+.sec--brown .tablewrap th[scope="row"],.sec--brown .tablewrap thead th{color:var(--brown)}
+.sec--brown .tablewrap caption{color:var(--muted)}
+.sec--brown .tablewrap a:not(.btn){color:var(--orange)}
+
+.sec--brown .form,.cta .form{color:var(--ink)}
+.sec--brown .form h2,.sec--brown .form h3,.sec--brown .form h4{color:var(--brown)}
+.sec--brown .form p,.sec--brown .form .hint,.sec--brown .form .chk{color:var(--muted)}
+.sec--brown .form strong{color:var(--brown)}
+.sec--brown .form label{color:var(--brown)}
+.sec--brown .form legend{color:var(--olive)}
+.sec--brown .form a:not(.btn){color:var(--orange)}
+.sec--brown .form a:not(.btn):hover{color:var(--brown)}
+.sec--brown .form .form-note{color:#5C3B18}
+.sec--brown .form .form-ok{color:#FFFFFF}
+.sec--brown .form .pill span{color:var(--brown)}
+.sec--brown .form .pill input:checked + span{color:#FFFFFF}
+
+.sec--brown .card--leaf,.sec--brown .card--sun,.sec--brown .tile{color:var(--ink)}
+.sec--brown .card--leaf h3,.sec--brown .card--sun h3,.sec--brown .tile h3{color:var(--brown)}
+.sec--brown .card--leaf p,.sec--brown .card--sun p,.sec--brown .tile p{color:var(--muted)}
