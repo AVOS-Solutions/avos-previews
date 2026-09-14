@@ -309,8 +309,8 @@ app.MapDelete("/api/shares/{id:guid}", async (AppDb db, Guid id) =>
     return Results.NoContent();
 }).RequireAuthorization("StaffOnly");
 
-app.MapGet("/api/previews/{slug}/{**rest}", (string slug, string? rest) =>
-    ServePreviewFile(slug, rest)).RequireAuthorization("StaffOnly");
+app.MapGet("/api/previews/{slug}/{**rest}", (HttpContext ctx, string slug, string? rest) =>
+    ServePreviewFile(ctx, slug, rest)).RequireAuthorization("StaffOnly");
 
 // ---------------------------------------------------------------------------
 // Public share links (browser-facing; the shared edge routes /s/* to this API)
@@ -372,7 +372,7 @@ async Task<IResult> ServeShared(HttpContext ctx, AppDb db, IDataProtectionProvid
         }
     }
 
-    return ServePreviewFile(link.Slug, rest);
+    return ServePreviewFile(ctx, link.Slug, rest);
 }
 
 app.Run();
@@ -381,7 +381,7 @@ app.Run();
 // Helpers
 // ---------------------------------------------------------------------------
 
-IResult ServePreviewFile(string slug, string? rest)
+IResult ServePreviewFile(HttpContext ctx, string slug, string? rest)
 {
     if (string.IsNullOrEmpty(rest)) rest = "index.html";
     var slugDir = Path.GetFullPath(Path.Combine(previewsRoot, slug));
@@ -395,7 +395,13 @@ IResult ServePreviewFile(string slug, string? rest)
     if (!File.Exists(file)) return Results.NotFound();
     if (!contentTypes.TryGetContentType(file, out var contentType))
         contentType = "application/octet-stream";
-    return Results.File(file, contentType);
+    // A preview is replaced in place on every deploy, so a browser must never keep showing an
+    // older copy. "no-cache" still allows caching, it just forces revalidation — together with
+    // the tag and timestamp an unchanged file costs a 304 instead of a full transfer.
+    var info = new FileInfo(file);
+    var tag = new Microsoft.Net.Http.Headers.EntityTagHeaderValue($"\"{info.LastWriteTimeUtc.Ticks:x}-{info.Length:x}\"");
+    ctx.Response.Headers.CacheControl = "no-cache";
+    return Results.File(file, contentType, lastModified: info.LastWriteTimeUtc, entityTag: tag);
 }
 
 IResult? CheckLink(ShareLink? link)
