@@ -4328,5 +4328,34 @@
   "location": "Großraum Wien, Wien",
   "description": "Patentierte Wasserabsperr- und Entleerungsverlängerung für die Gartenwasserleitung: Absperren, Entleeren und Aufdrehen direkt beim Schachtdeckel, ohne in den Schacht steigen zu…",
   "oldWebsite": "http://www.baufranz-technic.com"
+ },
+ {
+  "num": 206,
+  "slug": "206-energie-quelle",
+  "name": "Energie-Quelle – Bianca Dürbeck",
+  "category": "Ferienwohnungen / Massage / Gesundheit & Training",
+  "region": "Steiermark",
+  "location": "Rödschitz 53, 8983 Bad Mitterndorf (Ausseerland–Salzkammergut), Steiermark",
+  "description": "Kundenprojekt: kompletter Relaunch von energie-quelle.at – Ferienwohnungen, Heilmassage, gesundheitsorientiertes Training und Nährstoffberatung von Bianca Dürbeck. Gebaut als Next.js-App (React 19, Tailwind v4), hier als statischer Export eingebunden.",
+  "oldWebsite": "https://www.energie-quelle.at",
+  "grade": null,
+  "score": null,
+  "pitchHook": "Kein Recherche-Lead, sondern eine beauftragte Arbeit: der fertige Relaunch liegt hier zur Abnahme und lässt sich per Share-Link teilen.",
+  "priceLow": null,
+  "priceHigh": null,
+  "phone": "+43 664 462 46 62",
+  "email": "office@energie-quelle.at",
+  "contactPerson": "Bianca Dürbeck",
+  "pages": [
+   "index.html",
+   "ferienwohnungen/",
+   "massage/",
+   "training/",
+   "gesundheit/",
+   "wellness/",
+   "winter/",
+   "sommer/",
+   "kontakt/"
+  ]
  }
 ]

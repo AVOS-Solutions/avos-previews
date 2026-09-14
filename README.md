@@ -50,9 +50,10 @@ backend/src/Avos.Previews.Api/   .NET 10 Minimal API (JWT + Refresh-Rotation wie
 frontend/                        Next.js 16 App Router (Tailwind v4, ERP-Theme-Tokens,
                                  httpOnly-Cookie-Sessions, proxy.ts-Refresh wie avos-erp)
 previews/NNN-<slug>/             die 120 aktuellen Vorschauen (7–9 Seiten + style.css + img/)
+previews/206-energie-quelle/     Kundenprojekt Energie-Quelle als statischer Next.js-Export
 previews/NN-<slug>/              84 ältere Vorschauen der ersten Recherche-Runde (je 6 Seiten,
                                  ohne Bildmaterial); nicht im Katalog gelistet, als Referenz behalten
-businesses.json                  Katalog der 120 gelisteten Vorschauen
+businesses.json                  Katalog der gelisteten Vorschauen (120 Leads + Energie-Quelle)
 index.html                       Alte statische Übersicht (durch das Dashboard abgelöst)
 docker-compose[.prod].yml        Dev-Stack bzw. avos-edge-Produktionsstack mit TLS-Sidecars
 Caddyfile                        Referenz-Routing für die gemeinsame Edge-Caddy
@@ -65,12 +66,37 @@ Die Skripte, mit denen Inhalte gecrawlt, Vorschauen generiert und geprüft werde
 
 ## Hinweise
 
-- Jede Vorschau-Seite trägt die Kennzeichnung „Unverbindliche Gestaltungs-Vorschau" —
+- Jede Lead-Vorschau trägt die Kennzeichnung „Unverbindliche Gestaltungs-Vorschau" —
   es sind unabhängig erstellte Konzepte, keine offiziellen Websites der Betriebe;
-  Impressum/Datenschutz darin sind Muster-Platzhalter.
+  Impressum/Datenschutz darin sind Muster-Platzhalter. **Ausgenommen: Energie-Quelle**
+  (siehe unten) — ein beauftragter Relaunch, der bewusst ohne diese Leiste ausgeliefert wird.
 - Nichts wird indexiert: `X-Robots-Tag: noindex` auf allen API-Antworten,
   `robots.txt` Disallow im Frontend, noindex-Metas auf den Gate-Seiten.
 - Keine externen Tracker, keine eingebetteten Fremdkarten; Schriften über Google Fonts
   mit Fallback-Stack.
 - Share-Tokens (160 bit) stehen im Klartext in der DB, damit Links später erneut
   kopiert werden können; Passwörter sind ausschließlich gehasht.
+
+## Sonderfall: Energie-Quelle (Kundenprojekt)
+
+`previews/206-energie-quelle/` ist keine Recherche-Vorschau, sondern der fertige
+Relaunch von **energie-quelle.at** (Bianca Dürbeck, Bad Mitterndorf) — hier eingebunden,
+damit er über dieselben Share-Links zur Abnahme weitergegeben werden kann.
+
+Herkunft: `AVOS-Solutions/energie-quelle.at`, Next.js 16 / React 19 / Tailwind v4,
+9 Routen. Gebaut als statischer Export (`EXPORT=1 npm run build`, `output: "export"`,
+`trailingSlash: true`, `images.unoptimized`).
+
+Weil dieselbe Vorschau unter zwei verschiedenen Basis-Pfaden ausgeliefert wird
+(`/api/previews/<slug>/…` für das Team, `/s/<token>/…` für Share-Links, Token variabel),
+kann kein fester `BASE_PATH` gesetzt werden. Der Export wird daher nachbearbeitet:
+alle wurzel-absoluten URLs (`/_next/…`, `/images/…`, `href`, `srcset`, `url(…)` in CSS)
+werden pro Dateitiefe in relative Pfade umgeschrieben (`./…` auf der Startseite,
+`../…` eine Ebene tiefer). Die Navigation läuft dadurch als vollständiger Seitenwechsel
+statt über den Client-Router — für eine Vorschau unerheblich, dafür basis-pfad-unabhängig.
+
+Damit die Routen-Ordner (`massage/`, `kontakt/` …) ausgeliefert werden, liefert
+`ServePreviewFile` für Verzeichnispfade deren `index.html` aus.
+
+Geprüft unter beiden Basis-Pfaden: alle 9 Routen laden, 94 Bilder vollständig,
+CSS aktiv, keine 404er, WCAG-AA-Kontrast sauber, kein horizontales Scrollen bei 390 px.

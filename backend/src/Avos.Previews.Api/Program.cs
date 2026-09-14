@@ -353,8 +353,11 @@ IResult ServePreviewFile(string slug, string? rest)
     if (!slugDir.StartsWith(previewsRoot + Path.DirectorySeparatorChar) || !Directory.Exists(slugDir))
         return Results.NotFound();
     var file = Path.GetFullPath(Path.Combine(slugDir, rest));
-    if (!file.StartsWith(slugDir + Path.DirectorySeparatorChar) || !File.Exists(file))
-        return Results.NotFound();
+    if (!file.StartsWith(slugDir + Path.DirectorySeparatorChar)) return Results.NotFound();
+    // Exports with per-route folders (Next.js `trailingSlash`) address pages as
+    // "massage/" rather than "massage/index.html" — serve the folder's index.
+    if (Directory.Exists(file)) file = Path.Combine(file, "index.html");
+    if (!File.Exists(file)) return Results.NotFound();
     if (!contentTypes.TryGetContentType(file, out var contentType))
         contentType = "application/octet-stream";
     return Results.File(file, contentType);
