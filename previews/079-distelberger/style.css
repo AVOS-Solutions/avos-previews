@@ -64,7 +64,7 @@ strong{font-weight:700}
   justify-content:space-between;gap:1rem;padding:.7rem 0}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--moss-deep);min-width:0}
 .brand__mark{flex:none;width:2.9rem;height:2.9rem;border-radius:50% 50% 46% 46%/60% 60% 40% 40%;
-  background:linear-gradient(160deg,var(--most-bright),var(--wine));display:grid;place-items:center;
+  background-color:#9c4a10;background-image:linear-gradient(160deg,var(--most-bright),var(--wine));display:grid;place-items:center;
   color:#fff;font-family:"Fraunces",Georgia,serif;font-size:1.15rem;line-height:1}
 .brand__txt{display:flex;flex-direction:column;min-width:0}
 .brand__name{font-family:"Fraunces",Georgia,serif;font-size:1.12rem;font-weight:600;line-height:1.1}
@@ -99,11 +99,11 @@ strong{font-weight:700}
 .sec{padding-block:clamp(2.6rem,1.6rem + 4vw,5rem)}
 .sec--paper2{background:var(--paper-2)}
 .sec--dark{background:var(--moss-deep);color:#efe9da}
-.sec--dark h2,.sec--dark h3{color:#f6edd9}
+.sec--dark h1,.sec--dark h2,.sec--dark h3{color:#f6edd9}
 .sec--dark a:not(.btn){color:#f0cd86}
 .sec--dark a:not(.btn):hover{color:#fae4ba}
 .sec--wine{background:var(--wine-deep);color:#f8e9e4}
-.sec--wine h2,.sec--wine h3{color:#fff4ec}
+.sec--wine h1,.sec--wine h2,.sec--wine h3{color:#fff4ec}
 .sec--wine a:not(.btn){color:#ffd9b0}
 
 .eyebrow{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
@@ -290,3 +290,6 @@ dialog.lightbox .lb-close{margin-top:.8rem;display:inline-flex}
 .small{font-size:.86rem;color:var(--ink-2)}
 .sec--dark .small,.sec--wine .small{color:#ddd5c3}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap--narrow{width:min(62rem, 100% - 2.4rem)}
+.acc-list{display:block}
