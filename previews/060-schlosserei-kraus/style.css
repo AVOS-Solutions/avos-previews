@@ -43,6 +43,12 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 [hidden] { display: none !important; }
 
+/* Grid-Kinder duerfen schrumpfen (verhindert horizontalen Ueberlauf) */
+.split > *, .cols-2 > *, .cols-3 > *, .quad > *, .team > *, .steps > *,
+.form-layout > *, .map-layout > *, .preview-grid > *, .gal-grid > *,
+.serv-grid > *, .fgrid > * { min-width: 0; }
+h1, h2, h3, .reflist strong, .ref-chips li, .brand-name { overflow-wrap: break-word; word-break: break-word; }
+
 h1, h2, h3 {
   font-family: var(--ff-display);
   font-weight: 600;

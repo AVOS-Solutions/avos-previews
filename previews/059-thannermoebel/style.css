@@ -43,6 +43,10 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 [hidden] { display: none !important; }
 
+.split > *, .cols-2 > *, .cols-3 > *, .field-grid > *, .form-layout > *,
+.map-layout > *, .machines > *, .ref-grid > *, .cat-grid > *, .fgrid > * { min-width: 0; }
+h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; }
+
 h1, h2, h3 {
   font-family: var(--ff-display);
   font-weight: 600;
