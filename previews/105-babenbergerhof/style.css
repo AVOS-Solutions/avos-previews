@@ -36,6 +36,7 @@ body{
 img{max-width:100%;height:auto;display:block}
 a{color:var(--brass);text-underline-offset:.18em}
 a:hover{color:var(--ink)}
+h1,h2,h3,h4,p,li,td,th,a,summary,legend,label{overflow-wrap:break-word;hyphens:auto}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.2rem,1.4rem + 3.6vw,4.1rem)}
 h2{font-size:clamp(1.72rem,1.2rem + 2.1vw,2.85rem)}
@@ -53,7 +54,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
 .sec--tight{padding-block:clamp(2.2rem,5vw,3.6rem)}
 .sec--dark{background:var(--ink);color:var(--bone)}
 .sec--dark h1,.sec--dark h2,.sec--dark h3{color:var(--bone)}
-.sec--dark a:not(.btn){color:var(--brass-bright)}
+.sec--dark a:not(.btn),.hero a:not(.btn){color:var(--brass-bright)}
 .sec--dark a:not(.btn):hover{color:#fff}
 .sec--bone2{background:var(--bone-2)}
 .sec--paper{background:var(--paper)}
@@ -115,16 +116,16 @@ a.btn--brass,.btn--brass{background:var(--brass-bright);color:#141920;border-col
 a.btn--brass:hover,.btn--brass:hover,a.btn--brass:focus-visible{background:#F3D296;color:#141920}
 a.btn--line,.btn--line{background:transparent;color:var(--ink);border-color:rgba(20,25,32,.45)}
 a.btn--line:hover,.btn--line:hover{background:var(--ink);color:#F8F4EC}
-.sec--dark a.btn--line,.sec--dark .btn--line{color:#F8F4EC;border-color:var(--line-light)}
-.sec--dark a.btn--line:hover{background:#F8F4EC;color:#141920}
+.sec--dark a.btn--line,.sec--dark .btn--line,.hero a.btn--line,.hero .btn--line,.footer a.btn--line{color:#F8F4EC;border-color:var(--line-light)}
+.sec--dark a.btn--line:hover,.hero a.btn--line:hover,.hero a.btn--line:focus-visible{background:#F8F4EC;color:#141920}
 .btnrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
 
 /* ---------- Eyebrow / Ziffern ---------- */
 .eyebrow{font-size:.73rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);
   font-weight:600;margin:0 0 .9rem;display:block}
-.sec--dark .eyebrow{color:var(--brass-bright)}
+.sec--dark .eyebrow,.hero .eyebrow,.footer .eyebrow{color:var(--brass-bright)}
 .lede{font-size:clamp(1.07rem,1rem + .45vw,1.3rem);color:var(--muted);max-width:58ch}
-.sec--dark .lede{color:#D9D1C2}
+.sec--dark .lede,.hero .lede{color:#D9D1C2}
 
 /* ---------- Hero ---------- */
 .hero{background:var(--ink);color:var(--bone);position:relative;overflow:hidden}
@@ -257,4 +258,4 @@ details p{margin:.7rem 0 0;color:var(--muted)}
 .sec--dark :focus-visible,.hero :focus-visible,.footer :focus-visible{outline-color:var(--brass-bright)}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .note{font-size:.87rem;color:var(--muted);border-left:2px solid var(--bone-3);padding-left:.9rem}
-.sec--dark .note{color:#C3BAA8;border-left-color:rgba(255,255,255,.25)}
+.sec--dark .note,.hero .note{color:#C3BAA8;border-left-color:rgba(255,255,255,.25)}

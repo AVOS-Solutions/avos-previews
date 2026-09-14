@@ -142,7 +142,7 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fdfaf2
   font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;
   color:var(--ochre-ink);margin:0 0 .7rem
 }
-.sec--dark .eyebrow,.sec--deep .eyebrow{color:#e2bd7d}
+.sec--dark .eyebrow,.sec--deep .eyebrow,.hero .eyebrow{color:#e2bd7d}
 .lead{font-size:clamp(1.06rem,1rem + .35vw,1.22rem);color:var(--ink-soft);max-width:62ch}
 .sec--dark .lead,.sec--deep .lead{color:#e2dcce}
 
@@ -199,6 +199,8 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fdfaf2
 .figure{margin:0}
 .figure img{border-radius:var(--radius);width:100%;object-fit:cover}
 .figure figcaption{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem}
+.sec--dark .figure figcaption,.sec--deep .figure figcaption,.hero figcaption{color:#cdc6b6}
+.sec--dark .note,.sec--deep .note{color:#d5cec0}
 
 /* ---------- Raumkarten ---------- */
 .room{
@@ -298,7 +300,8 @@ a.btn--outline-light:hover,a.btn--outline-light:focus-visible{background:#fdfaf2
 .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;min-width:420px}
 th,td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--line);font-size:.95rem}
-th{font-family:var(--font-display);font-weight:700;background:var(--paper-2)}
+th{font-family:var(--font-display);font-weight:700;background:var(--paper-2);color:var(--ink)}
+.sec--dark td,.sec--deep td{color:#f2ece0}
 
 .deflist{margin:0;display:grid;gap:.1rem 1.2rem;grid-template-columns:1fr}
 .deflist dt{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre-ink);margin-top:.9rem}

@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Hotel-Pension Bleckmann, Wien Alsergrund — Gestaltungs-Vorschau AVOS Solutions
+   Motiv: Alt-Wiener Gründerzeit trifft Wiener Werkstätte. Elfenbein-Grund,
+   Flaschengrün, Messing. Quadratraster als Ornament, feine Doppellinien,
+   hohe vertikale Rhythmen (3,5 m Raumhöhe). Playfair Display / Karla.
+   ========================================================================== */
+
+:root{
+  --ivory:#fbf8f2;
+  --ivory-2:#f2ece0;
+  --ink:#1f2a24;
+  --ink-soft:#4d5a52;
+  --green:#2e4739;
+  --green-dk:#22352b;
+  --brass:#a67a2e;
+  --brass-ink:#8a6220;
+  --brass-lt:#d9b166;
+  --rule:#ddd4c2;
+  --bordeaux:#7a2e3c;
+  --wrap:1140px;
+  --disp:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Karla","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:var(--body);font-size:clamp(15.5px,.32vw + 14.9px,17px);line-height:1.7;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--brass-ink);outline-offset:3px;
+}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.12;margin:0 0 .55em;overflow-wrap:break-word}
+h1{font-size:clamp(2.05rem,5.2vw,3.9rem);letter-spacing:-.012em}
+h2{font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:-.008em}
+h3{font-size:clamp(1.15rem,1.8vw,1.45rem)}
+p{margin:0 0 1.05em}
+ul,ol{margin:0 0 1.05em;padding-left:1.2em}
+li{margin-bottom:.35em}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--green);color:var(--ivory);padding:.7em 1.2em;z-index:99;font-weight:700}
+.skip:focus{left:0}
+
+/* --- Ornament: Wiener-Werkstätte-Quadrate ------------------------------- */
+.karo{
+  height:12px;width:100%;
+  background-image:linear-gradient(90deg,var(--green) 50%,transparent 50%);
+  background-size:24px 12px;background-color:var(--brass);
+}
+.rule2{border:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);height:4px;margin:0 0 1.6em}
+
+/* --- Vorschauleiste ----------------------------------------------------- */
+.demo-bar{background:var(--green-dk);color:#e9e3d6;font-size:.79rem;letter-spacing:.015em}
+.demo-bar p{margin:0;padding:.55em 20px;text-align:center;overflow-wrap:anywhere}
+.demo-bar strong{color:var(--brass-lt)}
+
+/* --- Kopf --------------------------------------------------------------- */
+.head{background:var(--ivory);border-bottom:1px solid var(--rule)}
+.head__in{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-block:16px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);min-width:0}
+.brand svg{flex:none}
+.brand__n{display:block;font-family:var(--disp);font-size:1.5rem;font-weight:700;line-height:1.05}
+.brand__s{display:block;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-ink);margin-top:4px}
+.nav-toggle{
+  margin-left:auto;background:var(--green);border:1px solid var(--green);color:var(--ivory);
+  font-family:var(--body);font-weight:700;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.55em 1em;cursor:pointer;
+}
+.nav{width:100%;order:3}
+.nav[hidden]{display:none}
+.nav ul{list-style:none;margin:0;padding:.3em 0;display:flex;flex-direction:column}
+.nav li{margin:0}
+.nav a{
+  display:block;color:var(--ink);text-decoration:none;padding:.6em 0;
+  font-size:.94rem;letter-spacing:.05em;border-bottom:1px solid var(--rule);
+}
+.nav a:hover{color:var(--brass-ink)}
+.nav a[aria-current="page"]{color:var(--brass-ink);font-weight:700}
+@media (min-width:1000px){
+  .nav-toggle{display:none}
+  .nav{width:auto;order:0;margin-left:auto;display:block !important}
+  .nav ul{flex-direction:row;gap:4px}
+  .nav a{border-bottom:0;padding:.45em .6em;font-size:.9rem}
+  .nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--brass)}
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+.btn{
+  display:inline-flex;align-items:center;gap:.5em;font-family:var(--body);font-weight:700;
+  font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.85em 1.5em;text-decoration:none;border:1px solid transparent;cursor:pointer;line-height:1.2;
+}
+a.btn--solid,.btn--solid{background:var(--green);color:var(--ivory);border-color:var(--green)}
+a.btn--solid:hover{background:var(--green-dk);border-color:var(--green-dk);color:var(--ivory)}
+a.btn--solid:focus-visible{color:var(--ivory)}
+a.btn--outline,.btn--outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+a.btn--outline:hover{background:var(--ink);color:var(--ivory)}
+a.btn--ivory,.btn--ivory{background:var(--ivory);color:var(--green-dk);border-color:var(--ivory)}
+a.btn--ivory:hover{background:var(--brass-lt);color:var(--green-dk);border-color:var(--brass-lt)}
+a.btn--ondark,.btn--ondark{background:transparent;color:var(--ivory);border-color:var(--brass-lt)}
+a.btn--ondark:hover{background:var(--brass-lt);color:var(--green-dk);border-color:var(--brass-lt)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 1.2em}
+
+/* --- Sektionen ---------------------------------------------------------- */
+section{padding-block:clamp(42px,6vw,80px)}
+.sec--tint{background:var(--ivory-2)}
+.sec--green{background:var(--green);color:#efe9dd}
+.sec--green h1,.sec--green h2,.sec--green h3{color:var(--ivory)}
+.sec--green p,.sec--green li{color:#e6e0d3}
+.sec--green a:not(.btn){color:var(--brass-lt)}
+.sec--green a:not(.btn):hover{color:var(--ivory)}
+.kicker{
+  font-family:var(--body);font-weight:700;font-size:.76rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--brass-ink);margin:0 0 .9em;
+}
+.sec--green .kicker{color:var(--brass-lt)}
+.lede{font-size:clamp(1.04rem,1.3vw,1.2rem);color:var(--ink-soft);max-width:60ch}
+.sec--green .lede{color:#ded8ca}
+.sec-head{max-width:66ch;margin-bottom:clamp(26px,3.6vw,44px)}
+
+/* --- Hero --------------------------------------------------------------- */
+.hero{background:var(--ivory);padding-block:clamp(30px,4vw,54px) 0}
+.hero__band{position:relative}
+.hero__img{width:100%;height:clamp(230px,38vw,430px);object-fit:cover}
+.hero__card{
+  background:var(--ivory);border:1px solid var(--rule);padding:clamp(22px,3.4vw,40px);
+  margin-top:-38px;position:relative;max-width:760px;box-shadow:0 20px 46px -34px rgba(31,42,36,.6);
+}
+.hero__card::before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:6px;
+  background-image:linear-gradient(90deg,var(--green) 50%,transparent 50%);
+  background-size:16px 6px;background-color:var(--brass);
+}
+.hero h1{margin-top:.1em}
+.hero__stars{display:flex;align-items:center;gap:9px;margin:0 0 1em}
+.hero__stars span{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-ink);font-weight:700}
+
+/* --- Raster ------------------------------------------------------------- */
+.grid{display:grid;gap:clamp(20px,3vw,34px)}
+.grid>*{min-width:0}
+@media (min-width:860px){
+  .g-2{grid-template-columns:1fr 1fr}
+  .g-2-wide{grid-template-columns:1.3fr .7fr}
+  .g-2-narrow{grid-template-columns:.72fr 1.28fr}
+}
+@media (min-width:760px){.g-3{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:640px){.g-2s{grid-template-columns:1fr 1fr}}
+
+/* --- Karten ------------------------------------------------------------- */
+.card{background:var(--ivory);border:1px solid var(--rule);padding:24px;min-width:0;display:flex;flex-direction:column}
+.sec--tint .card{background:var(--ivory)}
+.card h3{margin-bottom:.4em}
+.card__num{
+  font-family:var(--disp);font-size:2.1rem;line-height:1;color:var(--brass-ink);
+  display:block;margin-bottom:.2em;
+}
+.card p{color:var(--ink-soft);font-size:.96rem}
+.card .btn{margin-top:auto;align-self:flex-start}
+.card--green{background:var(--green);color:#e6e0d3;border-color:var(--green)}
+.card--green h3{color:var(--ivory)}
+.card--green p,.card--green li{color:#ded8ca}
+.card--green a:not(.btn){color:var(--brass-lt)}
+
+/* --- Listen ------------------------------------------------------------- */
+.def{list-style:none;margin:0;padding:0}
+.def li{
+  display:flex;justify-content:space-between;gap:16px;margin:0;padding:.62em 0;
+  border-bottom:1px solid var(--rule);font-size:.95rem;min-width:0;
+}
+.def li span:first-child{min-width:0;overflow-wrap:anywhere}
+.def b{white-space:nowrap;font-family:var(--disp);font-size:1.08rem}
+.sec--green .def li{border-bottom-color:#44584b}
+.ticks{list-style:none;padding:0;margin:0 0 1.05em}
+.ticks li{position:relative;padding-left:22px;margin-bottom:.4em;font-size:.95rem;min-width:0;overflow-wrap:anywhere}
+.ticks li::before{
+  content:"";position:absolute;left:0;top:.58em;width:9px;height:9px;
+  background:var(--brass);
+}
+.sec--green .ticks li::before{background:var(--brass-lt)}
+.cols2{columns:1}
+@media (min-width:620px){.cols2{columns:2;column-gap:34px}}
+.cols2 li{break-inside:avoid}
+
+/* --- Zimmerblock -------------------------------------------------------- */
+.room{border:1px solid var(--rule);background:var(--ivory);min-width:0;display:flex;flex-direction:column}
+.room__top{display:flex;align-items:baseline;gap:12px;padding:18px 22px;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.room__top h3{margin:0}
+.room__cnt{
+  margin-left:auto;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:700;color:var(--ivory);background:var(--green);padding:.35em .75em;white-space:nowrap;
+}
+.room__in{padding:20px 22px;flex:1}
+
+/* --- Tabelle ------------------------------------------------------------ */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);background:var(--ivory)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+caption{text-align:left;padding:16px 18px;font-family:var(--disp);font-size:1.3rem;border-bottom:1px solid var(--rule)}
+th,td{padding:.65em .9em;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--green);color:var(--ivory);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+tbody th{background:var(--ivory-2);font-weight:700;width:36%}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+
+/* --- Formulare ---------------------------------------------------------- */
+form fieldset{border:0;padding:0;margin:0 0 1.7em;min-inline-size:0}
+form legend{font-family:var(--disp);font-size:1.3rem;padding:0;margin-bottom:.55em}
+.f-grid{display:grid;gap:15px}
+@media (min-width:660px){.f-grid--2{grid-template-columns:1fr 1fr}}
+.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field label{font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.field .hint{font-size:.76rem;font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--ink-soft)}
+input,select,textarea{
+  font:inherit;font-size:.97rem;color:var(--ink);background:#fff;border:1px solid #b3ab99;
+  padding:.65em .75em;width:100%;max-width:100%;border-radius:0;
+}
+textarea{min-height:135px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--ink-soft)}
+.check input{width:auto;flex:none;margin-top:.3em}
+.check label{text-transform:none;letter-spacing:0;font-weight:400;font-size:.88rem}
+.form-note{margin-top:1em;padding:1em 1.2em;background:var(--ivory-2);border-left:4px solid var(--brass);font-size:.92rem;color:var(--ink)}
+.form-note[hidden]{display:none}
+
+/* --- Galerie ------------------------------------------------------------ */
+.gal{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gal figure{margin:0;min-width:0}
+.gal img{width:100%;aspect-ratio:92/45;object-fit:cover;border:1px solid var(--rule)}
+.gal figcaption{font-size:.8rem;color:var(--ink-soft);margin-top:.45em}
+figure.shot{margin:0}
+figure.shot img{width:100%;object-fit:cover;border:1px solid var(--rule)}
+figure.shot figcaption{font-size:.8rem;color:var(--ink-soft);margin-top:.5em}
+.sec--green figure.shot figcaption{color:#c9c3b5}
+
+/* --- Wegbeschreibung ---------------------------------------------------- */
+.route{border-left:2px solid var(--brass);padding-left:20px;margin:0 0 1.6em}
+.route h3{margin-bottom:.3em}
+.route p:last-child{margin-bottom:0}
+
+/* --- Infobox ------------------------------------------------------------ */
+.box{border:1px solid var(--rule);background:var(--ivory);padding:22px;min-width:0}
+.box h3{margin-bottom:.45em}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box--brass{border-color:var(--brass);border-top-width:5px}
+.box.card--green{background:var(--green);border-color:#44584b;color:#e6e0d3}
+.box.card--green h3{color:var(--ivory)}
+.box.card--green p,.box.card--green li{color:#e6e0d3}
+.box.card--green .def li{border-bottom-color:#44584b}
+.box.card--green .ticks li::before{background:var(--brass-lt)}
+.box.card--green .small{color:#c9c3b5}
+.small{font-size:.82rem;color:var(--ink-soft);max-width:76ch}
+.sec--green .small{color:#c9c3b5}
+
+/* --- Akkordeon ---------------------------------------------------------- */
+details{border:1px solid var(--rule);background:var(--ivory);margin-bottom:10px}
+summary{cursor:pointer;padding:.9em 1.1em;font-family:var(--disp);font-size:1.12rem;list-style:none;display:flex;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-left:auto;color:var(--brass-ink);font-size:1.35rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+.det-body{padding:0 1.1em 1.1em;font-size:.95rem}
+.det-body p:last-child{margin-bottom:0}
+
+/* --- Karte -------------------------------------------------------------- */
+.map{border:1px solid var(--rule);background:var(--ivory);padding:16px}
+.map svg{width:100%;height:auto;display:block}
+
+/* --- Band --------------------------------------------------------------- */
+.band{background:var(--green-dk);color:#e6e0d3;padding-block:clamp(36px,5vw,60px)}
+.band h2{color:var(--ivory)}
+.band p{color:#ded8ca}
+.band a:not(.btn){color:var(--brass-lt)}
+
+/* --- Fuß ---------------------------------------------------------------- */
+.foot{background:var(--green);color:#ded8ca;padding-block:clamp(34px,5vw,56px) 22px;font-size:.92rem}
+.foot h2{color:var(--ivory);font-family:var(--disp);font-size:1.2rem;margin-bottom:.7em}
+.foot a{color:var(--brass-lt)}
+.foot a:hover{color:var(--ivory)}
+.foot__grid{display:grid;gap:26px}
+@media (min-width:780px){.foot__grid{grid-template-columns:1.1fr .9fr .9fr}}
+.foot__grid>*{min-width:0;overflow-wrap:anywhere}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:.35em}
+.foot__legal{border-top:1px solid #44584b;margin-top:26px;padding-top:18px;font-size:.81rem;color:#bcb6a8}
+.foot__legal p{margin-bottom:.5em}
+.nl{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-top:22px}
+.nl .field{flex:1 1 200px}
+.nl label{color:var(--ivory)}
+
+/* --- Hilfsklassen ------------------------------------------------------- */
+.stack>*+*{margin-top:1.15em}
+.pill{
+  display:inline-block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  border:1px solid var(--brass);color:var(--brass-ink);padding:.3em .8em;
+}
+.sec--green .pill{border-color:var(--brass-lt);color:var(--brass-lt)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 1.2em}
+.pills li{margin:0}
