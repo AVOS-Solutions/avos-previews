@@ -275,3 +275,12 @@ th{font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-siz
 .f-nacht .formular .klein a,.f-nacht .kachel .klein a{color:var(--ziegel)}
 .f-nacht .kachel-n label{color:#FFFDF7}
 .f-nacht .kachel-n .klein{color:#CFC6B0}
+
+/* ---------- Mobile Feinschliff ---------- */
+p,li,dd,td,th,figcaption,address{overflow-wrap:break-word}
+.zwei > *,.raster > *,.mitte > *{min-width:0}
+@media (max-width:620px){
+  .zeile{flex-wrap:wrap}
+  .zeile dd,.zeile .r{text-align:left}
+}
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}

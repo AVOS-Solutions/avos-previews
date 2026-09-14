@@ -293,3 +293,12 @@ caption{caption-side:bottom;text-align:left;font-size:.85rem;color:var(--tinte-2
 .fl-rebe .chronik{border-left-color:var(--linie-d)}
 .fl-rebe .chronik-jahr{color:var(--stroh)}
 .fl-rebe .chronik-punkt::before{background:var(--stroh)}
+
+/* ---------- Mobile Feinschliff ---------- */
+p,li,dd,td,th,figcaption,address{overflow-wrap:break-word}
+.paar > *,.reihe > *,.bahn > *{min-width:0}
+@media (max-width:620px){
+  .daten-zeile{flex-wrap:wrap}
+  .daten-zeile dd,.daten-zeile .wert{text-align:left}
+}
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}

@@ -192,7 +192,7 @@ a:hover { color: var(--petrol); }
 .section-petrol h2, .section-petrol h3 { color: #fff; }
 .section-petrol .eyebrow { color: var(--copper-light); }
 .section-petrol .lede { color: #bcd8de; }
-.section-petrol a { color: #f2c19c; }
+.section-petrol a:not(.btn) { color: #f2c19c; }
 
 .split { display: grid; gap: var(--gap); align-items: center; grid-template-columns: 1fr; }
 .split figure { margin: 0; }
@@ -310,7 +310,7 @@ figcaption {
   border-radius: var(--r-lg); padding: clamp(1.6rem, 4vw, 3rem);
 }
 .callout h2, .callout h3 { color: #fff; }
-.callout a { color: #fff; }
+.callout a:not(.btn) { color: #fff; }
 .phone-big {
   font-family: var(--display); font-weight: 700;
   font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.5rem);

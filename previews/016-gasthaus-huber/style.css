@@ -276,3 +276,13 @@ th{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gr
 .lb-close{position:absolute;top:1rem;right:1rem;background:var(--messing-hell);color:#14352A;border:0;
   font-family:var(--font-b);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
   padding:.6rem 1rem;cursor:pointer}
+
+/* ---------- Mobile Feinschliff ---------- */
+p,li,dd,td,th,figcaption,.v,.k,address{overflow-wrap:break-word}
+.split > *,.grid > *,.wrap > *{min-width:0}
+@media (max-width:620px){
+  .ledger li{flex-wrap:wrap}
+  .ledger .v{white-space:normal;text-align:left}
+  .ledger .fill{display:none}
+}
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}

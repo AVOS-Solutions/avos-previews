@@ -234,7 +234,7 @@ a:hover { color: var(--gold); }
 .section-wine h2, .section-wine h3 { color: #fff; }
 .section-wine .eyebrow { color: var(--gold-light); }
 .section-wine .lede { color: #e6d2be; }
-.section-wine a { color: var(--gold-light); }
+.section-wine a:not(.btn) { color: var(--gold-light); }
 
 .split {
   display: grid; gap: var(--gap); align-items: center;
@@ -346,7 +346,7 @@ figcaption {
   border-top: 4px solid var(--gold);
 }
 .callout h2, .callout h3 { color: #fff; }
-.callout a { color: var(--gold-light); }
+.callout a:not(.btn) { color: var(--gold-light); }
 .callout .eyebrow { color: var(--gold-light); }
 
 .phone-big {

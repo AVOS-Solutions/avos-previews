@@ -264,6 +264,7 @@ details.acc .acc__body{padding:0 1.15rem 1.15rem}
 /* ---------- Kontrast-Absicherung (WCAG AA) ---------- */
 .section--night .btn--outline{color:var(--gold-l);border-color:rgba(230,210,160,.5)}
 .section--night .btn--outline:hover{background:var(--gold-l);border-color:var(--gold-l);color:var(--night)}
+.pagehead .kicker,.pagehead .crumbs strong{color:var(--gold-l)}
 .pagehead a:not(.btn){color:var(--gold-l)}
 .pagehead a:not(.btn):hover{color:#F4E6C6}
 .hero a:not(.btn){color:var(--gold-l)}
