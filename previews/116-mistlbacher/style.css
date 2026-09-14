@@ -384,3 +384,16 @@ legend{font-family:var(--font-display);font-weight:600;font-size:1.15rem;color:v
 .sec--dark .stat-row b{color:var(--gold-light);}
 .stat-row span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);}
 .sec--dark .stat-row span{color:var(--on-dark-soft);}
+
+/* ===========================================================
+   Kontrast-Absicherung: helle Elemente auf dunklen Flächen
+   =========================================================== */
+.sec--dark .faq summary,.sec--carmine .faq summary{color:var(--cocoa);}
+.sec--dark .faq .faq-body,.sec--dark .faq .faq-body p,.sec--dark .faq .faq-body li,
+.sec--carmine .faq .faq-body,.sec--carmine .faq .faq-body p,.sec--carmine .faq .faq-body li{color:var(--text-soft);}
+.sec--dark .faq .faq-body a:not(.btn),.sec--carmine .faq .faq-body a:not(.btn){color:var(--carmine-deep);}
+.sec--dark .shop p,.sec--dark .shop li,.sec--dark .shop address{color:var(--text-soft);}
+.sec--dark .shop h3{color:var(--cocoa);}
+.sec--dark .table-wrap td,.sec--dark .table-wrap th,.sec--dark .table-wrap p{color:var(--text);}
+.sec--dark .notice p,.sec--carmine .notice p{color:var(--cocoa);}
+@media(min-width:960px){.vitrine{grid-template-columns:repeat(3,1fr);}}
