@@ -129,9 +129,15 @@ img{max-width:100%;height:auto;display:block}
 .sec--noir .room{background:var(--noir2);border-color:var(--line-d)}
 .sec--noir .room__no{background:var(--noir2);color:var(--gold)}
 .sec--noir .room p{color:#c6bfb4}
-.room--gold{background:var(--gold);border-color:var(--gold);color:var(--noir)}
-.room--gold .room__no{background:var(--gold);color:var(--noir)}
-.room--gold h3{color:var(--noir)}
+.room--gold,.sec--noir .room--gold,.sec--paper .room--gold{background:var(--gold);
+  border-color:var(--gold);color:var(--noir)}
+.room--gold .room__no,.sec--noir .room--gold .room__no{background:var(--gold);color:var(--noir)}
+.room--gold h3,.sec--noir .room--gold h3{color:var(--noir)}
+.room--gold p,.room--gold li,.room--gold b,.sec--noir .room--gold p,
+.sec--noir .room--gold li{color:var(--noir)}
+.room--gold a,.sec--noir .room--gold a{color:var(--noir);text-decoration-thickness:.09em}
+.room--gold a:hover,.sec--noir .room--gold a:hover{color:#3a2c0f}
+.room--gold .ticks li::before{border-top-color:var(--noir)}
 
 /* ---------- Preisliste ---------- */
 .pricebox{border:1px solid var(--line);background:var(--paper);padding:clamp(1.4rem,3vw,2.2rem)}
@@ -171,9 +177,11 @@ img{max-width:100%;height:auto;display:block}
 
 /* ---------- Zitate & Stimmen ---------- */
 .motto{font-family:Marcellus,Georgia,serif;font-size:clamp(1.35rem,1.1rem + 1.2vw,2rem);line-height:1.35;
-  font-style:italic;color:var(--gold);margin:0 auto;max-width:38rem;text-align:center}
-.motto+.motto__src{text-align:center;color:#8d8578;font-size:.78rem;letter-spacing:.2em;
+  font-style:italic;color:var(--bronze);margin:0 auto;max-width:38rem;text-align:center}
+.sec--noir .motto{color:var(--gold)}
+.motto+.motto__src{text-align:center;color:var(--muted);font-size:.78rem;letter-spacing:.2em;
   text-transform:uppercase;margin-top:.9rem}
+.sec--noir .motto+.motto__src{color:#b6ad9d}
 .voices{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
 .voice{border:1px solid var(--line);background:var(--paper);padding:1.5rem 1.4rem;display:flex;
   flex-direction:column;gap:.8rem}
@@ -253,3 +261,21 @@ img{max-width:100%;height:auto;display:block}
 .muster{border:1px solid var(--gold);background:var(--paper);padding:1.15rem 1.35rem;margin-bottom:2rem}
 .muster p{margin:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- Schutz: Buttons behalten ihre Farben in jedem Kontext ----------
+   (sonst gewinnen .nav a / .sec--noir a / .panel--noir a gegen .btn--*) */
+a.btn--gold{background:var(--gold);color:var(--noir);border-color:var(--gold)}
+a.btn--gold:hover{background:var(--gold-l);color:var(--noir)}
+a.btn--dark{background:var(--noir);color:var(--bone);border-color:var(--noir)}
+a.btn--dark:hover{color:var(--gold)}
+a.btn--line{color:inherit;border-color:currentColor}
+a.btn--line:hover{background:var(--noir);color:var(--gold);border-color:var(--noir)}
+/* Hover-Zustaende: Nav-/Basis-Linkfarben duerfen Buttons nicht einfaerben */
+.nav a.btn--gold,.nav a.btn--gold:hover{color:var(--noir);background:var(--gold)}
+.nav a.btn--gold:hover{background:var(--gold-l)}
+a.btn--dark:hover{background:var(--noir);color:var(--gold)}
+/* Dunkle Panels in hellen Abschnitten: Hilfstexte aufhellen */
+.panel--noir .hint,.panel--noir .datalist span,.panel--noir .field label,
+.panel--noir figcaption,.panel--noir .motto__src{color:#a9a196}
+.panel--noir .datalist,.panel--noir .datalist li{border-color:var(--line-d)}
+.panel--noir .ticks li::before{border-top-color:var(--gold)}

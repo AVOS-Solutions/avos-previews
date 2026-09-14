@@ -1,0 +1,277 @@
+/* Gasthof "Zum Brauhaus", Hartberg — Gestaltungs-Vorschau AVOS Solutions
+   Motiv: Altstadt-Plakat. Nachtblau, Gold, Ziegelrot, schmale Versalien,
+   Doppellinien wie auf einem gedruckten Wirtshausplakat. */
+
+:root{
+  --nacht:#17263F;
+  --nacht-2:#1E3352;
+  --nacht-3:#2C4066;
+  --gold:#E3B65A;
+  --gold-2:#F0D093;
+  --ziegel:#8E2F26;
+  --bone:#F6F1E7;
+  --sand:#E9E1D1;
+  --papier:#FFFCF5;
+  --tinte:#1E1B16;
+  --tinte-2:#5B5346;
+  --rahmen:#D6CBB4;
+  --rahmen-d:#3B4D6E;
+  --breit:1180px;
+  --luft:clamp(3rem,6.5vw,6rem);
+  --disp:"Oswald","Helvetica Neue Condensed",Impact,"Arial Narrow",sans-serif;
+  --text:"Lora",Georgia,"Times New Roman",serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--tinte);font-family:var(--text);
+  font-size:clamp(1rem,.96rem + .2vw,1.09rem);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--ziegel)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--ziegel);outline-offset:2px}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:500;text-transform:uppercase;letter-spacing:.02em;
+  line-height:1.08;margin:0 0 .55em;color:var(--nacht)}
+h1{font-size:clamp(2.4rem,1.5rem + 4vw,4.6rem);letter-spacing:.005em}
+h2{font-size:clamp(1.8rem,1.3rem + 2.1vw,2.9rem)}
+h3{font-size:clamp(1.15rem,1.05rem + .55vw,1.45rem);letter-spacing:.05em}
+p{margin:0 0 1.15em}
+.mitte{width:min(100% - 2.4rem,var(--breit));margin-inline:auto}
+.schmal{width:min(100% - 2.4rem,800px);margin-inline:auto}
+
+.skip{position:absolute;left:-9999px;background:var(--gold);color:var(--nacht);padding:.7rem 1.1rem;
+  z-index:70;font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.vorschau{background:var(--ziegel);color:#FDF4EC;text-align:center;padding:.5rem 1rem;
+  font-family:var(--disp);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.vorschau b{color:var(--gold-2);font-weight:600}
+
+/* ---------- Kopf ---------- */
+.kopf{background:var(--nacht);color:var(--bone);position:sticky;top:0;z-index:60;
+  border-bottom:3px solid var(--gold)}
+.kopf-in{display:flex;align-items:center;gap:1.1rem;padding:.7rem 0;flex-wrap:wrap}
+.marke{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
+.marke svg{width:46px;height:46px;flex:0 0 auto}
+.marke-t{font-family:var(--disp);font-size:1.35rem;line-height:1;color:#FFFDF7;text-transform:uppercase;
+  letter-spacing:.06em;display:block}
+.marke-u{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;
+  margin-top:.3rem;font-family:var(--disp)}
+.menu ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.menu a{color:#F1EADC;text-decoration:none;font-family:var(--disp);font-size:.85rem;letter-spacing:.13em;
+  text-transform:uppercase;padding-bottom:.25rem;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.menu a[aria-current="page"]{color:var(--gold);border-bottom-color:var(--gold)}
+.menu-tog{display:none;background:var(--gold);color:var(--nacht);border:0;font-family:var(--disp);
+  text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;padding:.55rem .95rem;cursor:pointer}
+
+/* ---------- Knöpfe ---------- */
+.taste{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;
+  font-size:.85rem;padding:.85rem 1.6rem;text-decoration:none;border:2px solid var(--gold);
+  background:var(--gold);color:#17263F;cursor:pointer}
+.taste:hover{background:var(--gold-2);border-color:var(--gold-2);color:#17263F}
+.taste-blau{background:var(--nacht);border-color:var(--nacht);color:#FFFDF7}
+.taste-blau:hover{background:var(--nacht-3);border-color:var(--nacht-3);color:#FFFDF7}
+.taste-rand{background:transparent;border-color:var(--nacht);color:var(--nacht)}
+.taste-rand:hover{background:var(--nacht);color:#FFFDF7}
+.taste-hell{background:transparent;border-color:var(--gold);color:#FFFDF7}
+.taste-hell:hover{background:var(--gold);color:#17263F}
+.taste-s{padding:.55rem 1rem;font-size:.78rem}
+
+/* ---------- Flächen ---------- */
+section{padding-block:var(--luft)}
+.f-bone{background:var(--bone)}
+.f-papier{background:var(--papier)}
+.f-sand{background:var(--sand)}
+.f-nacht{background:var(--nacht);color:#EDE6D6}
+.f-nacht h2,.f-nacht h3,.f-nacht h4{color:#FFFDF7}
+.f-nacht a:not(.taste){color:var(--gold)}
+.hut{font-family:var(--disp);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ziegel);display:block;margin-bottom:.8rem}
+.f-nacht .hut{color:var(--gold)}
+.doppel{border-top:3px solid var(--nacht);border-bottom:1px solid var(--nacht);height:5px;width:90px;margin-bottom:1.5rem}
+.f-nacht .doppel{border-top-color:var(--gold);border-bottom-color:var(--gold)}
+.intro{font-size:clamp(1.06rem,1rem + .4vw,1.3rem);color:var(--tinte-2);max-width:62ch}
+.f-nacht .intro{color:#DCD3BF}
+.klein{font-size:.9rem;color:var(--tinte-2)}
+.f-nacht .klein{color:#CFC6B0}
+.zentriert{text-align:center}
+.mi{margin-inline:auto}
+.o0{margin-top:0}.u0{margin-bottom:0}
+.o-l{margin-top:2.2rem}.o-m{margin-top:1.6rem}.o-s{margin-top:.9rem}
+
+/* ---------- Plakat-Hero ---------- */
+.plakat{background:var(--nacht);color:#F3ECDC;position:relative}
+.plakat-raster{display:grid;gap:0}
+.plakat-text{padding-block:clamp(2.6rem,6vw,5rem)}
+.plakat h1{color:#FFFDF7}
+.plakat h1 span{display:block;color:var(--gold)}
+.plakat p{color:#DCD3BF;max-width:48ch;font-size:clamp(1.05rem,1rem + .4vw,1.28rem)}
+.plakat-bild img{width:100%;height:100%;object-fit:cover;min-height:270px}
+.tasten{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.8rem 0 1.6rem}
+.merk{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;padding-top:1.2rem;border-top:1px solid var(--rahmen-d);
+  font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:#CFC6B0}
+.oval{display:inline-block;border:2px solid var(--gold);border-radius:999px;padding:.35rem 1.2rem;
+  font-family:var(--disp);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--gold);
+  margin-bottom:1.4rem}
+.oval-d{border-color:var(--nacht);color:var(--nacht)}
+
+/* ---------- Raster ---------- */
+.raster{display:grid;gap:clamp(1.2rem,3vw,2.2rem)}
+.r2{grid-template-columns:1fr}
+.r3{grid-template-columns:1fr}
+.r4{grid-template-columns:1fr 1fr}
+.zwei{display:grid;gap:clamp(1.6rem,4vw,3.2rem);align-items:center}
+
+.kachel{background:var(--papier);border:2px solid var(--nacht);padding:clamp(1.2rem,3vw,1.9rem);
+  box-shadow:7px 7px 0 var(--sand)}
+.kachel h3{margin-top:0}
+.kachel p:last-child{margin-bottom:0}
+.kachel-n{background:var(--nacht-2);border-color:var(--gold);color:#EDE6D6;box-shadow:7px 7px 0 rgba(227,182,90,.25)}
+.kachel-n h3{color:#FFFDF7}
+.jahr{font-family:var(--disp);font-size:2.6rem;line-height:1;color:var(--ziegel);display:block;margin-bottom:.3rem}
+.f-nacht .jahr{color:var(--gold)}
+
+figure.bild{margin:0}
+figure.bild img{width:100%;object-fit:cover;border:2px solid var(--nacht)}
+figure.bild figcaption{font-size:.86rem;color:var(--tinte-2);padding-top:.5rem;font-style:italic}
+.f-nacht figure.bild figcaption{color:#CFC6B0}
+.f-nacht figure.bild img{border-color:var(--gold)}
+
+/* ---------- Speisekarte ---------- */
+.carte{background:var(--papier);border:2px solid var(--nacht);padding:clamp(1.3rem,3.2vw,2.2rem)}
+.carte h3{border-bottom:2px solid var(--gold);padding-bottom:.45rem;margin-bottom:1.2rem;color:var(--nacht)}
+.gericht{display:flex;gap:1rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px dotted var(--rahmen)}
+.gericht:last-child{border-bottom:0}
+.gericht-t{flex:1}
+.gericht-t strong{display:block;font-weight:600;font-size:1.02rem}
+.gericht-t em{display:block;font-size:.87rem;color:var(--tinte-2);font-style:italic;margin-top:.15rem}
+.preis{font-family:var(--disp);background:var(--nacht);color:#FFFDF7;padding:.25rem .6rem;font-size:.92rem;
+  letter-spacing:.04em;white-space:nowrap}
+.zusatz{font-family:var(--disp);color:var(--ziegel);letter-spacing:.04em;white-space:nowrap;font-size:.9rem;
+  border:1px solid var(--ziegel);padding:.22rem .55rem}
+
+/* ---------- Listen ---------- */
+.liste{list-style:none;margin:0;padding:0}
+.liste li{padding:.55rem 0 .55rem 1.6rem;border-bottom:1px solid var(--rahmen);position:relative}
+.liste li:last-child{border-bottom:0}
+.liste li::before{content:"";position:absolute;left:0;top:1.15rem;width:8px;height:8px;background:var(--gold);
+  border:1px solid var(--nacht)}
+.f-nacht .liste li{border-bottom-color:var(--rahmen-d)}
+.f-nacht .liste li::before{border-color:var(--gold)}
+.zeile{display:flex;gap:1rem;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--rahmen);
+  align-items:baseline}
+.zeile:last-child{border-bottom:0}
+.zeile dt,.zeile .l{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:.92rem;color:var(--nacht)}
+.zeile dd,.zeile .r{margin:0;text-align:right;color:var(--tinte-2)}
+.f-nacht .zeile{border-bottom-color:var(--rahmen-d)}
+.f-nacht .zeile dt,.f-nacht .zeile .l{color:#FFFDF7}
+.f-nacht .zeile dd,.f-nacht .zeile .r{color:#DCD3BF}
+dl{margin:0}
+
+/* ---------- Zeitleiste ---------- */
+.gen{position:relative;padding-left:1.8rem;margin-bottom:2rem}
+.gen::before{content:"";position:absolute;left:0;top:.4rem;bottom:-2rem;width:3px;background:var(--gold)}
+.gen:last-child::before{bottom:auto;height:2.4rem}
+.gen h3{margin-bottom:.2rem}
+.gen p:last-child{margin-bottom:0}
+
+/* ---------- Hinweis ---------- */
+.hinweis{background:var(--sand);border-left:6px solid var(--ziegel);padding:1.1rem 1.3rem;margin-bottom:1.6rem}
+.hinweis strong{color:var(--ziegel)}
+.hinweis p:last-child{margin-bottom:0}
+.hinweis-b{border-left-color:var(--nacht)}
+.hinweis-b strong{color:var(--nacht)}
+
+/* ---------- Formulare ---------- */
+.formular{background:var(--papier);border:2px solid var(--nacht);padding:clamp(1.3rem,3.2vw,2.2rem)}
+.feld-reihe{display:grid;gap:1rem;grid-template-columns:1fr;margin-bottom:1rem}
+label{display:block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;
+  color:var(--nacht);margin-bottom:.3rem}
+input,select,textarea{width:100%;font-family:var(--text);font-size:1rem;padding:.7rem .8rem;
+  border:2px solid #8C8574;background:#FFFDF7;color:var(--tinte);border-radius:0}
+textarea{min-height:130px;resize:vertical}
+.hint{font-size:.86rem;color:var(--tinte-2);margin-top:.35rem}
+.haken{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:1.1rem}
+.haken input{width:auto;margin-top:.4rem}
+.haken label{text-transform:none;letter-spacing:0;font-family:var(--text);font-size:.93rem;color:var(--tinte-2)}
+.demo{display:none;background:var(--nacht);color:#FFFDF7;border-left:6px solid var(--gold);padding:1rem 1.2rem;margin-top:1.2rem}
+.demo.an{display:block}
+
+/* ---------- FAQ ---------- */
+.fragen details{background:var(--papier);border:2px solid var(--nacht);margin-bottom:.7rem}
+.fragen summary{cursor:pointer;padding:.95rem 1.2rem;font-family:var(--disp);text-transform:uppercase;
+  letter-spacing:.06em;font-size:1rem;color:var(--nacht);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.fragen summary::-webkit-details-marker{display:none}
+.fragen summary::after{content:"+";color:var(--ziegel);font-size:1.25rem;line-height:1}
+.fragen details[open] summary::after{content:"\2013"}
+.fragen .antwort{padding:0 1.2rem 1.1rem;color:var(--tinte-2)}
+.fragen .antwort p:last-child{margin-bottom:0}
+
+/* ---------- Karte ---------- */
+.plan{background:var(--papier);border:2px solid var(--nacht);padding:1rem}
+.plan svg{width:100%;height:auto;display:block}
+
+/* ---------- Galerie ---------- */
+.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
+.galerie figure{margin:0}
+.galerie img{aspect-ratio:3/2;object-fit:cover;width:100%;border:2px solid var(--nacht)}
+.galerie figcaption{font-size:.85rem;color:var(--tinte-2);padding-top:.45rem;font-style:italic}
+
+/* ---------- Tabelle ---------- */
+.tabelle{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:440px;background:var(--papier)}
+th,td{text-align:left;padding:.75rem .9rem;border-bottom:1px solid var(--rahmen);vertical-align:top}
+th{font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;color:#FFFDF7;background:var(--nacht)}
+
+/* ---------- Fuß ---------- */
+.fuss{background:var(--nacht);color:#CFC6B0;padding-block:clamp(2.6rem,5vw,4rem) 1.4rem;font-size:.95rem}
+.fuss h3{color:#FFFDF7;font-size:1.02rem}
+.fuss a{color:#EDE6D6;text-decoration:none;border-bottom:1px solid var(--rahmen-d)}
+.fuss a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.fuss-raster{display:grid;gap:2rem;grid-template-columns:1fr}
+.fuss ul{list-style:none;margin:0;padding:0}
+.fuss li{margin-bottom:.4rem}
+.fuss-unten{border-top:1px solid var(--rahmen-d);margin-top:2.4rem;padding-top:1.3rem;font-size:.82rem;color:#B3AA95}
+.fuss-unten p{margin:0 0 .5rem}
+
+@media (min-width:640px){
+  .r2{grid-template-columns:1fr 1fr}
+  .r3{grid-template-columns:1fr 1fr}
+  .feld-reihe.zwei-f{grid-template-columns:1fr 1fr}
+  .feld-reihe.drei-f{grid-template-columns:1fr 1fr 1fr}
+}
+@media (min-width:900px){
+  .r3{grid-template-columns:repeat(3,1fr)}
+  .r4{grid-template-columns:repeat(4,1fr)}
+  .zwei{grid-template-columns:1fr 1fr}
+  .zwei.links-breit{grid-template-columns:1.35fr .65fr}
+  .plakat-raster{grid-template-columns:1.05fr .95fr}
+  .plakat-text{padding-right:clamp(2rem,4vw,4rem)}
+}
+@media (max-width:899px){
+  .menu-tog{display:inline-block;order:3}
+  .menu{display:none;order:4;width:100%;border-top:1px solid var(--rahmen-d);margin-top:.4rem;padding-top:.7rem}
+  .menu.offen{display:block}
+  .menu ul{flex-direction:column;gap:0}
+  .menu li{border-bottom:1px solid var(--rahmen-d)}
+  .menu a{display:block;padding:.65rem 0;border-bottom:0}
+  .kopf-cta{display:none}
+  .plakat-bild img{min-height:240px;max-height:330px}
+  .kachel{box-shadow:5px 5px 0 var(--sand)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- Korrekturen auf dunklem Grund ---------- */
+.plakat .hut{color:var(--gold)}
+.f-nacht label{color:#FFFDF7}
+.f-nacht .haken label{color:#DCD3BF}
+.f-nacht .hint{color:#DCD3BF}
+.f-nacht caption,.f-nacht .klein a{color:var(--gold)}
+.f-nacht .formular label,.f-nacht .kachel label{color:var(--nacht)}
+.f-nacht .formular .haken label,.f-nacht .kachel .haken label{color:var(--tinte-2)}
+.f-nacht .formular .hint,.f-nacht .kachel .hint,.f-nacht .formular .klein,.f-nacht .kachel .klein{color:var(--tinte-2)}
+.f-nacht .formular .klein a,.f-nacht .kachel .klein a{color:var(--ziegel)}
+.f-nacht .kachel-n label{color:#FFFDF7}
+.f-nacht .kachel-n .klein{color:#CFC6B0}

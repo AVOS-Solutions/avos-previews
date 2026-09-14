@@ -2,7 +2,7 @@
    Palette: Wein #5c1630 · Schilcher-Rosé #e08398 · Creme #fbf5ee · Tinte #2a211c · Olive #6f7a4f
    Schriften: Cormorant Garamond (Display) + Karla (Text) · Motiv: Rundbogen, Doppellinien, Magazinsatz */
 :root{
-  --wine:#5c1630; --wine-d:#3f0c20; --rose:#e08398; --rose-l:#f7dfe4; --rose-p:#fdf1f3;
+  --wine:#5c1630; --wine-d:#3f0c20; --rose:#e08398; --rose-d:#a8425c; --rose-l:#f7dfe4; --rose-p:#fdf1f3;
   --cream:#fbf5ee; --paper:#fffcf8; --ink:#2a211c; --muted:#6e6058; --olive:#5e6a43;
   --line:#e2d5c6; --w:74rem; --pad:clamp(1rem,4vw,2.5rem);
 }
@@ -119,8 +119,9 @@ img{max-width:100%;height:auto;display:block}
 .card:hover{transform:translateY(-3px);box-shadow:0 1rem 2rem rgba(42,33,28,.08)}
 .card h3{margin-bottom:.35rem}
 .card p:last-child{margin-bottom:0}
-.card__num{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;color:var(--rose);line-height:1;
+.card__num{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;color:var(--rose-d);line-height:1;
   display:block;margin-bottom:.2rem}
+.card--wine .card__num,.sec--wine .card .card__num{color:var(--rose-l)}
 .card--wine{background:var(--wine);border-color:var(--wine);color:#f6e6ea}
 .card--wine h3{color:#fff}
 .sec--wine .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#f6e6ea}
@@ -207,3 +208,19 @@ img{max-width:100%;height:auto;display:block}
 .muster{background:var(--rose-p);border:1px solid var(--rose-l);border-radius:.6rem;padding:1.1rem 1.3rem;margin-bottom:2rem}
 .muster p{margin:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- Schutz: Buttons behalten ihre Farben in jedem Kontext ----------
+   (sonst gewinnen .nav a / .sec--wine a / .foot a gegen .btn--*) */
+a.btn--wine{background:var(--wine);color:#fff;border-color:var(--wine)}
+a.btn--wine:hover{background:var(--wine-d);color:#fff}
+a.btn--rose{background:var(--rose-l);color:var(--wine);border-color:var(--rose-l)}
+a.btn--rose:hover{background:#fff;color:var(--wine-d)}
+a.btn--line{color:inherit;border-color:currentColor}
+/* Hover-Zustaende: Nav-/Basis-Linkfarben duerfen Buttons nicht einfaerben */
+.nav a.btn--wine,.nav a.btn--wine:hover{color:#fff;background:var(--wine)}
+.nav a.btn--wine:hover{background:var(--wine-d)}
+a.btn--line:hover{color:inherit;background:transparent}
+a.btn--rose:hover{background:#fff;color:var(--wine-d)}
+/* Dunkle Flaechen in hellen Abschnitten: Hilfstexte aufhellen */
+.card--wine .hint,.card--wine .datalist span{color:#e3c9d1}
+.card--wine .datalist,.card--wine .datalist li{border-color:rgba(255,255,255,.25)}

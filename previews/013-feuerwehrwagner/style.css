@@ -1,0 +1,314 @@
+/* ============================================================
+   Weingut Feuerwehr-Wagner, 1190 Wien
+   Gestaltungsidee: Wiener Heurigen-Plakat / Letterpress
+   Palette: Pergament-Ocker, Helmrot, Flaschengrün, Etikettgold
+   ============================================================ */
+
+:root{
+  --paper:#fbf3e2;
+  --paper-2:#f3e6ca;
+  --paper-3:#ece0c0;
+  --ink:#22201c;
+  --muted:#5c5346;
+  --red:#a5201c;
+  --red-dark:#7e1714;
+  --green:#1d3a2a;
+  --green-2:#274b36;
+  --gold:#e8b21e;
+  --line:#cdbb93;
+  --cream:#fff6e6;
+  --rule:2px solid var(--ink);
+  --shadow:6px 6px 0 rgba(34,32,28,.12);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Lora",Georgia,"Times New Roman",serif;
+  font-size:clamp(1rem,.96rem + .2vw,1.09rem);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+
+/* ---------- Typo ---------- */
+h1,h2,h3,h4,.kicker,.nav a,.btn,.tag{
+  font-family:"Oswald","Haettenschweiler","Arial Narrow",Arial,sans-serif;
+  font-weight:500;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+h1{font-size:clamp(2.1rem,1.2rem + 4.4vw,4.2rem);line-height:1.02;margin:0 0 .4em}
+h2{font-size:clamp(1.5rem,1.1rem + 1.9vw,2.4rem);line-height:1.1;margin:0 0 .5em}
+h3{font-size:clamp(1.1rem,1rem + .55vw,1.35rem);margin:0 0 .4em;letter-spacing:.06em}
+h4{font-size:1rem;margin:0 0 .3em;letter-spacing:.08em}
+p{margin:0 0 1em}
+a{color:var(--red-dark);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+strong{font-weight:600}
+.lead{font-size:clamp(1.08rem,1rem + .5vw,1.3rem);line-height:1.55}
+.kicker{
+  display:inline-block;font-size:.78rem;letter-spacing:.22em;
+  color:var(--red-dark);margin:0 0 .8rem;
+}
+.muted{color:var(--muted)}
+.small{font-size:.86rem;line-height:1.5}
+
+/* ---------- Gerüst ---------- */
+.wrap{width:min(1160px,100% - 2.2rem);margin-inline:auto}
+.narrow{width:min(760px,100% - 2.2rem);margin-inline:auto}
+section{padding-block:clamp(2.6rem,1.6rem + 3.4vw,4.6rem)}
+.skip{
+  position:absolute;left:-999px;top:0;z-index:99;
+  background:var(--red);color:var(--cream);padding:.7rem 1.1rem;font-weight:600;
+}
+.skip:focus{left:.6rem;top:.6rem}
+
+/* ---------- Vorschau-Leiste ---------- */
+.preview-bar{
+  background:var(--green);color:#f0e4c8;
+  font-family:"Oswald",Arial,sans-serif;font-size:.74rem;letter-spacing:.12em;
+  text-transform:uppercase;text-align:center;padding:.55rem 1rem;line-height:1.45;
+}
+
+/* ---------- Kopf ---------- */
+.site-head{
+  background:var(--paper-2);
+  border-bottom:var(--rule);
+  position:relative;
+}
+.head-row{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding-block:.9rem;
+}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink)}
+.brand-mark{
+  width:46px;height:46px;flex:none;border-radius:50%;
+  background:var(--gold);border:2px solid var(--ink);
+  display:grid;place-items:center;
+  font-family:"Oswald",Arial,sans-serif;font-weight:600;font-size:1.05rem;color:var(--ink);
+  letter-spacing:0;
+}
+.brand-name{font-family:"Oswald",Arial,sans-serif;text-transform:uppercase;line-height:1.05}
+.brand-name b{display:block;font-size:1.12rem;letter-spacing:.09em;font-weight:600}
+.brand-name span{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--muted)}
+.nav-toggle{
+  font-family:"Oswald",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;
+  background:var(--ink);color:var(--cream);border:0;padding:.6rem .9rem;font-size:.85rem;cursor:pointer;
+}
+.nav{display:none}
+.nav.open{display:block}
+.nav ul{list-style:none;margin:0;padding:0 0 1rem;display:grid;gap:.1rem}
+.nav a{
+  display:block;padding:.62rem .2rem;font-size:.92rem;color:var(--ink);
+  text-decoration:none;border-bottom:1px dotted var(--line);
+}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--red-dark)}
+.nav a[aria-current="page"]{border-bottom:2px solid var(--red)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block;border:2px solid var(--red);background:var(--red);color:var(--cream);
+  padding:.72rem 1.4rem;text-decoration:none;font-size:.92rem;cursor:pointer;
+  box-shadow:var(--shadow);transition:transform .12s ease;
+}
+.btn:hover{color:var(--cream);transform:translate(-2px,-2px);box-shadow:8px 8px 0 rgba(34,32,28,.16)}
+.btn-ghost{background:transparent;color:var(--red-dark);border:2px solid var(--red-dark);box-shadow:none}
+.btn-ghost:hover{background:var(--red-dark);color:var(--cream)}
+.btn-dark{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.btn-dark:hover{color:var(--cream)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:var(--green);color:var(--cream);
+  border-bottom:6px double var(--gold);
+  padding-block:clamp(2.6rem,1.4rem + 5vw,5.4rem);
+}
+.hero h1{color:var(--cream)}
+.hero .kicker{color:var(--gold)}
+.hero p{color:#efe3c6;max-width:46ch}
+.hero-grid{display:grid;gap:2rem}
+.hero-facts{
+  display:grid;gap:.1rem;border-top:1px solid #4a6b55;margin-top:1.6rem;padding-top:1.2rem;
+}
+.hero-facts div{
+  display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;
+  border-bottom:1px solid #4a6b55;font-size:.92rem;color:#efe3c6;
+}
+.hero-facts b{font-family:"Oswald",Arial,sans-serif;font-weight:400;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;font-size:.82rem}
+
+/* ---------- Band / Flächen ---------- */
+.band-gold{background:var(--gold);color:var(--ink);border-block:var(--rule)}
+.band-paper2{background:var(--paper-2)}
+.band-green{background:var(--green);color:#efe3c6}
+.band-green h2,.band-green h3{color:var(--cream)}
+.band-green a{color:var(--gold)}
+.band-green .btn,.band-green .btn-dark{color:var(--cream)}
+.band-green .btn-ghost{color:var(--paper);border-color:var(--paper)}
+.band-green .btn-ghost:hover{background:var(--paper);color:var(--green)}
+
+/* ---------- Karten & Raster ---------- */
+.grid{display:grid;gap:1.4rem}
+.g2{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+.card{
+  background:var(--paper);border:2px solid var(--ink);padding:1.4rem;
+  box-shadow:var(--shadow);
+}
+.card h3{color:var(--red-dark)}
+.card.on-gold{background:var(--paper)}
+.num{
+  width:34px;height:34px;border-radius:50%;background:var(--gold);border:2px solid var(--ink);
+  display:grid;place-items:center;font-family:"Oswald",Arial,sans-serif;font-size:.95rem;
+  margin-bottom:.7rem;color:var(--ink);
+}
+
+/* ---------- Speisen-/Preislisten ---------- */
+.menu-block{margin-bottom:2.4rem}
+.menu-block h3{
+  border-bottom:var(--rule);padding-bottom:.45rem;margin-bottom:1rem;color:var(--ink);
+}
+.dishes{list-style:none;margin:0;padding:0}
+.dishes li{
+  display:flex;align-items:baseline;gap:.5rem;padding:.5rem 0;
+  border-bottom:1px dotted var(--line);
+}
+.d-name{flex:1 1 auto}
+.d-note{display:block;font-size:.82rem;color:var(--muted)}
+.d-price{
+  font-family:"Oswald",Arial,sans-serif;letter-spacing:.04em;white-space:nowrap;color:var(--ink);
+}
+.d-ask{font-family:"Oswald",Arial,sans-serif;font-size:.8rem;color:var(--muted);white-space:nowrap}
+
+/* ---------- Tabellen ---------- */
+.table-scroll{overflow-x:auto;border:2px solid var(--ink);background:var(--paper);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.94rem}
+caption{text-align:left;padding:.8rem 1rem;font-family:"Oswald",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;background:var(--paper-3);color:var(--ink);
+  border-bottom:2px solid var(--ink)}
+th,td{padding:.62rem .9rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--green);color:var(--cream);font-family:"Oswald",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:400;border-bottom:0}
+tbody tr:nth-child(even){background:var(--paper-2)}
+td.num-col,th.num-col{text-align:right;white-space:nowrap;font-family:"Oswald",Arial,sans-serif}
+
+/* ---------- Zeitleiste ---------- */
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--gold)}
+.timeline li{position:relative;padding:0 0 1.5rem 1.5rem}
+.timeline li::before{
+  content:"";position:absolute;left:-9px;top:.5rem;width:14px;height:14px;
+  background:var(--red);border:2px solid var(--ink);border-radius:50%;
+}
+.timeline .year{
+  font-family:"Oswald",Arial,sans-serif;letter-spacing:.1em;color:var(--red-dark);
+  display:block;font-size:.95rem;
+}
+
+/* ---------- Auszeichnungen ---------- */
+.badges{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.badges li{
+  border:2px solid var(--ink);background:var(--paper);padding:.45rem .9rem;
+  font-family:"Oswald",Arial,sans-serif;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.band-gold .badges li{background:var(--paper)}
+
+/* ---------- Öffnungszeiten ---------- */
+.hours{list-style:none;margin:0;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;border-bottom:1px dotted var(--line)}
+.hours b{font-weight:400;font-family:"Oswald",Arial,sans-serif;letter-spacing:.06em}
+
+/* ---------- Hinweis-Box ---------- */
+.note{
+  border-left:6px solid var(--red);background:var(--paper-2);padding:1rem 1.2rem;margin:1.4rem 0;
+}
+.note p:last-child{margin-bottom:0}
+
+/* ---------- Formulare ---------- */
+form{margin-top:1.4rem}
+fieldset{border:2px solid var(--ink);padding:1.2rem;margin:0 0 1.4rem;background:var(--paper)}
+legend{
+  font-family:"Oswald",Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;
+  font-size:.85rem;padding:0 .5rem;background:var(--gold);border:2px solid var(--ink);color:var(--ink);
+}
+.field{margin-bottom:1rem}
+.field label{display:block;font-family:"Oswald",Arial,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;font-size:.78rem;margin-bottom:.32rem;color:var(--ink)}
+input,select,textarea{
+  width:100%;font:inherit;font-size:.98rem;padding:.62rem .7rem;background:#fffdf6;
+  border:2px solid var(--line);color:var(--ink);border-radius:0;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--red);outline:none}
+textarea{min-height:120px;resize:vertical}
+.field-row{display:grid;gap:1rem}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem}
+.check input{width:auto;margin-top:.25rem}
+.form-hint{font-size:.85rem;color:var(--muted)}
+.form-msg{
+  display:none;margin-top:1rem;border:2px solid var(--green);background:var(--paper-2);
+  padding:.9rem 1.1rem;color:var(--ink);
+}
+.form-msg.show{display:block}
+
+/* ---------- Akkordeon ---------- */
+details{border:2px solid var(--ink);background:var(--paper);margin-bottom:.7rem}
+summary{
+  cursor:pointer;padding:.85rem 1.1rem;font-family:"Oswald",Arial,sans-serif;
+  text-transform:uppercase;letter-spacing:.06em;font-size:.95rem;color:var(--ink);
+}
+summary::marker{color:var(--red)}
+details[open] summary{border-bottom:1px solid var(--line)}
+.details-body{padding:1rem 1.1rem}
+.details-body p:last-child{margin-bottom:0}
+
+/* ---------- Bild ---------- */
+figure{margin:0}
+.figure-framed{border:2px solid var(--ink);background:var(--paper-2);padding:.9rem;box-shadow:var(--shadow)}
+.figure-framed figcaption{font-size:.84rem;color:var(--muted);margin-top:.6rem}
+
+/* ---------- Karte (SVG) ---------- */
+.map{border:2px solid var(--ink);background:var(--paper-2);box-shadow:var(--shadow)}
+.map svg{display:block;width:100%;height:auto}
+
+/* ---------- Fuß ---------- */
+.site-foot{background:var(--ink);color:#e6dcc6;padding-block:2.6rem 1.4rem;border-top:6px double var(--gold)}
+.site-foot h3{color:var(--gold);font-size:.95rem}
+.site-foot a{color:#f0e4c8}
+.site-foot a:hover{color:var(--gold)}
+.foot-grid{display:grid;gap:1.8rem}
+.foot-list{list-style:none;margin:0;padding:0;display:grid;gap:.35rem;font-size:.93rem}
+.foot-bottom{
+  margin-top:2rem;border-top:1px solid #43403a;padding-top:1.1rem;
+  font-size:.8rem;color:#c8bda6;display:grid;gap:.5rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width:640px){
+  .g2{grid-template-columns:1fr 1fr}
+  .field-row{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .hero-grid{grid-template-columns:1.25fr .75fr;align-items:end;gap:3rem}
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr}
+  .nav-toggle{display:none}
+  .nav{display:block}
+  .nav ul{display:flex;flex-wrap:wrap;gap:.2rem;padding:0}
+  .nav a{border-bottom:2px solid transparent;padding:.5rem .62rem;font-size:.83rem}
+  .head-row{padding-block:1.1rem}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  .split-wide{display:grid;grid-template-columns:1.35fr .65fr;gap:3rem;align-items:start}
+  .menu-columns{columns:2;column-gap:3rem}
+  .menu-columns .menu-block{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+@media print{
+  .preview-bar,.nav,.btn-row{display:none}
+}

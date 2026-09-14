@@ -3,7 +3,7 @@
    Schriften: Barlow Condensed (Display) + Inter (Text) */
 :root{
   --ink:#14181d; --ink2:#1b2127; --steel:#2a313a; --steel-l:#4b5663;
-  --sig:#ff6a13; --sig-d:#c44b00; --sand:#f4f2ee; --paper:#fffdfa;
+  --sig:#ff6a13; --sig-d:#b34400; --sand:#f4f2ee; --paper:#fffdfa;
   --line:#d6d1c8; --line-d:#39424c; --txt:#20262d; --muted:#5c6773;
   --w:76rem; --pad:clamp(1rem,4vw,2.5rem);
 }
@@ -87,8 +87,9 @@ img{max-width:100%;height:auto;display:block}
   background:radial-gradient(circle,rgba(255,106,19,.22),transparent 62%)}
 .hero__in{position:relative;z-index:1;max-width:46rem}
 .kicker{font:600 .78rem/1 Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.26em;
-  color:var(--sig);margin:0 0 1.1rem;display:flex;align-items:center;gap:.7rem}
-.kicker::before{content:"";width:2.4rem;height:2px;background:var(--sig)}
+  color:var(--sig-d);margin:0 0 1.1rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:"";width:2.4rem;height:2px;background:currentColor}
+.hero .kicker,.sec--dark .kicker,.panel--dark .kicker{color:var(--sig)}
 .hero h1{margin-bottom:.35em}
 .hero h1 em{font-style:normal;color:var(--sig)}
 .hero__lead{font-size:clamp(1.05rem,1rem + .5vw,1.3rem);color:#cfd6de;max-width:38rem}
@@ -126,8 +127,11 @@ img{max-width:100%;height:auto;display:block}
 .card p:last-child{margin-bottom:0}
 .card ul{padding-left:1.1rem;margin-bottom:0}
 .card li{margin-bottom:.25rem}
-.card--sig{background:var(--sig);border-color:var(--sig)}
-.card--sig h3,.card--sig p{color:#14181d}
+.card--sig{background:var(--sig);border-color:var(--sig);color:#14181d}
+.card--sig h3,.card--sig p,.card--sig li{color:#14181d}
+.card--sig .card__no{color:#14181d}
+.card--sig a{color:#14181d;text-decoration-thickness:.1em}
+.card--sig a:hover{color:#3f1a00}
 .sec--dark .card{background:var(--ink2);border-color:var(--line-d);color:var(--sand)}
 .sec--dark .card__no{color:var(--sig)}
 
@@ -218,3 +222,19 @@ img{max-width:100%;height:auto;display:block}
 .muster{background:#fff4ec;border:2px solid var(--sig);padding:1rem 1.2rem;margin:0 0 2rem}
 .muster p{margin:0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- Schutz: Buttons behalten ihre Farben in jedem Kontext ----------
+   (sonst gewinnen .nav a / .sec--dark a / .panel--dark a gegen .btn--*) */
+a.btn--sig{background:var(--sig);color:#14181d;border-color:var(--sig)}
+a.btn--sig:hover{background:#ff7f33;color:#14181d}
+a.btn--dark{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+a.btn--dark:hover{color:var(--sig)}
+a.btn--ghost{color:inherit;border-color:currentColor}
+/* Hover-Zustaende: Nav-/Basis-Linkfarben duerfen Buttons nicht einfaerben */
+.nav a.btn--sig,.nav a.btn--sig:hover{color:#14181d;background:var(--sig)}
+a.btn--ghost:hover{color:inherit;background:transparent}
+a.btn--sig:hover{background:#ff7f33;color:#14181d}
+a.btn--dark:hover{background:var(--ink);color:var(--sig)}
+/* Dunkle Panels in hellen Abschnitten: Hilfstexte aufhellen */
+.panel--dark .hint,.panel--dark .speclist span{color:#aab4be}
+.panel--dark .speclist,.panel--dark .speclist li{border-color:var(--line-d)}

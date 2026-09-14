@@ -6,6 +6,7 @@
   --lake:#0e5159;
   --lake-deep:#0a3236;
   --brass:#b47426;
+  --brass-dark:#7a4e0c;
   --brass-light:#d79b46;
   --cream:#faf5ec;
   --sand:#ece1cd;
@@ -28,7 +29,8 @@ body{
 }
 img{max-width:100%;height:auto;display:block}
 a{color:var(--lake);text-decoration-thickness:1px;text-underline-offset:3px}
-a:hover{color:var(--brass)}
+a:hover{color:var(--brass-dark)}
+.band-deep a:not(.btn):hover,.hero a:not(.btn):hover{color:#fff}
 h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2.1rem,1.45rem + 3.1vw,3.9rem)}
 h2{font-size:clamp(1.6rem,1.25rem + 1.6vw,2.5rem)}
@@ -48,7 +50,7 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
 .band-paper{background:var(--paper)}
 .band-deep{background:var(--lake-deep);color:#eef6f4}
 .band-deep h2,.band-deep h3{color:#fff}
-.band-deep a{color:var(--brass-light)}
+.band-deep a:not(.btn){color:var(--brass-light)}
 
 /* Kopfbereich */
 .preview-bar{
@@ -76,7 +78,7 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
   display:block;padding:.6rem .2rem;color:var(--ink);text-decoration:none;font-weight:500;
   border-bottom:1px solid var(--line);
 }
-#nav a[aria-current="page"]{color:var(--brass)}
+#nav a[aria-current="page"]{color:var(--brass-dark)}
 .head-cta{display:none}
 
 @media (min-width:62rem){
@@ -96,10 +98,10 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
   font-family:var(--sans);transition:transform .15s,background .15s;
 }
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--brass);color:#20130a}
-.btn-primary:hover{background:var(--brass-light);color:#20130a}
-.btn-ghost{border-color:currentColor;color:var(--ink);background:transparent}
-.band-deep .btn-ghost{color:#fff}
+a.btn-primary,button.btn-primary,.btn-primary{background:var(--brass);color:#20130a}
+a.btn-primary:hover,button.btn-primary:hover,.btn-primary:hover{background:var(--brass-light);color:#20130a}
+a.btn-ghost,button.btn-ghost,.btn-ghost{border-color:currentColor;color:var(--ink);background:transparent}
+.band-deep a.btn-ghost,.hero a.btn-ghost,.band-deep .btn-ghost,.hero .btn-ghost{color:#fff}
 .btn-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
 
 /* Hero */
@@ -110,8 +112,9 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
 .hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.4)}
 .eyebrow{
   display:inline-block;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--brass-light);margin-bottom:1rem;font-weight:700;
+  color:var(--brass-dark);margin-bottom:1rem;font-weight:700;
 }
+.hero .eyebrow,.band-deep .eyebrow,.factbar .eyebrow{color:var(--brass-light)}
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:-1px;height:38px;
   background:radial-gradient(120% 100% at 50% 100%,var(--cream) 60%,transparent 61%);
@@ -123,6 +126,7 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
 .factbar .wrap{display:grid;gap:1rem;padding-block:1.6rem;grid-template-columns:1fr}
 .factbar dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-light);font-weight:700}
 .factbar dd{margin:0;font-weight:500}
+.factbar a{color:var(--brass-light)}
 @media (min-width:48rem){.factbar .wrap{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
 
 /* Raster & Karten */
@@ -152,7 +156,8 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
 /* Zahlen */
 .numbers{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;text-align:center}
 @media (min-width:52rem){.numbers{grid-template-columns:repeat(4,1fr)}}
-.num{font-family:var(--serif);font-size:clamp(2.2rem,1.4rem + 3vw,3.4rem);line-height:1;color:var(--brass);display:block}
+.num{font-family:var(--serif);font-size:clamp(2.2rem,1.4rem + 3vw,3.4rem);line-height:1;color:var(--brass-dark);display:block}
+.band-deep .num{color:var(--brass-light)}
 .num-label{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .band-deep .num-label{color:#bcd3d0}
 
@@ -191,6 +196,8 @@ input,select,textarea{
 }
 textarea{min-height:7.5rem;resize:vertical}
 .hint{font-size:.82rem;color:var(--muted);margin-top:.3rem}
+.band-deep .hint,.hero .hint{color:#cfe0dd}
+.band-deep label,.hero label{color:#eaf3f1}
 fieldset{border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem;margin:0 0 1.4rem}
 legend{font-family:var(--serif);font-size:1.15rem;padding-inline:.5rem}
 .form-note{
