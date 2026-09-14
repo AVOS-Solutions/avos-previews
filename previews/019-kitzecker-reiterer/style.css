@@ -306,3 +306,7 @@ legend{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weigh
 .page-head .lede{max-width:58ch}
 
 @media print{.preview-bar,.site-head,.btn-row{display:none}}
+
+/* --- lange Wörter und Adressen sicher umbrechen --- */
+body{overflow-wrap:break-word}
+a,dd,td,th,li,p{overflow-wrap:anywhere}

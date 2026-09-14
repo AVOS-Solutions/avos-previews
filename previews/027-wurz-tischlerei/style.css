@@ -374,3 +374,10 @@ textarea { resize: vertical; }
   .cols--2 { columns: 2; }
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
+
+
+/* ------------------------------------------------- Umbruch-Sicherung */
+body { overflow-wrap: break-word; }
+.split > *, .hero-grid > *, .cards > *, .gallery > *, .book > *,
+.steps > *, .footer-grid > *, .field-row > *, .check-grid > * { min-width: 0; }
+.form, input, select, textarea { max-width: 100%; }

@@ -11,6 +11,7 @@
   --forest: #2f4a37;
   --forest-light: #4a6b53;
   --brass: #c6a15b;
+  --brass-ink: #7d5f1e;  /* Messington fuer Text auf hellem Grund (AA) */
   --brass-light: #e0c58f;
   --birch: #ede6da;
   --paper: #fbf9f5;
@@ -72,8 +73,9 @@ a:hover { color: var(--brass); }
 .eyebrow {
   font-family: var(--body); font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--brass); margin: 0 0 1rem;
+  color: var(--brass-ink); margin: 0 0 1rem;
 }
+.hero .eyebrow, .section-night .eyebrow { color: var(--brass); }
 .lede {
   font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
   font-weight: 300; color: var(--ink-soft);
@@ -255,8 +257,10 @@ figcaption {
   content: counter(gang, upper-roman);
   position: absolute; left: 0; top: 1.1rem;
   font-family: var(--display); font-size: 1.9rem; line-height: 1;
-  color: var(--brass); min-width: 3.2rem;
+  color: var(--brass-ink); min-width: 3.2rem;
 }
+.section-night .course-list li::before,
+.section-forest .course-list li::before { color: var(--brass); }
 .section-night .course-list li { border-bottom-color: var(--line-dark); }
 .course-list h3 { margin-bottom: 0.3em; }
 
@@ -284,16 +288,18 @@ figcaption {
 }
 .facts dt {
   flex: 0 0 10.5rem; font-size: 0.74rem; font-weight: 500;
-  letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass);
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass-ink);
 }
 .facts dd { margin: 0; flex: 1 1 13rem; }
 .section-night .facts div, .section-forest .facts div { border-bottom-color: var(--line-dark); }
+.section-night .facts dt, .section-forest .facts dt { color: var(--brass-light); }
 
 .checklist { list-style: none; margin: 0; padding: 0; }
 .checklist li { position: relative; padding: 0.35rem 0 0.35rem 1.8rem; }
 .checklist li::before {
-  content: "—"; position: absolute; left: 0; top: 0.35rem; color: var(--brass);
+  content: "—"; position: absolute; left: 0; top: 0.35rem; color: var(--brass-ink);
 }
+.section-night .checklist li::before, .section-forest .checklist li::before { color: var(--brass); }
 
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 1.5rem 0 0; padding: 0; }
 .tags li {
@@ -402,6 +408,52 @@ details.faq .faq-body { padding: 0 0 1.2rem; color: var(--ink-soft); font-size: 
   font-size: 0.78rem; color: #877e70;
   display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; justify-content: space-between;
 }
+
+/* --- Schaltflaechen: Farbe gegen Abschnitts-Linkregeln absichern ---
+   .section-night a und .section-forest a haben hoehere Spezifitaet als
+   .btn* und wuerden sonst die Beschriftung unsichtbar faerben. ------- */
+
+a.btn, button.btn,
+.hero a.btn, .section-night a.btn, .section-forest a.btn,
+.section-night button.btn, .section-forest button.btn {
+  background: var(--forest); border-color: var(--forest); color: #fff;
+}
+a.btn:hover, button.btn:hover,
+.hero a.btn:hover, .section-night a.btn:hover, .section-forest a.btn:hover {
+  background: #23382a; border-color: #23382a; color: #fff;
+}
+
+a.btn-brass, button.btn-brass,
+.hero a.btn-brass, .section-night a.btn-brass, .section-forest a.btn-brass,
+.section-night button.btn-brass, .section-forest button.btn-brass {
+  background: var(--brass); border-color: var(--brass); color: var(--night);
+}
+a.btn-brass:hover, button.btn-brass:hover,
+.hero a.btn-brass:hover, .section-night a.btn-brass:hover, .section-forest a.btn-brass:hover {
+  background: var(--brass-light); border-color: var(--brass-light); color: var(--night);
+}
+
+a.btn-outline, button.btn-outline {
+  background: transparent; color: var(--forest); border-color: var(--forest);
+}
+a.btn-outline:hover, button.btn-outline:hover {
+  background: var(--forest); color: #fff; border-color: var(--forest);
+}
+
+a.btn-outline-light, button.btn-outline-light,
+.hero a.btn-outline-light, .section-night a.btn-outline-light, .section-forest a.btn-outline-light {
+  background: transparent; color: var(--brass-light); border-color: var(--brass-light);
+}
+a.btn-outline-light:hover, button.btn-outline-light:hover,
+.hero a.btn-outline-light:hover, .section-night a.btn-outline-light:hover,
+.section-forest a.btn-outline-light:hover {
+  background: var(--brass-light); color: var(--night); border-color: var(--brass-light);
+}
+
+/* Grosse Telefonnummer */
+.section-paper .phone-big, .section-sand .phone-big { color: var(--forest); }
+.section-paper .phone-big:hover, .section-sand .phone-big:hover { color: var(--brass-ink); }
+.section-night .phone-big, .section-forest .phone-big, .hero .phone-big { color: var(--brass-light); }
 
 /* --- Breakpoints ------------------------------------------ */
 

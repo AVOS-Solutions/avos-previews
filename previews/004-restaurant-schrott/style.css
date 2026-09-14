@@ -121,7 +121,8 @@ strong{font-weight:700}
 .section--paper{background:var(--paper);border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12)}
 .section--ink{background:var(--ink);color:#F2E7D8}
 .section--ink h2,.section--ink h3{color:#FFF8EE}
-.section--ink a{color:var(--ochre)}
+.section--ink a:not(.btn){color:var(--ochre)}
+.section--ink a:not(.btn):hover{color:#F0D08C}
 .section-head{max-width:62ch;margin-bottom:2.2rem}
 .section-head p{color:var(--ink-70)}
 .section--ink .section-head p{color:#D9C7B2}
@@ -152,6 +153,13 @@ strong{font-weight:700}
 .menu-list .m-price{font-family:var(--font-display);font-weight:900;white-space:nowrap;color:var(--red)}
 .menu-list .m-desc{display:block;font-size:.9rem;color:var(--ink-70);font-weight:400;margin-top:.15rem}
 .menu-list li.is-block{flex-direction:column;align-items:flex-start;gap:.1rem}
+
+.allerg{display:inline-block;font-size:.7rem;letter-spacing:.1em;font-weight:600;color:var(--ink-70);border:1px solid var(--ink-12);background:rgba(42,24,16,.04);border-radius:4px;padding:.05rem .36rem;margin-left:.4rem;white-space:nowrap;vertical-align:.06em}
+.section--ink .allerg{color:#D9C7B2;border-color:rgba(255,248,238,.28);background:rgba(255,248,238,.07)}
+.menu-group{margin-bottom:2.4rem}
+.menu-group>h3{margin-bottom:.2rem}
+.menu-group>p.muted{margin-bottom:.9rem}
+.sides{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 0}
 
 /* ---------- Zeiten ---------- */
 .hours{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
@@ -233,6 +241,30 @@ details.acc .acc__body{padding:0 1.1rem 1.1rem}
 .mt0{margin-top:0}
 .muted{color:var(--ink-70)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- Kontrast-Absicherung (WCAG AA) ---------- */
+.section--ink .btn--ghost{background:transparent;color:#FFF8EE;border-color:rgba(255,248,238,.6)}
+.section--ink .btn--ghost:hover{background:#FFF8EE;border-color:#FFF8EE;color:var(--ink)}
+.section--ink .muted,.section--ink p.muted,.section--ink .fact span,.section--ink .crumbs,.section--ink .crumbs a{color:#D9C7B2}
+.section--ink .hours{border-top-color:rgba(255,248,238,.6)}
+.section--ink .hours li{border-bottom-color:rgba(255,248,238,.2)}
+.section--ink .hours li.is-closed .t{color:var(--ochre)}
+.section--ink .card__price,.section--ink .menu-list .m-price{color:var(--ochre)}
+.section--ink .menu-list li,.section--ink .menu-list .m-dots{border-bottom-color:rgba(255,248,238,.3)}
+.section--ink .menu-list .m-desc{color:#D9C7B2}
+.section--ink .note{color:#F7EDDD;border-color:rgba(255,248,238,.45)}
+.section--ink .note b{color:var(--ochre)}
+.section--ink .tag,.section--ink .tag--moss{background:rgba(217,164,65,.22);color:var(--ochre)}
+.section--ink details.acc{background:rgba(255,248,238,.06);border-color:rgba(255,248,238,.22)}
+.section--ink details.acc>summary{color:#FFF8EE}
+.section--ink details.acc>summary::after{color:var(--ochre)}
+/* Helle Karten und Formulare in dunklen Abschnitten behalten dunkle Schrift */
+.section--ink .form{color:var(--ink)}
+.section--ink .form h2,.section--ink .form h3,.section--ink .form h4{color:var(--ink)}
+.section--ink .form label,.section--ink .form .check label,.section--ink .form .form-note{color:var(--ink)}
+.section--ink .form .field small,.section--ink .form .muted{color:var(--ink-70)}
+.section--ink .form a:not(.btn){color:var(--red)}
+.section--ink .form a:not(.btn):hover{color:var(--red-dark)}
 
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms !important;transition-duration:.01ms !important}

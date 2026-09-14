@@ -480,3 +480,11 @@ textarea { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .btn:hover { transform: none; }
 }
+
+
+/* ------------------------------------------------- Umbruch-Sicherung */
+body { overflow-wrap: break-word; }
+.split > *, .hours-block > *, .tile-grid > *, .card-row > *, .info-grid > *,
+.room-grid > *, .job-grid > *, .contact-grid > *, .feature-list > *,
+.award-grid > *, .footer-grid > *, .timeline li > * { min-width: 0; }
+.form, input, select, textarea { max-width: 100%; }

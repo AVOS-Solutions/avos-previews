@@ -279,3 +279,7 @@ hr.rule{border:0;height:2px;background:var(--ink);margin:0}
 .band-ox a.btn-white,.band-ox a.btn-white:hover{color:var(--ox-dark)}
 .band-ox a.btn-out{color:#fff;border-color:#fff}
 .band-ox a.btn-out:hover{background:#fff;color:var(--ox-dark)}
+
+/* --- lange Wörter und Adressen sicher umbrechen --- */
+body{overflow-wrap:break-word}
+a,dd,td,th,li,p{overflow-wrap:anywhere}

@@ -448,3 +448,7 @@ blockquote { margin: 0 0 1.2rem; padding-left: 1.2rem; border-left: 3px solid va
 .site-footer a.btn--gold { color: #1A1606; }
 body { overflow-wrap: break-word; }
 .legal p, .legal li, .footer-grid p { overflow-wrap: anywhere; }
+
+/* ---------- Schmale Viewports: Raster dürfen schrumpfen ---------- */
+.split > *, .grid > *, .form > *, .field, .stack > * { min-width: 0; }
+.field input, .field select, .field textarea { width: 100%; max-width: 100%; }

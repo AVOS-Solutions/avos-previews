@@ -363,3 +363,11 @@ textarea { resize: vertical; }
   .hero-media img { height: 100%; min-height: 460px; }
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
 }
+
+
+/* ------------------------------------------------- Umbruch-Sicherung */
+body { overflow-wrap: break-word; }
+.grid-2 > *, .grid-3 > *, .grid-4 > *, .hero-grid > *, .gallery > *,
+.steps > *, .stats > *, .footer-grid > *, .field-row > * { min-width: 0; }
+.table-wrap { max-width: 100%; }
+.form, input, select, textarea { max-width: 100%; }

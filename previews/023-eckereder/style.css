@@ -319,3 +319,7 @@ a.btn--line:hover, .cta a.btn--line:hover { color: #F8F2E7; }
 
 .section--wood a.btn--light { color: #F8F2E7; }
 .section--wood a.btn--light:hover { color: #FFFFFF; }
+
+/* ---------- Schmale Viewports: Raster dürfen schrumpfen ---------- */
+.split > *, .grid > *, .form > *, .field, .stack > * { min-width: 0; }
+.field input, .field select, .field textarea { width: 100%; max-width: 100%; }

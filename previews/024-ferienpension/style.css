@@ -328,3 +328,21 @@ figcaption { font-size: .86rem; color: var(--muted); margin-top: .6rem; }
 .price-xl { font-family: "Outfit", sans-serif; font-size: 2rem; font-weight: 600; }
 .section--deep .card .big, .card--deep .big { color: #E4EEF0; }
 .section--deep .card .small, .card--deep .small { color: #B9CED2; }
+
+/* ---------- Kontrast: Buttons behalten ihre Textfarbe in jedem Kontext ---------- */
+a.btn--sun, .section--deep a.btn--sun, .section--aqua a.btn--sun, .section--green a.btn--sun,
+.cta a.btn--sun, .card--sun a.btn--sun, .mainnav a.btn--sun, .mainnav a.btn--sun[aria-current="page"] { color: #2A1F00; }
+a.btn--deep, .section--deep a.btn--deep, .cta a.btn--deep, .card--sun a.btn--deep, .section--aqua a.btn--deep { color: #FFF8EC; }
+a.btn--aqua, .section--deep a.btn--aqua, .cta a.btn--aqua { color: #FFFFFF; }
+a.btn--outline, .cta a.btn--outline, .section--aqua a.btn--outline, .card a.btn--outline { color: var(--tief); }
+a.btn--outline:hover, .cta a.btn--outline:hover { color: #FFF8EC; }
+.section--deep a.btn--light { color: #FFF8EC; }
+.section--deep a.btn--light:hover { color: #FFFFFF; }
+
+/* ---------- Schmale Viewports: Raster dürfen schrumpfen ---------- */
+.split > *, .grid > *, .form > *, .field, .stack > *, .statrow > *, .factbar > *, .bookbar > * { min-width: 0; }
+.field input, .field select, .field textarea, .bookbar input, .bookbar select { width: 100%; max-width: 100%; }
+.pricetable th, .hours th { word-break: break-word; }
+@media (max-width: 520px) {
+  .pricetable td:last-child { white-space: normal; }
+}

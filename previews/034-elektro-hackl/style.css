@@ -309,3 +309,6 @@ a.nav-cta{display:none}
 h1,h2,h3,h4,p,li,dd,dt,td,th,summary,label,figcaption,address{overflow-wrap:break-word}
 .duo>*,.grid>*,.cards>*,.hero .inner>*,.sparten>*{min-width:0}
 h1,h2,h3,h4{hyphens:auto;-webkit-hyphens:auto}
+
+/* --- Leitungs-Liste: Text immer in Spalte 2 --- */
+.trace li>b,.trace li>span{grid-column:2}

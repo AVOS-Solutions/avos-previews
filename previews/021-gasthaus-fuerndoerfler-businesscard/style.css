@@ -275,3 +275,7 @@ legend{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weigh
 .band-forest .faq summary,.band-forest .faq p{color:var(--ink)}
 .band-forest .card-forest,.band-forest .card-forest .card-foot,.band-forest .card-forest li{color:#e7e0cf}
 .band-forest .card-forest a{color:var(--gold-light)}
+
+/* --- lange Wörter und Adressen sicher umbrechen --- */
+body{overflow-wrap:break-word}
+a,dd,td,th,li,p{overflow-wrap:anywhere}

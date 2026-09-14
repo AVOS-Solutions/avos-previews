@@ -28,11 +28,12 @@ img{max-width:100%;height:auto;display:block}
 a{color:var(--blue)}
 a:hover{color:#12385E}
 h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.08;margin:0 0 .55em;
-  text-transform:uppercase;letter-spacing:.005em;overflow-wrap:anywhere}
+  text-transform:uppercase;letter-spacing:.005em;overflow-wrap:break-word}
 h1{font-size:clamp(2.2rem,1.3rem + 4vw,4.4rem);font-weight:600}
 h2{font-size:clamp(1.7rem,1.2rem + 2.2vw,2.9rem)}
 h3{font-size:clamp(1.15rem,1rem + .8vw,1.5rem);font-weight:500}
 h4{font-size:1.02rem;font-weight:500}
+@media (max-width:620px){h1,h2,h3,h4{overflow-wrap:anywhere}}
 p{margin:0 0 1em}
 ul{margin:0 0 1em;padding-left:1.15em}
 li{margin-bottom:.3em}
@@ -124,7 +125,9 @@ li{margin-bottom:.3em}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(105deg,rgba(10,18,26,.94) 0%,rgba(10,18,26,.86) 45%,rgba(10,18,26,.45) 100%)}
 .hero .wrap{position:relative;padding:clamp(3.5rem,9vw,7.5rem) 0 clamp(3rem,7vw,6rem);max-width:min(1200px,100% - 2.5rem)}
-.hero h1{color:#fff;max-width:15ch;margin-bottom:.5em}
+.hero h1{color:#fff;max-width:13ch;margin-bottom:.35em}
+.hero .claim{font-family:var(--f-display);font-weight:400;text-transform:uppercase;letter-spacing:.04em;
+  font-size:clamp(1rem,.85rem + .7vw,1.45rem);color:#F0A877;margin:0 0 1.2rem;max-width:30ch}
 .hero .lead{max-width:52ch;color:#D7E2ED}
 .hero-meta{display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:2.4rem;padding-top:1.6rem;
   border-top:1px solid rgba(255,255,255,.25);font-family:var(--f-display);letter-spacing:.1em;

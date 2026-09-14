@@ -8,8 +8,9 @@
   --petrol: #0f4c5c;
   --petrol-dark: #093642;
   --petrol-light: #2c7186;
-  --copper: #c05b2b;
-  --copper-light: #e08a55;
+  --copper: #a8481c;        /* dunkler: Text auf Sand und Weiss auf Kupfer erfuellen AA */
+  --copper-mid: #c05b2b;    /* nur fuer Flaechen/Zierlinien, nicht fuer Text */
+  --copper-light: #f2b184;  /* heller: Text auf Petrol erfuellt AA */
   --sand: #efe3d2;
   --sand-soft: #f8f1e7;
   --paper: #fffdfa;
@@ -155,7 +156,7 @@ a:hover { color: var(--petrol); }
 .btn-ghost { background: transparent; color: var(--petrol); }
 .btn-ghost:hover { background: var(--petrol); color: #fff; }
 .btn-copper { background: var(--copper); border-color: var(--copper); }
-.btn-copper:hover { background: #a64a1f; border-color: #a64a1f; }
+.btn-copper:hover { background: #8c3a14; border-color: #8c3a14; }
 .btn-on-dark { background: #fff; border-color: #fff; color: var(--petrol-dark); }
 .btn-on-dark:hover { background: var(--sand); border-color: var(--sand); color: var(--petrol-dark); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.7rem; }
@@ -247,6 +248,9 @@ figcaption {
 .hours td { font-weight: 600; color: var(--petrol-dark); white-space: nowrap; }
 .hours tr.is-closed td, .hours tr.is-closed th { color: var(--copper); }
 .section-petrol .hours th, .section-petrol .hours td { border-bottom-color: rgba(255,255,255,0.2); color: #e6f2f5; }
+.section-petrol .hours tr.is-closed td, .section-petrol .hours tr.is-closed th,
+.callout .hours tr.is-closed td, .callout .hours tr.is-closed th { color: var(--copper-light); }
+.callout .hours th, .callout .hours td { color: #fff; border-bottom-color: rgba(255,255,255,0.28); }
 
 /* --- Fakten ----------------------------------------------- */
 
@@ -399,6 +403,53 @@ details.faq .faq-body { padding: 0 1.3rem 1.2rem; color: var(--ink-soft); }
   font-family: var(--display); font-size: 0.8rem; color: #91b3bd;
   display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; justify-content: space-between;
 }
+
+/* --- Schaltflaechen: Farbe gegen Abschnitts-Linkregeln absichern ---
+   .section-petrol a und .callout a haben hoehere Spezifitaet als .btn*
+   und wuerden sonst die Beschriftung unsichtbar faerben. ------------- */
+
+a.btn, button.btn,
+.section-petrol a.btn, .callout a.btn,
+.section-petrol button.btn, .callout button.btn { color: #fff; }
+a.btn:hover, button.btn:hover,
+.section-petrol a.btn:hover, .callout a.btn:hover {
+  background: var(--petrol-dark); border-color: var(--petrol-dark); color: #fff;
+}
+
+a.btn-copper, button.btn-copper,
+.section-petrol a.btn-copper, .callout a.btn-copper,
+.section-petrol button.btn-copper, .callout button.btn-copper {
+  background: var(--copper); border-color: var(--copper); color: #fff;
+}
+a.btn-copper:hover, button.btn-copper:hover,
+.section-petrol a.btn-copper:hover, .callout a.btn-copper:hover {
+  background: #8c3a14; border-color: #8c3a14; color: #fff;
+}
+
+a.btn-on-dark, button.btn-on-dark,
+.section-petrol a.btn-on-dark, .callout a.btn-on-dark,
+.section-petrol button.btn-on-dark, .callout button.btn-on-dark {
+  background: #fff; border-color: #fff; color: var(--petrol-dark);
+}
+a.btn-on-dark:hover, button.btn-on-dark:hover,
+.section-petrol a.btn-on-dark:hover, .callout a.btn-on-dark:hover {
+  background: var(--sand); border-color: var(--sand); color: var(--petrol-dark);
+}
+
+a.btn-ghost, button.btn-ghost { background: transparent; color: var(--petrol); border-color: var(--petrol); }
+a.btn-ghost:hover, button.btn-ghost:hover { background: var(--petrol); color: #fff; border-color: var(--petrol); }
+
+.section-petrol a.btn-ghost, .callout a.btn-ghost {
+  background: transparent; color: #fff; border-color: #fff;
+}
+.section-petrol a.btn-ghost:hover, .callout a.btn-ghost:hover {
+  background: #fff; color: var(--petrol-dark); border-color: #fff;
+}
+
+/* Grosse Telefonnummer: dunkel auf hellem, hell auf farbigem Grund */
+.section-paper .phone-big, .section-sand .phone-big { color: var(--copper); }
+.section-paper .phone-big:hover, .section-sand .phone-big:hover { color: var(--petrol); }
+.section-petrol .phone-big, .callout .phone-big { color: #fff; }
 
 /* --- Breakpoints ------------------------------------------ */
 
