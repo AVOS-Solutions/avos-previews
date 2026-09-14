@@ -274,3 +274,5 @@ h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}
   h2{font-size:clamp(1.5rem,1rem + 2.4vw,2.05rem)}
   h3{font-size:clamp(1.15rem,1rem + 1vw,1.4rem)}
 }
+/* Grid-Spalten duerfen schrumpfen (sonst sprengen breite Tabellen das Layout) */
+.split>*,.grid>*,.hero__grid>*,.foot-grid>*{min-width:0}
