@@ -241,3 +241,33 @@ strong{font-weight:700}
 .doc{max-width:75ch}
 .muster{background:#fdf3d8; border:1px solid var(--amber); border-left-width:5px; padding:1rem 1.2rem; border-radius:var(--rad); color:#4a3406}
 .muster b{color:#3a2802}
+
+/* ---------- Kontrast-Korrekturen: helle Bausteine auf dunklen Bändern ---------- */
+.band--dark a.btn--primary,.band--green a.btn--primary,.hero a.btn--primary{color:#1b1410}
+.band--dark a.btn--light,.band--green a.btn--light,.hero a.btn--light{color:#1b1410}
+.band--dark a.btn--dark,.band--green a.btn--dark{color:var(--cream)}
+.band--dark a.btn--outline,.band--green a.btn--outline{color:var(--ink)}
+.card--dark a.btn--primary{color:#1b1410}
+.card--dark a.btn--light{color:#1b1410}
+.card--dark a,.band--dark .card--dark a{color:var(--amber)}
+.band--green a:not(.btn){color:#ffe6b0}
+
+.band--dark .card:not(.card--dark),
+.band--green .card:not(.card--dark),
+.band--dark .form,.band--green .form,
+.band--dark .imgcard,.band--green .imgcard,
+.band--dark .map,.band--green .map{color:var(--ink-2)}
+.band--dark .card:not(.card--dark) h2,.band--dark .card:not(.card--dark) h3,
+.band--green .card:not(.card--dark) h2,.band--green .card:not(.card--dark) h3,
+.band--dark .form h3,.band--green .form h3,
+.band--dark .imgcard h3,.band--green .imgcard h3{color:var(--ink)}
+.band--dark .card:not(.card--dark) a,.band--green .card:not(.card--dark) a,
+.band--dark .form a,.band--green .form a{color:var(--amber-dk)}
+.band--dark .card:not(.card--dark) .muted,.band--green .card:not(.card--dark) .muted,
+.band--dark .card:not(.card--dark) .specs dd,.band--green .card:not(.card--dark) .specs dd{color:var(--muted)}
+.band--dark .card:not(.card--dark) .card__kicker,.band--green .card:not(.card--dark) .card__kicker{color:var(--amber-dk)}
+.band--dark .card:not(.card--dark) .hours td,.band--green .card:not(.card--dark) .hours td{color:var(--muted)}
+.band--dark .card:not(.card--dark) .hours caption,.band--green .card:not(.card--dark) .hours caption{color:var(--ink)}
+.band--dark .card:not(.card--dark) .hours th,.band--dark .card:not(.card--dark) .hours td,
+.band--green .card:not(.card--dark) .hours th,.band--green .card:not(.card--dark) .hours td{border-bottom-color:var(--line)}
+.band--dark .formnote,.band--green .formnote{color:#f4f7f2}

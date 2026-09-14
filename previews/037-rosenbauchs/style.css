@@ -74,6 +74,8 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 .nav a{font-size:.83rem;letter-spacing:.07em;text-transform:uppercase;color:var(--text);
   text-decoration:none;padding:.35rem 0;border-bottom:2px solid transparent;font-weight:500}
 .nav a:hover,.nav a[aria-current="page"]{border-bottom-color:var(--brass);color:var(--brass)}
+.nav a.btn{color:var(--paper);border-bottom:1px solid var(--brass)}
+.nav a.btn:hover{color:var(--paper);border-bottom-color:var(--ink)}
 .nav-toggle{display:none;background:var(--ink);color:var(--cream);border:0;font-family:var(--sans);
   font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.62rem .95rem;cursor:pointer}
 
@@ -167,7 +169,7 @@ section{padding-block:clamp(3rem,7vw,6rem)}
 .hours li{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between;
   padding:.95rem 0;border-bottom:1px solid var(--line);margin:0}
 .hours .day{font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:.84rem;flex:0 0 auto}
-.hours .time{text-align:right;font-size:.96rem;color:var(--muted);flex:1 1 auto}
+.hours .time{text-align:right;font-size:.96rem;color:var(--muted);flex:1 1 14rem}
 .hours .closed{color:var(--rose);font-weight:700}
 .band .hours{border-color:var(--line-dark)}
 .band .hours li{border-color:var(--line-dark)}
