@@ -170,6 +170,7 @@ a.btn-outline,button.btn-outline,.btn-outline{border-color:currentColor;color:in
 .dotted{list-style:none;margin:0;padding:0}
 .dotted li{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;border-bottom:1px dotted var(--line);padding:.55rem 0;margin:0}
 .dotted .v{font-weight:800;white-space:nowrap;color:var(--moos)}
+@media (max-width:45.99rem){.dotted .v{white-space:normal;text-align:right}}
 .band-moos .dotted .v,.band-dark .dotted .v{color:#e8c98e}
 .supplier{list-style:none;margin:0;padding:0;columns:1}
 @media (min-width:48rem){.supplier{columns:2;column-gap:2.2rem}}

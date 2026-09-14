@@ -79,7 +79,7 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
   border-bottom:1px solid var(--line);
 }
 #nav a[aria-current="page"]{color:var(--brass-dark)}
-.head-cta{display:none}
+.btn.head-cta,.head-cta{display:none}
 
 @media (min-width:62rem){
   .nav-toggle{display:none}
@@ -88,7 +88,7 @@ section{padding-block:clamp(2.6rem,1.8rem + 3vw,4.6rem)}
   #nav a{border:0;padding:.3rem 0;position:relative}
   #nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--brass);transition:right .2s}
   #nav a:hover::after,#nav a[aria-current="page"]::after{right:0}
-  .head-cta{display:inline-flex;margin-left:1.2rem}
+  .btn.head-cta,.head-cta{display:inline-flex;margin-left:1.2rem}
 }
 
 /* Buttons */

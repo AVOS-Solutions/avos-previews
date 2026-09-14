@@ -166,6 +166,7 @@ a.btn-solid:hover,button.btn-solid:hover,.btn-solid:hover{background:var(--nacht
   border-bottom:1px solid var(--line);margin:0}
 .bg-night .rows li,.bg-ink .rows li{border-color:rgba(244,240,231,.16)}
 .rows .v{font-family:var(--display);font-size:1.08rem;white-space:nowrap;color:var(--bordeaux)}
+@media (max-width:45.99rem){.rows .v{white-space:normal;text-align:right}}
 .bg-night .rows .v,.bg-ink .rows .v{color:var(--messing-hell)}
 .tick{list-style:none;padding:0;margin:0}
 .tick li{padding-left:1.6rem;position:relative;margin-bottom:.6rem}

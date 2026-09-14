@@ -289,7 +289,9 @@ td.num,th.num{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:7
 .ticket .from small{font-family:var(--f-body);font-size:.8rem;font-weight:700;color:var(--muted);display:block}
 
 /* ---------- Zeitplan ---------- */
-.day{border:2px solid var(--sand-deep);border-radius:var(--r-md);background:var(--cream);overflow:hidden}
+.day{border:2px solid var(--sand-deep);border-radius:var(--r-md);background:var(--cream);overflow:hidden;color:var(--ink)}
+.sec--forest .day .muted,.sec--sand .day .muted{color:var(--muted)}
+.sec--forest .day a:not(.btn){color:var(--berry)}
 .day > h3{
   margin:0;padding:.75rem 1.1rem;background:var(--forest);color:#fdf7ec;
   font-size:1.02rem;
