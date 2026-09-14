@@ -278,3 +278,15 @@ legend{font-family:var(--ff-head);text-transform:uppercase;letter-spacing:.12em;
 .sec--dark .card a:not(.btn),.sec--dark .job a:not(.btn),.sec--dark .person a:not(.btn),.sec--dark .form a:not(.btn),
 .sec--copper .card a:not(.btn),.sec--copper .form a:not(.btn){color:var(--copper-d)}
 .sec--dark .card .card__num,.sec--copper .card .card__num{color:var(--copper-d)}
+
+/* Kopf-CTA erst ab Desktop sichtbar (muss nach .btn stehen) */
+.head-cta{display:none}
+@media(min-width:1000px){.head-cta{display:inline-flex}}
+
+/* Lange deutsche Woerter duerfen auf kleinen Schirmen umbrechen */
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}
+@media(max-width:620px){
+  h1{font-size:clamp(1.85rem,1.05rem + 3.6vw,2.6rem)}
+  h2{font-size:clamp(1.5rem,1rem + 2.4vw,2.05rem)}
+  h3{font-size:clamp(1.15rem,1rem + 1vw,1.4rem)}
+}

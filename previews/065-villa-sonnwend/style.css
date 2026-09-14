@@ -259,3 +259,18 @@ legend{font-family:var(--ff-display);font-size:1.25rem;color:var(--ink);padding:
 /* Hero liegt auf dunklem Grund – Auszeichnungsfarben aufhellen */
 .hero .eyebrow{color:var(--brass-l)}
 .hero .badge{color:#ece4d0}
+
+/* Kopf-CTA erst ab Desktop sichtbar (muss nach .btn stehen) */
+.head-cta{display:none}
+@media(min-width:1000px){.head-cta{display:inline-flex}}
+/* Mobile Sicherheit fuer Tabellen */
+table{max-width:100%}
+.info-list th,.info-list td{overflow-wrap:anywhere}
+
+/* Lange deutsche Woerter duerfen auf kleinen Schirmen umbrechen */
+h1,h2,h3,h4{overflow-wrap:break-word;hyphens:auto}
+@media(max-width:620px){
+  h1{font-size:clamp(1.85rem,1.05rem + 3.6vw,2.6rem)}
+  h2{font-size:clamp(1.5rem,1rem + 2.4vw,2.05rem)}
+  h3{font-size:clamp(1.15rem,1rem + 1vw,1.4rem)}
+}
