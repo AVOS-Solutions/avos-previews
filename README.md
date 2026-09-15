@@ -51,6 +51,8 @@ frontend/                        Next.js 16 App Router (Tailwind v4, ERP-Theme-T
                                  httpOnly-Cookie-Sessions, proxy.ts-Refresh wie avos-erp)
 previews/NNN-<slug>/             die 120 aktuellen Vorschauen (7–9 Seiten + style.css + img/)
 previews/206-energie-quelle/     Kundenprojekt Energie-Quelle als statischer Next.js-Export
+previews/20[789]-dieherzl-*/     drei Gestaltungsvarianten fuer dieselbe Herzl-Recherche
+generatoren/<betrieb>/           Renderer, wo mehrere Varianten aus einem Inhalt entstehen
 previews/NN-<slug>/              84 ältere Vorschauen der ersten Recherche-Runde (je 6 Seiten,
                                  ohne Bildmaterial); nicht im Katalog gelistet, als Referenz behalten
 businesses.json                  Katalog der gelisteten Vorschauen (120 Leads + Energie-Quelle)

@@ -1,0 +1,32 @@
+01.jpg	600x401	backhenderlsalat	Steirischer Backhenderlsalat: gebackene Hühnerstreifen auf bunten Blattsalaten
+02.jpg	600x401	kuerbiscremesuppe	Kürbiscremesuppe vom Hokkaidokürbis mit Sahnehäubchen und Kernöl
+03.jpg	600x401	kaesespaetzle	Käsespätzle mit Röstzwiebeln in der Eisenpfanne
+04.jpg	600x401	nudelpfandl	Bandnudel-Pfandl mit Kürbis, Spargel und Cherrytomaten
+05.jpg	600x401	rippchen-brett	Gegrillte Rippchen auf dem Holzbrett mit Gemüse und Dip
+06.jpg	640x427	roestzwiebeln	Gebratenes Fleisch unter einer Haube goldener Röstzwiebeln, Nahaufnahme
+07.jpg	960x640	pfanne-deftig	Deftiges aus der großen Pfanne: in Speck gewickelte Würstel und Bratkartoffeln
+08.jpg	640x426	brettljause	Brettljause mit Speck, Schinken, Grammeln und Kren
+09.jpg	960x640	kaeseplatte	Käseplatte mit Trauben, Erdbeeren und Feigensenf
+10.jpg	600x401	kaiserschmarrn	Kaiserschmarrn mit Zwetschkenröster
+11.jpg	600x401	topfencreme	Topfencreme mit Himbeeren im Glas auf einem Herz aus Holz
+12.jpg	800x521	kueche-anrichten	Die Küche richtet die Teller in der Stube an
+13.jpg	960x640	stube-tafel	Gedeckte Tafel in der Stube, Butzenfenster und Holzvertäfelung
+14.jpg	960x640	stube-gruen	Stube mit grünen Vorhängen, Vertäfelung und rundem Stammtisch
+15.jpg	960x640	gewoelbe	Gewölbekeller mit eingedeckten Tischen
+16.jpg	960x640	gewoelbe-gaeste	Gäste im Gewölbe unter Laternenlicht
+17.jpg	960x640	gastgarten	Gastgarten im Innenhof unter dem Baum
+18.jpg	960x640	eingang-blumen	Margeriten neben dem Eingang in der Prokopigasse
+19.jpg	960x640	team	Das Herzl-Team stößt mit einem Glas Wein an
+20.jpg	960x640	wein-einschenken	Steirischer Wein wird am Tisch eingeschenkt
+21.jpg	960x640	gaeste-fass	Gäste vor dem Haus am Weinfass
+22.jpg	960x640	auszeichnung	Urkunde und steirische Weine bei einer Auszeichnung
+23.jpg	900x600	graz-rathaus	Grazer Rathaus mit dem Erzherzog-Johann-Brunnen
+24.jpg	900x600	graz-glockenspiel	Der Glockenspielplatz, wenige Schritte vom Mehlplatz
+25.jpg	900x600	graz-luftbild	Luftbild der Grazer Altstadt mit ihren roten Dächern
+26.jpg	960x640	graz-gasse	Altstadtgasse mit Blumen und schmiedeeiserner Laterne
+27.jpg	900x600	graz-kirche	Gotisches Kircheninneres in der Grazer Altstadt
+28.jpg	500x700	presse-80jahre	Zeitungsbericht: „Herzl Weinstube: 80 Jahre sind noch nicht genug"
+29.jpg	500x700	presse-graz	Bericht der Stadtzeitung über die Herzl
+30.jpg	500x700	presse-1934	Pressestimmen zur Eröffnung, Grazer Zeitung 1934
+31.jpg	500x700	presse-eroeffnung	Zeitungsausschnitt zur Eröffnung der Weinstube Robert Herzl
+32.jpg	960x1280	presse-kulinarik	Kulinarik-News mit einem Beitrag über das Haus
