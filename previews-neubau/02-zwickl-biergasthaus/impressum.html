@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum – Zwickl Biergasthaus</title>
+<meta name="description" content="Muster-Impressum, Platzhalter zur Veranschaulichung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c130b; --ink-soft:#3a2a1a;
+    --paper:#f6ecd9; --paper-deep:#eee0c4; --foam:#fff8ec;
+    --amber:#c9832b; --amber-deep:#8a5a1e; --amber-bright:#e2a13f;
+    --line:rgba(28,19,11,0.14);
+    --dark:#1c130b; --dark-2:#2a1c10;
+    --serif:"Fraunces","Georgia",serif;
+    --sans:"Space Grotesk",system-ui,-apple-system,sans-serif;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+
+  .disclosure{background:var(--dark);color:var(--amber-bright);text-align:center;padding:8px 16px;font-size:clamp(0.68rem,0.62rem + 0.2vw,0.8rem);letter-spacing:0.01em;border-bottom:1px solid rgba(226,161,63,0.25);}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(28,19,11,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);}
+  .nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;color:var(--foam);}
+  .brand{font-family:var(--serif);font-weight:700;font-style:italic;font-size:clamp(1.1rem,1rem + 0.5vw,1.5rem);color:var(--foam);display:flex;align-items:center;gap:10px;}
+  .brand .mark{width:26px;height:26px;flex-shrink:0;}
+  .nav-links{display:flex;gap:28px;font-size:0.95rem;font-weight:500;}
+  .nav-links a{padding:10px 2px;border-bottom:2px solid transparent;}
+  .nav-links a:hover{border-color:var(--amber-bright);color:var(--amber-bright);}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--dark);font-weight:600;padding:10px 18px;border-radius:999px;font-size:0.9rem;min-height:44px;white-space:nowrap;}
+  .burger{display:none;width:44px;height:44px;border:none;background:transparent;color:var(--foam);cursor:pointer;align-items:center;justify-content:center;}
+  .burger span, .burger span::before, .burger span::after{content:"";display:block;width:22px;height:2px;background:var(--foam);position:relative;transition:transform .2s ease;}
+  .burger span::before{position:absolute;top:-7px;}
+  .burger span::after{position:absolute;top:7px;}
+  .burger.open span{background:transparent;}
+  .burger.open span::before{transform:rotate(45deg) translate(5px,5px);}
+  .burger.open span::after{transform:rotate(-45deg) translate(5px,-5px);}
+  .mobile-menu{display:none;flex-direction:column;background:var(--dark-2);padding:8px 20px 18px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--foam);padding:14px 4px;border-bottom:1px solid rgba(255,255,255,0.08);font-size:1rem;}
+  .mobile-menu .nav-cta{margin-top:14px;justify-content:center;}
+  @media (max-width:820px){ .nav-links{display:none;} .burger{display:flex;} }
+
+  main.legal-main{padding:clamp(3rem,2.5rem + 3vw,5rem) 20px;max-width:760px;margin:0 auto;}
+  .legal-notice{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.4rem;font-size:0.9rem;color:var(--ink-soft);margin-bottom:2rem;}
+  .legal-main h1{font-family:var(--serif);font-size:clamp(1.8rem,1.5rem + 1.5vw,2.4rem);margin:0 0 1.5rem;}
+  .legal-main h2{font-size:1.1rem;margin:2rem 0 0.6rem;font-family:var(--sans);}
+  .legal-main p{font-size:0.96rem;color:var(--ink-soft);line-height:1.7;}
+
+  footer{background:var(--dark-2);color:#cdbfa6;padding:2.4rem 20px 2.8rem;font-size:0.85rem;text-align:center;}
+  footer .foot-name{font-family:var(--serif);font-style:italic;font-weight:700;color:var(--foam);font-size:1.15rem;margin-bottom:0.6rem;}
+  footer .foot-links{margin-top:0.8rem;}
+  footer .foot-links a{color:#cdbfa6;margin:0 0.6rem;}
+  footer .foot-links a:hover{color:var(--amber-bright);}
+  footer .foot-disclosure{max-width:640px;margin:1.2rem auto 0;line-height:1.6;color:#a2926f;font-size:0.78rem;border-top:1px solid rgba(255,248,236,0.1);padding-top:1.2rem;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Unverbindliche Gestaltungs-Vorschau · erstellt zu Demonstrationszwecken · keine offizielle Website von Zwickl Biergasthaus · keine Verbindung zum Unternehmen</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 3h10l-1 3H7L6 3Z" fill="#e2a13f"/>
+        <path d="M7 6h9l-1 13.5a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5L7 6Z" stroke="#fff8ec" stroke-width="1.3"/>
+        <path d="M16.5 9.5h1.8a1.7 1.7 0 0 1 1.7 1.9l-.4 3a1.7 1.7 0 0 1-1.7 1.4h-1.6" stroke="#fff8ec" stroke-width="1.3"/>
+      </svg>
+      s'Zwickl
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Übers Haus</a>
+      <a href="angebot.html">Angebot</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="nav-cta" href="tel:+4312948484">Tisch reservieren</a>
+    <button class="burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Übers Haus</a>
+    <a href="angebot.html">Angebot</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a class="nav-cta" href="tel:+4312948484">Tisch reservieren</a>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="legal-notice">
+    <b>Muster-Impressum — Platzhalter zur Veranschaulichung.</b> Ersetzt keine rechtliche Prüfung; der Betrieb
+    müsste ein rechtskonformes Impressum durch seine eigene Rechts-/Steuerberatung erstellen lassen.
+  </div>
+  <h1>Impressum</h1>
+
+  <h2>Diensteanbieter</h2>
+  <p>Zwickl Biergasthaus<br>
+  Siemensstraße 76<br>
+  1210 Wien, Österreich</p>
+
+  <h2>Kontakt</h2>
+  <p>Telefon: <a href="tel:+4312948484">+43 1 294 84 84</a></p>
+
+  <h2>Unternehmensgegenstand</h2>
+  <p>Gastgewerbe (Gasthaus/Beisl)</p>
+
+  <h2>Gewerberechtliche Angaben</h2>
+  <p>Gewerbeberechtigung: [Platzhalter]<br>
+  Firmenbuchnummer / UID-Nummer: [Platzhalter]<br>
+  Zuständige Kammer/Behörde: [Platzhalter]</p>
+
+  <h2>EU-Streitschlichtung</h2>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, abrufbar unter
+  <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.</p>
+</main>
+
+<footer>
+  <div class="foot-name">s'Zwickl · Biergasthaus</div>
+  <div>Siemensstraße 76, 1210 Wien · <a href="tel:+4312948484" style="color:var(--amber-bright);">+43 1 294 84 84</a></div>
+  <div class="foot-links">
+    <a href="ueber-uns.html">Übers Haus</a>·
+    <a href="angebot.html">Angebot</a>·
+    <a href="kontakt.html">Kontakt</a>·
+    <a href="impressum.html">Impressum</a>·
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="foot-disclosure">
+    Unverbindliche Gestaltungs-Vorschau, erstellt zu Demonstrationszwecken auf Basis öffentlich zugänglicher
+    Branchenverzeichnis-Daten. Diese Seite ist keine offizielle Website des Zwickl Biergasthauses und steht in
+    keiner Verbindung zum Unternehmen.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function () {
+    var isOpen = menu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
