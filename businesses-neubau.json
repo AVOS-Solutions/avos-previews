@@ -94,5 +94,29 @@
       "kontakt.html",
       "kueche.html"
     ]
+  },
+  {
+    "num": 8,
+    "slug": "08-gasthaus-schmitzberger-v3",
+    "name": "Gasthaus Schmitzberger · v3 Gastgarten",
+    "category": "Gasthaus und Gasthof",
+    "region": "Wien",
+    "location": "Wien (3. Bezirk, Landstraße)",
+    "description": "Wiener Gasthaus in der Nottendorfer Gasse, seit 1924 Familienbetrieb. Hausmannskost und Alt-Wiener Küche, saisonale Speisen und Tagesspezialitäten. Gastgarten mit rund 100 Plätzen unter alten Bäumen, dazu Extrazimmer für 50 und 28 Personen. Mo–Fr 10–21 Uhr, Küche 11–20 Uhr, nur Barzahlung.",
+    "oldWebsite": null,
+    "pitchHook": "Dritte Variante, diesmal aus recherchierten Betriebsfakten statt aus einer Stil-Assoziation: Gastgarten, Extrazimmer, Barzahlung, Küchenzeiten.",
+    "priceLow": 3800,
+    "priceHigh": 7200,
+    "phone": "+43 1 7989168",
+    "email": null,
+    "contactPerson": null,
+    "pages": [
+      "datenschutz.html",
+      "garten.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "kueche.html"
+    ]
   }
 ]
