@@ -22,7 +22,31 @@ Directory.CreateDirectory(dataDir);
 var previewsSetting = builder.Configuration["Previews:Root"];
 if (string.IsNullOrWhiteSpace(previewsSetting))
     previewsSetting = Path.Combine(builder.Environment.ContentRootPath, "..", "..", "..", "previews");
-var previewsRoot = Path.GetFullPath(previewsSetting);
+var previewsRoot = NormalizeDir(previewsSetting);
+
+// Relaunch leads live in previews/, new-build leads in previews-neubau/. Both are browsable
+// and shareable; the dataset tag is what tells them apart in the UI.
+var neubauSetting = builder.Configuration["Previews:NeubauRoot"];
+if (string.IsNullOrWhiteSpace(neubauSetting))
+    neubauSetting = Path.Combine(previewsRoot, "..", "previews-neubau");
+var neubauRoot = NormalizeDir(neubauSetting);
+
+var previewRoots = new List<PreviewRoot>
+{
+    new(previewsRoot, CatalogFor(previewsRoot, "businesses.json"), "relaunch"),
+};
+if (Directory.Exists(neubauRoot))
+    previewRoots.Add(new PreviewRoot(neubauRoot, CatalogFor(neubauRoot, "businesses-neubau.json"), "neubau"));
+
+static string NormalizeDir(string path) =>
+    Path.GetFullPath(path).TrimEnd(Path.DirectorySeparatorChar);
+
+// The catalog sits next to the previews folder in the repo, inside it in the container image.
+static string CatalogFor(string root, string fileName)
+{
+    var beside = Path.GetFullPath(Path.Combine(root, "..", fileName));
+    return File.Exists(beside) ? beside : Path.GetFullPath(Path.Combine(root, fileName));
+}
 
 // Postgres in normal operation (ERP parity); SQLite fallback when no connection string is
 // configured, so the API runs locally with zero infrastructure.
@@ -113,7 +137,13 @@ var builtAt = !string.IsNullOrEmpty(entryPath) && File.Exists(entryPath)
 IResult Health() => Results.Ok(new
 {
     status = "ok",
-    businesses = BusinessCatalog.Load(previewsRoot).Count,
+    businesses = BusinessCatalog.Load(previewRoots).Count,
+    // Per-dataset counts, so a deploy check shows at a glance whether the image carries
+    // previews-neubau/ and not just previews/.
+    datasets = BusinessCatalog.Load(previewRoots)
+        .GroupBy(b => b.Dataset)
+        .OrderBy(g => g.Key, StringComparer.Ordinal)
+        .ToDictionary(g => g.Key, g => g.Count()),
     built = builtAt,
 });
 
@@ -234,7 +264,7 @@ app.MapGet("/api/me", (ClaimsPrincipal user) => Results.Ok(new
 
 app.MapGet("/api/businesses", async (AppDb db) =>
 {
-    var businesses = BusinessCatalog.Load(previewsRoot);
+    var businesses = BusinessCatalog.Load(previewRoots);
     var now = DateTimeOffset.UtcNow;
     var links = await db.ShareLinks.AsNoTracking().ToListAsync();
     var bySlug = links.GroupBy(l => l.Slug).ToDictionary(g => g.Key, g => g.ToList());
@@ -242,6 +272,7 @@ app.MapGet("/api/businesses", async (AppDb db) =>
     {
         b.Num, b.Slug, b.Name, b.Category, b.Region, b.Location, b.Description, b.OldWebsite,
         b.Grade, b.Score, b.PitchHook, b.PriceLow, b.PriceHigh, b.Phone, b.Email, b.ContactPerson,
+        b.Dataset,
         activeLinks = bySlug.TryGetValue(b.Slug, out var ls) ? ls.Count(l => l.IsUsable(now)) : 0,
         totalViews = bySlug.TryGetValue(b.Slug, out var ls2) ? ls2.Sum(l => l.ViewCount) : 0,
     }));
@@ -259,7 +290,7 @@ app.MapGet("/api/shares", async (AppDb db, string? slug) =>
 
 app.MapPost("/api/shares", async (AppDb db, ClaimsPrincipal user, CreateShareRequest req) =>
 {
-    var businesses = BusinessCatalog.Load(previewsRoot);
+    var businesses = BusinessCatalog.Load(previewRoots);
     if (businesses.All(b => b.Slug != req.Slug))
         return Results.BadRequest(new { message = "Unbekannter Betrieb." });
     if (req.MaxViews is < 1)
@@ -384,9 +415,8 @@ app.Run();
 IResult ServePreviewFile(HttpContext ctx, string slug, string? rest)
 {
     if (string.IsNullOrEmpty(rest)) rest = "index.html";
-    var slugDir = Path.GetFullPath(Path.Combine(previewsRoot, slug));
-    if (!slugDir.StartsWith(previewsRoot + Path.DirectorySeparatorChar) || !Directory.Exists(slugDir))
-        return Results.NotFound();
+    var slugDir = BusinessCatalog.ResolveFolder(previewRoots, slug);
+    if (slugDir == null) return Results.NotFound();
     var file = Path.GetFullPath(Path.Combine(slugDir, rest));
     if (!file.StartsWith(slugDir + Path.DirectorySeparatorChar)) return Results.NotFound();
     // Exports with per-route folders (Next.js `trailingSlash`) address pages as
@@ -423,7 +453,7 @@ IResult? CheckLink(ShareLink? link)
 }
 
 string BusinessName(string slug) =>
-    BusinessCatalog.Load(previewsRoot).FirstOrDefault(b => b.Slug == slug)?.Name ?? slug;
+    BusinessCatalog.Load(previewRoots).FirstOrDefault(b => b.Slug == slug)?.Name ?? slug;
 
 void SetUnlockCookie(HttpContext ctx, IDataProtectionProvider dp, ShareLink link)
 {

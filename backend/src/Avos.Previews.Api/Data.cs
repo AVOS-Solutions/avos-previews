@@ -72,21 +72,77 @@ public record Business(
     string? Grade = null, double? Score = null, string? PitchHook = null,
     int? PriceLow = null, int? PriceHigh = null,
     string? Phone = null, string? Email = null, string? ContactPerson = null,
-    List<string>? Pages = null);
+    List<string>? Pages = null, string Dataset = "relaunch");
+
+/// <summary>One folder of preview sites (one subfolder per slug) plus the catalog file that
+/// describes them. Dir is an absolute path without a trailing separator.</summary>
+public sealed record PreviewRoot(string Dir, string CatalogPath, string Dataset);
 
 public static class BusinessCatalog
 {
+    private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
     private static List<Business>? _cache;
 
-    public static List<Business> Load(string previewsRoot)
+    public static List<Business> Load(IReadOnlyList<PreviewRoot> roots)
     {
         if (_cache != null) return _cache;
-        var path = Path.Combine(previewsRoot, "..", "businesses.json");
-        if (!File.Exists(path)) path = Path.Combine(previewsRoot, "businesses.json");
-        var json = File.ReadAllText(path);
-        _cache = JsonSerializer.Deserialize<List<Business>>(json,
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? [];
+        var all = new List<Business>();
+        var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var root in roots)
+        {
+            foreach (var b in ReadCatalog(root))
+                if (seen.Add(b.Slug)) all.Add(b with { Dataset = root.Dataset });
+            // A preview folder no catalog lists is still a preview. Surfacing it with a
+            // slug-derived name beats letting it sit on disk invisible to the dashboard.
+            foreach (var slug in PreviewFolders(root.Dir))
+                if (seen.Add(slug)) all.Add(FromFolder(slug, root.Dataset));
+        }
+        _cache = all;
         return _cache;
+    }
+
+    /// <summary>Absolute path of the folder holding <paramref name="slug"/>'s files, or null
+    /// when no root has it. Rejects slugs that would escape a root.</summary>
+    public static string? ResolveFolder(IReadOnlyList<PreviewRoot> roots, string slug)
+    {
+        foreach (var root in roots)
+        {
+            var dir = Path.GetFullPath(Path.Combine(root.Dir, slug));
+            if (dir.StartsWith(root.Dir + Path.DirectorySeparatorChar, StringComparison.Ordinal)
+                && Directory.Exists(dir))
+                return dir;
+        }
+        return null;
+    }
+
+    private static List<Business> ReadCatalog(PreviewRoot root)
+    {
+        if (!File.Exists(root.CatalogPath)) return [];
+        return JsonSerializer.Deserialize<List<Business>>(File.ReadAllText(root.CatalogPath), JsonOptions) ?? [];
+    }
+
+    private static IEnumerable<string> PreviewFolders(string dir)
+    {
+        if (!Directory.Exists(dir)) return [];
+        return new DirectoryInfo(dir).EnumerateDirectories()
+            .Where(d => File.Exists(Path.Combine(d.FullName, "index.html")))
+            .Select(d => d.Name)
+            .Order(StringComparer.Ordinal);
+    }
+
+    private static Business FromFolder(string slug, string dataset)
+    {
+        var rest = slug;
+        var dash = rest.IndexOf('-');
+        var num = 0;
+        if (dash > 0 && int.TryParse(rest[..dash], out var parsed))
+        {
+            num = parsed;
+            rest = rest[(dash + 1)..];
+        }
+        var name = string.Join(' ', rest.Split('-', StringSplitOptions.RemoveEmptyEntries)
+            .Select(w => char.ToUpperInvariant(w[0]) + w[1..]));
+        return new Business(num, slug, name.Length > 0 ? name : slug, "", "", "", "", null, Dataset: dataset);
     }
 }
 

@@ -20,6 +20,8 @@ export type BusinessSummary = {
   location: string;
   description: string;
   oldWebsite: string | null;
+  /** "relaunch" for leads with an outdated site, "neubau" for leads with none yet. */
+  dataset: string;
   activeLinks: number;
   totalViews: number;
   grade?: string | null;

@@ -14,7 +14,9 @@ WORKDIR /app
 RUN useradd --create-home appuser
 COPY --from=build /app .
 COPY --chown=appuser:appuser previews/ /app/previews/
+COPY --chown=appuser:appuser previews-neubau/ /app/previews-neubau/
 COPY --chown=appuser:appuser businesses.json /app/businesses.json
+COPY --chown=appuser:appuser businesses-neubau.json /app/businesses-neubau.json
 # Internal-TLS sidecar (see docker/Caddyfile) — terminates HTTPS on 8443 for container-to-container
 # traffic within the Docker network, in front of the plain-HTTP Kestrel process on 8080.
 COPY --from=caddy:2-alpine /usr/bin/caddy /usr/local/bin/caddy

@@ -1,0 +1,26 @@
+[
+  {
+    "num": 2,
+    "slug": "02-zwickl-biergasthaus",
+    "name": "Zwickl Biergasthaus",
+    "category": "Gasthaus / Beisl",
+    "region": "Wien",
+    "location": "Wien 21 (Floridsdorf)",
+    "description": "Traditionelles Wiener Beisl/Gasthaus, gegründet 1996, mit rund 80 Sitzplätzen innen und ca. 40 im Gastgarten. Serviert klassische österreichische Hausmannskost und tägliche Mittagsmenüs (laut herold.at-Eintrag und Speiseplan auf mittag.at).",
+    "oldWebsite": null,
+    "pitchHook": "Kein eigener Webauftritt — auffindbar nur über Verzeichnisse und Menü-Aggregatoren. Eine eigene Seite bringt Tagesmenü, Gastgarten und Reservierung unter die Kontrolle des Hauses.",
+    "priceLow": 3800,
+    "priceHigh": 7200,
+    "phone": "+43 1 2948484",
+    "email": null,
+    "contactPerson": null,
+    "pages": [
+      "angebot.html",
+      "datenschutz.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "ueber-uns.html"
+    ]
+  }
+]
