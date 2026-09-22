@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stilauswahl – Gasthaus Schmitzberger</title>
+<meta name="description" content="Sechs Gestaltungsrichtungen zur Auswahl, bevor eine davon ausgebaut wird.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..700&family=Lato:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,300..600&family=Inter:opsz,wght@14..32,300..700&family=Anton&family=Cormorant+Garamond:ital,wght@0,300..600;1,300..500&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#15171a;color:#e8e6e1;font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  .disclosure{background:#000;color:#8f8a80;text-align:center;padding:9px 16px;font-size:clamp(0.66rem,0.62rem + 0.2vw,0.76rem);}
+  .page{max-width:1240px;margin:0 auto;padding:clamp(2rem,1.5rem + 2vw,3.5rem) 20px 5rem;}
+  .kicker{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#f0a35e;font-weight:600;}
+  h1.top{font-family:"Inter",sans-serif;font-weight:700;letter-spacing:-0.03em;font-size:clamp(1.7rem,1.3rem + 2vw,2.8rem);margin:0.8rem 0 0;line-height:1.1;}
+  .intro{color:#9d988f;max-width:52em;margin-top:1rem;font-size:clamp(0.95rem,0.92rem + 0.25vw,1.05rem);}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.2rem,0.8rem + 1.5vw,2rem);margin-top:clamp(2rem,1.5rem + 2vw,3rem);}
+  @media (max-width:880px){.grid{grid-template-columns:1fr;}}
+
+  .opt{border:1px solid #2c2f34;border-radius:14px;overflow:hidden;background:#1b1e22;min-width:0;}
+  .opt-head{padding:1rem 1.2rem;border-bottom:1px solid #2c2f34;}
+  .opt-head .id{font-weight:700;color:#f0a35e;font-size:0.82rem;letter-spacing:0.08em;}
+  .opt-head h2{font-family:"Inter",sans-serif;font-size:1.12rem;font-weight:600;margin:0.25rem 0 0;letter-spacing:-0.01em;color:#e8e6e1;}
+  .opt-head p{margin:0.4rem 0 0;font-size:0.84rem;color:#9d988f;}
+  .mock{height:390px;overflow:hidden;position:relative;}
+  .mock-inner{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;}
+  .mini-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:10.5px;margin-bottom:auto;}
+  .mini-nav .links{display:flex;gap:12px;opacity:0.72;}
+  .cta{display:inline-block;padding:9px 16px;font-size:11px;font-weight:600;}
+
+  /* A — klassisch-bürgerlich */
+  .A{background:#f2ece0;color:#2e2a24;text-align:center;}
+  .A .mini-nav{justify-content:center;flex-direction:column;gap:6px;}
+  .A .wordmark{font-family:"Playfair Display",serif;font-size:19px;letter-spacing:0.04em;}
+  .A .links{font-family:"Lato",sans-serif;letter-spacing:0.12em;text-transform:uppercase;font-size:9px;}
+  .A .orn{color:#8d7440;letter-spacing:0.5em;font-size:11px;margin:16px 0 10px;}
+  .A h3{font-family:"Playfair Display",serif;font-weight:400;font-size:32px;line-height:1.16;margin:0;}
+  .A h3 em{font-style:italic;color:#8d7440;}
+  .A p{font-family:"Lato",sans-serif;font-size:12px;color:#6a6055;margin:12px auto 0;max-width:30em;}
+  .A .cta{background:#5b6b47;color:#f2ece0;margin-top:auto;font-family:"Lato",sans-serif;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* B — warm & minimal */
+  .B{background:#fdfcfa;color:#1c1b19;}
+  .B .wordmark{font-family:"Source Serif 4",serif;font-size:15px;font-weight:600;}
+  .B .links{font-size:10px;color:#8b8781;}
+  .B h3{font-family:"Source Serif 4",serif;font-weight:400;font-size:29px;line-height:1.22;margin:26px 0 0;max-width:11em;letter-spacing:-0.01em;}
+  .B p{font-size:11.5px;color:#8b8781;margin:14px 0 0;max-width:26em;}
+  .B .meta{display:flex;gap:26px;margin-top:auto;padding-top:14px;border-top:1px solid #e8e4dd;font-size:10px;color:#8b8781;}
+  .B .cta{border:1px solid #1c1b19;color:#1c1b19;margin-top:18px;align-self:flex-start;}
+
+  /* C — foto-geführt */
+  /* Verlauf als Hintergrund der Fläche selbst — ein überlagertes Element würde den Text verdecken. */
+  .C{color:#fff;background:
+      linear-gradient(180deg,rgba(15,18,16,0.15) 0%,rgba(15,18,16,0.88) 70%),
+      repeating-linear-gradient(115deg,#36442f 0 22px,#3e4d35 22px 44px,#2f3b2a 44px 66px);}
+  .C .wordmark{font-size:14px;font-weight:700;letter-spacing:0.03em;}
+  .C .links{font-size:10px;}
+  .C h3{font-family:"Inter",sans-serif;font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-0.035em;margin:0;}
+  .C p{font-size:11.5px;color:#cfd6c9;margin:10px 0 0;max-width:24em;}
+  .C .barstrip{display:flex;gap:8px;margin-top:14px;}
+  .C .chip{background:rgba(255,255,255,0.14);border-radius:999px;padding:5px 11px;font-size:10px;}
+  .C .cta{background:#fff;color:#0f1210;border-radius:999px;margin-top:16px;align-self:flex-start;}
+  .C .tagph{position:absolute;bottom:14px;right:14px;z-index:3;background:rgba(0,0,0,0.55);border:1px dashed rgba(255,255,255,0.45);
+      font-size:9px;padding:4px 8px;border-radius:4px;color:#e4e4e4;}
+
+  /* D — plakativ */
+  .D{background:#faf6ef;color:#101010;}
+  .D .wordmark{font-family:"Anton",sans-serif;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;}
+  .D .links{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;}
+  .D h3{font-family:"Anton",sans-serif;font-weight:400;font-size:46px;line-height:0.94;letter-spacing:0.005em;text-transform:uppercase;margin:20px 0 0;}
+  .D h3 span{color:#e2402b;}
+  .D p{font-size:11.5px;color:#5a564f;margin:12px 0 0;max-width:24em;}
+  .D .rule{height:6px;background:#101010;margin-top:auto;}
+  .D .cta{background:#e2402b;color:#fff;margin-top:14px;align-self:flex-start;text-transform:uppercase;letter-spacing:0.08em;}
+
+  /* E — dunkel & elegant */
+  .E{background:#14130f;color:#efe9dc;}
+  .E .wordmark{font-family:"Cormorant Garamond",serif;font-size:19px;letter-spacing:0.14em;text-transform:uppercase;color:#d8bd85;}
+  .E .links{font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#9a9182;}
+  .E h3{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:36px;line-height:1.16;margin:24px 0 0;max-width:10em;}
+  .E h3 em{font-style:italic;color:#d8bd85;}
+  .E p{font-size:11px;color:#9a9182;margin:14px 0 0;max-width:26em;letter-spacing:0.01em;}
+  .E .hair{height:1px;background:linear-gradient(90deg,#d8bd85,transparent);margin-top:auto;}
+  .E .cta{border:1px solid #d8bd85;color:#d8bd85;margin-top:16px;align-self:flex-start;letter-spacing:0.12em;text-transform:uppercase;}
+
+  /* F — freundlich & rund */
+  .F{background:#fff8ef;color:#2a2620;}
+  .F .wordmark{font-family:"Nunito",sans-serif;font-weight:800;font-size:15px;}
+  .F .links{font-family:"Nunito",sans-serif;font-size:10.5px;font-weight:600;}
+  .F h3{font-family:"Nunito",sans-serif;font-weight:800;font-size:31px;line-height:1.14;margin:22px 0 0;max-width:10em;letter-spacing:-0.02em;}
+  .F h3 span{color:#e07a3f;}
+  .F p{font-family:"Nunito",sans-serif;font-size:12px;color:#6d655b;margin:12px 0 0;max-width:25em;}
+  .F .bubbles{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .F .bub{background:#ffe6cf;color:#a4541f;border-radius:999px;padding:6px 13px;font-size:10.5px;font-weight:700;font-family:"Nunito",sans-serif;}
+  .F .cta{background:#2f7d4f;color:#fff;border-radius:999px;margin-top:auto;align-self:flex-start;font-family:"Nunito",sans-serif;}
+
+  .foot{margin-top:3rem;padding-top:1.6rem;border-top:1px solid #2c2f34;color:#7d786f;font-size:0.82rem;line-height:1.65;}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Interne Auswahlhilfe · keine Website und nicht zum Versenden · keine offizielle Website von Gasthaus Schmitzberger · keine Verbindung zum Unternehmen</div>
+
+<div class="page">
+  <div class="kicker">Gasthaus Schmitzberger · Stilauswahl</div>
+  <h1 class="top">Sechs Richtungen. Eine davon bauen wir aus.</h1>
+  <p class="intro">
+    v1 bis v3 haben nicht getroffen, und weiter zu raten kostet pro Versuch sechs Seiten. Hier
+    steht stattdessen dieselbe Startseite in sechs Gestaltungssprachen nebeneinander — gleicher
+    Inhalt, gleiche Fakten, nur die Gestaltung ändert sich. Sag mir einen Buchstaben, dann wird
+    daraus die vollständige Site. Bei C steht ein Platzhalter, wo ein echtes Foto hingehört.
+  </p>
+
+  <div class="grid">
+
+    <!-- A -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">A</div>
+        <h2>Klassisch-bürgerlich</h2>
+        <p>Was die meisten Wiener Gasthäuser tatsächlich haben: mittig, Serifen, Ornament, gedecktes Grün und Beige. Vertraut, unaufgeregt, niemandem zu modern.</p>
+      </div>
+      <div class="mock"><div class="mock-inner A">
+        <div class="mini-nav">
+          <div class="wordmark">Gasthaus Schmitzberger</div>
+          <div class="links"><span>Startseite</span><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+        </div>
+        <div class="orn">✦ ✦ ✦</div>
+        <h3>Wiener Küche<br><em>seit 1924</em></h3>
+        <p>Hausmannskost und Alt-Wiener Küche, ein großer Gastgarten und zwei Extrazimmer für Ihre Feier.</p>
+        <span class="cta">Tisch reservieren</span>
+      </div></div>
+    </article>
+
+    <!-- B -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">B</div>
+        <h2>Warm &amp; minimal</h2>
+        <p>Viel Weißraum, ruhige Serifen, kleine Schriftgrade. Zurückhaltend und hochwertig — eher Bistro als Wirtshaus.</p>
+      </div>
+      <div class="mock"><div class="mock-inner B">
+        <div class="mini-nav">
+          <div class="wordmark">Schmitzberger</div>
+          <div class="links"><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+        </div>
+        <h3>Ein Gasthaus in der Nottendorfer Gasse.</h3>
+        <p>Seit 1924 in Familienhand. Alt-Wiener Küche, saisonale Speisen, ein Garten unter alten Bäumen.</p>
+        <span class="cta">Reservieren</span>
+        <div class="meta"><span>Mo–Fr 10–21</span><span>Küche 11–20</span><span>Nur Barzahlung</span></div>
+      </div></div>
+    </article>
+
+    <!-- C -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">C</div>
+        <h2>Foto-geführt</h2>
+        <p>Das Muster fast aller Restaurant-Seiten: großes Bild, Text darüber, Infos in Chips. Steht und fällt mit guten Fotos vom Garten.</p>
+      </div>
+      <div class="mock">
+        <div class="mock-inner C">
+          <div class="tagph">Platzhalter: echtes Foto</div>
+          <div class="mini-nav">
+            <div class="wordmark">SCHMITZBERGER</div>
+            <div class="links"><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+          </div>
+          <h3>Hundert Plätze<br>unter alten Bäumen.</h3>
+          <p>Seit 1924 Familienbetrieb in der Landstraße.</p>
+          <div class="barstrip">
+            <span class="chip">Gastgarten</span><span class="chip">Extrazimmer</span><span class="chip">Mo–Fr</span>
+          </div>
+          <span class="cta">Tisch reservieren</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- D -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">D</div>
+        <h2>Plakativ</h2>
+        <p>Riesige fette Versalien, harte Kanten, eine Signalfarbe. Laut und selbstbewusst — fällt auf, ist aber weit weg von gemütlich.</p>
+      </div>
+      <div class="mock"><div class="mock-inner D">
+        <div class="mini-nav">
+          <div class="wordmark">Schmitzberger</div>
+          <div class="links"><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+        </div>
+        <h3>Seit 1924<br><span>Hausmanns&shy;kost</span></h3>
+        <p>Gastgarten für hundert. Zwei Extrazimmer. Montag bis Freitag.</p>
+        <span class="cta">Reservieren</span>
+        <div class="rule"></div>
+      </div></div>
+    </article>
+
+    <!-- E -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">E</div>
+        <h2>Dunkel &amp; elegant</h2>
+        <p>Fast schwarz, Gold, feine Serifen mit weiten Sperrungen. Wirkt gehoben — die Frage ist, ob das zum Haus passt oder zu viel verspricht.</p>
+      </div>
+      <div class="mock"><div class="mock-inner E">
+        <div class="mini-nav">
+          <div class="wordmark">Schmitzberger</div>
+          <div class="links"><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+        </div>
+        <h3>Alt-Wiener Küche<br><em>seit 1924</em></h3>
+        <p>Ein Gasthaus in der Nottendorfer Gasse, geführt von einer Familie. Gastgarten und zwei Extrazimmer.</p>
+        <span class="cta">Reservieren</span>
+        <div class="hair"></div>
+      </div></div>
+    </article>
+
+    <!-- F -->
+    <article class="opt">
+      <div class="opt-head">
+        <div class="id">F</div>
+        <h2>Freundlich &amp; rund</h2>
+        <p>Weiche Formen, runde Schrift, helle warme Töne. Einladend und familientauglich — passt zu Kinderportionen und Gastgarten.</p>
+      </div>
+      <div class="mock"><div class="mock-inner F">
+        <div class="mini-nav">
+          <div class="wordmark">Schmitzberger</div>
+          <div class="links"><span>Küche</span><span>Garten</span><span>Kontakt</span></div>
+        </div>
+        <h3>Essen wie <span>daheim</span>, seit 1924.</h3>
+        <p>Großer Gastgarten, zwei Extrazimmer, Kinderportionen — mitten im dritten Bezirk.</p>
+        <div class="bubbles">
+          <span class="bub">100 Plätze im Garten</span><span class="bub">Mo–Fr</span>
+        </div>
+        <span class="cta">Tisch reservieren</span>
+      </div></div>
+    </article>
+
+  </div>
+
+  <div class="foot">
+    Diese Seite ist eine interne Auswahlhilfe und keine Gestaltungs-Vorschau für den Betrieb.
+    Sie ist nicht dafür gedacht, an das Gasthaus Schmitzberger geschickt zu werden. Sie steht in
+    keiner Verbindung zum Unternehmen; die gezeigten Angaben dienen nur der Veranschaulichung.
+  </div>
+</div>
+
+</body>
+</html>
