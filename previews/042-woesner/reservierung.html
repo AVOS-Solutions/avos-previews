@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisch reservieren, Essen bestellen und Gutschein anfordern – Gasthof Wösner</title>
+<meta name="description" content="Reservieren Sie Ihren Tisch im Gasthof Wösner in Münzkirchen online, bestellen Sie Essen zur Abholung vor oder fordern Sie einen Gutschein an – ohne Warteschleife.">
+<link rel="canonical" href="https://www.woesner.at/reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Gasthof Wösner Münzkirchen">
+<meta property="og:title" content="Tisch reservieren, Essen bestellen und Gutschein anfordern – Gasthof Wösner">
+<meta property="og:description" content="Reservieren Sie Ihren Tisch im Gasthof Wösner in Münzkirchen online, bestellen Sie Essen zur Abholung vor oder fordern Sie einen Gutschein an – ohne Warteschleife.">
+<meta property="og:url" content="https://www.woesner.at/reservierung.html">
+<meta property="og:image" content="https://www.woesner.at/img/01.jpg">
+<meta name="theme-color" content="#7c2233">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="notice">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des <b>Gasthof Wösner</b> · erstellt von AVOS Solutions</div>
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true">W</span><span><b>Gasthof Wösner</b><span>Münzkirchen im Sauwald · Da fühl i mi wohl</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnavi">Menü</button>
+    <nav class="nav" id="hauptnavi" aria-label="Hauptnavigation">
+        <a href="index.html">Start</a>
+        <a href="speisekarte.html">Speisekarte</a>
+        <a href="feiern.html">Feiern &amp; Hochzeit</a>
+        <a href="zimmer.html">Zimmer</a>
+        <a href="reservierung.html" aria-current="page">Reservierung</a>
+        <a href="ausflug.html">Ausflug &amp; Gruppen</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--burgund sec--tight">
+  <div class="wrap">
+    <span class="band band--creme">Neu · online</span>
+    <h1 style="margin-top:1rem">Tisch reservieren</h1>
+    <p class="lead" style="max-width:56ch">Bisher ging das nur telefonisch oder per Mail. Hier reicht ein Formular – wir bestätigen Ihren Tisch zurück.</p>
+    <div class="btnrow">
+      <a class="btn btn--o" href="tel:+4377167240">07716 7240</a>
+      <a class="btn btn--line" href="mailto:info@woesner.at">info@woesner.at</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--creme">
+  <div class="wrap duo duo--wide duo--top">
+    <form class="form" data-demo>
+      <h3>Reservierungswunsch</h3>
+      <div class="f2">
+        <div class="field"><label for="re-name">Name</label><input id="re-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="re-tel">Telefon</label><input id="re-tel" name="tel" type="tel" autocomplete="tel" required></div>
+      </div>
+      <div class="field"><label for="re-mail">E-Mail</label><input id="re-mail" name="mail" type="email" autocomplete="email" required></div>
+      <div class="f2">
+        <div class="field"><label for="re-datum">Datum</label><input id="re-datum" name="datum" type="date" required></div>
+        <div class="field"><label for="re-zeit">Uhrzeit</label>
+          <select id="re-zeit" name="zeit">
+            <option>08:30</option><option>09:00</option><option>11:00</option><option>11:30</option>
+            <option>12:00</option><option>12:30</option><option>13:00</option><option>17:00</option>
+            <option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option>
+            <option>19:30</option><option>20:00</option>
+          </select>
+          <small>Küche: Mi–Fr 11:00–13:30 und 16:30–21:00, Sa 11:00–21:00, So 08:00–14:00 Uhr</small>
+        </div>
+      </div>
+      <div class="f2">
+        <div class="field"><label for="re-pers">Personen</label><input id="re-pers" name="personen" type="number" min="1" max="30" value="2" required></div>
+        <div class="field"><label for="re-bereich">Bereich</label>
+          <select id="re-bereich" name="bereich">
+            <option>egal</option><option>Gaststube &amp; Kaminstüberl</option><option>Restaurant</option>
+            <option>Schanigarten</option><option>Hopfengartl</option><option>Ratsherrenkeller</option>
+          </select></div>
+      </div>
+      <div class="field"><label for="re-text">Anmerkung</label><textarea id="re-text" name="text" placeholder="Kinderstuhl, Geburtstagstisch, Unverträglichkeiten, Vorbestellung „Bratl in der Rein“ …"></textarea></div>
+      <div class="checkrow"><input id="re-ds" type="checkbox" required><label for="re-ds">Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Reservierung verwendet werden.</label></div>
+      <button class="btn btn--b" type="submit">Reservierung absenden</button>
+      <p class="formnote">Vorschau — im Live-Betrieb geht diese Reservierung direkt an den Gasthof Wösner (info@woesner.at, +43 7716 7240).</p>
+    </form>
+    <div class="stack">
+      <div class="card"><div class="tablescroll"><table class="hours">
+  <caption>Gasthof</caption>
+  <tbody>
+    <tr><th scope="row">Montag</th><td>Ruhetag</td></tr>
+    <tr><th scope="row">Dienstag</th><td>ab 18:00 Uhr</td></tr>
+    <tr><th scope="row">Mittwoch–Freitag</th><td>09:00–13:30 Uhr und ab 16:30 Uhr</td></tr>
+    <tr><th scope="row">Samstag</th><td>ab 09:00 Uhr</td></tr>
+    <tr><th scope="row">Sonntag</th><td>08:00–15:00 Uhr</td></tr>
+  </tbody>
+</table></div></div>
+      <div class="card card--b">
+        <span class="kicker">Ab 20 Personen</span>
+        <h3>Größere Runden</h3>
+        <p class="mb0">Gesellschaften, Vereine und Busgruppen planen wir lieber persönlich. Nutzen Sie dafür die <a href="feiern.html#anfrage">Feieranfrage</a> oder – für Reisegruppen – die <a href="ausflug.html#busgruppen">Busgruppen-Anmeldung</a>.</p>
+      </div>
+      <div class="card card--blush">
+        <span class="kicker">Auf Vorbestellung</span>
+        <h3>Bratl in der Rein &amp; Co.</h3>
+        <p class="mb0">Unsere Reinen gibt es ab 5 Personen auf Vorbestellung: Bratl in der Rein € 15,90, Brustspitz Surripperl € 14,90, Schnitzelrein € 17,90 und Spare Ribs &amp; Wings € 17,50 – jeweils pro Person. <a href="speisekarte.html#standard">Zur Karte</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--papier" id="bestellen">
+  <div class="wrap duo duo--top">
+    <div>
+      <span class="band">Abholung</span>
+      <h2 style="margin-top:1rem">Essen vorbestellen</h2>
+      <p>Sie möchten bei uns essen, aber daheim? Geben Sie Ihre Bestellung durch und holen Sie sie zur Wunschzeit ab. Besonders gefragt: Pizza am Freitag und Samstag ab 17:00 Uhr.</p>
+      <p class="muted">Alle Gerichte und Preise finden Sie in der <a href="speisekarte.html">Speisekarte</a> – Standardkarte, Tageskarte, Mittagskarte und Pizzakarte.</p>
+      <img src="img/06.jpg" alt="Speisen zur Abholung im Gasthof Wösner" width="700" height="467" loading="lazy" style="margin-top:1.6rem; border-radius:26px">
+    </div>
+    <form class="form" data-demo>
+      <h3>Bestellung zur Abholung</h3>
+      <div class="f2">
+        <div class="field"><label for="be-name">Name</label><input id="be-name" name="name" type="text" required></div>
+        <div class="field"><label for="be-tel">Telefon</label><input id="be-tel" name="tel" type="tel" required></div>
+      </div>
+      <div class="f2">
+        <div class="field"><label for="be-datum">Abholtag</label><input id="be-datum" name="datum" type="date" required></div>
+        <div class="field"><label for="be-zeit">Abholzeit</label><input id="be-zeit" name="zeit" type="time" value="18:00"></div>
+      </div>
+      <div class="field"><label for="be-karte">Aus welcher Karte?</label>
+        <select id="be-karte" name="karte">
+          <option>Pizzakarte (Fr &amp; Sa ab 17:00 Uhr)</option><option>Standardkarte</option>
+          <option>Tageskarte</option><option>Mittagskarte (Mi–Fr 11:00–13:30 Uhr)</option>
+        </select></div>
+      <div class="field"><label for="be-text">Ihre Bestellung</label><textarea id="be-text" name="text" placeholder="z. B. 2× Sauwaldpizza, 1× Margherita ohne Basilikum, 1× Wiener Schnitzel vom Schweinskarree"></textarea></div>
+      <div class="checkrow"><input id="be-ds" type="checkbox" required><label for="be-ds">Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Bestellung verwendet werden.</label></div>
+      <button class="btn btn--b" type="submit">Bestellung senden</button>
+      <p class="formnote">Vorschau — im Live-Betrieb geht diese Bestellung direkt an den Gasthof Wösner (info@woesner.at, +43 7716 7240).</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec sec--blush" id="gutschein">
+  <div class="wrap duo duo--rev duo--top">
+    <div>
+      <span class="band">Gutschein</span>
+      <h2 style="margin-top:1rem">Gutschein anfordern</h2>
+      <p>Ein Gutschein vom Wösner passt zu jedem Anlass: für ein Essen zu zweit, eine Feier im Kreis der Familie oder eine Nacht in einem unserer acht Zimmer. Den Betrag bestimmen Sie.</p>
+      <p class="muted mb0">Wir melden uns mit der Bestätigung und klären mit Ihnen, ob Sie den Gutschein abholen oder zugesandt bekommen möchten.</p>
+    </div>
+    <form class="form" data-demo>
+      <h3>Gutschein</h3>
+      <div class="f2">
+        <div class="field"><label for="gu-name">Ihr Name</label><input id="gu-name" name="name" type="text" required></div>
+        <div class="field"><label for="gu-mail">Ihre E-Mail</label><input id="gu-mail" name="mail" type="email" required></div>
+      </div>
+      <div class="f2">
+        <div class="field"><label for="gu-wert">Wert in Euro</label><input id="gu-wert" name="wert" type="number" min="10" step="5" value="50"></div>
+        <div class="field"><label for="gu-art">Gutschein für</label>
+          <select id="gu-art" name="art"><option>Essen &amp; Trinken</option><option>Übernachtung mit Frühstück</option><option>freier Betrag</option></select></div>
+      </div>
+      <div class="field"><label for="gu-text">Widmung</label><textarea id="gu-text" name="text" placeholder="Für wen ist der Gutschein? Anlass?"></textarea></div>
+      <div class="checkrow"><input id="gu-ds" type="checkbox" required><label for="gu-ds">Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</label></div>
+      <button class="btn btn--o" type="submit">Gutschein anfordern</button>
+      <p class="formnote">Vorschau — im Live-Betrieb geht diese Anforderung direkt an den Gasthof Wösner (info@woesner.at, +43 7716 7240).</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Gasthof Wösner</h4>
+        <p>Gasthof Wösner e.U.<br>Hofmark 12<br>4792 Münzkirchen<br>Oberösterreich</p>
+        <p>Tel. <a href="tel:+4377167240">+43 7716 7240</a><br>Fax +43 7716 7240-4<br><a href="mailto:info@woesner.at">info@woesner.at</a></p>
+      </div>
+      <div>
+        <h4>Essen &amp; Feiern</h4>
+        <ul>
+          <li><a href="speisekarte.html">Speisekarte &amp; Preise</a></li>
+          <li><a href="speisekarte.html#pizza">Pizzakarte</a></li>
+          <li><a href="feiern.html">Feste &amp; Hochzeiten</a></li>
+          <li><a href="feiern.html#kapazitaeten">Räume &amp; Kapazitäten</a></li>
+          <li><a href="zimmer.html">Zimmer &amp; Frühstück</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul>
+          <li>Mi–Fr 09:00–13:30 und ab 16:30 Uhr</li>
+          <li>Samstag ab 09:00 Uhr</li>
+          <li>Sonntag 08:00–15:00 Uhr</li>
+          <li>Dienstag ab 18:00 Uhr</li>
+          <li>Montag Ruhetag</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul>
+          <li><a href="reservierung.html">Tisch reservieren</a></li>
+          <li><a href="reservierung.html#gutschein">Gutschein anfordern</a></li>
+          <li><a href="ausflug.html#busgruppen">Busgruppen</a></li>
+          <li><a href="ausflug.html#erdstollen">Der Erdstollen</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anreise</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions. Das verwendete Bildmaterial stammt von der bestehenden Website des Betriebs (woesner.at).</span>
+      <span>Muster-Entwurf · keine offizielle Website</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.querySelector('.nav-toggle'), n=document.getElementById('hauptnavi');
+  if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var n=f.querySelector('.formnote');
+      if(n){n.classList.add('show'); n.setAttribute('role','status'); n.scrollIntoView({block:'center',behavior:'smooth'});}
+    });
+  });
+})();
+</script>
+</body>
+</html>

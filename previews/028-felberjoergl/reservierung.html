@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisch reservieren – Buschenschank Felberjörgl, Kitzeck im Sausal</title>
+<meta name="description" content="Online-Reservierung für den Buschenschank Felberjörgl: Datum, Uhrzeit ab 13 Uhr, Personenzahl und Wunschplatz angeben – rund um die Uhr möglich.">
+<link rel="canonical" href="reservierung.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Weingut &amp; Buschenschank Felberjörgl">
+<meta property="og:title" content="Tisch reservieren – Buschenschank Felberjörgl, Kitzeck im Sausal">
+<meta property="og:description" content="Online-Reservierung für den Buschenschank Felberjörgl: Datum, Uhrzeit ab 13 Uhr, Personenzahl und Wunschplatz angeben – rund um die Uhr möglich.">
+<meta property="og:image" content="img/01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="previewbar">Unverbindliche <strong>Gestaltungs-Vorschau</strong> &middot; keine offizielle Website des Weinguts &amp; Buschenschanks Felberj&ouml;rgl &middot; erstellt von AVOS Solutions</div>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="wordmark" href="index.html">Felberj&ouml;rgl<span>Weingut &middot; Buschenschank &middot; Sausal</span></a>
+    <button class="nav-toggle" id="navBtn" aria-expanded="false" aria-controls="nav">Men&uuml;</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="weingut.html">Weingut</a></li>
+        <li><a href="weine.html">Weine</a></li>
+        <li><a href="buschenschank.html">Buschenschank</a></li>
+        <li><a href="reservierung.html" aria-current="page">Reservierung</a></li>
+        <li><a href="bestellung.html">Bestellung</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="pagehead">
+  <div class="wrap">
+    <p class="kicker">Neu &middot; bisher nur telefonisch m&ouml;glich</p>
+    <h1>Tisch im Buschenschank reservieren</h1>
+    <p>In zwei Minuten erledigt &ndash; rund um die Uhr, auch wenn bei uns gerade Ruhetag ist.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <form class="form" data-demo>
+        <div class="row2">
+          <div class="field">
+            <label for="r-datum">Wunschdatum</label>
+            <input type="date" id="r-datum" name="datum" required>
+          </div>
+          <div class="field">
+            <label for="r-zeit">Uhrzeit (ab 13.00 Uhr)</label>
+            <input type="time" id="r-zeit" name="zeit" value="13:00" min="13:00" required>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="r-pers">Personen</label>
+            <select id="r-pers" name="personen">
+              <option>1</option><option>2</option><option selected>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9 bis 12</option><option>mehr als 12</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-platz">Wunschplatz</label>
+            <select id="r-platz" name="platz">
+              <option>egal</option>
+              <option>Stube</option>
+              <option>Terrasse / im Freien</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="r-name">Name</label>
+            <input type="text" id="r-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="r-tel">Telefon</label>
+            <input type="tel" id="r-tel" name="telefon" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="r-mail">E-Mail</label>
+          <input type="email" id="r-mail" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="r-text">Anmerkung</label>
+          <textarea id="r-text" name="anmerkung" placeholder="Anlass, Kinderstuhl, Unvertr&auml;glichkeiten, Wunsch nach Verkostung"></textarea>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="r-verkauf" name="weinverkauf">
+          <label for="r-verkauf">Ich m&ouml;chte beim Besuch auch Wein mitnehmen (Weinverkauf).</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="r-dsgvo" name="dsgvo" required>
+          <label for="r-dsgvo">Meine Daten d&uuml;rfen zur Bearbeitung der Reservierung verwendet werden.</label>
+        </div>
+        <div class="form-note">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an info@felberjoergl.at und wird im Reservierungsbuch des Weinguts eingetragen. Aktuell werden keine Daten &uuml;bertragen.</div>
+        <button class="btn btn-gold" type="submit">Reservierung absenden</button>
+        <p class="formmsg" tabindex="-1" hidden>Danke! Vorschau &ndash; im Live-Betrieb ginge Ihre Reservierung jetzt direkt an das Weingut Felberj&ouml;rgl und Sie bek&auml;men eine Best&auml;tigung per E-Mail.</p>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Wann wir ge&ouml;ffnet haben</h3>
+        <ul class="sorte-list">
+          <li><span>Freitag</span><span class="tag">ab 13.00</span></li>
+          <li><span>Samstag</span><span class="tag">ab 13.00</span></li>
+          <li><span>Sonntag</span><span class="tag">ab 13.00</span></li>
+          <li><span>Montag</span><span class="tag">ab 13.00</span></li>
+          <li><span>Dienstag</span><span class="tag">ab 13.00</span></li>
+          <li><span>Mittwoch</span><span class="tag">Ruhetag</span></li>
+          <li><span>Donnerstag</span><span class="tag">Ruhetag</span></li>
+        </ul>
+        <p class="hint" style="margin-top:1rem">Zus&auml;tzlich geschlossen: Montag, 20.&nbsp;Juli. Sommerpause von 29.7. bis 6.8.2026.</p>
+      </div>
+      <div class="card" style="margin-top:1.2rem">
+        <h3>Lieber telefonisch?</h3>
+        <p>Wir sind unter <a href="tel:+4334563189">+43 3456 3189</a> erreichbar, per Mail unter <a href="mailto:info@felberjoergl.at">info@felberjoergl.at</a>.</p>
+        <p class="mute">Gruppen ab acht Personen bitte mit Vorlauf anmelden &ndash; dann k&ouml;nnen wir den passenden Tisch vorbereiten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Weingut Felberj&ouml;rgl</h4>
+        <p class="mute">Familie Temmel<br>H&ouml;ch 47<br>8442 Kitzeck im Sausal<br>S&uuml;dsteiermark</p>
+      </div>
+      <div>
+        <h4>Direkt erreichbar</h4>
+        <ul class="footer-list">
+          <li><a href="tel:+4334563189">+43 3456 3189</a></li>
+          <li><a href="mailto:info@felberjoergl.at">info@felberjoergl.at</a></li>
+          <li><a href="https://www.facebook.com/WeingutFelberjoergl/" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/explore/locations/1032004956/weingut-felberjorgl/" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Buschenschank</h4>
+        <p class="mute">Freitag bis Dienstag ab 13.00 Uhr<br>Mittwoch und Donnerstag Ruhetag<br>Weinverkauf auf Voranmeldung auch au&szlig;erhalb der &Ouml;ffnungszeiten</p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul class="footer-list">
+          <li><a href="weingut.html">Weingut &amp; Rieden</a></li>
+          <li><a href="weine.html">Weine &amp; Sortiment</a></li>
+          <li><a href="buschenschank.html">Buschenschank</a></li>
+          <li><a href="reservierung.html">Tisch reservieren</a></li>
+          <li><a href="bestellung.html">Weinbestellung</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Das gesamte Bildmaterial dieser Vorschau stammt von der bestehenden Website des Weinguts Felberj&ouml;rgl (felberjoergl.at) und bleibt Eigentum des Betriebs.</p>
+      <p>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions &middot; keine offizielle Website des Betriebs &middot; alle Formulare sind Demos ohne Daten&uuml;bertragung.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  var btn = document.getElementById('navBtn');
+  var nav = document.getElementById('nav');
+  if (btn && nav) {
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('form[data-demo]').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = f.querySelector('.formmsg');
+      if (msg) { msg.hidden = false; msg.focus(); }
+    });
+  });
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    document.querySelectorAll('.cert').forEach(function (c) {
+      c.addEventListener('click', function () {
+        var img = c.querySelector('img');
+        lb.querySelector('img').src = img.getAttribute('src');
+        lb.querySelector('img').alt = img.getAttribute('alt');
+        lb.showModal();
+      });
+    });
+    lb.querySelector('.close').addEventListener('click', function () { lb.close(); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* Salon Privat – private rooms / Salon Eva · Vorschau-Design "Nachtkarte"
+   Palette: Tiefschwarz #101013 · Rauch #1b1b20 · Champagner #c9a86c · Bone #f4efe9 · Bronze #7a5c22
+   Schriften: Marcellus (Display) + Jost (Text) · Motiv: goldene Haarlinien, Raumkarten, Sperrsatz */
+:root{
+  --noir:#101013; --noir2:#1a1a20; --noir3:#25252c; --gold:#c9a86c; --gold-l:#e3cfa4;
+  --bronze:#7a5c22; --bone:#f4efe9; --paper:#fbf8f4; --ink:#1c1a19; --muted:#6b6560;
+  --line:#e2dbd1; --line-d:#33333c; --w:72rem; --pad:clamp(1rem,4vw,2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--ink);
+  font-family:Jost,"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:clamp(1rem,.95rem + .22vw,1.08rem);font-weight:300;line-height:1.75;overflow-x:hidden}
+h1,h2,h3,.display{font-family:Marcellus,"Cormorant Garamond",Georgia,serif;font-weight:400;
+  line-height:1.14;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2.4rem,1.5rem + 4.2vw,4.3rem)}
+h2{font-size:clamp(1.8rem,1.25rem + 2.2vw,2.8rem)}
+h3{font-size:clamp(1.2rem,1.05rem + .7vw,1.5rem)}
+p,ul,ol,table{margin:0 0 1.15em}
+a{color:var(--bronze);text-underline-offset:.22em;text-decoration-thickness:.06em}
+a:hover{color:var(--ink)}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;left:-9999px;background:var(--gold);color:var(--noir);padding:.7rem 1.1rem;font-weight:500}
+.skip:focus{left:.5rem;top:.5rem;z-index:99}
+.wrap{width:min(var(--w),100% - 2*var(--pad));margin-inline:auto}
+.plain{list-style:none;padding:0}
+.plain li{margin-bottom:.4rem}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Vorschau-Leiste ---------- */
+.previewbar{margin:0;background:var(--noir);color:#b6ad9d;font-size:.74rem;letter-spacing:.1em;
+  text-transform:uppercase;text-align:center;padding:.55rem var(--pad)}
+
+/* ---------- Kopf ---------- */
+.site{background:var(--noir);color:var(--bone);position:sticky;top:0;z-index:40;
+  border-bottom:1px solid var(--line-d)}
+.site__in{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;min-height:4.6rem}
+.brand{display:flex;align-items:center;gap:.75rem;color:inherit;text-decoration:none;margin-right:auto;padding:.6rem 0}
+.brand__mono{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid var(--gold);
+  color:var(--gold);font-family:Marcellus,Georgia,serif;font-size:1.05rem;letter-spacing:.08em}
+.brand__txt b{display:block;font-family:Marcellus,Georgia,serif;font-weight:400;font-size:1.35rem;
+  letter-spacing:.14em;line-height:1.1;text-transform:uppercase}
+.brand__txt small{display:block;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:#8d8578}
+.navtoggle{display:inline-flex;align-items:center;gap:.55rem;background:none;border:1px solid var(--line-d);
+  color:var(--bone);font:400 .76rem/1 Jost,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  padding:.7rem .95rem;cursor:pointer}
+.navtoggle__bars{width:1rem;height:.55rem;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.nav{display:none;width:100%;padding-bottom:1.2rem}
+.nav.is-open{display:block}
+.nav ul{list-style:none;margin:0 0 1rem;padding:0;border-top:1px solid var(--line-d)}
+.nav a{display:block;color:var(--bone);text-decoration:none;padding:.65rem 0;font-size:.98rem;
+  letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line-d)}
+.nav a:hover,.nav a.is-active{color:var(--gold)}
+@media (min-width:66rem){
+  .navtoggle{display:none}
+  .nav{display:flex;align-items:center;gap:1.6rem;width:auto;padding:0}
+  .nav ul{display:flex;gap:1.5rem;margin:0;border:0}
+  .nav a{border:0;padding:.25rem 0;font-size:.72rem;letter-spacing:.18em;position:relative}
+  .nav a.is-active::after,.nav a:hover::after{content:"";position:absolute;left:0;right:0;bottom:-.3rem;
+    border-bottom:1px solid var(--gold)}
+}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;font:500 .74rem/1 Jost,Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;
+  padding:1rem 1.7rem;text-decoration:none;border:1px solid transparent;
+  transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn--gold{background:var(--gold);color:var(--noir);border-color:var(--gold)}
+.btn--gold:hover{background:var(--gold-l);color:var(--noir)}
+.btn--line{border-color:currentColor;color:inherit}
+.btn--line:hover{background:var(--noir);color:var(--gold);border-color:var(--noir)}
+.btn--dark{background:var(--noir);color:var(--bone);border-color:var(--noir)}
+.btn--dark:hover{color:var(--gold)}
+.btnrow{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.8rem}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--noir);color:var(--bone);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(201,168,108,.14) 0 1px,transparent 1px 7.5rem);
+  opacity:.7}
+.hero__in{position:relative;z-index:2;display:grid;gap:clamp(1.8rem,5vw,3.5rem);align-items:center;
+  padding:clamp(3rem,9vw,6rem) 0 clamp(2.6rem,7vw,4.5rem)}
+@media (min-width:58rem){.hero__in{grid-template-columns:1.15fr .85fr}}
+.hero h1{color:var(--bone)}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero__lead{color:#c6bfb4;font-size:clamp(1.05rem,1rem + .5vw,1.28rem);max-width:36rem}
+.eyebrow{font:400 .7rem/1 Jost,Arial,sans-serif;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 1.3rem;display:flex;align-items:center;gap:.9rem}
+.eyebrow::before{content:"";width:2.2rem;border-top:1px solid currentColor}
+.eyebrow--dark{color:var(--bronze)}
+.monopanel{border:1px solid var(--gold);padding:clamp(1.6rem,4vw,2.6rem);text-align:center;
+  background:linear-gradient(160deg,rgba(201,168,108,.14),transparent 65%)}
+.monopanel svg{width:min(11rem,42vw);height:auto;margin:0 auto .8rem}
+.monopanel p{margin:0;color:#c6bfb4;font-size:.9rem;letter-spacing:.12em}
+.monopanel b{display:block;font-family:Marcellus,Georgia,serif;font-size:1.35rem;color:var(--gold);
+  letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+
+/* ---------- Kennzahlenband ---------- */
+.facts{position:relative;z-index:2;display:grid;gap:1px;background:var(--line-d);
+  grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));border-top:1px solid var(--line-d)}
+.facts div{background:var(--noir2);padding:1.2rem 1.3rem}
+.facts b{display:block;font-family:Marcellus,Georgia,serif;font-size:1.9rem;color:var(--gold);line-height:1.1}
+.facts span{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#8d8578}
+
+/* ---------- Abschnitte ---------- */
+.sec{padding:clamp(3rem,7vw,5.5rem) 0}
+.sec--paper{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec--noir{background:var(--noir);color:var(--bone)}
+.sec--noir h2,.sec--noir h3{color:var(--bone)}
+.sec--noir a{color:var(--gold)}
+.sec--noir .sec__head p{color:#b6ad9d}
+.sec__head{max-width:42rem;margin-bottom:clamp(1.8rem,4vw,3rem)}
+.sec__head--mid{margin-inline:auto;text-align:center}
+.sec__head--mid .eyebrow{justify-content:center}
+.sec__head--mid .eyebrow::before{display:none}
+.sec__head p{color:var(--muted);font-size:1.05rem}
+.lead{font-size:clamp(1.05rem,1rem + .4vw,1.22rem)}
+.split{display:grid;gap:clamp(1.8rem,4vw,3.4rem);align-items:start}
+@media (min-width:56rem){.split{grid-template-columns:1.08fr .92fr}
+  .split--even{grid-template-columns:1fr 1fr}}
+
+/* ---------- Raumkarten ---------- */
+.grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}
+.room{border:1px solid var(--line);background:var(--paper);padding:1.7rem 1.5rem;position:relative}
+.room__no{position:absolute;top:-.75rem;left:1.4rem;background:var(--paper);padding:0 .5rem;
+  font:400 .7rem/1 Jost,Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze)}
+.room h3{margin-bottom:.4rem}
+.room p:last-child{margin-bottom:0}
+.sec--noir .room{background:var(--noir2);border-color:var(--line-d)}
+.sec--noir .room__no{background:var(--noir2);color:var(--gold)}
+.sec--noir .room p{color:#c6bfb4}
+.room--gold,.sec--noir .room--gold,.sec--paper .room--gold{background:var(--gold);
+  border-color:var(--gold);color:var(--noir)}
+.room--gold .room__no,.sec--noir .room--gold .room__no{background:var(--gold);color:var(--noir)}
+.room--gold h3,.sec--noir .room--gold h3{color:var(--noir)}
+.room--gold p,.room--gold li,.room--gold b,.sec--noir .room--gold p,
+.sec--noir .room--gold li{color:var(--noir)}
+.room--gold a,.sec--noir .room--gold a{color:var(--noir);text-decoration-thickness:.09em}
+.room--gold a:hover,.sec--noir .room--gold a:hover{color:#3a2c0f}
+.room--gold .ticks li::before{border-top-color:var(--noir)}
+
+/* ---------- Preisliste ---------- */
+.pricebox{border:1px solid var(--line);background:var(--paper);padding:clamp(1.4rem,3vw,2.2rem)}
+.pricebox h3{margin-top:0;padding-bottom:.6rem;border-bottom:1px solid var(--gold)}
+.price{list-style:none;padding:0;margin:0}
+.price li{display:flex;align-items:baseline;gap:.6rem;padding:.55rem 0;border-bottom:1px dotted var(--line)}
+.price li:last-child{border-bottom:0}
+.price__svc{flex:0 1 auto}
+.price__dots{flex:1 1 auto;border-bottom:1px dotted var(--line);transform:translateY(-.25rem)}
+.price__val{flex:none;font-family:Marcellus,Georgia,serif;font-size:1.08rem;color:var(--bronze);white-space:nowrap}
+.sec--noir .pricebox{background:var(--noir2);border-color:var(--line-d)}
+.sec--noir .price li{border-color:var(--line-d)}
+.sec--noir .price__dots{border-color:var(--line-d)}
+.sec--noir .price__val{color:var(--gold)}
+
+/* ---------- Listen, Marken, Notizen ---------- */
+.ticks{list-style:none;padding:0}
+.ticks li{position:relative;padding-left:1.6rem;margin-bottom:.6rem}
+.ticks li::before{content:"";position:absolute;left:0;top:.78em;width:.85rem;border-top:1px solid var(--gold)}
+.datalist{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.datalist li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.3rem 1rem;padding:.75rem 0;
+  border-bottom:1px solid var(--line)}
+.datalist span{color:var(--muted)}
+.sec--noir .datalist,.sec--noir .datalist li{border-color:var(--line-d)}
+.sec--noir .datalist span{color:#b6ad9d}
+.pill{display:inline-block;border:1px solid var(--line);padding:.45rem .9rem;margin:0 .4rem .45rem 0;
+  font:400 .72rem/1 Jost,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.sec--noir .pill{border-color:var(--line-d);color:var(--gold-l)}
+.note{border-left:1px solid var(--gold);background:var(--paper);padding:1.1rem 1.3rem}
+.note p{margin:0}
+.sec--noir .note{background:var(--noir2)}
+.panel{border:1px solid var(--line);background:var(--paper);padding:clamp(1.4rem,3vw,2.1rem)}
+.panel--noir{background:var(--noir);color:var(--bone);border-color:var(--noir)}
+.panel--noir h2,.panel--noir h3{color:var(--bone)}
+.panel--noir a{color:var(--gold)}
+.panel h2:first-child,.panel h3:first-child{margin-top:0}
+
+/* ---------- Zitate & Stimmen ---------- */
+.motto{font-family:Marcellus,Georgia,serif;font-size:clamp(1.35rem,1.1rem + 1.2vw,2rem);line-height:1.35;
+  font-style:italic;color:var(--bronze);margin:0 auto;max-width:38rem;text-align:center}
+.sec--noir .motto{color:var(--gold)}
+.motto+.motto__src{text-align:center;color:var(--muted);font-size:.78rem;letter-spacing:.2em;
+  text-transform:uppercase;margin-top:.9rem}
+.sec--noir .motto+.motto__src{color:#b6ad9d}
+.voices{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))}
+.voice{border:1px solid var(--line);background:var(--paper);padding:1.5rem 1.4rem;display:flex;
+  flex-direction:column;gap:.8rem}
+.voice blockquote{margin:0;font-size:.97rem;color:var(--ink)}
+.voice figcaption{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:auto}
+.stars{color:var(--bronze);letter-spacing:.3em;font-size:.85rem}
+.sec--noir .voice{background:var(--noir2);border-color:var(--line-d)}
+.sec--noir .voice blockquote{color:#ded7cc}
+.sec--noir .stars{color:var(--gold)}
+.sec--noir .voice figcaption{color:#8d8578}
+
+/* ---------- Ablauf-Zeitleiste ---------- */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 1.6rem 3.2rem;border-left:1px solid var(--line)}
+.steps li:last-child{border-left-color:transparent;padding-bottom:0}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:-1.05rem;top:0;
+  width:2.1rem;height:2.1rem;display:grid;place-items:center;background:var(--gold);color:var(--noir);
+  font:500 .78rem/1 Jost,Arial,sans-serif;letter-spacing:.06em}
+.steps h3{margin-bottom:.25rem}
+.steps p{margin:0}
+.sec--noir .steps li{border-left-color:var(--line-d)}
+
+/* ---------- Akkordeon ---------- */
+.acc{border-top:1px solid var(--line)}
+.acc__item{border-bottom:1px solid var(--line)}
+.acc h3{margin:0;font-size:1rem}
+.acc__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;
+  border:0;cursor:pointer;text-align:left;padding:1.1rem .1rem;color:var(--ink);
+  font:400 1.2rem/1.35 Marcellus,Georgia,serif}
+.acc__q:hover{color:var(--bronze)}
+.acc__q i{flex:none;width:.8rem;height:.8rem;border-right:1px solid var(--bronze);
+  border-bottom:1px solid var(--bronze);transform:rotate(45deg);margin-bottom:.3rem;transition:transform .18s ease}
+.acc__q[aria-expanded="true"] i{transform:rotate(-135deg);margin:.3rem 0 0}
+.acc__a{padding:0 .1rem 1.2rem;max-width:50rem}
+.acc__a p{margin:0}
+.sec--noir .acc,.sec--noir .acc__item{border-color:var(--line-d)}
+.sec--noir .acc__q{color:var(--bone)}
+.sec--noir .acc__q i{border-color:var(--gold)}
+
+/* ---------- Formular ---------- */
+.form{display:grid;gap:1.05rem}
+@media (min-width:40rem){.form__row{display:grid;grid-template-columns:1fr 1fr;gap:1.05rem}}
+.field label{display:block;font:400 .7rem/1 Jost,Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.45rem}
+.field input,.field select,.field textarea{width:100%;font:inherit;color:var(--ink);background:#fff;
+  border:1px solid var(--line);padding:.8rem .9rem}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:8rem;resize:vertical}
+.field--check{display:flex;gap:.65rem;align-items:flex-start}
+.field--check input{width:auto;margin-top:.4rem}
+.field--check label{text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--ink);line-height:1.55}
+.hint{font-size:.86rem;color:var(--muted)}
+.sec--noir .hint{color:#a9a196}
+.sec--noir .field label{color:#b6ad9d}
+.formnote{border:1px solid var(--gold);background:var(--paper);padding:1.15rem 1.3rem;margin:0}
+.formnote b{display:block;font-family:Marcellus,Georgia,serif;font-size:1.25rem;color:var(--bronze);
+  letter-spacing:.06em;margin-bottom:.3rem}
+
+/* ---------- Karte ---------- */
+.map{border:1px solid var(--line);background:var(--paper);overflow:hidden}
+.map svg{display:block;width:100%;height:auto}
+
+/* ---------- Fuß ---------- */
+.foot{background:var(--noir);color:#a9a196;padding:clamp(2.6rem,6vw,4rem) 0 1.6rem;font-size:.93rem;
+  border-top:1px solid var(--gold)}
+.foot a{color:var(--bone);text-decoration:none}
+.foot a:hover{color:var(--gold);text-decoration:underline}
+.foot h2{color:var(--bone);font-size:1.15rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.7rem}
+.foot__grid{display:grid;gap:2.2rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr))}
+.foot__mono{display:grid;place-items:center;width:2.8rem;height:2.8rem;border:1px solid var(--gold);
+  color:var(--gold);font-family:Marcellus,Georgia,serif;margin:0 0 .9rem;letter-spacing:.08em}
+.foot__name{color:var(--bone);font-family:Marcellus,Georgia,serif;font-size:1.2rem;margin-bottom:.5rem}
+.foot__name span{color:#8d8578;font-size:.95rem}
+.foot__small{font-size:.84rem;color:#8d8578}
+.foot__note{margin-top:2.6rem;padding-top:1.3rem;border-top:1px solid var(--line-d)}
+.foot__note p{font-size:.78rem;color:#8d8578;margin:0;max-width:64rem}
+.muster{border:1px solid var(--gold);background:var(--paper);padding:1.15rem 1.35rem;margin-bottom:2rem}
+.muster p{margin:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- Schutz: Buttons behalten ihre Farben in jedem Kontext ----------
+   (sonst gewinnen .nav a / .sec--noir a / .panel--noir a gegen .btn--*) */
+a.btn--gold{background:var(--gold);color:var(--noir);border-color:var(--gold)}
+a.btn--gold:hover{background:var(--gold-l);color:var(--noir)}
+a.btn--dark{background:var(--noir);color:var(--bone);border-color:var(--noir)}
+a.btn--dark:hover{color:var(--gold)}
+a.btn--line{color:inherit;border-color:currentColor}
+a.btn--line:hover{background:var(--noir);color:var(--gold);border-color:var(--noir)}
+/* Hover-Zustaende: Nav-/Basis-Linkfarben duerfen Buttons nicht einfaerben */
+.nav a.btn--gold,.nav a.btn--gold:hover{color:var(--noir);background:var(--gold)}
+.nav a.btn--gold:hover{background:var(--gold-l)}
+a.btn--dark:hover{background:var(--noir);color:var(--gold)}
+/* Dunkle Panels in hellen Abschnitten: Hilfstexte aufhellen */
+.panel--noir .hint,.panel--noir .datalist span,.panel--noir .field label,
+.panel--noir figcaption,.panel--noir .motto__src{color:#a9a196}
+.panel--noir .datalist,.panel--noir .datalist li{border-color:var(--line-d)}
+.panel--noir .ticks li::before{border-top-color:var(--gold)}

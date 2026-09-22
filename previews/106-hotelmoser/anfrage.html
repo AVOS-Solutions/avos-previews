@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer anfragen, Tisch reservieren &amp; Menü bestellen — Hotel Moser-Reiter</title>
+<meta name="description" content="Online-Anfrage für Zimmer, Tischreservierung, Vorbestellung des Tagesmenüs (€ 9,60 Abholung) und Gutscheine im Hotel Moser-Reiter Pöchlarn.">
+<link rel="canonical" href="https://hotelmoser.at/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Hotel Moser-Reiter Pöchlarn">
+<meta property="og:title" content="Zimmer anfragen, Tisch reservieren &amp; Menü bestellen — Hotel Moser-Reiter">
+<meta property="og:description" content="Online-Anfrage für Zimmer, Tischreservierung, Vorbestellung des Tagesmenüs (€ 9,60 Abholung) und Gutscheine im Hotel Moser-Reiter Pöchlarn.">
+<meta property="og:image" content="img/01.jpg">
+<meta property="og:url" content="https://hotelmoser.at/">
+<meta name="theme-color" content="#0E3348">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<p class="ribbon">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des Hotel Moser-Reiter · erstellt von <strong>AVOS Solutions</strong></p>
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html"><b>Moser-Reiter</b><span>Hotel · Restaurant · Pöchlarn</span></a>
+    <button class="navtoggle" type="button" id="navbtn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+     <ul>
+      <li><a href="index.html">Hotel</a></li>
+      <li><a href="zimmer.html">Zimmer &amp; Preise</a></li>
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="feiern.html">Feiern, Catering &amp; Seminare</a></li>
+      <li><a href="wachau.html">Wachau &amp; Ausflüge</a></li>
+      <li><a href="anfrage.html" aria-current="page">Anfrage</a></li>
+      <li><a href="kontakt.html">Anreise &amp; Kontakt</a></li>
+     </ul>
+    </nav>
+    <a class="btn btn--primary" href="anfrage.html">Zimmer anfragen</a>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--tight sec--deep">
+  <div class="wrap">
+    <span class="label">Anfrage &amp; Bestellung</span>
+    <h1>Buchen, reservieren, bestellen — ohne Umweg.</h1>
+    <p class="lede">Zimmer anfragen, Tisch reservieren, Tagesmenü vorbestellen oder einen Gutschein
+    verschenken: Alle Wege führen direkt zur Rezeption in Pöchlarn.</p>
+    <div class="btnrow">
+      <a class="btn btn--primary" href="#zimmer">Zimmer</a>
+      <a class="btn btn--line" href="#tisch">Tisch</a>
+      <a class="btn btn--line" href="#menue">Tagesmenü</a>
+      <a class="btn btn--line" href="#gutschein">Gutschein</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zimmer">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Zimmeranfrage</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="z-an">Anreise</label><input type="date" id="z-an" name="anreise" required></div>
+              <div class="field"><label for="z-ab">Abreise</label><input type="date" id="z-ab" name="abreise" required></div>
+              <div class="field"><label for="z-kat">Zimmerkategorie</label>
+                <select id="z-kat" name="kategorie">
+                  <option>„Das Moderne“ Kat. A+ — DZ ab € 108,– / EZ ab € 77,–</option>
+                  <option>„Das Gemütliche“ Kat. A — DZ ab € 103,– / EZ ab € 72,–</option>
+                  <option>„Das Komfortable“ Kat. B — DZ ab € 95,– / EZ ab € 65,–</option>
+                  <option>Barrierefreies Zimmer</option>
+                  <option>Radpauschale Wachau</option>
+                  <option>Last-Minute-Radurlaub</option>
+                </select></div>
+              <div class="field"><label for="z-zi">Anzahl Zimmer</label>
+                <select id="z-zi" name="zimmer"><option>1</option><option>2</option><option>3</option><option>4 oder mehr</option></select></div>
+              <div class="field"><label for="z-erw">Erwachsene</label><input type="number" id="z-erw" name="erwachsene" min="1" max="60" value="2"></div>
+              <div class="field"><label for="z-kind">Kinder (mit Alter)</label><input type="text" id="z-kind" name="kinder" placeholder="z. B. 1 Kind, 4 Jahre"></div>
+              <div class="field"><label for="z-verp">Verpflegung</label>
+                <select id="z-verp" name="verpflegung"><option>Frühstück (inklusive)</option><option>Halbpension (auf Anfrage)</option></select></div>
+              <div class="field"><label for="z-extra">Extras</label>
+                <select id="z-extra" name="extras"><option>keine</option><option>Gitterbett (€ 12,– pro Bett)</option>
+                  <option>Haustier (€ 8,– pro Nacht)</option><option>Fahrradabstellraum</option></select></div>
+              <div class="field"><label for="z-name">Name</label><input type="text" id="z-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="z-mail">E-Mail</label><input type="email" id="z-mail" name="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="z-txt">Anmerkungen</label>
+              <textarea id="z-txt" name="nachricht" placeholder="Anreisezeit, Barrierefreiheit, Räder, Gruppenanfrage …"></textarea></div>
+            <p class="checkline"><input type="checkbox" id="z-ds" required>
+              <label for="z-ds" style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)">
+              Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden.</label></p>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Unverbindlich anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb geht Ihre Anfrage direkt an
+          reception@hotelmoser.at und wird von der Rezeption beantwortet.</p>
+        </form>
+      </div>
+      <div>
+        <span class="label">Gut zu wissen</span>
+        <h2>Zur Zimmeranfrage</h2>
+        <ul>
+          <li>Alle Preise inklusive Frühstück, saisonabhängig</li>
+          <li>Halbpension auf Anfrage möglich</li>
+          <li>100 % Ermäßigung für Kinder von 0–6 Jahren im Bett der Eltern</li>
+          <li>Gitterbett € 12,– pro Bett — bitte bekanntgeben</li>
+          <li>Haustier € 8,– pro Nacht</li>
+          <li>Barrierefreie Zimmer vorhanden</li>
+          <li>Absperrbarer Fahrradabstellraum im Haus</li>
+        </ul>
+        <p class="note">Telefonisch: <a href="tel:+4327572448">+43 2757 2448</a> ·
+        <a href="mailto:reception@hotelmoser.at">reception@hotelmoser.at</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--sand" id="tisch">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div>
+        <span class="label">Restaurant</span>
+        <h2>Tisch reservieren</h2>
+        <p>Wir ersuchen um Tischreservierung — vor allem für die Sonntagsbuffets von 11.30 bis 14.30 Uhr.
+        Telefonisch unter <a href="tel:+4327572448">02757 2448</a> oder
+        <a href="tel:+4327572444">02757 2444</a>.</p>
+        <ul class="board">
+          <li><b>So 06.09.</b><span>Familienbuffet € 14,90</span></li>
+          <li><b>So 13.09.</b><span>Dirndl-Buffet € 26,90</span></li>
+          <li><b>So 20.09.</b><span>Deftiges Buffet € 26,90</span></li>
+          <li><b>So 27.09.</b><span>Backhenderl-Buffet € 16,90</span></li>
+          <li><b>So 04.10.</b><span>Wild-Buffet € 29,90</span></li>
+          <li><b>So 11.10.</b><span>Schnitzel-Buffet € 19,90</span></li>
+        </ul>
+      </div>
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Tischreservierung</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="t-datum">Datum</label><input type="date" id="t-datum" name="datum" required></div>
+              <div class="field"><label for="t-zeit">Uhrzeit</label><input type="time" id="t-zeit" name="zeit" required></div>
+              <div class="field"><label for="t-pers">Personen</label><input type="number" id="t-pers" name="personen" min="1" max="120" value="2"></div>
+              <div class="field"><label for="t-anlass">Anlass</label>
+                <select id="t-anlass" name="anlass"><option>Mittagessen</option><option>Abendessen</option>
+                  <option>Sonntagsbuffet</option><option>Familienfeier</option></select></div>
+              <div class="field"><label for="t-name">Name</label><input type="text" id="t-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="t-mail">E-Mail oder Telefon</label><input type="text" id="t-mail" name="kontakt" required></div>
+            </div>
+            <div class="field"><label for="t-txt">Anmerkungen</label>
+              <textarea id="t-txt" name="nachricht" style="min-height:5rem" placeholder="Kinderstuhl, Unverträglichkeiten, Sitzplatzwunsch …"></textarea></div>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Tisch anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb landet die Reservierung sofort
+          im Restaurant (02757 2448).</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="menue">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Tagesmenü bestellen</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="m-tag">Für welchen Tag?</label><input type="date" id="m-tag" name="tag" required></div>
+              <div class="field"><label for="m-zeit">Gewünschte Zeit (11–20 Uhr)</label><input type="time" id="m-zeit" name="zeit"></div>
+              <div class="field"><label for="m-anz">Anzahl Menüs</label><input type="number" id="m-anz" name="anzahl" min="1" max="50" value="1"></div>
+              <div class="field"><label for="m-art">Abholung oder Lieferung</label>
+                <select id="m-art" name="art"><option>Abholung — € 9,60 pro Menü</option><option>Lieferung — € 13,– pro Menü</option></select></div>
+              <div class="field"><label for="m-wahl">Menüwahl</label>
+                <select id="m-wahl" name="wahl"><option>Menü I</option><option>Menü II</option><option>egal</option></select></div>
+              <div class="field"><label for="m-tel">Telefon</label><input type="tel" id="m-tel" name="telefon" autocomplete="tel" required></div>
+            </div>
+            <div class="field"><label for="m-txt">Änderungswünsche</label>
+              <textarea id="m-txt" name="nachricht" style="min-height:5rem" placeholder="z. B. ohne Sauce, Suppe extra, Lieferadresse …"></textarea></div>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Menü bestellen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb geht die Bestellung direkt in die
+          Küche. Bitte im echten Betrieb unter 02757 2448 anmelden.</p>
+        </form>
+      </div>
+      <div>
+        <span class="label">Neu — Online-Bestellung</span>
+        <h2>Tagesmenü vorbestellen</h2>
+        <p>Täglich von Montag bis Sonntag, Abholung oder Lieferservice von 11 bis 20 Uhr, solange der
+        Vorrat reicht. <strong>€ 9,60</strong> pro Menü bei Abholung, <strong>€ 13,–</strong> bei Lieferung.
+        Änderungswünsche bitte gleich bei der Bestellung angeben.</p>
+        <p class="note">Neue Funktion in dieser Vorschau: Bisher ist der Menüplan nur als PDF-Download
+        verfügbar und Bestellungen laufen ausschließlich telefonisch.</p>
+        <div class="btnrow"><a class="btn btn--deep" href="restaurant.html#menueplan">Zum Menüplan</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--deep" id="gutschein">
+  <div class="wrap wrap--narrow">
+    <span class="label">Neu — Gutscheine</span>
+    <h2>Gutschein verschenken</h2>
+    <p class="lede">Übernachtung, Essen im Restaurant oder ein frei wählbarer Betrag — wir stellen den
+    Gutschein aus und senden ihn per Post oder als PDF.</p>
+    <div class="formbox" style="margin-top:1.3rem">
+      <form data-demo>
+        <fieldset>
+          <legend>Gutschein bestellen</legend>
+          <div class="fieldgrid">
+            <div class="field"><label for="g-art">Art</label>
+              <select id="g-art" name="art"><option>Wertgutschein</option><option>Übernachtung mit Frühstück</option>
+                <option>Essen im Restaurant</option><option>Sonntagsbuffet für 2 Personen</option>
+                <option>Radpauschale</option></select></div>
+            <div class="field"><label for="g-wert">Wert in Euro</label><input type="number" id="g-wert" name="wert" min="20" step="10" placeholder="z. B. 100"></div>
+            <div class="field"><label for="g-name">Ihr Name</label><input type="text" id="g-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="g-mail">Ihre E-Mail</label><input type="email" id="g-mail" name="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="g-txt">Widmung (optional)</label>
+            <textarea id="g-txt" name="widmung" style="min-height:4.5rem"></textarea></div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Gutschein anfragen</button>
+        <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb wird der Gutschein direkt bestellt
+        und an reception@hotelmoser.at übermittelt.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>Hotel Moser-Reiter</h4>
+        <p style="margin-bottom:.5rem"><strong style="color:#F2EBDE">Hotel Restaurant Moser-Reiter</strong><br>
+        Bahnhofsplatz 3, 3380 Pöchlarn, Niederösterreich</p>
+        <p>Rezeption <a href="tel:+4327572448">+43 2757 2448</a> · Feiern &amp; Seminare <a href="tel:+4327572444">02757 2444</a><br>
+        Mobil <a href="tel:+436642318652">0664 2318652</a><br>
+        <a href="mailto:reception@hotelmoser.at">reception@hotelmoser.at</a></p>
+        <p>Ganzjährig geöffnet — Familie Monika Reiter und das gesamte Team.</p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="index.html">Hotel</a></li>
+          <li><a href="zimmer.html">Zimmer &amp; Preise</a></li>
+          <li><a href="restaurant.html">Restaurant &amp; Menüplan</a></li>
+          <li><a href="feiern.html">Feiern, Catering &amp; Seminare</a></li>
+          <li><a href="wachau.html">Wachau &amp; Ausflüge</a></li>
+          <li><a href="anfrage.html">Anfrage &amp; Bestellung</a></li>
+          <li><a href="kontakt.html">Anreise &amp; Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kurz notiert</h4>
+        <ul>
+          <li>38 Zimmer, 3 Kategorien</li>
+          <li>Tagesmenü € 9,60 zum Abholen</li>
+          <li>Lieferservice 11–20 Uhr</li>
+          <li>Fahrradabstellraum absperrbar</li>
+          <li>Catering von 20 bis 1000 Personen</li>
+        </ul>
+        <p style="margin-top:.9rem"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Gestaltungs-Vorschau von AVOS Solutions — Inhalte und Preise stammen von der bestehenden Website des Betriebs.</span>
+      <span>Das Bildmaterial stammt von der bestehenden Website des Hotel Moser-Reiter.</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('navbtn'),n=document.getElementById('nav');
+  if(b&&n){b.addEventListener('click',function(){var o=n.getAttribute('data-open')==='true';
+    n.setAttribute('data-open',String(!o));b.setAttribute('aria-expanded',String(!o));});}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){e.preventDefault();
+      var m=f.querySelector('.msg');
+      if(m){m.setAttribute('data-show','true');m.setAttribute('role','status');m.scrollIntoView({block:'center',behavior:'smooth'});}
+      f.querySelectorAll('input,textarea,select').forEach(function(i){if(i.type!=='checkbox')i.value='';});});
+  });
+})();
+</script>
+</body>
+</html>

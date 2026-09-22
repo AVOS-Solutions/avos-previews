@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anfrage: Zimmer, Tisch, Feier, Seminar &amp; Gutschein – Wirt im Feld</title>
+<meta name="description" content="Zimmer anfragen, Tisch reservieren, Hochzeit oder Seminar planen, Busgruppe anmelden oder Gutschein bestellen – alle Anfragen beim Wirt im Feld in Steyr-Dietachdorf.">
+<link rel="canonical" href="https://www.wirtimfeld.at/anfrage.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Landgasthof Wirt im Feld">
+<meta property="og:title" content="Anfrage: Zimmer, Tisch, Feier, Seminar &amp; Gutschein – Wirt im Feld">
+<meta property="og:description" content="Zimmer anfragen, Tisch reservieren, Hochzeit oder Seminar planen, Busgruppe anmelden oder Gutschein bestellen – alle Anfragen beim Wirt im Feld in Steyr-Dietachdorf.">
+<meta property="og:locale" content="de_AT">
+<meta property="og:image" content="img/04.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=Jost:wght@300;400;500;600&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<div class="previewbar">Unverbindliche <b>Gestaltungs-Vorschau</b> · keine offizielle Website des Landgasthof Wirt im Feld · erstellt von AVOS&nbsp;Solutions</div>
+<header class="site">
+  <div class="site__in">
+    <a class="brand" href="index.html">
+      <span class="brand__n">Wirt im Feld</span>
+      <span class="brand__s">Landgasthof &amp; Hotel · Steyr-Dietachdorf</span>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="index.html">Haus</a></li>
+        <li><a href="wirtshaus.html">Wirtshaus &amp; Karte</a></li>
+        <li><a href="zimmer.html">Zimmer</a></li>
+        <li><a href="feiern-tagen.html">Feiern &amp; Tagen</a></li>
+        <li><a href="karriere.html">Karriere</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="anfrage.html">Zimmer anfragen</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--sand">
+  <div class="wrap">
+    <p class="kicker">Anfrage</p>
+    <h1>Sagen Sie uns,<br>worum es geht</h1>
+    <p class="lead">Zimmer, Tisch, Seminarraum, Festsaal, Busgruppe oder Gutschein &ndash; ein Formular pro Anliegen, Antwort direkt von den Chef-Leuten.</p>
+    <div class="btnrow">
+      <a class="btn btn--line" href="#zimmer">Zimmer</a>
+      <a class="btn btn--line" href="#tisch">Tisch</a>
+      <a class="btn btn--line" href="#feier">Feier</a>
+      <a class="btn btn--line" href="#seminar">Seminar</a>
+      <a class="btn btn--line" href="#gruppe">Busgruppe</a>
+      <a class="btn btn--line" href="#gutschein">Gutschein</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zimmer">
+  <div class="wrap">
+    <div class="split split--l">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an office@wirtimfeld.at. Aktuell wird nichts versendet und nichts gespeichert.</p>
+        <span class="num">01</span>
+        <h2 style="margin-top:0">Zimmer anfragen</h2>
+        <fieldset>
+          <legend>Aufenthalt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="z-an">Anreise</label><input type="date" id="z-an" name="anreise" required></div>
+            <div class="field"><label for="z-ab">Abreise</label><input type="date" id="z-ab" name="abreise" required></div>
+            <div class="field"><label for="z-erw">Erwachsene</label><input type="number" id="z-erw" name="erwachsene" min="1" max="20" value="1" required></div>
+            <div class="field"><label for="z-kin">Kinder</label><input type="number" id="z-kin" name="kinder" min="0" max="10" value="0"></div>
+            <div class="field"><label for="z-kat">Zimmerkategorie</label>
+              <select id="z-kat" name="kategorie">
+                <option>Business Zimmer (28 m²)</option>
+                <option>Standard Zimmer (24 m²)</option>
+                <option>Economy Zimmer (16 m²)</option>
+                <option>Bitte empfehlen</option>
+              </select>
+            </div>
+            <div class="field"><label for="z-anz">Anzahl Zimmer</label><input type="number" id="z-anz" name="zimmer" min="1" max="50" value="1"></div>
+          </div>
+          <p class="hint">Preise pro Person und Nacht inkl. Frühstücksbuffet, W-LAN und Parkplatz, zuzüglich € 2,40 Ortstaxe pro Person und Nacht.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="z-name">Name</label><input type="text" id="z-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="z-firma">Firma (optional)</label><input type="text" id="z-firma" name="firma"></div>
+            <div class="field"><label for="z-mail">E-Mail</label><input type="email" id="z-mail" name="email" autocomplete="email" required></div>
+            <div class="field"><label for="z-tel">Telefon</label><input type="tel" id="z-tel" name="telefon" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="z-text">Anmerkung (E-Auto laden, Langzeitaufenthalt, barrierefrei …)</label><textarea id="z-text" name="text"></textarea></div>
+          <p class="check"><input type="checkbox" id="z-ok" required> <label for="z-ok" style="font-weight:400">Meine Angaben dürfen zur Bearbeitung der Anfrage verwendet werden. <a href="datenschutz.html">Datenschutz</a></label></p>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Zimmeranfrage senden</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Zimmeranfrage jetzt beim Wirt im Feld. Dies ist eine Vorschau &ndash; bitte schreiben Sie derzeit an office@wirtimfeld.at oder rufen Sie +43 7252 38 2 22 an.</p>
+      </form>
+
+      <aside>
+        <div class="boxed">
+          <h3 style="margin-top:0">Direkt erreichbar</h3>
+          <p>Telefon: <a href="tel:+43725238222">+43 7252 38 2 22</a><br>
+             E-Mail: <a href="mailto:office@wirtimfeld.at">office@wirtimfeld.at</a></p>
+          <p class="note">24-Stunden-Rezeption. Wir sprechen russisch, ungarisch, tschechisch, italienisch, französisch und spanisch.</p>
+        </div>
+        <div class="boxed" style="margin-top:1.6rem" id="gutschein">
+          <span class="num">06</span>
+          <h3 style="margin-top:0">Gutschein bestellen</h3>
+          <p>Ein Gutschein für Übernachtung, Wirtshaus oder Wellness &ndash; Betrag frei wählbar.</p>
+          <form data-demo>
+            <div class="field"><label for="g-art">Gutschein für</label>
+              <select id="g-art" name="art">
+                <option>Übernachtung mit Frühstück</option>
+                <option>Essen im Wirtshaus</option>
+                <option>Sauna &amp; Infrarotkabine</option>
+                <option>Wertgutschein</option>
+              </select>
+            </div>
+            <div class="field"><label for="g-betrag">Betrag in Euro</label><input type="number" id="g-betrag" name="betrag" min="10" step="5" value="50"></div>
+            <div class="field"><label for="g-name">Ihr Name</label><input type="text" id="g-name" name="name" required></div>
+            <div class="field"><label for="g-mail">E-Mail</label><input type="email" id="g-mail" name="email" required></div>
+            <button class="btn btn--line" type="submit">Gutschein anfragen</button>
+            <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Gutscheinbestellung jetzt beim Wirt im Feld. Vorschau &ndash; bitte melden Sie sich derzeit unter office@wirtimfeld.at.</p>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--ink" id="tisch">
+  <div class="wrap">
+    <div class="split">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Reservierung direkt ans Wirtshaus.</p>
+        <span class="num">02</span>
+        <h2 style="margin-top:0">Tisch reservieren</h2>
+        <fieldset>
+          <legend>Ihr Besuch</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="t-datum">Datum</label><input type="date" id="t-datum" name="datum" required></div>
+            <div class="field"><label for="t-zeit">Uhrzeit</label><input type="time" id="t-zeit" name="zeit" required></div>
+            <div class="field"><label for="t-pers">Personen</label><input type="number" id="t-pers" name="personen" min="1" max="60" value="2" required></div>
+            <div class="field"><label for="t-ort">Bereich</label>
+              <select id="t-ort" name="bereich">
+                <option>Stube</option><option>Gickerl-Bar</option><option>Gewölberaum</option>
+                <option>Gastgarten</option><option>egal – bitte einteilen</option>
+              </select>
+            </div>
+          </div>
+          <p class="hint">Mo–Do &amp; Sa 07:00–23:00 Uhr, So &amp; Feiertag 08:00–14:30 Uhr, Freitag Ruhetag.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="t-name">Name</label><input type="text" id="t-name" name="name" required></div>
+            <div class="field"><label for="t-tel">Telefon</label><input type="tel" id="t-tel" name="telefon" required></div>
+          </div>
+          <div class="field"><label for="t-text">Anmerkung</label><textarea id="t-text" name="text"></textarea></div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Tisch reservieren</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website wäre Ihre Reservierung jetzt im Haus. Vorschau &ndash; bitte rufen Sie derzeit +43 7252 38 2 22 an.</p>
+      </form>
+
+      <form class="form" data-demo id="gruppe">
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anmeldung direkt an office@wirtimfeld.at.</p>
+        <span class="num">05</span>
+        <h2 style="margin-top:0">Busgruppe anmelden</h2>
+        <fieldset>
+          <legend>Ihre Gruppe</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="b-datum">Datum</label><input type="date" id="b-datum" name="datum" required></div>
+            <div class="field"><label for="b-zeit">Ankunftszeit</label><input type="time" id="b-zeit" name="zeit" required></div>
+            <div class="field"><label for="b-pers">Personen</label><input type="number" id="b-pers" name="personen" min="10" max="300" value="45" required></div>
+            <div class="field"><label for="b-art">Verpflegung</label>
+              <select id="b-art" name="verpflegung">
+                <option>Mittagessen</option><option>Abendessen</option>
+                <option>Kaffee und Kuchen</option><option>Jause</option><option>nach Absprache</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="b-text">Wünsche, Allergien, Programm</label><textarea id="b-text" name="text"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Reiseveranstalter / Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="b-name">Name / Firma</label><input type="text" id="b-name" name="name" required></div>
+            <div class="field"><label for="b-mail">E-Mail</label><input type="email" id="b-mail" name="email" required></div>
+          </div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Gruppe anmelden</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Gruppenanmeldung jetzt beim Wirt im Feld. Vorschau &ndash; bitte schreiben Sie derzeit an office@wirtimfeld.at.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="feier">
+  <div class="wrap">
+    <div class="split split--l">
+      <form class="form" data-demo>
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an die Chef-Leute.</p>
+        <span class="num">03</span>
+        <h2 style="margin-top:0">Hochzeit &amp; Fest anfragen</h2>
+        <fieldset>
+          <legend>Ihre Feier</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="f-anlass">Anlass</label>
+              <select id="f-anlass" name="anlass">
+                <option>Hochzeit</option><option>Geburtstag</option><option>Firmenfeier</option>
+                <option>Vereinsfeier</option><option>Weihnachtsfeier</option><option>Taufe / Familienfest</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-datum">Wunschtermin</label><input type="date" id="f-datum" name="datum" required></div>
+            <div class="field"><label for="f-pers">Personen</label><input type="number" id="f-pers" name="personen" min="10" max="250" value="80" required></div>
+            <div class="field"><label for="f-saal">Raum</label>
+              <select id="f-saal" name="saal">
+                <option>Vorschlag erbeten</option>
+                <option>Festsaal (bis 250)</option>
+                <option>Saal „Enns“ (bis 120)</option>
+                <option>Saal „Steyr“ (bis 100)</option>
+                <option>Stube / Gewölberaum</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-zimmer">Zimmer für Gäste</label><input type="number" id="f-zimmer" name="zimmer" min="0" max="96" value="0"></div>
+            <div class="field"><label for="f-kinder">Kinder (Kindermenüs)</label><input type="number" id="f-kinder" name="kinder" min="0" max="60" value="0"></div>
+          </div>
+          <div class="field"><label for="f-text">Was ist Ihnen wichtig? (Menü oder Buffet, Musik, Tanzboden, Brautstehlen, Dekoration)</label><textarea id="f-text" name="text"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required></div>
+            <div class="field"><label for="f-mail">E-Mail</label><input type="email" id="f-mail" name="email" required></div>
+          </div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Feier anfragen</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Anfrage jetzt beim Wirt im Feld. Vorschau &ndash; bitte schreiben Sie derzeit an office@wirtimfeld.at.</p>
+      </form>
+
+      <form class="form" data-demo id="seminar">
+        <p class="formnote">Vorschau &ndash; im Live-Betrieb geht diese Anfrage direkt an office@wirtimfeld.at.</p>
+        <span class="num">04</span>
+        <h2 style="margin-top:0">Seminar anfragen</h2>
+        <fieldset>
+          <legend>Ihre Veranstaltung</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="s-typ">Art</label>
+              <select id="s-typ" name="typ">
+                <option>Ganztägiges Seminar mit Übernachtung</option>
+                <option>Tagesseminar</option>
+                <option>Halbtagsseminar</option>
+                <option>Workshop / Schulung</option>
+              </select>
+            </div>
+            <div class="field"><label for="s-raum">Raum</label>
+              <select id="s-raum" name="raum">
+                <option>Vorschlag erbeten</option>
+                <option>Seminarraum „Enns“</option>
+                <option>Seminarraum „Steyr“</option>
+                <option>Seminarraum „Dietach“</option>
+                <option>„Enns“ + „Steyr“ kombiniert</option>
+              </select>
+            </div>
+            <div class="field"><label for="s-datum">Termin</label><input type="date" id="s-datum" name="datum" required></div>
+            <div class="field"><label for="s-pers">Teilnehmende</label><input type="number" id="s-pers" name="personen" min="2" max="200" value="15" required></div>
+          </div>
+          <div class="field"><label for="s-tech">Benötigte Technik &amp; Verpflegung</label><textarea id="s-tech" name="technik" placeholder="Beamer, Flipchart, Pinnwände, Kaffeepausen, Wahlmenü …"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Kontakt</legend>
+          <div class="formgrid formgrid--2">
+            <div class="field"><label for="s-name">Name / Firma</label><input type="text" id="s-name" name="name" required></div>
+            <div class="field"><label for="s-mail">E-Mail</label><input type="email" id="s-mail" name="email" required></div>
+          </div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Seminar anfragen</button>
+        <p class="formdone" hidden>Danke! In der fertigen Website läge Ihre Seminaranfrage jetzt beim Wirt im Feld. Vorschau &ndash; bitte schreiben Sie derzeit an office@wirtimfeld.at.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Landgasthof Wirt im Feld</h3>
+        <ul>
+          <li>Ennserstraße 99, A-4407 Steyr-Dietachdorf</li>
+          <li>Telefon: <a href="tel:+43725238222">+43 7252 38 2 22</a></li>
+          <li>E-Mail: <a href="mailto:office@wirtimfeld.at">office@wirtimfeld.at</a></li>
+          <li><a href="https://www.facebook.com/wirtimfeld" rel="noopener">Wirt im Feld auf Facebook</a></li>
+          <li><a href="https://www.youtube.com/channel/UCIsLauX09VPSMKF0ttvWDuA" rel="noopener">Wirt im Feld auf YouTube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul>
+          <li>Mo–Do &amp; Sa: 07:00 – 23:00 Uhr</li>
+          <li>So &amp; Feiertag: 08:00 – 14:30 Uhr</li>
+          <li>Freitag: Ruhetag</li>
+          <li>Frühstück ab 06:00 Uhr (Early Bird)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="wirtshaus.html">Wirtshaus &amp; Speisenkarte</a></li>
+          <li><a href="zimmer.html">Zimmer &amp; Hotelservice</a></li>
+          <li><a href="feiern-tagen.html">Hochzeit, Feste, Seminare, Busse</a></li>
+          <li><a href="anfrage.html">Anfrage &amp; Gutschein</a></li>
+          <li><a href="karriere.html">Karriere &amp; Einblicke</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anreise</a></li>
+          <li><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <p>Sämtliche Fotos dieser Vorschau stammen von der bestehenden Website des Landgasthof Wirt im Feld (wirtimfeld.at) und bleiben Eigentum des Betriebs.</p>
+      <p>Unverbindliche Gestaltungs-Vorschau von AVOS Solutions · keine offizielle Website, kein Vertragsangebot.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var t=document.getElementById('navtoggle'), n=document.getElementById('nav');
+  function sync(){ if(window.matchMedia('(min-width:1000px)').matches){ n.hidden=false; }
+    else { n.hidden = t.getAttribute('aria-expanded')!=='true'; } }
+  t.addEventListener('click',function(){
+    var open=t.getAttribute('aria-expanded')==='true';
+    t.setAttribute('aria-expanded',String(!open)); n.hidden=open;
+  });
+  window.addEventListener('resize',sync); sync();
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var box=f.querySelector('.formdone');
+      if(box){ box.hidden=false; box.setAttribute('tabindex','-1'); box.focus(); box.scrollIntoView({block:'center'}); }
+    });
+  });
+  var lb=document.getElementById('lightbox');
+  if(lb){
+    var img=lb.querySelector('img');
+    document.querySelectorAll('.gallery button').forEach(function(b){
+      b.addEventListener('click',function(){
+        var s=b.querySelector('img'); img.src=s.src; img.alt=s.alt;
+        lb.classList.add('is-open'); lb.querySelector('.lightbox__close').focus();
+      });
+    });
+    function close(){ lb.classList.remove('is-open'); }
+    lb.querySelector('.lightbox__close').addEventListener('click',close);
+    lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  }
+})();
+</script>
+</body>
+</html>

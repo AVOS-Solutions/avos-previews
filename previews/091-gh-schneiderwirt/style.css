@@ -1,0 +1,205 @@
+/* Gasthaus Schneiderwirt Altaussee — Gestaltungs-Vorschau (AVOS Solutions)
+   Motiv: Wirtshaus-Tafel im Ausseerland — Bogenformen, Kreidetafel, Almgrün */
+
+:root{
+  --tann:#123528;
+  --tann-2:#1b4b37;
+  --wiese:#2c7a51;
+  --kupfer:#a9491a;
+  --kupfer-hell:#c4622f;
+  --creme:#f8f3e8;
+  --papier:#fffdf7;
+  --kreide:#f0e7d3;
+  --linie:#ddcfb3;
+  --text:#241f1a;
+  --text-leise:#544a40;
+  --schatten:0 14px 34px rgba(18,53,40,.13);
+  --radius-bogen:190px 190px 14px 14px;
+  --mw:1140px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--creme);
+  color:var(--text);
+  font-family:"Karla","Segoe UI",Tahoma,sans-serif;
+  font-size:clamp(1rem,.97rem + .2vw,1.08rem);
+  line-height:1.65;
+  overflow-wrap:break-word;
+}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{font-family:"Fraunces","Iowan Old Style",Georgia,serif;line-height:1.12;margin:0 0 .5em;font-weight:600}
+h1{font-size:clamp(2.2rem,1.5rem + 3.4vw,4rem);letter-spacing:-.015em}
+h2{font-size:clamp(1.65rem,1.25rem + 1.7vw,2.6rem)}
+h3{font-size:clamp(1.15rem,1.05rem + .5vw,1.45rem)}
+p{margin:0 0 1em}
+a{color:#0f5c3d}
+a:hover{color:var(--kupfer)}
+:focus-visible{outline:3px solid var(--kupfer);outline-offset:3px;border-radius:4px}
+
+.wrap{width:min(100% - 2rem,var(--mw));margin-inline:auto}
+.wrap--schmal{width:min(100% - 2rem,780px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--tann);color:#fff;padding:.7rem 1.1rem;z-index:60}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ---------- Vorschauleiste ---------- */
+.vorschau{background:var(--tann);color:var(--kreide);font-size:.78rem;letter-spacing:.02em;padding:.5rem 0}
+.vorschau p{margin:0}
+.vorschau strong{color:#fff;font-weight:600}
+
+/* ---------- Kopf ---------- */
+.kopf{background:var(--papier);border-bottom:1px solid var(--linie);position:sticky;top:0;z-index:50}
+.kopf__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0;flex-wrap:wrap}
+.marke{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--tann);min-width:0}
+.marke__zeichen{width:44px;height:44px;flex:none;border-radius:50% 50% 10px 10px;background:var(--wiese);color:#fff;display:grid;place-items:center;font-family:"Fraunces",Georgia,serif;font-size:1.35rem;line-height:1}
+.marke__text{display:flex;flex-direction:column;min-width:0}
+.marke__name{font-family:"Fraunces",Georgia,serif;font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+.marke__ort{font-size:.72rem;text-transform:uppercase;letter-spacing:.22em;color:var(--text-leise)}
+.navtoggle{font:inherit;font-size:.9rem;background:var(--tann);color:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer}
+.nav{display:none;width:100%}
+.nav.is-open{display:block}
+.nav ul{list-style:none;margin:.6rem 0 .3rem;padding:0;display:flex;flex-direction:column;gap:.15rem}
+.nav a{display:block;padding:.6rem .2rem;text-decoration:none;color:var(--tann);border-bottom:1px solid var(--linie);font-weight:600;font-size:.98rem}
+.nav a[aria-current="page"]{color:var(--kupfer)}
+
+@media (min-width:900px){
+  .navtoggle{display:none}
+  .nav{display:block;width:auto}
+  .nav ul{flex-direction:row;gap:1.35rem;margin:0}
+  .nav a{border:0;padding:.2rem 0;font-size:.95rem}
+  .nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--kupfer)}
+}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;font:inherit;font-weight:700;font-size:.95rem;text-decoration:none;border:0;border-radius:999px;padding:.8rem 1.5rem;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+a.btn--primar,.btn--primar{background:var(--kupfer);color:#fff}
+a.btn--primar:hover,a.btn--primar:focus-visible,.btn--primar:hover{background:#8f3c14;color:#fff}
+a.btn--hell,.btn--hell{background:var(--creme);color:var(--tann)}
+a.btn--hell:hover,a.btn--hell:focus-visible{background:#fff;color:var(--tann)}
+a.btn--dunkel,.btn--dunkel{background:var(--tann);color:#fff}
+a.btn--dunkel:hover,a.btn--dunkel:focus-visible{background:var(--tann-2);color:#fff}
+.btn-reihe{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--papier);padding:0 0 clamp(2rem,5vw,3.5rem)}
+.hero__bild{position:relative}
+.hero__bild img{width:100%;height:clamp(230px,42vw,460px);object-fit:cover;border-radius:0 0 26px 26px}
+.hero__panel{background:var(--tann);color:var(--kreide);border-radius:22px;padding:clamp(1.5rem,4vw,2.6rem);margin-top:-2.5rem;position:relative;box-shadow:var(--schatten);max-width:760px}
+.hero__panel h1{color:#fff;margin-bottom:.35em}
+.hero__panel p{color:var(--kreide);font-size:1.06rem;max-width:52ch}
+.hero__eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.24em;color:#a8d8be;margin-bottom:.9rem}
+
+/* ---------- Fakten ---------- */
+.fakten{background:var(--wiese);color:#fff;padding:1.4rem 0}
+.fakten ul{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:1fr}
+.fakten li{min-width:0}
+.fakten b{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.3rem;color:#fff}
+.fakten span{font-size:.88rem;color:#eaf6ee}
+@media(min-width:720px){.fakten ul{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* ---------- Abschnitte ---------- */
+.abschnitt{padding:clamp(2.6rem,6vw,4.6rem) 0}
+.abschnitt--papier{background:var(--papier)}
+.abschnitt--tann{background:var(--tann);color:var(--kreide)}
+.abschnitt--tann h2,.abschnitt--tann h3{color:#fff}
+.abschnitt--tann a:not(.btn){color:#a8d8be}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.24em;color:var(--kupfer);font-weight:700;margin:0 0 .7rem}
+.abschnitt--tann .eyebrow{color:#a8d8be}
+.lead{font-size:1.1rem;max-width:60ch;color:var(--text-leise)}
+.abschnitt--tann .lead{color:var(--kreide)}
+
+.duo{display:grid;gap:clamp(1.5rem,4vw,3rem);align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .duo--kehr>*:first-child{order:2}}
+.bogen{border-radius:var(--radius-bogen);overflow:hidden;box-shadow:var(--schatten)}
+.bogen img{width:100%;height:clamp(260px,40vw,430px);object-fit:cover}
+.bild-kante{border-radius:18px;overflow:hidden;box-shadow:var(--schatten)}
+.bild-kante img{width:100%;height:clamp(190px,26vw,290px);object-fit:cover}
+
+/* ---------- Öffnungszeiten ---------- */
+.zeiten{background:var(--papier);border:1px solid var(--linie);border-radius:20px;padding:clamp(1.2rem,3vw,2rem);box-shadow:var(--schatten)}
+.zeiten dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.1rem .8rem}
+.zeiten dt{padding:.5rem 0;border-bottom:1px dotted var(--linie);font-weight:700;min-width:0}
+.zeiten dd{margin:0;padding:.5rem 0;border-bottom:1px dotted var(--linie);text-align:right;font-variant-numeric:tabular-nums;color:var(--text-leise)}
+.zeiten .ruhe{color:var(--kupfer);font-weight:700}
+.hinweis{font-size:.9rem;color:var(--text-leise);margin-top:1rem}
+.abschnitt--tann .hinweis{color:var(--kreide)}
+
+/* ---------- Kreidetafel ---------- */
+.tafel{background:#0e2b21;border:10px solid #6b4a2a;border-radius:14px;padding:clamp(1.4rem,4vw,2.6rem);color:var(--kreide);box-shadow:var(--schatten)}
+.tafel h2,.tafel h3{color:#fff;font-style:italic}
+.tafel__linie{border:0;border-top:1px dashed rgba(240,231,211,.45);margin:1.2rem 0}
+.tafel ul{list-style:none;padding:0;margin:0;display:grid;gap:.9rem}
+.tafel li{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;min-width:0}
+.tafel .pos{font-weight:700;color:#fff}
+.tafel .notiz{font-size:.92rem;color:#cfc2a6}
+
+/* ---------- Karten ---------- */
+.karten{display:grid;gap:1.3rem;grid-template-columns:1fr;margin-top:2rem}
+@media(min-width:700px){.karten--2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:860px){.karten--3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.karte{background:var(--papier);border:1px solid var(--linie);border-radius:18px;padding:1.5rem;min-width:0;box-shadow:0 6px 18px rgba(18,53,40,.07)}
+.karte h3{margin-bottom:.35em}
+.karte p:last-child{margin-bottom:0}
+.karte__nr{font-family:"Fraunces",Georgia,serif;font-size:1.6rem;color:var(--kupfer);display:block;margin-bottom:.3rem}
+.abschnitt--tann .karte{background:var(--tann-2);border-color:#2f6b51;color:var(--kreide)}
+.abschnitt--tann .karte h3{color:#fff}
+
+/* ---------- Galerie ---------- */
+.galerie{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));margin-top:2rem}
+.galerie figure{margin:0;background:var(--papier);border:1px solid var(--linie);border-radius:16px;overflow:hidden;min-width:0}
+.galerie img{width:100%;height:230px;object-fit:cover}
+.galerie figcaption{padding:.7rem .9rem;font-size:.88rem;color:var(--text-leise)}
+
+/* ---------- Formulare ---------- */
+.formular{background:var(--papier);border:1px solid var(--linie);border-radius:20px;padding:clamp(1.3rem,3.5vw,2.2rem);box-shadow:var(--schatten)}
+.feldgruppe{display:grid;gap:1rem;grid-template-columns:1fr;margin-bottom:1rem}
+@media(min-width:640px){.feldgruppe--2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.feld{display:flex;flex-direction:column;gap:.35rem;min-width:0}
+.feld label{font-weight:700;font-size:.9rem}
+.feld input,.feld select,.feld textarea{font:inherit;width:100%;max-width:100%;padding:.7rem .85rem;border:1px solid #c9bb9d;border-radius:10px;background:#fff;color:var(--text)}
+.feld textarea{min-height:130px;resize:vertical}
+fieldset{min-inline-size:0;border:1px solid var(--linie);border-radius:14px;padding:1rem;margin:0 0 1rem}
+legend{font-weight:700;font-size:.9rem;padding:0 .4rem}
+.pflicht{font-size:.85rem;color:var(--text-leise)}
+.formular-hinweis{margin-top:1rem;padding:.9rem 1.1rem;border-radius:12px;background:#e6f1e9;border:1px solid #b9d9c6;color:#14402d;font-size:.93rem}
+.formular-hinweis[hidden]{display:none}
+
+/* ---------- FAQ ---------- */
+.faq details{background:var(--papier);border:1px solid var(--linie);border-radius:14px;padding:.2rem 1.1rem;margin-bottom:.8rem}
+.faq summary{cursor:pointer;font-weight:700;padding:.9rem 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--kupfer);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 1rem}
+
+/* ---------- Karte/Anfahrt ---------- */
+.anfahrt{background:var(--tann-2);border-radius:20px;padding:1.4rem;color:var(--kreide)}
+.anfahrt svg{width:100%;height:auto;display:block;border-radius:14px;background:#1b4b37}
+
+/* ---------- Fuß ---------- */
+.fuss{background:var(--tann);color:var(--kreide);padding:clamp(2.2rem,5vw,3.4rem) 0 1.5rem;margin-top:0}
+.fuss a:not(.btn){color:#a8d8be}
+.fuss__raster{display:grid;gap:1.8rem;grid-template-columns:1fr}
+@media(min-width:760px){.fuss__raster{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.fuss h3{color:#fff;font-size:1.05rem}
+.fuss ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.fuss__klein{border-top:1px solid #2f6b51;margin-top:2rem;padding-top:1.2rem;font-size:.82rem;color:#c8bca2}
+.fuss__klein a{color:#a8d8be}
+
+.tabellenhuelle{overflow-x:auto}
+.muster{background:#fdf3e2;border:1px solid #e0c896;border-radius:14px;padding:1rem 1.2rem;color:#5a3d0c;font-size:.93rem}
+
+/* ---------- Korrekturen: Formulare und Dekoziffern auf dunklem Grund ---------- */
+.formular{color:var(--text)}
+.formular h2,.formular h3,.formular label,.formular legend,.formular .pflicht{color:var(--text)}
+.formular .pflicht,.formular .hinweis{color:var(--text-leise)}
+.abschnitt--tann .formular a:not(.btn){color:#0f5c3d}
+.abschnitt--tann .karte__nr{color:#f0b183}
+.zeiten,.faq details,.karte,.galerie figure{color:var(--text)}
+.abschnitt--tann .zeiten{color:var(--text)}
+.abschnitt--tann .zeiten h3{color:var(--tann)}
+.abschnitt--tann .zeiten .hinweis{color:var(--text-leise)}

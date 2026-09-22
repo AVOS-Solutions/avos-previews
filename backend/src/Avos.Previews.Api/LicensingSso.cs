@@ -26,6 +26,11 @@ public class LicensingSso(HttpClient http, IConfiguration config)
         $"{BaseUrl}/api/sso/authorize?client_id={Uri.EscapeDataString(ClientId!)}" +
         $"&redirect_uri={Uri.EscapeDataString(redirectUri)}&state={Uri.EscapeDataString(state)}";
 
+    /// <summary>Throws (rather than returning null) on a non-success response from avos-licensing,
+    /// carrying the status code and response body — the caller's catch block logs it. A silent null
+    /// here previously made every real failure reason (wrong client secret, an expired/already-used
+    /// code, a redirect_uri avos-licensing itself doesn't recognize) indistinguishable from any
+    /// other, with nothing in the logs to tell them apart.</summary>
     public async Task<SsoIdentity?> ExchangeCodeAsync(string code, string redirectUri, CancellationToken ct)
     {
         var resp = await http.PostAsJsonAsync($"{BaseUrl}/api/sso/token", new
@@ -35,7 +40,11 @@ public class LicensingSso(HttpClient http, IConfiguration config)
             code,
             redirectUri,
         }, ct);
-        if (!resp.IsSuccessStatusCode) return null;
+        if (!resp.IsSuccessStatusCode)
+        {
+            var body = await resp.Content.ReadAsStringAsync(ct);
+            throw new InvalidOperationException($"avos-licensing rejected the SSO code exchange ({(int)resp.StatusCode} {resp.StatusCode}): {body}");
+        }
         return await resp.Content.ReadFromJsonAsync<SsoIdentity>(ct);
     }
 }

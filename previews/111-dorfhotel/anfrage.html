@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer anfragen, Gutschein bestellen, Seminar planen — Dorfhotel Fernblick</title>
+<meta name="description" content="Zimmer- und Package-Anfrage, Tischreservierung, Gutscheinbestellung, Kräutergarten-Führung, Seminaranfrage und Newsletter des Dorfhotel Fernblick in Bad Gams.">
+<link rel="canonical" href="https://www.dorfhotel.at/anfrage.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Dorfhotel Fernblick">
+<meta property="og:title" content="Zimmer anfragen, Gutschein bestellen, Seminar planen — Dorfhotel Fernblick">
+<meta property="og:description" content="Zimmer- und Package-Anfrage, Tischreservierung, Gutscheinbestellung, Kräutergarten-Führung, Seminaranfrage und Newsletter des Dorfhotel Fernblick in Bad Gams.">
+<meta property="og:url" content="https://www.dorfhotel.at/anfrage.html">
+<meta property="og:image" content="https://www.dorfhotel.at/img/10.jpg">
+<meta name="theme-color" content="#132a1e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Karla:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p class="preview-bar">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des <b>Dorfhotel Fernblick</b> · erstellt von AVOS&nbsp;Solutions</p>
+<a class="skip" href="#main">Direkt zum Inhalt</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><path d="M17 3C9 7 4 13 4 21c0 5 3.6 9 8.8 9 7 0 12-6.2 12-14 0-5-2.6-9.6-7.8-13Z" fill="none" stroke="#2f5c42" stroke-width="1.6"/><path d="M17 30V8" fill="none" stroke="#a8324a" stroke-width="1.6"/><path d="M17 14l5-4M17 19l6-4M17 24l5-3M17 15l-5-4M17 20l-6-4" fill="none" stroke="#2f5c42" stroke-width="1.2"/></svg>
+      <span><span class="brand-name">Dorfhotel Fernblick</span><span class="brand-sub">Bad Gams · Schilcherland</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptnavigation" id="navbtn"><span></span>Menü</button>
+    <nav class="nav" id="hauptnavigation" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="zimmer.html">Zimmer &amp; Preise</a></li>
+        <li><a href="angebote.html">Packages</a></li>
+        <li><a href="kulinarik.html">Kulinarik</a></li>
+        <li><a href="haus-umgebung.html">Haus &amp; Garten</a></li>
+        <li><a href="anfrage.html" aria-current="page">Anfragen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li class="nav-cta"><a class="btn btn--primary" href="anfrage.html">Zimmer anfragen</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="sec sec--tight sec--sand">
+  <div class="wrap">
+    <span class="eyebrow">Anfragen &amp; buchen</span>
+    <h1>Ein Formular für alles</h1>
+    <p class="lead" style="max-width:62ch">Zimmer, Package, Tisch, Gartenführung, Seminar oder
+    Gutschein — hier laufen alle Anfragen zusammen. Wir melden uns persönlich zurück.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap split split--wide-left">
+    <div>
+      <h2 class="mt0" id="tisch">Zimmer- und Package-Anfrage</h2>
+      <p>Die Preise entnehmen Sie der <a href="zimmer.html">Preisliste</a>; Aufpreise für Halbpension
+      wählen Sie gleich mit aus.</p>
+      <form class="form" data-demo>
+        <fieldset>
+          <legend>Ihr Aufenthalt</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="an">Anreise</label>
+              <input type="date" id="an" name="anreise" required>
+            </div>
+            <div class="field">
+              <label for="ab">Abreise</label>
+              <input type="date" id="ab" name="abreise" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="erw">Erwachsene</label>
+              <input type="number" id="erw" name="erwachsene" min="1" max="12" value="2">
+            </div>
+            <div class="field">
+              <label for="kin">Kinder</label>
+              <input type="number" id="kin" name="kinder" min="0" max="8" value="0">
+              <span class="hint">Bis 6 Jahre frei im Zimmer der Eltern, bis 12 Jahre 50 % Rabatt.</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="kat">Zimmerkategorie</label>
+            <select id="kat" name="kategorie">
+              <option>Doppelzimmer mit Frühstück</option>
+              <option>Einbettzimmer mit Frühstück</option>
+              <option>Zwei Doppelzimmer</option>
+              <option>Noch offen — bitte beraten</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="verp">Verpflegung</label>
+            <select id="verp" name="verpflegung">
+              <option>Frühstück</option>
+              <option>Halbpension, Menü 2-gängig (+ € 12,50 p. P.)</option>
+              <option>Halbpension, Menü 3-gängig (+ € 15,50 p. P.)</option>
+              <option>Halbpension, Menü 4-gängig (+ € 23,50 p. P.)</option>
+              <option>Vollpension (auf Anfrage)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pack">Package</label>
+            <select id="pack" name="package">
+              <option>Ohne Package</option>
+              <option>Silvester, 3 Nächte (€ 199,90 p. P.)</option>
+              <option>Mondscheinzauber, 3 Tage / 2 Nächte (€ 124,90 p. P.)</option>
+              <option>Rosèwein &amp; Rosen, 3 Tage / 2 Nächte (€ 124,90 p. P.)</option>
+              <option>Kräuterfrische Genußtage, 3 Tage / 2 Nächte (€ 124,90 p. P.)</option>
+              <option>Steirischer Osterbrauch, 3 Tage / 2 Nächte (€ 124,90 p. P.)</option>
+              <option>Ostermenü 4-gängig, 3.–8. April 2026 (€ 29,90 p. P.)</option>
+              <option>Ostermenü mit Erweiterungs-Package (+ € 99,00 p. P.)</option>
+            </select>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="transfer" name="transfer">
+            <label for="transfer">Kostenlosen Transfer ab Bahnhof Frauental/Gams organisieren</label>
+          </div>
+          <div class="check">
+            <input type="checkbox" id="tischres" name="tisch">
+            <label for="tischres">Zusätzlich einen Tisch im Restaurant reservieren</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ihre Kontaktdaten</legend>
+          <div class="field-row">
+            <div class="field"><label for="nam">Name</label><input type="text" id="nam" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="tel">Telefon</label><input type="tel" id="tel" name="telefon" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="mail">E-Mail</label><input type="email" id="mail" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="nachricht">Ihre Nachricht</label><textarea id="nachricht" name="nachricht" placeholder="Wünsche, Fragen, Anlass …"></textarea></div>
+          <div class="check">
+            <input type="checkbox" id="dsg" name="datenschutz" required>
+            <label for="dsg">Ich habe die <a href="datenschutz.html">Datenschutzhinweise</a> gelesen.</label>
+          </div>
+        </fieldset>
+        <p class="form-note" hidden>Vorschau — im Live-Betrieb geht diese Anfrage direkt an info@dorfhotel.at. In dieser Demo wird nichts gesendet und nichts gespeichert.</p>
+        <div><button class="btn btn--primary" type="submit">Anfrage senden</button></div>
+      </form>
+    </div>
+
+    <aside>
+      <div class="panel">
+        <h3 class="mt0">Lieber direkt?</h3>
+        <ul class="facts">
+          <li><b>Telefon</b><span><a href="tel:+4334632905">+43 3463 2905-0</a></span></li>
+          <li><b>Fax</b><span>+43 3463 2905-6</span></li>
+          <li><b>E-Mail</b><span class="breakable"><a href="mailto:info@dorfhotel.at">info@dorfhotel.at</a></span></li>
+          <li><b>Adresse</b><span>Brabeckweg 101, 8524 Bad Gams</span></li>
+        </ul>
+      </div>
+      <div class="panel panel--dark" style="margin-top:1.4rem">
+        <h3 class="mt0">Was sich hier ändert</h3>
+        <p class="mb0">Auf der bestehenden Website führt „Suchen &amp; buchen“ zu einem einfachen
+        Kontaktformular, Preisliste und Packages liegen hinter einer Bot-Verifizierung oder als PDF.
+        In dieser Vorschau sind alle Preise direkt lesbar und jede Anfrage — Zimmer, Gutschein,
+        Führung, Seminar — hat ihr eigenes, kurzes Formular.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="sec sec--sand" id="gutschein">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Neu</span>
+      <h2 class="mt0">Gutschein bestellen</h2>
+      <p>Ein Wertgutschein für Übernachtung, Menü, Wellness oder eine Kräutergartenführung — auf Wunsch
+      als PDF zum Selbstausdrucken oder per Post.</p>
+      <form class="form" data-demo>
+        <fieldset>
+          <legend>Gutschein</legend>
+          <div class="field">
+            <label for="gart">Art des Gutscheins</label>
+            <select id="gart" name="gutscheinart">
+              <option>Wertgutschein über frei wählbaren Betrag</option>
+              <option>Doppelzimmer mit Frühstück, 1 Nacht</option>
+              <option>Halbpension-Menü für zwei Personen</option>
+              <option>Führung im Schau-Kräutergarten</option>
+              <option>Package „Steirischer Osterbrauch“ (€ 124,90 p. P.)</option>
+              <option>Package „Mondscheinzauber“ (€ 124,90 p. P.)</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="gbet">Betrag in Euro</label><input type="number" id="gbet" name="betrag" min="20" step="10" value="100"></div>
+            <div class="field">
+              <label for="gver">Zustellung</label>
+              <select id="gver" name="versand"><option>PDF per E-Mail</option><option>Per Post</option><option>Abholung im Haus</option></select>
+            </div>
+          </div>
+          <div class="field"><label for="gname">Ihr Name</label><input type="text" id="gname" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="gmail">Ihre E-Mail</label><input type="email" id="gmail" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="gwid">Widmung auf dem Gutschein</label><input type="text" id="gwid" name="widmung" placeholder="z. B. Für Anna und Martin"></div>
+        </fieldset>
+        <p class="form-note" hidden>Vorschau — im Live-Betrieb geht diese Anfrage direkt an info@dorfhotel.at. In dieser Demo wird nichts gesendet und nichts gespeichert.</p>
+        <div><button class="btn btn--primary" type="submit">Gutschein bestellen</button></div>
+      </form>
+    </div>
+    <div>
+      <div id="fuehrung">
+        <span class="eyebrow">Neu</span>
+        <h2 class="mt0">Kräutergarten-Führung anfragen</h2>
+        <form class="form" data-demo>
+          <fieldset>
+            <legend>Führung</legend>
+            <div class="field">
+              <label for="fthema">Themenschwerpunkt</label>
+              <select id="fthema" name="thema">
+                <option>Kräuterwelt von Artemisia bis Zaubernuss</option>
+                <option>In 80 Kräutern um die Welt</option>
+                <option>Kräuter in Haus und Garten</option>
+                <option>Schönwetter-Führung, 1. Sonntag im Monat, 11:00 Uhr</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="fdat">Wunschtermin</label><input type="date" id="fdat" name="termin"></div>
+              <div class="field"><label for="fpers">Personen</label><input type="number" id="fpers" name="personen" min="1" value="10"></div>
+            </div>
+            <div class="check"><input type="checkbox" id="fhap" name="haeppchen"><label for="fhap">„Gartenfrische Häppchen“ (+ € 1,50 p. P.)</label></div>
+            <div class="check"><input type="checkbox" id="fbuf" name="buffet"><label for="fbuf">„Schmankerlbüfett“ (kalt) &amp; Glas Schilcher (+ € 3,50 p. P.)</label></div>
+            <div class="field"><label for="fmail">E-Mail</label><input type="email" id="fmail" name="email" required></div>
+          </fieldset>
+          <p class="form-note" hidden>Vorschau — im Live-Betrieb geht diese Anfrage direkt an info@krauterwirt.at. In dieser Demo wird nichts gesendet und nichts gespeichert.</p>
+          <div><button class="btn btn--primary" type="submit">Führung anfragen</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="seminar">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Neu</span>
+      <h2 class="mt0">Seminaranfrage</h2>
+      <p>Raummiete halber Tag € 50, Tagesmiete (8 Stunden) € 90 inkl. MwSt., max. 30 Teilnehmende.
+      Nächtigung und Verpflegung ergänzen wir nach Ihren Wünschen.</p>
+      <form class="form" data-demo>
+        <fieldset>
+          <legend>Ihr Seminar</legend>
+          <div class="field-row">
+            <div class="field"><label for="sfirma">Organisation</label><input type="text" id="sfirma" name="organisation" autocomplete="organization"></div>
+            <div class="field"><label for="steil">Teilnehmende</label><input type="number" id="steil" name="teilnehmer" min="1" max="30" value="12"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="svon">Von</label><input type="date" id="svon" name="von"></div>
+            <div class="field"><label for="sbis">Bis</label><input type="date" id="sbis" name="bis"></div>
+          </div>
+          <div class="field">
+            <label for="sdauer">Raummiete</label>
+            <select id="sdauer" name="dauer"><option>Halber Tag (€ 50,–)</option><option>Tagesmiete, 8 Stunden (€ 90,–)</option><option>Mehrtägig</option></select>
+          </div>
+          <div class="check"><input type="checkbox" id="snae" name="naechtigung"><label for="snae">Nächtigung für die Teilnehmenden mitplanen</label></div>
+          <div class="check"><input type="checkbox" id="srah" name="rahmen"><label for="srah">Begleitendes Rahmenprogramm gewünscht</label></div>
+          <div class="field"><label for="smail">E-Mail</label><input type="email" id="smail" name="email" required></div>
+        </fieldset>
+        <p class="form-note" hidden>Vorschau — im Live-Betrieb geht diese Anfrage direkt an info@dorfhotel.at. In dieser Demo wird nichts gesendet und nichts gespeichert.</p>
+        <div><button class="btn btn--primary" type="submit">Seminar anfragen</button></div>
+      </form>
+    </div>
+    <div>
+      <span class="eyebrow">Newsletter</span>
+      <h2 class="mt0">Angebote aus erster Hand</h2>
+      <p>Unser Newsletter informiert über Angebote und Neuigkeiten aus unserem Hause. Regionale
+      Veranstaltungen und interessante Angebote bekommen Sie rechtzeitig aus erster Hand.</p>
+      <form class="form" data-demo>
+        <fieldset>
+          <legend>Anmeldung</legend>
+          <div class="field"><label for="nname">Name</label><input type="text" id="nname" name="name" autocomplete="name"></div>
+          <div class="field"><label for="nmail">E-Mail</label><input type="email" id="nmail" name="email" autocomplete="email" required></div>
+          <div class="check"><input type="checkbox" id="nok" name="einwilligung" required><label for="nok">Ich möchte den Newsletter erhalten und kann mich jederzeit wieder abmelden.</label></div>
+        </fieldset>
+        <p class="form-note" hidden>Vorschau — im Live-Betrieb geht diese Anfrage direkt an info@dorfhotel.at. In dieser Demo wird nichts gesendet und nichts gespeichert.</p>
+        <div><button class="btn btn--primary" type="submit">Newsletter abonnieren</button></div>
+      </form>
+      <div class="panel" style="margin-top:1.4rem">
+        <p class="mb0"><strong>Datenschutz ist uns ein wichtiges Anliegen.</strong> Ihre Daten werden
+        niemals an Dritte weitergegeben.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec sec--tight cta-band">
+  <div class="wrap cta-in">
+    <div>
+      <h2 class="mb0">Zimmer, Package oder Tisch — in zwei Minuten angefragt.</h2>
+      <p>Oder direkt am Telefon: <a href="tel:+4334632905">+43 3463 2905-0</a>, täglich erreichbar.</p>
+    </div>
+    <div class="btn-row" style="margin-top:0">
+      <a class="btn btn--light" href="anfrage.html">Anfrage senden</a>
+      <a class="btn btn--outline-light" href="kontakt.html">Anfahrt ansehen</a>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Dorfhotel Fernblick</h3>
+        <p>Das kleine Landhotel im Schilcherland — 30 Zimmer mit Balkon, Wellnessbereich,
+        Schau-Kräutergarten und steirischer Küche. Familie Wölkart, Bad Gams.</p>
+        <p class="breakable">Brabeckweg 101, 8524 Bad Gams<br>
+        Tel. <a href="tel:+4334632905">+43 3463 2905-0</a><br>
+        Fax +43 3463 2905-6<br>
+        <a href="mailto:info@dorfhotel.at">info@dorfhotel.at</a></p>
+      </div>
+      <div>
+        <h3>Seiten</h3>
+        <ul>
+          <li><a href="zimmer.html">Zimmer &amp; Preise</a></li>
+          <li><a href="angebote.html">Packages &amp; Arrangements</a></li>
+          <li><a href="kulinarik.html">Kulinarik</a></li>
+          <li><a href="haus-umgebung.html">Wellness, Garten &amp; Seminare</a></li>
+          <li><a href="anfrage.html">Anfrage, Gutschein, Newsletter</a></li>
+          <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Gut zu wissen</h3>
+        <ul>
+          <li>Check-in ab 13:00 Uhr</li>
+          <li>Check-out bis 11:00 Uhr</li>
+          <li>Küche 11:30–14:00 &amp; ab 18:00</li>
+          <li>Kostenloser Transfer ab Bahnhof Frauental/Gams</li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-note">Diese Seite ist eine unverbindliche Gestaltungs-Vorschau von AVOS Solutions und keine
+    offizielle Website des Dorfhotel Fernblick. <strong>Das gesamte Bildmaterial stammt von der bestehenden
+    Website des Betriebs</strong> (dorfhotel.at, © Herbert Wölkart) und dient ausschließlich der Veranschaulichung.
+    Alle Inhalte, Preise und Termine wurden aus der bestehenden Website und deren PDF-Unterlagen übernommen —
+    verbindlich sind ausschließlich die Angaben des Betriebs.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('navbtn'),n=document.getElementById('hauptnavigation');
+  if(b&&n){b.addEventListener('click',function(){
+    var o=n.getAttribute('data-open')==='true';
+    n.setAttribute('data-open',String(!o));b.setAttribute('aria-expanded',String(!o));
+  });}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var n=f.querySelector('.form-note');
+      if(n){n.hidden=false;n.setAttribute('role','status');n.scrollIntoView({behavior:'smooth',block:'center'});}
+    });
+  });
+})();
+</script>
+</body>
+</html>

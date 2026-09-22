@@ -1,0 +1,491 @@
+/* =========================================================
+   Autohaus Feichtmayr — Designsystem "Datenblatt"
+   Kondensierte Technik-Typografie, Asphalt-Dunkel, Signalrot
+   ========================================================= */
+
+:root{
+  --ink:#12151a;
+  --ink-2:#1b212a;
+  --ink-3:#272f3a;
+  --paper:#f2f2ef;
+  --paper-2:#e6e6e1;
+  --white:#ffffff;
+  --red:#c2101f;
+  --red-dark:#960c18;
+  --steel:#5c6672;
+  --line:#d6d6d0;
+  --line-dark:#333c48;
+  --volt:#17c3d4;
+  --teal-ink:#0a6f79;
+  --mute-dark:#a8b2be;
+
+  --display:"Barlow Condensed","Arial Narrow",Helvetica,Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  --wrap:1200px;
+  --pad:clamp(1rem,4vw,2.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-size:clamp(1rem,0.97rem + 0.18vw,1.075rem);
+  line-height:1.62;
+  color:var(--ink);
+  background:var(--paper);
+  overflow-x:hidden;
+  overflow-wrap:break-word;
+}
+img{max-width:100%;height:auto;display:block;}
+
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.04;letter-spacing:.005em;margin:0 0 .6em;}
+h1{font-size:clamp(2.4rem,1.3rem + 4.6vw,4.6rem);text-transform:uppercase;letter-spacing:-.01em;}
+h2{font-size:clamp(1.8rem,1.2rem + 2.4vw,3rem);text-transform:uppercase;}
+h3{font-size:clamp(1.25rem,1.05rem + .8vw,1.6rem);text-transform:uppercase;letter-spacing:.01em;}
+h4{font-size:1.08rem;text-transform:uppercase;letter-spacing:.06em;}
+p{margin:0 0 1rem;}
+ul,ol{margin:0 0 1rem;padding-left:1.15rem;}
+li{margin-bottom:.35rem;}
+a{color:var(--red-dark);}
+a:hover{color:var(--ink);}
+strong{font-weight:600;}
+
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad);}
+.wrap-narrow{max-width:830px;}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:99;
+  background:var(--red);color:#fff;padding:.7rem 1.1rem;font-weight:600;
+}
+.skip-link:focus{left:0;}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+.preview-bar :focus-visible,.site-footer :focus-visible,.sec--dark :focus-visible{outline-color:var(--volt);}
+
+/* ---------- Vorschau-Leiste ---------- */
+.preview-bar{
+  background:#242c36;color:#e8ecf1;
+  font-size:.79rem;letter-spacing:.03em;
+  padding:.55rem var(--pad);text-align:center;
+  font-family:var(--display);text-transform:uppercase;
+}
+.preview-bar strong{color:#fff;font-weight:600;}
+
+/* ---------- Kopf ---------- */
+.site-header{background:var(--ink);color:#fff;position:relative;}
+.header-inner{display:flex;align-items:center;gap:1rem;justify-content:space-between;padding-block:.75rem;}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff;}
+.brand-slash{
+  width:11px;height:42px;background:var(--red);
+  transform:skewX(-16deg);flex:none;
+}
+.brand-name{
+  font-family:var(--display);font-size:1.65rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;line-height:1;display:block;
+}
+.brand-sub{
+  display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mute-dark);margin-top:.18rem;
+}
+.nav-toggle{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:transparent;border:1px solid #56606d;color:#fff;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;
+  font-size:.9rem;padding:.5rem .85rem;cursor:pointer;
+}
+.nav-toggle:hover{border-color:var(--red);}
+.nav{display:none;width:100%;order:3;}
+.nav[data-open="true"]{display:block;}
+.nav ul{list-style:none;margin:0;padding:0 0 .8rem;}
+.nav li{margin:0;border-top:1px solid var(--line-dark);}
+.nav a{
+  display:block;padding:.72rem .2rem;white-space:nowrap;color:#fff;text-decoration:none;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.09em;font-size:1.05rem;
+}
+.nav a:hover,.nav a:focus{color:var(--volt);}
+.nav a[aria-current="page"]{color:var(--volt);}
+.nav a[aria-current="page"]::before{content:"";display:inline-block;width:10px;height:2px;background:var(--red);vertical-align:middle;margin-right:.5rem;}
+
+@media (min-width:62rem){
+  .nav-toggle{display:none;}
+  .nav{display:block;width:auto;order:0;}
+  .nav ul{display:flex;gap:clamp(.6rem,1.4vw,1.5rem);padding:0;}
+  .nav li{border:0;}
+  .nav a{padding:.45rem 0;font-size:.98rem;}
+  .nav a[aria-current="page"]::before{display:none;}
+  .nav a[aria-current="page"]{border-bottom:3px solid var(--red);}
+}
+
+/* ---------- Buttons ---------- */
+.btn,a.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;
+  font-size:1rem;font-weight:600;line-height:1;
+  padding:.92rem 1.5rem;border:2px solid transparent;
+  text-decoration:none;cursor:pointer;transition:.16s;
+}
+a.btn--primary,.btn--primary{background:var(--red);color:#fff;border-color:var(--red);}
+a.btn--primary:hover,a.btn--primary:focus-visible,.btn--primary:hover{background:var(--red-dark);border-color:var(--red-dark);color:#fff;}
+a.btn--dark,.btn--dark{background:var(--ink);color:#fff;border-color:var(--ink);}
+a.btn--dark:hover,a.btn--dark:focus-visible{background:var(--ink-3);border-color:var(--ink-3);color:#fff;}
+a.btn--line,.btn--line{background:transparent;color:var(--ink);border-color:var(--ink);}
+a.btn--line:hover,a.btn--line:focus-visible{background:var(--ink);color:#fff;}
+a.btn--onDark,.btn--onDark{background:transparent;color:#fff;border-color:#fff;}
+a.btn--onDark:hover,a.btn--onDark:focus-visible{background:#fff;color:var(--ink);}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.4rem 0 0;}
+
+/* ---------- Abschnitte ---------- */
+.sec{padding-block:clamp(3rem,7vw,5.5rem);}
+.sec--tight{padding-block:clamp(2rem,4vw,3rem);}
+.sec--paper2{background:var(--paper-2);}
+.sec--white{background:var(--white);}
+.sec--dark{background:var(--ink);color:#fff;}
+.sec--dark h1,.sec--dark h2,.sec--dark h3,.sec--dark h4{color:#fff;}
+.sec--dark a:not(.btn){color:var(--volt);}
+.sec--dark a:not(.btn):hover{color:#fff;}
+.sec--dark .lead,.sec--dark .muted{color:var(--mute-dark);}
+
+.eyebrow{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.24em;
+  font-size:.8rem;font-weight:600;color:var(--red-dark);margin:0 0 .5rem;
+}
+.sec--dark .eyebrow,.hero .eyebrow{color:var(--volt);}
+.sec-head{max-width:62ch;margin-bottom:clamp(1.6rem,3vw,2.6rem);}
+.lead{font-size:clamp(1.08rem,1rem + .4vw,1.28rem);color:#2c333d;}
+.muted{color:var(--steel);}
+.small{font-size:.87rem;}
+
+/* Ziffernmarke vor Überschriften */
+.numtag{
+  font-family:var(--display);font-weight:700;color:var(--red);
+  font-size:.95rem;letter-spacing:.18em;display:block;margin-bottom:.35rem;
+}
+.sec--dark .numtag,.hero .numtag{color:var(--volt);}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;}
+.hero-media{position:absolute;inset:0;}
+.hero-media img{width:100%;height:100%;object-fit:cover;opacity:.42;}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(10,12,16,.95) 0%,rgba(10,12,16,.86) 45%,rgba(10,12,16,.5) 100%);
+}
+.hero-body{position:relative;padding-block:clamp(3.2rem,9vw,6.5rem);}
+.hero-body h1{max-width:16ch;margin-bottom:.35em;}
+.hero-body h1 em{font-style:normal;color:var(--volt);}
+.hero-claim{font-size:clamp(1.05rem,.98rem + .5vw,1.35rem);max-width:52ch;color:#dfe4ea;}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:2.2rem;
+  border-top:1px solid var(--line-dark);
+}
+.hero-facts div{
+  flex:1 1 150px;padding:.95rem 1.1rem .95rem 0;border-right:1px solid var(--line-dark);
+}
+.hero-facts div:last-child{border-right:0;}
+.hero-facts b{
+  display:block;font-family:var(--display);font-size:1.9rem;line-height:1;
+  color:#fff;font-weight:700;
+}
+.hero-facts span{font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mute-dark);}
+
+/* ---------- Markenband ---------- */
+.marken{display:grid;gap:1px;grid-template-columns:1fr;background:var(--line-dark);}
+@media(min-width:40rem){.marken{grid-template-columns:1fr 1fr;}}
+.marke{background:var(--ink-2);padding:clamp(1.5rem,4vw,2.4rem);display:flex;gap:1.2rem;align-items:center;}
+.marke img{width:74px;height:auto;flex:none;filter:contrast(1.1);}
+.marke h3{margin-bottom:.25rem;color:#fff;}
+.marke p{margin:0;color:var(--mute-dark);font-size:.95rem;}
+
+/* ---------- Raster ---------- */
+.grid{display:grid;gap:clamp(1rem,2.4vw,1.8rem);}
+.grid>*{min-width:0;}
+.split>*{min-width:0;}
+.g2{grid-template-columns:1fr;}
+.g3{grid-template-columns:1fr;}
+.g4{grid-template-columns:1fr;}
+@media(min-width:30rem){.g4{grid-template-columns:1fr 1fr;}}
+@media(min-width:46rem){
+  .g2{grid-template-columns:1fr 1fr;}
+  .g3{grid-template-columns:repeat(2,1fr);}
+}
+@media(min-width:64rem){
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g4{grid-template-columns:repeat(4,1fr);}
+}
+.split{display:grid;gap:clamp(1.5rem,4vw,3rem);align-items:center;}
+@media(min-width:56rem){.split{grid-template-columns:1.05fr .95fr;}
+  .split--flip>*:first-child{order:2;}}
+
+/* ---------- Karten ---------- */
+.card{
+  background:var(--white);border:1px solid var(--line);
+  padding:clamp(1.2rem,2.4vw,1.7rem);position:relative;
+}
+.card--accent{border-left:5px solid var(--red);}
+.card h3{margin-bottom:.4rem;}
+.card p:last-child{margin-bottom:0;}
+.card-link{
+  display:block;text-decoration:none;color:inherit;background:var(--white);
+  border:1px solid var(--line);padding:clamp(1.1rem,2.2vw,1.5rem);transition:.16s;
+}
+.card-link:hover{border-color:var(--ink);box-shadow:0 10px 24px rgba(18,21,26,.1);color:inherit;}
+.card-link h3{color:var(--ink);}
+.card-link .more{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;
+  font-size:.85rem;color:var(--red-dark);font-weight:600;
+}
+
+/* ---------- Fahrzeugkarten ---------- */
+.veh{
+  background:var(--white);border:1px solid var(--line);border-left:5px solid var(--ink);
+  display:flex;flex-direction:column;
+}
+.veh[data-typ="Neuwagen"]{border-left-color:var(--red);}
+.veh[data-typ="Vorführwagen"]{border-left-color:var(--teal-ink);}
+.veh-head{padding:1.1rem 1.2rem .7rem;}
+.veh-badge{
+  display:inline-block;font-family:var(--display);text-transform:uppercase;
+  letter-spacing:.14em;font-size:.72rem;font-weight:600;
+  padding:.24rem .55rem;background:var(--ink);color:#fff;margin-bottom:.55rem;
+}
+.veh[data-typ="Neuwagen"] .veh-badge{background:var(--red);}
+.veh[data-typ="Vorführwagen"] .veh-badge{background:var(--teal-ink);}
+.veh h3{font-size:1.18rem;margin-bottom:.3rem;text-transform:none;letter-spacing:0;}
+.veh-price{
+  font-family:var(--display);font-size:1.85rem;font-weight:700;color:var(--red-dark);
+  line-height:1;margin:.2rem 0 0;
+}
+.veh-price.ask{font-size:1.05rem;color:var(--steel);letter-spacing:.04em;text-transform:uppercase;}
+.veh-specs{list-style:none;margin:0;padding:0 1.2rem 1.1rem;border-top:1px solid var(--line);}
+.veh-specs li{
+  display:flex;justify-content:space-between;gap:1rem;margin:0;
+  padding:.42rem 0;border-bottom:1px dotted var(--line);font-size:.9rem;
+}
+.veh-specs li:last-child{border-bottom:0;}
+.veh-specs dt,.veh-specs .k{color:var(--steel);letter-spacing:.05em;text-transform:uppercase;font-size:.76rem;font-family:var(--display);}
+.veh-specs .v{font-weight:500;text-align:right;}
+.veh-foot{padding:0 1.2rem 1.2rem;}
+.veh-foot .btn{width:100%;font-size:.9rem;padding:.72rem 1rem;}
+
+.filterbar{
+  display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;
+  padding:1rem 0 1.6rem;
+}
+.chip{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-size:.86rem;
+  background:var(--white);border:1px solid var(--ink);color:var(--ink);
+  padding:.5rem 1rem;cursor:pointer;font-weight:600;
+}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;}
+.chip:hover{border-color:var(--red);}
+.countline{font-family:var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--steel);font-size:.85rem;}
+
+/* ---------- Datenblatt-Tabellen ---------- */
+.tbl-scroll{overflow-x:auto;}
+table.data{width:100%;border-collapse:collapse;font-size:.95rem;min-width:min(100%,420px);}
+table.data caption{
+  text-align:left;font-family:var(--display);text-transform:uppercase;letter-spacing:.14em;
+  color:var(--red-dark);font-size:.85rem;font-weight:600;padding-bottom:.6rem;
+}
+table.data th,table.data td{
+  text-align:left;padding:.62rem .7rem;border-bottom:1px solid var(--line);vertical-align:top;
+}
+table.data th{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;
+  font-size:.82rem;color:var(--steel);font-weight:600;
+}
+table.data td.price{text-align:right;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums;}
+table.data tr:last-child td{border-bottom:0;}
+.sec--dark table.data th{color:var(--mute-dark);}
+.sec--dark table.data th,.sec--dark table.data td{border-color:var(--line-dark);}
+
+/* Preisliste (Werkstatt) */
+.plist{list-style:none;margin:0;padding:0;}
+.plist li{
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.55rem 0;border-bottom:1px dotted var(--line);margin:0;
+}
+.plist .p{font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+/* ---------- Modell-Blöcke ---------- */
+.model{border-top:3px solid var(--ink);padding-top:1.3rem;margin-bottom:2.4rem;}
+.model h3{margin-bottom:.15rem;}
+.model .claim{font-family:var(--display);font-size:1.15rem;letter-spacing:.02em;color:var(--red-dark);text-transform:uppercase;margin-bottom:.7rem;}
+.variants{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.5rem;}
+.variants li{
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  background:var(--paper-2);padding:.6rem .85rem;margin:0;font-size:.94rem;
+}
+.variants b{color:var(--red-dark);white-space:nowrap;font-variant-numeric:tabular-nums;}
+
+/* ---------- Zeitleiste ---------- */
+.timeline{list-style:none;margin:0;padding:0;position:relative;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.timeline li{position:relative;padding-left:2.2rem;margin:0 0 1.8rem;}
+.timeline li::before{
+  content:"";position:absolute;left:0;top:.45rem;width:12px;height:12px;
+  background:var(--red);border-radius:50%;
+}
+.timeline .yr{
+  font-family:var(--display);font-size:1.5rem;font-weight:700;line-height:1;
+  color:var(--ink);display:block;letter-spacing:.04em;
+}
+.sec--dark .timeline::before{background:var(--line-dark);}
+.sec--dark .timeline .yr{color:#fff;}
+
+/* ---------- Team ---------- */
+.person{
+  background:var(--white);border:1px solid var(--line);padding:1.1rem 1.2rem;
+  display:flex;gap:.9rem;align-items:flex-start;
+}
+.mono{
+  flex:none;width:48px;height:48px;background:var(--ink);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:.03em;
+  display:flex;align-items:center;justify-content:center;
+}
+.person h3{font-size:1.06rem;margin-bottom:.1rem;text-transform:none;letter-spacing:0;}
+.person .role{font-size:.86rem;color:var(--steel);margin:0 0 .45rem;}
+.person ul{list-style:none;margin:0;padding:0;font-size:.9rem;}
+.person li{margin:0 0 .15rem;}
+
+/* ---------- Galerie ---------- */
+.gal{display:grid;gap:.6rem;grid-template-columns:1fr;}
+@media(min-width:42rem){.gal{grid-template-columns:1fr 1fr;}}
+.gal figure{margin:0;background:var(--ink);}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/1;}
+.gal figcaption{font-size:.82rem;color:var(--mute-dark);padding:.5rem .7rem;}
+.band-img img{width:100%;aspect-ratio:3/1;object-fit:cover;}
+
+/* ---------- Formulare ---------- */
+.form{background:var(--white);border:1px solid var(--line);padding:clamp(1.2rem,3vw,2rem);}
+.sec--dark .form{background:var(--ink-2);border-color:var(--line-dark);}
+.fieldset{border:0;padding:0;margin:0 0 1.6rem;}
+.fieldset legend{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.14em;
+  font-size:.9rem;font-weight:600;color:var(--red-dark);padding:0;margin-bottom:.8rem;
+  border-bottom:2px solid var(--line);width:100%;padding-bottom:.4rem;
+}
+.sec--dark .fieldset legend{color:var(--volt);border-color:var(--line-dark);}
+.frow{display:grid;gap:1rem;grid-template-columns:1fr;margin-bottom:1rem;}
+@media(min-width:44rem){.frow.two{grid-template-columns:1fr 1fr;}.frow.three{grid-template-columns:repeat(3,1fr);}}
+label{display:block;font-size:.85rem;font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--ink);margin-bottom:.3rem;}
+.sec--dark label{color:#fff;}
+input,select,textarea{
+  width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);
+  background:var(--paper);border:1px solid #b9bcb6;padding:.68rem .8rem;border-radius:0;
+}
+textarea{min-height:8rem;resize:vertical;}
+input:focus,select:focus,textarea:focus{border-color:var(--red);background:#fff;}
+.check{display:flex;gap:.6rem;align-items:flex-start;margin-bottom:1.1rem;}
+.check input{width:auto;margin-top:.35rem;}
+.check label{text-transform:none;letter-spacing:0;font-family:var(--body);font-weight:400;font-size:.93rem;margin:0;}
+.formnote{
+  margin-top:1.1rem;padding:.9rem 1rem;background:#fdf1f2;border-left:4px solid var(--red);
+  font-size:.92rem;color:#4a1015;
+}
+.formnote[hidden]{display:none;}
+
+/* ---------- Tabs ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem;}
+.tab{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-weight:600;
+  font-size:.95rem;padding:.7rem 1.2rem;border:1px solid var(--ink);background:var(--white);
+  color:var(--ink);cursor:pointer;
+}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;}
+.tabpanel[hidden]{display:none;}
+
+/* ---------- Terminraster (Demo) ---------- */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:.5rem;margin:.4rem 0 1rem;}
+.slot{
+  font-family:var(--display);letter-spacing:.06em;font-size:.95rem;font-weight:600;
+  padding:.6rem .3rem;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer;
+}
+.slot[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff;}
+.slot[disabled]{color:#8d9299;background:var(--paper-2);cursor:not-allowed;text-decoration:line-through;}
+
+/* ---------- Akkordeon ---------- */
+.acc{border-top:1px solid var(--line);}
+.acc details{border-bottom:1px solid var(--line);}
+.acc summary{
+  cursor:pointer;list-style:none;padding:1rem .2rem;
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;
+  font-size:1.08rem;font-weight:600;display:flex;justify-content:space-between;gap:1rem;align-items:center;
+}
+.acc summary::-webkit-details-marker{display:none;}
+.acc summary::after{content:"+";color:var(--red);font-size:1.5rem;line-height:1;}
+.acc details[open] summary::after{content:"–";}
+.acc .acc-body{padding:0 .2rem 1.2rem;}
+.acc .acc-body p:last-child,.acc .acc-body ul:last-child{margin-bottom:0;}
+
+/* ---------- Info-Kästen ---------- */
+.note{
+  background:var(--white);border-left:5px solid var(--ink);
+  padding:1rem 1.2rem;font-size:.95rem;
+}
+.note--red{border-left-color:var(--red);}
+.sec--dark .note{background:var(--ink-2);border-left-color:var(--volt);}
+
+.hours{list-style:none;margin:0;padding:0;font-size:.95rem;}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.4rem 0;border-bottom:1px dotted var(--line);margin:0;}
+.sec--dark .hours li{border-color:var(--line-dark);}
+.hours .d{color:var(--steel);}
+.sec--dark .hours .d{color:var(--mute-dark);}
+
+/* ---------- Karte (SVG) ---------- */
+.map{background:var(--ink-2);border:1px solid var(--line-dark);padding:1rem;}
+.map svg{width:100%;height:auto;display:block;}
+
+/* ---------- CTA-Band ---------- */
+.cta-band{background:var(--red);color:#fff;}
+.cta-band h2{color:#fff;}
+.cta-band p{color:#ffe3e5;}
+.cta-band a:not(.btn){color:#fff;}
+.cta-inner{display:grid;gap:1.4rem;align-items:center;padding-block:clamp(2.4rem,5vw,3.6rem);}
+@media(min-width:52rem){.cta-inner{grid-template-columns:1.4fr auto;}}
+
+/* ---------- Newsletter ---------- */
+.nl-form{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem;}
+.nl-form input{flex:1 1 220px;background:#fff;border-color:#b9bcb6;}
+
+/* ---------- Fuß ---------- */
+.site-footer{background:var(--ink);color:#cfd6de;padding-block:clamp(2.4rem,5vw,3.6rem) 0;font-size:.94rem;}
+.site-footer h4{color:#fff;letter-spacing:.14em;font-size:.86rem;margin-bottom:.9rem;}
+.site-footer a{color:#cfd6de;text-decoration:none;}
+.site-footer a:hover{color:var(--volt);text-decoration:underline;}
+.foot-grid{display:grid;gap:2rem;grid-template-columns:1fr;}
+@media(min-width:44rem){.foot-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:70rem){.foot-grid{grid-template-columns:1.2fr 1fr 1fr 1.1fr;}}
+.foot-grid ul{list-style:none;margin:0;padding:0;}
+.foot-grid li{margin-bottom:.4rem;}
+.foot-bottom{
+  margin-top:2.4rem;border-top:1px solid var(--line-dark);
+  padding-block:1.2rem;display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;
+  justify-content:space-between;font-size:.82rem;color:#98a3b0;
+}
+.foot-bottom a{color:#98a3b0;}
+
+/* ---------- Hilfsklassen ---------- */
+.stack>*+*{margin-top:1rem;}
+.center{text-align:center;}
+.mt0{margin-top:0;}
+.mb0{margin-bottom:0;}
+.mt2{margin-top:2rem;}
+.hr{height:1px;background:var(--line);border:0;margin:2.2rem 0;}
+.sec--dark .hr{background:var(--line-dark);}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+.badge-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem;}
+.tag{
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;
+  font-weight:600;background:var(--paper-2);color:#3a424d;padding:.28rem .6rem;
+}
+.sec--dark .tag{background:var(--ink-3);color:#e2e8ef;}
+
+@media print{
+  .preview-bar,.nav-toggle,.nav,.cta-band{display:none;}
+}
+
+a.btn--white,.btn--white{background:#fff;color:var(--red-dark);border-color:#fff;}
+a.btn--white:hover,a.btn--white:focus-visible{background:var(--ink);border-color:var(--ink);color:#fff;}
+.slot[disabled]{color:#4f5862;}

@@ -1,0 +1,278 @@
+
+/* =========================================================
+   Sch&uuml;ttkasten Geras | Gestaltungs-Vorschau AVOS Solutions
+   Motiv: Rundbogen-Arkade, Kalkputz, Korn - klosterliches Gutshaus
+   ========================================================= */
+:root{
+  --kalk:#f7f3ea;
+  --stein:#ebe4d6;
+  --papier:#fffdf8;
+  --tinte:#221f1a;
+  --tinte-2:#55503f;
+  --gruen:#1f3b2f;
+  --gruen-2:#2e5240;
+  --moos:#3f6b4f;
+  --ocker:#7d5810;
+  --ocker-hell:#e8c273;
+  --linie:#ddd3bf;
+  --max:1160px;
+  --bogen:999px 999px 0 0;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--kalk);color:var(--tinte);
+  font-family:"Jost","Avenir Next","Segoe UI",Arial,sans-serif;
+  font-size:clamp(1rem,.95rem + .22vw,1.09rem);line-height:1.68;font-weight:400;overflow-wrap:break-word}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:"Cormorant Garamond","Garamond","Times New Roman",serif;font-weight:600;
+  line-height:1.12;margin:0 0 .5em;letter-spacing:.005em}
+h1{font-size:clamp(2.4rem,1.5rem + 3.9vw,4.5rem);font-weight:400}
+h2{font-size:clamp(1.85rem,1.3rem + 2.2vw,3rem);font-weight:400}
+h3{font-size:clamp(1.2rem,1.05rem + .7vw,1.6rem);font-weight:600}
+h4{font-family:"Jost",Arial,sans-serif;font-size:.95rem;font-weight:600;margin:0 0 .3rem;letter-spacing:.02em}
+p{margin:0 0 1rem}
+a{color:var(--ocker)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--moos);outline-offset:3px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:clamp(1rem,4vw,2.4rem)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:.5rem;top:.5rem;z-index:70;background:var(--gruen);color:#fff;padding:.6rem 1rem;border-radius:.4rem}
+
+/* ---- Vorschau ---- */
+.vorschau{background:var(--gruen);color:#e0d6c0;font-size:.76rem;letter-spacing:.05em}
+.vorschau__in{padding-block:.5rem}
+
+/* ---- Kopf ---- */
+.top{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.97);border-bottom:1px solid var(--linie)}
+.top__in{display:flex;align-items:center;gap:.8rem 1.2rem;flex-wrap:wrap;padding-block:.8rem}
+.sig{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--tinte);margin-right:auto;min-width:0}
+.sig__bogen{color:var(--moos);flex:0 0 auto;display:block}
+.sig__bogen svg{display:block}
+.sig__txt{display:flex;flex-direction:column;min-width:0}
+.sig__txt b{font-family:"Cormorant Garamond",Garamond,serif;font-size:1.3rem;font-weight:600;line-height:1.05}
+.sig__txt i{font-style:normal;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tinte-2);
+  margin-top:.15rem}
+.ruf{text-decoration:none;color:var(--gruen);font-weight:500;font-size:.92rem;white-space:nowrap}
+.ruf:hover{text-decoration:underline}
+.burger{border:1px solid var(--gruen);background:transparent;color:var(--gruen);font:inherit;font-size:.85rem;
+  padding:.42rem .9rem;border-radius:999px;cursor:pointer}
+.nav{flex-basis:100%;display:none}
+.nav--open{display:block}
+.nav ul{list-style:none;margin:.6rem 0 .2rem;padding:0;display:flex;flex-direction:column}
+.nav a{display:block;padding:.55rem .2rem;text-decoration:none;color:var(--tinte);font-size:.98rem;
+  border-bottom:1px solid var(--linie)}
+.nav a:hover{color:var(--moos)}
+.nav a[aria-current="page"]{color:var(--moos);font-weight:600}
+@media(min-width:62rem){
+  .burger{display:none}
+  .nav{display:block;flex-basis:auto;order:3}
+  .ruf{order:4;margin-left:.8rem;font-size:.86rem}
+  .nav ul{flex-direction:row;gap:1.15rem;margin:0}
+  .nav a{border-bottom:0;padding:.25rem 0;font-size:.83rem;letter-spacing:.02em;position:relative;
+    white-space:nowrap}
+  .nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-.3rem;height:2px;
+    background:var(--moos)}
+}
+
+/* ---- Buttons ---- */
+.btn{display:inline-block;font:inherit;font-size:.92rem;font-weight:500;letter-spacing:.04em;
+  padding:.82rem 1.7rem;border-radius:999px;text-decoration:none;border:1px solid transparent;cursor:pointer;
+  transition:background .15s,color .15s}
+a.btn--gruen,.btn--gruen{background:var(--gruen);color:#fdfaf2;border-color:var(--gruen)}
+a.btn--gruen:hover,a.btn--gruen:focus-visible{background:#122519;color:#fdfaf2}
+a.btn--ocker,.btn--ocker{background:var(--ocker);color:#fffdf6;border-color:var(--ocker)}
+a.btn--ocker:hover,a.btn--ocker:focus-visible{background:#63450b;color:#fffdf6}
+a.btn--rand,.btn--rand{background:transparent;color:var(--gruen);border-color:var(--gruen)}
+a.btn--rand:hover,a.btn--rand:focus-visible{background:var(--gruen);color:#fdfaf2}
+a.btn--kalk,.btn--kalk{background:var(--kalk);color:var(--gruen);border-color:var(--kalk)}
+a.btn--kalk:hover,a.btn--kalk:focus-visible{background:#fff;color:var(--gruen)}
+.btnrow{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.7rem}
+
+/* ---- Abschnitte ---- */
+.sec{padding-block:clamp(2.8rem,6.5vw,5.4rem)}
+.sec--papier{background:var(--papier)}
+.sec--stein{background:var(--stein)}
+.sec--gruen{background:var(--gruen);color:#ece4d3}
+.sec--gruen h2,.sec--gruen h3{color:#fdf8ec}
+.sec--gruen a:not(.btn){color:var(--ocker-hell)}
+.sec--moos{background:var(--gruen-2);color:#e8e1d1}
+.sec--moos h2,.sec--moos h3{color:#fdf8ec}
+.sec--moos a:not(.btn){color:var(--ocker-hell)}
+.korn{background-image:radial-gradient(var(--linie) 1px,transparent 1px);background-size:17px 17px}
+.marke{display:block;font-size:.74rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--ocker);margin:0 0 1rem}
+.sec--gruen .marke,.sec--moos .marke{color:var(--ocker-hell)}
+.lead{font-family:"Cormorant Garamond",Garamond,serif;font-size:clamp(1.3rem,1.1rem + 1vw,1.85rem);
+  line-height:1.38;color:var(--tinte-2);max-width:44ch;font-weight:400}
+.sec--gruen .lead,.sec--moos .lead{color:#ddd4c1}
+.trenner{height:1px;background:var(--linie);border:0;margin:2.6rem 0}
+.sec--gruen .trenner,.sec--moos .trenner{background:rgba(216,171,78,.38)}
+
+/* ---- Arkade ---- */
+.arkade{display:block;width:100%;height:auto;color:var(--linie)}
+.sec--gruen .arkade,.sec--moos .arkade{color:rgba(216,171,78,.5)}
+
+/* ---- Hero ---- */
+.hero{background:var(--gruen);color:#f1ead9;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(216,171,78,.13) 1px,transparent 1px);background-size:20px 20px}
+.hero__in{position:relative;z-index:1;padding-block:clamp(3rem,9vw,6.5rem);max-width:60rem}
+.hero h1{color:#fdf8ec;margin-bottom:.3em}
+.hero .marke{color:var(--ocker-hell)}
+.hero__motto{font-family:"Cormorant Garamond",Garamond,serif;font-style:italic;
+  font-size:clamp(1.05rem,1rem + .6vw,1.45rem);color:var(--ocker-hell);margin-bottom:1rem}
+.hero__sub{font-size:clamp(1.02rem,.98rem + .45vw,1.2rem);color:#ded5c2;max-width:50ch}
+.hero__fakt{list-style:none;margin:2.4rem 0 0;padding:1.4rem 0 0;border-top:1px solid rgba(216,171,78,.35);
+  display:grid;gap:1rem 1.8rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:40rem){.hero__fakt{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.hero__fakt b{display:block;font-family:"Cormorant Garamond",Garamond,serif;font-size:2.1rem;color:#fdf8ec;
+  line-height:1;font-weight:600}
+.hero__fakt span{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#c9bfa9}
+.hero--klein .hero__in{padding-block:clamp(2.4rem,6vw,4.4rem);max-width:52rem}
+.hero--klein h1{font-size:clamp(2.1rem,1.4rem + 2.9vw,3.5rem)}
+
+/* ---- Raster ---- */
+.grid{display:grid;gap:clamp(1.1rem,3vw,2rem)}
+.g2{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+@media(min-width:46rem){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+@media(min-width:64rem){.g3{grid-template-columns:repeat(3,1fr)}}
+.grid>*{min-width:0}
+.split{display:grid;gap:clamp(1.5rem,4vw,3.2rem);align-items:start}
+@media(min-width:58rem){.split{grid-template-columns:1fr 1fr}.split--um>:first-child{order:2}}
+.split>*{min-width:0}
+
+/* ---- Bogenkarte ---- */
+.bogen{background:var(--papier);border:1px solid var(--linie);border-radius:var(--bogen);
+  padding:clamp(1.6rem,3.6vw,2.3rem) clamp(1.2rem,3vw,1.9rem) clamp(1.3rem,3vw,1.8rem);
+  text-align:center;color:var(--tinte)}
+.bogen h3{margin-bottom:.4em}
+.bogen p{color:var(--tinte-2)}
+.bogen p:last-child{margin-bottom:0}
+.bogen__z{display:inline-grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:999px;
+  background:var(--gruen);color:#fdf8ec;font-size:.9rem;font-weight:500;margin-bottom:.9rem}
+.sec--gruen .bogen,.sec--moos .bogen{background:rgba(253,248,236,.075);border-color:rgba(216,171,78,.32);
+  color:#efe8d8}
+.sec--gruen .bogen p,.sec--moos .bogen p{color:#ddd4c1}
+.sec--gruen .bogen h3,.sec--moos .bogen h3{color:#fdf8ec}
+.sec--gruen .bogen__z,.sec--moos .bogen__z{background:var(--ocker-hell);color:#22200f}
+
+/* ---- Tafelkarte (links ausgerichtet) ---- */
+.tafel{background:var(--papier);border:1px solid var(--linie);border-radius:1.1rem;
+  padding:clamp(1.2rem,3vw,1.8rem);color:var(--tinte)}
+.tafel h3{margin-bottom:.3em}
+.tafel p{color:var(--tinte-2)}
+.tafel p:last-child{margin-bottom:0}
+.sec--stein .tafel{background:var(--kalk)}
+.sec--gruen .tafel,.sec--moos .tafel{background:rgba(253,248,236,.075);border-color:rgba(216,171,78,.32);
+  color:#efe8d8}
+.sec--gruen .tafel p,.sec--moos .tafel p{color:#ddd4c1}
+.sec--gruen .tafel h3,.sec--moos .tafel h3{color:#fdf8ec}
+.preis{display:inline-block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--ocker);color:var(--ocker);border-radius:999px;padding:.22rem .8rem;margin-bottom:.8rem}
+.sec--gruen .preis,.sec--moos .preis{border-color:var(--ocker-hell);color:var(--ocker-hell)}
+
+/* ---- Listen ---- */
+.liste{list-style:none;margin:0;padding:0}
+.liste li{display:grid;grid-template-columns:1.1rem 1fr;gap:.8rem;padding:.55rem 0;
+  border-bottom:1px solid var(--linie)}
+.liste li::before{content:"";width:.55rem;height:.55rem;margin-top:.6rem;border-radius:999px;
+  background:var(--moos)}
+.sec--gruen .liste li,.sec--moos .liste li{border-color:rgba(216,171,78,.28)}
+.sec--gruen .liste li::before,.sec--moos .liste li::before{background:var(--ocker-hell)}
+.werte{list-style:none;margin:0;padding:0}
+.werte li{display:flex;justify-content:space-between;gap:1.2rem;padding:.68rem 0;
+  border-bottom:1px solid var(--linie)}
+.werte b{font-weight:600}
+.werte span{color:var(--tinte-2);text-align:right}
+.sec--gruen .werte li,.sec--moos .werte li{border-color:rgba(216,171,78,.28)}
+.sec--gruen .werte span,.sec--moos .werte span{color:#cfc5b1}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0}
+.tags li{border:1px solid var(--linie);border-radius:999px;padding:.35rem .9rem;font-size:.82rem;
+  color:var(--tinte-2);background:var(--papier)}
+.sec--gruen .tags li,.sec--moos .tags li{background:rgba(253,248,236,.08);border-color:rgba(216,171,78,.35);
+  color:#e4dbc8}
+
+/* ---- Zitat ---- */
+.zitat{margin:0;border:0;padding:0;font-family:"Cormorant Garamond",Garamond,serif;font-style:italic;
+  font-size:clamp(1.25rem,1.1rem + .9vw,1.9rem);line-height:1.32;color:var(--gruen)}
+.sec--gruen .zitat,.sec--moos .zitat{color:#fdf8ec}
+.zitat cite{display:block;margin-top:.8rem;font-family:"Jost",Arial,sans-serif;font-style:normal;
+  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tinte-2)}
+.sec--gruen .zitat cite,.sec--moos .zitat cite{color:#c9bfa9}
+
+/* ---- Akkordeon ---- */
+.akk{border-bottom:1px solid var(--linie)}
+.akk summary{cursor:pointer;list-style:none;padding:1rem 2.2rem 1rem 0;position:relative;font-weight:500}
+.akk summary::-webkit-details-marker{display:none}
+.akk summary::after{content:"";position:absolute;right:.4rem;top:1.35rem;width:.6rem;height:.6rem;
+  border-right:2px solid var(--moos);border-bottom:2px solid var(--moos);transform:rotate(45deg)}
+.akk[open] summary::after{transform:rotate(225deg);top:1.55rem}
+.akk__in{padding:0 0 1.2rem}
+.akk__in p:last-child{margin-bottom:0}
+
+/* ---- Formulare ---- */
+.form{background:var(--papier);border:1px solid var(--linie);border-radius:1.4rem;
+  padding:clamp(1.2rem,3.4vw,2.2rem);color:var(--tinte)}
+.sec--gruen .form,.sec--moos .form{background:var(--papier);color:var(--tinte)}
+.sec--gruen .form label,.sec--moos .form label,.sec--gruen .form p,.sec--moos .form p{color:var(--tinte)}
+.sec--gruen .form legend,.sec--moos .form legend{color:var(--ocker)}
+.sec--gruen .form h3,.sec--moos .form h3{color:var(--tinte)}
+.form fieldset{border:0;padding:0;margin:0 0 1.4rem;min-inline-size:0}
+.form legend{padding:0;font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ocker);margin-bottom:.8rem}
+.feld{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem;min-width:0}
+.feld label{font-size:.85rem;font-weight:500}
+.feld input,.feld select,.feld textarea{font:inherit;font-size:1rem;width:100%;max-width:100%;
+  padding:.7rem .9rem;border:1px solid #bdb29a;border-radius:.6rem;background:#fff;color:var(--tinte)}
+.feld textarea{min-height:7.5rem;resize:vertical}
+.feld--hint{font-size:.82rem;color:var(--tinte-2)}
+.felder{display:grid;gap:0 1.1rem}
+@media(min-width:40rem){.felder--2{grid-template-columns:1fr 1fr}.felder--3{grid-template-columns:repeat(3,1fr)}}
+.felder>*{min-width:0}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;margin-bottom:1rem}
+.check input{margin-top:.3rem;flex:0 0 auto;width:auto}
+.formnote{display:block;margin-top:1rem;font-size:.9rem;color:var(--gruen);border-left:3px solid var(--ocker-hell);
+  padding-left:.9rem}
+.formnote--on{padding-block:.55rem;background:#f4efe1;border-radius:0 .5rem .5rem 0}
+
+/* ---- Hinweisfelder ---- */
+.hinweis{border:1px solid var(--ocker);background:#f8f1df;border-radius:1rem;padding:1.1rem 1.4rem;
+  color:#4b3608}
+.hinweis p{margin:0}
+.hinweis p + p{margin-top:.6rem}
+.hinweis a{color:#63450b}
+.aktuell{border-left:4px solid var(--ocker);background:var(--papier);padding:1.1rem 1.4rem;border-radius:0 1rem 1rem 0}
+.aktuell p{margin:0;color:var(--tinte)}
+.aktuell p + p{margin-top:.5rem}
+.muster{border:1px solid var(--ocker);background:#f8f1df;border-radius:1rem;padding:1rem 1.3rem;
+  color:#4b3608;margin-bottom:2rem}
+.muster p{margin:0}
+
+/* ---- Tabelle ---- */
+.tabhuelle{overflow-x:auto;border:1px solid var(--linie);border-radius:1rem;background:var(--papier)}
+table{border-collapse:collapse;width:100%;min-width:31rem;font-size:.95rem}
+th,td{text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tinte-2);background:var(--stein)}
+
+/* ---- Weg / Anreise ---- */
+.wege{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.7rem}
+.wege li{display:grid;grid-template-columns:5.4rem 1fr;gap:.9rem;align-items:baseline;font-size:.96rem}
+.wege .art{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#fdf8ec;background:var(--moos);
+  border-radius:999px;padding:.22rem .6rem;text-align:center}
+
+/* ---- Fuss ---- */
+.foot{background:var(--gruen);color:#cfc5b1;padding-block:clamp(2.6rem,6vw,4rem) 1.5rem;font-size:.93rem}
+.foot__grid{display:grid;gap:2rem}
+@media(min-width:40rem){.foot__grid{grid-template-columns:1fr 1fr}}
+@media(min-width:66rem){.foot__grid{grid-template-columns:1.25fr 1fr 1fr 1fr}}
+.foot__grid>*{min-width:0}
+.foot__logo{font-family:"Cormorant Garamond",Garamond,serif;font-size:1.55rem;color:#fdf8ec;margin:0 0 .6rem}
+.foot__h{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ocker-hell);margin:0 0 .6rem;
+  font-weight:600}
+.foot a{color:#e8e0cf}
+.foot a:hover{color:#fff}
+.foot__nav{list-style:none;margin:0;padding:0;display:grid;gap:.34rem}
+.foot__note{margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid rgba(216,171,78,.3)}
+.foot__note p{font-size:.8rem;color:#b5ab97;margin:0;max-width:80ch}
+.anker{scroll-margin-top:6rem}

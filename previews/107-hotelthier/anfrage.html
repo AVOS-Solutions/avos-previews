@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zimmer, Gruppen &amp; Gutscheine anfragen — Hotel Thier Mönichkirchen</title>
+<meta name="description" content="Online-Anfrage für Zimmer, Gruppen und Seminare, Mietwohnungen im Appartementhaus sowie Gutscheine des Hotel Thier in Mönichkirchen.">
+<link rel="canonical" href="https://hotelthier.at/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_AT">
+<meta property="og:site_name" content="Hotel Thier Mönichkirchen">
+<meta property="og:title" content="Zimmer, Gruppen &amp; Gutscheine anfragen — Hotel Thier Mönichkirchen">
+<meta property="og:description" content="Online-Anfrage für Zimmer, Gruppen und Seminare, Mietwohnungen im Appartementhaus sowie Gutscheine des Hotel Thier in Mönichkirchen.">
+<meta property="og:image" content="img/01.jpg">
+<meta property="og:url" content="https://hotelthier.at/">
+<meta name="theme-color" content="#123527">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<p class="ribbon">Unverbindliche Gestaltungs-Vorschau · keine offizielle Website des Hotel Thier · erstellt von <strong>AVOS Solutions</strong></p>
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="index.html"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M2 19h20L15 6l-4 7-2-3-7 9z" fill="#F3B071"/><circle cx="18" cy="5.6" r="2.4" fill="#8FD0DE"/></svg></span><span><b>Hotel Thier</b><span class="brand__sub">Mönichkirchen · 1.000 m</span></span></a>
+    <button class="navtoggle" type="button" id="navbtn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+     <ul>
+      <li><a href="index.html">Haus</a></li>
+      <li><a href="hotel.html">Zimmer &amp; Wellness</a></li>
+      <li><a href="preise.html">Preise &amp; Wohnen</a></li>
+      <li><a href="gruppen.html">Gruppen &amp; Seminare</a></li>
+      <li><a href="region.html">Ort &amp; Ausflüge</a></li>
+      <li><a href="anfrage.html" aria-current="page">Anfrage</a></li>
+      <li><a href="kontakt.html">Anreise &amp; Kontakt</a></li>
+     </ul>
+    </nav>
+    <a class="btn btn--primary" href="anfrage.html">Urlaub anfragen</a>
+  </div>
+</header>
+<main id="main">
+
+<section class="sec sec--tight sec--pine">
+  <div class="wrap">
+    <span class="eyebrow">Anfrage</span>
+    <h1>Lieber Gast, wir freuen uns, von Ihnen zu hören.</h1>
+    <p class="lede">Schreiben Sie uns Ihren Reservierungswunsch, Fragen oder Anliegen. Für Rückfragen
+    erreichen Sie uns auch per E-Mail oder gerne telefonisch.</p>
+    <div class="btnrow">
+      <a class="btn btn--primary" href="#zimmer">Zimmer</a>
+      <a class="btn btn--line" href="#gruppe">Gruppe &amp; Seminar</a>
+      <a class="btn btn--line" href="#wohnung">Mietwohnung</a>
+      <a class="btn btn--line" href="#gutschein">Gutschein</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zimmer">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Zimmeranfrage</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="z-an">Anreise *</label><input type="date" id="z-an" name="anreise" required></div>
+              <div class="field"><label for="z-ab">Abreise *</label><input type="date" id="z-ab" name="abreise" required></div>
+              <div class="field"><label for="z-kat">Zimmerkategorie</label>
+                <select id="z-kat" name="kategorie">
+                  <option>Einbettzimmer</option><option>Zweibettzimmer</option>
+                  <option>Dreibettzimmer</option><option>Familienzimmer (ab 3 Personen)</option>
+                </select></div>
+              <div class="field"><label for="z-arr">Arrangement</label>
+                <select id="z-arr" name="arrangement">
+                  <option>mit Frühstück — ab € 60,– p. P./Tag</option>
+                  <option>mit Halbpension — ab € 67,– p. P./Tag</option>
+                  <option>mit Vollpension — ab € 72,– p. P./Tag</option>
+                </select></div>
+              <div class="field"><label for="z-erw">Erwachsene</label><input type="number" id="z-erw" name="erwachsene" min="1" max="20" value="2"></div>
+              <div class="field"><label for="z-kind">Kinder (mit Alter)</label><input type="text" id="z-kind" name="kinder" placeholder="z. B. 2 Kinder, 6 und 9 Jahre"></div>
+              <div class="field"><label for="z-name">Name *</label><input type="text" id="z-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="z-mail">E-Mail *</label><input type="email" id="z-mail" name="email" autocomplete="email" required></div>
+              <div class="field"><label for="z-tel">Telefon</label><input type="tel" id="z-tel" name="telefon" autocomplete="tel"></div>
+              <div class="field"><label for="z-ank">Ankunftszeit</label>
+                <select id="z-ank" name="ankunft"><option>ab 13.00 Uhr</option><option>Nachmittag</option><option>Abend</option></select></div>
+            </div>
+            <div class="field"><label for="z-txt">Ihre Nachricht an uns</label>
+              <textarea id="z-txt" name="nachricht" placeholder="Wünsche zur Zimmerlage, Badelandschaft, Schibus, Diäten …"></textarea></div>
+            <p class="checkline"><input type="checkbox" id="z-ds" required>
+              <label for="z-ds" style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--muted)">
+              Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. *</label></p>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Unverbindlich anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb geht Ihre Anfrage direkt an
+          office@hotelthier.at und wird von der Gastgeberfamilie Thier persönlich beantwortet.</p>
+          <p class="formnote">Mit * markierte Felder bitte ausfüllen. Danke!</p>
+        </form>
+      </div>
+      <div>
+        <span class="eyebrow">Gut zu wissen</span>
+        <h2>Vor Ihrer Anfrage</h2>
+        <ul class="ticks">
+          <li>Sommerpreise gelten vom 1. Mai bis 26. Oktober</li>
+          <li>Preise pro Person und Tag, Einzelzimmer-Zuschlag € 7,–</li>
+          <li>Ortstaxe € 2,90 pro Person und Tag (ab 1.1.2024)</li>
+          <li>Anreise ab 13.00 Uhr, Abreise bis ca. 10.00 Uhr</li>
+          <li>Badelandschaft für Hausgäste inklusive</li>
+          <li>350 m zum Sessellift, gratis Schibus</li>
+        </ul>
+        <p class="note">Telefon <a href="tel:+432649281">+43 2649 281</a> ·
+        Mobil <a href="tel:+436641056480">+43 664 1056480</a> ·
+        <a href="mailto:office@hotelthier.at">office@hotelthier.at</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--stone" id="gruppe">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div>
+        <span class="eyebrow">Gruppen &amp; Seminare</span>
+        <h2>Angebot für Ihre Gruppe</h2>
+        <p>Gerne machen wir Ihnen ein attraktives Angebot für Ihre Reisegruppe — ob Verein, Busreise,
+        Trainingslager, Seniorengruppe oder Seminar mit bis zu 60 Personen.</p>
+        <p class="note">Gruppenpreise auf Anfrage: <a href="tel:+432649281">+43 (0) 2649 281</a> oder
+        <a href="mailto:office@hotelthier.at">office@hotelthier.at</a></p>
+      </div>
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Gruppenanfrage</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="g-art">Art der Gruppe</label>
+                <select id="g-art" name="art"><option>Verein</option><option>Busreise</option>
+                  <option>Fußball-Trainingslager</option><option>Seniorengruppe</option>
+                  <option>Seminar / Firmenveranstaltung</option><option>Schulgruppe</option></select></div>
+              <div class="field"><label for="g-pers">Personen</label><input type="number" id="g-pers" name="personen" min="10" max="120" placeholder="z. B. 40"></div>
+              <div class="field"><label for="g-von">Von</label><input type="date" id="g-von" name="von"></div>
+              <div class="field"><label for="g-bis">Bis</label><input type="date" id="g-bis" name="bis"></div>
+              <div class="field"><label for="g-verp">Verpflegung</label>
+                <select id="g-verp" name="verpflegung"><option>Frühstück</option><option>Halbpension</option><option>Vollpension</option></select></div>
+              <div class="field"><label for="g-raum">Seminarraum</label>
+                <select id="g-raum" name="raum"><option>nicht nötig</option><option>bis 20 Personen</option>
+                  <option>bis 40 Personen</option><option>bis 60 Personen</option></select></div>
+              <div class="field"><label for="g-name">Ansprechperson *</label><input type="text" id="g-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="g-mail">E-Mail *</label><input type="email" id="g-mail" name="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="g-txt">Programmwünsche</label>
+              <textarea id="g-txt" name="nachricht" style="min-height:6rem" placeholder="Ausflüge, Trainingszeiten, Technik im Seminarraum, Busparkplatz …"></textarea></div>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Gruppenangebot anfordern</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb erhalten Sie Ihr persönliches
+          Gruppenangebot direkt vom Hotel Thier.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="wohnung">
+  <div class="wrap">
+    <div class="split split--wide">
+      <div class="formbox">
+        <form data-demo>
+          <fieldset>
+            <legend>Mietwohnung anfragen</legend>
+            <div class="fieldgrid">
+              <div class="field"><label for="w-var">Variante</label>
+                <select id="w-var" name="variante">
+                  <option>Variante 1 — 2-Zimmer-Wohnung, 45 m², € 420,–</option>
+                  <option>Variante 2 — 1-Zimmer-Wohnung, 30 m², € 350,–</option>
+                </select></div>
+              <div class="field"><label for="w-ab">Gewünschter Mietbeginn</label><input type="month" id="w-ab" name="beginn"></div>
+              <div class="field"><label for="w-name">Name *</label><input type="text" id="w-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="w-mail">E-Mail *</label><input type="email" id="w-mail" name="email" autocomplete="email" required></div>
+            </div>
+            <div class="field"><label for="w-txt">Fragen zur Wohnung</label>
+              <textarea id="w-txt" name="nachricht" style="min-height:5rem"></textarea></div>
+          </fieldset>
+          <button class="btn btn--primary" type="submit">Wohnung anfragen</button>
+          <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb meldet sich das Hotel Thier mit
+          Verfügbarkeit und Details zur Mietwohnung.</p>
+        </form>
+      </div>
+      <div>
+        <span class="eyebrow">Appartementhaus</span>
+        <h2>Wohnen auf Zeit, ab 6 Monaten</h2>
+        <ul class="ticks">
+          <li>Variante 1: 2-Zimmer-Wohnung, 45 m², € 420,–</li>
+          <li>Variante 2: 1-Zimmer-Wohnung, 30 m², € 350,–</li>
+          <li>Mindestmietdauer 6 Monate</li>
+          <li>Verbrauchsgebühren nach tatsächlichem Aufwand</li>
+          <li>Benützung aller Geräte inkludiert</li>
+        </ul>
+        <div class="btnrow"><a class="btn btn--line" href="preise.html#appartements">Details ansehen</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--pine" id="gutschein">
+  <div class="wrap wrap--narrow">
+    <span class="eyebrow">Neu — Gutscheine</span>
+    <h2>Berge verschenken</h2>
+    <p class="lede">Eine Nacht mit Frühstück, ein Wellness-Tag oder ein frei wählbarer Betrag: Wir stellen
+    den Gutschein aus und senden ihn per Post oder als PDF.</p>
+    <div class="formbox" style="margin-top:1.3rem">
+      <form data-demo>
+        <fieldset>
+          <legend>Gutschein bestellen</legend>
+          <div class="fieldgrid">
+            <div class="field"><label for="gs-art">Art</label>
+              <select id="gs-art" name="art"><option>Wertgutschein</option>
+                <option>Übernachtung mit Frühstück</option><option>Wochenende mit Halbpension</option>
+                <option>Tag in der Badelandschaft (für Hausgäste)</option></select></div>
+            <div class="field"><label for="gs-wert">Wert in Euro</label><input type="number" id="gs-wert" name="wert" min="20" step="10" placeholder="z. B. 120"></div>
+            <div class="field"><label for="gs-name">Ihr Name *</label><input type="text" id="gs-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="gs-mail">Ihre E-Mail *</label><input type="email" id="gs-mail" name="email" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="gs-txt">Widmung (optional)</label>
+            <textarea id="gs-txt" name="widmung" style="min-height:4.5rem"></textarea></div>
+        </fieldset>
+        <button class="btn btn--primary" type="submit">Gutschein anfragen</button>
+        <p class="msg">Danke! Das ist eine Vorschau — im Live-Betrieb wird der Gutschein direkt bestellt
+        und an office@hotelthier.at übermittelt.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>Hotel Thier</h4>
+        <p style="margin-bottom:.5rem"><strong style="color:#EFF5F0">Gastgeberfamilie Thier</strong><br>
+        A-2872 Mönichkirchen 243, Niederösterreich</p>
+        <p>Telefon <a href="tel:+432649281">+43 2649 281</a><br>
+        Mobil <a href="tel:+436641056480">+43 664 1056480</a><br>
+        Fax +43 2649 281 59<br>
+        <a href="mailto:office@hotelthier.at">office@hotelthier.at</a></p>
+        <p>Seit 2022 energieautark: Photovoltaik mit Speicher, Hackgut-Heizung, eigene Wasserversorgung.</p>
+      </div>
+      <div>
+        <h4>Seiten</h4>
+        <ul>
+          <li><a href="index.html">Das Haus</a></li>
+          <li><a href="hotel.html">Zimmer &amp; Badelandschaft</a></li>
+          <li><a href="preise.html">Preise &amp; Appartements</a></li>
+          <li><a href="gruppen.html">Gruppen &amp; Seminare</a></li>
+          <li><a href="region.html">Ort &amp; Ausflugsziele</a></li>
+          <li><a href="anfrage.html">Anfrage &amp; Gutschein</a></li>
+          <li><a href="kontakt.html">Anreise &amp; Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gut zu wissen</h4>
+        <ul>
+          <li>Über 50 Zimmer, Personenlift</li>
+          <li>Badelandschaft für Hausgäste</li>
+          <li>350 m zum Sessellift, gratis Schibus</li>
+          <li>Seminarräume für 10–60 Personen</li>
+          <li>Ortstaxe € 2,90 pro Person und Tag</li>
+        </ul>
+        <p style="margin-top:1rem"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Gestaltungs-Vorschau von AVOS Solutions — Inhalte und Preise stammen von der bestehenden Website des Betriebs.</span>
+      <span>Das Bildmaterial stammt von der bestehenden Website des Hotel Thier.</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('navbtn'),n=document.getElementById('nav');
+  if(b&&n){b.addEventListener('click',function(){var o=n.getAttribute('data-open')==='true';
+    n.setAttribute('data-open',String(!o));b.setAttribute('aria-expanded',String(!o));});}
+  document.querySelectorAll('form[data-demo]').forEach(function(f){
+    f.addEventListener('submit',function(e){e.preventDefault();
+      var m=f.querySelector('.msg');
+      if(m){m.setAttribute('data-show','true');m.setAttribute('role','status');m.scrollIntoView({block:'center',behavior:'smooth'});}
+      f.querySelectorAll('input,textarea,select').forEach(function(i){if(i.type!=='checkbox')i.value='';});});
+  });
+})();
+</script>
+</body>
+</html>
