@@ -22,5 +22,29 @@
       "kontakt.html",
       "ueber-uns.html"
     ]
+  },
+  {
+    "num": 3,
+    "slug": "03-kronberger-haus-oberlaa",
+    "name": "KHO Kronberger-Haus Oberlaa",
+    "category": "Pension / Gästehaus",
+    "region": "Wien",
+    "location": "Wien 10 (Favoriten, Oberlaa)",
+    "description": "Familiengeführte Pension (laut herold.at seit 1988) mit 18 Zimmern und 36 Betten, Einzel-/Doppel-/Mehrbettzimmer mit Frühstück, nahe dem Kurpark Oberlaa/Therme Wien gelegen. Der Eintrag auf Wiens offizieller Tourismus-Website wien.info beschreibt eine kleine Unterkunft mit Lift, teilweiser Rollstuhlzugänglichkeit und Parkplatz.",
+    "oldWebsite": null,
+    "pitchHook": "Keine eigene Domain — buchbar nur über fremde Portale, mit Gmail-Adresse statt Geschäftsmail. Eine eigene Seite bringt Zimmer, Preise und Anfrage unter die Kontrolle des Hauses.",
+    "priceLow": 4200,
+    "priceHigh": 7800,
+    "phone": "+43 1 6884650",
+    "email": "kronbergerhaus@gmail.com",
+    "contactPerson": null,
+    "pages": [
+      "datenschutz.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "ueber-uns.html",
+      "zimmer.html"
+    ]
   }
 ]
