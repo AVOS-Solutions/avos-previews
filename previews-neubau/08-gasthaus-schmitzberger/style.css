@@ -63,8 +63,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(247,242,231,0.95);ba
 .week{display:flex;gap:4px;max-width:520px;margin:2.2rem auto 0;}
 .day{flex:1;text-align:center;padding:0.7rem 0.2rem;border:1px solid rgba(184,148,77,0.4);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;}
 .day.on{background:var(--gold);color:var(--deep);border-color:var(--gold);font-weight:600;}
-.day.off{color:#6d6152;position:relative;overflow:hidden;}
-.day.off::after{content:"";position:absolute;left:-10%;right:-10%;top:50%;height:1px;background:#6d6152;transform:rotate(-16deg);}
+.day.off{color:#8a7b68;position:relative;overflow:hidden;}
+.day.off::after{content:"";position:absolute;left:-10%;right:-10%;top:50%;height:1px;background:#8a7b68;transform:rotate(-16deg);}
 .week-note{text-align:center;margin-top:0.9rem;font-size:0.76rem;letter-spacing:0.08em;color:#a8917a;}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:2rem;}
 
