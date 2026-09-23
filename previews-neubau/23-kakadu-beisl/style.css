@@ -1,9 +1,13 @@
 :root{
-  /* Die Farben kommen vom Rosakakadu selbst: rosa Brust und Haube, graue Flügel.
-     Dazu das Nachtblau, weil hier sieben Tage in der Woche erst um zwei gesperrt wird. */
+  /* Die Farben kommen vom Gelbhaubenkakadu: cremeweißes Gefieder, gelbe Haube.
+     Dazu das Nachtblau, weil hier sieben Tage in der Woche erst um zwei gesperrt wird.
+     Schwefelgelb, nicht Bernstein: der Ton liegt bei 49 Grad und damit 13 Grad von der
+     Zwickl-Vorschau entfernt, die auf braunem Grund mit 36 Grad arbeitet.
+     Gelb trägt nur auf dem dunklen Grund (10,28:1); auf Creme steht dafür der dunkle
+     Ockerton --haube-text (5,91:1), weil reines Gelb dort auf 1,5:1 fällt. */
   --nacht:#20242E; --nacht-2:#2A2F3B; --nacht-3:#333A48;
   --creme:#F5F1EC; --creme-2:#EAE4DC;
-  --rosa:#E692A6; --rosa-hover:#D4798F; --rosa-hell:#F0BFC9; --rosa-text:#A0435A;
+  --haube:#EFD152; --haube-hover:#E5C63F; --haube-hell:#F5E08F; --haube-text:#75580D;
   --asche:#A4ACBA; --asche-dim:#8C94A3;
   --ink:#1C2028; --ink-soft:#4A5260; --muted:#5E6573;
   --line:rgba(28,32,40,0.13);
@@ -26,8 +30,8 @@ ul{margin:0;padding-left:1.15rem;}
 
 /* Kleine Auszeichnungszeile über den Überschriften */
 .eyebrow{font-size:0.71rem;font-weight:700;letter-spacing:0.19em;text-transform:uppercase;
-  color:var(--rosa-text);}
-.eyebrow-light{color:var(--rosa);}
+  color:var(--haube-text);}
+.eyebrow-light{color:var(--haube);}
 /* Hausdetail: die doppelte Haarlinie taucht unter jeder Abschnittsüberschrift auf */
 .rule{height:0;border:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   padding-top:3px;margin:1.1rem 0 0;}
@@ -51,7 +55,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,241,236,0.95);
 .nav-links a{padding:10px 2px;border-bottom:2px solid transparent;color:var(--ink-soft);
   min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
 .nav-links a:hover{color:var(--ink);border-color:var(--asche);}
-.nav-links a.active{color:var(--ink);border-color:var(--rosa);}
+.nav-links a.active{color:var(--ink);border-color:var(--haube-text);}
 .nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--nacht);
   color:var(--creme);font-weight:600;padding:11px 19px;border-radius:var(--r);font-size:0.9rem;
   min-height:45px;white-space:nowrap;}
@@ -81,7 +85,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,241,236,0.95);
 .hero-grid > *{min-width:0;}
 .hero-text{padding-bottom:clamp(2.2rem,1.8rem + 3vw,4.2rem);}
 .hero h1{font-size:clamp(2.05rem,1.4rem + 3vw,4rem);color:var(--creme);margin-top:1rem;}
-.hero h1 em{font-style:italic;color:var(--rosa);font-weight:600;}
+.hero h1 em{font-style:italic;color:var(--haube);font-weight:600;}
 .hero-lead{margin-top:1.2rem;color:var(--asche);max-width:34em;
   font-size:clamp(0.99rem,0.95rem + 0.32vw,1.13rem);}
 .hero-actions{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:11px;}
@@ -99,15 +103,15 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,241,236,0.95);
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;
   border-radius:var(--r);font-size:0.94rem;font-weight:600;min-height:48px;
   transition:background .18s ease,color .18s ease,border-color .18s ease;}
-/* Rosa trägt dunkle Schrift – helle Schrift auf diesem Rosa fällt unter 4,5:1 */
-.btn-rosa{background:var(--rosa);color:var(--nacht);}
-.btn-rosa:hover{background:var(--rosa-hover);}
+/* Gelb trägt dunkle Schrift – helle Schrift auf diesem Gelb fällt weit unter 4,5:1 */
+.btn-haube{background:var(--haube);color:var(--nacht);}
+.btn-haube:hover{background:var(--haube-hover);}
 .btn-nacht{background:var(--nacht);color:var(--creme);}
 .btn-nacht:hover{background:var(--nacht-2);}
 .btn-ghost{border:1.5px solid var(--asche-dim);color:var(--asche);}
-.btn-ghost:hover{border-color:var(--rosa);color:var(--rosa);}
+.btn-ghost:hover{border-color:var(--haube);color:var(--haube);}
 .btn-ghost-l{border:1.5px solid var(--line);color:var(--ink-soft);}
-.btn-ghost-l:hover{border-color:var(--rosa-text);color:var(--rosa-text);}
+.btn-ghost-l:hover{border-color:var(--haube-text);color:var(--haube-text);}
 
 /* ---------- Faktenband ---------- */
 .band{background:var(--nacht-2);color:var(--creme);}
@@ -115,7 +119,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(245,241,236,0.95);
   display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,0.6rem + 1.6vw,2.4rem);}
 .band-inner > *{min-width:0;}
 .band-k{font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1.5vw,2.3rem);font-weight:700;
-  color:var(--rosa);line-height:1.05;}
+  color:var(--haube);line-height:1.05;}
 .band-t{margin-top:0.3rem;font-size:0.88rem;color:var(--asche);}
 @media (max-width:700px){.band-inner{grid-template-columns:1fr;gap:1.1rem;}}
 
@@ -126,7 +130,7 @@ section.s-alt{background:var(--creme-2);}
 .s-head{max-width:46rem;}
 .s h2{font-size:clamp(1.5rem,1.25rem + 1.3vw,2.4rem);margin-top:0.85rem;}
 .s-dark h2{color:var(--creme);}
-.s-dark h2 em{font-style:italic;color:var(--rosa);}
+.s-dark h2 em{font-style:italic;color:var(--haube);}
 .s-lead{margin-top:1rem;color:var(--ink-soft);font-size:clamp(0.99rem,0.96rem + 0.25vw,1.1rem);}
 .s-dark .s-lead{color:var(--asche);}
 
@@ -134,17 +138,17 @@ section.s-alt{background:var(--creme-2);}
 .cards{margin-top:clamp(1.6rem,1.2rem + 1.4vw,2.6rem);display:grid;
   grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(1rem,0.7rem + 1vw,1.7rem);}
 .cards > *{min-width:0;}
-.card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--rosa);
+.card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--haube-text);
   border-radius:var(--r-lg);padding:clamp(1.15rem,1rem + 0.6vw,1.7rem);min-width:0;}
-.card-dark{background:var(--nacht-2);border:1px solid var(--line-dark);border-top:3px solid var(--rosa);}
+.card-dark{background:var(--nacht-2);border:1px solid var(--line-dark);border-top:3px solid var(--haube);}
 .card-h{font-family:var(--display);font-weight:700;font-size:clamp(1.14rem,1.05rem + 0.4vw,1.35rem);
   line-height:1.2;}
 .card-dark .card-h{color:var(--creme);}
 .card-p{margin-top:0.6rem;color:var(--ink-soft);font-size:0.96rem;}
 .card-dark .card-p{color:var(--asche);}
 .card-zeit{margin-top:0.9rem;font-family:var(--display);font-weight:700;font-size:1.5rem;
-  color:var(--rosa-text);letter-spacing:0.01em;}
-.card-dark .card-zeit{color:var(--rosa);}
+  color:var(--haube-text);letter-spacing:0.01em;}
+.card-dark .card-zeit{color:var(--haube);}
 .card-note{margin-top:0.55rem;font-size:0.82rem;color:var(--muted);}
 .card-dark .card-note{color:var(--asche-dim);}
 
@@ -154,18 +158,13 @@ section.s-alt{background:var(--creme-2);}
   text-anchor:middle;}
 .dial .dc{font-family:"Asap",sans-serif;font-size:12px;font-weight:600;fill:#A4ACBA;
   text-anchor:middle;letter-spacing:0.04em;}
-.dial .dsperr{font-family:"Alegreya",serif;font-style:italic;font-size:15px;fill:#E692A6;
-  text-anchor:middle;}
-.dial-light .dl{fill:#5E6573;}
-.dial-light .dc{fill:#4A5260;}
-.dial-light .dsperr{fill:#A0435A;}
 .dial-grid{margin-top:clamp(1.6rem,1.2rem + 1.4vw,2.6rem);display:grid;
   grid-template-columns:0.95fr 1.05fr;gap:clamp(1.4rem,1rem + 2vw,3rem);align-items:center;}
 .dial-grid > *{min-width:0;}
 .legend{margin-top:1.4rem;display:flex;flex-direction:column;gap:0.75rem;}
 .leg{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.95rem;}
 .leg-sw{width:26px;height:9px;border-radius:5px;flex-shrink:0;margin-top:0.45rem;}
-.leg-sw.rosa{background:var(--rosa);}
+.leg-sw.haube{background:var(--haube);}
 .leg-sw.asche{background:var(--asche);}
 @media (max-width:860px){.dial-grid{grid-template-columns:1fr;}}
 
@@ -202,11 +201,11 @@ section.s-alt{background:var(--creme-2);}
 .tl-item > *{min-width:0;}
 .tl-item:last-child{padding-bottom:0;}
 .tl-dot{position:relative;width:13px;display:flex;justify-content:center;}
-.tl-dot::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--rosa);
+.tl-dot::before{content:"";width:13px;height:13px;border-radius:50%;background:var(--haube-text);
   margin-top:8px;flex-shrink:0;z-index:1;}
 .tl-item:not(:last-child) .tl-dot::after{content:"";position:absolute;top:19px;bottom:-1.6rem;
   width:2px;background:var(--line);}
-.tl-jahr{font-family:var(--display);font-weight:700;font-size:1.22rem;color:var(--rosa-text);}
+.tl-jahr{font-family:var(--display);font-weight:700;font-size:1.22rem;color:var(--haube-text);}
 .tl-t{margin-top:0.25rem;color:var(--ink-soft);font-size:0.97rem;}
 
 /* ---------- Kontaktzeile ---------- */
@@ -219,18 +218,18 @@ section.s-alt{background:var(--creme-2);}
 .kx-val{margin-top:0.45rem;font-family:var(--display);font-weight:700;
   font-size:clamp(1.14rem,1rem + 0.6vw,1.45rem);line-height:1.25;}
 .s-dark .kx-val{color:var(--creme);}
-.kx-val a{border-bottom:2px solid var(--rosa);}
+.kx-val a{border-bottom:2px solid var(--haube);}
 .kx-sub{margin-top:0.4rem;font-size:0.9rem;color:var(--ink-soft);}
 .s-dark .kx-sub{color:var(--asche);}
 
 /* ---------- Ruf-Streifen ---------- */
-.ruf{background:var(--rosa);color:var(--nacht);}
+.ruf{background:var(--haube-hover);color:var(--nacht);}
 .ruf-inner{max-width:var(--wrap);margin:0 auto;padding:clamp(1.8rem,1.5rem + 1.6vw,3rem) 20px;
   display:flex;align-items:center;justify-content:space-between;gap:clamp(1rem,0.8rem + 1.4vw,2.4rem);
   flex-wrap:wrap;}
 .ruf-inner > *{min-width:0;}
 .ruf h2{font-size:clamp(1.42rem,1.2rem + 1.2vw,2.15rem);color:var(--nacht);}
-.ruf p{margin-top:0.5rem;font-size:0.97rem;color:#3A2028;max-width:32em;}
+.ruf p{margin-top:0.5rem;font-size:0.97rem;color:#33300E;max-width:32em;}
 .ruf .btn-nacht{flex-shrink:0;}
 
 /* ---------- Rechtstexte ---------- */
@@ -238,7 +237,7 @@ section.s-alt{background:var(--creme-2);}
 .legal h1{font-size:clamp(1.6rem,1.3rem + 1.6vw,2.5rem);}
 .legal h2{font-size:clamp(1.12rem,1.05rem + 0.5vw,1.4rem);margin-top:2.1rem;}
 .legal p,.legal li{margin-top:0.75rem;color:var(--ink-soft);font-size:0.98rem;}
-.legal .hinweis{margin-top:1.5rem;border-left:3px solid var(--rosa);background:var(--creme-2);
+.legal .hinweis{margin-top:1.5rem;border-left:3px solid var(--haube-text);background:var(--creme-2);
   padding:1.1rem 1.3rem;border-radius:0 var(--r-lg) var(--r-lg) 0;}
 .legal .hinweis p{margin-top:0;color:var(--ink);}
 .dl-list{margin-top:1.2rem;display:grid;gap:0.85rem;}
@@ -255,7 +254,7 @@ footer{background:var(--nacht);color:var(--asche);padding:clamp(2rem,1.7rem + 1.
 .foot-inner > *{min-width:0;}
 .foot-name{font-family:var(--display);font-weight:700;font-size:1.28rem;color:var(--creme);
   margin-bottom:0.35rem;}
-.foot-inner a:hover{color:var(--rosa);}
+.foot-inner a:hover{color:var(--haube);}
 .foot-links{display:flex;flex-direction:column;gap:0.45rem;}
 .foot-disclosure{border-top:1px solid var(--line-dark);padding:1.1rem 20px 1.4rem;
   max-width:var(--wrap);margin:0 auto;font-size:0.78rem;line-height:1.62;color:var(--asche-dim);}
@@ -263,5 +262,5 @@ footer{background:var(--nacht);color:var(--asche);padding:clamp(2rem,1.7rem + 1.
 /* Seitenköpfe der Unterseiten teilen die Größen der Abschnittsüberschriften */
 .s h1{font-size:clamp(1.7rem,1.35rem + 1.8vw,2.8rem);margin-top:0.85rem;}
 .s-dark h1{color:var(--creme);}
-.s-dark h1 em{font-style:italic;color:var(--rosa);font-weight:600;}
-.s h1 em{font-style:italic;color:var(--rosa-text);font-weight:600;}
+.s-dark h1 em{font-style:italic;color:var(--haube);font-weight:600;}
+.s h1 em{font-style:italic;color:var(--haube-text);font-weight:600;}
