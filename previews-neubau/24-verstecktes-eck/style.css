@@ -1,0 +1,288 @@
+:root{
+  /* Zwei Farben, wie auf einem Wiener Emailschild: Schildblau und Creme. Kein dritter Akzent —
+     Betonung entsteht durch Umkehrung (weiße Schrift auf blauer Tafel), nicht durch eine
+     weitere Farbe. Der Holzton, der hier zuerst stand, fiel mit 4,41:1 auf Creme durch. */
+  --schild:#1C3A6B; --schild-2:#152C53; --schild-3:#2B4E85;
+  --papier:#F4F1EA; --papier-2:#E8E2D5; --weiss:#FFFFFF;
+  --hell:#C6D2E6; --hell-2:#A9BAD6;
+  --ink:#1A1C22; --ink-soft:#474B55; --muted:#5C616B;
+  --line:rgba(26,28,34,0.14);
+  --line-blau:rgba(255,255,255,0.28);
+  --display:"Oswald",Impact,system-ui,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --r:5px; --r-lg:10px;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--papier);color:var(--ink);font-family:var(--serif);
+  font-size:1.04rem;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;margin:0;
+  letter-spacing:0.01em;overflow-wrap:break-word;}
+p{margin:0;overflow-wrap:break-word;}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px;}
+.wrap > *{min-width:0;}
+
+/* Auszeichnungszeile: gesperrte Versalien, wie die Beschriftung auf einer Tafel */
+.eyebrow{font-family:var(--display);font-size:0.74rem;font-weight:500;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--schild);}
+.eyebrow-light{color:var(--hell);}
+/* Hausdetail: die Schild-Keylinie taucht als Trennlinie wieder auf */
+.rule{height:0;border:none;border-top:2px solid var(--schild);width:54px;margin:1.1rem 0 0;}
+.rule-light{border-top-color:var(--hell);}
+
+.disclosure{background:var(--schild-2);color:var(--hell);text-align:center;padding:9px 16px;
+  font-size:clamp(0.66rem,0.61rem + 0.2vw,0.77rem);line-height:1.5;}
+
+/* ---------- Navigation ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(244,241,234,0.96);
+  backdrop-filter:blur(10px);border-bottom:2px solid var(--schild);}
+.nav-inner{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;padding:11px 20px;gap:16px;}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;}
+.brand .mark{width:34px;height:34px;flex-shrink:0;}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;min-width:0;}
+.brand-name{font-family:var(--display);font-weight:600;text-transform:uppercase;
+  letter-spacing:0.04em;font-size:clamp(1.02rem,0.92rem + 0.5vw,1.26rem);color:var(--schild);}
+.brand-sub{font-family:var(--display);font-size:0.58rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+.nav-links{display:flex;gap:24px;font-family:var(--display);font-size:0.93rem;
+  letter-spacing:0.06em;text-transform:uppercase;}
+.nav-links a{padding:10px 2px;border-bottom:3px solid transparent;color:var(--ink-soft);
+  min-height:44px;display:inline-flex;align-items:center;white-space:nowrap;}
+.nav-links a:hover{color:var(--schild);}
+.nav-links a.active{color:var(--schild);border-color:var(--schild);}
+.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--schild);color:var(--weiss);font-family:var(--display);font-weight:500;
+  letter-spacing:0.04em;padding:11px 19px;border-radius:var(--r);font-size:0.92rem;
+  min-height:45px;white-space:nowrap;}
+.nav-cta:hover{background:var(--schild-2);}
+.burger{display:none;width:44px;height:44px;border:none;background:transparent;cursor:pointer;
+  align-items:center;justify-content:center;flex-shrink:0;}
+.burger span,.burger span::before,.burger span::after{content:"";display:block;width:22px;height:2px;
+  background:var(--schild);position:relative;transition:transform .2s ease;}
+.burger span::before{position:absolute;top:-7px;}
+.burger span::after{position:absolute;top:7px;}
+.burger.open span{background:transparent;}
+.burger.open span::before{transform:rotate(45deg) translate(5px,5px);}
+.burger.open span::after{transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;flex-direction:column;background:var(--papier-2);padding:6px 20px 18px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:14px 4px;border-bottom:1px solid var(--line);font-family:var(--display);
+  letter-spacing:0.05em;text-transform:uppercase;font-size:0.96rem;min-height:44px;
+  display:flex;align-items:center;}
+.mobile-menu .nav-cta{margin-top:14px;border-bottom:none;}
+@media (max-width:920px){.nav-links{display:none;} .burger{display:flex;}
+  .nav-inner > .nav-cta{display:none;}}
+
+/* ---------- Hero: hell, das Schild trägt die Farbe ---------- */
+.hero{background:var(--papier);padding:clamp(2.2rem,1.8rem + 3vw,4.4rem) 0;}
+.hero-grid{max-width:var(--wrap);margin:0 auto;padding:0 20px;display:grid;
+  grid-template-columns:1.15fr 0.85fr;gap:clamp(1.6rem,0.8rem + 3vw,3.4rem);align-items:center;}
+.hero-grid > *{min-width:0;}
+.hero h1{font-size:clamp(1.9rem,1.35rem + 2.4vw,3.1rem);color:var(--schild);font-weight:500;
+  text-transform:uppercase;letter-spacing:0.005em;margin-top:1rem;}
+.hero h1 em{font-style:normal;font-weight:300;color:var(--ink);display:block;}
+.hero-lead{margin-top:1.3rem;color:var(--ink-soft);max-width:34em;
+  font-size:clamp(1rem,0.96rem + 0.32vw,1.14rem);}
+.hero-actions{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:11px;}
+.schild{width:100%;max-width:420px;margin:0 auto;height:auto;}
+.schild .sch-n{font-family:"Oswald",sans-serif;font-size:21px;font-weight:600;fill:#FFFFFF;
+  text-anchor:middle;letter-spacing:0.04em;}
+.schild .sch-s{font-family:"Oswald",sans-serif;font-size:11.5px;font-weight:300;fill:#C6D2E6;
+  text-anchor:middle;letter-spacing:0.1em;}
+.schild .sch-nr{font-family:"Oswald",sans-serif;font-size:30px;font-weight:600;fill:#FFFFFF;
+  text-anchor:middle;}
+.schild .sch-w{font-family:"Oswald",sans-serif;font-size:15px;font-weight:500;fill:#FFFFFF;
+  text-anchor:middle;letter-spacing:0.09em;}
+@media (max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:1.6rem;}
+  .schild{max-width:340px;}
+}
+
+/* ---------- Knöpfe ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;
+  border-radius:var(--r);font-family:var(--display);font-size:0.95rem;font-weight:500;
+  letter-spacing:0.05em;min-height:48px;transition:background .18s ease,color .18s ease,
+  border-color .18s ease;}
+.btn-schild{background:var(--schild);color:var(--weiss);}
+.btn-schild:hover{background:var(--schild-2);}
+.btn-weiss{background:var(--weiss);color:var(--schild);border:2px solid var(--schild);}
+.btn-weiss:hover{background:var(--papier-2);}
+.btn-ghost{border:2px solid var(--hell-2);color:var(--weiss);}
+.btn-ghost:hover{border-color:var(--weiss);}
+
+/* ---------- Das Tafel-Band: drei kleine Emailschilder ---------- */
+.tafeln{background:var(--papier-2);padding:clamp(1.8rem,1.4rem + 1.6vw,3rem) 0;}
+.tafeln-inner{max-width:var(--wrap);margin:0 auto;padding:0 20px;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:clamp(0.9rem,0.6rem + 1.2vw,1.6rem);}
+.tafeln-inner > *{min-width:0;}
+.tafel{background:var(--schild);border-radius:var(--r-lg);padding:clamp(1rem,0.8rem + 0.8vw,1.5rem);
+  position:relative;min-width:0;}
+.tafel::before{content:"";position:absolute;inset:7px;border:1.5px solid var(--line-blau);
+  border-radius:5px;pointer-events:none;}
+.tafel-k{font-family:var(--display);font-weight:600;color:var(--weiss);
+  font-size:clamp(1.5rem,1.2rem + 1.5vw,2.2rem);line-height:1.08;text-transform:uppercase;
+  letter-spacing:0.02em;}
+.tafel-t{margin-top:0.4rem;font-size:0.9rem;color:var(--hell);line-height:1.55;}
+@media (max-width:760px){.tafeln-inner{grid-template-columns:1fr;gap:0.9rem;}}
+
+/* ---------- Abschnitte ---------- */
+section.s{padding:clamp(2.4rem,2rem + 2.6vw,4.6rem) 0;}
+section.s-blau{background:var(--schild);color:var(--hell);}
+section.s-alt{background:var(--papier-2);}
+.s-head{max-width:46rem;}
+.s h1{font-size:clamp(1.75rem,1.35rem + 2vw,2.9rem);color:var(--schild);text-transform:uppercase;
+  font-weight:500;margin-top:0.85rem;}
+.s h2{font-size:clamp(1.5rem,1.25rem + 1.4vw,2.35rem);color:var(--schild);text-transform:uppercase;
+  font-weight:500;margin-top:0.85rem;}
+.s-blau h1,.s-blau h2{color:var(--weiss);}
+.s h1 em,.s h2 em{font-style:normal;font-weight:300;color:var(--ink);}
+.s-blau h1 em,.s-blau h2 em{color:var(--hell);}
+.s-lead{margin-top:1.1rem;color:var(--ink-soft);font-size:clamp(1rem,0.97rem + 0.25vw,1.11rem);}
+.s-blau .s-lead{color:var(--hell);}
+
+/* ---------- Karten ---------- */
+.cards{margin-top:clamp(1.6rem,1.2rem + 1.4vw,2.6rem);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(252px,1fr));gap:clamp(1rem,0.7rem + 1vw,1.6rem);}
+.cards > *{min-width:0;}
+.card{background:var(--weiss);border:2px solid var(--schild);border-radius:var(--r-lg);
+  padding:clamp(1.15rem,1rem + 0.6vw,1.7rem);min-width:0;}
+.card-voll{background:var(--schild);border-color:var(--schild);}
+.card-h{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:0.03em;
+  font-size:clamp(1.1rem,1rem + 0.4vw,1.3rem);color:var(--schild);line-height:1.18;}
+.card-voll .card-h{color:var(--weiss);}
+.card-p{margin-top:0.65rem;color:var(--ink-soft);font-size:0.97rem;}
+.card-voll .card-p{color:var(--hell);}
+.card-gross{margin-top:0.85rem;font-family:var(--display);font-weight:600;font-size:1.6rem;
+  color:var(--schild);letter-spacing:0.02em;}
+.card-voll .card-gross{color:var(--weiss);}
+.card-note{margin-top:0.6rem;font-size:0.83rem;color:var(--muted);}
+.card-voll .card-note{color:var(--hell-2);}
+
+/* ---------- Öffnungszeiten-Tafel ---------- */
+.zeittafel{margin-top:clamp(1.5rem,1.2rem + 1.4vw,2.6rem);background:var(--schild);
+  border-radius:var(--r-lg);padding:clamp(1.1rem,0.9rem + 1vw,1.9rem);position:relative;
+  max-width:44rem;}
+.zeittafel::before{content:"";position:absolute;inset:9px;border:1.5px solid var(--line-blau);
+  border-radius:6px;pointer-events:none;}
+.zeittafel-h{font-family:var(--display);text-transform:uppercase;letter-spacing:0.14em;
+  font-size:0.8rem;color:var(--hell);text-align:center;padding-bottom:0.7rem;
+  border-bottom:1px solid var(--line-blau);margin:0.3rem 0.5rem 0;}
+.zt-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding:11px clamp(0.4rem,0.2rem + 0.6vw,0.9rem);border-bottom:1px solid var(--line-blau);}
+.zt-row:last-child{border-bottom:none;}
+.zt-row > *{min-width:0;}
+.zt-tag{font-family:var(--display);font-weight:400;letter-spacing:0.07em;text-transform:uppercase;
+  color:var(--hell);font-size:0.95rem;}
+.zt-h{font-family:var(--display);font-weight:600;color:var(--weiss);font-size:1.12rem;
+  white-space:nowrap;letter-spacing:0.02em;}
+.zt-row.zu .zt-tag,.zt-row.zu .zt-h{color:var(--hell-2);font-weight:400;}
+.zt-fuss{margin:0.8rem 0.5rem 0.2rem;padding-top:0.8rem;border-top:1px solid var(--line-blau);
+  font-size:0.83rem;color:var(--hell-2);text-align:center;}
+
+/* ---------- Bargeld-Warnung ---------- */
+.bar{margin-top:clamp(1.5rem,1.2rem + 1.2vw,2.4rem);border:3px solid var(--schild);
+  border-radius:var(--r-lg);background:var(--weiss);padding:clamp(1.2rem,1rem + 0.8vw,2rem);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(1rem,0.8rem + 0.8vw,1.6rem);
+  align-items:start;}
+.bar > *{min-width:0;}
+.bar-mark{width:54px;height:54px;flex-shrink:0;}
+.bar-h{font-family:var(--display);text-transform:uppercase;letter-spacing:0.03em;font-weight:600;
+  font-size:clamp(1.2rem,1.05rem + 0.7vw,1.6rem);color:var(--schild);line-height:1.15;}
+.bar-p{margin-top:0.6rem;color:var(--ink-soft);font-size:0.99rem;}
+@media (max-width:560px){.bar{grid-template-columns:1fr;} .bar-mark{width:44px;height:44px;}}
+
+/* ---------- Was der Eintrag hergibt ---------- */
+.eintrag{margin-top:clamp(1.5rem,1.2rem + 1.2vw,2.4rem);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(1rem,0.7rem + 1vw,1.7rem);}
+.eintrag > *{min-width:0;}
+.eintrag-sp{min-width:0;}
+.eintrag-h{font-family:var(--display);text-transform:uppercase;letter-spacing:0.13em;
+  font-size:0.76rem;font-weight:500;padding-bottom:0.6rem;border-bottom:2px solid currentColor;}
+.eintrag-ja .eintrag-h{color:var(--schild);}
+.s-blau .eintrag-ja .eintrag-h{color:var(--weiss);}
+.eintrag-nein .eintrag-h{color:var(--muted);}
+.s-blau .eintrag-nein .eintrag-h{color:var(--hell-2);}
+.eintrag-liste{list-style:none;margin:0;padding:0;}
+.eintrag-liste li{padding:0.5rem 0;border-bottom:1px solid var(--line);font-size:0.96rem;
+  display:flex;gap:0.6rem;align-items:baseline;}
+.s-blau .eintrag-liste li{border-bottom-color:var(--line-blau);color:var(--hell);}
+.eintrag-liste li:last-child{border-bottom:none;}
+.eintrag-liste .z{font-family:var(--display);font-weight:600;flex-shrink:0;}
+.eintrag-ja .z{color:var(--schild);}
+.s-blau .eintrag-ja .z{color:var(--weiss);}
+.eintrag-nein li,.eintrag-nein .z{color:var(--muted);}
+.s-blau .eintrag-nein li,.s-blau .eintrag-nein .z{color:var(--hell-2);}
+
+/* ---------- Platzhalter ---------- */
+.platz{margin-top:clamp(1.4rem,1.1rem + 1vw,2.2rem);border:2px dashed var(--muted);
+  border-radius:var(--r-lg);padding:clamp(1.2rem,1rem + 0.7vw,1.9rem);
+  background:rgba(28,58,107,0.045);}
+.s-blau .platz{border-color:var(--hell-2);background:rgba(255,255,255,0.06);}
+.platz-tag{display:inline-block;font-family:var(--display);font-size:0.68rem;font-weight:500;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--muted);
+  border-radius:99px;padding:3px 11px;}
+.s-blau .platz-tag{color:var(--hell);border-color:var(--hell-2);}
+.platz-h{margin-top:0.85rem;font-size:clamp(1.1rem,1rem + 0.4vw,1.35rem);color:var(--schild);
+  text-transform:uppercase;font-weight:500;}
+.s-blau .platz-h{color:var(--weiss);}
+.platz-p{margin-top:0.6rem;color:var(--ink-soft);font-size:0.97rem;max-width:44em;}
+.s-blau .platz-p{color:var(--hell);}
+
+/* ---------- Kontaktzeile ---------- */
+.kontakt-grid{margin-top:clamp(1.5rem,1.2rem + 1.2vw,2.4rem);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:clamp(1rem,0.7rem + 1vw,1.7rem);}
+.kontakt-grid > *{min-width:0;}
+.kx-label{font-family:var(--display);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--muted);}
+.s-blau .kx-label{color:var(--hell-2);}
+.kx-val{margin-top:0.5rem;font-family:var(--display);font-weight:500;
+  font-size:clamp(1.14rem,1rem + 0.6vw,1.45rem);line-height:1.25;color:var(--schild);}
+.s-blau .kx-val{color:var(--weiss);}
+.kx-val a{border-bottom:2px solid currentColor;}
+.kx-sub{margin-top:0.45rem;font-size:0.92rem;color:var(--ink-soft);}
+.s-blau .kx-sub{color:var(--hell);}
+
+/* ---------- Ruf-Streifen ---------- */
+.ruf{background:var(--schild-2);color:var(--hell);}
+.ruf-inner{max-width:var(--wrap);margin:0 auto;padding:clamp(1.8rem,1.5rem + 1.6vw,3rem) 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:clamp(1rem,0.8rem + 1.4vw,2.4rem);flex-wrap:wrap;}
+.ruf-inner > *{min-width:0;}
+.ruf h2{font-size:clamp(1.4rem,1.2rem + 1.2vw,2.1rem);color:var(--weiss);text-transform:uppercase;
+  font-weight:500;}
+.ruf p{margin-top:0.55rem;font-size:0.98rem;color:var(--hell);max-width:32em;}
+.ruf .btn-weiss{flex-shrink:0;background:var(--weiss);border-color:var(--weiss);}
+
+/* ---------- Rechtstexte ---------- */
+.legal{padding:clamp(2.2rem,1.8rem + 2vw,3.8rem) 0;}
+.legal h1{font-size:clamp(1.65rem,1.3rem + 1.7vw,2.6rem);color:var(--schild);
+  text-transform:uppercase;font-weight:500;}
+.legal h2{font-size:clamp(1.1rem,1.02rem + 0.5vw,1.36rem);margin-top:2.1rem;color:var(--schild);
+  text-transform:uppercase;font-weight:500;}
+.legal p,.legal li{margin-top:0.75rem;color:var(--ink-soft);font-size:0.99rem;}
+.legal .hinweis{margin-top:1.5rem;border-left:4px solid var(--schild);background:var(--papier-2);
+  padding:1.1rem 1.3rem;border-radius:0 var(--r-lg) var(--r-lg) 0;}
+.legal .hinweis p{margin-top:0;color:var(--ink);}
+.dl-list{margin-top:1.2rem;display:grid;gap:0.85rem;}
+.dl-list > div{display:grid;grid-template-columns:minmax(0,11rem) 1fr;gap:0.4rem 1.2rem;}
+.dl-list dt{font-family:var(--display);font-weight:500;letter-spacing:0.04em;color:var(--schild);
+  font-size:0.95rem;text-transform:uppercase;}
+.dl-list dd{margin:0;color:var(--ink-soft);font-size:0.97rem;min-width:0;}
+@media (max-width:620px){.dl-list > div{grid-template-columns:1fr;}}
+
+/* ---------- Fuß ---------- */
+footer{background:var(--schild);color:var(--hell);padding:clamp(2rem,1.7rem + 1.6vw,3rem) 0 0;}
+.foot-inner{max-width:var(--wrap);margin:0 auto;padding:0 20px clamp(1.6rem,1.3rem + 1.2vw,2.4rem);
+  display:flex;justify-content:space-between;gap:clamp(1.4rem,1rem + 2vw,3rem);flex-wrap:wrap;
+  font-size:0.95rem;}
+.foot-inner > *{min-width:0;}
+.foot-name{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;
+  font-size:1.3rem;color:var(--weiss);margin-bottom:0.4rem;}
+.foot-inner a:hover{color:var(--weiss);}
+.foot-links{display:flex;flex-direction:column;gap:0.45rem;font-family:var(--display);
+  letter-spacing:0.05em;text-transform:uppercase;font-size:0.88rem;}
+.foot-disclosure{border-top:1px solid var(--line-blau);padding:1.1rem 20px 1.4rem;
+  max-width:var(--wrap);margin:0 auto;font-size:0.79rem;line-height:1.62;color:var(--hell-2);}

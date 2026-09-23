@@ -214,5 +214,29 @@
       "kontakt.html",
       "zeiten.html"
     ]
+  },
+  {
+    "num": 24,
+    "slug": "24-verstecktes-eck",
+    "name": "Verstecktes Eck",
+    "category": "Gasthaus / Wirtshaus",
+    "region": "Wien",
+    "location": "Wien (Liesing, 23. Bezirk)",
+    "description": "Kleines Gasthaus in der Laxenburger Straße in Liesing. Werktags durchgehend von 08:00 bis 23:00 geöffnet, Samstag 10:00–19:00, Sonntag geschlossen. Gezahlt wird ausschließlich bar. Der gesamte Online-Auftritt besteht aus einem einzigen Branchenverzeichnis-Eintrag ohne Beschreibung, Foto oder Speisekarte.",
+    "oldWebsite": null,
+    "pitchHook": "Ein Lokal, das „Verstecktes Eck“ heißt, kann sich Unauffindbarkeit am wenigsten leisten. Das stärkste Argument ist die Barzahlung: Sie ist verbindlich, steht nur in einem Verzeichnis und verdirbt jedem Gast den Abend, der ohne Bargeld anreist. Dazu kommen Sonntagsruhe und der ungewöhnliche Start um 08:00 — drei Angaben, die nirgends gemeinsam zu finden sind.",
+    "priceLow": 2900,
+    "priceHigh": 5800,
+    "phone": "+43 664 4247524",
+    "email": null,
+    "contactPerson": null,
+    "pages": [
+      "das-eck.html",
+      "datenschutz.html",
+      "finden.html",
+      "impressum.html",
+      "index.html",
+      "offen.html"
+    ]
   }
 ]
