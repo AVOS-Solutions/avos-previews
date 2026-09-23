@@ -190,5 +190,29 @@
       "kontakt.html",
       "kueche.html"
     ]
+  },
+  {
+    "num": 23,
+    "slug": "23-kakadu-beisl",
+    "name": "Kakadu Beis'l",
+    "category": "Gasthaus / Beisl",
+    "region": "Wien",
+    "location": "Wien (Liesing, 23. Bezirk)",
+    "description": "Klassisches Wiener Beisl in Liesing, betrieben von der Walter Safer GmbH und als Gasthaus seit 15.11.1988 im Firmenbuch. Unter der Woche durchgehend von 10:00 bis 02:00 geöffnet, am Wochenende ab 19:00 — Sperrstunde ist an allen sieben Tagen 02:00.",
+    "oldWebsite": null,
+    "pitchHook": "Ein Lokal, das sieben Tage die Woche bis zwei Uhr früh offen hat, lebt von Gästen, die spätabends nachschauen, ob noch offen ist — und findet dazu keine eigene Seite. Die ungewöhnlichen Zeiten selbst sind das Argument: sie stehen verstreut in Verzeichnissen, nirgends unter eigener Kontrolle.",
+    "priceLow": 3200,
+    "priceHigh": 6400,
+    "phone": "+43 1 8871762",
+    "email": null,
+    "contactPerson": "Walter Safer, Philip Safer (Geschäftsführung)",
+    "pages": [
+      "beisl.html",
+      "datenschutz.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "zeiten.html"
+    ]
   }
 ]
