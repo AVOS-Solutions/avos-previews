@@ -1,9 +1,11 @@
 :root{
-  /* Zwei Farben, wie auf einem Gasthaus-Emailschild: Ochsenblut und Bein. Ochsenblutrot ist
+  /* Ochsenblut und Bein. Ochsenblutrot ist
      eine überlieferte Wiener Bau- und Tischlerfarbe — Gründerzeittüren, Heurigenfensterläden —
      und damit näher am Haus als das Blau-Weiß, das hier zuerst stand: das ist die Farbe
      behördlicher Straßenschilder und ließ ein Wirtshaus wie ein Amt aussehen.
-     Kein dritter Akzent; Betonung entsteht durch Umkehrung, nicht durch eine weitere Farbe. */
+     Betonung entsteht durch Umkehrung, nicht durch eine weitere Farbe. Dazu zwei Holztöne
+     und ein Lampenlicht, die ausschließlich in der Grafik vorkommen und keine Schrift
+     tragen — die Stube braucht Wärme, die Schrift braucht Kontrast. */
   --eck:#6E2230; --eck-2:#571A26;
   --papier:#F2EDE3; --papier-2:#E6DFD1; --weiss:#FFFFFF;
   --hell:#EDD9D3; --hell-2:#D6B5B2;
@@ -79,28 +81,22 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(244,241,234,0.96);
   .nav-inner > .nav-cta{display:none;}}
 
 /* ---------- Hero: hell, das Schild trägt die Farbe ---------- */
-.hero{background:var(--papier);padding:clamp(2.2rem,1.8rem + 3vw,4.4rem) 0;}
+.hero{background:var(--eck);color:var(--hell);padding:clamp(2.2rem,1.8rem + 3vw,4.4rem) 0;
+  overflow:hidden;}
 .hero-grid{max-width:var(--wrap);margin:0 auto;padding:0 20px;display:grid;
   grid-template-columns:1.15fr 0.85fr;gap:clamp(1.6rem,0.8rem + 3vw,3.4rem);align-items:center;}
 .hero-grid > *{min-width:0;}
-.hero h1{font-size:clamp(1.9rem,1.35rem + 2.4vw,3.1rem);color:var(--eck);font-weight:500;
+.hero h1{font-size:clamp(1.9rem,1.35rem + 2.4vw,3.1rem);color:var(--weiss);font-weight:500;
   letter-spacing:0.005em;margin-top:1rem;}
-.hero h1 em{font-style:normal;font-weight:300;color:var(--ink);display:block;}
-.hero-lead{margin-top:1.3rem;color:var(--ink-soft);max-width:34em;
+.hero h1 em{font-style:normal;font-weight:300;color:var(--hell);display:block;}
+.hero .eyebrow{color:var(--hell-2);}
+.hero-lead{margin-top:1.3rem;color:var(--hell);max-width:34em;
   font-size:clamp(1rem,0.96rem + 0.32vw,1.14rem);}
 .hero-actions{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:11px;}
-.schild{width:100%;max-width:420px;margin:0 auto;height:auto;}
-.schild .sch-n{font-family:"Oswald",sans-serif;font-size:21px;font-weight:600;fill:#FFFFFF;
-  text-anchor:middle;letter-spacing:0.04em;}
-.schild .sch-s{font-family:"Oswald",sans-serif;font-size:11.5px;font-weight:300;fill:#EDD9D3;
-  text-anchor:middle;letter-spacing:0.1em;}
-.schild .sch-nr{font-family:"Oswald",sans-serif;font-size:30px;font-weight:600;fill:#FFFFFF;
-  text-anchor:middle;}
-.schild .sch-w{font-family:"Oswald",sans-serif;font-size:15px;font-weight:500;fill:#FFFFFF;
-  text-anchor:middle;letter-spacing:0.09em;}
+.stube{width:100%;max-width:420px;margin:0 auto;height:auto;}
 @media (max-width:920px){
   .hero-grid{grid-template-columns:1fr;gap:1.6rem;}
-  .schild{max-width:340px;}
+  .stube{max-width:340px;}
 }
 
 /* ---------- Knöpfe ---------- */
@@ -108,26 +104,20 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(244,241,234,0.96);
   border-radius:var(--r);font-family:var(--display);font-size:0.95rem;font-weight:500;
   letter-spacing:0.05em;min-height:48px;transition:background .18s ease,color .18s ease,
   border-color .18s ease;}
-.btn-eck{background:var(--eck);color:var(--weiss);}
-.btn-eck:hover{background:var(--eck-2);}
 .btn-weiss{background:var(--weiss);color:var(--eck);border:2px solid var(--eck);}
 .btn-weiss:hover{background:var(--papier-2);}
 .btn-ghost{border:2px solid var(--hell-2);color:var(--weiss);}
 .btn-ghost:hover{border-color:var(--weiss);}
 
 /* ---------- Das Tafel-Band: drei kleine Emailschilder ---------- */
-.tafeln{background:var(--papier-2);padding:clamp(1.8rem,1.4rem + 1.6vw,3rem) 0;}
+.tafeln{background:var(--papier-2);padding:clamp(1.7rem,1.4rem + 1.4vw,2.6rem) 0;}
 .tafeln-inner{max-width:var(--wrap);margin:0 auto;padding:0 20px;display:grid;
   grid-template-columns:repeat(3,1fr);gap:clamp(0.9rem,0.6rem + 1.2vw,1.6rem);}
 .tafeln-inner > *{min-width:0;}
-.tafel{background:var(--eck);border-radius:var(--r-lg);padding:clamp(1rem,0.8rem + 0.8vw,1.5rem);
-  position:relative;min-width:0;}
-.tafel::before{content:"";position:absolute;inset:7px;border:1.5px solid var(--line-hell);
-  border-radius:5px;pointer-events:none;}
-.tafel-k{font-family:var(--display);font-weight:600;color:var(--weiss);
-  font-size:clamp(1.5rem,1.2rem + 1.5vw,2.2rem);line-height:1.08;text-transform:uppercase;
-  letter-spacing:0.02em;}
-.tafel-t{margin-top:0.4rem;font-size:0.9rem;color:var(--hell);line-height:1.55;}
+.tafel{border-top:2px solid var(--eck);padding:0.9rem 0 0;min-width:0;}
+.tafel-k{font-family:var(--display);font-weight:500;color:var(--eck);
+  font-size:clamp(1.3rem,1.1rem + 1.1vw,1.8rem);line-height:1.12;}
+.tafel-t{margin-top:0.35rem;font-size:0.92rem;color:var(--ink-soft);line-height:1.6;}
 @media (max-width:760px){.tafeln-inner{grid-template-columns:1fr;gap:0.9rem;}}
 
 /* ---------- Abschnitte ---------- */
@@ -151,18 +141,11 @@ section.s-alt{background:var(--papier-2);}
 .cards > *{min-width:0;}
 .card{background:var(--weiss);border:2px solid var(--eck);border-radius:var(--r-lg);
   padding:clamp(1.15rem,1rem + 0.6vw,1.7rem);min-width:0;}
-.card-voll{background:var(--eck);border-color:var(--eck);}
 .card-h{font-family:var(--display);font-weight:500;letter-spacing:0.03em;
   font-size:clamp(1.1rem,1rem + 0.4vw,1.3rem);color:var(--eck);line-height:1.18;}
-.card-voll .card-h{color:var(--weiss);}
 .card-p{margin-top:0.65rem;color:var(--ink-soft);font-size:0.97rem;}
-.card-voll .card-p{color:var(--hell);}
 .card-gross{margin-top:0.85rem;font-family:var(--display);font-weight:600;font-size:1.6rem;
   color:var(--eck);letter-spacing:0.02em;}
-.card-voll .card-gross{color:var(--weiss);}
-.card-note{margin-top:0.6rem;font-size:0.83rem;color:var(--muted);}
-.card-voll .card-note{color:var(--hell-2);}
-
 /* ---------- Öffnungszeiten-Tafel ---------- */
 .zeittafel{margin-top:clamp(1.5rem,1.2rem + 1.4vw,2.6rem);background:var(--eck);
   border-radius:var(--r-lg);padding:clamp(1.1rem,0.9rem + 1vw,1.9rem);position:relative;
@@ -195,28 +178,6 @@ section.s-alt{background:var(--papier-2);}
   font-size:clamp(1.2rem,1.05rem + 0.7vw,1.6rem);color:var(--eck);line-height:1.15;}
 .bar-p{margin-top:0.6rem;color:var(--ink-soft);font-size:0.99rem;}
 @media (max-width:560px){.bar{grid-template-columns:1fr;} .bar-mark{width:44px;height:44px;}}
-
-/* ---------- Was der Eintrag hergibt ---------- */
-.eintrag{margin-top:clamp(1.5rem,1.2rem + 1.2vw,2.4rem);display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(1rem,0.7rem + 1vw,1.7rem);}
-.eintrag > *{min-width:0;}
-.eintrag-sp{min-width:0;}
-.eintrag-h{font-family:var(--display);text-transform:uppercase;letter-spacing:0.13em;
-  font-size:0.76rem;font-weight:500;padding-bottom:0.6rem;border-bottom:2px solid currentColor;}
-.eintrag-ja .eintrag-h{color:var(--eck);}
-.s-eck .eintrag-ja .eintrag-h{color:var(--weiss);}
-.eintrag-nein .eintrag-h{color:var(--muted);}
-.s-eck .eintrag-nein .eintrag-h{color:var(--hell-2);}
-.eintrag-liste{list-style:none;margin:0;padding:0;}
-.eintrag-liste li{padding:0.5rem 0;border-bottom:1px solid var(--line);font-size:0.96rem;
-  display:flex;gap:0.6rem;align-items:baseline;}
-.s-eck .eintrag-liste li{border-bottom-color:var(--line-hell);color:var(--hell);}
-.eintrag-liste li:last-child{border-bottom:none;}
-.eintrag-liste .z{font-family:var(--display);font-weight:600;flex-shrink:0;}
-.eintrag-ja .z{color:var(--eck);}
-.s-eck .eintrag-ja .z{color:var(--weiss);}
-.eintrag-nein li,.eintrag-nein .z{color:var(--muted);}
-.s-eck .eintrag-nein li,.s-eck .eintrag-nein .z{color:var(--hell-2);}
 
 /* ---------- Platzhalter ---------- */
 .platz{margin-top:clamp(1.4rem,1.1rem + 1vw,2.2rem);border:2px dashed var(--muted);
