@@ -166,5 +166,29 @@
       "kontakt.html",
       "leistungen.html"
     ]
+  },
+  {
+    "num": 14,
+    "slug": "14-schutzhaus-gaswerk",
+    "name": "Schutzhaus Gaswerk",
+    "category": "Gasthaus u Gasthof",
+    "region": "Wien",
+    "location": "Wien (Simmering, 11. Bezirk)",
+    "description": "Schutzhaus in der Simmeringer Gartenanlage, seit Februar 2024 von einer Familie geführt. Österreichische Klassiker und ungarische Spezialitäten, zwei Gaststuben und ein Gastgarten, barrierefrei zugänglich.",
+    "oldWebsite": null,
+    "pitchHook": "Zwei frühere Webadressen sind offline gegangen — schutzhausgaswerk.at und gasthausschutzhausgaswerk-wien.at lösen beide nicht mehr auf, Suchmaschinen führen sie aber weiter. Der Betrieb kennt den Nutzen bereits und hat ihn verloren.",
+    "priceLow": 3800,
+    "priceHigh": 7200,
+    "phone": "+43 1 7670863",
+    "email": "office@schutzhausgaswerk.at",
+    "contactPerson": null,
+    "pages": [
+      "datenschutz.html",
+      "haus.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "kueche.html"
+    ]
   }
 ]
