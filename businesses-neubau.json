@@ -118,5 +118,29 @@
       "kontakt.html",
       "kueche.html"
     ]
+  },
+  {
+    "num": 10,
+    "slug": "10-installateur-tauchner",
+    "name": "Installateur Peter Tauchner",
+    "category": "Installateur (Gas, Wasser, Heizung, Gebrechendienst)",
+    "region": "Wien",
+    "location": "Wien (3. Bezirk, Landstraße)",
+    "description": "Installateurbetrieb für Gas, Wasser und Heizung in der Neulinggasse in Wien-Landstraße, inklusive Gebrechendienst. Der Betrieb wurde 1973 eröffnet und 2008 übernommen, vier Mitarbeiter, Einzugsgebiet Wien und Niederösterreich.",
+    "oldWebsite": null,
+    "pitchHook": "Nur über Branchenverzeichnisse und eine Provider-Mailadresse erreichbar, während praktisch alle Mitbewerber im Bezirk eine eigene Domain führen. Bei einem Gebrechendienst entscheidet Auffindbarkeit im Notfall.",
+    "priceLow": 3200,
+    "priceHigh": 6200,
+    "phone": "+43 664 9895247",
+    "email": "p.tauchner@kabsi.at",
+    "contactPerson": null,
+    "pages": [
+      "datenschutz.html",
+      "gebrechendienst.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "leistungen.html"
+    ]
   }
 ]
