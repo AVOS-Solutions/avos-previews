@@ -142,5 +142,29 @@
       "kontakt.html",
       "leistungen.html"
     ]
+  },
+  {
+    "num": 12,
+    "slug": "12-noti-malermeisterbetrieb",
+    "name": "NOTI Malermeisterbetrieb e.U.",
+    "category": "Maler, Anstreicher u Lackierer",
+    "region": "Wien",
+    "location": "Wien (Neubau, 7. Bezirk)",
+    "description": "Malermeisterbetrieb in der Kandlgasse in Wien-Neubau, seit 2015 im Firmenbuch (FN 436726w, Handelsgericht Wien). Die Gewerbeberechtigung umfasst Maler, Anstreicher und Lackierer im verbundenen Handwerk mit Vergolder und Stuckateur.",
+    "oldWebsite": null,
+    "pitchHook": "Nur über Register und Branchenverzeichnisse auffindbar. Gerade die Stuckateur- und Vergolder-Berechtigung ist im Gründerzeit-Bezirk ein Alleinstellungsmerkmal, das online derzeit nirgends sichtbar ist.",
+    "priceLow": 3200,
+    "priceHigh": 6200,
+    "phone": "+43 676 5734771",
+    "email": null,
+    "contactPerson": null,
+    "pages": [
+      "arbeitsweise.html",
+      "datenschutz.html",
+      "impressum.html",
+      "index.html",
+      "kontakt.html",
+      "leistungen.html"
+    ]
   }
 ]
