@@ -34,6 +34,9 @@ Steiermark 26 · Relaunch-Potenzial der abgedeckten Betriebe: € 1,15–2,14 Mi
 - **Dashboard** (Next.js, AVOS-Design-System): alle Betriebe nach Bundesland,
   Suche + Filter, Vorschau-Ansicht für eingeloggte Teammitglieder — samt Grade,
   Aufhänger und Richtpreis je Lead.
+- **Filter „Hinzugefügt"**: Heute / 7 Tage / 30 Tage oder ein genauer Tag, um zu sehen,
+  was in einem Durchgang entstanden ist. Grundlage ist `addedOn` im Katalog; jede Karte
+  zeigt ihr Datum rechts neben dem Ort.
 - **Login über avos-licensing** (SSO-Flow `/api/sso/authorize` → Code-Exchange):
   Licensing-Admins immer, andere Konten nur mit aktiver AVOS-Previews-Lizenz.
 - **Share-Links** pro Betrieb (`https://<domain>/s/<token>`), einzeln steuerbar:
@@ -56,6 +59,8 @@ generatoren/<betrieb>/           Renderer, wo mehrere Varianten aus einem Inhalt
 previews/NN-<slug>/              84 ältere Vorschauen der ersten Recherche-Runde (je 6 Seiten,
                                  ohne Bildmaterial); nicht im Katalog gelistet, als Referenz behalten
 businesses.json                  Katalog der gelisteten Vorschauen (120 Leads + Energie-Quelle)
+businesses-neubau.json           Katalog der Neubau-Vorschauen (Leads noch ganz ohne Website)
+scripts/set-added-dates.py       schreibt `addedOn` je Eintrag aus der Git-Historie
 index.html                       Alte statische Übersicht (durch das Dashboard abgelöst)
 docker-compose[.prod].yml        Dev-Stack bzw. avos-edge-Produktionsstack mit TLS-Sidecars
 Caddyfile                        Referenz-Routing für die gemeinsame Edge-Caddy
@@ -78,6 +83,11 @@ Die Skripte, mit denen Inhalte gecrawlt, Vorschauen generiert und geprüft werde
   mit Fallback-Stack.
 - Share-Tokens (160 bit) stehen im Klartext in der DB, damit Links später erneut
   kopiert werden können; Passwörter sind ausschließlich gehasht.
+- **Nach dem Anlegen neuer Vorschauen** `python3 scripts/set-added-dates.py` laufen lassen,
+  bevor committet wird — sonst fehlt den neuen Einträgen das Datum und sie fallen aus dem
+  Filter „Hinzugefügt". Das Datum muss im Katalog stehen: das API-Image kopiert nur
+  `previews*/` und die Kataloge, kein `.git`, und alle Dateien tragen dort die Bauzeit.
+  `--check` meldet Lücken, ohne zu schreiben (Rückgabewert 1).
 
 ## Sonderfall: Energie-Quelle (Kundenprojekt)
 

@@ -26,7 +26,8 @@
   ],
   "phone": "+43 3475 2311",
   "email": "office@gasthof-palz.at",
-  "contactPerson": "Mathilde Palz (Mathilde Palz Gastronomie GmbH & Co KG)"
+  "contactPerson": "Mathilde Palz (Mathilde Palz Gastronomie GmbH & Co KG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 2,
@@ -56,7 +57,8 @@
   ],
   "phone": "+43 3135 52308",
   "email": "office@hotel-pendl.at",
-  "contactPerson": "Gasthof Pendl GmbH (FN 339317x)"
+  "contactPerson": "Gasthof Pendl GmbH (FN 339317x)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 3,
@@ -85,7 +87,8 @@
   ],
   "phone": "+43 3475 2176",
   "email": "info@genusshirsch.at",
-  "contactPerson": "Fabian Palz (Koch & Jäger, Inhaber)"
+  "contactPerson": "Fabian Palz (Koch & Jäger, Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 4,
@@ -114,7 +117,8 @@
   ],
   "phone": "+43 3113 2286",
   "email": "info@restaurant-schrott.at",
-  "contactPerson": "Christian Theodor Schrott (mit Daniela Schrott, 4. Generation)"
+  "contactPerson": "Christian Theodor Schrott (mit Daniela Schrott, 4. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 5,
@@ -142,7 +146,8 @@
   ],
   "phone": "+43 1 320 34 91",
   "email": "office@wannenmacher-brot.at",
-  "contactPerson": "Gregor Lautner (Geschäftsführer)"
+  "contactPerson": "Gregor Lautner (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 6,
@@ -171,7 +176,8 @@
   ],
   "phone": "+43 1 405 53 14",
   "email": "reservierung@cafehummel.at",
-  "contactPerson": "Christina Hummel (antwortet auf Google-Bewertungen)"
+  "contactPerson": "Christina Hummel (antwortet auf Google-Bewertungen)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 7,
@@ -200,7 +206,8 @@
   ],
   "phone": "+43 7252 76658",
   "email": "kfzflath@aon.at",
-  "contactPerson": "Walter Flath (Geschäftsführer)"
+  "contactPerson": "Walter Flath (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 8,
@@ -229,7 +236,8 @@
   ],
   "phone": "+43 664 2400555",
   "email": null,
-  "contactPerson": "Franz Schnattl (Schnattl GmbH)"
+  "contactPerson": "Franz Schnattl (Schnattl GmbH)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 9,
@@ -258,7 +266,8 @@
   ],
   "phone": "+43 1 269 05 70",
   "email": null,
-  "contactPerson": "Meisterin Gabriele Wiedenhofer"
+  "contactPerson": "Meisterin Gabriele Wiedenhofer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 10,
@@ -287,7 +296,8 @@
   ],
   "phone": "+43 7612 64262",
   "email": "info@gasthof-altmuehl.at",
-  "contactPerson": "Gerhard Scheuringer"
+  "contactPerson": "Gerhard Scheuringer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 11,
@@ -316,7 +326,8 @@
   ],
   "phone": "+43 316 824 300",
   "email": "office@dieherzl.at",
-  "contactPerson": "Edith Seitinger (Medieninhaberin)"
+  "contactPerson": "Edith Seitinger (Medieninhaberin)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 12,
@@ -345,7 +356,8 @@
   ],
   "phone": "+43 1 749 33 70",
   "email": "office@gasthausstern.at",
-  "contactPerson": "Christian Werner (Geschäftsführer/Chef)"
+  "contactPerson": "Christian Werner (Geschäftsführer/Chef)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 13,
@@ -374,7 +386,8 @@
   ],
   "phone": "+43 1 320 24 42",
   "email": "heuriger@feuerwehrwagner.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 14,
@@ -403,7 +416,8 @@
   ],
   "phone": "+43 699 11 22 95 30",
   "email": "gasthaus@wora.at",
-  "contactPerson": "Marion Jambor (Wirtin), Martin Buzernic (Küchenchef)"
+  "contactPerson": "Marion Jambor (Wirtin), Martin Buzernic (Küchenchef)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 15,
@@ -432,7 +446,8 @@
   ],
   "phone": "+43 7255 6215",
   "email": "info@gasthof-blasl.at",
-  "contactPerson": "Georg & Margaretha Blasl"
+  "contactPerson": "Georg & Margaretha Blasl",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 16,
@@ -461,7 +476,8 @@
   ],
   "phone": "+43 7242 45030",
   "email": "office@gasthaus-huber.at",
-  "contactPerson": "Familie Huber (Siegfried Huber Gasthaus GmbH & Co. KG)"
+  "contactPerson": "Familie Huber (Siegfried Huber Gasthaus GmbH & Co. KG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 17,
@@ -490,7 +506,8 @@
   ],
   "phone": "+43 3332 62210",
   "email": "office@brauhaus.co.at",
-  "contactPerson": "Familie Großschedl"
+  "contactPerson": "Familie Großschedl",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 18,
@@ -519,7 +536,8 @@
   ],
   "phone": "+43 3454 303",
   "email": "office@weingut-hack.at",
-  "contactPerson": "Philipp und Brigitte Hack"
+  "contactPerson": "Philipp und Brigitte Hack",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 19,
@@ -548,7 +566,8 @@
   ],
   "phone": "+43 3456 2537",
   "email": "weingut@kitzecker-reiterer.at",
-  "contactPerson": "Beate & Reinmund Reiterer"
+  "contactPerson": "Beate & Reinmund Reiterer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 20,
@@ -577,7 +596,8 @@
   ],
   "phone": "+43 3472 2109",
   "email": "j.oberer@aon.at",
-  "contactPerson": "Jörg Oberer (Fleischermeister, Chef seit 1995) und Maria Oberer"
+  "contactPerson": "Jörg Oberer (Fleischermeister, Chef seit 1995) und Maria Oberer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 21,
@@ -606,7 +626,8 @@
   ],
   "phone": "+43 3137 2279",
   "email": "office@gasthaus-fuerndoerfler.at",
-  "contactPerson": "Familie Fürndörfler (3. Generation)"
+  "contactPerson": "Familie Fürndörfler (3. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 22,
@@ -635,7 +656,8 @@
   ],
   "phone": "+43 1 728 95 65",
   "email": "office@lusthaus-wien.at",
-  "contactPerson": "Dr. Helmut Raftl"
+  "contactPerson": "Dr. Helmut Raftl",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 23,
@@ -664,7 +686,8 @@
   ],
   "phone": "+43 7729 2258",
   "email": "info@eckereder.at",
-  "contactPerson": "Andreas Pointner (Ansprechpartner Lehre, andreas.pointner@eckereder.at)"
+  "contactPerson": "Andreas Pointner (Ansprechpartner Lehre, andreas.pointner@eckereder.at)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 24,
@@ -693,7 +716,8 @@
   ],
   "phone": "+43 7755 6404",
   "email": "info@ferienpension.at",
-  "contactPerson": "Doris & Hannes (Gastgeber)"
+  "contactPerson": "Doris & Hannes (Gastgeber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 25,
@@ -722,7 +746,8 @@
   ],
   "phone": "+43 7242 45689",
   "email": "office@gasthaus-obermair.at",
-  "contactPerson": "Familie Obermair (Obermairs' Wirtshaus OHG)"
+  "contactPerson": "Familie Obermair (Obermairs' Wirtshaus OHG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 26,
@@ -751,7 +776,8 @@
   ],
   "phone": "+43 7242 44744-0",
   "email": "office@trimmel.at",
-  "contactPerson": "Franz Trimmel (Inhaber, 3. Generation)"
+  "contactPerson": "Franz Trimmel (Inhaber, 3. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 27,
@@ -780,7 +806,8 @@
   ],
   "phone": "+43 7956 7122",
   "email": "office@wurz-tischlerei.at",
-  "contactPerson": "Thomas Wurz (Inhaber, 3. Generation)"
+  "contactPerson": "Thomas Wurz (Inhaber, 3. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 28,
@@ -809,7 +836,8 @@
   ],
   "phone": "+43 3456 3189",
   "email": "info@felberjoergl.at",
-  "contactPerson": "Hans-Peter & Christine Temmel"
+  "contactPerson": "Hans-Peter & Christine Temmel",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 29,
@@ -838,7 +866,8 @@
   ],
   "phone": "+43 1 523 37 71",
   "email": null,
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 30,
@@ -867,7 +896,8 @@
   ],
   "phone": "02748 7474",
   "email": "office@birgldach.at",
-  "contactPerson": "Karin Birgl (Geschäftsleitung)"
+  "contactPerson": "Karin Birgl (Geschäftsleitung)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 31,
@@ -896,7 +926,8 @@
   ],
   "phone": "+43 2822 3339922",
   "email": "office@elektro-palmeshofer.at",
-  "contactPerson": "Jürgen Boden (Einkauf, kaufmännische Abteilung)"
+  "contactPerson": "Jürgen Boden (Einkauf, kaufmännische Abteilung)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 32,
@@ -925,7 +956,8 @@
   ],
   "phone": "+43 7472 62940",
   "email": null,
-  "contactPerson": "Ing. Paul Haberhauer (Geschäftsführer), Michael Kinast (Prokurist)"
+  "contactPerson": "Ing. Paul Haberhauer (Geschäftsführer), Michael Kinast (Prokurist)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 33,
@@ -954,7 +986,8 @@
   ],
   "phone": "02959 2240",
   "email": "willkommen@1a-wimmer.at",
-  "contactPerson": "Ing. Franz Wimmer (Geschäftsführer), Ulrike Wimmer (Prokuristin)"
+  "contactPerson": "Ing. Franz Wimmer (Geschäftsführer), Ulrike Wimmer (Prokuristin)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 34,
@@ -983,7 +1016,8 @@
   ],
   "phone": "+43 664 1865200",
   "email": "mha@elektro-hackl.at",
-  "contactPerson": "Ing. Manfred Hackl (CEO/Inhaber)"
+  "contactPerson": "Ing. Manfred Hackl (CEO/Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 35,
@@ -1012,7 +1046,8 @@
   ],
   "phone": "02946 2368-0",
   "email": "ing.gerhart@gerhartbau.at",
-  "contactPerson": "BM Ing. Roman Gerhart (Inhaber)"
+  "contactPerson": "BM Ing. Roman Gerhart (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 36,
@@ -1041,7 +1076,8 @@
   ],
   "phone": "07442 52278-0",
   "email": "info@marcik.at",
-  "contactPerson": "Ing. Christoph Marcik (Geschäftsführer)"
+  "contactPerson": "Ing. Christoph Marcik (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 37,
@@ -1070,7 +1106,8 @@
   ],
   "phone": "+43 2254 72338",
   "email": null,
-  "contactPerson": "Franz Rosenbauch (Küchenchef), Karl Rosenbauch (Service/Wein)"
+  "contactPerson": "Franz Rosenbauch (Küchenchef), Karl Rosenbauch (Service/Wein)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 38,
@@ -1099,7 +1136,8 @@
   ],
   "phone": "0664 3741091",
   "email": "office@tierarzt-alland.at",
-  "contactPerson": "Dr. Nicole Grünwald (Inhaberin, Fachtierärztin für Zahnheilkunde)"
+  "contactPerson": "Dr. Nicole Grünwald (Inhaberin, Fachtierärztin für Zahnheilkunde)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 39,
@@ -1128,7 +1166,8 @@
   ],
   "phone": "+43 2773 43603",
   "email": null,
-  "contactPerson": "Dr. Peter Kutschera (Leitung)"
+  "contactPerson": "Dr. Peter Kutschera (Leitung)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 40,
@@ -1157,7 +1196,8 @@
   ],
   "phone": "+43 7723 42204",
   "email": "info@wurmhoeringer.at",
-  "contactPerson": "Franz Claus Wurmhöringer (Inhaber, 5. Generation)"
+  "contactPerson": "Franz Claus Wurmhöringer (Inhaber, 5. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 41,
@@ -1186,7 +1226,8 @@
   ],
   "phone": "+43 7239 6225",
   "email": "holzpoldl@manuelgrabner.at",
-  "contactPerson": "Manuel Grabner (Inhaber) und Claudia Stiglitz"
+  "contactPerson": "Manuel Grabner (Inhaber) und Claudia Stiglitz",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 42,
@@ -1215,7 +1256,8 @@
   ],
   "phone": "+43 7716 7240",
   "email": "info@woesner.at",
-  "contactPerson": "Alexander Wösner (Geschäftsführer, Gasthof Wösner e.U.)"
+  "contactPerson": "Alexander Wösner (Geschäftsführer, Gasthof Wösner e.U.)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 43,
@@ -1244,7 +1286,8 @@
   ],
   "phone": "+43 7947 7310-21",
   "email": null,
-  "contactPerson": "Manuel & Bettina Stadler (Manuel Stadler e.U.)"
+  "contactPerson": "Manuel & Bettina Stadler (Manuel Stadler e.U.)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 44,
@@ -1273,7 +1316,8 @@
   ],
   "phone": "+43 7235 65012",
   "email": "office@tischlerei-hartl.co.at",
-  "contactPerson": "Herbert Hartl (Tischlermeister, Geschäftsführer)"
+  "contactPerson": "Herbert Hartl (Tischlermeister, Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 45,
@@ -1302,7 +1346,8 @@
   ],
   "phone": "+43 7614 6335",
   "email": "reservierung@hoftaverne.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 46,
@@ -1331,7 +1376,8 @@
   ],
   "phone": "+43 7586 7681",
   "email": "office@huemer-heizungstechnik.at",
-  "contactPerson": "Roland Huemer (Inhaber/Geschäftsführer)"
+  "contactPerson": "Roland Huemer (Inhaber/Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 47,
@@ -1360,7 +1406,8 @@
   ],
   "phone": "+43 7584 40909",
   "email": "office@badwerkstatt.at",
-  "contactPerson": "Michael Gschliffner (Gründer/Geschäftsführer); Thomas Radner und Harald Kronberger (Geschäftsführer Vorchdorf)"
+  "contactPerson": "Michael Gschliffner (Gründer/Geschäftsführer); Thomas Radner und Harald Kronberger (Geschäftsführer Vorchdorf)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 48,
@@ -1389,7 +1436,8 @@
   ],
   "phone": "+43 7588 7219",
   "email": "werner@mistlberger.at",
-  "contactPerson": "Ing. Werner Mistlberger (Inhaber); Josef Mistlberger (3D-Visualisierung, nächste Generation)"
+  "contactPerson": "Ing. Werner Mistlberger (Inhaber); Josef Mistlberger (3D-Visualisierung, nächste Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 49,
@@ -1418,7 +1466,8 @@
   ],
   "phone": "+43 7945 7228",
   "email": "feichtmayr@toyota-feichtmayr.at",
-  "contactPerson": "Karl Feichtmayr (Geschäftsführer)"
+  "contactPerson": "Karl Feichtmayr (Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 50,
@@ -1447,7 +1496,8 @@
   ],
   "phone": "+43 7948 390",
   "email": "info@kraeuter-wirt.at",
-  "contactPerson": "Familie Schimpl (Schimpl OG)"
+  "contactPerson": "Familie Schimpl (Schimpl OG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 51,
@@ -1476,7 +1526,8 @@
   ],
   "phone": "+43 7582 61380",
   "email": "master@1amadl.at",
-  "contactPerson": "Christian Madl und Philip Madl (Geschäftsführung)"
+  "contactPerson": "Christian Madl und Philip Madl (Geschäftsführung)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 52,
@@ -1505,7 +1556,8 @@
   ],
   "phone": "+43 7745 20100",
   "email": "office@gerlach-dach.at",
-  "contactPerson": "Martin Gerlach (Geschäftsführer, Meister)"
+  "contactPerson": "Martin Gerlach (Geschäftsführer, Meister)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 53,
@@ -1534,7 +1586,8 @@
   ],
   "phone": "+43 7742 2562",
   "email": "info@mattigtalerhof.at",
-  "contactPerson": "Franz Schrattenecker (Inhaber)"
+  "contactPerson": "Franz Schrattenecker (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 54,
@@ -1563,7 +1616,8 @@
   ],
   "phone": "+43 7262 61262",
   "email": "info@gasthof-geirhofer.at",
-  "contactPerson": "Christian Geirhofer (Inhaber, Hotel Mühlviertler Hof e.U.)"
+  "contactPerson": "Christian Geirhofer (Inhaber, Hotel Mühlviertler Hof e.U.)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 55,
@@ -1592,7 +1646,8 @@
   ],
   "phone": "+43 7269 379",
   "email": "tischlerei.nefischer@perg.at",
-  "contactPerson": "Gertrude Hintersteiner-Nefischer und Johann Hintersteiner (Inhaber seit 1991)"
+  "contactPerson": "Gertrude Hintersteiner-Nefischer und Johann Hintersteiner (Inhaber seit 1991)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 56,
@@ -1621,7 +1676,8 @@
   ],
   "phone": "+43 7667 7260",
   "email": "office@tischlerei-pachler.at",
-  "contactPerson": "Josef Pachler (Geschäftsführer)"
+  "contactPerson": "Josef Pachler (Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 57,
@@ -1650,7 +1706,8 @@
   ],
   "phone": "+43 6278 8747",
   "email": "office@schuster-elektro.at",
-  "contactPerson": "Norbert Schuster (Geschäftsführer)"
+  "contactPerson": "Norbert Schuster (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 58,
@@ -1679,7 +1736,8 @@
   ],
   "phone": "+43 7722 64545",
   "email": "gasthof@schuedlbauers.at",
-  "contactPerson": "Josef Gann (Schüdlbauer Gaststätten GmbH)"
+  "contactPerson": "Josef Gann (Schüdlbauer Gaststätten GmbH)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 59,
@@ -1708,7 +1766,8 @@
   ],
   "phone": "+43 7241 5608",
   "email": "kontakt@thanner.or.at",
-  "contactPerson": "Oliver Thanner (Geschäftsführer)"
+  "contactPerson": "Oliver Thanner (Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 60,
@@ -1737,7 +1796,8 @@
   ],
   "phone": "+43 664 4413775",
   "email": "office@schlosserei-kraus.at",
-  "contactPerson": "Thomas Kraus (Inhaber); Tina Kraus (Büro)"
+  "contactPerson": "Thomas Kraus (Inhaber); Tina Kraus (Büro)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 61,
@@ -1766,7 +1826,8 @@
   ],
   "phone": "+43 7262 61276",
   "email": "info@hotel-tinschert.at",
-  "contactPerson": "Katrin Tinschert / Familie Tinschert"
+  "contactPerson": "Katrin Tinschert / Familie Tinschert",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 62,
@@ -1795,7 +1856,8 @@
   ],
   "phone": "+43 7949 20110",
   "email": "office@tischlerei-pachinger.at",
-  "contactPerson": "Andreas Weißenböck (Geschäftsführer), Alois Pachinger (Gründer/Eigentümer)"
+  "contactPerson": "Andreas Weißenböck (Geschäftsführer), Alois Pachinger (Gründer/Eigentümer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 63,
@@ -1824,7 +1886,8 @@
   ],
   "phone": "+43 6232 3059",
   "email": "info@bywienerroither.com",
-  "contactPerson": "Franz Wienerroither"
+  "contactPerson": "Franz Wienerroither",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 64,
@@ -1853,7 +1916,8 @@
   ],
   "phone": "+43 7722 62434",
   "email": "office@uttenthalerdach.at",
-  "contactPerson": "Franz Karrer und Dominik Kinz (Holzbaumeister)"
+  "contactPerson": "Franz Karrer und Dominik Kinz (Holzbaumeister)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 65,
@@ -1882,7 +1946,8 @@
   ],
   "phone": "+43 7562 20592",
   "email": "villa-sonnwend@kalkalpen.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-14"
  },
  {
   "num": 66,
@@ -1911,7 +1976,8 @@
   ],
   "phone": "+43 3462 5656-0",
   "email": "info@burg-deutschlandsberg.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 67,
@@ -1940,7 +2006,8 @@
   ],
   "phone": "+43 316 291259",
   "email": "installationen@derneubauer.at",
-  "contactPerson": "Stefan Neubauer (Geschäftsführer)"
+  "contactPerson": "Stefan Neubauer (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 68,
@@ -1969,7 +2036,8 @@
   ],
   "phone": "+43 3184 2276",
   "email": "office@ferk-metallbau.at",
-  "contactPerson": "Karl F. Ferk (Geschäftsführung), Elisabeth Ferk (Prokuristin)"
+  "contactPerson": "Karl F. Ferk (Geschäftsführung), Elisabeth Ferk (Prokuristin)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 69,
@@ -1998,7 +2066,8 @@
   ],
   "phone": "+43 3143 20925-20",
   "email": "office@hg-haustechnik.at",
-  "contactPerson": "Hermann Glarcher (Inhaber)"
+  "contactPerson": "Hermann Glarcher (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 70,
@@ -2027,7 +2096,8 @@
   ],
   "phone": "+43 3882 2410",
   "email": "info@dreihasen.at",
-  "contactPerson": "Katharina & Peter Kroneis (Gastgeber, 6. Generation)"
+  "contactPerson": "Katharina & Peter Kroneis (Gastgeber, 6. Generation)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 71,
@@ -2056,7 +2126,8 @@
   ],
   "phone": "+43 3159 2250",
   "email": "hotel.stenitzer@aon.at",
-  "contactPerson": "Familie Stenitzer (Hotel Stenitzer KG)"
+  "contactPerson": "Familie Stenitzer (Hotel Stenitzer KG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 72,
@@ -2085,7 +2156,8 @@
   ],
   "phone": "+43 3577 22222",
   "email": "office@mt-hotel.at",
-  "contactPerson": "Fritz Mayer (Geschäftsführer)"
+  "contactPerson": "Fritz Mayer (Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 73,
@@ -2114,7 +2186,8 @@
   ],
   "phone": "+43 1 320 24 39",
   "email": "bach-hengl@aon.at",
-  "contactPerson": "Familie Franz Hengl"
+  "contactPerson": "Familie Franz Hengl",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 74,
@@ -2143,7 +2216,8 @@
   ],
   "phone": "+43 1 586 41 58",
   "email": "melange@cafesperl.at",
-  "contactPerson": "Manfred Staub (Geschäftsführung/Inhaber)"
+  "contactPerson": "Manfred Staub (Geschäftsführung/Inhaber)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 75,
@@ -2172,7 +2246,8 @@
   ],
   "phone": "+43 660 26 26 026",
   "email": null,
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 76,
@@ -2201,7 +2276,8 @@
   ],
   "phone": "+43 1 813 32 88",
   "email": "office@unserdach.at",
-  "contactPerson": "Patrick Hess (Geschäftsführer, Spenglermeister)"
+  "contactPerson": "Patrick Hess (Geschäftsführer, Spenglermeister)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 77,
@@ -2230,7 +2306,8 @@
   ],
   "phone": "+43 1 320 33 30",
   "email": "office@hengl-haselbrunner.at",
-  "contactPerson": "Familie Hengl (Ferdinand Hengl)"
+  "contactPerson": "Familie Hengl (Ferdinand Hengl)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 78,
@@ -2259,7 +2336,8 @@
   ],
   "phone": "+43 664 145 14 92",
   "email": "office@herbich.at",
-  "contactPerson": "Robert Herbich (Geschäftsführer)"
+  "contactPerson": "Robert Herbich (Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 79,
@@ -2288,7 +2366,8 @@
   ],
   "phone": "+43 7479 7334",
   "email": "info@distelberger.at",
-  "contactPerson": "Toni Distelberger & Christine Pfligl"
+  "contactPerson": "Toni Distelberger & Christine Pfligl",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 80,
@@ -2317,7 +2396,8 @@
   ],
   "phone": "+43 2573 25999",
   "email": "office@neunlaeuf.at",
-  "contactPerson": "Roland Krammer (Wirt/Sommelier), Ruth Krammer"
+  "contactPerson": "Roland Krammer (Wirt/Sommelier), Ruth Krammer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 81,
@@ -2346,7 +2426,8 @@
   ],
   "phone": "+43 2912 300",
   "email": "rezeption@schuettkasten-geras.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-14"
  },
  {
   "num": 82,
@@ -2375,7 +2456,8 @@
   ],
   "phone": "+43 7475 56481",
   "email": null,
-  "contactPerson": "Familie Reikersdorfer (Michaela Reikersdorfer, Kräuterpädagogin)"
+  "contactPerson": "Familie Reikersdorfer (Michaela Reikersdorfer, Kräuterpädagogin)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 83,
@@ -2404,7 +2486,8 @@
   ],
   "phone": "+43 699 15237800",
   "email": "wein@schaflerhof.at",
-  "contactPerson": "Andreas Schafler"
+  "contactPerson": "Andreas Schafler",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 84,
@@ -2433,7 +2516,8 @@
   ],
   "phone": "+43 2858 5231",
   "email": "waldpension.nebelstein@xundheitswelt.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 85,
@@ -2462,7 +2546,8 @@
   ],
   "phone": "+43 650 8891920",
   "email": null,
-  "contactPerson": "Barbara Beer, Johannes Beer"
+  "contactPerson": "Barbara Beer, Johannes Beer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 86,
@@ -2491,7 +2576,8 @@
   ],
   "phone": "+43 2713 2208",
   "email": "wein@romangritsch.at",
-  "contactPerson": "Roman Gritsch"
+  "contactPerson": "Roman Gritsch",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 87,
@@ -2520,7 +2606,8 @@
   ],
   "phone": "+43 681 81291881",
   "email": "kontakt@zumpranger.at",
-  "contactPerson": "Anna Gerland, Zane Berger"
+  "contactPerson": "Anna Gerland, Zane Berger",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 88,
@@ -2549,7 +2636,8 @@
   ],
   "phone": "+43 7286 8321",
   "email": "info@bruckwirt.at",
-  "contactPerson": "Familie Steininger"
+  "contactPerson": "Familie Steininger",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 89,
@@ -2578,7 +2666,8 @@
   ],
   "phone": "+43 7663 8100",
   "email": "info@hotel-attersee.at",
-  "contactPerson": "Familie Föttinger"
+  "contactPerson": "Familie Föttinger",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 90,
@@ -2607,7 +2696,8 @@
   ],
   "phone": "+43 3862 31258",
   "email": "office@bergerbauer.com",
-  "contactPerson": "Reinhold Ferdinand Haubenwaller (Inhaber)"
+  "contactPerson": "Reinhold Ferdinand Haubenwaller (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 91,
@@ -2636,7 +2726,8 @@
   ],
   "phone": "+43 3622 72117",
   "email": "info@gh-schneiderwirt.at",
-  "contactPerson": "Michael Kainzinger"
+  "contactPerson": "Michael Kainzinger",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 92,
@@ -2665,7 +2756,8 @@
   ],
   "phone": "+43 1 486 66 93-0",
   "email": "offner@trowal.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 93,
@@ -2694,7 +2786,8 @@
   ],
   "phone": "+43 1 526 26 46",
   "email": "apo@kaiserkrone.at",
-  "contactPerson": "Mag. pharm. Uwe Schehl (Konzessionär)"
+  "contactPerson": "Mag. pharm. Uwe Schehl (Konzessionär)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 94,
@@ -2723,7 +2816,8 @@
   ],
   "phone": "+43 1 505 80 10-0",
   "email": "office@citygreen.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 95,
@@ -2752,7 +2846,8 @@
   ],
   "phone": "+43 1 877 08 44",
   "email": "schnabl@schnabl.co.at",
-  "contactPerson": "Dr. Norbert Schnabl (Inhaber/Geschäftsführer)"
+  "contactPerson": "Dr. Norbert Schnabl (Inhaber/Geschäftsführer)",
+  "addedOn": "2026-09-14"
  },
  {
   "num": 96,
@@ -2781,7 +2876,8 @@
   ],
   "phone": "+43 676 650 86 88",
   "email": null,
-  "contactPerson": "Florian Georg Pichler (Medieninhaber, Physiotherapeut/Osteopath M.Sc.)"
+  "contactPerson": "Florian Georg Pichler (Medieninhaber, Physiotherapeut/Osteopath M.Sc.)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 97,
@@ -2810,7 +2906,8 @@
   ],
   "phone": "+43 1 545 22 84",
   "email": null,
-  "contactPerson": "Rupert Hutter (Inhaber)"
+  "contactPerson": "Rupert Hutter (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 98,
@@ -2839,7 +2936,8 @@
   ],
   "phone": "+43 1 577 43 00",
   "email": "praxis@tierarzt-wien-west.at",
-  "contactPerson": "Dr. Maurizio Colcuc (Geschäftsführer und Alleingesellschafter)"
+  "contactPerson": "Dr. Maurizio Colcuc (Geschäftsführer und Alleingesellschafter)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 99,
@@ -2868,7 +2966,8 @@
   ],
   "phone": "+43 1 203 35 05",
   "email": "office@notare.at",
-  "contactPerson": "Dr. Rainer Dürr (Öffentlicher Notar)"
+  "contactPerson": "Dr. Rainer Dürr (Öffentlicher Notar)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 100,
@@ -2897,7 +2996,8 @@
   ],
   "phone": "+43 664 1656396",
   "email": null,
-  "contactPerson": "Manuel Koller (Inhaber & Küchenchef)"
+  "contactPerson": "Manuel Koller (Inhaber & Küchenchef)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 101,
@@ -2926,7 +3026,8 @@
   ],
   "phone": "+43 3335 2267",
   "email": "office@gasthofhubmann.at",
-  "contactPerson": "Karlheinz Stelzer (Betriebsführung seit 2008)"
+  "contactPerson": "Karlheinz Stelzer (Betriebsführung seit 2008)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 102,
@@ -2955,7 +3056,8 @@
   ],
   "phone": "+43 1 877 74 01 (Ekazent) / +43 1 406 33 66 (Geblergasse)",
   "email": "hotel@ekazent.com",
-  "contactPerson": "Opal Immobilien V GmbH (FN 309616v, UID ATU64419846) bzw. BM HotelbetriebsgmbH (FN 67849d, UID ATU15154302)"
+  "contactPerson": "Opal Immobilien V GmbH (FN 309616v, UID ATU64419846) bzw. BM HotelbetriebsgmbH (FN 67849d, UID ATU15154302)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 103,
@@ -2984,7 +3086,8 @@
   ],
   "phone": "+43 1 408 08 99",
   "email": "info@hotelbleckmann.at",
-  "contactPerson": "Eugenia Galatan (Inhaberin, Einzelunternehmen, UID ATU69447609)"
+  "contactPerson": "Eugenia Galatan (Inhaberin, Einzelunternehmen, UID ATU69447609)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 104,
@@ -3013,7 +3116,8 @@
   ],
   "phone": "+43 1 769 68 58-0",
   "email": "kontakt@heiner.co.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 105,
@@ -3042,7 +3146,8 @@
   ],
   "phone": "+43 2236 22246",
   "email": "hotel@babenbergerhof.com",
-  "contactPerson": "Carl Breyer und Irene Schibich (Geschäftsführung, Babenbergerhof C. Breyer GmbH, FN 266237a)"
+  "contactPerson": "Carl Breyer und Irene Schibich (Geschäftsführung, Babenbergerhof C. Breyer GmbH, FN 266237a)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 106,
@@ -3071,7 +3176,8 @@
   ],
   "phone": "+43 2757 2448",
   "email": "reception@hotelmoser.at",
-  "contactPerson": "Monika Reiter (Geschäftsführung, Hotel Moser Seeblick GmbH, FN 326675f)"
+  "contactPerson": "Monika Reiter (Geschäftsführung, Hotel Moser Seeblick GmbH, FN 326675f)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 107,
@@ -3100,7 +3206,8 @@
   ],
   "phone": "+43 2649 281",
   "email": "office@hotelthier.at",
-  "contactPerson": "Gastgeberfamilie Thier"
+  "contactPerson": "Gastgeberfamilie Thier",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 108,
@@ -3129,7 +3236,8 @@
   ],
   "phone": "+43 7252 72013",
   "email": null,
-  "contactPerson": "Anna Zöchling (Gasthaus Zöchling KG)"
+  "contactPerson": "Anna Zöchling (Gasthaus Zöchling KG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 109,
@@ -3158,7 +3266,8 @@
   ],
   "phone": "+43 7252 38222",
   "email": "office@wirtimfeld.at",
-  "contactPerson": "Josef Schweinschwaller"
+  "contactPerson": "Josef Schweinschwaller",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 110,
@@ -3187,7 +3296,8 @@
   ],
   "phone": "+43 664 88248202",
   "email": "info@almpark.at",
-  "contactPerson": "Pierer Gastronomie GmbH (Betreiber)"
+  "contactPerson": "Pierer Gastronomie GmbH (Betreiber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 111,
@@ -3216,7 +3326,8 @@
   ],
   "phone": "+43 3463 2905-0",
   "email": "info@dorfhotel.at",
-  "contactPerson": "Herbert Wölkart (Inhaber, Herbert Wölkart KG)"
+  "contactPerson": "Herbert Wölkart (Inhaber, Herbert Wölkart KG)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 112,
@@ -3245,7 +3356,8 @@
   ],
   "phone": "+43 3573 4880",
   "email": "engelhardt@twin.at",
-  "contactPerson": "Robert Engelhardt (Inhaber)"
+  "contactPerson": "Robert Engelhardt (Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 113,
@@ -3274,7 +3386,8 @@
   ],
   "phone": "+43 1 406 08 71",
   "email": "taqueria@losmexikas.at",
-  "contactPerson": "Mauricio Aceves Omana (Chef/Inhaber)"
+  "contactPerson": "Mauricio Aceves Omana (Chef/Inhaber)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 114,
@@ -3303,7 +3416,8 @@
   ],
   "phone": "+43 1 604 22 67",
   "email": "info@mathesz-daecher.at",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-13"
  },
  {
   "num": 115,
@@ -3332,7 +3446,8 @@
   ],
   "phone": "+43 1 734 83 78",
   "email": "optik.burger@01sehtest.at",
-  "contactPerson": "Mst. Martin Burger, M.Sc. (Optometrist, Geschäftsführer)"
+  "contactPerson": "Mst. Martin Burger, M.Sc. (Optometrist, Geschäftsführer)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 116,
@@ -3361,7 +3476,8 @@
   ],
   "phone": "+43 7413 8219",
   "email": "office@mistlbacher.com",
-  "contactPerson": "Johannes Mistlbacher"
+  "contactPerson": "Johannes Mistlbacher",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 117,
@@ -3390,7 +3506,8 @@
   ],
   "phone": "+43 2272 62266",
   "email": "konditorei@koestlbauer.at",
-  "contactPerson": "Mag. Sebastian Köstlbauer"
+  "contactPerson": "Mag. Sebastian Köstlbauer",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 118,
@@ -3419,7 +3536,8 @@
   ],
   "phone": "+43 2841 8329",
   "email": "landgasthaus.topf@a1.net",
-  "contactPerson": null
+  "contactPerson": null,
+  "addedOn": "2026-09-14"
  },
  {
   "num": 119,
@@ -3448,7 +3566,8 @@
   ],
   "phone": "+43 2622 82916",
   "email": null,
-  "contactPerson": "Ali Celik (laut Impressum verantwortlich)"
+  "contactPerson": "Ali Celik (laut Impressum verantwortlich)",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 120,
@@ -3477,7 +3596,8 @@
   ],
   "phone": "+43 664 7614027",
   "email": "office@heuriger-oesterreicher.at",
-  "contactPerson": "Elfriede Polt-Österreicher"
+  "contactPerson": "Elfriede Polt-Österreicher",
+  "addedOn": "2026-09-13"
  },
  {
   "num": 121,
@@ -3487,7 +3607,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Familiengeführte Buschenschank in Sievering zwischen Neustift und Grinzing mit ausschließlich selbst erzeugten Weinen, Innenhof und…",
-  "oldWebsite": "http://www.buschenschank-haslinger.at/"
+  "oldWebsite": "http://www.buschenschank-haslinger.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 122,
@@ -3497,7 +3618,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "1848 gegründet - älteste Bäckerei Wiens in Familienbesitz; backt das originale 'Heurigen-Roggenbrot' nach unverändertem Rezept, mit Café,…",
-  "oldWebsite": "https://www.wannenmacher-brot.at/"
+  "oldWebsite": "https://www.wannenmacher-brot.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 123,
@@ -3507,7 +3629,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Traditionsreiches Wiener Kaffeehaus seit 1880 mit historischem Original-Interieur, mehrfach ausgezeichnet, bekannt für die Sperl-Torte;…",
-  "oldWebsite": "https://www.cafesperl.at/"
+  "oldWebsite": "https://www.cafesperl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 124,
@@ -3517,7 +3640,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "1966 gegründete Fahrschule mit über 13.000 Absolventen, Klassen A/B/L17/Moped, E-Autos und E-Motorrädern; 74-78% Erfolgsquote beim…",
-  "oldWebsite": "https://www.fahrschule-hietzing.at/"
+  "oldWebsite": "https://www.fahrschule-hietzing.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 125,
@@ -3527,7 +3651,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Kleiner Familienbetrieb im 6. Bezirk, der Schinken, Würste und Selchfleisch noch selbst erzeugt - ohne Zusatzstoffe/Phosphate; zusätzlich…",
-  "oldWebsite": "https://www.fleischerei-ringl.at/"
+  "oldWebsite": "https://www.fleischerei-ringl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 126,
@@ -3537,7 +3662,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Wiener Gasthaus in Meidling mit Wiener Küche, Balkan-Spezialitäten, Gastgarten und Mittagsmenü; Räumlichkeiten für Feiern und…",
-  "oldWebsite": "https://www.gasthaus-alt-wien.at/"
+  "oldWebsite": "https://www.gasthaus-alt-wien.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 127,
@@ -3547,7 +3673,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Urtypisches Wiener Gasthaus im Alsergrund mit frisch gekochter traditioneller österreichischer Küche, Schanigarten und Speisen zum…",
-  "oldWebsite": "http://www.wickerl.at/"
+  "oldWebsite": "http://www.wickerl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 128,
@@ -3557,7 +3684,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Legendäres, in zweiter Generation geführtes Stundenhotel von 1896 in der Inneren Stadt mit 7 Themenzimmern (Kaiser Suite, 1001 Nights…",
-  "oldWebsite": "http://www.hotelorient.at/"
+  "oldWebsite": "http://www.hotelorient.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 129,
@@ -3567,7 +3695,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Privat geführte Frühstückspension in Villenlage am Wiener Stadtrand (Hadersdorf-Weidlingau) mit Zimmern und Apartments, Garten,…",
-  "oldWebsite": "https://www.pension-anzengruber.at/"
+  "oldWebsite": "https://www.pension-anzengruber.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 130,
@@ -3577,7 +3706,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Zwei familiär geführte Innenstadt-Pensionen unter einem Dach ('zentral, funktionell, günstig'), Frühstückspension mit traditionell…",
-  "oldWebsite": "http://www.hotelpension.at/"
+  "oldWebsite": "http://www.hotelpension.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 131,
@@ -3587,7 +3717,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Traditionsreiche Pferdefleischerei mit sechs Verkaufsständen auf Wiener Märkten; großes Sortiment an Pferde- und Fohlenspezialitäten…",
-  "oldWebsite": "https://www.pferdefleischer.at/"
+  "oldWebsite": "https://www.pferdefleischer.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 132,
@@ -3597,7 +3728,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Gemeinschaftspraxis von vier Physiotherapeuten in Floridsdorf mit Schwerpunkten Orthopädie, Traumatologie, Sportverletzungen und…",
-  "oldWebsite": "http://physiotherapie1210.at/"
+  "oldWebsite": "http://physiotherapie1210.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 133,
@@ -3607,7 +3739,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Friseur-Meisterbetrieb in Kaisermühlen (22. Bezirk) mit zwei Konzepten: klassischer Salon Eva (Damen/Herren) und 'Salon Privat' mit…",
-  "oldWebsite": "https://www.salonprivat.at/"
+  "oldWebsite": "https://www.salonprivat.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 134,
@@ -3617,7 +3750,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Kultlokal im 7. Bezirk, vor über 50 Jahren von Günther und Helene Schmidt gegründet und heute von den Töchtern geführt; berühmt für…",
-  "oldWebsite": "https://www.schnitzelwirt.co.at/"
+  "oldWebsite": "https://www.schnitzelwirt.co.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 135,
@@ -3627,7 +3761,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Alteingesessener Familien-Tischlereibetrieb in der Donaustadt: Reparaturen, Innenausbau, Dachbodenausbauten, Böden, Türen, Fenster,…",
-  "oldWebsite": "http://www.tischlerei-koerzoe.at/"
+  "oldWebsite": "http://www.tischlerei-koerzoe.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 136,
@@ -3637,7 +3772,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Tischlerei in Ottakring (Firmenbuch seit 2003, FN 229971v), spezialisiert auf Sicherheits- und Feuerschutztüren, Tischlerarbeiten,…",
-  "oldWebsite": "http://www.tischlerei-kout.at/"
+  "oldWebsite": "http://www.tischlerei-kout.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 137,
@@ -3647,7 +3783,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Traditioneller Familien-Weinbaubetrieb und Heuriger in Nussdorf mit eigener Vinothek, Winzersaal, Eigenbauweinen vom Nussberg (Gemischter…",
-  "oldWebsite": "https://www.kierlinger.at/"
+  "oldWebsite": "https://www.kierlinger.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 138,
@@ -3657,7 +3794,8 @@
   "region": "Wien",
   "location": "Wien, Wien",
   "description": "Familien-Weingut und Heuriger am Nussberg im Kahlenbergerdorf (Mitglied der Landwirtschaftskammer Wien), bekannt für Eigenbauweine und…",
-  "oldWebsite": "http://www.sirbu.at/"
+  "oldWebsite": "http://www.sirbu.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 139,
@@ -3667,7 +3805,8 @@
   "region": "Wien",
   "location": "Wien (11. Bezirk, Simmering), Wien",
   "description": "Gemütliches Grätzel-Café in Simmering mit eigenem Frühstücksangebot, Gastgarten, Dart und Karaoke-Anlage. Geöffnet Mo-Sa 8-24 Uhr,…",
-  "oldWebsite": "http://www.savarona.at/"
+  "oldWebsite": "http://www.savarona.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 140,
@@ -3677,7 +3816,8 @@
   "region": "Wien",
   "location": "Wien (13. Bezirk, Hietzing), Wien",
   "description": "Kleines Weinlokal mit Vinothek in der Altgasse in Alt-Hietzing nahe Schönbrunn: ausgewählte österreichische Weiß- und Rotweine, Bier und…",
-  "oldWebsite": "https://www.zumhoelbl.at/"
+  "oldWebsite": "https://www.zumhoelbl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 141,
@@ -3687,7 +3827,8 @@
   "region": "Wien",
   "location": "Wien (19. Bezirk, Döbling), Wien",
   "description": "Pub & Restaurant (vormals Shakes&Beer), eröffnet am 28.05.1998, mit gutbürgerlicher internationaler Küche, Frühstück (Mo-Fr 8-10 Uhr),…",
-  "oldWebsite": "https://www.shakes.at/"
+  "oldWebsite": "https://www.shakes.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 142,
@@ -3697,7 +3838,8 @@
   "region": "Wien",
   "location": "Wien (19. Bezirk, Sievering), Wien",
   "description": "Italienisches Restaurant im Herzen von Sievering, seit 2003 bestehend, mit frisch zubereiteten Spezialitäten, Gastgarten, täglichem…",
-  "oldWebsite": "https://capri.co.at/"
+  "oldWebsite": "https://capri.co.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 143,
@@ -3707,7 +3849,8 @@
   "region": "Wien",
   "location": "Wien (22. Bezirk, Donaustadt), Wien",
   "description": "Chinesisches Familienrestaurant in der Donaustadt mit fernöstlichen Klassikern und Hauskreationen, Mittagsmenüs und Take-away. Mit…",
-  "oldWebsite": "https://www.huaqiang.at/"
+  "oldWebsite": "https://www.huaqiang.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 144,
@@ -3717,7 +3860,8 @@
   "region": "Wien",
   "location": "Wien (3. Bezirk, Landstraße), Wien",
   "description": "Alt-Wiener Wirtshaus seit 1900 im dritten Bezirk mit klassischer Hausmannskost wie Altwiener Suppentopf, Wiener Schnitzel und…",
-  "oldWebsite": "http://www.kolonitzbeisl.at/"
+  "oldWebsite": "http://www.kolonitzbeisl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 145,
@@ -3727,7 +3871,8 @@
   "region": "Niederösterreich",
   "location": "Amstetten (Ortsteil Gigerreith, Mostviertel), Niederösterreich",
   "description": "900 Jahre alter Vierkanthof im Mostviertler Birnbaumland; Mostbaron-Betrieb mit Mostheurigem, Hofladen (GenussLaden), Obstprodukten (Most,…",
-  "oldWebsite": "http://www.distelberger.at"
+  "oldWebsite": "http://www.distelberger.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 146,
@@ -3737,7 +3882,8 @@
   "region": "Niederösterreich",
   "location": "Göpfritz an der Wild (Waldviertel), Niederösterreich",
   "description": "Familienfleischerei in 4. Generation (Wurzeln bis 1842); eigene Schlachtung mit Tieren ausschließlich von Bauern der Gemeinde, Waldviertler…",
-  "oldWebsite": "https://www.fleischerei-anderl.at"
+  "oldWebsite": "https://www.fleischerei-anderl.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 147,
@@ -3747,7 +3893,8 @@
   "region": "Niederösterreich",
   "location": "Herzogenburg (zweiter Standort St. Pölten), Niederösterreich",
   "description": "Sanitär-, Heizungs- und Lüftungsbetrieb seit 1973 mit 17 Mitarbeitern und Standorten in Herzogenburg und St. Pölten; Bad- und…",
-  "oldWebsite": "http://www.heinzfischergmbh.at"
+  "oldWebsite": "http://www.heinzfischergmbh.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 148,
@@ -3757,7 +3904,8 @@
   "region": "Niederösterreich",
   "location": "Hollabrunn (Weinviertel), Niederösterreich",
   "description": "Elektrofachgeschäft (Expert-Partner 'Expert Babinsky') und Installationsbetrieb in Hollabrunn: Elektroinstallationen, SAT/Antenne,…",
-  "oldWebsite": "http://www.elektrobabinsky.at"
+  "oldWebsite": "http://www.elektrobabinsky.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 149,
@@ -3767,7 +3915,8 @@
   "region": "Niederösterreich",
   "location": "Klein-Pöchlarn (Bezirk Melk), Niederösterreich",
   "description": "Familienbäckerei und Konditorei seit 136 Jahren in 4. Generation, mit Geschäften/Cafés in Klein-Pöchlarn (Stammhaus), Pöchlarn NVZ und Melk…",
-  "oldWebsite": "https://www.mistlbacher.com"
+  "oldWebsite": "https://www.mistlbacher.com",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 150,
@@ -3777,7 +3926,8 @@
   "region": "Niederösterreich",
   "location": "Krems an der Donau, Niederösterreich",
   "description": "Herren- und Kinderfriseur am Kremser Bahnhof; der Inhaber wurde in der Türkei ausgebildet, hat die österreichische Meisterprüfung und 22…",
-  "oldWebsite": "https://www.friseur-burak.at"
+  "oldWebsite": "https://www.friseur-burak.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 151,
@@ -3787,7 +3937,8 @@
   "region": "Niederösterreich",
   "location": "Krems an der Donau, Niederösterreich",
   "description": "1975 gegründeter Friseursalon in der Kremser Altstadt (1. Stock, barrierefrei), Damen und Herren, Kosmetik, Hochzeitsstyling und…",
-  "oldWebsite": "https://www.lackner-friseure.at"
+  "oldWebsite": "https://www.lackner-friseure.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 152,
@@ -3797,7 +3948,8 @@
   "region": "Niederösterreich",
   "location": "Ladendorf (Bezirk Mistelbach, Weinviertel), Niederösterreich",
   "description": "1998 gegründete Meistertischlerei, spezialisiert auf Maßküchen ('SCHWAB Traumküchen') und Möbel von der Planung bis zur Montage; einer der…",
-  "oldWebsite": "http://www.tischlerei-werkstatt.at"
+  "oldWebsite": "http://www.tischlerei-werkstatt.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 153,
@@ -3807,7 +3959,8 @@
   "region": "Niederösterreich",
   "location": "Mödling, Niederösterreich",
   "description": "Frühstückspension in Mödling südlich von Wien für Urlaubs-, Geschäfts- und Seminargäste; Frühstück wochentags ab 6:15, bietet auch…",
-  "oldWebsite": "http://www.pensionmonika.com"
+  "oldWebsite": "http://www.pensionmonika.com",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 154,
@@ -3817,7 +3970,8 @@
   "region": "Niederösterreich",
   "location": "Pfaffstätten (Bezirk Baden), Niederösterreich",
   "description": "Familien-Heuriger im Pfaffstättner 'Heurigendorf' bei Baden; klassische Buschenschank-Küche, dazu täglicher Flaschenweinverkauf 8:00-18:00.",
-  "oldWebsite": "http://www.heuriger-bock.at"
+  "oldWebsite": "http://www.heuriger-bock.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 155,
@@ -3827,7 +3981,8 @@
   "region": "Niederösterreich",
   "location": "Pfaffstätten (Bezirk Baden), Niederösterreich",
   "description": "Bodenständiger Heuriger ('bei uns sollen Sie sich zu Hause fühlen') mit glutenfreien Gerichten, auf Falstaff gelistet; sozial engagiert…",
-  "oldWebsite": "https://www.heuriger-oesterreicher.at"
+  "oldWebsite": "https://www.heuriger-oesterreicher.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 156,
@@ -3837,7 +3992,8 @@
   "region": "Niederösterreich",
   "location": "St. Andrä-Wördern, Niederösterreich",
   "description": "Familiengeführtes Burgherren-Restaurant der Familie Zeiner mit deftiger Hausmannskost, Ritteressen, Heurigenlokal, Kegelbahn und…",
-  "oldWebsite": "http://www.gastro-zeiner.at/"
+  "oldWebsite": "http://www.gastro-zeiner.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 157,
@@ -3847,7 +4003,8 @@
   "region": "Niederösterreich",
   "location": "St. Andrä-Wördern (Bezirk Tulln), Niederösterreich",
   "description": "Installateur für Gas/Wasser/Heizung: Wärmepumpen, Pellets- und Biomasseheizungen, Wasserenthärtung, kontrollierte Wohnraumlüftung, Gas- und…",
-  "oldWebsite": "http://www.installateur-frieberger.at"
+  "oldWebsite": "http://www.installateur-frieberger.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 158,
@@ -3857,7 +4014,8 @@
   "region": "Niederösterreich",
   "location": "Straß im Straßertale (Bezirk Krems-Land), Niederösterreich",
   "description": "Familiengeführtes Gästehaus im Weinort Straßertal bei Langenlois/Kamptal, mit Garten, Pool, großen sauberen Zimmern und gelobtem…",
-  "oldWebsite": "http://www.gaestehaus-hahn.at"
+  "oldWebsite": "http://www.gaestehaus-hahn.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 159,
@@ -3867,7 +4025,8 @@
   "region": "Niederösterreich",
   "location": "Tulln an der Donau, Niederösterreich",
   "description": "Traditions-Café-Konditorei 'seit Generationen' direkt am Tullner Hauptplatz neben der Bezirkshauptmannschaft; hausgemachtes Eis,…",
-  "oldWebsite": "https://www.koestlbauer.at"
+  "oldWebsite": "https://www.koestlbauer.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 160,
@@ -3877,7 +4036,8 @@
   "region": "Niederösterreich",
   "location": "Vitis (Waldviertel), Niederösterreich",
   "description": "Traditioneller Waldviertler Landgasthof mit Restaurant, Gourmet-Stüberl, Gastgarten und Café. Mehrfach ausgezeichnet: erneut 2 Hauben im…",
-  "oldWebsite": "http://www.landgasthof-topf.at"
+  "oldWebsite": "http://www.landgasthof-topf.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 161,
@@ -3887,7 +4047,8 @@
   "region": "Niederösterreich",
   "location": "Weißenkirchen in der Wachau, Niederösterreich",
   "description": "Familienweingut im Herzen der Wachau mit 4 ha Rebfläche, Mitglied der Vinea Wachau Nobilis Districtus; betreibt einen Heurigen und…",
-  "oldWebsite": "http://www.wein-ottmann.at"
+  "oldWebsite": "http://www.wein-ottmann.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 162,
@@ -3897,7 +4058,8 @@
   "region": "Niederösterreich",
   "location": "Weißenkirchen in der Wachau, Niederösterreich",
   "description": "Familienweingut, das seit 1917 Wein erzeugt (Wurzeln bis ins Mittelalter); Wachauer Steinfeder-, Federspiel- und Smaragd-Weine inkl. Ried…",
-  "oldWebsite": "http://www.weingut-zottl.at"
+  "oldWebsite": "http://www.weingut-zottl.at",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 163,
@@ -3907,7 +4069,8 @@
   "region": "Niederösterreich",
   "location": "Wiener Neustadt, Niederösterreich",
   "description": "Pizzeria mit Lieferservice in der Neunkirchner Straße in Wiener Neustadt: Pizza, Pasta und italienische Klassiker, Zustellung mit warmer…",
-  "oldWebsite": "https://www.pizzaristorante-torino.at/"
+  "oldWebsite": "https://www.pizzaristorante-torino.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 164,
@@ -3917,7 +4080,8 @@
   "region": "Oberösterreich",
   "location": "Altmünster, Oberösterreich",
   "description": "Ein-Mann-Elektrotechnikbetrieb für Elektroinstallationen aller Art im privaten Haushalt, tätig im Großraum Gmunden und Vöcklabruck.",
-  "oldWebsite": "https://www.js-etechnik.at/"
+  "oldWebsite": "https://www.js-etechnik.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 165,
@@ -3927,7 +4091,8 @@
   "region": "Oberösterreich",
   "location": "Aschach an der Donau, Oberösterreich",
   "description": "Fachbetrieb für Malerei, Vollwärmeschutz, Innen- und Außenputz sowie Fassadensanierung im Bezirk Eferding; arbeitet mit Markensystemen von…",
-  "oldWebsite": "http://www.xn--chamleon-3za.at/"
+  "oldWebsite": "http://www.xn--chamleon-3za.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 166,
@@ -3937,7 +4102,8 @@
   "region": "Oberösterreich",
   "location": "Bad Goisern am Hallstättersee, Oberösterreich",
   "description": "Familien- und kinderfreundliche Frühstückspension wenige Gehminuten vom Zentrum von Bad Goisern im UNESCO-Welterbe Salzkammergut; 3 Häuser…",
-  "oldWebsite": "https://www.sydler.at/"
+  "oldWebsite": "https://www.sydler.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 167,
@@ -3947,7 +4113,8 @@
   "region": "Oberösterreich",
   "location": "Gmunden, Oberösterreich",
   "description": "Bodenständiger Familien-Gasthof am Traunsee mit 17 Doppel- und 10 Einzelzimmern, Mittagsmenüs und Hausmannskost; Küche macht 'alles selbst…",
-  "oldWebsite": "https://www.gasthof-altmuehl.at/"
+  "oldWebsite": "https://www.gasthof-altmuehl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 168,
@@ -3957,7 +4124,8 @@
   "region": "Oberösterreich",
   "location": "Gmunden, Oberösterreich",
   "description": "3-Sterne-Stadthotel in einem Gebäude von 1545 direkt an der Traun, wenige Schritte vom Stadtplatz und Traunsee; 29 Zimmer, Sauna und…",
-  "oldWebsite": "https://www.goldenerbrunnen.at/"
+  "oldWebsite": "https://www.goldenerbrunnen.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 169,
@@ -3967,7 +4135,8 @@
   "region": "Oberösterreich",
   "location": "Kirchheim im Innkreis, Oberösterreich",
   "description": "Familiengeführter Gasthof und Ferienhotel mit Hallenbad und großem Außenbereich am Römerradweg, 10 Autominuten von der Therme Geinberg;…",
-  "oldWebsite": "https://www.ferienpension.at/de/"
+  "oldWebsite": "https://www.ferienpension.at/de/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 170,
@@ -3977,7 +4146,8 @@
   "region": "Oberösterreich",
   "location": "Linz, Oberösterreich",
   "description": "Asiatisches Restaurant im Linzer Zentrum mit chinesischer und indischer Küche, Mittagsbuffet (Mo-Fr) und eigenem Zustellservice. 40…",
-  "oldWebsite": "https://www.chinoiss.at/"
+  "oldWebsite": "https://www.chinoiss.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 171,
@@ -3987,7 +4157,8 @@
   "region": "Oberösterreich",
   "location": "Linz, Oberösterreich",
   "description": "Asia-Fresh-Food-Restaurant mit großem Buffet und Teppanyaki-Grill sowie chinesischen, japanischen und thailändischen Gerichten à la carte.…",
-  "oldWebsite": "https://www.wok-more.at/"
+  "oldWebsite": "https://www.wok-more.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 172,
@@ -3997,7 +4168,8 @@
   "region": "Oberösterreich",
   "location": "Linz, Oberösterreich",
   "description": "Älteste Bäckerei von Linz mit Handgebäck seit 1570, berühmt für die Original Linzer Torte und das nostalgische Café mit der ältesten…",
-  "oldWebsite": "https://www.kuk-hofbaeckerei.at/"
+  "oldWebsite": "https://www.kuk-hofbaeckerei.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 173,
@@ -4007,7 +4179,8 @@
   "region": "Oberösterreich",
   "location": "Losenstein, Oberösterreich",
   "description": "Traditioneller Familiengasthof im Ennstal direkt am Ennsradweg mit 18 Komfortzimmern, Wellnessbereich (Sauna, Dampfbad, Infrarot) und…",
-  "oldWebsite": "https://www.gasthof-blasl.at/"
+  "oldWebsite": "https://www.gasthof-blasl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 174,
@@ -4017,7 +4190,8 @@
   "region": "Oberösterreich",
   "location": "Ort im Innkreis, Oberösterreich",
   "description": "Familiengeführte Bäckerei mit über 30 Jahren 'traditioneller Backkultur' und drei Verkaufsstellen in Ort im Innkreis, Utzenaich und…",
-  "oldWebsite": "https://www.enzlmueller-ort.at/"
+  "oldWebsite": "https://www.enzlmueller-ort.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 175,
@@ -4027,7 +4201,8 @@
   "region": "Oberösterreich",
   "location": "Ort im Innkreis, Oberösterreich",
   "description": "Installateurbetrieb für Sanitär- und Wasserinstallationen sowie Heizungs- und Lüftungstechnik (Ölkessel, Fußbodenheizung, Wärmepumpen,…",
-  "oldWebsite": "http://www.haustechnik-redhammer.at/"
+  "oldWebsite": "http://www.haustechnik-redhammer.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 176,
@@ -4037,7 +4212,8 @@
   "region": "Oberösterreich",
   "location": "Perg, Oberösterreich",
   "description": "Familienbetrieb in dritter Generation am Hauptplatz von Perg; regionale Schmankerl und internationale Spezialitäten, Zimmer für…",
-  "oldWebsite": "http://www.restaurant-schachner.at/"
+  "oldWebsite": "http://www.restaurant-schachner.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 177,
@@ -4047,7 +4223,8 @@
   "region": "Oberösterreich",
   "location": "Pramet, Oberösterreich",
   "description": "Zimmerei im Bezirk Ried im Innkreis: Dachstühle, Holzriegelbau, Gartenhäuser, Sanierungen, Terrassen, Balkone, Fassaden und Dämmung;…",
-  "oldWebsite": "https://www.hattinger-holzbau.at/"
+  "oldWebsite": "https://www.hattinger-holzbau.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 178,
@@ -4057,7 +4234,8 @@
   "region": "Oberösterreich",
   "location": "Sarleinsbach, Oberösterreich",
   "description": "Traditionsgasthof im Mühlviertel (Bezirk Rohrbach) mit Restaurant, Musikpub, Kegelbahnen und Indoor-Spielplatz; 4 Einzel- und 5…",
-  "oldWebsite": "http://gh-jell.at/"
+  "oldWebsite": "http://gh-jell.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 179,
@@ -4067,7 +4245,8 @@
   "region": "Oberösterreich",
   "location": "Schärding, Oberösterreich",
   "description": "Traditionscafé und Bäckerei-Konditorei an der barocken Silberzeile in Schärding; täglich frisches Brot, Gebäck und traditionelle…",
-  "oldWebsite": "http://www.linzerbaecker.at/"
+  "oldWebsite": "http://www.linzerbaecker.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 180,
@@ -4077,7 +4256,8 @@
   "region": "Oberösterreich",
   "location": "Steyr, Oberösterreich",
   "description": "Fahrschule in Steyr (Schwesterbetrieb der Fahrschule Staudinger Kirchdorf/Krems); Klassen A, B, C, E, EzB sowie Moped-, Microcar- und…",
-  "oldWebsite": "https://www.fahrschule-staudinger-steyr.at/"
+  "oldWebsite": "https://www.fahrschule-staudinger-steyr.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 181,
@@ -4087,7 +4267,8 @@
   "region": "Oberösterreich",
   "location": "Steyr, Oberösterreich",
   "description": "Fahrschule mit Standorten in Steyr und Weyer; Ausbildung für Moped, Motorrad, PKW, LKW, Anhänger und Traktor.",
-  "oldWebsite": "https://www.fahrschule-steininger.at/"
+  "oldWebsite": "https://www.fahrschule-steininger.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 182,
@@ -4097,7 +4278,8 @@
   "region": "Oberösterreich",
   "location": "Wels, Oberösterreich",
   "description": "Inhabergeführter 'Insider Coiffeur' Frisiersalon im Welser Zentrum; bietet Damen- und Herrenschnitte, Styling, Brautfrisuren und Make-up.",
-  "oldWebsite": "https://www.friseur-traunmueller.at/"
+  "oldWebsite": "https://www.friseur-traunmueller.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 183,
@@ -4107,7 +4289,8 @@
   "region": "Oberösterreich",
   "location": "Wels, Oberösterreich",
   "description": "Traditioneller Welser Gasthof mit internationaler, regionaler und vegetarischer Küche, zwei Sälen (bis 80 Personen), Gastgarten mit…",
-  "oldWebsite": "https://www.gasthaus-huber.at/"
+  "oldWebsite": "https://www.gasthaus-huber.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 184,
@@ -4117,7 +4300,8 @@
   "region": "Oberösterreich",
   "location": "Wels, Oberösterreich",
   "description": "Friseursalon ('Ihre Frisur - Unsere Passion') in Wels, arbeitet mit Redken-Produkten; bietet Schnitt, Styling und Make-up.",
-  "oldWebsite": "http://www.haarstudio-melanie.at/"
+  "oldWebsite": "http://www.haarstudio-melanie.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 185,
@@ -4127,7 +4311,8 @@
   "region": "Oberösterreich",
   "location": "Wels (Wimpassing), Oberösterreich",
   "description": "Traditionswirtshaus in Wels-Wimpassing, seit rund 1870 bestehend, mit bodenständiger Hausmannskost und moderner leichter Küche. Geöffnet…",
-  "oldWebsite": "https://www.gasthaus-obermair.at/"
+  "oldWebsite": "https://www.gasthaus-obermair.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 186,
@@ -4137,7 +4322,8 @@
   "region": "Steiermark",
   "location": "Bad Aussee, Steiermark",
   "description": "Familiär geführte Frühstückspension im Ausseerland, ca. 500 m vom Stadtzentrum Bad Aussee, mit großem Garten direkt an der Altausseer…",
-  "oldWebsite": "https://www.zimmer-ausseerland.at/stocker/"
+  "oldWebsite": "https://www.zimmer-ausseerland.at/stocker/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 187,
@@ -4147,7 +4333,8 @@
   "region": "Steiermark",
   "location": "Gamlitz, Steiermark",
   "description": "Weingut (seit 1920, 15 ha, überwiegend Handarbeit) mit ausgezeichnetem Buschenschank im 360 Jahre alten Winzerhaus an der Südsteirischen…",
-  "oldWebsite": "https://www.hack-gebell.at/"
+  "oldWebsite": "https://www.hack-gebell.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 188,
@@ -4157,7 +4344,8 @@
   "region": "Steiermark",
   "location": "Gnas, Steiermark",
   "description": "Familienbetrieb (gegründet von Albert Konrad sen.) für Holzböden, Sanierung und Versiegelung alter Böden sowie Beratung, Planung und…",
-  "oldWebsite": "https://www.bodenleger-konrad.at/"
+  "oldWebsite": "https://www.bodenleger-konrad.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 189,
@@ -4167,7 +4355,8 @@
   "region": "Steiermark",
   "location": "Gnas, Steiermark",
   "description": "Landgasthaus im Steirischen Vulkanland, seit 1878 in Familienbesitz; steirische Spezialitäten und regionale Küche, nur Barzahlung.",
-  "oldWebsite": "https://www.gasthaus-binderhansl.at/"
+  "oldWebsite": "https://www.gasthaus-binderhansl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 190,
@@ -4177,7 +4366,8 @@
   "region": "Steiermark",
   "location": "Gnas, Steiermark",
   "description": "Kleine private Zimmervermietung (2 ebenerdige Doppelzimmer mit Dusche/WC, Sat-TV) in ruhiger Lage 5 Minuten von Gnas, im Steirischen…",
-  "oldWebsite": "http://www.zimmer-steger.at/"
+  "oldWebsite": "http://www.zimmer-steger.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 191,
@@ -4187,7 +4377,8 @@
   "region": "Steiermark",
   "location": "Gnas (Poppendorf), Steiermark",
   "description": "Selbständige Buchhalterin in Poppendorf bei Gnas; Buchhaltung, Personalverrechnung und Bürodienstleistungen für Klein- und Familienbetriebe…",
-  "oldWebsite": "http://www.gherzog.at/"
+  "oldWebsite": "http://www.gherzog.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 192,
@@ -4197,7 +4388,8 @@
   "region": "Steiermark",
   "location": "Graz, Steiermark",
   "description": "Traditionsfriseur am Grazer Lendplatz, seit 1962; Damen- und Herrensalon (zwei Häuser nebeneinander), klassische Friseurleistungen ohne…",
-  "oldWebsite": "https://www.friseursalon-poelzl.at/"
+  "oldWebsite": "https://www.friseursalon-poelzl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 193,
@@ -4207,7 +4399,8 @@
   "region": "Steiermark",
   "location": "Graz (Innere Stadt), Steiermark",
   "description": "Altsteirisches Gasthaus im ältesten Viertel von Graz, 1934 von Robert Herzl als Weinstube eröffnet, in einem Haus aus dem 17. Jahrhundert.…",
-  "oldWebsite": "https://dieherzl.at/"
+  "oldWebsite": "https://dieherzl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 194,
@@ -4217,7 +4410,8 @@
   "region": "Steiermark",
   "location": "Graz (Waltendorf), Steiermark",
   "description": "Italienisches Restaurant in Graz-Waltendorf mit Pizza, Pasta und Schnitzelgerichten sowie eigenem Lieferservice in Graz und Umgebung…",
-  "oldWebsite": "https://www.italiener-graz.at/"
+  "oldWebsite": "https://www.italiener-graz.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 195,
@@ -4227,7 +4421,8 @@
   "region": "Steiermark",
   "location": "Graz-Gösting, Steiermark",
   "description": "Städtisches Gasthaus mit beliebtem naturbelassenem Gastgarten an der Bus-Endhaltestelle in Graz-Gösting; seit 2014 von Gerti Kristandl…",
-  "oldWebsite": "https://www.gasthauszursonne-graz.at/"
+  "oldWebsite": "https://www.gasthauszursonne-graz.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 196,
@@ -4237,7 +4432,8 @@
   "region": "Steiermark",
   "location": "Ligist, Steiermark",
   "description": "Buschenschank am Beginn der Schilcherweinstraße in der Lipizzanerheimat; der Betrieb ist seit rund 100 Jahren vom Obstbau geprägt, mit…",
-  "oldWebsite": "http://www.buschenschank-zach.at/"
+  "oldWebsite": "http://www.buschenschank-zach.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 197,
@@ -4247,7 +4443,8 @@
   "region": "Steiermark",
   "location": "Mureck, Steiermark",
   "description": "Gasthaus und Fleischerei in vierter Generation; das rund 400 Jahre alte Haus ist seit fast 120 Jahren in Familienbesitz. Eigene Wurst- und…",
-  "oldWebsite": "http://www.oberer-mureck.at/"
+  "oldWebsite": "http://www.oberer-mureck.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 198,
@@ -4257,7 +4454,8 @@
   "region": "Steiermark",
   "location": "St. Ruprecht an der Raab, Steiermark",
   "description": "Traditionelle Fleischhauerei im Bezirk Weiz mit eigener Produktion und regionalen Spezialitäten, Slogan 'Fleisch gibt Kraft'.…",
-  "oldWebsite": "http://fleisch-gibt-kraft.at/"
+  "oldWebsite": "http://fleisch-gibt-kraft.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 199,
@@ -4267,7 +4465,8 @@
   "region": "Steiermark",
   "location": "St. Stefan ob Stainz, Steiermark",
   "description": "Frühstückspension (seit 1991) in sonniger Panoramalage inmitten der Schilcher-Weingärten der Weststeiermark, mit Pool, Garten und…",
-  "oldWebsite": "https://www.hauslangmann.at/"
+  "oldWebsite": "https://www.hauslangmann.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 200,
@@ -4277,7 +4476,8 @@
   "region": "Steiermark",
   "location": "Straden, Steiermark",
   "description": "Privatzimmervermietung in Karla, Hof bei Straden, mit vier Themenzimmern (Luft, Wasser, Feuer, Erde) und Frühstücksraum.",
-  "oldWebsite": "http://www.gaestehaus-egger.com/"
+  "oldWebsite": "http://www.gaestehaus-egger.com/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 201,
@@ -4287,7 +4487,8 @@
   "region": "Steiermark",
   "location": "Straden, Steiermark",
   "description": "Privates Gästehaus mit Zimmervermietung in Radochen bei Straden im Steirischen Vulkanland, familiär geführt von Josef und Margarete…",
-  "oldWebsite": "http://www.gaestehaus-stoeckler.com/"
+  "oldWebsite": "http://www.gaestehaus-stoeckler.com/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 202,
@@ -4297,7 +4498,8 @@
   "region": "Steiermark",
   "location": "Straden, Steiermark",
   "description": "4-Sterne-Landhaus mit Gästezimmern und Badeteich im steirischen Wein-, Thermen- und Vulkanland bei Straden; Ausgangspunkt für Radtouren…",
-  "oldWebsite": "http://www.sudy.info/"
+  "oldWebsite": "http://www.sudy.info/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 203,
@@ -4307,7 +4509,8 @@
   "region": "Steiermark",
   "location": "Vordernberg, Steiermark",
   "description": "Ferienwohnungen (65 m², 5-7 Personen) in einem 2007 zum Gästehaus umgebauten historischen Haus im Ortskern von Vordernberg an der…",
-  "oldWebsite": "http://www.appartement-praebichl.at/"
+  "oldWebsite": "http://www.appartement-praebichl.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 204,
@@ -4317,7 +4520,8 @@
   "region": "Steiermark",
   "location": "Weißkirchen in Steiermark, Steiermark",
   "description": "Familiengeführte Tischlerei und Holzmarkt im Murtal, ansässig im ehemaligen Betrieb der Tischlerei Zechner. Massivmöbelbau (Eiche, Zirbe,…",
-  "oldWebsite": "http://www.tischlerei-genger.at/"
+  "oldWebsite": "http://www.tischlerei-genger.at/",
+  "addedOn": "2026-08-27"
  },
  {
   "num": 205,
@@ -4327,7 +4531,8 @@
   "region": "Wien",
   "location": "Großraum Wien, Wien",
   "description": "Patentierte Wasserabsperr- und Entleerungsverlängerung für die Gartenwasserleitung: Absperren, Entleeren und Aufdrehen direkt beim Schachtdeckel, ohne in den Schacht steigen zu…",
-  "oldWebsite": "http://www.baufranz-technic.com"
+  "oldWebsite": "http://www.baufranz-technic.com",
+  "addedOn": "2026-09-11"
  },
  {
   "num": 206,
@@ -4356,7 +4561,8 @@
    "winter/",
    "sommer/",
    "kontakt/"
-  ]
+  ],
+  "addedOn": "2026-09-14"
  },
  {
   "num": 207,
@@ -4385,7 +4591,8 @@
   ],
   "phone": "+43 316 824 300",
   "email": "office@dieherzl.at",
-  "contactPerson": "Edith Seitinger (Medieninhaberin)"
+  "contactPerson": "Edith Seitinger (Medieninhaberin)",
+  "addedOn": "2026-09-15"
  },
  {
   "num": 208,
@@ -4414,7 +4621,8 @@
   ],
   "phone": "+43 316 824 300",
   "email": "office@dieherzl.at",
-  "contactPerson": "Edith Seitinger (Medieninhaberin)"
+  "contactPerson": "Edith Seitinger (Medieninhaberin)",
+  "addedOn": "2026-09-15"
  },
  {
   "num": 209,
@@ -4443,6 +4651,7 @@
   ],
   "phone": "+43 316 824 300",
   "email": "office@dieherzl.at",
-  "contactPerson": "Edith Seitinger (Medieninhaberin)"
+  "contactPerson": "Edith Seitinger (Medieninhaberin)",
+  "addedOn": "2026-09-15"
  }
 ]

@@ -272,7 +272,7 @@ app.MapGet("/api/businesses", async (AppDb db) =>
     {
         b.Num, b.Slug, b.Name, b.Category, b.Region, b.Location, b.Description, b.OldWebsite,
         b.Grade, b.Score, b.PitchHook, b.PriceLow, b.PriceHigh, b.Phone, b.Email, b.ContactPerson,
-        b.Dataset,
+        b.Dataset, b.AddedOn,
         activeLinks = bySlug.TryGetValue(b.Slug, out var ls) ? ls.Count(l => l.IsUsable(now)) : 0,
         totalViews = bySlug.TryGetValue(b.Slug, out var ls2) ? ls2.Sum(l => l.ViewCount) : 0,
     }));

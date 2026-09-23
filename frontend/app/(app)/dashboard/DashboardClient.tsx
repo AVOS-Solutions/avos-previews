@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { BusinessSummary, ShareLinkDto } from "@/lib/types";
 import { Badge, Button, Card, Input, Label, PageHeader, Select, cx } from "@/components/ui";
 import { ShareModal } from "./ShareModal";
+import { ADDED_PRESETS, ISO_DAY, addedMatcher, formatDay, isoDay } from "@/lib/added-filter";
 
 const REGIONS = ["Wien", "Niederösterreich", "Oberösterreich", "Steiermark"];
 const DATASETS = [
@@ -26,27 +27,46 @@ export function DashboardClient({ initialBusinesses }: { initialBusinesses: Busi
   const [businesses, setBusinesses] = useState(initialBusinesses);
   const [region, setRegion] = useState("");
   const [dataset, setDataset] = useState("");
+  /** "" = alle, ein Vorgabe-Schlüssel ("today" | "7d" | "30d") oder ein genaues yyyy-MM-dd. */
+  const [added, setAdded] = useState("");
   const [query, setQuery] = useState("");
   const [shareSlug, setShareSlug] = useState<string | null>(null);
 
-  const inDataset = useMemo(
+  // Jede Leiste zählt gegen die jeweils anderen Filter, aber nicht gegen sich selbst —
+  // sonst zeigte eine Schaltfläche die Zahl, die sie nach dem Klick gerade ausschließt.
+  const byDataset = useMemo(
     () => businesses.filter((b) => !dataset || b.dataset === dataset),
     [businesses, dataset],
   );
 
+  const byAdded = useMemo(() => {
+    const matches = addedMatcher(added);
+    return businesses.filter((b) => matches(b.addedOn));
+  }, [businesses, added]);
+
+  const inScope = useMemo(() => {
+    const matches = addedMatcher(added);
+    return byDataset.filter((b) => matches(b.addedOn));
+  }, [byDataset, added]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return inDataset.filter(
+    return inScope.filter(
       (b) =>
         (!region || (b.region || "") === region) &&
         (!q || `${b.name} ${b.category} ${b.location}`.toLowerCase().includes(q)),
     );
-  }, [inDataset, region, query]);
+  }, [inScope, region, query]);
 
   const regionChips = useMemo(
-    () => orderRegions(Array.from(new Set(inDataset.map((b) => b.region || "")))),
-    [inDataset],
+    () => orderRegions(Array.from(new Set(inScope.map((b) => b.region || "")))),
+    [inScope],
   );
+
+  const exactDay = ISO_DAY.test(added) ? added : "";
+  // Previews ohne Datum stehen nicht im Katalog; unter einem Datumsfilter fallen sie heraus.
+  // Das wird angesagt, statt sie stillschweigend verschwinden zu lassen.
+  const undated = useMemo(() => byDataset.filter((b) => !b.addedOn).length, [byDataset]);
 
   const groups = useMemo(
     () =>
@@ -93,13 +113,13 @@ export function DashboardClient({ initialBusinesses }: { initialBusinesses: Busi
           className="max-w-xs"
         />
         <FilterButton active={region === ""} onClick={() => setRegion("")}>
-          Alle <span className="mono text-[0.72rem] opacity-70">{inDataset.length}</span>
+          Alle <span className="mono text-[0.72rem] opacity-70">{inScope.length}</span>
         </FilterButton>
         {regionChips.map((r) => (
           <FilterButton key={r || "none"} active={region === r} onClick={() => setRegion(r)}>
             {r || "Ohne Region"}{" "}
             <span className="mono text-[0.72rem] opacity-70">
-              {inDataset.filter((b) => (b.region || "") === r).length}
+              {inScope.filter((b) => (b.region || "") === r).length}
             </span>
           </FilterButton>
         ))}
@@ -114,7 +134,7 @@ export function DashboardClient({ initialBusinesses }: { initialBusinesses: Busi
             setRegion("");
           }}
         >
-          Alle <span className="mono text-[0.72rem] opacity-70">{businesses.length}</span>
+          Alle <span className="mono text-[0.72rem] opacity-70">{byAdded.length}</span>
         </FilterButton>
         {DATASETS.map((d) => (
           <FilterButton
@@ -127,10 +147,59 @@ export function DashboardClient({ initialBusinesses }: { initialBusinesses: Busi
           >
             {d.label}{" "}
             <span className="mono text-[0.72rem] opacity-70">
-              {businesses.filter((b) => b.dataset === d.key).length}
+              {byAdded.filter((b) => b.dataset === d.key).length}
             </span>
           </FilterButton>
         ))}
+      </div>
+
+      <div className="mb-6 flex flex-wrap items-center gap-2">
+        <span className="mono text-[0.72rem] uppercase tracking-[0.08em] text-slate">
+          Hinzugef&uuml;gt
+        </span>
+        <FilterButton active={added === ""} onClick={() => setAdded("")}>
+          Alle <span className="mono text-[0.72rem] opacity-70">{byDataset.length}</span>
+        </FilterButton>
+        {ADDED_PRESETS.map((preset) => {
+          const matches = addedMatcher(preset.key);
+          return (
+            <FilterButton
+              key={preset.key}
+              active={added === preset.key}
+              onClick={() => {
+                setAdded(preset.key);
+                setRegion("");
+              }}
+            >
+              {preset.label}{" "}
+              <span className="mono text-[0.72rem] opacity-70">
+                {byDataset.filter((b) => matches(b.addedOn)).length}
+              </span>
+            </FilterButton>
+          );
+        })}
+        <Input
+          type="date"
+          aria-label="Nur Previews von diesem Tag"
+          value={exactDay}
+          max={isoDay(new Date())}
+          onChange={(e) => {
+            setAdded(e.target.value);
+            setRegion("");
+          }}
+          className="max-w-[11rem]"
+        />
+        {exactDay ? (
+          <span className="mono text-[0.72rem] text-slate">
+            {filtered.length} am {formatDay(exactDay)}
+          </span>
+        ) : null}
+        {added && undated > 0 ? (
+          <span className="text-[0.76rem] text-slate">
+            {undated} Vorschau{undated === 1 ? "" : "en"} ohne Datum ausgeblendet &ndash; nicht im
+            Katalog gef&uuml;hrt.
+          </span>
+        ) : null}
       </div>
 
       {groups.map(
@@ -160,7 +229,17 @@ export function DashboardClient({ initialBusinesses }: { initialBusinesses: Busi
                       </span>
                     </div>
                     <h3 className="text-[1.02rem] leading-snug">{b.name}</h3>
-                    <p className="m-0 text-[0.82rem] text-slate">{b.location}</p>
+                    <div className="flex items-baseline justify-between gap-2">
+                      <p className="m-0 text-[0.82rem] text-slate">{b.location}</p>
+                      {b.addedOn ? (
+                        <span
+                          className="mono shrink-0 text-[0.68rem] text-slate"
+                          title="Vorschau angelegt am"
+                        >
+                          {formatDay(b.addedOn)}
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="m-0 text-[0.85rem] text-ink-soft">{b.description}</p>
                     <div className="mt-auto flex flex-wrap gap-2 pt-3">
                       <a

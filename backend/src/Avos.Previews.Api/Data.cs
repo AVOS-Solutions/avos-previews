@@ -66,13 +66,17 @@ public class AppDb(DbContextOptions<AppDb> options) : DbContext(options)
     }
 }
 
+/// <summary>One preview site. <paramref name="AddedOn"/> is the ISO date (yyyy-MM-dd) on which
+/// the preview folder was first committed, baked into the catalog by scripts/set-added-dates.py.
+/// The runtime image carries no .git and every file shares the image build time, so the date
+/// cannot be recovered here — a preview the catalog does not list therefore has none.</summary>
 public record Business(
     int Num, string Slug, string Name, string Category,
     string Region, string Location, string Description, string? OldWebsite,
     string? Grade = null, double? Score = null, string? PitchHook = null,
     int? PriceLow = null, int? PriceHigh = null,
     string? Phone = null, string? Email = null, string? ContactPerson = null,
-    List<string>? Pages = null, string Dataset = "relaunch");
+    List<string>? Pages = null, string Dataset = "relaunch", string? AddedOn = null);
 
 /// <summary>One folder of preview sites (one subfolder per slug) plus the catalog file that
 /// describes them. Dir is an absolute path without a trailing separator.</summary>

@@ -22,6 +22,9 @@ export type BusinessSummary = {
   oldWebsite: string | null;
   /** "relaunch" for leads with an outdated site, "neubau" for leads with none yet. */
   dataset: string;
+  /** ISO date (yyyy-MM-dd) the preview folder was first committed, or null for a preview
+   *  the catalog does not list. Seeded by scripts/set-added-dates.py. */
+  addedOn?: string | null;
   activeLinks: number;
   totalViews: number;
   grade?: string | null;
